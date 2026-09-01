@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "telemetry_file": "data/sample/sensor/sensor_impact_sample.csv",
+  "sampling_frequency_hz": 50.0,
+  "peak_g_force": 4.85,
+  "stabilization_seconds": 0.85,
+  "status": "PASS"
+}

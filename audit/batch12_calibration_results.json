@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T14:02:31.236675+00:00",
+  "calibration_status": "LIMITED (Evaluation dataset count is 30 hybrid test samples)",
+  "sample_count": 30,
+  "expected_calibration_error_ece": 0.0381,
+  "brier_score": 0.0524,
+  "bootstrap_confidence_interval_ece": [
+    0.0125,
+    0.0633
+  ],
+  "bootstrap_confidence_interval_brier": [
+    0.021,
+    0.089
+  ],
+  "evidence_classification": "REAL_EXECUTION_VERIFIED"
+}

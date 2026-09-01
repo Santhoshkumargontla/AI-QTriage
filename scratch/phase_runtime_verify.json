@@ -1,0 +1,202 @@
+{
+  "yolo": {
+    "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "task": "detect",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "demo_sweep": {
+      "0.01": {
+        "n": 23,
+        "max_conf": 0.07722003012895584,
+        "classes": [
+          "bruise",
+          "cut"
+        ]
+      },
+      "0.05": {
+        "n": 2,
+        "max_conf": 0.07722003012895584,
+        "classes": [
+          "cut"
+        ]
+      },
+      "0.1": {
+        "n": 0,
+        "max_conf": null,
+        "classes": []
+      },
+      "0.25": {
+        "n": 0,
+        "max_conf": null,
+        "classes": []
+      },
+      "0.4": {
+        "n": 0,
+        "max_conf": null,
+        "classes": []
+      },
+      "0.5": {
+        "n": 0,
+        "max_conf": null,
+        "classes": []
+      }
+    },
+    "wrapper_default_n": 0
+  },
+  "mask": {
+    "compose_landscape_ok": true,
+    "compose_portrait_ok": true,
+    "unet_mask_equals_roi": true,
+    "outside_roi_sum": 0,
+    "affected_ratio": 0.0
+  },
+  "ood": [
+    {
+      "name": "gray",
+      "hw": [
+        240,
+        400
+      ],
+      "eff_winner": null,
+      "eff_raw_winner": "Swelling",
+      "eff_raw_max": 0.9632953405380249,
+      "eff_status": "LOW_QUALITY_INPUT",
+      "eff_max_prob": null,
+      "unet_positive_ratio": 0.0,
+      "unet_raw_positive_ratio": 0.0,
+      "unet_status": "LOW_QUALITY_INPUT",
+      "unet_reason": "uniform_or_blank_image",
+      "unet_pixels": 0,
+      "eff_raw_probs": {
+        "Cut": 0.03669266402721405,
+        "Bruise": 1.197674009745242e-05,
+        "Swelling": 0.9632953405380249
+      }
+    },
+    {
+      "name": "black",
+      "hw": [
+        240,
+        400
+      ],
+      "eff_winner": null,
+      "eff_raw_winner": "Swelling",
+      "eff_raw_max": 1.0,
+      "eff_status": "LOW_QUALITY_INPUT",
+      "eff_max_prob": null,
+      "unet_positive_ratio": 0.0,
+      "unet_raw_positive_ratio": 0.996429,
+      "unet_status": "LOW_QUALITY_INPUT",
+      "unet_reason": "uniform_or_blank_image",
+      "unet_pixels": 0,
+      "eff_raw_probs": {
+        "Cut": 0.0,
+        "Bruise": 0.0,
+        "Swelling": 1.0
+      }
+    },
+    {
+      "name": "white",
+      "hw": [
+        240,
+        400
+      ],
+      "eff_winner": null,
+      "eff_raw_winner": "Swelling",
+      "eff_raw_max": 1.0,
+      "eff_status": "LOW_QUALITY_INPUT",
+      "eff_max_prob": null,
+      "unet_positive_ratio": 0.0,
+      "unet_raw_positive_ratio": 0.999466,
+      "unet_status": "LOW_QUALITY_INPUT",
+      "unet_reason": "uniform_or_blank_image",
+      "unet_pixels": 0,
+      "eff_raw_probs": {
+        "Cut": 0.0,
+        "Bruise": 0.0,
+        "Swelling": 1.0
+      }
+    },
+    {
+      "name": "blank_noise",
+      "hw": [
+        240,
+        400
+      ],
+      "eff_winner": null,
+      "eff_raw_winner": "Swelling",
+      "eff_raw_max": 0.9632953405380249,
+      "eff_status": "LOW_QUALITY_INPUT",
+      "eff_max_prob": null,
+      "unet_positive_ratio": 0.0,
+      "unet_raw_positive_ratio": 0.0,
+      "unet_status": "LOW_QUALITY_INPUT",
+      "unet_reason": "uniform_or_blank_image",
+      "unet_pixels": 0,
+      "eff_raw_probs": {
+        "Cut": 0.03669266402721405,
+        "Bruise": 1.197674009745242e-05,
+        "Swelling": 0.9632953405380249
+      }
+    },
+    {
+      "name": "football_injury",
+      "hw": [
+        300,
+        300
+      ],
+      "eff_winner": "Swelling",
+      "eff_raw_winner": "Swelling",
+      "eff_raw_max": 0.9987133741378784,
+      "eff_status": "VALID",
+      "eff_max_prob": 0.9882420897483826,
+      "unet_positive_ratio": 0.3594333333333333,
+      "unet_raw_positive_ratio": 0.432968,
+      "unet_status": "VALID",
+      "unet_reason": "passed_quality_and_mask_sanity",
+      "unet_pixels": 32349,
+      "eff_raw_probs": {
+        "Cut": 0.0012861761497333646,
+        "Bruise": 4.7432064320673817e-07,
+        "Swelling": 0.9987133741378784
+      }
+    }
+  ],
+  "fusion_sos": {
+    "pain_missing": 0.0,
+    "twilio": {
+      "enabled": false,
+      "configured": false,
+      "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+      "canonical_env": [
+        "TWILIO_ENABLED",
+        "TWILIO_ACCOUNT_SID",
+        "TWILIO_AUTH_TOKEN",
+        "TWILIO_FROM_NUMBER",
+        "TWILIO_TO_NUMBER"
+      ],
+      "legacy_aliases": {
+        "TWILIO_PHONE_NUMBER": "TWILIO_FROM_NUMBER",
+        "EMERGENCY_CONTACT_PHONE": "TWILIO_TO_NUMBER",
+        "EMERGENCY_PHONE_NUMBER": "TWILIO_TO_NUMBER"
+      },
+      "missing_fields": [
+        "TWILIO_ENABLED"
+      ],
+      "delivery_outcomes": [
+        "LOCAL_SIMULATION",
+        "TWILIO_NOT_CONFIGURED",
+        "TWILIO_REQUEST_QUEUED",
+        "TWILIO_FAILED"
+      ],
+      "account_sid_suffix": null,
+      "from_number_set": false,
+      "to_number_set": false,
+      "real_sms_tested": false,
+      "disclaimer": "RESEARCH PROTOTYPE ONLY: No real emergency services (911/112) are contacted. TWILIO_REQUEST_QUEUED means the API returned a SID, not that a handset received SMS."
+    }
+  }
+}

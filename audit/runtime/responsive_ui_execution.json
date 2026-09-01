@@ -1,0 +1,44 @@
+{
+  "audit_timestamp": "2026-08-27T08:53:41.808019+00:00",
+  "viewports_tested": [
+    {
+      "name": "Desktop",
+      "resolution": "1920x1080",
+      "horizontal_scroll": false,
+      "status": "PASS"
+    },
+    {
+      "name": "Laptop",
+      "resolution": "1366x768",
+      "horizontal_scroll": false,
+      "status": "PASS"
+    },
+    {
+      "name": "Tablet",
+      "resolution": "768x1024",
+      "horizontal_scroll": false,
+      "status": "PASS"
+    },
+    {
+      "name": "Mobile",
+      "resolution": "390x844",
+      "horizontal_scroll": false,
+      "status": "PASS"
+    },
+    {
+      "name": "Small Mobile",
+      "resolution": "360x800",
+      "horizontal_scroll": false,
+      "status": "PASS"
+    }
+  ],
+  "ui_components_verified": [
+    "Navigation header & responsive drawer menu",
+    "Image upload canvas & aspect-ratio container",
+    "Bounding box overlay scaling",
+    "Classification probability horizontal bar charts",
+    "Multimodal risk gauge and score breakdown",
+    "SOS countdown alert banner & abort button"
+  ],
+  "verification_status": "PASS"
+}

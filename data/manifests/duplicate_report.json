@@ -1,0 +1,1445 @@
+{
+  "created_utc": "2026-08-30T06:09:42.465289+00:00",
+  "exact_duplicate_groups": 203,
+  "cross_dataset_duplicates": [
+    {
+      "sha256": "ba7b71e02c0d79d86fcb17d1f9deb30c7e50f7d57cc45ccc55e6f570a1efc6ee",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/131e1c15787858e8.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_81fcf581b1ae87e7.jpg"
+      ]
+    },
+    {
+      "sha256": "f6e26479601321630e4c99eebdc503b05f1020965898a58771665ddce368d479",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/137d945bc5051ce1.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_9518fb240d906db6.jpg"
+      ]
+    },
+    {
+      "sha256": "21c6b1a350e84a4514f47ddc12bfd1867a64a43f74791a1ae0d70ab81097100d",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/1c52990dcf40ff46.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_8d3f04754e63d968.jpg"
+      ]
+    },
+    {
+      "sha256": "41b9e9c7753b4e72f8bb6176ec06cab62383f047f298c295b5f7cf46a3ce0dbb",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/1ee0a42fc5a644fa.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_aae875acceac5466.jpg"
+      ]
+    },
+    {
+      "sha256": "eac47acacce4240c0e842f43adca4c0d4f2be8e29c2f2c87d3217f39cfacd480",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/266cc97d7c8d0181.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_bfdc30af8e6b3617.jpg"
+      ]
+    },
+    {
+      "sha256": "3b9b0d8c625b38d8133fa9245bc520501801fede9c54b9621332406e0d08c4b1",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/2dea6acc041f147d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_f2df0dd7b3efbfcd.jpg"
+      ]
+    },
+    {
+      "sha256": "e23ee8f16a2e3e9aaa72e19365e1abf5c18fcef82dd968e2f81bbdb0d8e363ea",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/2dfba54e203a0d25.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_67ab87440f41df27.jpg"
+      ]
+    },
+    {
+      "sha256": "eef9f2a9624967be36e976a0d491eddb867e663174901dadc0769d42b76f2a19",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/33320eb001a8f24b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_60138f7a49e067fa.jpg"
+      ]
+    },
+    {
+      "sha256": "691b24df189139ff906ee7cd8d95758a4b2b29d29353cbfcf2b553191085a67b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/36a9816eb1260449.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_c53050223498d5b7.jpg"
+      ]
+    },
+    {
+      "sha256": "734a218fb775cb996a6f842dd7d56fef0254bfad91191444efa5849ef2204e3d",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/4663a40e14117f32.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_6a411e89f7b68690.jpg"
+      ]
+    },
+    {
+      "sha256": "a4de2493d2a96be715d7e2b417e2841f80d51ea2377069db81dda210718953bd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/47393dad08cc6279.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_9ffd62dfae8982ab.jpg"
+      ]
+    },
+    {
+      "sha256": "99d7e909918c3f162e14a50461d68fac249821b35aa138b2646ea323648c578c",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/4d547b86395d9cfe.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_bb4c1c5db0d89e71.jpg"
+      ]
+    },
+    {
+      "sha256": "69dfe11472e7a5103705325d29fbd7871b275c1af2ece63809a255fed16414c9",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/521909364d7ed2e6.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_264a1b4733a85f5b.jpg"
+      ]
+    },
+    {
+      "sha256": "76154bc83d32a97e89d19d38fabfade20847f0407f7b99def3a4126d06cf5cfc",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/58b9025ffdac8e72.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_57afbe452bdd7ec1.jpg"
+      ]
+    },
+    {
+      "sha256": "e063729f3f11c14c7e8b33fe64dddcdb9dc1d6771f2cce8fc203d71a65d58b25",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/6ab74e80fd6d4209.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_084b816371f3046b.jpg"
+      ]
+    },
+    {
+      "sha256": "e61ac81137e03eb6d9ab96be2ef4fd8f0e3e9adbeb744a47d313d2d20405e8e6",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/6f35d094a0df855c.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_1c30992420c65c7d.jpg"
+      ]
+    },
+    {
+      "sha256": "87a9365663dcd6f7bf7101ebe9e9c42f41b6a0d02b09851a5dd5fc21b908e254",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/74bb08237b4e78e1.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a2e520a3dcbf164f.jpg"
+      ]
+    },
+    {
+      "sha256": "cc121e901a600ee75fb63ba570dfbee7e33a41fdba011e706babc6528947f6c0",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/7753f15727a387cc.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_7f489b86251a07c5.jpg"
+      ]
+    },
+    {
+      "sha256": "e3f29ff15458ab5cf11c18b24f13328b850c64cd5147c43840799237e3e508bd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/82928d2a74cda913.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_8572db1d2d14b3d2.jpg"
+      ]
+    },
+    {
+      "sha256": "98117006ab662dab9097bc5f6a58970f94a3977a45a208645cf47ac6795dac30",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/8af2da2cb095aea5.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_b0f81ab87acdc383.jpg"
+      ]
+    },
+    {
+      "sha256": "d145dbeb618450c555a9d83ce2310782eb67f04765799eeeead2fa1116fa9490",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/90548a0e48fda425.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_268e1c568c6cac4d.jpg"
+      ]
+    },
+    {
+      "sha256": "c74e40e2b7bd09dd38147c9c3dec4bec1e1ab296baa4bde89920cc8f66416d54",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/9564d5a0ac7d5f31.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_3ffdde0fa31f9e0d.jpg"
+      ]
+    },
+    {
+      "sha256": "f244d94ccfaed3b54adb285534f53a6d9116fc6a40b0cb6c855c0f442b7a3ebd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/a7116a9c094bb766.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_ea0a3652e2b3ec0c.jpg"
+      ]
+    },
+    {
+      "sha256": "3e140503536ce27b08c8f380b9ca426a33d70680d5b8d0928acdb152d8c0ad57",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/a84d3d078048cf92.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_6be0f696ad2c7ca0.jpg"
+      ]
+    },
+    {
+      "sha256": "7b14bcc0093cbce5f06b8488311f5ce67f59154a664f6d7f333d12f8737051f9",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/c0057d1a04a95684.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_aae38642a71676ba.jpg"
+      ]
+    },
+    {
+      "sha256": "b80b644734a73a08d01c536af9539aba10d65f7c3dc55abfb4dbe6da33ace8c0",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/d08e87536b237058.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_c5048bec355d8227.jpg"
+      ]
+    },
+    {
+      "sha256": "b1aa69ef9ef09b33d8c5244e417b38e07f857aa97805e0fcd53eaf59e56cf507",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/d4c2921a91ed2ff8.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_f97cf7989f7a4691.jpg"
+      ]
+    },
+    {
+      "sha256": "197e4b81329c66dae537945198362e2c8bc6995b0ee103eb5bcdcad0dcc06f89",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/ed56adc9a5315c41.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_503a060fbf9f2707.jpg"
+      ]
+    },
+    {
+      "sha256": "fd175195a599fa43a133ab1e28e1a17497a4bbe0183e3bdd97e5e5cd1edad17c",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/val/normal/f33037ba65fa9dee.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_6bc4df200412ddc7.jpg"
+      ]
+    },
+    {
+      "sha256": "1f5d711ccb5b04a9222fad07669ff0e5af9dc71bc1eeafa79fbe1b06213845b5",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/00273bd7bed6e4d1.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_5403708bfd41682c.jpg"
+      ]
+    },
+    {
+      "sha256": "4487e41e41da5bd91769546aeb243bd5f3bdb975c3c1394c23c448cbc1af57e9",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/028a2d079cdaca65.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_53f2e98090829817.jpg"
+      ]
+    },
+    {
+      "sha256": "e8a84fd6c6edbe91e3ccb32df7c7fafe998d3108ff25e08a7691c1e14018cd2f",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/03b76961c048501b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_26b109ec2603c5a9.jpg"
+      ]
+    },
+    {
+      "sha256": "44db28841046ecb1c2f1a01f49fd8ec5308d6690bcafb45e27e21a15ce349d20",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/05ecfeefd8a59f83.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_87c15eb94d7ebebb.jpg"
+      ]
+    },
+    {
+      "sha256": "c0f5a4bb1a91bc60377e9ca76f22a462b3206d83b7ecdc968ca62a733ca83647",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/0a272c775d88e48d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_d9a94cbf3003f3c4.jpg"
+      ]
+    },
+    {
+      "sha256": "3a0de1d4bbd107d9eaa5a6615442ca051f3a7865c6b65a92cd23a72ec8942183",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/0abf2d0a10a4c507.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_6880dccf22eeede0.jpg"
+      ]
+    },
+    {
+      "sha256": "8e8e061477165878d877f76fd04b3f7efb264c5423a3fa4d94866bad8544a3df",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/0ad616213d21b3cc.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_faaf282a5ca6d115.jpg"
+      ]
+    },
+    {
+      "sha256": "2a87b0485280b841b1f0907ea3058aa25715634a4e403998ee41a1558e1ffff1",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/0afdefbfa1c27c66.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_c6955a67699e0fcb.jpg"
+      ]
+    },
+    {
+      "sha256": "e639cbf0e6ee2957c0e5ba166c2a5d16cb5007ab6b278b2c73379bddfd9599ad",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/0c38186bc0f19a8a.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_fa3f77cfe2c658f9.jpg"
+      ]
+    },
+    {
+      "sha256": "0a0a485b3bfd43bf50831874c28194c385c9db8ac1381176058153e8961ce3a5",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/0cd9d432a4f064fd.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_479c2b2f9a73e361.jpg"
+      ]
+    },
+    {
+      "sha256": "c5905c3b383bcc3fe5425fa4f03075793e19e1c73edc1c8253637c3e648266cc",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/117ad4679c947ee1.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_94ff69e212624dd0.jpg"
+      ]
+    },
+    {
+      "sha256": "2a104a67543f847460023d127376259ceed634988539d0ac4c6604fd250e36d0",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/119829c3b946d050.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_97f466f54a89a290.jpg"
+      ]
+    },
+    {
+      "sha256": "835e5e1f3f7504369b9e47be28febe57a1e1be0e320cbe5ff8a15b5a2f866cd3",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/1372b055e965393d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_02fba13d784d10fd.jpg"
+      ]
+    },
+    {
+      "sha256": "86d9eecbb603b94a3443dcc87019e340abf3a96625b344ba2d54e674e592828f",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/13f7d01529ca5e65.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_ae95abc7da208066.jpg"
+      ]
+    },
+    {
+      "sha256": "266d01b88cb086349b8c8f3a677c9163e1cfb2af9a3a3dd1668b6d34b1dd8b51",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/19c09cadfbaabc41.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_d4fbda28f24536e0.jpg"
+      ]
+    },
+    {
+      "sha256": "21d96d3de49243e2edf260d491701c9c9bc0dc03de691d6298ccdd783a186b89",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/1c491ab69cdf7170.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_0d4d2a1a9c89112f.jpg"
+      ]
+    },
+    {
+      "sha256": "85765639353ed8b1822c09521927654961cc631dcb8ee8a64f2b5bdc7d38f443",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/1eb18a257d9e76db.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_2608cdf129c94cbb.jpg"
+      ]
+    },
+    {
+      "sha256": "b7913ac0e3ad9f48a9d4ce4f511dd49a7619a6457aaf7b8903b8be1ddf25b568",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/1f79523bb701d711.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_4916beb0de4f10d5.jpg"
+      ]
+    },
+    {
+      "sha256": "c5a294e8027ffd0ae5b9dee65ff04886aacc85d84ec7de9d114f02b5de9939c5",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/20476648f109cf6a.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_b332315c4c9d9296.jpg"
+      ]
+    },
+    {
+      "sha256": "c14141b8f172e30e0fedc52fa29ebcd1e759efb9efe2f35ffa74f4bfd0801629",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/22a245a4828be0fc.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_6e25f308a60a58ac.jpg"
+      ]
+    },
+    {
+      "sha256": "49c4835154a2c6daeb81c13fb574e709c62537fe2bf68ee4ea7bd0f97471b1eb",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/2475ec91995af637.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_ccd50813881f7748.jpg"
+      ]
+    },
+    {
+      "sha256": "6372080b8544980fef5eecd4f4cada1f3a417174f55296becad3364c224fd912",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/26ce11b39bd0fad7.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_b93d1e9ee25f9f97.jpg"
+      ]
+    },
+    {
+      "sha256": "959177d7b54de6fa79c8d4b98ceeb2e72fda4137a398738008b9b77247476016",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/2717efb5afa6db71.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_6fc6d66925cd4894.jpg"
+      ]
+    },
+    {
+      "sha256": "1c08b70c83486b8cd6b60844a93c4e3c20f25c45a7d5f5717e65fc878a58685b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/28856c4b6f801850.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_ec9e640c04d4d69b.jpg"
+      ]
+    },
+    {
+      "sha256": "e6244709d0206e571c912173934170521e43f5aa8d3ded698ae0a6cd2efefecb",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/296259308c85ee3c.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_e63aa2ede55a8e73.jpg"
+      ]
+    },
+    {
+      "sha256": "46cbe1468e2ad29dde8ddaaab0f904836d3f8fdba033060ff7e69d6b0b2ff742",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/29b2e9bc41337be8.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_2ec96e274f55a3c1.jpg"
+      ]
+    },
+    {
+      "sha256": "e1abe9aeb3e923af9d72a8c7a72a58ba35f73f7f9bbccc3dc0903c1db7781f39",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/2a445b2a13e3b88d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_aba73837fc76d70e.jpg"
+      ]
+    },
+    {
+      "sha256": "f0134f443481137cf9620685be6e9f0e0047917b6f9e54575fcb40f709d7af60",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/2bdc310d1a596e4b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_a9ca4cdf1d240a99.jpg"
+      ]
+    },
+    {
+      "sha256": "7899eff5b860285e246dfc09d55456e56327766f35595eaf00c4a2e9ee788953",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/2e2d5a43a5dd73a3.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_8efb2a59c75e8e2f.jpg"
+      ]
+    },
+    {
+      "sha256": "5008c2a2bbf8a5c3eda0e87d4ab121e0d331421a3b076ea11619e60d5f04edcd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/33d0a89043f95064.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_4ef7d4b5f697b195.jpg"
+      ]
+    },
+    {
+      "sha256": "59c8d907194f577ef73ae08d5ab7dfce6ea32b65325069f43800310855ba6e3b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/3467eaaad7f4287d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_2e9755df9a498843.jpg"
+      ]
+    },
+    {
+      "sha256": "5fce097487702b46f878bd0f1b8651736177e5e8d226baad0cc6ce689a590d99",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/35d24a4f4ba8b706.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_7697b4849e59d162.jpg"
+      ]
+    },
+    {
+      "sha256": "70d3c9c14d05527c7a31417fecc4d19d791a7fae60e5a9721bf906be5dd5c96f",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/363c74c5babe74e9.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_be35b2d31b16e8df.jpg"
+      ]
+    },
+    {
+      "sha256": "c05fcdb8da1d8e2926851dcb9a1af77a143e391f37e1cc5139a69c9f0974377a",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/37bf55e6b6c7c622.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_ccd3ee78cb2af0e9.jpg"
+      ]
+    },
+    {
+      "sha256": "62b3d53e08c36346c9984c48cdce53e80a8fa26789d84003b79fa3b3f8a97d44",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/37d7ffc9537dbd0f.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_bd4a55be37533872.jpg"
+      ]
+    },
+    {
+      "sha256": "ee0da465f976975cb0507453e3929281fc4fe26e870e2152820ff663667d5ccd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/39062ae69eb052f4.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_15ff8aae673f08b5.jpg"
+      ]
+    },
+    {
+      "sha256": "8ad6a16957cbaa76631b4398180f89f2d7e7547971bcf233e3def5cfba1d73c4",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/3a3d8f2464d05713.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_b437f27f9a4d442a.jpg"
+      ]
+    },
+    {
+      "sha256": "f17e1d85f82eb0a25204cc4d2318906598ec618baced6025f2e79582745120ae",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/3c60d28af770d45d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a3b6b1b7df51689a.jpg"
+      ]
+    },
+    {
+      "sha256": "dfee8c2e1fc49d535c4202749d81e63f6b0b03bf140d93542e562be7d83e9954",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/3d2c81e4e2ad57d7.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_69e1f60a33de167f.jpg"
+      ]
+    },
+    {
+      "sha256": "cdb69eb3c2339f41cf04d0f05c56a3e0781b289c5c53150ed5c679bbaec47b21",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/40a74f32814fdbac.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_c758e564b4bdc86b.jpg"
+      ]
+    },
+    {
+      "sha256": "535f8f2823fdc572c2f5ca19b4ddfb2235dcbbaf295f2fd782d6e818bc746f38",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/41f8c5d07e295c56.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_dc71ec896d91964e.jpg"
+      ]
+    },
+    {
+      "sha256": "5c22ef6d8b8d1e44b122711480cd71bf9a90b607d7e07a12a32a8f0be5d16b37",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/478363e3ed50e15b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_45440e605dced7c8.jpg"
+      ]
+    },
+    {
+      "sha256": "e56fd96c380c815e7992a736994f7dd4dd96c3eebd353c2d51d302848900af0c",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/485cdb7713cabb1d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_4a49bdd51019144a.jpg"
+      ]
+    },
+    {
+      "sha256": "054c24ab89ecab525c00435ce98db2d228f4a5b35dfbad7eee2b0de2e021981f",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/4ba9a3f1feaf731b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_74e5434fa81fe4f2.jpg"
+      ]
+    },
+    {
+      "sha256": "b0dfc99267fc4cd9c6b872d9c422adc25734c1ac545ddd5e8b1e940721036f89",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/5073b3711595a5ac.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_ea7cc12c43d80c67.jpg"
+      ]
+    },
+    {
+      "sha256": "877b5db65f21753849b682a952748b77ae3cc7d9535d33c9c08f469420f4240e",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/507ff9756c133acf.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_6700264a9627757c.jpg"
+      ]
+    },
+    {
+      "sha256": "9e61b0d0ce41d4e3eaaee25883931eb5e331bbeac4d023bd136a7858793eadd9",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/5299bc79222037d3.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_777d1c5d4d7b7f2d.jpg"
+      ]
+    },
+    {
+      "sha256": "661225e2b7078caccff771aaccf6a2f44f3980e771742973f7a103245aaa8c9c",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/543db286eca072b1.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_614a232f86350edb.jpg"
+      ]
+    },
+    {
+      "sha256": "466606d32a0a12360a67e0f3bcbcfde16ab1397fb92d5a0fe82137f0c8d25640",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/5a545d3d3c7fdb0e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a7d63c43434bc34c.jpg"
+      ]
+    },
+    {
+      "sha256": "8f19a263f64ea02c8aae49f333a337f4f871d8e6c21d06a9e9a407f9b39bdcca",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/5c587b7b6c271c05.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_2b82a72d95f2e786.jpg"
+      ]
+    },
+    {
+      "sha256": "ad4d3c11b8c274cd63ebe5218f3e3c3dc6e70e9f61b9d93a9ac411cc099129f3",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/60891163f7c42b9b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_a958bd05121ee559.jpg"
+      ]
+    },
+    {
+      "sha256": "27674338129ec0780f82af58a089b39895639c66bff168747d1e5ad2555ec70c",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/613ec65784cc94b5.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_ed71a5401eb8d5ae.jpg"
+      ]
+    },
+    {
+      "sha256": "f4ad020dae8da420e0c9599226d2b07a48891959c2e5661320a5d3ece8a22842",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/658e50eeacc0866d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_55446fa69401c491.jpg"
+      ]
+    },
+    {
+      "sha256": "f62b48d4528f22f5258519da3cb143aa4655dc59febd16976ed583180627a913",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/65a90a5ae6ef7ec1.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_55044413b2cf6fc7.jpg"
+      ]
+    },
+    {
+      "sha256": "daf39127a191f4c4be1550e263da72b726acf20e181bbb18c155b50a90256892",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/66b875fb23626d7e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_4aa5e92915c7989c.jpg"
+      ]
+    },
+    {
+      "sha256": "ac545a77d44d1ad3562fd4df6d689403c4aacb50e0fb6b99dd46d88e8526f909",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/70c3e2f14ec3b3c3.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_3fa213a203ca1fea.jpg"
+      ]
+    },
+    {
+      "sha256": "89c894aca8b51f47e698834799292e92b4012875e4a9592edd29328e221bc848",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/7230038a2a1b3447.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_c9458ba609af4355.jpg"
+      ]
+    },
+    {
+      "sha256": "771ae8e6198fae685bef55ac06e4796f7bb97d0cbe11c16ac79a77dbc828a431",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/7484e45131192418.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a2af5ca08f2a4656.jpg"
+      ]
+    },
+    {
+      "sha256": "c20cd5592f27372a78e376cb6bf4242f0f56a1abc6276bf6724ae98a3b9a577d",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/75c0662d4f8370d4.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_0539d91308616b4a.jpg"
+      ]
+    },
+    {
+      "sha256": "eb3dd659dd83590c7801731fc30372685d44c51fb719da4ff19e969673865596",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/76385df2069304c7.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_64c100f551d895d8.jpg"
+      ]
+    },
+    {
+      "sha256": "e6940d1161511c9469546798ba9c09c974e019ede89a3aadb8e8960c8c126b63",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/78dc0707da0bdd72.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_78d26597e398cb56.jpg"
+      ]
+    },
+    {
+      "sha256": "d7303369780aa02c9d381b8a30f6e541f392b39b1f67fe742f01eafe4229bf82",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/7af0b354de06a0a5.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_800a30572bc4f0f0.jpg"
+      ]
+    },
+    {
+      "sha256": "dd0066dc3c8cb34176e9bed739beb5c34d1d59d78ce975eb14ecc04760b07117",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/7e0bebae74ea1146.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_5bfc77a47b268d0a.jpg"
+      ]
+    },
+    {
+      "sha256": "18f6ec486cac454b5550734acf16833d30103374582d9853ffe10c59765ca4de",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/7fdae0ef0b872855.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_93f43339c3451476.jpg"
+      ]
+    },
+    {
+      "sha256": "468d412d47bed09a69d95263445d5225d6d94b7d8809da4e97d49de53fde018b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/83c60ae0de449868.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_786af0e138a7920e.jpg"
+      ]
+    },
+    {
+      "sha256": "1c76a4ab8887a0c9e9735977dbf6f8f793424e3e5155db1ca47dc1771a77a2c1",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/846fcff489bad2a8.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_ffd7758f61dbaaf4.jpg"
+      ]
+    },
+    {
+      "sha256": "a760325d7469910c493b29498db1cbbf329bcdbc08c8d6362099f5be193a73bd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/863dbe17749b4d9f.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_5fec0fa6a793ce92.jpg"
+      ]
+    },
+    {
+      "sha256": "0058cf5d6e134b8af53b90d9833b6bdec7f16bfebe0b028c4dbb4070378ce8fe",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/87380eb958cd946e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_c98e8d71f6110a90.jpg"
+      ]
+    },
+    {
+      "sha256": "dd49b63b63f0d8746390269736fc380fd6e57ac7fc725049064e7dfb45879aed",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/8911f969f9c823a2.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_c4383f9b55dfae34.jpg"
+      ]
+    },
+    {
+      "sha256": "8580415592cd20f0a2561e17a4b505d43274139cf5c76d0a7305ec8416ec4f43",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/89fd3119bf831e0b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_c3bfb06824afe30a.jpg"
+      ]
+    },
+    {
+      "sha256": "d0f4618ac671a13bca527cf606ccb78519413a3719d8d99c75f5a7b0d56d9004",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/8ac4d64e4af5d09c.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_f5c61472f97c0580.jpg"
+      ]
+    },
+    {
+      "sha256": "f04e4c60e06b44a24c68f12d8a6a974feea240238611e8d8acd8ca9ebaa79418",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/8add7f84bc8e7825.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_b4fdb1bbd89cf210.jpg"
+      ]
+    },
+    {
+      "sha256": "4ad7519c12539ce17c8ff400a4b7603b5d476381008171e5d85d1aefae4bb47d",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/902344ed65d85571.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_81cf11cd71291922.jpg"
+      ]
+    },
+    {
+      "sha256": "2989dc82a292aa474befee1374c0026d66e26c4df1bb41c32e7fc90cbe255063",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/9107b8b9fae2e348.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_3940120752906164.jpg"
+      ]
+    },
+    {
+      "sha256": "b55df8ac1bac4a900953cfec377538561001dc038a5ad1cd219e77a93b1a4fe2",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/92725f3c423efb8e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_5c80c52f10dd8a64.jpg"
+      ]
+    },
+    {
+      "sha256": "b71fecb8f70c505e1ea3fa18561bdf2f53c564f4b9d30e1f57194890320ee6bd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/92eb05242cc83d8a.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_dbc69d1abd994d19.jpg"
+      ]
+    },
+    {
+      "sha256": "5b5ec7773bf30e2c07fe903893c69d1fc75b4d961d67c1f8a7c15efb2910d4c4",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/932d25c35b0bf990.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_db1944cb55974471.jpg"
+      ]
+    },
+    {
+      "sha256": "5a1f10bc08b32bb3b1e1b23ccb47ba0c57391e9993f89ad20888756b89697a0e",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/953a24868638ef7c.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_361ceffe12146b6b.jpg"
+      ]
+    },
+    {
+      "sha256": "34dccecea85a53a76baac6c23276fbbdd4247ea3c29295973b39a85fa8c81911",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/95ef6d31ac2613df.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_aa1e0f80ee677a57.jpg"
+      ]
+    },
+    {
+      "sha256": "071438a7a65315032fb8d53df0fe50d08ac6c63bd315cbfbef86d7fccf8b7ae0",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/95ff7a27613d1247.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_50c3bfbe3b2646d8.jpg"
+      ]
+    },
+    {
+      "sha256": "a120f053e88d84e3eb90ad745df3f4e2929165499166ee6ee60ddfdb64309e93",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/98af55df94b7fa1e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_faec5f43f085540c.jpg"
+      ]
+    },
+    {
+      "sha256": "87c2a5637967c68ef5c142ae1c05f00e9a5640beb9865c432bf1705e916d61ff",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/9e449c96c33413b4.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_3aa8afad05776295.jpg"
+      ]
+    },
+    {
+      "sha256": "88dc122a7f487926fb9a1ba4fcea2edf472332dc3a7da0740ecbd1bf0ea4bc3b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/9fe0dcc8346a888f.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_1f8b75d4e2723012.jpg"
+      ]
+    },
+    {
+      "sha256": "7d965f6cea08db161b9a12a510f9211f6ff72b062f6c08bc3a01fd317ea09c13",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/a21b40399266bb24.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_6b15ee95d7e36e86.jpg"
+      ]
+    },
+    {
+      "sha256": "9361b10028f658cd28d446021d30e0050f78a0e2b9f4a58ebb18776b6a26912d",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/a8519860c78b74a9.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_dcb1799edd53e0e9.jpg"
+      ]
+    },
+    {
+      "sha256": "d8f004be6db270a63a3ebb4746ed6fcced1aaa26e1b8eaaefa3ca4481c606b44",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/a92c1b9bff1437d6.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a13ab0765359051d.jpg"
+      ]
+    },
+    {
+      "sha256": "1fc3e92074a9f48896efffc04e8a3199fc7d3f2d3b1b583ab24b6e5289c91d77",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/a9fe06aca7510ef8.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_8227f37d8709b6e7.jpg"
+      ]
+    },
+    {
+      "sha256": "ac3653191dcd38122e2b5f5bad05e322d8d70eeca1c57464de5a2c325ed62d94",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/aaca669d9099e898.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_208afa5945adfc1c.jpg"
+      ]
+    },
+    {
+      "sha256": "00179c4a80c057d2f3212e8e2eaadc278302e44eba4d8f4dfa665454d50f6460",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/ac484a263f8f499e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_58384416080d35c2.jpg"
+      ]
+    },
+    {
+      "sha256": "8fe1c431159e35b32199eab1105849b7077785df547e72ae73a6acb1900797d7",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/ac54dcfb4268cba4.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_bb196a88e741caaf.jpg"
+      ]
+    },
+    {
+      "sha256": "c23c1961b4c9850bd94ad8e813d39aa7ed1e48be412eaa2c72829520f680c49a",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/ad14aebcf51cd916.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_e79589f25b1fa2ec.jpg"
+      ]
+    },
+    {
+      "sha256": "0bdf513b34302a6264c092aeb8822b1531baf8f321c6b93baff2cba6c1978a07",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/b2f2865600d8b6b4.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_fe246478815a0e43.jpg"
+      ]
+    },
+    {
+      "sha256": "eab7866fa76ce846b2640bc1390ea8d149ea9a0ebf60e0098cc5a3f4554007c8",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/b32d8c607df2a289.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_5e5c8e04d968cd1b.jpg"
+      ]
+    },
+    {
+      "sha256": "850c8f290d045896768c124ea78ebf8b46fbd12d311e4b8d85698af2a207fd94",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/b468138fb13f1bec.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_15969eb9243fc666.jpg"
+      ]
+    },
+    {
+      "sha256": "91ac2301baae08b16198ae675a0de7e058ae80805f33e2d22291d1ff731aa2ab",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/b735ad6e8babd536.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_9f8cf87fd368c9aa.jpg"
+      ]
+    },
+    {
+      "sha256": "5e9a22a4c9d73f68698453642915f0d8b522b66c76c3f69bc554bf863d5d5809",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/b767cc5608fb6b3e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_5ef09577ada12061.jpg"
+      ]
+    },
+    {
+      "sha256": "1b6279c69b6ea2869f9df3a5d25410a838bc72e516018db3816dfac9c57c0f6b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/b796c15d33b3e548.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_d37a254de674d255.jpg"
+      ]
+    },
+    {
+      "sha256": "c5f0ac7e26acb7abbb03f085676b5b66fc083ffda8ec7a9e20b328e28874ca4c",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/b8acf80a4a4a4a46.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_b81b033b7b87210f.jpg"
+      ]
+    },
+    {
+      "sha256": "7bfc8498175f8c6283437eeb3df1006332adc58e9615aee4a063ad60dbdab92e",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/bc0a2f29d66e8e8d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_4050a7bf2645ec34.jpg"
+      ]
+    },
+    {
+      "sha256": "26ba309d9daa63060b433644ed32fc8dcf91103c8e84a5e34eb7e148347333d9",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/bcf6ba40113f1040.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_9883ef9797d5833c.jpg"
+      ]
+    },
+    {
+      "sha256": "ddb30501cc98f7adffbd65264ab04166706ccbe8c5d913b9b0d8ce2af30b8665",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/bd361d2850449559.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_f51db936cf04bbbe.jpg"
+      ]
+    },
+    {
+      "sha256": "6ed515bce687e5bf7c78156a90b7ac0d50bb57c32513c85329d6d8486817b144",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/c80591edd8e80319.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_ac2d20f4f82a421f.jpg"
+      ]
+    },
+    {
+      "sha256": "eb979ba9f3146120ebcb198d9263ac0305bcbb265d93d67581e8a8a69a7ba879",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/caf233205cbe4081.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_c0426039d9271326.jpg"
+      ]
+    },
+    {
+      "sha256": "a96fa87ff643be500b54709d018a3fd8f54ad58c8e8f24bc12afa18e8c2150d5",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/ce35f38873288e16.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_01fae345c60a153c.jpg"
+      ]
+    },
+    {
+      "sha256": "ab7458eeeed6dabe7bc04875cbb915b8833d0b5272a310bad6166610d055e54d",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/ce7a5ca6184d256d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_0e978996d84d3100.jpg"
+      ]
+    },
+    {
+      "sha256": "7d3076a3e7f412e650cdccb7575f10f088a944adb2fda0fea3a58fb07e9d2c29",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/cefab92c0aa197f7.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_559e2a3056c06567.jpg"
+      ]
+    },
+    {
+      "sha256": "81b79959536b2fa88cd727d6cd18350a40d3bd7e05a669b27729f02887fc1643",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/d112fc3f45982d31.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_9c9038a75cf6e156.jpg"
+      ]
+    },
+    {
+      "sha256": "b81dd83174612452c53501a8948fa1f73f6e9f5f8c09c382fea3d68ad5fc7359",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/d1ff94cbf9367d21.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_646ccf8fd9752780.jpg"
+      ]
+    },
+    {
+      "sha256": "7cdf66bd5b4a8b6f0ee1f0359e7de98501fc3af3e53d52e3e95ae8e4bf90dcbd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/d2af69b83dc2f5fd.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_13f6ade25c4ca669.jpg"
+      ]
+    },
+    {
+      "sha256": "4d877245172700a5f133806120596a7e13d8a22414b05b7dde8bc8bac00e9d29",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/d36de1cab7548571.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_463d9f41908b0601.jpg"
+      ]
+    },
+    {
+      "sha256": "a8479f90fda8ffaed44f7ecc670272591c3ffe9970afc5f4da0b5e135b6aae9f",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/d929b3f31554b53c.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_824c7f4d089f80ef.jpg"
+      ]
+    },
+    {
+      "sha256": "3b273cf706765567e45d870f258368f036473c073e01917f998d61b2fee6665a",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/d96f625f7638682b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_086651985d94733b.jpg"
+      ]
+    },
+    {
+      "sha256": "ba47a89b58df443f49d8e21646458673b606086368f031cd8cd14d523925f2e0",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/dbd4426626a3618f.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a99abf096495c9c1.jpg"
+      ]
+    },
+    {
+      "sha256": "ff68f505f50534cedc6aaea7c3d27d91c9ee046382ac1bae1fa714584f67d7be",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/e505a4bb3c058b89.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_d5af98c70e141c1e.jpg"
+      ]
+    },
+    {
+      "sha256": "5692908b3fd0a11b8f9f225edd2ce4bece6c8037d661b9c163b3e1ed8d709657",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/e54fdf4998d68b58.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_ef869d3d6c609b33.jpg"
+      ]
+    },
+    {
+      "sha256": "0195aabb332de8b71263f2ae80da434add61bb58d7367c88d1c9076be8e538ee",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/e57c4afeecf3968e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_504b9689e2bb537c.jpg"
+      ]
+    },
+    {
+      "sha256": "929422e6c89800f1701699e651fbbca710fa13b6f0c1cbdbff759b5237cf8f60",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/e5dd3d0c4dc12f66.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_1da45853880a563f.jpg"
+      ]
+    },
+    {
+      "sha256": "2b574823c4865a91b15d94b9433f911ea2c1b5d56ccf3ef1f580c2990860776e",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/e7b576f848d56e1f.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_a8d075a3e72c7d1e.jpg"
+      ]
+    },
+    {
+      "sha256": "51b2f25d84c50e0f0cc8b74b3133393c45946a14c2ba5253b184e1b9b6dab89a",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/e8b56f4db77ad780.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_acef095a45d71af7.jpg"
+      ]
+    },
+    {
+      "sha256": "dbb9276b63b89904f0036c63313e2ccebb30814494d7843236552a335793f723",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/ead43a65f2422def.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_b0eac72840486f9e.jpg"
+      ]
+    },
+    {
+      "sha256": "f6fbdebfe14c35cce2e6b3f81d24ed63a32507f6ccba7b866e487e001a745fcf",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/eadcd9929c128c61.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_fc7394942dc7e4ad.jpg"
+      ]
+    },
+    {
+      "sha256": "82bb824e82bc0f3b9c6d2922b7bfa1e46bd2625ebe3c6ae397c630bbe60bfe8b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/ed2de4e22d1205ee.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_92dc214aee901b43.jpg"
+      ]
+    },
+    {
+      "sha256": "bccc54c7ffcdda352009a7aef38539b763093036da9029a1d9eddfb531e780ab",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/ee0201cb509696ec.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_9e4ab17cb134fb54.jpg"
+      ]
+    },
+    {
+      "sha256": "76e9a6118ef78c8185ebdbc0de96c723a6d7a2a6617f67ac148c3f1856b61639",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/f16cbea899a1dc77.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_83bf40367f38b2bf.jpg"
+      ]
+    },
+    {
+      "sha256": "6df89ab14557317f00447360c962ab79b72702d1e9d03c87c52270e65ee064c3",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/f44204f814c4123a.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_cf00ca4546dfe99b.jpg"
+      ]
+    },
+    {
+      "sha256": "2aff5a6f6a61cd243dcc88fabd2063d70f311b6fdc747c4ed44e4426cc450824",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/f513b183b698a260.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_e6880d246142f94b.jpg"
+      ]
+    },
+    {
+      "sha256": "9dc78d751104dddaccfa2194dbb003fb1854692d50084ed7b99374352c518a47",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/fab0cbd1c377df67.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_b1f2c34249deff2c.jpg"
+      ]
+    },
+    {
+      "sha256": "f70c579b8bde17d5eaaf4a218dc66d2278e4075b17c2bbf6ba6598c71d718587",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/train/normal/fce004524016e77d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_20aebc10219b9d37.jpg"
+      ]
+    },
+    {
+      "sha256": "5a735f45ab7643c81c93b8214385923bc1b533ecffb3fabbba80b2b714463b1e",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/0270f052df11a821.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_b090b134d2e60961.jpg"
+      ]
+    },
+    {
+      "sha256": "d464a42f49afe224c4542f3cb125cd5898807beb01088ea8f5baa6454827a4fe",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/048c244d8128de17.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_28025ede6fc219b6.jpg"
+      ]
+    },
+    {
+      "sha256": "6d8d5710f540bd6ade7e58e24bbbd3e7a61e296a66b7da792358741b2d773bc7",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/0ef370f835ccb7aa.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_c4cc47ec7d43d540.jpg"
+      ]
+    },
+    {
+      "sha256": "a654abbb1872f4eef0b0092bf3767e381511c642ef3939a2609c5efad7a41105",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/15270ac4bf30c90d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_8dc8c596cb9c3cb4.jpg"
+      ]
+    },
+    {
+      "sha256": "d0527baf286d329a391445a17144f127119b1d403e02736b53cd61019c24c238",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/22e8cb870496a4ba.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_7a47a3b5af26c2bd.jpg"
+      ]
+    },
+    {
+      "sha256": "4fe80d5b055befed62c4d0002eabc1c0b5a910ca420401b780cc4a197fbf5071",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/28065e4b15062385.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_e4b609e972cc189d.jpg"
+      ]
+    },
+    {
+      "sha256": "8582095197eaa87bb83d769bbad86cc91cb9c645a95387cd91168db7a168bded",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/2b541c719ade56ac.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_1a331ce34e1b560b.jpg"
+      ]
+    },
+    {
+      "sha256": "16fbf573890efee87823fcce9d42a1cc0e372e617d34569a6995e03ee37f005b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/326642e47b07686d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_18151726c604ea50.jpg"
+      ]
+    },
+    {
+      "sha256": "c4d524d4089695e0ebfff8657cc46aaf5a865cd133b44f97ea981d33de5b1589",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/36c369170b7f9096.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_483d9b50161c4144.jpg"
+      ]
+    },
+    {
+      "sha256": "d2e3b05730d3d3fe3759c879a8b6e58174e9b217fe62cf1223612ac6dae50ad1",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/3a3bbf974020207b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_86af6cd9e4a0b9ab.jpg"
+      ]
+    },
+    {
+      "sha256": "9dce86281ff6ac53a875097638120b13c07144e65757ce6027950f600d13e737",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/3d34c0bca810181b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_931de38628aea94c.jpg"
+      ]
+    },
+    {
+      "sha256": "4c162f24480679dccf4171b5f44aeaa8d9d6bbd26fb820dde82c72713ce93cc4",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/421d376e64aeeded.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a0e2ca31d1221fca.jpg"
+      ]
+    },
+    {
+      "sha256": "07580fd11d1bc7593e90f9034131b7ada378d22ee45bb6d6acd8641b36c7e805",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/4c4904e235e35a78.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_815d6972eeed2fc4.jpg"
+      ]
+    },
+    {
+      "sha256": "a92cf7f5d1c90f76d961118ced7bcd021e5154dc38f5bd2312f049d7c179ac1e",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/4c609f797cec1afd.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_4df2ab48ea4fbfd9.jpg"
+      ]
+    },
+    {
+      "sha256": "d17723574ea3f0ff3ac4d45b6a38892046be43d86871b5e5acdff53825108981",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/5074fda686618d89.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_dcc7128704cb9487.jpg"
+      ]
+    },
+    {
+      "sha256": "4d86cfaa61d75d8e190201c3c4aa84cc6504fc8113f2ca98bc73a5422623f40e",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/5173bdad144cdd56.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_72a718fd959194ed.jpg"
+      ]
+    },
+    {
+      "sha256": "fb06567b3ab8a8937c895da17844210c19744d2e5be4c8b8acf29eba00c447b2",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/51b790290613b109.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_037f2c6f03a9cbd8.jpg"
+      ]
+    },
+    {
+      "sha256": "504c87101e0bba4493f6216da8f4b1a5611b0e84b99b978da2eab7914e5862c3",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/51f0cf3eaf8096ed.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_822548a8b1e70308.jpg"
+      ]
+    },
+    {
+      "sha256": "c5577325971d92aa4185cd38b1e3d8667b160366e55a3f1b015fb74be13a052a",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/59fc26a6cba1616e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_c4ded04034d38549.jpg"
+      ]
+    },
+    {
+      "sha256": "b63209bf09805f34ad426715c2e089194ccdf2bcf8ad220af7c5f22276540a5b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/63afd7a9e02d48ec.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_7192ddd500984da9.jpg"
+      ]
+    },
+    {
+      "sha256": "0a36764a3f3950d29bf6dac63b0aed2bae7de57aea35731608ba1a18b448241b",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/65b829fb67f14a35.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_b4733a655529e88d.jpg"
+      ]
+    },
+    {
+      "sha256": "3ba8ca58311b9ced3c6c472481d952ba00b322ff86f7b2a7ddedbd5f3768c21d",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/65c649fe0d8bbf06.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_2b328b5df8cb9253.jpg"
+      ]
+    },
+    {
+      "sha256": "74bf206dc3bd2deba223ce9d59c90fcccb3c41ed0a578025736e8a6a74e00d32",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/692ce051e42d7fc3.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_df5b58283b51b9bb.jpg"
+      ]
+    },
+    {
+      "sha256": "cabcf699d66ca7c02fbc7e4f60a2fa34cb089cc9b063b709977fb442bf983af0",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/6d67a4fd3d15ae38.jpg",
+        "data/datasets/yolo_real_skin_v2/images/test/neg_ibrahimfateen_normal_52bc678c8c1afd84.jpg"
+      ]
+    },
+    {
+      "sha256": "034c7a2d9673a49ac09d68f4736aa5c432b7b320b81add102601895122f2ace1",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/718fcba5d1f99d82.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_e469f3fde44945bb.jpg"
+      ]
+    },
+    {
+      "sha256": "17e58f7f455ce12675ca41349b90c8e30677771b66808db6b3e50c774ba054dd",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/76c2da7077545b5b.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_b6163caa320719c2.jpg"
+      ]
+    },
+    {
+      "sha256": "620b4d5d80f495d325254d52eb76da01a8c414946f359f438db0907194ffccd9",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/8400e2e4734ac4d0.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_812ac8948905f7d8.jpg"
+      ]
+    },
+    {
+      "sha256": "49bf4e0b3d915cf89191fcd8c371c8f4859a883f635eb9416a2b37738b571ce3",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/8dd9579bd8bee44a.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_875c43be01f3dca9.jpg"
+      ]
+    },
+    {
+      "sha256": "abdbcd6ad69e2e074577f4cc0e20d00a8437d9c0f71d64c633995362f42ef7f7",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/8ed8787a371afddb.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_d07e3dc425050919.jpg"
+      ]
+    },
+    {
+      "sha256": "5d47be87a82c27fe53c055058b4ae42c7facc7986ba1047f40c79c2f222e42f5",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/9a650ffb6b3d769e.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a8291154483296e8.jpg"
+      ]
+    },
+    {
+      "sha256": "8366bfca6fde74a88dd290b6e10050a0ecbdf7741bcebd8928b76cb89675bc1a",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/9dbc5850a7051920.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_822de4712089a301.jpg"
+      ]
+    },
+    {
+      "sha256": "ca7fa2c29ee3656de13623b7dfe9b7350f9eb2f4478d0cc5ec0e31349770a780",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/a14242972e6fa8c3.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_cfe7b22beb5c9be5.jpg"
+      ]
+    },
+    {
+      "sha256": "494d6cdf0ed19d977ef08a13ebe07222ed306f7c85d6abf7c64efff58909f879",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/a5865090c258fedc.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_607322104973778f.jpg"
+      ]
+    },
+    {
+      "sha256": "b8b5e38d7d4b24d5220b7e41b1b2b5218f42bffeeb87918fa040bc922c9dd137",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/afae4803f18309a9.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a93cf0685d9cba74.jpg"
+      ]
+    },
+    {
+      "sha256": "a7c8f91384e63038379b5c201f335057169b3181b2237649df75fc810b799e42",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/ba4b39de5bb13aef.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_813c17cae5fd9d3f.jpg"
+      ]
+    },
+    {
+      "sha256": "e3b6c96b0eddd34612182f96d5abae82ebdc1e5313512c1b0fe87e7570dfacce",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/c6ff4e4e33c4041d.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_1590f5040c82bcd6.jpg"
+      ]
+    },
+    {
+      "sha256": "bd649947c7e258017a4d3732d5efdd66177233224c08fa21aff218eeb7e99803",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/c95d1147631615c8.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_fd27be9172457d0d.jpg"
+      ]
+    },
+    {
+      "sha256": "0d85964d06f3910f00b0e0e783718080ef9b3fc5f388a481e7c83e99cac89dd3",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/cbdad9edcc22cdba.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_d235418dd01f0f50.jpg"
+      ]
+    },
+    {
+      "sha256": "c28db353b17f5ff3b80a4383be580f9d09a576e74261542017e9e4689904c783",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/dfd0dc15ee97ca67.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_3e8f2558da87cadc.jpg"
+      ]
+    },
+    {
+      "sha256": "fc0f2dff596a71d12a22157347dcb3971f311327b2bb6f6f301fa95de17aff7a",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/dfde0a4cc2f91ddc.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_398081c9d9149b4a.jpg"
+      ]
+    },
+    {
+      "sha256": "f34e5aa4960d9efd6b1eba4eb847d2eb22253668b83f86c35f6babf083c9b8e3",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/f61bb8af4057eb34.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_a4209b8e2378b250.jpg"
+      ]
+    },
+    {
+      "sha256": "d4e197f4f1c00abcf59e47b52f3b5e85173f0ed3f9dea4eb7b81d57b7a1d5228",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/fdea2e90c44b913c.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_ibrahimfateen_normal_418cf1ff628e7976.jpg"
+      ]
+    },
+    {
+      "sha256": "ed78d2cc3ab6c9c9b01a92ed09ea02a9e9cecff89420d278d4250f007a8322e1",
+      "paths": [
+        "data/datasets/efficientnet_kaggle_v1/test/normal/ff2d0f33a0a256de.jpg",
+        "data/datasets/yolo_real_skin_v2/images/val/neg_ibrahimfateen_normal_ebbf38d498575cd7.jpg"
+      ]
+    },
+    {
+      "sha256": "3a86b75258327d919751547cb0dbc33f6a039959646f0c170a644e598c1a43bd",
+      "paths": [
+        "data/datasets/unet_deduped_subject/masks/empty_black_0.png",
+        "data/datasets/unet_deduped_subject/masks/empty_gray_0.png",
+        "data/datasets/unet_deduped_subject/masks/empty_gray_1.png",
+        "data/datasets/unet_deduped_subject/masks/empty_gray_2.png",
+        "data/datasets/unet_deduped_subject/masks/empty_gray_3.png",
+        "data/datasets/unet_deduped_subject/masks/empty_gray_4.png",
+        "data/datasets/unet_deduped_subject/masks/empty_gray_5.png",
+        "data/datasets/unet_deduped_subject/masks/empty_noise_0.png",
+        "data/datasets/unet_deduped_subject/masks/empty_noise_1.png",
+        "data/datasets/unet_deduped_subject/masks/empty_noise_2.png",
+        "data/datasets/unet_deduped_subject/masks/empty_noise_3.png",
+        "data/datasets/unet_deduped_subject/masks/empty_noise_4.png",
+        "data/datasets/unet_deduped_subject/masks/empty_noise_5.png",
+        "data/datasets/unet_deduped_subject/masks/empty_skin_0.png",
+        "data/datasets/unet_deduped_subject/masks/empty_skin_1.png",
+        "data/datasets/unet_deduped_subject/masks/empty_skin_2.png",
+        "data/datasets/unet_deduped_subject/masks/empty_skin_3.png",
+        "data/datasets/unet_deduped_subject/masks/empty_skin_4.png",
+        "data/datasets/unet_deduped_subject/masks/empty_skin_5.png",
+        "data/datasets/unet_deduped_subject/masks/empty_white_0.png"
+      ]
+    },
+    {
+      "sha256": "6c7f94c5011354db7518c1991519f580b42bcb51021ed8e527cc59f13fecf325",
+      "paths": [
+        "data/datasets/yolo_real_skin_v2/images/test/neg_synthetic_blank_8c09e3d764d425b3.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/legacy_negative__dummy_test.jpg"
+      ]
+    },
+    {
+      "sha256": "05ddd52a976572e8d932acbf77f31a0f42dd8c7738379050cb54657ca5a08641",
+      "paths": [
+        "data/datasets/yolo_real_skin_v2/images/train/legacy_negative__blank_skin.jpg",
+        "data/datasets/yolo_real_skin_v2/images/train/neg_synthetic_blank_2b71864e9bc097ee.jpg"
+      ]
+    }
+  ]
+}

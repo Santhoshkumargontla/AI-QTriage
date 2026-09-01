@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "split_policy": "Subject-Level Isolation (70% Train, 15% Val, 15% Test)",
+  "duplicate_images_found": 0,
+  "subject_overlap_detected": false,
+  "test_set_isolation": "PASS (Test set untouched until final evaluation)"
+}

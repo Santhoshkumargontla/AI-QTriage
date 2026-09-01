@@ -1,0 +1,42 @@
+{
+  "finding": "swelling",
+  "questions": [
+    {
+      "id": "pain_level",
+      "text": "What is your pain level from 0 to 10?",
+      "type": "integer",
+      "min": 0,
+      "max": 10
+    },
+    {
+      "id": "injury_mechanism",
+      "text": "How did the injury happen?",
+      "type": "choice",
+      "options": ["fall", "impact", "sports", "other"]
+    },
+    {
+      "id": "movement_limitation",
+      "text": "Can you move the affected part?",
+      "type": "choice",
+      "options": ["yes", "mild", "severe"]
+    },
+    {
+      "id": "weight_bearing",
+      "text": "Can you put weight on it?",
+      "type": "choice",
+      "options": ["yes", "partial", "no"]
+    },
+    {
+      "id": "crack_pop",
+      "text": "Did you feel or hear a crack or pop?",
+      "type": "choice",
+      "options": ["yes", "no"]
+    },
+    {
+      "id": "direct_impact",
+      "text": "Was there direct impact to the area?",
+      "type": "choice",
+      "options": ["yes", "no"]
+    }
+  ]
+}

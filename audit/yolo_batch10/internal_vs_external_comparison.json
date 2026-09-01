@@ -1,0 +1,22 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "comparison": {
+    "precision": {
+      "internal": 0.895,
+      "external": 0.862
+    },
+    "recall": {
+      "internal": 0.86,
+      "external": 0.828
+    },
+    "mAP50": {
+      "internal": 0.888,
+      "external": 0.854
+    },
+    "mAP50_95": {
+      "internal": 0.648,
+      "external": 0.612
+    }
+  },
+  "status": "PASS"
+}

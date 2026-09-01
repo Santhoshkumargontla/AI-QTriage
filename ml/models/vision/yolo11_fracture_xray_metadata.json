@@ -1,0 +1,178 @@
+{
+  "model_name": "YOLO11 Fracture X-ray (Experimental)",
+  "version": "fracture-xray-v1",
+  "status": "EXPERIMENTAL_XRAY_ONLY",
+  "used_in_phone_analyze": false,
+  "promoted_to_skin_canonical": false,
+  "modality": "XRAY",
+  "classes": [
+    "elbow positive",
+    "fingers positive",
+    "forearm fracture",
+    "humerus fracture",
+    "humerus",
+    "shoulder fracture",
+    "wrist positive"
+  ],
+  "canonical_experimental_path": "ml/models/vision/yolo11_fracture_xray_best.pt",
+  "artifact_sha256": "876ce077b2177ea9a6779387ef2136fc40a5a51b8369374f7ca03da9b5d2e232",
+  "dataset_provenance": "pkdarabi Bone Fracture YOLO (CC BY 4.0) \u2014 X-ray only",
+  "data_provenance_class": "PUBLIC_REAL_XRAY",
+  "metrics": {
+    "precision": 0.34543465054787553,
+    "recall": 0.06172839506172839,
+    "mAP50": 0.010624489801096842,
+    "mAP50-95": 0.0041010271823396964,
+    "per_class": {
+      "elbow positive": {
+        "precision": 1.0,
+        "recall": 0.0,
+        "mAP50": 0.003876031820216436,
+        "mAP50-95": 0.002132104254983017
+      },
+      "fingers positive": {
+        "precision": 0.041749673084127754,
+        "recall": 0.037037037037037035,
+        "mAP50": 0.024652201350756846,
+        "mAP50-95": 0.006077751980383493
+      },
+      "forearm fracture": {
+        "precision": 1.0,
+        "recall": 0.0,
+        "mAP50": 0.008663793103448275,
+        "mAP50-95": 0.007060344827586207
+      },
+      "humerus fracture": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "mAP50": 0.0,
+        "mAP50-95": 0.0041010271823396964
+      },
+      "humerus": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "mAP50": 0.0,
+        "mAP50-95": 0.0
+      },
+      "shoulder fracture": {
+        "precision": 0.030858230203125222,
+        "recall": 0.3333333333333333,
+        "mAP50": 0.0265549125321595,
+        "mAP50-95": 0.0
+      },
+      "wrist positive": {
+        "precision": null,
+        "recall": null,
+        "mAP50": null,
+        "mAP50-95": 0.009335962031085462,
+        "note": "NO_GROUND_TRUTH_OR_UNDEFINED"
+      }
+    },
+    "confusion_matrix": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        17.0,
+        27.0,
+        14.0,
+        0.0,
+        15.0,
+        17.0,
+        6.0,
+        0.0
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "elbow positive",
+      "fingers positive",
+      "forearm fracture",
+      "humerus fracture",
+      "humerus",
+      "shoulder fracture",
+      "wrist positive",
+      "background"
+    ],
+    "model_names": {
+      "0": "elbow positive",
+      "1": "fingers positive",
+      "2": "forearm fracture",
+      "3": "humerus fracture",
+      "4": "humerus",
+      "5": "shoulder fracture",
+      "6": "wrist positive"
+    },
+    "metrics_source": "ultralytics.val",
+    "not_clinical_accuracy": true
+  },
+  "epochs": 8,
+  "train_fraction": 0.35,
+  "known_limitations": "Not for phone skin photos. Ordinary photographs cannot detect fractures. Not wired into /analyze image path."
+}

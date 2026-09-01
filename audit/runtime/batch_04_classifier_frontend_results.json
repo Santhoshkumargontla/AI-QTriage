@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T09:13:02.305974+00:00",
+  "ui_component": "Classification Probability Bar Chart & Top Class Badge",
+  "rendered_data": {
+    "top_class": "Swelling",
+    "bar_chart_probabilities": {
+      "Cut": 0.0,
+      "Bruise": 0.0,
+      "Swelling": 1.0,
+      "Other": 0.0
+    }
+  },
+  "verification_status": "PASS"
+}

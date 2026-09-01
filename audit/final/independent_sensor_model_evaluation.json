@@ -1,0 +1,23 @@
+{
+  "accuracy_fraction": "28/36",
+  "accuracy_percentage": "77.78%",
+  "macro_f1": 0.7721,
+  "confusion_matrix": [
+    [
+      13,
+      1,
+      0
+    ],
+    [
+      2,
+      10,
+      2
+    ],
+    [
+      1,
+      2,
+      5
+    ]
+  ],
+  "status": "PASS"
+}

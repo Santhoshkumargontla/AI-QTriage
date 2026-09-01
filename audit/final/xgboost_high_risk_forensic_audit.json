@@ -1,0 +1,6 @@
+{
+  "high_risk_support": 3,
+  "high_risk_recall": 1.0,
+  "test_leakage_check": "PASSED",
+  "uncertainty_disclaimer": "Evaluated on N=3 held-out synthetic samples"
+}

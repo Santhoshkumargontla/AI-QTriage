@@ -1,0 +1,55 @@
+{
+  "audit_timestamp": "2026-08-27T13:40:30.546976+00:00",
+  "scenarios": [
+    {
+      "test": "TEST 1: YOLO + EfficientNet agree on injury",
+      "result": "Strong Agreement (95%)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 2: YOLO detects injury, EfficientNet disagrees",
+      "result": "Partial Agreement (75%)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 3: Vision mild, Sensor elevated risk",
+      "result": "Moderate Disagreement (55%)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 4: Questionnaire severe, Vision mild",
+      "result": "Moderate Disagreement (50%)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 5: Classical ML and Sensor disagree",
+      "result": "Partial Agreement (70%)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 6: VQC strongly disagrees with validated models",
+      "result": "Safely Isolated (VQC sos_weight=0.0)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 7: One model fails gracefully",
+      "result": "Degraded Mode (Logged & Handled)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 8: One modality missing (Sensor missing)",
+      "result": "Reduced Modality Mode (No False Penalty)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 9: Two major modalities missing",
+      "result": "Insufficient Evidence Flagged",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 10: All major modalities agree",
+      "result": "Full Agreement (100%)",
+      "status": "PASS"
+    }
+  ]
+}

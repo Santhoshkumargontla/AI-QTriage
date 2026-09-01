@@ -1,0 +1,20 @@
+{
+  "audit_timestamp": "2026-08-27T13:02:00.021320+00:00",
+  "false_positives": 4,
+  "false_negatives": 4,
+  "categories": [
+    {
+      "type": "Sub-15px micro-scratch",
+      "cases": 2,
+      "pct": 50.0,
+      "cause": "Resolution downsampling"
+    },
+    {
+      "type": "Moisture specular glare",
+      "cases": 2,
+      "pct": 50.0,
+      "cause": "Tissue reflectance"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "taxonomy": [
+    "cut",
+    "bruise",
+    "wound",
+    "abrasion"
+  ],
+  "class_counts": {
+    "cut": 85,
+    "bruise": 62,
+    "wound": 142,
+    "abrasion": 38
+  },
+  "total_annotations": 327
+}

@@ -1,0 +1,50 @@
+{
+  "audit_timestamp": "2026-08-27T13:19:18.267575+00:00",
+  "categories": [
+    {
+      "category": "Dataset Quality",
+      "score": 94.5,
+      "weight": 0.2,
+      "weighted": 18.9
+    },
+    {
+      "category": "Held-Out Test Performance",
+      "score": 89.5,
+      "weight": 0.25,
+      "weighted": 22.38
+    },
+    {
+      "category": "Per-Class Balance",
+      "score": 95.0,
+      "weight": 0.15,
+      "weighted": 14.25
+    },
+    {
+      "category": "Robustness Testing",
+      "score": 88.0,
+      "weight": 0.15,
+      "weighted": 13.2
+    },
+    {
+      "category": "Inference Reliability",
+      "score": 95.0,
+      "weight": 0.1,
+      "weighted": 9.5
+    },
+    {
+      "category": "Runtime Performance",
+      "score": 95.0,
+      "weight": 0.1,
+      "weighted": 9.5
+    },
+    {
+      "category": "Application Integration",
+      "score": 100.0,
+      "weight": 0.05,
+      "weighted": 5.0
+    }
+  ],
+  "overall_yolo11_strength_pct": 92.73,
+  "classification": "EXCELLENT_ACADEMIC_MODEL",
+  "status": "PASS"
+}

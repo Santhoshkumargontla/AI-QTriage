@@ -1,0 +1,62 @@
+{
+    "overall": {
+        "precision": 0.005158286017756365,
+        "recall": 1.0,
+        "mAP50": 0.5449583333333333,
+        "mAP50_95": 0.38993175134108193
+    },
+    "per_class": {
+        "cut": {
+            "precision": 0.006896551724137931,
+            "recall": 1.0,
+            "ap50": 0.3933333333333333,
+            "ap50_95": 0.1548293863167086
+        },
+        "bruise": {
+            "precision": 0.001422475106685633,
+            "recall": 1.0,
+            "ap50": 0.5423333333333333,
+            "ap50_95": 0.48810000000000003
+        },
+        "abrasion": {
+            "precision": 0.009569377990430622,
+            "recall": 1.0,
+            "ap50": 0.9116666666666666,
+            "ap50_95": 0.6293333333333333
+        },
+        "laceration": {
+            "precision": 0.0027447392497712718,
+            "recall": 1.0,
+            "ap50": 0.33250000000000013,
+            "ap50_95": 0.28746428571428584
+        }
+    },
+    "test_metadata": {
+        "images_count": 14,
+        "class_distribution": {
+            "cut": 4,
+            "laceration": 3,
+            "bruise": 3,
+            "abrasion": 4
+        }
+    },
+    "manual_case": {
+        "image_path": "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0183.jpg",
+        "actual_class": "cut",
+        "actual_bounding_box": [
+            185.00032000000002,
+            100.0,
+            362.0,
+            264.0
+        ],
+        "predicted_class": null,
+        "predicted_confidence": 0.0,
+        "predicted_bounding_box": null,
+        "iou": 0.0,
+        "correct": false
+    },
+    "blank_skin_test": {
+        "image_path": "data\\datasets\\yolo_injury\\blank_skin.jpg",
+        "has_detections": false
+    }
+}

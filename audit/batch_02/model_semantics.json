@@ -1,0 +1,43 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.338946+00:00",
+  "model_definitions": [
+    {
+      "model": "YOLO11 Wound Detector",
+      "task": "Object Detection",
+      "outputs": [
+        "bounding_box [xmin, ymin, xmax, ymax]",
+        "confidence_score",
+        "class_label"
+      ],
+      "correct_interpretation": "Identifies spatial bounding box around supported injury classes ('wound', 'cut', 'bruise', 'abrasion', 'laceration'). Absence of box does NOT mean no injury exists."
+    },
+    {
+      "model": "EfficientNetV2-S Classifier",
+      "task": "Image Classification",
+      "outputs": [
+        "softmax_probabilities [Cut, Bruise, Swelling, Other]",
+        "predicted_class"
+      ],
+      "correct_interpretation": "Calculates global injury type likelihood across 4 categories."
+    },
+    {
+      "model": "ResNet34-UNet Segmenter",
+      "task": "Lesion Segmentation",
+      "outputs": [
+        "binary_pixel_mask",
+        "affected_ratio",
+        "positive_pixel_count"
+      ],
+      "correct_interpretation": "Delineates lesion region within ROI box and computes percentage of affected area."
+    },
+    {
+      "model": "Grad-CAM Explainability",
+      "task": "Saliency Localization",
+      "outputs": [
+        "activation_heatmap_overlay"
+      ],
+      "correct_interpretation": "Visualizes model attention focus in target layer 'conv_head'. Not a clinical segmentation boundary."
+    }
+  ],
+  "verification_status": "PASS"
+}

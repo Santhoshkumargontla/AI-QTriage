@@ -1,0 +1,23 @@
+{
+  "audit_timestamp": "2026-08-27T14:09:30.836045+00:00",
+  "vector_length": 23,
+  "has_nan": false,
+  "has_inf": false,
+  "xgb_model_path": "ml\\models\\xgboost_multimodal_best.json",
+  "xgb_sha256": "3302606df1c82dffbf79ce8dd726c148978fc92cee8e5e8071348a249f6d4d9f",
+  "xgb_latency_ms": 4.17,
+  "xgb_probabilities": {
+    "LOW": 0.00559999980032444,
+    "MODERATE": 0.2289000004529953,
+    "HIGH": 0.7653999924659729
+  },
+  "predicted_risk": "HIGH",
+  "model_weights": {
+    "YOLO": 0.3,
+    "EfficientNet": 0.25,
+    "XGBoost": 0.25,
+    "Sensor": 0.1,
+    "VQC": 0.1
+  },
+  "evidence_type": "REAL_EXECUTION_VERIFIED"
+}

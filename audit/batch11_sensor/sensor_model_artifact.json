@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "artifact_path": "ml\\models\\sensor_motion_best.json",
+  "file_size_bytes": 135603,
+  "scaler_path": "ml\\models\\sensor_scaler.pkl",
+  "status": "PASS"
+}

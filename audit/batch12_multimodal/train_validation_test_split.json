@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:00:48.351359+00:00",
+  "train_ratio": 0.7,
+  "val_ratio": 0.15,
+  "test_ratio": 0.15,
+  "stratified": true,
+  "status": "PASS"
+}

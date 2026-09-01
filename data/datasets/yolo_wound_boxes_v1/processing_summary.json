@@ -1,0 +1,203 @@
+{
+  "summary": {
+    "created_utc": "2026-08-29T08:36:49.789239+00:00",
+    "root": "data\\datasets\\yolo_wound_boxes_v1",
+    "yaml": "data/datasets/yolo_wound_boxes_v1/data.yaml",
+    "n": 1388,
+    "split_sizes": {
+      "test": 214,
+      "train": 965,
+      "val": 209
+    },
+    "box_counts": {
+      "bruise": 63,
+      "cut": 61,
+      "wound": 1262
+    },
+    "provenance_counts": {
+      "SYNTHETIC": 126,
+      "PUBLIC_REAL_PHOTOS": 1262
+    },
+    "subjects": 1227,
+    "subject_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "exclusions_n": 257,
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "known_limitations": [
+      "wound boxes are axis-aligned envelopes of public ulcer/wound masks \u2014 not sports injuries.",
+      "cut/bruise remain largely SYNTHETIC drawings from yolo_retrain_v2.",
+      "Roboflow cut/bruise photo download blocked (no valid API key).",
+      "Do not claim clinical detection performance."
+    ],
+    "leakage_free": true
+  },
+  "exclusions_sample": [
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\0272003ec882522e7bec012aac93cc26_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\030f458bd12ad589f1c2d6ae4cc245e0_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\045897ff55447150716a26960a3b8fd6_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\054008cac63fbda02ca31e4c9cd5ee46_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\06252257a775dfbd3a1272509efeca03_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\07971964f7d48992be468a95390f365f_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\09b2942c518c46e4937296e182decfaa_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\0a5a3ada2bb75c4af2daf8e4726bf099_1.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\0b75779bc915ab15efaebc1e8d80e4ce_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\0ddc7e1cf8508f1fcae87bd41106d8c6_1.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\0e9585008d43fdf08d840064a49674f3_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\0fe849d1ae06c9d2ba348e0a968b5ab2_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\100e9e226ad344e054a1a36191308da1_1.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1160024c976ffe3b100704810a10137b_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1576e366442683aac204404e081eb938_3.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1636f83a5221bc82ca5083fbe9dcaee5_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\16489f399948a5dfc46c056f1d26da40_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\17ed06c4768fe6d776714cdaa132a293_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\198d30ff02f21203321976149131d44f_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1aaf67eaf95e58809c1a181f9261a55f_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1c8e887ad6ec44f3c6cc91e88dd59f56_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1d3c85fa730afe4353328ad0eb032845_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1d557cd47276255d999c71bc49ccf493_2.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1dbb00d92741863fcc6451afd48daf31_1.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1dbb00d92741863fcc6451afd48daf31_2.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\1ede7f8f0776e55ac198e7585bba7c43_0.png"
+    },
+    {
+      "reason": "exact_dup",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\22476241644edd0ccb41dc9d27c26d3b_1.png"
+    },
+    {
+      "reason": "exact_dup",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\22476241644edd0ccb41dc9d27c26d3b_2.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\22476241644edd0ccb41dc9d27c26d3b_3.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\22625ae4786b4bfde48860accb485452_1.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\24597141d24289747225c61527d97cb4_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\24597141d24289747225c61527d97cb4_3.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\24d033a91d4fa6e1a8143d03229886fd_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\24d033a91d4fa6e1a8143d03229886fd_3.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\25c5504d70193d1d8cf21b9863e293d9_2.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\25fbd4751a5aa2f7f5fa5fd4554b70a8_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\2628fb9c453669b715cde7e5a2fd5169_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\26b0e1c37795cfb1b930a593165149c9_0.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\28d3f7cdb7d3b68029a480498dfbc279_1.png"
+    },
+    {
+      "reason": "no_valid_box",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\29040e0c4889bd33bc4d18426675c6df_3.png"
+    }
+  ]
+}

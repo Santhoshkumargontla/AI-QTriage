@@ -1,0 +1,80 @@
+{
+  "model_name": "ResNet34-UNet Segmentation",
+  "version": "v1.3.0",
+  "status": "MODEL_OUTPUT_NOT_TRUSTWORTHY",
+  "device": "cpu",
+  "metrics": {
+    "dataset_name": "public_wound_dataset",
+    "dataset_type": "public_image_mask_pairs",
+    "train_samples": 140,
+    "val_samples": 30,
+    "test_samples": 30,
+    "epochs": 6,
+    "loss": "BCE_plus_Dice",
+    "encoder": "resnet34 imagenet frozen",
+    "device": "cpu",
+    "val_best_dice": 0.982192,
+    "test": {
+      "n": 30,
+      "mean_dice": 0.982084,
+      "mean_iou": 0.965434,
+      "precision": 0.986665,
+      "recall": 0.977954,
+      "mean_false_positive_area": 0.000901
+    },
+    "uniform_image_probes": {
+      "gray": {
+        "mean_prob": 0.1398,
+        "max_prob": 0.921,
+        "positive_ratio": 0.1575
+      },
+      "black": {
+        "mean_prob": 0.9972,
+        "max_prob": 1.0,
+        "positive_ratio": 0.9964
+      },
+      "white": {
+        "mean_prob": 0.997,
+        "max_prob": 1.0,
+        "positive_ratio": 0.9995
+      }
+    },
+    "blank_mask_untrustworthy": true,
+    "training_history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.728011,
+        "val_dice": 0.854224
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.216808,
+        "val_dice": 0.970059
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.109109,
+        "val_dice": 0.981797
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.05085,
+        "val_dice": 0.981982
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.073313,
+        "val_dice": 0.943134
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.054977,
+        "val_dice": 0.982192
+      }
+    ],
+    "metrics_source": "computed_from_held_out_predictions",
+    "trained_at": "2026-08-28T13:29:55.409626+00:00"
+  },
+  "weights_path": "ml\\models\\vision\\unet_injury_best.pt",
+  "training_was_real": true
+}

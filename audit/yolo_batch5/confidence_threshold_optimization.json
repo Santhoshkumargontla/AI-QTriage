@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "swept_thresholds": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "selected_operating_threshold": 0.1,
+  "selection_rationale": "Balances high sensitivity (Recall=90.0%, F1=0.915) for academic emergency triage prototype workflows",
+  "status": "PASS"
+}

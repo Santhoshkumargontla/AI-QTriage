@@ -1,0 +1,23 @@
+{
+  "audit_timestamp": "2026-08-27T08:41:37.194235+00:00",
+  "predicted_class": "Bruise",
+  "predicted_probability": 1.0,
+  "target_layer": "conv_head",
+  "heatmap_min": 0,
+  "heatmap_max": 255,
+  "heatmap_mean": 18.71,
+  "overlay_dimensions": "300x300",
+  "original_image_dimensions": "300x300",
+  "coordinate_scaling_fidelity": "MATCH",
+  "spatial_consistency": {
+    "yolo_bbox": [
+      103.07,
+      106.88,
+      198.29,
+      190.57
+    ],
+    "gradcam_max_activation_in_bbox": true,
+    "unet_segmentation_overlap": true
+  },
+  "verification_status": "PASS"
+}

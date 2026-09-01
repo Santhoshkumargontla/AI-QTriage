@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "selected_experiment": 2,
+  "selection_reason": "Highest validation mAP@50-95 (0.648) and mAP@50 (0.888) with optimal recall (0.860)",
+  "status": "PASS"
+}

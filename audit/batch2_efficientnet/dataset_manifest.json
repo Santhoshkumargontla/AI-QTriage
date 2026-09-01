@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "storage_location": "ml/data/injury_classification/",
+  "total_samples": 200,
+  "train_samples": 140,
+  "val_samples": 30,
+  "test_samples": 30,
+  "status": "PASS"
+}

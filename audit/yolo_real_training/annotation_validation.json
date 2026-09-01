@@ -1,0 +1,18 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "total_images": 350,
+  "total_annotation_files": 350,
+  "total_boxes": 420,
+  "valid_boxes": 420,
+  "invalid_boxes": 0,
+  "removed_boxes": 0,
+  "images_without_annotations": 0,
+  "class_distribution": {
+    "cut": 100,
+    "bruise": 100,
+    "abrasion": 100,
+    "laceration": 60,
+    "wound": 60
+  },
+  "status": "PASS"
+}

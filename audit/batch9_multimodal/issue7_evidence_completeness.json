@@ -1,0 +1,24 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "modalities_status": {
+    "YOLO11": "AVAILABLE",
+    "UNet": "AVAILABLE",
+    "EfficientNetV2": "AVAILABLE",
+    "Questionnaire": "AVAILABLE",
+    "Sensor": "MISSING"
+  },
+  "available_modalities": [
+    "YOLO11",
+    "UNet",
+    "EfficientNetV2",
+    "Questionnaire"
+  ],
+  "missing_modalities": [
+    "Sensor"
+  ],
+  "failed_modalities": [],
+  "invalid_modalities": [],
+  "evidence_completeness": "80.0%",
+  "reduced_evidence_warning": "Sensor telemetry is absent; risk prediction uses reduced-modality feature fusion.",
+  "status": "IMPROVED"
+}

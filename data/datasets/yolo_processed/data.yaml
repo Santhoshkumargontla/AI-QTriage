@@ -1,0 +1,14 @@
+path: C:\Users\santh\Capstone Project Code\data\datasets\yolo_processed
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: cut
+  1: bruise
+  2: wound
+provenance: SYNTHETIC
+notes: |
+  Honest mapping only. cut=0, bruise=1, wound=2.
+  abrasion, laceration, and swelling were dropped, not remapped.
+  Raw sources were not modified. Exact pixel/byte duplicates were removed.
+  Do not treat this set as real clinical photography.

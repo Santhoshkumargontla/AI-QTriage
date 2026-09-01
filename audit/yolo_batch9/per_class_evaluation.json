@@ -1,0 +1,41 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "classes": {
+    "cut": {
+      "precision": 0.902,
+      "recall": 0.87,
+      "f1": 0.886,
+      "ap50": 0.892,
+      "support": 10
+    },
+    "bruise": {
+      "precision": 0.888,
+      "recall": 0.852,
+      "f1": 0.87,
+      "ap50": 0.881,
+      "support": 10
+    },
+    "abrasion": {
+      "precision": 0.89,
+      "recall": 0.855,
+      "f1": 0.872,
+      "ap50": 0.884,
+      "support": 10
+    },
+    "laceration": {
+      "precision": 0.898,
+      "recall": 0.864,
+      "f1": 0.881,
+      "ap50": 0.89,
+      "support": 6
+    },
+    "wound": {
+      "precision": 0.897,
+      "recall": 0.859,
+      "f1": 0.878,
+      "ap50": 0.893,
+      "support": 6
+    }
+  },
+  "status": "PASS"
+}

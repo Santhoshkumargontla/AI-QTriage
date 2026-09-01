@@ -1,0 +1,54 @@
+{
+  "template_id": "cut",
+  "template_version": "1.0",
+  "finding": "cut",
+  "description": "Assessment questions for visible cut/laceration findings.",
+  "questions": [
+    {
+      "id": "location",
+      "text": "Where is the cut located on the body?",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "pain",
+      "text": "What is your pain level from 0 to 10?",
+      "type": "number",
+      "min": 0,
+      "max": 10,
+      "required": true
+    },
+    {
+      "id": "bleeding",
+      "text": "Is there visible bleeding from the wound?",
+      "type": "boolean",
+      "required": true
+    },
+    {
+      "id": "mechanism",
+      "text": "What caused the cut? (e.g., sharp object, fall, collision)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "depth_estimate",
+      "text": "Does the wound appear deep or surface-level?",
+      "type": "select",
+      "options": ["surface", "moderate", "deep", "unsure"],
+      "required": true
+    },
+    {
+      "id": "debris",
+      "text": "Is there any debris or foreign material visible in the wound?",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "id": "tetanus",
+      "text": "Do you know if your tetanus vaccination is up to date?",
+      "type": "select",
+      "options": ["yes", "no", "unsure"],
+      "required": false
+    }
+  ]
+}

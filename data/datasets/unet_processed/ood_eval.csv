@@ -1,0 +1,3 @@
+sample_id,path,source_dataset,provenance,pixel_sha256,empty_mask,used_as_training_label,note,image_hw,empty_mask_sum
+blank_skin,data/datasets/yolo_injury/blank_skin.jpg,yolo_injury,EXISTING_FILE_NOT_A_TRAINING_CLASS,631931cb967c6717bfc2c6298d7a8407f25a1517c3ce940edc9e10c892eb96ea,True,False,"Too few existing no-injury files to train an empty-mask class. Eval-only. Empty mask is all-zero, not a fabricated wound shape.","[640, 640]",0
+dummy_test,data/datasets/yolo_injury/dummy_test.jpg,yolo_injury,EXISTING_FILE_NOT_A_TRAINING_CLASS,0e5852861e08da9afb471da75f6f42f55d42d5e413aef1271428dd132b145886,True,False,"Too few existing no-injury files to train an empty-mask class. Eval-only. Empty mask is all-zero, not a fabricated wound shape.","[64, 64]",0

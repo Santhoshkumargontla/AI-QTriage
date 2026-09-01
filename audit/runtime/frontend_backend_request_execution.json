@@ -1,0 +1,37 @@
+{
+  "audit_timestamp": "2026-08-27T08:42:32.516521+00:00",
+  "base_url": "http://localhost:8000",
+  "endpoints_audited": [
+    {
+      "frontend_method": "api.createCase()",
+      "backend_route": "POST /api/cases",
+      "content_type": "application/json",
+      "parameters_matched": true
+    },
+    {
+      "frontend_method": "handleImageUpload()",
+      "backend_route": "POST /api/cases/{case_id}/image",
+      "content_type": "multipart/form-data (FormData auto-boundary)",
+      "parameters_matched": true
+    },
+    {
+      "frontend_method": "api.submitQuestionnaire()",
+      "backend_route": "POST /api/cases/{case_id}/questionnaire",
+      "content_type": "application/json",
+      "parameters_matched": true
+    },
+    {
+      "frontend_method": "api.triggerDemoSOS()",
+      "backend_route": "POST /api/cases/{case_id}/sos/demo/trigger",
+      "content_type": "application/json",
+      "parameters_matched": true
+    },
+    {
+      "frontend_method": "api.getReport()",
+      "backend_route": "GET /api/cases/{case_id}/report",
+      "content_type": "application/json",
+      "parameters_matched": true
+    }
+  ],
+  "verification_status": "PASS"
+}

@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "components": {
+    "internal_performance_30pct": 26.64,
+    "external_quantitative_performance_30pct": 25.62,
+    "external_qualitative_robustness_15pct": 12.75,
+    "false_positive_behavior_10pct": 9.0,
+    "domain_shift_stability_10pct": 9.62,
+    "api_frontend_execution_5pct": 5.0
+  },
+  "final_generalization_score_pct": 88.63,
+  "status": "PASS"
+}

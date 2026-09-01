@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T12:54:20.247714+00:00",
+  "mean_iou_with_gt": 0.885,
+  "nms_suppression_iou": 0.45,
+  "duplicate_box_count": 0,
+  "shifted_boxes_count": 0,
+  "status": "PASS"
+}

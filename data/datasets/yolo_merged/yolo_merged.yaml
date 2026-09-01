@@ -1,0 +1,8 @@
+path: C:\Users\santh\Capstone Project Code\data\datasets\yolo_merged
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: cut
+  1: bruise
+  2: wound

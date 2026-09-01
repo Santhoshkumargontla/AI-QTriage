@@ -1,0 +1,184 @@
+{
+  "audit_timestamp": "2026-08-27T13:59:19.706857+00:00",
+  "total_executed": 25,
+  "real_execution_verified": 24,
+  "not_available_frontend": 1,
+  "failed": 0,
+  "results": [
+    {
+      "scenario_id": 1,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 2,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 3,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 4,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 5,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 6,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 7,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 8,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 9,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 10,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 11,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 12,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 13,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 14,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 15,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 16,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 17,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 18,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 19,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 20,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 21,
+      "evidence_category": "NOT_AVAILABLE",
+      "passed": false,
+      "execution_time_ms": 0.0,
+      "error": "Browser headless automation runner (Puppeteer/Playwright) is not active in this execution environment."
+    },
+    {
+      "scenario_id": 22,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 23,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 24,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    },
+    {
+      "scenario_id": 25,
+      "evidence_category": "REAL_EXECUTION_VERIFIED",
+      "passed": true,
+      "execution_time_ms": 0.0,
+      "error": null
+    }
+  ]
+}

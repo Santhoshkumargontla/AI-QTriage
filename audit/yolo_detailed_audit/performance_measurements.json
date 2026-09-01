@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:19:18.267575+00:00",
+  "yolo_inference_avg_ms": 103.94,
+  "api_response_avg_ms": 165.17,
+  "complete_pipeline_avg_ms": 285.4,
+  "device": "PyTorch CPU (OpenMP 12 threads)",
+  "status": "PASS"
+}

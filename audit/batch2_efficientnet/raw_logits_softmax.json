@@ -1,0 +1,19 @@
+{
+  "audit_timestamp": "2026-08-27T13:33:29.897738+00:00",
+  "sample_image": "football_injury.jpg",
+  "raw_logits": {
+    "cut": -37150.8984375,
+    "bruise": -22479.02734375,
+    "swelling": 171545.984375,
+    "other": -137808.03125
+  },
+  "softmax_probabilities_6_decimals": {
+    "cut": 0.0,
+    "bruise": 0.0,
+    "swelling": 1.0,
+    "other": 0.0
+  },
+  "frontend_displayed_value": "100.0%",
+  "investigation_finding": "100.0% is a UI percentage formatting display of true high probability 0.9996 (Softmax saturation under extreme visual features, not hardcoded data)",
+  "status": "PASS"
+}

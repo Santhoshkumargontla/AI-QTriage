@@ -1,0 +1,5 @@
+{
+  "audit_timestamp": "2026-08-27T13:40:30.546976+00:00",
+  "confidence_calibration": "LIMITED (Empirical calibration score ECE = 0.045 across held-out split)",
+  "status": "PASS"
+}

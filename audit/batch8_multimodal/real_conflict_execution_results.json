@@ -1,0 +1,85 @@
+{
+  "audit_timestamp": "2026-08-27T13:43:10.965138+00:00",
+  "scenarios": [
+    {
+      "scenario_id": 1,
+      "score": 100.0,
+      "status": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "passed": true
+    },
+    {
+      "scenario_id": 2,
+      "score": 100.0,
+      "status": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "passed": true
+    },
+    {
+      "scenario_id": 3,
+      "score": 100.0,
+      "status": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "passed": true
+    },
+    {
+      "scenario_id": 4,
+      "score": 60.0,
+      "status": "Partially Consistent",
+      "conflicts_count": 1,
+      "agreements_count": 1,
+      "passed": true
+    },
+    {
+      "scenario_id": 5,
+      "score": 100.0,
+      "status": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "passed": true
+    },
+    {
+      "scenario_id": 6,
+      "score": 60.0,
+      "status": "Partially Consistent",
+      "conflicts_count": 1,
+      "agreements_count": 1,
+      "passed": true
+    },
+    {
+      "scenario_id": 7,
+      "score": 85.0,
+      "status": "Highly Consistent",
+      "conflicts_count": 1,
+      "agreements_count": 2,
+      "passed": true
+    },
+    {
+      "scenario_id": 8,
+      "score": 100.0,
+      "status": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "passed": true
+    },
+    {
+      "scenario_id": 9,
+      "score": 100.0,
+      "status": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "passed": true
+    },
+    {
+      "scenario_id": 10,
+      "score": 100.0,
+      "status": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "passed": true
+    }
+  ]
+}

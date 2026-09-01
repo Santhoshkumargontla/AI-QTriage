@@ -1,0 +1,43 @@
+{
+  "audit_timestamp": "2026-08-27T14:09:30.836045+00:00",
+  "boolean_condition_code": "if peak_g_force >= 4.0 and stabilization_time >= 1.5:",
+  "threshold_name": "RESEARCH_PROTOTYPE_SAFETY_THRESHOLD",
+  "boundary_tests": [
+    {
+      "peak_g_force": 3.99,
+      "stabilization_time": 1.5,
+      "sos_triggered": false,
+      "expected": false,
+      "match": true
+    },
+    {
+      "peak_g_force": 4.0,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected": true,
+      "match": true
+    },
+    {
+      "peak_g_force": 4.01,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected": true,
+      "match": true
+    },
+    {
+      "peak_g_force": 5.0,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected": true,
+      "match": true
+    },
+    {
+      "peak_g_force": 8.5,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected": true,
+      "match": true
+    }
+  ],
+  "evidence_type": "REAL_EXECUTION_VERIFIED"
+}

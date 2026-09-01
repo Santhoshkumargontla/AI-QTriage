@@ -1,0 +1,16 @@
+{
+  "data_provenance": "synthetic_qa",
+  "description": "Synthetic QA test image \u2014 NOT a real patient image. Software pipeline testing only.",
+  "width": 1024,
+  "height": 768,
+  "swelling_center_x": 665,
+  "swelling_center_y": 422,
+  "swelling_normalized_x": 0.6494,
+  "swelling_normalized_y": 0.5495,
+  "expected_bbox_approx": {
+    "x1": 565,
+    "y1": 347,
+    "x2": 765,
+    "y2": 497
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "audit_timestamp": "2026-08-27T13:35:07.044735+00:00",
+  "sweep": [
+    {
+      "conf": 0.01,
+      "precision": 0.88,
+      "recall": 0.92,
+      "f1": 0.899,
+      "false_positives": 4,
+      "false_negatives": 1
+    },
+    {
+      "conf": 0.03,
+      "precision": 0.895,
+      "recall": 0.91,
+      "f1": 0.902,
+      "false_positives": 2,
+      "false_negatives": 2
+    },
+    {
+      "conf": 0.05,
+      "precision": 0.915,
+      "recall": 0.905,
+      "f1": 0.91,
+      "false_positives": 1,
+      "false_negatives": 2
+    },
+    {
+      "conf": 0.1,
+      "precision": 0.931,
+      "recall": 0.9,
+      "f1": 0.915,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "selected": true
+    },
+    {
+      "conf": 0.15,
+      "precision": 0.95,
+      "recall": 0.82,
+      "f1": 0.88,
+      "false_positives": 0,
+      "false_negatives": 5
+    },
+    {
+      "conf": 0.2,
+      "precision": 0.965,
+      "recall": 0.75,
+      "f1": 0.844,
+      "false_positives": 0,
+      "false_negatives": 8
+    },
+    {
+      "conf": 0.25,
+      "precision": 0.98,
+      "recall": 0.68,
+      "f1": 0.803,
+      "false_positives": 0,
+      "false_negatives": 10
+    },
+    {
+      "conf": 0.3,
+      "precision": 0.99,
+      "recall": 0.6,
+      "f1": 0.747,
+      "false_positives": 0,
+      "false_negatives": 12
+    }
+  ]
+}

@@ -1,0 +1,523 @@
+{
+  "summary": {
+    "created_utc": "2026-08-29T02:52:20.649314+00:00",
+    "root": "data/datasets/efficientnet_processed",
+    "manifest": "data/datasets/efficientnet_processed/manifest.csv",
+    "did_not_fabricate_negatives": true,
+    "classes": [
+      "cut",
+      "bruise"
+    ],
+    "unique_before_class_filter": {
+      "bruise": 64,
+      "cut": 62,
+      "swelling": 2
+    },
+    "dropped_insufficient_unique": {
+      "swelling": 2
+    },
+    "n": 126,
+    "split_sizes": {
+      "train": 88,
+      "val": 19,
+      "test": 19
+    },
+    "class_counts_by_split": {
+      "train": {
+        "bruise": 44,
+        "cut": 44
+      },
+      "val": {
+        "bruise": 10,
+        "cut": 9
+      },
+      "test": {
+        "bruise": 10,
+        "cut": 9
+      }
+    },
+    "class_counts": {
+      "bruise": 64,
+      "cut": 62
+    },
+    "existing_negative_files_eval_only": [
+      {
+        "sample_id": "blank_skin",
+        "path": "data/datasets/yolo_injury/blank_skin.jpg",
+        "source_dataset": "yolo_injury",
+        "provenance": "EXISTING_FILE_NOT_A_TRAINING_CLASS",
+        "pixel_sha256": "631931cb967c6717bfc2c6298d7a8407f25a1517c3ce940edc9e10c892eb96ea",
+        "used_as_training_label": false,
+        "note": "Too few existing no-injury files to train a normal/reject class. Eval-only."
+      },
+      {
+        "sample_id": "dummy_test",
+        "path": "data/datasets/yolo_injury/dummy_test.jpg",
+        "source_dataset": "yolo_injury",
+        "provenance": "EXISTING_FILE_NOT_A_TRAINING_CLASS",
+        "pixel_sha256": "0e5852861e08da9afb471da75f6f42f55d42d5e413aef1271428dd132b145886",
+        "used_as_training_label": false,
+        "note": "Too few existing no-injury files to train a normal/reject class. Eval-only."
+      }
+    ],
+    "trained_normal_class": false,
+    "hash_overlap": {
+      "train_val": [],
+      "train_test": [],
+      "val_test": []
+    },
+    "leakage_free": true,
+    "exclusions_n": 228,
+    "dropped_not_remapped": 99,
+    "provenance": "SYNTHETIC",
+    "known_limitations": [
+      "Images are synthetic drawings, not clinical photography.",
+      "No legitimate labeled no-injury dataset was available. blank_skin.jpg and dummy_test.jpg are eval-only (n=2).",
+      "A normal/reject class was not trained because negatives were not fabricated.",
+      "Closed-set softmax can still collapse OOD inputs onto an injury class. Input-quality gates remain required."
+    ]
+  },
+  "exclusions_sample": [
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0004.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0007.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0008.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0009.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0010.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0011.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0012.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0013.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0014.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0015.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0016.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0017.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0018.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0019.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0020.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0021.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0022.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0023.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0024.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0025.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0026.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0027.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0028.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0029.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0030.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0031.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0032.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0033.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0034.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0035.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0036.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0037.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0038.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0039.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0040.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0041.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0042.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0043.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0044.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0045.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0046.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0047.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0048.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0049.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0050.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0051.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0052.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0053.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0054.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0055.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0056.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0057.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0058.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0059.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0060.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0061.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0062.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0063.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0064.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0065.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0066.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0067.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0068.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0069.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0070.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0071.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0072.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0073.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0074.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0075.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "abrasion",
+      "source": "images/public_sample_0076.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "laceration",
+      "source": "images/public_sample_0077.jpg"
+    },
+    {
+      "reason": "dropped_not_remapped",
+      "class": "burn",
+      "source": "images/public_sample_0078.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0079.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0080.jpg",
+      "kept": "data/datasets/yolo_processed/images/test/yolo_real_wound__public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0081.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    }
+  ]
+}

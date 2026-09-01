@@ -1,0 +1,19 @@
+{
+  "audit_timestamp": "2026-08-27T14:06:11.683835+00:00",
+  "sample_count": 30,
+  "ece": 0.0429,
+  "ece_95_ci": [
+    0.0175,
+    0.1494
+  ],
+  "brier_score": 0.0875,
+  "brier_95_ci": [
+    0.0215,
+    0.1655
+  ],
+  "bootstrap_iterations": 1000,
+  "bootstrap_seed": 42,
+  "bin_count": 5,
+  "limitation_warning": "STATISTICALLY_LIMITED_SAMPLE_COUNT (Calibration evaluated on 30 held-out records; not clinically reliable)",
+  "evidence_classification": "REAL_EXECUTION_VERIFIED"
+}

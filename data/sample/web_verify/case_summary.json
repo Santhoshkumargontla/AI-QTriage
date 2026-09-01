@@ -1,0 +1,40 @@
+{
+  "case_id": "6ea663d9-489f-4ec9-931e-c1838ca76fb0",
+  "ui": "http://localhost:3000/cases/6ea663d9-489f-4ec9-931e-c1838ca76fb0",
+  "image_source": "Wikimedia Commons \u2014 Upper Arm Bruise.jpg",
+  "image_url_source": "https://commons.wikimedia.org/wiki/File:Upper_Arm_Bruise.jpg",
+  "local_copy": "data/sample/web_verify/upper_arm_bruise_wikimedia.jpg",
+  "uploaded_path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\6ea663d9-489f-4ec9-931e-c1838ca76fb0.jpg",
+  "yolo": {
+    "detected": true,
+    "finding": "Bruise",
+    "confidence": 0.5376,
+    "box": [
+      1511.41,
+      1071.67,
+      2970.4,
+      2582.77
+    ]
+  },
+  "classifier": {
+    "finding": null,
+    "probability": null,
+    "status": "LOW_QUALITY_INPUT"
+  },
+  "xgboost": {
+    "class": "MODERATE",
+    "probability": 0.786147952079773,
+    "model_version": "v1.2.0",
+    "model_id": "xgb_image_questionnaire_v1",
+    "n_features": 23,
+    "data_provenance": "SYNTHETIC",
+    "data_provenance_detail": "synthetic_multimodal_fusion",
+    "status": "TRAINED",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "label_source": "SYNTHETIC_RULE_LABELS",
+    "paired_clinical_samples": 0,
+    "clinical_claim_blocked": true,
+    "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+  },
+  "status": "analyzed"
+}

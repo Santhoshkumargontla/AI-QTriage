@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "service_file": "backend/services/vision_service.py",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "status": "PASS"
+}

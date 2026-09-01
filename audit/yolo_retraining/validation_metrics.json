@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T13:17:24.939494+00:00",
+  "val_images": 300,
+  "precision": 0.902,
+  "recall": 0.87,
+  "mAP50": 0.898,
+  "mAP50_95": 0.658,
+  "status": "PASS"
+}

@@ -1,0 +1,63 @@
+{
+  "created_utc": "2026-08-30T06:55:27.622787+00:00",
+  "output": "data/datasets/yolo_roboflow_v1",
+  "names": [
+    "cut",
+    "bruise",
+    "abrasion"
+  ],
+  "image_counts": {
+    "train": 933,
+    "val": 198,
+    "test": 220
+  },
+  "box_counts": {
+    "abrasion": 616,
+    "cut": 129,
+    "bruise": 645
+  },
+  "negative_counts": {
+    "train": 176,
+    "test": 47,
+    "val": 27
+  },
+  "source_counts": {
+    "aid": 239,
+    "injury_detection_v2": 578,
+    "wound2": 284
+  },
+  "skipped_class_boxes": {
+    "burn": 212,
+    "stab": 21,
+    "injury_detection": 6,
+    "scarring": 13
+  },
+  "unique_images": 1351,
+  "forensic_excluded": true,
+  "leakage_exact_hash": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "leakage_free": true,
+  "class_support_honest": {
+    "cut": {
+      "supported": true,
+      "total_boxes": 129
+    },
+    "bruise": {
+      "supported": true,
+      "total_boxes": 645
+    },
+    "abrasion": {
+      "supported": true,
+      "total_boxes": 616
+    }
+  },
+  "known_limitations": [
+    "Burn/scarring/Injury-detection/Stab excluded \u2014 not remapped to cut/bruise/abrasion.",
+    "wound class NOT included \u2014 insufficient honest wound boxes in downloaded Roboflow sets.",
+    "Negatives include empty-label real_skin images + blank_skin/dummy_test.",
+    "CC BY 4.0 Roboflow sources; research use only."
+  ]
+}

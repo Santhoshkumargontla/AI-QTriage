@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:16:35.425790+00:00",
+  "converted_masks_count": 500,
+  "algorithm": "OpenCV findContours -> Bounding Rect -> Normalized YOLO [x, y, w, h]",
+  "derived_boxes_note": "Derived from real segmentation mask contours",
+  "status": "PASS"
+}

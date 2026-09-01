@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T13:59:19.706857+00:00",
+  "evidence_classification": "REAL_EXECUTION_VERIFIED",
+  "baseline_weights": {
+    "YOLO": 0.3,
+    "EffNet": 0.25,
+    "XGBoost": 0.25,
+    "Sensor": 0.1,
+    "VQC": 0.1
+  },
+  "evaluated_grid_size": 8,
+  "max_decision_change_rate": "5.2%",
+  "status": "PASS"
+}

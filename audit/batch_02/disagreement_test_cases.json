@@ -1,0 +1,21 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.374144+00:00",
+  "scenarios_tested": [
+    {
+      "scenario": "No YOLO detection + High EffNet Bruise (1.0) + UNet Mask (55.58%)",
+      "interpretation": "CLASSIFICATION_SEGMENTATION_SUPPORT_WITH_DETECTION_FAILURE",
+      "status": "HANDLED_EXPLICITLY"
+    },
+    {
+      "scenario": "High Pain (9/10) + Low Sensor Impact (1.1g)",
+      "interpretation": "Subjective pain reported without kinetic impact corroboration",
+      "status": "HANDLED_EXPLICITLY"
+    },
+    {
+      "scenario": "XGBoost (MODERATE) vs VQC (LOW) Class Disagreement",
+      "interpretation": "Model Disagreement penalty (-40 pts)",
+      "status": "HANDLED_EXPLICITLY"
+    }
+  ],
+  "verification_status": "PASS"
+}

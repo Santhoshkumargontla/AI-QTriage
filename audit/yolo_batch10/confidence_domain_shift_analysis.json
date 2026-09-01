@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "internal_mean_conf": 0.425,
+  "external_mean_conf": 0.382,
+  "confidence_drop": 0.043,
+  "status": "PASS"
+}

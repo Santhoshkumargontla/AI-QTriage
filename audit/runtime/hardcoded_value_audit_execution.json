@@ -1,0 +1,42 @@
+{
+  "audit_timestamp": "2026-08-27T08:51:34.569781+00:00",
+  "audited_frontend_files": [
+    "frontend/app/cases/[id]/page.tsx",
+    "frontend/app/create-case/page.tsx",
+    "frontend/app/page.tsx"
+  ],
+  "value_classifications": [
+    {
+      "value": "Confidence",
+      "type": "UI Label",
+      "status": "VALID"
+    },
+    {
+      "value": "Risk Level",
+      "type": "UI Label",
+      "status": "VALID"
+    },
+    {
+      "value": "Research Prototype Notice",
+      "type": "UI Label",
+      "status": "VALID"
+    },
+    {
+      "value": "Synthetic demonstration image",
+      "type": "Example/Demo Data",
+      "status": "VALID (Labeled Demo)"
+    },
+    {
+      "value": "95%",
+      "type": "Incorrect Fake Live Result",
+      "status": "REMOVED / BOUND TO API"
+    },
+    {
+      "value": "87%",
+      "type": "Incorrect Fake Live Result",
+      "status": "REMOVED / BOUND TO API"
+    }
+  ],
+  "fake_live_results_found": 0,
+  "verification_status": "PASS"
+}

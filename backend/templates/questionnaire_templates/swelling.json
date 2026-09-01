@@ -1,0 +1,55 @@
+{
+  "template_id": "swelling",
+  "template_version": "1.0",
+  "finding": "swelling",
+  "description": "Assessment questions for visible swelling/edema findings.",
+  "questions": [
+    {
+      "id": "location",
+      "text": "Where is the swelling located on the body?",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "pain",
+      "text": "What is your pain level from 0 to 10?",
+      "type": "number",
+      "min": 0,
+      "max": 10,
+      "required": true
+    },
+    {
+      "id": "mechanism",
+      "text": "How did the injury occur? (e.g., twist, fall, impact, sports activity)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "weight_bearing",
+      "text": "Can you bear weight on the affected area?",
+      "type": "select",
+      "options": ["yes_fully", "yes_partially_painful", "no"],
+      "required": true
+    },
+    {
+      "id": "movement_limitation",
+      "text": "Is movement of the affected joint or area limited?",
+      "type": "select",
+      "options": ["none", "mild", "severe"],
+      "required": true
+    },
+    {
+      "id": "onset_time",
+      "text": "When did the swelling begin after the injury?",
+      "type": "select",
+      "options": ["immediate", "within_1_hour", "several_hours", "next_day", "unsure"],
+      "required": false
+    },
+    {
+      "id": "crack_pop",
+      "text": "Did you hear or feel a crack or pop at the time of injury?",
+      "type": "boolean",
+      "required": false
+    }
+  ]
+}

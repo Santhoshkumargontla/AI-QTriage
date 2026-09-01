@@ -1,0 +1,150 @@
+[
+  {
+    "model_name": "YOLO11",
+    "model_version": "v1.4.0",
+    "version": "v1.4.0",
+    "status": "INFERENCE_EXECUTES",
+    "weights_loaded": true,
+    "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+    "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+    "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "task": "detect",
+    "classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "supported_classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "yolo_supported_classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "yolo11_supported_classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "validated_classes": [
+      "cut",
+      "bruise"
+    ],
+    "unsupported_classes": [
+      "wound"
+    ],
+    "class_support": {
+      "cut": {
+        "status": "RESEARCH_DEMO_LIMITED",
+        "train_boxes": 47,
+        "val_boxes": 6,
+        "test_boxes": 8,
+        "note": "Present in train/val/test; synthetic provenance; not clinically validated.",
+        "in_model_names": true
+      },
+      "bruise": {
+        "status": "RESEARCH_DEMO_LIMITED",
+        "train_boxes": 40,
+        "val_boxes": 13,
+        "test_boxes": 10,
+        "note": "Present in train/val/test; synthetic provenance; not clinically validated.",
+        "in_model_names": true
+      },
+      "wound": {
+        "status": "UNSUPPORTED",
+        "train_boxes": 0,
+        "val_boxes": 0,
+        "test_boxes": 0,
+        "note": "Head index exists in model.names (nc=3) but production training set has zero honest wound boxes. Do not report wound accuracy or treat wound detections as validated.",
+        "in_model_names": true
+      }
+    },
+    "promotion_status": "PROMOTION_VALIDATED_WITH_LIMITATIONS",
+    "dataset_provenance": "SYNTHETIC drawings/graphics (126/126 in retrain_v2 manifest); not real clinical photos",
+    "untrained_classes": {
+      "wound": "UNSUPPORTED",
+      "abrasion": "UNTRAINED_CLASS",
+      "laceration": "UNTRAINED_CLASS",
+      "swelling": "UNTRAINED_CLASS"
+    },
+    "untrained_class_status": "UNTRAINED_CLASS",
+    "swelling_yolo_coverage": "UNTRAINED_CLASS",
+    "swelling_note": "Swelling is an EfficientNetV2 research classifier category only. It is UNTRAINED_CLASS for YOLO11. Classes come from model.names.",
+    "wound_note": "Wound appears in model.names but has zero honest training boxes in the production retrain_v2 dataset. Status=UNSUPPORTED — do not claim wound accuracy.",
+    "training_dataset": "canonical_yolo11_checkpoint",
+    "clinically_validated": false,
+    "runtime_status": "INFERENCE_EXECUTES"
+  },
+  {
+    "model_name": "EfficientNetV2",
+    "model_version": "reject-v2",
+    "version": "reject-v2",
+    "status": "READY_FOR_RESEARCH_DEMO",
+    "training_status": "READY_FOR_RESEARCH_DEMO",
+    "weights_loaded": true,
+    "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "model_path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+    "artifact_sha256": "fa7aa5c822e6a4127d7f1aa9d9518e687cc0ee9e3d8cfd362d902f72ac06568c",
+    "classes": [
+      "cut",
+      "bruise",
+      "normal",
+      "ood_reject"
+    ],
+    "classifier_categories": [
+      "cut",
+      "bruise",
+      "normal",
+      "ood_reject"
+    ],
+    "category_type": "research_classifier",
+    "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present.",
+    "note": "EfficientNetV2 reject-v2 classes are cut/bruise/normal/ood_reject. normal and ood_reject are abstention classes, not diagnoses. swelling is not in the active classifier head (no labeled swelling data). These categories are NOT equivalent to YOLO11 detections. cut/bruise training images remain largely SYNTHETIC drawings — research demo only."
+  },
+  {
+    "model_name": "U-Net",
+    "model_version": "deduped-subject-v1",
+    "version": "deduped-subject-v1",
+    "status": "READY_FOR_RESEARCH_DEMO",
+    "training_status": "READY_FOR_RESEARCH_DEMO",
+    "weights_loaded": true,
+    "canonical_path": "ml/models/vision/unet_injury_best.pt",
+    "artifact_path": "ml/models/vision/unet_injury_best.pt",
+    "model_path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt",
+    "artifact_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+    "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present. Overlay gates withhold blank/OOD masks; they do not certify photographs."
+  },
+  {
+    "model_name": "XGBoost",
+    "model_version": "v1.2.0",
+    "status": "TRAINED",
+    "weights_loaded": true,
+    "schema_features": 23,
+    "canonical_path": "ml/models/xgboost_best.json",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+    "data_provenance": "SYNTHETIC",
+    "data_provenance_detail": "synthetic_multimodal_fusion",
+    "training_dataset": "synthetic_multimodal_fusion",
+    "status_note": "Missing canonical artifact is MODEL_ARTIFACT_MISSING. File existence is not TRAINED_AND_EVALUATED. Status comes from xgboost_metadata.json."
+  },
+  {
+    "model_name": "VQC",
+    "model_version": "v1.4.0",
+    "status": "EXPERIMENTAL_ONLY",
+    "weights_loaded": true,
+    "canonical_path": "ml/models/vqc/vqc_weights.npz",
+    "artifact_path": "ml/models/vqc/vqc_weights.npz",
+    "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+    "data_provenance": "SYNTHETIC",
+    "used_in_main_decision": false,
+    "experimental_only": true,
+    "recommendation": "DISABLE_FROM_MAIN_DECISION",
+    "status_note": "EXPERIMENTAL_ONLY. Isolated from SOS, first-aid, and main case decisions. Missing artifact is MODEL_UNAVAILABLE, not a fabricated class."
+  }
+]

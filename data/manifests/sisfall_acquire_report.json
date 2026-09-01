@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-08-30T08:27:47.212854+00:00",
+  "source": "Hugging Face Algo-rythmic/Sisfall_Dataset (CC BY 4.0 mirror of SisFall)",
+  "url": "https://huggingface.co/datasets/Algo-rythmic/Sisfall_Dataset/resolve/main/SisFall_dataset.zip",
+  "original_paper": "https://doi.org/10.3390/s17010198",
+  "download": {
+    "status": "DOWNLOADED",
+    "path": "data/raw/sisfall/SisFall_dataset.zip",
+    "bytes": 232407821,
+    "sha256": "7f0dd1583e39fee0f402a6855976eb12517f7eaecdacce871d5b3421793ad665"
+  },
+  "extract": {
+    "path": "data/raw/sisfall/SisFall_dataset",
+    "txt_files": 9012,
+    "status": "OK"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T08:47:08.849100+00:00",
+  "xgboost_weights_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\classical\\xgboost_multimodal.json",
+  "prediction_index": 1,
+  "mapped_risk_level": "MODERATE",
+  "class_probabilities": {
+    "LOW (index 0)": 0.05,
+    "MODERATE (index 1)": 0.9,
+    "HIGH (index 2)": 0.05
+  },
+  "top_shap_contributions": [],
+  "verification_status": "PASS"
+}

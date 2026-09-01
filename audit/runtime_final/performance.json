@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "model_warmup_ms": 1158.14,
+  "yolo11_avg_ms": 103.94,
+  "efficientnetv2_avg_ms": 165.17,
+  "unet_avg_ms": 120.73,
+  "complete_vision_pipeline_avg_ms": 389.84,
+  "status": "PASS"
+}

@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "component": "frontend/app/cases/[id]/page.tsx",
+  "rendering_status": "PASS",
+  "probability_bars": "Rendered correctly for Cut, Bruise, Swelling, Other",
+  "status": "PASS"
+}

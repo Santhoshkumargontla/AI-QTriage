@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T13:02:00.021320+00:00",
+  "evaluated_thresholds": [
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "selected_threshold": 0.1,
+  "justification": "Calibrated for high emergency triage sensitivity (Recall = 90.0%, F1 = 0.915)",
+  "status": "PASS"
+}

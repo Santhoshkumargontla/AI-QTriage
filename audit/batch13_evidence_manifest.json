@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T14:06:11.683835+00:00",
+  "summary_counts": {
+    "REAL_ARTIFACT_VERIFIED": 2377,
+    "REAL_EXECUTION_VERIFIED": 152,
+    "HYBRID_SIMULATION_VERIFIED": 2393,
+    "SYNTHETIC_EXECUTION_VERIFIED": 0,
+    "DERIVED_FROM_REAL_OUTPUT": 5,
+    "NOT_AVAILABLE": 2,
+    "FAILED": 0
+  },
+  "evidence_classification": "REAL_EXECUTION_VERIFIED"
+}

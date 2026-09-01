@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "ece": 0.0429,
+  "ece_95_ci": [
+    0.0175,
+    0.1494
+  ],
+  "brier_score": 0.0875,
+  "brier_95_ci": [
+    0.0215,
+    0.1655
+  ],
+  "calibration_sample_count": 30,
+  "bootstrap_iterations": 1000,
+  "calibration_status": "LIMITED"
+}

@@ -1,0 +1,9 @@
+path: data/datasets/yolo_roboflow_v1
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: cut
+  1: bruise
+  2: abrasion
+nc: 3

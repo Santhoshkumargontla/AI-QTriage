@@ -1,0 +1,287 @@
+{
+  "cases": [
+    {
+      "tag": "synth_cut",
+      "case_id": "7d0c7a90-be9c-4d5b-ba94-66bfd7e48c5f",
+      "file_sha": "b2883418e2ada1182d6952f63fbd751646a8bf4bafe5401c0a9a2458123aa772",
+      "upload_status": 422,
+      "upload_ok": false,
+      "upload_detail": {
+        "detail": "Image quality is insufficient for reliable research inference (contrast is too low. StdDev: 12.1, Threshold: 15.0)."
+      },
+      "questionnaire_status": 200,
+      "sensor_mode": "demo",
+      "sensor_status": 200,
+      "analyze_status": null,
+      "get_status": null,
+      "mongo": null,
+      "api_visible_injury": null
+    },
+    {
+      "tag": "synth_bruise",
+      "case_id": "2c773af0-3575-4e70-93fc-b05b0008f572",
+      "file_sha": "4f8458b4c3398314e24c1646fd078b7cd8eb0d6d8e45db0269b900f837fc43fd",
+      "upload_status": 200,
+      "upload_ok": true,
+      "upload_detail": {
+        "image_sha256": "4f8458b4c3398314e24c1646fd078b7cd8eb0d6d8e45db0269b900f837fc43fd"
+      },
+      "questionnaire_status": 200,
+      "sensor_mode": "simulate_fall",
+      "sensor_status": 200,
+      "analyze_status": 200,
+      "get_status": 200,
+      "mongo": {
+        "image_sha256": "4f8458b4c3398314e24c1646fd078b7cd8eb0d6d8e45db0269b900f837fc43fd",
+        "yolo_finding": "Bruise",
+        "yolo_confidence": 0.975,
+        "yolo_bbox": [
+          174.36,
+          131.08,
+          306.14,
+          228.71
+        ],
+        "classifier_finding": null,
+        "classifier_model_status": "READY_FOR_RESEARCH_DEMO",
+        "classifier_is_confident": false,
+        "classifier_abstention": null,
+        "segmentation_reliable": false,
+        "source_type": "uploaded",
+        "gradcam_status": "WITHHELD",
+        "xgb": "MODERATE",
+        "vqc": {
+          "class": "MODERATE",
+          "used": false,
+          "status": "EXPERIMENTAL_ONLY"
+        },
+        "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS",
+        "sensor_source": "simulated"
+      },
+      "api_visible_injury": {
+        "yolo_finding": "Bruise",
+        "yolo_confidence": 0.975,
+        "yolo_bounding_box": [
+          174.36,
+          131.08,
+          306.14,
+          228.71
+        ],
+        "classifier_finding": null,
+        "classifier_model_status": "READY_FOR_RESEARCH_DEMO",
+        "classifier_is_confident": false,
+        "classifier_abstention_class": null,
+        "segmentation_reliable": false,
+        "gradcam_explanation_status": "WITHHELD",
+        "source_type": "uploaded",
+        "image_sha256": "4f8458b4c3398314e24c1646fd078b7cd8eb0d6d8e45db0269b900f837fc43fd"
+      }
+    },
+    {
+      "tag": "blank_black",
+      "case_id": "886e8264-995e-49fe-81ce-e1123abda2e0",
+      "file_sha": "d6724eae81c588bcebc0f8ad63778f6921bcec608aa43b39b40f7695a396a79d",
+      "upload_status": 422,
+      "upload_ok": false,
+      "upload_detail": {
+        "detail": "Image quality is insufficient for reliable research inference (image is too dark. Mean: 0.0, Threshold: 40.0)."
+      },
+      "questionnaire_status": 200,
+      "sensor_mode": "simulate_normal",
+      "sensor_status": 200,
+      "analyze_status": null,
+      "get_status": null,
+      "mongo": null,
+      "api_visible_injury": null
+    },
+    {
+      "tag": "normal_skin",
+      "case_id": "2112d449-7be2-4e7e-b85e-fb00ff3f84f9",
+      "file_sha": "a372f4e5a25703e080228f4347a1c40a7e4bd6780bbf482873993f0b1f77637b",
+      "upload_status": 422,
+      "upload_ok": false,
+      "upload_detail": {
+        "detail": "Image quality is insufficient for reliable research inference (contrast is too low. StdDev: 4.0, Threshold: 15.0)."
+      },
+      "questionnaire_status": 200,
+      "sensor_mode": "skip",
+      "sensor_status": 200,
+      "analyze_status": null,
+      "get_status": null,
+      "mongo": null,
+      "api_visible_injury": null
+    },
+    {
+      "tag": "unrelated",
+      "case_id": "7cd8227c-65b1-46e4-a8d5-e2aecfc667d3",
+      "file_sha": "fa69702e2142769d61894802150b1983b5d18a15898fd49c9dde0339b485b9f5",
+      "upload_status": 422,
+      "upload_ok": false,
+      "upload_detail": {
+        "detail": "Image quality is insufficient for reliable research inference (image is too blurry. Variance: 1.12, Threshold: 12.0)."
+      },
+      "questionnaire_status": 200,
+      "sensor_mode": "demo",
+      "sensor_status": 200,
+      "analyze_status": null,
+      "get_status": null,
+      "mongo": null,
+      "api_visible_injury": null
+    }
+  ],
+  "sos": {
+    "case_id": "2c773af0-3575-4e70-93fc-b05b0008f572",
+    "trigger_status": 200,
+    "trigger_body": {
+      "message": "SOS countdown started (Local Demo). Simulation only.",
+      "event": {
+        "event_id": "8e96f6f0-1b53-4fce-9042-1e140a204780",
+        "case_id": "2c773af0-3575-4e70-93fc-b05b0008f572",
+        "sos_status": "countdown",
+        "trigger_source": "demo",
+        "delivery_mode": "local_demo",
+        "twilio_enabled": false,
+        "twilio_configured": false,
+        "demo_only": true,
+        "countdown_seconds": 10,
+        "user_response": null,
+        "created_at": "2026-08-29T13:46:51.042922",
+        "warning": "NO REAL EMERGENCY SERVICES WERE CONTACTED."
+      },
+      "duplicate": false
+    },
+    "sos_status": "countdown"
+  },
+  "health": {
+    "status": "healthy",
+    "database": "connected",
+    "timestamp": "2026-08-29T13:46:51.850705"
+  },
+  "models_status": 200,
+  "effnet_api": {
+    "model_name": "EfficientNetV2",
+    "model_version": "reject-v2",
+    "version": "reject-v2",
+    "status": "READY_FOR_RESEARCH_DEMO",
+    "training_status": "READY_FOR_RESEARCH_DEMO",
+    "weights_loaded": true,
+    "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "model_path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+    "artifact_sha256": "fa7aa5c822e6a4127d7f1aa9d9518e687cc0ee9e3d8cfd362d902f72ac06568c",
+    "classes": [
+      "cut",
+      "bruise",
+      "normal",
+      "ood_reject"
+    ],
+    "classifier_categories": [
+      "cut",
+      "bruise",
+      "normal",
+      "ood_reject"
+    ],
+    "category_type": "research_classifier",
+    "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present.",
+    "note": "EfficientNetV2 reject-v2 classes are cut/bruise/normal/ood_reject. normal and ood_reject are abstention classes, not diagnoses. swelling is not in the active classifier head (no labeled swelling data). These categories are NOT equivalent to YOLO11 detections. cut/bruise training images remain largely SYNTHETIC drawings \u2014 research demo only."
+  },
+  "registry_effnet": {
+    "model_name": "EfficientNetV2 Classification",
+    "version": "reject-v2",
+    "status": "READY_FOR_RESEARCH_DEMO",
+    "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "artifact_sha256": "fa7aa5c822e6a4127d7f1aa9d9518e687cc0ee9e3d8cfd362d902f72ac06568c",
+    "artifact_size_mb": 77.84,
+    "file_size": 81624567,
+    "schema_version": "v1.3.0",
+    "classes": [
+      "cut",
+      "bruise",
+      "normal",
+      "ood_reject"
+    ],
+    "training_status": "READY_FOR_RESEARCH_DEMO",
+    "readiness_status": "READY_FOR_RESEARCH_DEMO",
+    "evaluation_artifact": "ml/models/vision/efficientnetv2_metadata.json",
+    "dataset_type": "public_wound_dataset",
+    "training_dataset": "public_wound_dataset",
+    "dataset_provenance": "synthetic cut/bruise drawings + REAL normal patches (AZH/Medetec) + synthetic ood_reject canvases; subject-aware splits",
+    "data_provenance_class": null,
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-29T13:21:15.642303+00:00",
+    "sample_count": null,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_efficientnet.py",
+    "metrics": {
+      "test": {
+        "n": 28,
+        "loss": 0.459456,
+        "accuracy": 0.928571,
+        "macro_f1": 0.875,
+        "balanced_accuracy": 0.875,
+        "per_class": {
+          "cut": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 9
+          },
+          "bruise": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 10
+          },
+          "normal": {
+            "precision": 0.666667,
+            "recall": 0.666667,
+            "f1": 0.666667,
+            "support": 3
+          },
+          "ood_reject": {
+            "precision": 0.833333,
+            "recall": 0.833333,
+            "f1": 0.833333,
+            "support": 6
+          }
+        },
+        "confusion_matrix": [
+          [
+            9,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            10,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            2,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            5
+          ]
+        ]
+      },
+      "ood_collapse": 0,
+      "baseline_ood_collapse": 10
+    },
+    "known_limitations": "Not clinical. cut/bruise still drawings. swelling unsupported (no labels). normal/ood_reject are abstention classes, not diagnoses.",
+    "notes": "Status and metrics come from efficientnetv2_metadata.json after real training.",
+    "training_was_real": false,
+    "display_sample_count": "test 28",
+    "display_sample_count_note": "Counts are split sizes from training metadata (train/val/test). Held-out metric uses the test split only.",
+    "display_held_out_metric": "READY_FOR_RESEARCH_DEMO (reject-v2 OOD abstention)",
+    "train_samples": null,
+    "val_samples": null,
+    "test_samples": 28
+  }
+}

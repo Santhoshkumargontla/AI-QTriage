@@ -1,0 +1,101 @@
+[
+  {
+    "model": "YOLO11 Detection",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "file_exists": true,
+    "file_size_bytes": 1455,
+    "sha256": "b1bb6e935110d7954168655ff1a4eaa91d873621d1f90378dc626cf074deb6fc",
+    "registry_hash": "b1bb6e935110d7954168655ff1a4eaa91d873621d1f90378dc626cf074deb6fc",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-14T12:33:31.219814"
+  },
+  {
+    "model": "EfficientNetV2 Classification",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\vision\\efficientnetv2_injury_best.pt",
+    "file_exists": true,
+    "file_size_bytes": 1567,
+    "sha256": "ecd5f2b0962f7220e4738e4506cdba5057476958b090073c89f069c043fd4403",
+    "registry_hash": "ecd5f2b0962f7220e4738e4506cdba5057476958b090073c89f069c043fd4403",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-14T12:33:31.225605"
+  },
+  {
+    "model": "ResNet34-UNet Segmentation",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\vision\\unet_injury_best.pt",
+    "file_exists": true,
+    "file_size_bytes": 1379,
+    "sha256": "b60846ef32b2db859bc69e221194d2913d5fd69eba3936cf87573783e495bee4",
+    "registry_hash": "b60846ef32b2db859bc69e221194d2913d5fd69eba3936cf87573783e495bee4",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-14T12:33:31.222495"
+  },
+  {
+    "model": "Sensor Motion Event Classifier",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\sensor_motion_best.json",
+    "file_exists": true,
+    "file_size_bytes": 135603,
+    "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+    "registry_hash": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-27T12:38:18.406681"
+  },
+  {
+    "model": "StandardScaler",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\scaler.pkl",
+    "file_exists": true,
+    "file_size_bytes": 1207,
+    "sha256": "bce5fb3ba54c4d5f8e54cad42a9f9a41801dd165f21a622c9f75b60f4c8dbbd1",
+    "registry_hash": "N/A",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-27T12:45:59.657232"
+  },
+  {
+    "model": "PCA Transformer",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\pca.pkl",
+    "file_exists": true,
+    "file_size_bytes": 2071,
+    "sha256": "b1b0fef80e8410faa6422126cb63b725c66d5885386b1471a34d7465654a423a",
+    "registry_hash": "N/A",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-27T12:45:59.660751"
+  },
+  {
+    "model": "Sensor StandardScaler",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\sensor_scaler.pkl",
+    "file_exists": true,
+    "file_size_bytes": 775,
+    "sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959",
+    "registry_hash": "N/A",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-27T12:38:18.100561"
+  },
+  {
+    "model": "XGBoost Multimodal",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\xgboost_multimodal_best.json",
+    "file_exists": true,
+    "file_size_bytes": 184296,
+    "sha256": "775d0bf1a7e07f2cbc01250d5d18224fff021415b0e6fa8554bcca0b1d1b2a84",
+    "registry_hash": "775d0bf1a7e07f2cbc01250d5d18224fff021415b0e6fa8554bcca0b1d1b2a84",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-27T12:45:59.866106"
+  },
+  {
+    "model": "Experimental 4-Qubit VQC",
+    "version": "v1.2.0",
+    "artifact_path": "ml\\models\\vqc\\vqc_weights.npz",
+    "file_exists": true,
+    "file_size_bytes": 1086,
+    "sha256": "8eadc4fd3ecc3406113d3d42e494b0e29a1f5c0229d14f52ba2b92976e44b27a",
+    "registry_hash": "8eadc4fd3ecc3406113d3d42e494b0e29a1f5c0229d14f52ba2b92976e44b27a",
+    "registry_hash_matches": true,
+    "last_modified": "2026-08-27T12:39:44.827248"
+  }
+]

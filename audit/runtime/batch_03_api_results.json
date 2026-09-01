@@ -1,0 +1,20 @@
+{
+  "audit_timestamp": "2026-08-27T09:11:43.667675+00:00",
+  "endpoint_tested": "POST /api/cases/{id}/image",
+  "request_payload": "FormData (multipart/form-data with football_injury.jpg)",
+  "http_status": 200,
+  "response_body_sample": {
+    "visible_injury": {
+      "yolo_finding_detected": true,
+      "yolo_finding": "wound",
+      "yolo_confidence": 0.1153,
+      "bounding_box": [
+        103.07,
+        106.88,
+        198.29,
+        190.57
+      ]
+    }
+  },
+  "verification_status": "PASS"
+}

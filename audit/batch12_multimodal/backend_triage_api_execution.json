@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:00:48.351359+00:00",
+  "endpoint": "POST /api/cases/demo",
+  "predicted_triage_category": "MODERATE",
+  "http_status": 200,
+  "status": "PASS"
+}

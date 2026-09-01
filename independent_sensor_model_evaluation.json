@@ -1,0 +1,30 @@
+{
+  "model_name": "Dedicated Sensor Motion Event Classifier",
+  "version": "v1.2.0",
+  "test_samples": 36,
+  "correct_predictions": 28,
+  "accuracy": 0.7778,
+  "macro_f1": 0.7721,
+  "mcc": 0.6684,
+  "fpr": 0.0714,
+  "fnr": 0.1364,
+  "confusion_matrix": [
+    [
+      13,
+      1,
+      0
+    ],
+    [
+      2,
+      10,
+      2
+    ],
+    [
+      1,
+      2,
+      5
+    ]
+  ],
+  "scope_disclaimer": "Framed strictly as MOTION / FALL / IMPACT EVENT DETECTION (not medical diagnosis).",
+  "verification_status": "PASS"
+}

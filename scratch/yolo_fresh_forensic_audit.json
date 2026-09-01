@@ -1,0 +1,359 @@
+{
+  "created_utc": "2026-08-30T06:43:38.583331+00:00",
+  "production": {
+    "path": "ml/models/vision/yolo11_injury_best.pt",
+    "sha256_disk": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "sha256_metadata": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "sha256_registry": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "sha_match_meta": true,
+    "runtime_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "classes_metadata": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "classes_checkpoint": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "zero_training_boxes": [
+      "wound"
+    ],
+    "keep_threshold": 0.25,
+    "version": "v1.4.0",
+    "status": "INFERENCE_EXECUTES"
+  },
+  "registry_entry": {
+    "model_name": "YOLO11 Detection",
+    "version": "v1.4.0",
+    "status": "INFERENCE_EXECUTES",
+    "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+    "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+    "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "artifact_size_mb": 5.22,
+    "file_size": 5470234,
+    "schema_version": "v1.4.0",
+    "task": "detect",
+    "classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "untrained_class_status": "UNTRAINED_CLASS",
+    "training_status": "TRAINED_AND_EVALUATED",
+    "readiness_status": "INFERENCE_EXECUTES",
+    "evaluation_artifact": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json"
+  },
+  "manifest_entry": {
+    "model_name": "YOLO11 Detection",
+    "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+    "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "version": "v1.4.0",
+    "classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "training_status": "TRAINED_AND_EVALUATED",
+    "evaluation_artifact": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+    "readiness_status": "INFERENCE_EXECUTES",
+    "wrapper": "ml.vision.yolo_wrapper.YOLO11Detector",
+    "used_by_runtime": true
+  },
+  "label_counts_yolo_retrain_v2": {
+    "train": {
+      "images": 87,
+      "empty_labels": 0,
+      "boxes": {
+        "cut": 47,
+        "bruise": 40,
+        "wound": 0
+      }
+    },
+    "val": {
+      "images": 20,
+      "empty_labels": 1,
+      "boxes": {
+        "cut": 6,
+        "bruise": 13,
+        "wound": 0
+      }
+    },
+    "test": {
+      "images": 19,
+      "empty_labels": 1,
+      "boxes": {
+        "cut": 8,
+        "bruise": 10,
+        "wound": 0
+      }
+    }
+  },
+  "label_counts_yolo_real_skin_v2": {
+    "train": {
+      "images": 1246,
+      "empty_labels": 283,
+      "boxes": {
+        "cut": 45,
+        "bruise": 41,
+        "wound": 877
+      }
+    },
+    "val": {
+      "images": 270,
+      "empty_labels": 61,
+      "boxes": {
+        "cut": 10,
+        "bruise": 9,
+        "wound": 190
+      }
+    },
+    "test": {
+      "images": 274,
+      "empty_labels": 60,
+      "boxes": {
+        "cut": 6,
+        "bruise": 13,
+        "wound": 195
+      }
+    }
+  },
+  "probes": {
+    "blank_gray": {
+      "path": "scratch\\yolo_fresh_probes\\blank_gray.png",
+      "exists": true,
+      "raw_001": [],
+      "app_keep": [],
+      "n_raw": 0,
+      "n_app": 0
+    },
+    "black": {
+      "path": "scratch\\yolo_fresh_probes\\black.png",
+      "exists": true,
+      "raw_001": [
+        {
+          "class": "cut",
+          "confidence": 0.010593828745186329,
+          "bounding_box": [
+            0.0,
+            3.45,
+            114.78,
+            121.04
+          ]
+        }
+      ],
+      "app_keep": [],
+      "n_raw": 1,
+      "n_app": 0
+    },
+    "white": {
+      "path": "scratch\\yolo_fresh_probes\\white.png",
+      "exists": true,
+      "raw_001": [],
+      "app_keep": [],
+      "n_raw": 0,
+      "n_app": 0
+    },
+    "dummy_test": {
+      "path": "data\\datasets\\yolo_injury\\dummy_test.jpg",
+      "exists": true,
+      "raw_001": [
+        {
+          "class": "cut",
+          "confidence": 0.010593828745186329,
+          "bounding_box": [
+            0.0,
+            0.86,
+            28.7,
+            30.26
+          ]
+        }
+      ],
+      "app_keep": [],
+      "n_raw": 1,
+      "n_app": 0
+    },
+    "blank_skin": {
+      "path": "data\\datasets\\yolo_injury\\blank_skin.jpg",
+      "exists": true,
+      "raw_001": [],
+      "app_keep": [],
+      "n_raw": 0,
+      "n_app": 0
+    },
+    "football_injury": {
+      "path": null,
+      "exists": false,
+      "raw_001": [],
+      "app_keep": [],
+      "n_raw": 0,
+      "n_app": 0
+    },
+    "forensic_hand": {
+      "path": "data\\uploads\\3f629ca8-dd98-427d-a708-f976e2042555.jpeg",
+      "exists": true,
+      "raw_001": [
+        {
+          "class": "bruise",
+          "confidence": 0.7574395537376404,
+          "bounding_box": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.34727203845977783,
+          "bounding_box": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.10708634555339813,
+          "bounding_box": [
+            960.29,
+            279.72,
+            1281.02,
+            700.0
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.09999527782201767,
+          "bounding_box": [
+            771.19,
+            0.0,
+            1283.0,
+            372.34
+          ]
+        },
+        {
+          "class": "cut",
+          "confidence": 0.0818450078368187,
+          "bounding_box": [
+            557.9,
+            250.78,
+            738.89,
+            456.48
+          ]
+        },
+        {
+          "class": "cut",
+          "confidence": 0.03419547900557518,
+          "bounding_box": [
+            550.26,
+            199.67,
+            742.79,
+            476.02
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.02560405619442463,
+          "bounding_box": [
+            1024.21,
+            0.25,
+            1283.0,
+            340.49
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.02015518583357334,
+          "bounding_box": [
+            806.28,
+            266.58,
+            1283.0,
+            700.0
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.015410611405968666,
+          "bounding_box": [
+            1043.81,
+            298.22,
+            1281.59,
+            695.31
+          ]
+        }
+      ],
+      "app_keep": [
+        {
+          "class": "bruise",
+          "confidence": 0.7574395537376404,
+          "bounding_box": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.34727203845977783,
+          "bounding_box": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ]
+        }
+      ],
+      "n_raw": 9,
+      "n_app": 2,
+      "heuristic_gt": [
+        550.0,
+        200.0,
+        750.0,
+        480.0
+      ],
+      "best_iou_vs_gt": 0.9479,
+      "best_det": {
+        "class": "cut",
+        "confidence": 0.03419547900557518,
+        "bounding_box": [
+          550.26,
+          199.67,
+          742.79,
+          476.02
+        ]
+      },
+      "cut_at_001": [
+        {
+          "class": "cut",
+          "confidence": 0.0818450078368187,
+          "bounding_box": [
+            557.9,
+            250.78,
+            738.89,
+            456.48
+          ]
+        },
+        {
+          "class": "cut",
+          "confidence": 0.03419547900557518,
+          "bounding_box": [
+            550.26,
+            199.67,
+            742.79,
+            476.02
+          ]
+        }
+      ],
+      "covers_injury_heuristic": true
+    }
+  },
+  "credentials": {
+    "ROBOFLOW_API_KEY_in_process_env": false,
+    "ROBOFLOW_API_KEY_in_backend_dotenv": false,
+    "KAGGLE_JSON_present": false
+  }
+}

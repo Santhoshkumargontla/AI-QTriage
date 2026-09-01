@@ -1,0 +1,12 @@
+{
+  "audit_timestamp": "2026-08-27T12:56:40.451981+00:00",
+  "class_counts": {
+    "cut": 50,
+    "bruise": 50,
+    "abrasion": 50,
+    "laceration": 25,
+    "wound": 25
+  },
+  "imbalance_mitigation": "Targeted augmentation and balanced mini-batch sampling",
+  "status": "PASS"
+}

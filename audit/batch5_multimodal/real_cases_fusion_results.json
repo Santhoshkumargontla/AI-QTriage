@@ -1,0 +1,32 @@
+{
+  "audit_timestamp": "2026-08-27T13:36:49.385977+00:00",
+  "real_cases": [
+    {
+      "case": "Cut Image",
+      "yolo": "Cut (0.85)",
+      "unet": "0.12 ratio",
+      "effnet": "Cut (0.88)",
+      "quest": "Bleeding",
+      "sensor": "Not provided",
+      "agreement": "Strong Agreement (95%)"
+    },
+    {
+      "case": "Bruise Image",
+      "yolo": "Bruise (0.82)",
+      "unet": "0.18 ratio",
+      "effnet": "Bruise (0.85)",
+      "quest": "Impact pain",
+      "sensor": "Peak 4.2g",
+      "agreement": "Strong Agreement (100%)"
+    },
+    {
+      "case": "Clean Skin Image",
+      "yolo": "None",
+      "unet": "0.00 ratio",
+      "effnet": "Other (0.90)",
+      "quest": "No pain",
+      "sensor": "Not provided",
+      "agreement": "Strong Agreement (100%)"
+    }
+  ]
+}

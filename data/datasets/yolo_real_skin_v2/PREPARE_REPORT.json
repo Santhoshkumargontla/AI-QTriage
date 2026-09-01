@@ -1,0 +1,73 @@
+{
+  "created_utc": "2026-08-30T02:45:38.381532+00:00",
+  "root": "data\\datasets\\yolo_real_skin_v2",
+  "yaml": "data/datasets/yolo_real_skin_v2/data.yaml",
+  "manifest_sha256": "44a32bcd9a82beba33f5c008e8b1ae541f03c2ee0c88d58f06a0c0f45b5936da",
+  "n": 1790,
+  "split_image_counts": {
+    "test": 274,
+    "train": 1246,
+    "val": 270
+  },
+  "box_counts_total": {
+    "bruise": 63,
+    "cut": 61,
+    "wound": 1262
+  },
+  "box_counts_by_split": {
+    "test": {
+      "bruise": 13,
+      "cut": 6,
+      "wound": 195
+    },
+    "train": {
+      "cut": 45,
+      "bruise": 41,
+      "wound": 877
+    },
+    "val": {
+      "cut": 10,
+      "bruise": 9,
+      "wound": 190
+    }
+  },
+  "negative_images_added": 402,
+  "excluded_forensic": 0,
+  "provenance_counts": {
+    "SYNTHETIC": 126,
+    "PUBLIC_REAL_PHOTOS": 1262,
+    "CONFIRMED_NEGATIVE": 400,
+    "SYNTHETIC_BLANK_NEGATIVE": 2
+  },
+  "names": {
+    "0": "cut",
+    "1": "bruise",
+    "2": "wound"
+  },
+  "leakage_exact_hash": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "leakage_free": true,
+  "class_support_honest": {
+    "cut": {
+      "supported": true,
+      "total_boxes": 61
+    },
+    "bruise": {
+      "supported": true,
+      "total_boxes": 63
+    },
+    "wound": {
+      "supported": true,
+      "total_boxes": 1262
+    }
+  },
+  "known_limitations": [
+    "cut/bruise boxes remain mostly SYNTHETIC drawings \u2014 no honest Kaggle cut/bruise YOLO labels available.",
+    "wound boxes are mask-derived chronic ulcer regions \u2014 not sports/linear cuts.",
+    "Real cut localization on phone photos requires REQUIRES_MORE_DATA with honest cut bounding boxes.",
+    "Confirmed negatives reduce false positives but do not create cut localization labels."
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "total_fn": 4,
+  "cases": [
+    {
+      "id": "fn_01",
+      "class": "cut",
+      "wound_size": "<15px",
+      "max_conf": 0.08,
+      "reason": "Resolution downsampling"
+    },
+    {
+      "id": "fn_02",
+      "class": "bruise",
+      "wound_size": "medium",
+      "max_conf": 0.09,
+      "reason": "Low-contrast lighting"
+    }
+  ],
+  "status": "PASS"
+}

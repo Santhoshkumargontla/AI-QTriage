@@ -1,0 +1,131 @@
+{
+  "model_name": "Experimental 4-Qubit VQC",
+  "version": "v1.4.0",
+  "status": "EXPERIMENTAL_ONLY",
+  "data_provenance_class": "SYNTHETIC",
+  "used_in_main_decision": false,
+  "recommendation": "DISABLE_FROM_MAIN_DECISION",
+  "disclaimer": "PennyLane default.qubit is a classical CPU simulator. No quantum advantage. EXPERIMENTAL_ONLY. Excluded from SOS, first-aid, and main case decisions.",
+  "canonical_path": "ml/models/vqc/vqc_weights.npz",
+  "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+  "classes": ["LOW", "MODERATE", "HIGH"],
+  "dataset_provenance": "Same 200 synthetic fusion samples as XGBoost. 0 clinical pairs.",
+  "training_status": "EXPERIMENTAL_ONLY",
+  "known_limitations": "Classical simulator only. Held-out 16/30 vs XGBoost 25/30. Isolated from SOS, first-aid, and main decisions. Quantum advantage not claimed.",
+  "metrics": {
+    "train_samples": 140,
+    "val_samples": 30,
+    "test_samples": 30,
+    "epochs": 15,
+    "lr": 0.1,
+    "optimizer": "PennyLane AdamOptimizer",
+    "loss_start": 1.1119120284481623,
+    "loss_end": 0.8746161075293077,
+    "loss_decreased": true,
+    "loss_history": [
+      1.111912,
+      1.054581,
+      1.013338,
+      0.98525,
+      0.965653,
+      0.951015,
+      0.939036,
+      0.928689,
+      0.919162,
+      0.909691,
+      0.900643,
+      0.892832,
+      0.886206,
+      0.880387,
+      0.874616
+    ],
+    "train_seconds": 48.1,
+    "circuit": {
+      "embedding": "AngleEmbedding",
+      "rotation": "X",
+      "ansatz": "StronglyEntanglingLayers",
+      "num_qubits": 4,
+      "num_layers": 2,
+      "measurement": "PauliZ_expval_per_qubit",
+      "postprocess": "linear_4_to_3_softmax",
+      "device": "default.qubit",
+      "qnode": "VQCClassifier._vqc_circuit",
+      "train_forward": "VQCClassifier._forward",
+      "predict_forward": "VQCClassifier._forward",
+      "circuits_match": true
+    },
+    "backend": "PennyLane default.qubit (classical simulator)",
+    "metrics_source": "held_out_test_via_VQCClassifier.predict",
+    "data_provenance_class": "SYNTHETIC",
+    "genuinely_paired_clinical_samples": 0,
+    "trained_at": "2026-08-28T17:38:37.547751+00:00",
+    "vqc_correct_predictions": "16 / 30",
+    "vqc_accuracy": 0.533333,
+    "vqc_macro_f1": 0.423016,
+    "vqc_mcc": 0.095978,
+    "vqc_macro_precision": 0.466184,
+    "vqc_macro_recall": 0.43268,
+    "vqc_per_class_support": [
+      10,
+      17,
+      3
+    ],
+    "vqc_brier_score": 0.512306,
+    "vqc_ece": 0.136455,
+    "vqc_confusion_matrix": [
+      [
+        2,
+        8,
+        0
+      ],
+      [
+        2,
+        13,
+        2
+      ],
+      [
+        0,
+        2,
+        1
+      ]
+    ],
+    "vqc_inference_latency_ms_per_sample": 3.51,
+    "xgb_comparison": {
+      "model": "XGBoost",
+      "correct_predictions": "25 / 30",
+      "accuracy": 0.833333,
+      "macro_f1": 0.78502,
+      "mcc": 0.702692,
+      "macro_precision": 0.822222,
+      "macro_recall": 0.769281,
+      "per_class_support": [
+        10,
+        17,
+        3
+      ],
+      "brier_score": 0.304532,
+      "ece": 0.118284,
+      "confusion_matrix": [
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "vqc_outperforms_xgboost": false,
+    "recommendation": "DISABLE_FROM_MAIN_DECISION",
+    "isolation": "EXPERIMENTAL_ONLY",
+    "used_in_main_decision": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T13:59:19.706857+00:00",
+  "evidence_hierarchy_summary": {
+    "REAL_ARTIFACT_VERIFIED": 2367,
+    "REAL_EXECUTION_VERIFIED": 59,
+    "DERIVED_FROM_REAL_OUTPUT": 5,
+    "MOCK_OR_SIMULATED": 0,
+    "NOT_AVAILABLE": 1
+  },
+  "final_verdict": "SOFTWARE_VERIFIED_ONLY"
+}

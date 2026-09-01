@@ -1,0 +1,51 @@
+{
+  "audit_timestamp": "2026-08-27T08:42:32.516935+00:00",
+  "type_mappings": [
+    {
+      "backend_field": "case_id",
+      "frontend_type": "string",
+      "status": "MATCH"
+    },
+    {
+      "backend_field": "visible_injury.finding",
+      "frontend_type": "string",
+      "status": "MATCH"
+    },
+    {
+      "backend_field": "visible_injury.yolo_finding_detected",
+      "frontend_type": "boolean",
+      "status": "MATCH"
+    },
+    {
+      "backend_field": "visible_injury.confidence",
+      "frontend_type": "number | null",
+      "status": "MATCH"
+    },
+    {
+      "backend_field": "visible_injury.bounding_box",
+      "frontend_type": "number[] | null",
+      "status": "MATCH"
+    },
+    {
+      "backend_field": "visible_injury.affected_ratio",
+      "frontend_type": "number | null",
+      "status": "MATCH"
+    },
+    {
+      "backend_field": "xgboost_prediction.class",
+      "frontend_type": "string",
+      "status": "MATCH"
+    },
+    {
+      "backend_field": "quantum_prediction.class",
+      "frontend_type": "string",
+      "status": "MATCH"
+    },
+    {
+      "backend_field": "sos_status",
+      "frontend_type": "string",
+      "status": "MATCH"
+    }
+  ],
+  "verification_status": "PASS"
+}

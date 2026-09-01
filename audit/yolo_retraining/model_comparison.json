@@ -1,0 +1,38 @@
+{
+  "audit_timestamp": "2026-08-27T13:17:24.939494+00:00",
+  "comparison": {
+    "dataset_size": {
+      "old": 200,
+      "new": 2000
+    },
+    "test_set_size": {
+      "old": 30,
+      "new": 300
+    },
+    "precision": {
+      "old": 0.891,
+      "new": 0.9
+    },
+    "recall": {
+      "old": 0.854,
+      "new": 0.868
+    },
+    "mAP50": {
+      "old": 0.885,
+      "new": 0.895
+    },
+    "mAP50_95": {
+      "old": 0.642,
+      "new": 0.655
+    },
+    "sha256": {
+      "old": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "new": "080817b4531bbc0d57af7ff2c08d48f353aa42ace53c710662eaa28dce0fd837"
+    },
+    "file_size_bytes": {
+      "old": 5470810,
+      "new": 5470840
+    }
+  },
+  "status": "PASS"
+}

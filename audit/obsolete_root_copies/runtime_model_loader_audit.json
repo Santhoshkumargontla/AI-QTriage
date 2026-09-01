@@ -1,0 +1,56 @@
+[
+  {
+    "component": "YOLO11 Detection",
+    "loader_script": "ml/vision/yolo_wrapper.py",
+    "selected_artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+    "runtime_version": "v1.2.0",
+    "fallback_triggered": false,
+    "inference_status": "SUCCESS",
+    "output_schema_valid": true
+  },
+  {
+    "component": "EfficientNetV2 Classification",
+    "loader_script": "ml/vision/efficientnet_wrapper.py",
+    "selected_artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "runtime_version": "v1.2.0",
+    "fallback_triggered": false,
+    "inference_status": "SUCCESS",
+    "output_schema_valid": true
+  },
+  {
+    "component": "ResNet34-UNet Segmentation",
+    "loader_script": "ml/vision/unet_wrapper.py",
+    "selected_artifact_path": "ml/models/vision/unet_injury_best.pt",
+    "runtime_version": "v1.2.0",
+    "fallback_triggered": false,
+    "inference_status": "SUCCESS",
+    "output_schema_valid": true
+  },
+  {
+    "component": "Sensor Motion Event Classifier",
+    "loader_script": "ml/training/train_sensor_model.py",
+    "selected_artifact_path": "ml/models/sensor_motion_best.json",
+    "runtime_version": "v1.2.0",
+    "fallback_triggered": false,
+    "inference_status": "SUCCESS",
+    "output_schema_valid": true
+  },
+  {
+    "component": "XGBoost Multimodal",
+    "loader_script": "ml/classifiers/xgboost_classifier.py",
+    "selected_artifact_path": "ml/models/xgboost_multimodal_best.json",
+    "runtime_version": "v1.2.0",
+    "fallback_triggered": false,
+    "inference_status": "SUCCESS",
+    "output_schema_valid": true
+  },
+  {
+    "component": "Experimental 4-Qubit VQC",
+    "loader_script": "ml/classifiers/vqc_classifier.py",
+    "selected_artifact_path": "ml/models/vqc/vqc_weights.npz",
+    "runtime_version": "v1.2.0",
+    "fallback_triggered": false,
+    "inference_status": "SUCCESS",
+    "output_schema_valid": true
+  }
+]

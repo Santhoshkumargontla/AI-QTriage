@@ -1,0 +1,62 @@
+{
+  "audit_timestamp": "2026-08-27T08:42:32.515274+00:00",
+  "workflows": [
+    {
+      "workflow": "Vision Image Analysis",
+      "states_implemented": [
+        "IDLE",
+        "LOADING",
+        "SUCCESS",
+        "NO_RESULT",
+        "ERROR"
+      ],
+      "loading_indicator": "Loader2 spinner on button and progress stepper",
+      "no_result_representation": "YOLO11: No confident injury detection badge rendered",
+      "error_representation": "Red AlertOctagon banner with server detail message",
+      "verification_status": "PASS"
+    },
+    {
+      "workflow": "Sensor Data Assessment",
+      "states_implemented": [
+        "IDLE",
+        "LOADING",
+        "SUCCESS",
+        "NO_RESULT",
+        "ERROR"
+      ],
+      "loading_indicator": "Sensor capture modal spinner / demo load spinner",
+      "no_result_representation": "Sensor skipped message (Questionnaire + Image only)",
+      "error_representation": "Validation error alert banner on missing columns",
+      "verification_status": "PASS"
+    },
+    {
+      "workflow": "Multimodal Risk Triage",
+      "states_implemented": [
+        "IDLE",
+        "LOADING",
+        "SUCCESS",
+        "ERROR"
+      ],
+      "loading_indicator": "Full-page research assessment retrieval spinner",
+      "no_result_representation": "Reduced modality model fallback warning block",
+      "error_representation": "Red error card with return to dashboard button",
+      "verification_status": "PASS"
+    },
+    {
+      "workflow": "SOS Alert Workflow",
+      "states_implemented": [
+        "IDLE",
+        "COUNTDOWN",
+        "CANCELLED",
+        "SENT",
+        "DELIVERED",
+        "FAILED"
+      ],
+      "loading_indicator": "Animated pulsing red countdown banner",
+      "no_result_representation": "Local demo mode status block",
+      "error_representation": "Twilio failure details block with error code and SID",
+      "verification_status": "PASS"
+    }
+  ],
+  "verification_status": "PASS"
+}

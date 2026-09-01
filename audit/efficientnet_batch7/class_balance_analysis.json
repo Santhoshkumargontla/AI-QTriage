@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "distribution": {
+    "Cut": 50,
+    "Bruise": 50,
+    "Swelling": 50,
+    "Other": 50
+  },
+  "imbalance_ratio": "1:1:1:1 (Balanced)",
+  "status": "PASS"
+}

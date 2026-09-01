@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T14:02:31.236675+00:00",
+  "frontend_runtime_status": "NOT_AVAILABLE",
+  "browser_tool": "Puppeteer / Playwright (Headless browser automation runner is not active)",
+  "executed_tests": 0,
+  "passed_tests": 0,
+  "reason": "Headless browser automation environment is not installed or configured in this audit session.",
+  "evidence_classification": "NOT_AVAILABLE"
+}

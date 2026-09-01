@@ -1,0 +1,5 @@
+{
+  "created_utc": "2026-08-30T06:09:42.652142+00:00",
+  "status": "BLOCKED_NO_ROBOFLOW_DATA",
+  "reason": "No data/raw/roboflow/* exports found. Set ROBOFLOW_API_KEY and run acquire_real_public_datasets.py first."
+}

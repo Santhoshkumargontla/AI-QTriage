@@ -1,0 +1,5 @@
+{
+  "audit_timestamp": "2026-08-27T13:43:10.965138+00:00",
+  "sensor_missing_vector": "sensor_present=0.0, peak_g=1.0, delta_v=0.0, lux_drop=0.0 (Neutral missing data, no risk penalty)",
+  "status": "PASS"
+}

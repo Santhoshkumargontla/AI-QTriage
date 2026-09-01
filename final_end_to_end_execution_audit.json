@@ -1,0 +1,74 @@
+{
+  "execution_timestamp": "2026-08-27T07:30:51.953312+00:00",
+  "stages": [
+    {
+      "stage": "1. Backend Startup",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "2. Frontend Startup",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "3. Injury Image Upload",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "4. YOLO Detection",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "5. EfficientNet Classification",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "6. U-Net Segmentation",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "7. Grad-CAM Visualization",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "8. Questionnaire Processing",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "9. Sensor CSV Upload",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "10. Demo Sensor Data",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "11. Simulated Sensor Data",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "12. Continue Without Sensor Data",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "13. Real-Time Sensor Capture Path",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "14. XGBoost Multimodal Inference",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "15. Experimental VQC Inference",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "16. SOS Safety Threshold Logic",
+      "result": "REAL_MODEL_EXECUTION"
+    },
+    {
+      "stage": "17. PDF/JSON Report Generation",
+      "result": "REAL_MODEL_EXECUTION"
+    }
+  ],
+  "workflow_verdict": "PASS"
+}

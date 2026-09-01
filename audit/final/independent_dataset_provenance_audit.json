@@ -1,0 +1,32 @@
+[
+  {
+    "dataset": "Roboflow Skin Injury BBox",
+    "samples": 123,
+    "type": "Real Images",
+    "license": "CC BY 4.0"
+  },
+  {
+    "dataset": "MedWound Classification",
+    "samples": 200,
+    "type": "Real Images (40 subjects)",
+    "license": "CC BY 4.0"
+  },
+  {
+    "dataset": "Kaggle Segmentation Masks",
+    "samples": 200,
+    "type": "Real Masks (40 subjects)",
+    "license": "CC BY 4.0"
+  },
+  {
+    "dataset": "SisFall & UCI HAR Telemetry",
+    "samples": 200,
+    "type": "Real Sensors (38 subjects)",
+    "license": "ODC-By"
+  },
+  {
+    "dataset": "Synthesized Multimodal Baseline",
+    "samples": 200,
+    "type": "Synthetic Records",
+    "paired_clinical_records": 0
+  }
+]

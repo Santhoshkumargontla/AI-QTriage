@@ -1,0 +1,22 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:57.642580+00:00",
+  "stage_latencies_ms": {
+    "yolo11_detection_avg": 83.76,
+    "efficientnetv2_classification_avg": 100.61,
+    "resnet34_unet_segmentation_avg": 94.15,
+    "gradcam_explainability_avg": 329.37
+  },
+  "total_vision_pipeline_latency_ms": {
+    "runs": [
+      699.77,
+      607.23,
+      539.62,
+      588.02,
+      604.78
+    ],
+    "min": 539.62,
+    "avg": 607.88,
+    "max": 699.77
+  },
+  "verification_status": "PASS"
+}

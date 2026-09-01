@@ -1,0 +1,281 @@
+{
+  "created_utc": "2026-08-30T00:00:00+00:00",
+  "catalog_version": "real_data_campaign_v1",
+  "datasets": [
+    {
+      "dataset_name": "Injury Detection v2 (BRYAN)",
+      "source": "Roboflow Universe",
+      "url": "https://universe.roboflow.com/bryans-workspace-rrftd/injury-detection-4vjih",
+      "license": "CC BY 4.0",
+      "task": "yolo_detection",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 847,
+      "classes": [
+        "Abrasion",
+        "Bruise",
+        "bruising",
+        "Burn",
+        "Cut",
+        "Injury-detection",
+        "scarring"
+      ],
+      "annotations": "YOLO bounding boxes / polygons converted to boxes",
+      "usable": true,
+      "reason": "Downloaded to data/raw/roboflow/injury_detection_v2 (v2, CC BY 4.0). Used in yolo_roboflow_v1."
+    },
+    {
+      "dataset_name": "wound2 (Dongdong)",
+      "source": "Roboflow Universe",
+      "url": "https://universe.roboflow.com/dongdong-d6lo7/wound2",
+      "license": "CC BY 4.0",
+      "task": "yolo_detection",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 476,
+      "classes": [
+        "abrasions",
+        "bruises"
+      ],
+      "annotations": "YOLO bounding boxes",
+      "usable": true,
+      "reason": "Downloaded to data/raw/roboflow/wound2. Used in yolo_roboflow_v1."
+    },
+    {
+      "dataset_name": "aid (TingTing)",
+      "source": "Roboflow Universe",
+      "url": "https://universe.roboflow.com/tingting-rph02/aid-lvngz",
+      "license": "CC BY 4.0",
+      "task": "yolo_detection",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 259,
+      "classes": [
+        "Abrasions",
+        "Bruises",
+        "Burn",
+        "Cut",
+        "Stab"
+      ],
+      "annotations": "YOLO polygons converted to boxes",
+      "usable": true,
+      "reason": "Downloaded to data/raw/roboflow/aid (v2). Burn included in yolo_expanded_v1; Stab mapped to laceration."
+    },
+    {
+      "dataset_name": "ibrahimfateen Wound Classification",
+      "source": "Kaggle",
+      "url": "https://www.kaggle.com/datasets/ibrahimfateen/wound-classification",
+      "license": "unknown on card",
+      "task": "classification",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 2940,
+      "classes": [
+        "Normal",
+        "Cut",
+        "Abrasions",
+        "Bruises",
+        "Burns",
+        "pressure/venous/diabetic/surgical wounds"
+      ],
+      "annotations": "folder labels",
+      "usable": true,
+      "reason": "Normal folder (~200) used as empty-label negatives for yolo_expanded_v1. No YOLO boxes on injury folders."
+    },
+    {
+      "dataset_name": "hf_wseg_dataset (WSNet)",
+      "source": "Hugging Face",
+      "url": "https://huggingface.co/datasets/subbareddyoota/wseg_dataset",
+      "license": "CC-BY-NC-4.0",
+      "task": "segmentation",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 2686,
+      "classes": [
+        "wound_binary"
+      ],
+      "annotations": "image-mask pairs",
+      "usable": true,
+      "reason": "Masks\u2192tight YOLO wound boxes (capped) for yolo_expanded_v1. Also used in unet_deduped_subject."
+    },
+    {
+      "dataset_name": "shubhambaid Skin Burn YOLO",
+      "source": "Kaggle",
+      "url": "https://www.kaggle.com/datasets/shubhambaid/skin-burn-dataset",
+      "license": "CC0",
+      "task": "yolo_detection",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 1227,
+      "classes": [
+        "burn"
+      ],
+      "annotations": "YOLO bounding boxes",
+      "usable": true,
+      "reason": "Primary burn boxes for yolo_expanded_v1 skin detector."
+    },
+    {
+      "dataset_name": "pkdarabi Bone Fracture YOLO",
+      "source": "Kaggle / Roboflow CC BY 4.0",
+      "url": "https://www.kaggle.com/datasets/pkdarabi/bone-fracture-detection-computer-vision-project",
+      "license": "CC BY 4.0",
+      "task": "yolo_detection",
+      "data_type": "X-ray",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 4000,
+      "classes": [
+        "elbow/fingers/forearm/humerus/shoulder/wrist fracture classes"
+      ],
+      "annotations": "YOLO boxes/polygons",
+      "usable": true,
+      "reason": "X-ray only. Trains SEPARATE yolo_fracture_xray candidate \u2014 never mixed into phone skin YOLO."
+    },
+    {
+      "dataset_name": "YOLO expanded skin v1 taxonomy",
+      "source": "merged public photos",
+      "url": "",
+      "license": "mixed CC BY / CC0 / CC-BY-NC (see sources)",
+      "task": "yolo_detection",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 2813,
+      "classes": [
+        "cut",
+        "bruise",
+        "abrasion",
+        "burn",
+        "wound",
+        "laceration"
+      ],
+      "annotations": "YOLO boxes + empty-label Normal/OOD negatives",
+      "usable": true,
+      "reason": "Built by prepare_yolo_expanded_v1.py (2813 images). Normal/OOD empty labels. Fracture excluded."
+    },
+    {
+      "dataset_name": "Yasin Pratomo Wound Dataset",
+      "source": "Kaggle",
+      "url": "https://www.kaggle.com/datasets/yasinpratomo/wound-dataset",
+      "license": "unknown on card",
+      "task": "classification",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 431,
+      "classes": [
+        "abrasions",
+        "bruises",
+        "burns",
+        "cut",
+        "laceration",
+        "stab_wound",
+        "ingrown_nails"
+      ],
+      "annotations": "folder labels",
+      "usable": true,
+      "reason": "Present at data/raw/kaggle/yasinpratomo_wound_dataset. Classification only \u2014 no YOLO boxes invented for laceration."
+    },
+    {
+      "dataset_name": "Medetec foot ulcer 224",
+      "source": "GitHub UWM wound-segmentation",
+      "url": "https://github.com/uwm-bigdata/wound-segmentation",
+      "license": "Medetec terms",
+      "task": "segmentation",
+      "data_type": "photographs",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 200,
+      "classes": [
+        "foot_ulcer"
+      ],
+      "annotations": "binary masks",
+      "usable": true,
+      "reason": "Present at data/datasets/external/wound-segmentation."
+    },
+    {
+      "dataset_name": "UCI HAR Smartphone",
+      "source": "UCI ML Repository",
+      "url": "https://archive.ics.uci.edu/dataset/240/human+activity+recognition+using+smartphones",
+      "license": "CC BY 4.0",
+      "task": "sensor_classification",
+      "data_type": "accelerometer/gyroscope time series",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 10299,
+      "classes": [
+        "WALKING",
+        "WALKING_UPSTAIRS",
+        "WALKING_DOWNSTAIRS",
+        "SITTING",
+        "STANDING",
+        "LAYING"
+      ],
+      "annotations": "activity labels",
+      "usable": true,
+      "reason": "Normal activity baseline for sensor_real_manifest (2000 subsampled windows)."
+    },
+    {
+      "dataset_name": "SisFall",
+      "source": "Hugging Face mirror (Algo-rythmic/Sisfall_Dataset)",
+      "url": "https://huggingface.co/datasets/Algo-rythmic/Sisfall_Dataset",
+      "license": "CC BY 4.0",
+      "task": "sensor_classification",
+      "data_type": "accelerometer/gyroscope time series",
+      "real_world": true,
+      "download_verified": true,
+      "num_samples": 4505,
+      "classes": [
+        "fall (F*)",
+        "impact (D18/D19)",
+        "normal_activity (other D*)"
+      ],
+      "annotations": "activity trial codes",
+      "usable": true,
+      "reason": "Downloaded to data/raw/sisfall. Primary real fall/impact source for Sensor Motion v2.0.0-real."
+    },
+    {
+      "dataset_name": "XGBoost multimodal fusion training",
+      "source": "local synthetic generator",
+      "url": "",
+      "license": "research synthetic",
+      "task": "multimodal_fusion",
+      "data_type": "synthetic paired features",
+      "real_world": false,
+      "download_verified": true,
+      "num_samples": 0,
+      "classes": [
+        "Cut",
+        "Bruise",
+        "Swelling",
+        "Other"
+      ],
+      "annotations": "synthetic 23-d vectors",
+      "usable": true,
+      "reason": "SYNTHETIC_RESEARCH_BASELINE \u2014 no public paired clinical multimodal dataset found."
+    },
+    {
+      "dataset_name": "VQC experimental weights",
+      "source": "local synthetic",
+      "url": "",
+      "license": "research synthetic",
+      "task": "quantum_classifier",
+      "data_type": "synthetic",
+      "real_world": false,
+      "download_verified": true,
+      "num_samples": 0,
+      "classes": [
+        "same as XGB schema"
+      ],
+      "annotations": "synthetic",
+      "usable": true,
+      "reason": "EXPERIMENTAL_ONLY \u2014 not promoted for clinical use."
+    }
+  ]
+}

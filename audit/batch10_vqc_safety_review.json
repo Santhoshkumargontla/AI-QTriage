@@ -1,0 +1,10 @@
+{
+  "audit_timestamp": "2026-08-27T13:57:32.584745+00:00",
+  "vqc_multimodal_weight": 0.1,
+  "vqc_sos_weight": 0.0,
+  "can_trigger_sos": false,
+  "can_cancel_sos": false,
+  "can_override_deterministic_rules": false,
+  "safety_isolation_assertion": "PASS (VQC output is 100% isolated from emergency SOS triggers)",
+  "evidence_classification": "REAL_EXECUTION_VERIFIED"
+}

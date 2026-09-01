@@ -1,0 +1,5 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "flow": "Sensor Log -> Telemetry Adapter -> XGBoost Sensor Model -> Feature Fusion -> XGBoost Triage Model -> SOS Decision",
+  "status": "PASS"
+}

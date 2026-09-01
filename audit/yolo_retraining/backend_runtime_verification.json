@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:16:35.425790+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "active_model_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_best.pt",
+  "status": "PASS"
+}

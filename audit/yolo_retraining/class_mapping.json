@@ -1,0 +1,35 @@
+{
+  "audit_timestamp": "2026-08-27T13:16:35.425790+00:00",
+  "mappings": [
+    {
+      "source": "WSNet",
+      "original": "wound_region",
+      "mapped": "wound",
+      "reason": "Mask contour bounding box extraction"
+    },
+    {
+      "source": "Roboflow",
+      "original": "cut",
+      "mapped": "cut",
+      "reason": "Direct match"
+    },
+    {
+      "source": "Roboflow",
+      "original": "bruise",
+      "mapped": "bruise",
+      "reason": "Direct match"
+    },
+    {
+      "source": "Roboflow",
+      "original": "abrasion",
+      "mapped": "abrasion",
+      "reason": "Direct match"
+    },
+    {
+      "source": "SurgWound",
+      "original": "surgical_wound",
+      "mapped": "laceration",
+      "reason": "Surgical incisional laceration"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T12:54:20.247714+00:00",
+  "selected_model": "yolo11_retrained_active",
+  "verdict": "BEST_FOR_DEPLOYMENT",
+  "weighted_scores": {
+    "mAP50_95_20pct": 12.96,
+    "recall_20pct": 17.2,
+    "precision_15pct": 13.43,
+    "fp_performance_10pct": 10.0,
+    "robustness_15pct": 15.0,
+    "speed_10pct": 9.5,
+    "compatibility_10pct": 10.0,
+    "total_score": 88.09
+  },
+  "status": "PASS"
+}

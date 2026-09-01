@@ -1,0 +1,59 @@
+{
+  "message": "Multimodal analysis completed successfully",
+  "xgboost": {
+    "class": "MODERATE",
+    "probability": 0.786147952079773,
+    "model_version": "v1.2.0",
+    "model_id": "xgb_image_questionnaire_v1",
+    "n_features": 23,
+    "data_provenance": "SYNTHETIC",
+    "data_provenance_detail": "synthetic_multimodal_fusion",
+    "status": "TRAINED",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "label_source": "SYNTHETIC_RULE_LABELS",
+    "paired_clinical_samples": 0,
+    "clinical_claim_blocked": true,
+    "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+  },
+  "quantum": {
+    "class": "MODERATE",
+    "score": [
+      0.27382831370824173,
+      0.5946640799473965,
+      0.13150760634436187
+    ],
+    "model_version": "v1.4.0",
+    "model_id": "vqc_sim_v1",
+    "status": "EXPERIMENTAL_ONLY",
+    "experimental": true,
+    "experimental_only": true,
+    "used_in_main_decision": false,
+    "data_provenance": "SYNTHETIC",
+    "error": null,
+    "pca_features": [
+      -3.0,
+      0.7513077963276316,
+      -0.986223018944107,
+      2.878797156520253
+    ],
+    "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+  },
+  "consistency": {
+    "score": 85.0,
+    "status": "Highly Consistent",
+    "conflicts": [
+      "Segmentation Warning: No reliable segmentation mask was available for area calculation."
+    ],
+    "agreements": [],
+    "explanation": "Evidence consistency scoring measures alignment between independent data channels and model predictions. It does not validate clinical diagnostic accuracy."
+  },
+  "modalities_used": [
+    "image",
+    "questionnaire"
+  ],
+  "model_configuration_used": "xgb_image_questionnaire_v1",
+  "clinical_claim_blocked": true,
+  "fusion_label_source": "SYNTHETIC_RULE_LABELS",
+  "paired_clinical_samples": 0,
+  "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+}

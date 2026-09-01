@@ -1,0 +1,717 @@
+{
+  "identity": {
+    "case_id": "ac69884f-7a50-48e5-b7cc-a9bea9b20313",
+    "path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\ac69884f-7a50-48e5-b7cc-a9bea9b20313.jpeg",
+    "file_sha256": "87a76147983d0cdb3a63c9f3d3988b0e16ba8157085513f63463de26a559b446",
+    "pixel_sha256": "07012fd977c9c1fe8cd91d6dd0dd15e1f91539ad6b7d1155196373d0e918c89c",
+    "dimensions": [
+      700,
+      1283
+    ],
+    "nbytes": 70118,
+    "mean": 68.95133912333445,
+    "std": 59.76583379256478
+  },
+  "yolo_active": {
+    "sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "names": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "wrapper_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "sweeps": {
+      "0.01": [
+        {
+          "finding": "bruise",
+          "confidence": 0.7574,
+          "bbox": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.3473,
+          "bbox": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.1071,
+          "bbox": [
+            960.29,
+            279.72,
+            1281.02,
+            700.0
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.1,
+          "bbox": [
+            771.19,
+            0.0,
+            1283.0,
+            372.34
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "cut",
+          "confidence": 0.0818,
+          "bbox": [
+            557.9,
+            250.78,
+            738.89,
+            456.48
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "cut",
+          "confidence": 0.0342,
+          "bbox": [
+            550.26,
+            199.67,
+            742.79,
+            476.02
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.0256,
+          "bbox": [
+            1024.21,
+            0.25,
+            1283.0,
+            340.49
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.0202,
+          "bbox": [
+            806.28,
+            266.58,
+            1283.0,
+            700.0
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.0154,
+          "bbox": [
+            1043.81,
+            298.22,
+            1281.59,
+            695.31
+          ],
+          "class_id": null
+        }
+      ],
+      "0.05": [
+        {
+          "finding": "bruise",
+          "confidence": 0.7574,
+          "bbox": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.3473,
+          "bbox": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.1071,
+          "bbox": [
+            960.29,
+            279.72,
+            1281.02,
+            700.0
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.1,
+          "bbox": [
+            771.19,
+            0.0,
+            1283.0,
+            372.34
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "cut",
+          "confidence": 0.0818,
+          "bbox": [
+            557.9,
+            250.78,
+            738.89,
+            456.48
+          ],
+          "class_id": null
+        }
+      ],
+      "0.1": [
+        {
+          "finding": "bruise",
+          "confidence": 0.7574,
+          "bbox": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.3473,
+          "bbox": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.1071,
+          "bbox": [
+            960.29,
+            279.72,
+            1281.02,
+            700.0
+          ],
+          "class_id": null
+        }
+      ],
+      "0.25": [
+        {
+          "finding": "bruise",
+          "confidence": 0.7574,
+          "bbox": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ],
+          "class_id": null
+        },
+        {
+          "finding": "bruise",
+          "confidence": 0.3473,
+          "bbox": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ],
+          "class_id": null
+        }
+      ],
+      "0.4": [
+        {
+          "finding": "bruise",
+          "confidence": 0.7574,
+          "bbox": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ],
+          "class_id": null
+        }
+      ],
+      "0.5": [
+        {
+          "finding": "bruise",
+          "confidence": 0.7574,
+          "bbox": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ],
+          "class_id": null
+        }
+      ]
+    },
+    "ultralytics": {
+      "0.01": {
+        "names": {
+          "0": "cut",
+          "1": "bruise",
+          "2": "wound"
+        },
+        "dets": [
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.7574395537376404,
+            "xyxy": [
+              1.4143790006637573,
+              0.0,
+              405.6142272949219,
+              320.855712890625
+            ]
+          },
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.34727203845977783,
+            "xyxy": [
+              942.0635375976562,
+              0.0,
+              1280.5621337890625,
+              373.69451904296875
+            ]
+          },
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.10708634555339813,
+            "xyxy": [
+              960.2913208007812,
+              279.71563720703125,
+              1281.02490234375,
+              700.0
+            ]
+          },
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.09999527782201767,
+            "xyxy": [
+              771.1852416992188,
+              0.0,
+              1283.0,
+              372.3393249511719
+            ]
+          },
+          {
+            "cls_id": 0,
+            "name": "cut",
+            "conf": 0.0818450078368187,
+            "xyxy": [
+              557.8950805664062,
+              250.78233337402344,
+              738.8866577148438,
+              456.47998046875
+            ]
+          },
+          {
+            "cls_id": 0,
+            "name": "cut",
+            "conf": 0.03419547900557518,
+            "xyxy": [
+              550.2556762695312,
+              199.6704559326172,
+              742.7915649414062,
+              476.0219421386719
+            ]
+          },
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.02560405619442463,
+            "xyxy": [
+              1024.210205078125,
+              0.25113654136657715,
+              1283.0,
+              340.4939880371094
+            ]
+          },
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.02015518583357334,
+            "xyxy": [
+              806.281005859375,
+              266.58013916015625,
+              1283.0,
+              700.0
+            ]
+          },
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.015410611405968666,
+            "xyxy": [
+              1043.806640625,
+              298.2158203125,
+              1281.5889892578125,
+              695.3113403320312
+            ]
+          }
+        ]
+      },
+      "0.25": {
+        "names": {
+          "0": "cut",
+          "1": "bruise",
+          "2": "wound"
+        },
+        "dets": [
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.7574395537376404,
+            "xyxy": [
+              1.4143790006637573,
+              0.0,
+              405.6142272949219,
+              320.855712890625
+            ]
+          },
+          {
+            "cls_id": 1,
+            "name": "bruise",
+            "conf": 0.34727203845977783,
+            "xyxy": [
+              942.0635375976562,
+              0.0,
+              1280.5621337890625,
+              373.69451904296875
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "backup_compare": {
+    "sha": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "dets_0.25": [
+      {
+        "cls_id": 1,
+        "name": "bruise",
+        "conf": 0.4618493616580963,
+        "xyxy": [
+          0.0,
+          0.0,
+          399.587646484375,
+          353.277099609375
+        ]
+      }
+    ],
+    "dets_0.01": [
+      {
+        "cls_id": 1,
+        "name": "bruise",
+        "conf": 0.4618493616580963,
+        "xyxy": [
+          0.0,
+          0.0,
+          399.587646484375,
+          353.277099609375
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.05440434813499451,
+        "xyxy": [
+          0.0,
+          0.0,
+          397.92230224609375,
+          353.2190856933594
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.03659941628575325,
+        "xyxy": [
+          430.2917175292969,
+          0.0,
+          577.1555786132812,
+          76.63175201416016
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.014176830649375916,
+        "xyxy": [
+          738.863037109375,
+          88.15235137939453,
+          1283.0,
+          700.0
+        ]
+      },
+      {
+        "cls_id": 1,
+        "name": "bruise",
+        "conf": 0.014058589935302734,
+        "xyxy": [
+          775.600341796875,
+          233.99423217773438,
+          1283.0,
+          700.0
+        ]
+      },
+      {
+        "cls_id": 1,
+        "name": "bruise",
+        "conf": 0.013635578565299511,
+        "xyxy": [
+          0.0,
+          288.9830322265625,
+          860.6644287109375,
+          700.0
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.013602729886770248,
+        "xyxy": [
+          824.5967407226562,
+          218.22789001464844,
+          1283.0,
+          700.0
+        ]
+      },
+      {
+        "cls_id": 1,
+        "name": "bruise",
+        "conf": 0.013560803607106209,
+        "xyxy": [
+          0.0,
+          502.48260498046875,
+          425.76416015625,
+          700.0
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.011950384825468063,
+        "xyxy": [
+          799.7280883789062,
+          386.1785583496094,
+          1283.0,
+          700.0
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.011920400895178318,
+        "xyxy": [
+          0.0,
+          0.0,
+          392.80731201171875,
+          191.53411865234375
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.01146182045340538,
+        "xyxy": [
+          993.7605590820312,
+          600.5267944335938,
+          1280.7822265625,
+          700.0
+        ]
+      },
+      {
+        "cls_id": 1,
+        "name": "bruise",
+        "conf": 0.011350685730576515,
+        "xyxy": [
+          445.3499450683594,
+          0.0,
+          585.5021362304688,
+          102.61804962158203
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.011341255158185959,
+        "xyxy": [
+          0.0,
+          0.0,
+          595.9959106445312,
+          357.60736083984375
+        ]
+      },
+      {
+        "cls_id": 1,
+        "name": "bruise",
+        "conf": 0.010751024819910526,
+        "xyxy": [
+          758.017333984375,
+          0.0,
+          1283.0,
+          700.0
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.010704664513468742,
+        "xyxy": [
+          882.3558349609375,
+          0.0,
+          1079.748291015625,
+          62.58464813232422
+        ]
+      },
+      {
+        "cls_id": 1,
+        "name": "bruise",
+        "conf": 0.010399349965155125,
+        "xyxy": [
+          758.8731079101562,
+          0.0,
+          1282.6290283203125,
+          492.50018310546875
+        ]
+      },
+      {
+        "cls_id": 2,
+        "name": "wound",
+        "conf": 0.010080203413963318,
+        "xyxy": [
+          0.0,
+          607.9595336914062,
+          203.2041473388672,
+          700.0
+        ]
+      }
+    ]
+  },
+  "debug_overlay": "C:\\Users\\santh\\Capstone Project Code\\scratch\\ac69884f-7a50-48e5-b7cc-a9bea9b20313_yolo_debug.jpg",
+  "efficientnet": {
+    "raw": {
+      "winner": "Swelling",
+      "max": 1.0,
+      "probs": {
+        "Cut": 3.239929657894436e-09,
+        "Bruise": 3.343580620707165e-12,
+        "Swelling": 1.0
+      }
+    },
+    "gated": {
+      "status": "VALID",
+      "reason": "passed_quality_and_confidence_gates",
+      "winner": "Swelling",
+      "max_prob": 0.9999977350234985,
+      "is_confident": true,
+      "low_confidence": false,
+      "class_probs": {
+        "Cut": 2.18955733544135e-06,
+        "Bruise": 2.2360088891559826e-08,
+        "Swelling": 0.9999977350234985
+      }
+    },
+    "gradcam": {
+      "overlay": false,
+      "explanation_status": "WITHHELD",
+      "withheld_reason": "classifier_model_not_trustworthy",
+      "model_status": "NOT_TRUSTWORTHY"
+    }
+  },
+  "unet_full": {
+    "raw_pos": 0.041214,
+    "raw_mean": 0.0448,
+    "status": "VALID",
+    "withheld": false,
+    "reliable": true,
+    "px": 36892
+  },
+  "unet_roi": {
+    "bbox": [
+      1.41,
+      0.0,
+      405.61,
+      320.86
+    ],
+    "raw_pos": 0.0,
+    "reliable": false,
+    "withheld": true,
+    "status": "VALID",
+    "pos_px": 0
+  },
+  "mongo_case": {
+    "error": "cannot import name 'get_database' from 'backend.database' (unknown location)"
+  },
+  "class_support": {
+    "generated_from": "data/datasets/yolo_retrain_v2 label counts (production training lineage)",
+    "keep_threshold": 0.25,
+    "active_checkpoint_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "dataset_provenance": "SYNTHETIC drawings/graphics (126/126 in retrain_v2 manifest); not real clinical photos",
+    "classes": {
+      "cut": {
+        "train_boxes": 47,
+        "val_boxes": 6,
+        "test_boxes": 8,
+        "status": "RESEARCH_DEMO_LIMITED",
+        "note": "Present in train/val/test; synthetic provenance; not clinically validated."
+      },
+      "bruise": {
+        "train_boxes": 40,
+        "val_boxes": 13,
+        "test_boxes": 10,
+        "status": "RESEARCH_DEMO_LIMITED",
+        "note": "Present in train/val/test; synthetic provenance; not clinically validated."
+      },
+      "wound": {
+        "train_boxes": 0,
+        "val_boxes": 0,
+        "test_boxes": 0,
+        "status": "UNSUPPORTED",
+        "note": "Head index exists in model.names (nc=3) but production training set has zero honest wound boxes. Do not report wound accuracy or treat wound detections as validated."
+      }
+    },
+    "negative_gate_images": {
+      "blank_skin": {
+        "path": "data/datasets/yolo_injury/blank_skin.jpg",
+        "role": "verified empty-label true negative (synthetic/blank)",
+        "sufficient_for_real_world_fp": false
+      },
+      "dummy_test": {
+        "path": "data/datasets/yolo_injury/dummy_test.jpg",
+        "role": "verified empty-label true negative (tiny synthetic)",
+        "sufficient_for_real_world_fp": false
+      }
+    },
+    "promotion_status": "PROMOTION_VALIDATED_WITH_LIMITATIONS"
+  }
+}

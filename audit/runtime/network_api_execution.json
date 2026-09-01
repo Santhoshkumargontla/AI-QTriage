@@ -1,0 +1,87 @@
+{
+  "audit_timestamp": "2026-08-27T08:53:41.807414+00:00",
+  "base_url": "http://localhost:8000",
+  "network_audit_results": [
+    {
+      "endpoint": "/api/health",
+      "method": "GET",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/cases",
+      "method": "POST",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{id}",
+      "method": "GET",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{id}/image",
+      "method": "POST",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{id}/questionnaire",
+      "method": "POST",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{id}/sensor/demo",
+      "method": "POST",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/demo",
+      "method": "POST",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/models",
+      "method": "GET",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/evaluation/comparison",
+      "method": "GET",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{id}/sos/demo/trigger",
+      "method": "POST",
+      "status": 200,
+      "cors": "OK",
+      "preflight": "OK",
+      "result": "PASS"
+    }
+  ],
+  "verification_status": "PASS"
+}

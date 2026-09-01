@@ -1,0 +1,20 @@
+{
+  "audit_timestamp": "2026-08-27T13:06:03.578076+00:00",
+  "target_classes": [
+    "cut",
+    "bruise",
+    "abrasion",
+    "laceration",
+    "wound"
+  ],
+  "class_mapping": {
+    "0": "cut",
+    "1": "bruise",
+    "2": "abrasion",
+    "3": "laceration",
+    "4": "wound"
+  },
+  "total_bounding_boxes": 612,
+  "invalid_boxes_removed": 0,
+  "status": "PASS"
+}

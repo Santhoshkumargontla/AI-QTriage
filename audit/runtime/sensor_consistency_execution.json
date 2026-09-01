@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T08:47:08.815397+00:00",
+  "input_features": {
+    "peak_g_force": 4.85,
+    "pre_impact_delta_v": 12.4,
+    "post_impact_stabilization_seconds": 0.85,
+    "optical_lux_drop": true
+  },
+  "prediction_parity": {
+    "direct_feature_extraction": "MATCH",
+    "backend_sensor_summary": "MATCH",
+    "api_response_schema": "MATCH",
+    "frontend_display_rendering": "MATCH"
+  },
+  "verification_status": "PASS"
+}

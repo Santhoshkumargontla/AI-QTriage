@@ -1,0 +1,123 @@
+{
+  "model_name": "EfficientNetV2 Classification",
+  "version": "v1.3.0",
+  "status": "NOT_TRUSTWORTHY",
+  "device": "cpu",
+  "classes": [
+    "cut",
+    "bruise",
+    "swelling"
+  ],
+  "metrics": {
+    "dataset_name": "public_wound_dataset",
+    "dataset_type": "public_labeled_images",
+    "classes": [
+      "cut",
+      "bruise",
+      "swelling"
+    ],
+    "train_samples": 140,
+    "val_samples": 30,
+    "test_samples": 30,
+    "epochs": 8,
+    "optimizer": "Adam",
+    "loss": "CrossEntropyLoss_class_weighted",
+    "backbone": "tf_efficientnetv2_s.in21k_ft_in1k pretrained, classifier-head only",
+    "device": "cpu",
+    "val_best_accuracy": 1.0,
+    "test": {
+      "n": 30,
+      "accuracy": 1.0,
+      "macro_precision": 1.0,
+      "macro_recall": 1.0,
+      "macro_f1": 1.0,
+      "confusion_matrix": [
+        [
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          20
+        ]
+      ]
+    },
+    "uniform_image_probes": {
+      "gray": {
+        "cut": 0.0376,
+        "bruise": 0.0,
+        "swelling": 0.9624,
+        "max": 0.9624,
+        "argmax": "swelling"
+      },
+      "black": {
+        "cut": 0.0,
+        "bruise": 0.0,
+        "swelling": 1.0,
+        "max": 1.0,
+        "argmax": "swelling"
+      },
+      "white": {
+        "cut": 0.0,
+        "bruise": 0.0,
+        "swelling": 1.0,
+        "max": 1.0,
+        "argmax": "swelling"
+      }
+    },
+    "blank_image_collapsed": true,
+    "training_history": [
+      {
+        "epoch": 1,
+        "train_loss": 0.72217,
+        "val_accuracy": 0.9
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.294603,
+        "val_accuracy": 1.0
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.611706,
+        "val_accuracy": 1.0
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.166797,
+        "val_accuracy": 1.0
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.026934,
+        "val_accuracy": 1.0
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.054903,
+        "val_accuracy": 1.0
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.078833,
+        "val_accuracy": 1.0
+      },
+      {
+        "epoch": 8,
+        "train_loss": 0.005725,
+        "val_accuracy": 1.0
+      }
+    ],
+    "metrics_source": "computed_from_held_out_predictions",
+    "trained_at": "2026-08-28T13:24:36.755402+00:00"
+  },
+  "weights_path": "ml\\models\\vision\\efficientnetv2_injury_best.pt",
+  "training_was_real": true
+}

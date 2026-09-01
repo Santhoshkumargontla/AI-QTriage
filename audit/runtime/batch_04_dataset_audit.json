@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T09:13:02.303539+00:00",
+  "dataset_directory": "c:\\Users\\santh\\Capstone Project Code\\data\\datasets\\vision_classification",
+  "train_images": 850,
+  "val_images": 150,
+  "test_images": 100,
+  "classes": [
+    "Cut",
+    "Bruise",
+    "Swelling",
+    "Other"
+  ],
+  "quality_assessment": "ADEQUATE for multiclass injury classification",
+  "verification_status": "PASS"
+}

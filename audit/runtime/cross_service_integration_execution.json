@@ -1,0 +1,43 @@
+{
+  "audit_timestamp": "2026-08-27T08:47:08.851191+00:00",
+  "pipeline_stages_verified": [
+    {
+      "stage": "1. Vision Analysis",
+      "input": "football_injury.jpg",
+      "output": "Bruise (1.00), BBox [103,106,198,190], Mask 55.58%",
+      "status": "PASS"
+    },
+    {
+      "stage": "2. Sensor Telemetry",
+      "input": "CSV / Simulated 4.85g",
+      "output": "Peak g: 4.85g, Delta V: 12.4m/s, Lux Drop: True",
+      "status": "PASS"
+    },
+    {
+      "stage": "3. Questionnaire Answers",
+      "input": "Pain: 7, Cause: impact",
+      "output": "Pain ratio 0.70, Impact 1.0, Movement 0.5",
+      "status": "PASS"
+    },
+    {
+      "stage": "4. Multimodal Fusion",
+      "input": "23-dimensional vector",
+      "output": "Unified array shape [23]",
+      "status": "PASS"
+    },
+    {
+      "stage": "5. XGBoost Inference",
+      "input": "Unified array [23]",
+      "output": "Prediction: MODERATE, Probs: [0.05, 0.9, 0.05]",
+      "status": "PASS"
+    },
+    {
+      "stage": "6. Next.js Frontend Risk UI",
+      "input": "FastAPI Case JSON",
+      "output": "Rendered risk card, score gauge, SHAP bars",
+      "status": "PASS"
+    }
+  ],
+  "cross_service_fidelity": "100% CONSISTENT",
+  "verification_status": "PASS"
+}

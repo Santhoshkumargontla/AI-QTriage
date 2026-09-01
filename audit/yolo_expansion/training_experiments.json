@@ -1,0 +1,23 @@
+{
+  "audit_timestamp": "2026-08-27T13:06:03.578076+00:00",
+  "experiments": [
+    {
+      "exp": "Exp 1 (Baseline 200 images)",
+      "val_mAP50": 0.885,
+      "val_mAP50_95": 0.642,
+      "status": "BASELINE"
+    },
+    {
+      "exp": "Exp 2 (Expanded 500 images)",
+      "val_mAP50": 0.888,
+      "val_mAP50_95": 0.648,
+      "status": "BEST"
+    },
+    {
+      "exp": "Exp 3 (Expanded + Heavy Augmentation)",
+      "val_mAP50": 0.882,
+      "val_mAP50_95": 0.64,
+      "status": "OVER-AUGMENTED"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "vqc_status": "EXPERIMENTAL",
+  "sos_isolation": "sos_weight = 0.0 (VQC output mathematically isolated)",
+  "status": "EXPERIMENTAL"
+}

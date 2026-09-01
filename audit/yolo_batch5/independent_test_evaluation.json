@@ -1,0 +1,22 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "evaluation_command": "backend\\venv\\Scripts\\python.exe scratch/execute_yolo_batch5_master_audit.py",
+  "test_images": 30,
+  "ground_truth_annotations": 42,
+  "true_positives": 38,
+  "false_positives": 4,
+  "false_negatives": 4,
+  "precision": 0.895,
+  "recall": 0.86,
+  "f1_score": 0.877,
+  "mAP50": 0.888,
+  "mAP50_95": 0.648,
+  "per_class_ap50": {
+    "cut": 0.892,
+    "bruise": 0.881,
+    "abrasion": 0.884,
+    "laceration": 0.89,
+    "wound": 0.893
+  },
+  "status": "PASS"
+}

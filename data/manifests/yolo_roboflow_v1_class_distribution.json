@@ -1,0 +1,12 @@
+{
+  "box_counts": {
+    "abrasion": 616,
+    "cut": 129,
+    "bruise": 645
+  },
+  "image_counts": {
+    "train": 933,
+    "val": 198,
+    "test": 220
+  }
+}

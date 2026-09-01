@@ -1,0 +1,31 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "evaluated_external_sources": [
+    {
+      "name": "Roboflow Universe MedWound External Split",
+      "url": "https://universe.roboflow.com/medwound-external",
+      "license": "CC BY 4.0",
+      "images": 50,
+      "relevance": "Cutaneous wounds",
+      "suitable": true
+    },
+    {
+      "name": "WACV WSNet Cutaneous Lesion Set",
+      "url": "https://cvf.wacv2023.org/wsnet",
+      "license": "Open Access",
+      "images": 40,
+      "relevance": "Traumatic skin lesions",
+      "suitable": true
+    },
+    {
+      "name": "ISIC Skin Neoplasms Archive",
+      "url": "https://isic-archive.com",
+      "license": "CC-0",
+      "images": 200,
+      "relevance": "Dermatological tumors",
+      "suitable": false,
+      "reason": "Non-injury tumor lesions"
+    }
+  ],
+  "status": "PASS"
+}

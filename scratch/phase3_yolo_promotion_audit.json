@@ -1,0 +1,4959 @@
+{
+  "created_utc": "2026-08-29T05:55:45.140489+00:00",
+  "default_infer_conf": 0.25,
+  "artifacts": {
+    "canonical": {
+      "path": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt",
+      "rel": "ml/models/vision/yolo11_injury_best.pt",
+      "exists": true,
+      "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "size_bytes": 5470234,
+      "mtime_utc": "2026-08-29T02:24:40.330596+00:00",
+      "runtime": true
+    },
+    "pre_retrain_v2_backup": {
+      "path": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt.pre_retrain_v2_backup",
+      "rel": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_v2_backup",
+      "exists": true,
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size_bytes": 5468506,
+      "mtime_utc": "2026-08-28T13:36:35.181105+00:00",
+      "runtime": false
+    },
+    "retrain_run_best": {
+      "path": "C:/Users/santh/Capstone Project Code/ml/models/yolo_retrain_v2/run_v2/weights/best.pt",
+      "rel": "ml/models/yolo_retrain_v2/run_v2/weights/best.pt",
+      "exists": true,
+      "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "size_bytes": 5470234,
+      "mtime_utc": "2026-08-29T02:24:40.330596+00:00",
+      "runtime": false
+    }
+  },
+  "agreement": {
+    "disk_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "wrapper_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "registry_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "manifest_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "wrapper_canonical_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "registry_path": "ml/models/vision/yolo11_injury_best.pt",
+    "manifest_path": "ml/models/vision/yolo11_injury_best.pt",
+    "all_four_match_candidate": true,
+    "backup_is_previous": true,
+    "run_best_equals_canonical": true
+  },
+  "wrapper_info": {
+    "infer_conf": 0.25,
+    "classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "task": "detect",
+    "status": "INFERENCE_EXECUTES",
+    "model_path": "ml\\models\\vision\\yolo11_injury_best.pt"
+  },
+  "forensic_image": {
+    "path": "data/uploads/3e0dbd17-7475-487d-9f10-e7f9d6800238.jpg",
+    "width": 300,
+    "height": 167,
+    "channels": 3,
+    "size_bytes": 12041,
+    "sha256": "473899eabf7df5db0618d8ba99d7b7188a53f88f397004f64b274ed4ae41dfab",
+    "bgr_mean": [
+      114.9374251497006,
+      127.7298003992016,
+      133.0701596806387
+    ],
+    "bgr_std": [
+      82.63461947564687,
+      76.78211354371304,
+      73.02286525516858
+    ],
+    "unique_gray_values": 236,
+    "is_uniform": false,
+    "is_near_blank": false,
+    "in_yolo_retrain_v2_dataset": [],
+    "classification": "unlabeled_ood_photo_with_visible_injury_like_mark"
+  },
+  "wrapper_application_threshold": {
+    "threshold": 0.25,
+    "forensic": [],
+    "blank_skin": [],
+    "synthetic_gray": [],
+    "demo": []
+  },
+  "candidate_sweep": {
+    "forensic_upload": {
+      "path": "data/uploads/3e0dbd17-7475-487d-9f10-e7f9d6800238.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 35,
+          "max_confidence": 0.20360051095485687,
+          "classes": [
+            "bruise",
+            "cut"
+          ],
+          "width": 300,
+          "height": 167,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.20360051095485687,
+              "xyxy": [
+                75.61711883544922,
+                0.0,
+                137.5673065185547,
+                69.31893920898438
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.18692757189273834,
+              "xyxy": [
+                62.6885986328125,
+                0.0,
+                153.04457092285156,
+                72.02946472167969
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.1499946564435959,
+              "xyxy": [
+                12.653345108032227,
+                0.0,
+                138.7982177734375,
+                72.33961486816406
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.10021451860666275,
+              "xyxy": [
+                78.78909301757812,
+                13.446477890014648,
+                125.61980438232422,
+                69.18595123291016
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.08119884878396988,
+              "xyxy": [
+                3.377723455429077,
+                16.98224449157715,
+                52.354896545410156,
+                73.45474243164062
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.07940953969955444,
+              "xyxy": [
+                0.0,
+                72.14701843261719,
+                104.48025512695312,
+                161.9546356201172
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.06639747321605682,
+              "xyxy": [
+                135.2315673828125,
+                55.98483657836914,
+                198.6015625,
+                119.33731079101562
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.05720984935760498,
+              "xyxy": [
+                78.58682250976562,
+                0.0,
+                198.9207000732422,
+                72.23332977294922
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.047768089920282364,
+              "xyxy": [
+                134.5396270751953,
+                58.272953033447266,
+                199.86964416503906,
+                90.47531127929688
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.04677370563149452,
+              "xyxy": [
+                55.2811393737793,
+                75.1027603149414,
+                105.49082946777344,
+                125.67704772949219
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.030966563150286674,
+              "xyxy": [
+                113.77020263671875,
+                137.7815704345703,
+                197.54443359375,
+                166.91090393066406
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.02997516095638275,
+              "xyxy": [
+                19.620004653930664,
+                64.52388763427734,
+                104.65701293945312,
+                145.8684844970703
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.02996748313307762,
+              "xyxy": [
+                78.05762481689453,
+                112.85701751708984,
+                195.41151428222656,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.029084496200084686,
+              "xyxy": [
+                76.59523010253906,
+                129.26492309570312,
+                145.7567596435547,
+                166.1925506591797
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.025878001004457474,
+              "xyxy": [
+                96.2698974609375,
+                65.0467529296875,
+                222.51150512695312,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.02189004048705101,
+              "xyxy": [
+                15.031098365783691,
+                0.0,
+                189.0283660888672,
+                70.51866149902344
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.020324917510151863,
+              "xyxy": [
+                28.210763931274414,
+                72.25698852539062,
+                105.95701599121094,
+                135.81390380859375
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.019796397536993027,
+              "xyxy": [
+                0.346584290266037,
+                0.0,
+                121.9748306274414,
+                65.87666320800781
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.018442880362272263,
+              "xyxy": [
+                129.94044494628906,
+                48.20388412475586,
+                203.928955078125,
+                130.35081481933594
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.01654055155813694,
+              "xyxy": [
+                135.9010467529297,
+                43.471736907958984,
+                234.63522338867188,
+                129.6298370361328
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.016138572245836258,
+              "xyxy": [
+                131.58163452148438,
+                56.16114807128906,
+                197.8072052001953,
+                137.5842742919922
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.014739613980054855,
+              "xyxy": [
+                78.04791259765625,
+                0.0,
+                112.39478302001953,
+                71.05159759521484
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.013783439062535763,
+              "xyxy": [
+                0.0,
+                0.0,
+                90.43572998046875,
+                62.21977996826172
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.012025262229144573,
+              "xyxy": [
+                128.1600341796875,
+                42.92687225341797,
+                244.1510467529297,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.011766786687076092,
+              "xyxy": [
+                57.99361038208008,
+                128.00897216796875,
+                194.68801879882812,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.011764591559767723,
+              "xyxy": [
+                58.611812591552734,
+                0.0,
+                126.8463363647461,
+                77.13990783691406
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.011554255150258541,
+              "xyxy": [
+                83.00753784179688,
+                130.5172576904297,
+                166.31800842285156,
+                166.3533935546875
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.011455344036221504,
+              "xyxy": [
+                0.0,
+                79.15165710449219,
+                125.99661254882812,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.011350862681865692,
+              "xyxy": [
+                204.94920349121094,
+                85.89765167236328,
+                299.1778869628906,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.010968444868922234,
+              "xyxy": [
+                50.12785720825195,
+                75.41556549072266,
+                135.30990600585938,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.010704447515308857,
+              "xyxy": [
+                0.0,
+                0.0,
+                57.10691833496094,
+                67.42961120605469
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.010657125152647495,
+              "xyxy": [
+                77.7804946899414,
+                0.2159857600927353,
+                111.25652313232422,
+                31.497915267944336
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.010639985091984272,
+              "xyxy": [
+                119.86869812011719,
+                1.5812586545944214,
+                276.7973327636719,
+                117.73412322998047
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.010247823782265186,
+              "xyxy": [
+                225.9224395751953,
+                78.41312408447266,
+                300.0,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.010239068418741226,
+              "xyxy": [
+                82.24602508544922,
+                77.76548767089844,
+                201.55421447753906,
+                167.0
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 8,
+          "max_confidence": 0.20360051095485687,
+          "classes": [
+            "bruise",
+            "cut"
+          ],
+          "width": 300,
+          "height": 167,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.20360051095485687,
+              "xyxy": [
+                75.61711883544922,
+                0.0,
+                137.5673065185547,
+                69.31893920898438
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.18692757189273834,
+              "xyxy": [
+                62.6885986328125,
+                0.0,
+                153.04457092285156,
+                72.02946472167969
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.1499946564435959,
+              "xyxy": [
+                12.653345108032227,
+                0.0,
+                138.7982177734375,
+                72.33961486816406
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.10021451860666275,
+              "xyxy": [
+                78.78909301757812,
+                13.446477890014648,
+                125.61980438232422,
+                69.18595123291016
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.08119884878396988,
+              "xyxy": [
+                3.377723455429077,
+                16.98224449157715,
+                52.354896545410156,
+                73.45474243164062
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.07940953969955444,
+              "xyxy": [
+                0.0,
+                72.14701843261719,
+                104.48025512695312,
+                161.9546356201172
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.06639747321605682,
+              "xyxy": [
+                135.2315673828125,
+                55.98483657836914,
+                198.6015625,
+                119.33731079101562
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.05720984935760498,
+              "xyxy": [
+                78.58682250976562,
+                0.0,
+                198.9207000732422,
+                72.23332977294922
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 4,
+          "max_confidence": 0.20360051095485687,
+          "classes": [
+            "bruise"
+          ],
+          "width": 300,
+          "height": 167,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.20360051095485687,
+              "xyxy": [
+                75.61711883544922,
+                0.0,
+                137.5673065185547,
+                69.31893920898438
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.18692757189273834,
+              "xyxy": [
+                62.6885986328125,
+                0.0,
+                153.04457092285156,
+                72.02946472167969
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.1499946564435959,
+              "xyxy": [
+                12.653345108032227,
+                0.0,
+                138.7982177734375,
+                72.33961486816406
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.10021451860666275,
+              "xyxy": [
+                78.78909301757812,
+                13.446477890014648,
+                125.61980438232422,
+                69.18595123291016
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 167,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 167,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 167,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.20360051095485687,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "demo_football": {
+      "path": "data/sample/image/football_injury.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 23,
+          "max_confidence": 0.07722003012895584,
+          "classes": [
+            "bruise",
+            "cut"
+          ],
+          "width": 300,
+          "height": 300,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.07722003012895584,
+              "xyxy": [
+                10.119723320007324,
+                233.5945281982422,
+                128.06663513183594,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.05347835645079613,
+              "xyxy": [
+                155.5100860595703,
+                231.95037841796875,
+                290.21484375,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.04349010810256004,
+              "xyxy": [
+                10.348676681518555,
+                0.0,
+                137.4285125732422,
+                64.57315063476562
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.036239735782146454,
+              "xyxy": [
+                235.21572875976562,
+                273.25518798828125,
+                291.1523742675781,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.0271185040473938,
+              "xyxy": [
+                10.258726119995117,
+                252.03018188476562,
+                123.60617065429688,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.02589832991361618,
+              "xyxy": [
+                107.39315795898438,
+                235.13356018066406,
+                266.5946960449219,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.02505808137357235,
+              "xyxy": [
+                40.60053253173828,
+                234.98672485351562,
+                191.54345703125,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.024453312158584595,
+              "xyxy": [
+                76.44100952148438,
+                235.32095336914062,
+                224.65377807617188,
+                300.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.023914823308587074,
+              "xyxy": [
+                202.08743286132812,
+                1.9454954862594604,
+                290.4761047363281,
+                88.11076354980469
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.021216223016381264,
+              "xyxy": [
+                155.02781677246094,
+                0.0,
+                289.5931091308594,
+                88.47039031982422
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.019845107570290565,
+              "xyxy": [
+                194.83261108398438,
+                0.0,
+                290.71246337890625,
+                70.67308044433594
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.01927201636135578,
+              "xyxy": [
+                10.526411056518555,
+                11.639334678649902,
+                72.15911865234375,
+                43.05873489379883
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.01915295422077179,
+              "xyxy": [
+                10.688251495361328,
+                0.0,
+                134.98744201660156,
+                52.936256408691406
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.018848039209842682,
+              "xyxy": [
+                10.661651611328125,
+                257.476318359375,
+                84.5147705078125,
+                300.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.018836989998817444,
+              "xyxy": [
+                223.29104614257812,
+                7.0136542320251465,
+                289.4461975097656,
+                97.12190246582031
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.017305251210927963,
+              "xyxy": [
+                184.69003295898438,
+                0.0,
+                290.5093078613281,
+                44.65913009643555
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.015225883573293686,
+              "xyxy": [
+                10.547883033752441,
+                0.0,
+                67.2166976928711,
+                44.99272155761719
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.01502502616494894,
+              "xyxy": [
+                11.10986614227295,
+                0.0,
+                154.9745330810547,
+                74.14269256591797
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.013155733235180378,
+              "xyxy": [
+                191.64544677734375,
+                201.65126037597656,
+                289.2576599121094,
+                300.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.012829345650970936,
+              "xyxy": [
+                180.46530151367188,
+                214.17201232910156,
+                289.98272705078125,
+                300.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.012104324996471405,
+              "xyxy": [
+                191.85360717773438,
+                236.02218627929688,
+                289.6650085449219,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.01200586836785078,
+              "xyxy": [
+                10.456158638000488,
+                275.7010192871094,
+                84.41063690185547,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.010231353342533112,
+              "xyxy": [
+                198.08767700195312,
+                251.99139404296875,
+                290.3514099121094,
+                300.0
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 2,
+          "max_confidence": 0.07722003012895584,
+          "classes": [
+            "cut"
+          ],
+          "width": 300,
+          "height": 300,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.07722003012895584,
+              "xyxy": [
+                10.119723320007324,
+                233.5945281982422,
+                128.06663513183594,
+                300.0
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.05347835645079613,
+              "xyxy": [
+                155.5100860595703,
+                231.95037841796875,
+                290.21484375,
+                300.0
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.07722003012895584,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "blank_skin": {
+      "path": "data/datasets/yolo_injury/blank_skin.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": null,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "dummy_test": {
+      "path": "data/datasets/yolo_injury/dummy_test.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 1,
+          "max_confidence": 0.010593828745186329,
+          "classes": [
+            "cut"
+          ],
+          "width": 64,
+          "height": 64,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.010593828745186329,
+              "xyxy": [
+                0.0,
+                0.8634277582168579,
+                28.696231842041016,
+                30.259357452392578
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.010593828745186329,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "val_neg_blank": {
+      "path": "data/datasets/yolo_retrain_v2/images/val/negative__blank_skin.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": null,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "test_neg_dummy": {
+      "path": "data/datasets/yolo_retrain_v2/images/test/negative__dummy_test.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 1,
+          "max_confidence": 0.010593828745186329,
+          "classes": [
+            "cut"
+          ],
+          "width": 64,
+          "height": 64,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.010593828745186329,
+              "xyxy": [
+                0.0,
+                0.8634277582168579,
+                28.696231842041016,
+                30.259357452392578
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.010593828745186329,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "val_0_negative__blank_skin.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/val/negative__blank_skin.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": null,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "val_1_raw_synthetic_wound__syn_wound_0150.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/val/raw_synthetic_wound__syn_wound_0150.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 3,
+          "max_confidence": 0.9938325881958008,
+          "classes": [
+            "bruise",
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9938325881958008,
+              "xyxy": [
+                192.00234985351562,
+                240.21893310546875,
+                391.6551208496094,
+                370.44671630859375
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.04933365434408188,
+              "xyxy": [
+                192.54498291015625,
+                177.818359375,
+                391.687744140625,
+                384.468505859375
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.047441452741622925,
+              "xyxy": [
+                260.16741943359375,
+                244.04681396484375,
+                391.69171142578125,
+                367.31927490234375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 1,
+          "max_confidence": 0.9938325881958008,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9938325881958008,
+              "xyxy": [
+                192.00234985351562,
+                240.21893310546875,
+                391.6551208496094,
+                370.44671630859375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 1,
+          "max_confidence": 0.9938325881958008,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9938325881958008,
+              "xyxy": [
+                192.00234985351562,
+                240.21893310546875,
+                391.6551208496094,
+                370.44671630859375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 1,
+          "max_confidence": 0.9938325881958008,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9938325881958008,
+              "xyxy": [
+                192.00234985351562,
+                240.21893310546875,
+                391.6551208496094,
+                370.44671630859375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 1,
+          "max_confidence": 0.9938325881958008,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9938325881958008,
+              "xyxy": [
+                192.00234985351562,
+                240.21893310546875,
+                391.6551208496094,
+                370.44671630859375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 1,
+          "max_confidence": 0.9938325881958008,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9938325881958008,
+              "xyxy": [
+                192.00234985351562,
+                240.21893310546875,
+                391.6551208496094,
+                370.44671630859375
+              ]
+            }
+          ]
+        }
+      ],
+      "max_at_0_01": 0.9938325881958008,
+      "n_at_0_25": 1,
+      "kept_at_application_0_25": [
+        {
+          "class": "bruise",
+          "confidence": 0.9938325881958008,
+          "xyxy": [
+            192.00234985351562,
+            240.21893310546875,
+            391.6551208496094,
+            370.44671630859375
+          ]
+        }
+      ]
+    },
+    "val_2_raw_synthetic_wound__syn_wound_0153.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/val/raw_synthetic_wound__syn_wound_0153.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 2,
+          "max_confidence": 0.9990648627281189,
+          "classes": [
+            "bruise",
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9990648627281189,
+              "xyxy": [
+                216.7484130859375,
+                126.28408813476562,
+                312.9208984375,
+                243.81146240234375
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.01486818864941597,
+              "xyxy": [
+                217.74667358398438,
+                124.996826171875,
+                315.0268859863281,
+                244.47555541992188
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 1,
+          "max_confidence": 0.9990648627281189,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9990648627281189,
+              "xyxy": [
+                216.7484130859375,
+                126.28408813476562,
+                312.9208984375,
+                243.81146240234375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 1,
+          "max_confidence": 0.9990648627281189,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9990648627281189,
+              "xyxy": [
+                216.7484130859375,
+                126.28408813476562,
+                312.9208984375,
+                243.81146240234375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 1,
+          "max_confidence": 0.9990648627281189,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9990648627281189,
+              "xyxy": [
+                216.7484130859375,
+                126.28408813476562,
+                312.9208984375,
+                243.81146240234375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 1,
+          "max_confidence": 0.9990648627281189,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9990648627281189,
+              "xyxy": [
+                216.7484130859375,
+                126.28408813476562,
+                312.9208984375,
+                243.81146240234375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 1,
+          "max_confidence": 0.9990648627281189,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9990648627281189,
+              "xyxy": [
+                216.7484130859375,
+                126.28408813476562,
+                312.9208984375,
+                243.81146240234375
+              ]
+            }
+          ]
+        }
+      ],
+      "max_at_0_01": 0.9990648627281189,
+      "n_at_0_25": 1,
+      "kept_at_application_0_25": [
+        {
+          "class": "bruise",
+          "confidence": 0.9990648627281189,
+          "xyxy": [
+            216.7484130859375,
+            126.28408813476562,
+            312.9208984375,
+            243.81146240234375
+          ]
+        }
+      ]
+    },
+    "test_0_negative__dummy_test.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/test/negative__dummy_test.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 1,
+          "max_confidence": 0.010593828745186329,
+          "classes": [
+            "cut"
+          ],
+          "width": 64,
+          "height": 64,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.010593828745186329,
+              "xyxy": [
+                0.0,
+                0.8634277582168579,
+                28.696231842041016,
+                30.259357452392578
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.010593828745186329,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "test_1_raw_synthetic_wound__syn_wound_0185.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/test/raw_synthetic_wound__syn_wound_0185.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 4,
+          "max_confidence": 0.9988032579421997,
+          "classes": [
+            "bruise",
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9988032579421997,
+              "xyxy": [
+                234.41107177734375,
+                202.76023864746094,
+                400.89398193359375,
+                399.5867919921875
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.021898219361901283,
+              "xyxy": [
+                233.86138916015625,
+                316.16064453125,
+                399.3345947265625,
+                398.49163818359375
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.02015044540166855,
+              "xyxy": [
+                236.2421417236328,
+                165.70558166503906,
+                396.74615478515625,
+                387.8375244140625
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.018499530851840973,
+              "xyxy": [
+                233.2568817138672,
+                272.81146240234375,
+                401.46502685546875,
+                400.36639404296875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 1,
+          "max_confidence": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9988032579421997,
+              "xyxy": [
+                234.41107177734375,
+                202.76023864746094,
+                400.89398193359375,
+                399.5867919921875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 1,
+          "max_confidence": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9988032579421997,
+              "xyxy": [
+                234.41107177734375,
+                202.76023864746094,
+                400.89398193359375,
+                399.5867919921875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 1,
+          "max_confidence": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9988032579421997,
+              "xyxy": [
+                234.41107177734375,
+                202.76023864746094,
+                400.89398193359375,
+                399.5867919921875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 1,
+          "max_confidence": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9988032579421997,
+              "xyxy": [
+                234.41107177734375,
+                202.76023864746094,
+                400.89398193359375,
+                399.5867919921875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 1,
+          "max_confidence": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9988032579421997,
+              "xyxy": [
+                234.41107177734375,
+                202.76023864746094,
+                400.89398193359375,
+                399.5867919921875
+              ]
+            }
+          ]
+        }
+      ],
+      "max_at_0_01": 0.9988032579421997,
+      "n_at_0_25": 1,
+      "kept_at_application_0_25": [
+        {
+          "class": "bruise",
+          "confidence": 0.9988032579421997,
+          "xyxy": [
+            234.41107177734375,
+            202.76023864746094,
+            400.89398193359375,
+            399.5867919921875
+          ]
+        }
+      ]
+    },
+    "test_2_raw_synthetic_wound__syn_wound_0186.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/test/raw_synthetic_wound__syn_wound_0186.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 7,
+          "max_confidence": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.5069368481636047,
+              "xyxy": [
+                229.10836791992188,
+                138.9566650390625,
+                391.8593444824219,
+                308.5743103027344
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.3283132314682007,
+              "xyxy": [
+                227.44784545898438,
+                166.5413818359375,
+                387.4749450683594,
+                282.82513427734375
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.03967580571770668,
+              "xyxy": [
+                243.60443115234375,
+                187.52398681640625,
+                391.418212890625,
+                264.0050048828125
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.026074042543768883,
+              "xyxy": [
+                228.5441131591797,
+                187.62481689453125,
+                362.18121337890625,
+                268.9624328613281
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.012313973158597946,
+              "xyxy": [
+                159.5592498779297,
+                86.00015258789062,
+                386.96990966796875,
+                308.8016357421875
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.010887703858315945,
+              "xyxy": [
+                85.81649780273438,
+                129.87295532226562,
+                379.808349609375,
+                306.04949951171875
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.010139941237866879,
+              "xyxy": [
+                1.48602294921875,
+                0.0,
+                280.7398681640625,
+                145.537353515625
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 2,
+          "max_confidence": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.5069368481636047,
+              "xyxy": [
+                229.10836791992188,
+                138.9566650390625,
+                391.8593444824219,
+                308.5743103027344
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.3283132314682007,
+              "xyxy": [
+                227.44784545898438,
+                166.5413818359375,
+                387.4749450683594,
+                282.82513427734375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 2,
+          "max_confidence": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.5069368481636047,
+              "xyxy": [
+                229.10836791992188,
+                138.9566650390625,
+                391.8593444824219,
+                308.5743103027344
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.3283132314682007,
+              "xyxy": [
+                227.44784545898438,
+                166.5413818359375,
+                387.4749450683594,
+                282.82513427734375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 2,
+          "max_confidence": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.5069368481636047,
+              "xyxy": [
+                229.10836791992188,
+                138.9566650390625,
+                391.8593444824219,
+                308.5743103027344
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.3283132314682007,
+              "xyxy": [
+                227.44784545898438,
+                166.5413818359375,
+                387.4749450683594,
+                282.82513427734375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 1,
+          "max_confidence": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.5069368481636047,
+              "xyxy": [
+                229.10836791992188,
+                138.9566650390625,
+                391.8593444824219,
+                308.5743103027344
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 1,
+          "max_confidence": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "cut",
+              "confidence": 0.5069368481636047,
+              "xyxy": [
+                229.10836791992188,
+                138.9566650390625,
+                391.8593444824219,
+                308.5743103027344
+              ]
+            }
+          ]
+        }
+      ],
+      "max_at_0_01": 0.5069368481636047,
+      "n_at_0_25": 2,
+      "kept_at_application_0_25": [
+        {
+          "class": "cut",
+          "confidence": 0.5069368481636047,
+          "xyxy": [
+            229.10836791992188,
+            138.9566650390625,
+            391.8593444824219,
+            308.5743103027344
+          ]
+        },
+        {
+          "class": "cut",
+          "confidence": 0.3283132314682007,
+          "xyxy": [
+            227.44784545898438,
+            166.5413818359375,
+            387.4749450683594,
+            282.82513427734375
+          ]
+        }
+      ]
+    },
+    "synthetic_uniform_gray": {
+      "path": "data/test_suite/phase3_uniform_gray.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 1,
+          "max_confidence": 0.01032616849988699,
+          "classes": [
+            "bruise"
+          ],
+          "width": 300,
+          "height": 300,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.01032616849988699,
+              "xyxy": [
+                265.0820007324219,
+                258.2264709472656,
+                300.0,
+                300.0
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.01032616849988699,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    }
+  },
+  "previous_sweep": {
+    "forensic_upload": {
+      "path": "data/uploads/3e0dbd17-7475-487d-9f10-e7f9d6800238.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 17,
+          "max_confidence": 0.04541875049471855,
+          "classes": [
+            "bruise",
+            "wound"
+          ],
+          "width": 300,
+          "height": 167,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.04541875049471855,
+              "xyxy": [
+                0.0,
+                9.020662307739258,
+                90.68235778808594,
+                148.408447265625
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.030414743348956108,
+              "xyxy": [
+                0.0,
+                0.0,
+                119.19194793701172,
+                166.50247192382812
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.025185823440551758,
+              "xyxy": [
+                0.0,
+                35.6519775390625,
+                67.46076965332031,
+                150.70114135742188
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.022242028266191483,
+              "xyxy": [
+                0.0,
+                0.0,
+                72.22731018066406,
+                121.89616394042969
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.016626106575131416,
+              "xyxy": [
+                170.68429565429688,
+                121.4208755493164,
+                298.02203369140625,
+                167.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.015580868348479271,
+              "xyxy": [
+                3.417391538619995,
+                116.0143051147461,
+                149.87652587890625,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.014310949482023716,
+              "xyxy": [
+                0.0,
+                0.0,
+                201.33258056640625,
+                166.4048614501953
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.012238790281116962,
+              "xyxy": [
+                0.0,
+                0.0,
+                113.2297592163086,
+                167.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.011913157999515533,
+              "xyxy": [
+                0.0,
+                101.2787857055664,
+                93.23064422607422,
+                167.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.01174311712384224,
+              "xyxy": [
+                20.481489181518555,
+                119.27973175048828,
+                192.531982421875,
+                167.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.011384227313101292,
+              "xyxy": [
+                0.0,
+                120.22821807861328,
+                73.08540344238281,
+                167.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.011233951896429062,
+              "xyxy": [
+                0.0,
+                47.12420654296875,
+                103.1425552368164,
+                167.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.011193947866559029,
+              "xyxy": [
+                139.19822692871094,
+                76.49273681640625,
+                300.0,
+                167.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010753865353763103,
+              "xyxy": [
+                0.14541862905025482,
+                8.376989364624023,
+                63.502559661865234,
+                117.04389953613281
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010467461310327053,
+              "xyxy": [
+                78.3165054321289,
+                0.0,
+                112.10847473144531,
+                47.058929443359375
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010446825996041298,
+              "xyxy": [
+                0.38979288935661316,
+                91.02815246582031,
+                70.07735443115234,
+                167.0
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.010114530101418495,
+              "xyxy": [
+                0.0,
+                119.09173583984375,
+                144.11962890625,
+                167.0
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 167,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 167,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 167,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 167,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 167,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.04541875049471855,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "demo_football": {
+      "path": "data/sample/image/football_injury.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 86,
+          "max_confidence": 0.29816821217536926,
+          "classes": [
+            "bruise",
+            "wound"
+          ],
+          "width": 300,
+          "height": 300,
+          "detections": [
+            {
+              "class": "wound",
+              "confidence": 0.29816821217536926,
+              "xyxy": [
+                0.0,
+                260.1416320800781,
+                81.839599609375,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2917913794517517,
+              "xyxy": [
+                2.216305732727051,
+                0.0,
+                98.47794342041016,
+                50.20976257324219
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2628355324268341,
+              "xyxy": [
+                72.3770523071289,
+                0.0,
+                206.9345245361328,
+                49.93438720703125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.24662455916404724,
+              "xyxy": [
+                0.07309197634458542,
+                233.765869140625,
+                87.34447479248047,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.21558289229869843,
+              "xyxy": [
+                7.447113513946533,
+                0.0,
+                124.87503051757812,
+                46.1922607421875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2087480127811432,
+              "xyxy": [
+                7.630290508270264,
+                0.0,
+                181.2068634033203,
+                48.32201385498047
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.20213815569877625,
+              "xyxy": [
+                55.104148864746094,
+                0.0,
+                188.6705780029297,
+                78.89583587646484
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.17683929204940796,
+              "xyxy": [
+                79.31201171875,
+                0.0,
+                209.83607482910156,
+                75.87954711914062
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.16991722583770752,
+              "xyxy": [
+                165.79046630859375,
+                174.80409240722656,
+                293.5321960449219,
+                299.580810546875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.1613311916589737,
+              "xyxy": [
+                101.42567443847656,
+                0.0,
+                227.8502655029297,
+                48.171913146972656
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.15625767409801483,
+              "xyxy": [
+                48.819576263427734,
+                0.0,
+                192.26565551757812,
+                44.32744216918945
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.13373121619224548,
+              "xyxy": [
+                10.415395736694336,
+                0.0,
+                179.56211853027344,
+                80.64895629882812
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.11094850301742554,
+              "xyxy": [
+                6.262564182281494,
+                0.0,
+                151.0953369140625,
+                68.75800323486328
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.09463246911764145,
+              "xyxy": [
+                149.07199096679688,
+                0.3246760070323944,
+                257.28326416015625,
+                63.10676574707031
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.09238718450069427,
+              "xyxy": [
+                127.25328826904297,
+                0.0,
+                250.37185668945312,
+                47.35451126098633
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.08978652209043503,
+              "xyxy": [
+                0.2686429023742676,
+                0.0,
+                86.80376434326172,
+                79.42259216308594
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.07140859216451645,
+              "xyxy": [
+                122.05060577392578,
+                0.0,
+                239.2301788330078,
+                69.57149505615234
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.06527402251958847,
+              "xyxy": [
+                0.0,
+                258.8696594238281,
+                128.74508666992188,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.055088840425014496,
+              "xyxy": [
+                176.96961975097656,
+                0.0,
+                299.91888427734375,
+                100.66868591308594
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.048925649374723434,
+              "xyxy": [
+                57.64352798461914,
+                0.0,
+                171.46742248535156,
+                90.22258758544922
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.045748911798000336,
+              "xyxy": [
+                85.63035583496094,
+                0.0,
+                201.745361328125,
+                88.0478515625
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.04552635923027992,
+              "xyxy": [
+                0.015535353682935238,
+                198.10641479492188,
+                113.21623992919922,
+                297.2702941894531
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.042806364595890045,
+              "xyxy": [
+                132.6000213623047,
+                189.58139038085938,
+                293.73822021484375,
+                295.515625
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.037859052419662476,
+              "xyxy": [
+                194.80174255371094,
+                190.0915069580078,
+                296.4532775878906,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.03749227151274681,
+              "xyxy": [
+                172.02806091308594,
+                135.57008361816406,
+                297.3243713378906,
+                292.1378173828125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.03523032367229462,
+              "xyxy": [
+                0.0,
+                0.0,
+                110.03742980957031,
+                138.14236450195312
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.03447047248482704,
+              "xyxy": [
+                0.5820035338401794,
+                0.0,
+                65.5097427368164,
+                121.95982360839844
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.03412524238228798,
+              "xyxy": [
+                147.66714477539062,
+                0.5356335639953613,
+                296.2711486816406,
+                46.025394439697266
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.029486393555998802,
+              "xyxy": [
+                62.766292572021484,
+                0.0,
+                185.25941467285156,
+                111.30345916748047
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.029228156432509422,
+              "xyxy": [
+                0.6257628798484802,
+                261.41851806640625,
+                170.114990234375,
+                299.9689025878906
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.028692012652754784,
+              "xyxy": [
+                179.3661651611328,
+                0.0,
+                299.4391784667969,
+                140.91812133789062
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.02839413285255432,
+              "xyxy": [
+                0.4587650001049042,
+                152.9933319091797,
+                103.55834197998047,
+                295.1323547363281
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.028221359476447105,
+              "xyxy": [
+                40.888275146484375,
+                0.0,
+                143.863525390625,
+                91.32621002197266
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.02778909169137478,
+              "xyxy": [
+                191.4312286376953,
+                205.1231231689453,
+                298.1763000488281,
+                295.0899963378906
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.027253182604908943,
+              "xyxy": [
+                1.899347186088562,
+                0.0,
+                122.416259765625,
+                109.53943634033203
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.026996804401278496,
+              "xyxy": [
+                33.81464385986328,
+                0.0,
+                174.67550659179688,
+                114.39769744873047
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.025112921372056007,
+              "xyxy": [
+                0.22592781484127045,
+                17.75084686279297,
+                100.60722351074219,
+                127.1889419555664
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.023557089269161224,
+              "xyxy": [
+                30.016807556152344,
+                0.0,
+                126.4018783569336,
+                31.591567993164062
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.023379458114504814,
+              "xyxy": [
+                173.51519775390625,
+                0.0,
+                297.835693359375,
+                194.52423095703125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.022855369374155998,
+              "xyxy": [
+                0.0,
+                228.54136657714844,
+                155.5760040283203,
+                297.804443359375
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.022816255688667297,
+              "xyxy": [
+                11.550363540649414,
+                0.0,
+                130.53627014160156,
+                85.33011627197266
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.02272905595600605,
+              "xyxy": [
+                227.2754669189453,
+                0.0,
+                292.9348449707031,
+                19.878204345703125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.022407207638025284,
+              "xyxy": [
+                0.37221190333366394,
+                4.189438819885254,
+                70.11961364746094,
+                143.36033630371094
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.021841032430529594,
+              "xyxy": [
+                30.733993530273438,
+                2.23297119140625,
+                185.9847869873047,
+                164.7720489501953
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.021113283932209015,
+              "xyxy": [
+                113.32249450683594,
+                0.0,
+                217.21327209472656,
+                92.7043228149414
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.020884601399302483,
+              "xyxy": [
+                0.1817464679479599,
+                123.09919738769531,
+                93.7923812866211,
+                250.70445251464844
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.020795384421944618,
+              "xyxy": [
+                121.22296905517578,
+                207.2921600341797,
+                259.6632385253906,
+                293.5862121582031
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.020567812025547028,
+              "xyxy": [
+                0.0,
+                132.06895446777344,
+                132.30865478515625,
+                295.021484375
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.020309168845415115,
+              "xyxy": [
+                81.47700500488281,
+                0.0,
+                207.6819305419922,
+                116.50030517578125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.02030354179441929,
+              "xyxy": [
+                88.00886535644531,
+                0.0,
+                225.78448486328125,
+                143.5466766357422
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.019902337342500687,
+              "xyxy": [
+                41.573707580566406,
+                0.0,
+                173.4140167236328,
+                22.99863052368164
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.019835473969578743,
+              "xyxy": [
+                20.61482810974121,
+                0.0,
+                150.5026092529297,
+                25.977937698364258
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.019407639279961586,
+              "xyxy": [
+                69.15706634521484,
+                0.7745217680931091,
+                205.8446044921875,
+                190.77001953125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.01851433329284191,
+              "xyxy": [
+                141.31301879882812,
+                0.0,
+                294.6756896972656,
+                168.83055114746094
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.017949070781469345,
+              "xyxy": [
+                137.99888610839844,
+                0.0,
+                250.15158081054688,
+                97.89025115966797
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.017267560586333275,
+              "xyxy": [
+                11.814149856567383,
+                0.0,
+                112.5831527709961,
+                28.747793197631836
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.01672900840640068,
+              "xyxy": [
+                0.0,
+                38.045623779296875,
+                106.6175308227539,
+                227.2359619140625
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.015935424715280533,
+              "xyxy": [
+                169.55645751953125,
+                73.95011138916016,
+                296.6529541015625,
+                291.8330993652344
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.015930714085698128,
+              "xyxy": [
+                149.25816345214844,
+                0.0,
+                262.9851379394531,
+                151.02474975585938
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.01570887677371502,
+              "xyxy": [
+                254.03018188476562,
+                0.0,
+                291.58843994140625,
+                47.655189514160156
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.015550019219517708,
+              "xyxy": [
+                11.613041877746582,
+                0.0,
+                100.07150268554688,
+                16.873971939086914
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.015473851002752781,
+              "xyxy": [
+                89.12938690185547,
+                0.0,
+                259.8017883300781,
+                180.7266082763672
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.015249839052557945,
+              "xyxy": [
+                65.39662170410156,
+                0.0,
+                203.10491943359375,
+                15.02944278717041
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.015208989381790161,
+              "xyxy": [
+                0.13889551162719727,
+                53.30305480957031,
+                103.12064361572266,
+                138.0279541015625
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.015111292712390423,
+              "xyxy": [
+                51.929656982421875,
+                0.0,
+                163.09698486328125,
+                23.263198852539062
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.014992591924965382,
+              "xyxy": [
+                15.42939567565918,
+                259.18670654296875,
+                156.4961700439453,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.014969196170568466,
+              "xyxy": [
+                75.54113006591797,
+                0.0,
+                211.8316192626953,
+                15.33250904083252
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.014797789976000786,
+              "xyxy": [
+                6.775116443634033,
+                234.1361846923828,
+                193.00851440429688,
+                296.0492248535156
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.014555837959051132,
+              "xyxy": [
+                146.45993041992188,
+                22.726533889770508,
+                294.2279357910156,
+                266.89971923828125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.01415905449539423,
+              "xyxy": [
+                197.4142303466797,
+                0.0,
+                283.324462890625,
+                25.016691207885742
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.013432367704808712,
+              "xyxy": [
+                0.0,
+                95.42070770263672,
+                106.83842468261719,
+                291.67413330078125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.012794969603419304,
+              "xyxy": [
+                0.3287601172924042,
+                83.46273040771484,
+                97.59841918945312,
+                243.62127685546875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.012403173372149467,
+              "xyxy": [
+                127.02383422851562,
+                130.61279296875,
+                293.51019287109375,
+                290.2767639160156
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.012148406356573105,
+              "xyxy": [
+                0.0,
+                205.8505096435547,
+                201.20858764648438,
+                293.91815185546875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.011641747318208218,
+              "xyxy": [
+                111.15388488769531,
+                0.0,
+                282.60955810546875,
+                192.71270751953125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.011233242228627205,
+              "xyxy": [
+                22.44563865661621,
+                12.259754180908203,
+                204.03688049316406,
+                217.75625610351562
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010966024361550808,
+              "xyxy": [
+                185.57757568359375,
+                0.0,
+                268.3502197265625,
+                24.006717681884766
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.01075410284101963,
+              "xyxy": [
+                123.03130340576172,
+                232.78746032714844,
+                294.26763916015625,
+                292.4200439453125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010745984502136707,
+              "xyxy": [
+                0.32118555903434753,
+                36.161155700683594,
+                95.72209167480469,
+                179.91578674316406
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010669469833374023,
+              "xyxy": [
+                105.22000122070312,
+                22.36163902282715,
+                233.9420623779297,
+                220.8041534423828
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.010414749383926392,
+              "xyxy": [
+                114.7018051147461,
+                33.08692169189453,
+                294.02532958984375,
+                267.4849853515625
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010351563803851604,
+              "xyxy": [
+                57.7292594909668,
+                212.3744354248047,
+                220.86497497558594,
+                293.87969970703125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010281874798238277,
+              "xyxy": [
+                14.729718208312988,
+                217.4197998046875,
+                169.61158752441406,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010222053155303001,
+              "xyxy": [
+                40.881526947021484,
+                157.37619018554688,
+                300.0,
+                298.4095764160156
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010128866881132126,
+              "xyxy": [
+                10.067051887512207,
+                122.8804702758789,
+                282.36993408203125,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.010099378414452076,
+              "xyxy": [
+                5.037688732147217,
+                175.49215698242188,
+                258.311279296875,
+                290.9593200683594
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 19,
+          "max_confidence": 0.29816821217536926,
+          "classes": [
+            "wound"
+          ],
+          "width": 300,
+          "height": 300,
+          "detections": [
+            {
+              "class": "wound",
+              "confidence": 0.29816821217536926,
+              "xyxy": [
+                0.0,
+                260.1416320800781,
+                81.839599609375,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2917913794517517,
+              "xyxy": [
+                2.216305732727051,
+                0.0,
+                98.47794342041016,
+                50.20976257324219
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2628355324268341,
+              "xyxy": [
+                72.3770523071289,
+                0.0,
+                206.9345245361328,
+                49.93438720703125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.24662455916404724,
+              "xyxy": [
+                0.07309197634458542,
+                233.765869140625,
+                87.34447479248047,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.21558289229869843,
+              "xyxy": [
+                7.447113513946533,
+                0.0,
+                124.87503051757812,
+                46.1922607421875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2087480127811432,
+              "xyxy": [
+                7.630290508270264,
+                0.0,
+                181.2068634033203,
+                48.32201385498047
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.20213815569877625,
+              "xyxy": [
+                55.104148864746094,
+                0.0,
+                188.6705780029297,
+                78.89583587646484
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.17683929204940796,
+              "xyxy": [
+                79.31201171875,
+                0.0,
+                209.83607482910156,
+                75.87954711914062
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.16991722583770752,
+              "xyxy": [
+                165.79046630859375,
+                174.80409240722656,
+                293.5321960449219,
+                299.580810546875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.1613311916589737,
+              "xyxy": [
+                101.42567443847656,
+                0.0,
+                227.8502655029297,
+                48.171913146972656
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.15625767409801483,
+              "xyxy": [
+                48.819576263427734,
+                0.0,
+                192.26565551757812,
+                44.32744216918945
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.13373121619224548,
+              "xyxy": [
+                10.415395736694336,
+                0.0,
+                179.56211853027344,
+                80.64895629882812
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.11094850301742554,
+              "xyxy": [
+                6.262564182281494,
+                0.0,
+                151.0953369140625,
+                68.75800323486328
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.09463246911764145,
+              "xyxy": [
+                149.07199096679688,
+                0.3246760070323944,
+                257.28326416015625,
+                63.10676574707031
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.09238718450069427,
+              "xyxy": [
+                127.25328826904297,
+                0.0,
+                250.37185668945312,
+                47.35451126098633
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.08978652209043503,
+              "xyxy": [
+                0.2686429023742676,
+                0.0,
+                86.80376434326172,
+                79.42259216308594
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.07140859216451645,
+              "xyxy": [
+                122.05060577392578,
+                0.0,
+                239.2301788330078,
+                69.57149505615234
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.06527402251958847,
+              "xyxy": [
+                0.0,
+                258.8696594238281,
+                128.74508666992188,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.055088840425014496,
+              "xyxy": [
+                176.96961975097656,
+                0.0,
+                299.91888427734375,
+                100.66868591308594
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 13,
+          "max_confidence": 0.29816821217536926,
+          "classes": [
+            "wound"
+          ],
+          "width": 300,
+          "height": 300,
+          "detections": [
+            {
+              "class": "wound",
+              "confidence": 0.29816821217536926,
+              "xyxy": [
+                0.0,
+                260.1416320800781,
+                81.839599609375,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2917913794517517,
+              "xyxy": [
+                2.216305732727051,
+                0.0,
+                98.47794342041016,
+                50.20976257324219
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2628355324268341,
+              "xyxy": [
+                72.3770523071289,
+                0.0,
+                206.9345245361328,
+                49.93438720703125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.24662455916404724,
+              "xyxy": [
+                0.07309197634458542,
+                233.765869140625,
+                87.34447479248047,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.21558289229869843,
+              "xyxy": [
+                7.447113513946533,
+                0.0,
+                124.87503051757812,
+                46.1922607421875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2087480127811432,
+              "xyxy": [
+                7.630290508270264,
+                0.0,
+                181.2068634033203,
+                48.32201385498047
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.20213815569877625,
+              "xyxy": [
+                55.104148864746094,
+                0.0,
+                188.6705780029297,
+                78.89583587646484
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.17683929204940796,
+              "xyxy": [
+                79.31201171875,
+                0.0,
+                209.83607482910156,
+                75.87954711914062
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.16991722583770752,
+              "xyxy": [
+                165.79046630859375,
+                174.80409240722656,
+                293.5321960449219,
+                299.580810546875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.1613311916589737,
+              "xyxy": [
+                101.42567443847656,
+                0.0,
+                227.8502655029297,
+                48.171913146972656
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.15625767409801483,
+              "xyxy": [
+                48.819576263427734,
+                0.0,
+                192.26565551757812,
+                44.32744216918945
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.13373121619224548,
+              "xyxy": [
+                10.415395736694336,
+                0.0,
+                179.56211853027344,
+                80.64895629882812
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.11094850301742554,
+              "xyxy": [
+                6.262564182281494,
+                0.0,
+                151.0953369140625,
+                68.75800323486328
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 3,
+          "max_confidence": 0.29816821217536926,
+          "classes": [
+            "wound"
+          ],
+          "width": 300,
+          "height": 300,
+          "detections": [
+            {
+              "class": "wound",
+              "confidence": 0.29816821217536926,
+              "xyxy": [
+                0.0,
+                260.1416320800781,
+                81.839599609375,
+                300.0
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2917913794517517,
+              "xyxy": [
+                2.216305732727051,
+                0.0,
+                98.47794342041016,
+                50.20976257324219
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.2628355324268341,
+              "xyxy": [
+                72.3770523071289,
+                0.0,
+                206.9345245361328,
+                49.93438720703125
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.29816821217536926,
+      "n_at_0_25": 3,
+      "kept_at_application_0_25": [
+        {
+          "class": "wound",
+          "confidence": 0.29816821217536926,
+          "xyxy": [
+            0.0,
+            260.1416320800781,
+            81.839599609375,
+            300.0
+          ]
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2917913794517517,
+          "xyxy": [
+            2.216305732727051,
+            0.0,
+            98.47794342041016,
+            50.20976257324219
+          ]
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2628355324268341,
+          "xyxy": [
+            72.3770523071289,
+            0.0,
+            206.9345245361328,
+            49.93438720703125
+          ]
+        }
+      ]
+    },
+    "blank_skin": {
+      "path": "data/datasets/yolo_injury/blank_skin.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": null,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "dummy_test": {
+      "path": "data/datasets/yolo_injury/dummy_test.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 1,
+          "max_confidence": 0.0116623779758811,
+          "classes": [
+            "bruise"
+          ],
+          "width": 64,
+          "height": 64,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.0116623779758811,
+              "xyxy": [
+                0.0,
+                54.25213623046875,
+                19.744291305541992,
+                64.0
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.0116623779758811,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "val_neg_blank": {
+      "path": "data/datasets/yolo_retrain_v2/images/val/negative__blank_skin.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": null,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "test_neg_dummy": {
+      "path": "data/datasets/yolo_retrain_v2/images/test/negative__dummy_test.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 1,
+          "max_confidence": 0.0116623779758811,
+          "classes": [
+            "bruise"
+          ],
+          "width": 64,
+          "height": 64,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.0116623779758811,
+              "xyxy": [
+                0.0,
+                54.25213623046875,
+                19.744291305541992,
+                64.0
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.0116623779758811,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "val_0_negative__blank_skin.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/val/negative__blank_skin.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": null,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "val_1_raw_synthetic_wound__syn_wound_0150.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/val/raw_synthetic_wound__syn_wound_0150.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 6,
+          "max_confidence": 0.946492075920105,
+          "classes": [
+            "bruise",
+            "cut",
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.946492075920105,
+              "xyxy": [
+                190.72572326660156,
+                241.43817138671875,
+                389.1832275390625,
+                367.5201416015625
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.11554764211177826,
+              "xyxy": [
+                194.3284149169922,
+                243.3541259765625,
+                390.18060302734375,
+                366.3428955078125
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.03569940850138664,
+              "xyxy": [
+                28.963623046875,
+                242.53268432617188,
+                371.987548828125,
+                363.7433776855469
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.035083238035440445,
+              "xyxy": [
+                293.31829833984375,
+                244.8629913330078,
+                390.81427001953125,
+                366.92266845703125
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.03197069838643074,
+              "xyxy": [
+                190.91668701171875,
+                247.69204711914062,
+                290.79132080078125,
+                367.1536560058594
+              ]
+            },
+            {
+              "class": "cut",
+              "confidence": 0.014857262372970581,
+              "xyxy": [
+                195.44259643554688,
+                239.13037109375,
+                391.6439514160156,
+                405.8270263671875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 2,
+          "max_confidence": 0.946492075920105,
+          "classes": [
+            "bruise",
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.946492075920105,
+              "xyxy": [
+                190.72572326660156,
+                241.43817138671875,
+                389.1832275390625,
+                367.5201416015625
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.11554764211177826,
+              "xyxy": [
+                194.3284149169922,
+                243.3541259765625,
+                390.18060302734375,
+                366.3428955078125
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 2,
+          "max_confidence": 0.946492075920105,
+          "classes": [
+            "bruise",
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.946492075920105,
+              "xyxy": [
+                190.72572326660156,
+                241.43817138671875,
+                389.1832275390625,
+                367.5201416015625
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.11554764211177826,
+              "xyxy": [
+                194.3284149169922,
+                243.3541259765625,
+                390.18060302734375,
+                366.3428955078125
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 1,
+          "max_confidence": 0.946492075920105,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.946492075920105,
+              "xyxy": [
+                190.72572326660156,
+                241.43817138671875,
+                389.1832275390625,
+                367.5201416015625
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 1,
+          "max_confidence": 0.946492075920105,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.946492075920105,
+              "xyxy": [
+                190.72572326660156,
+                241.43817138671875,
+                389.1832275390625,
+                367.5201416015625
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 1,
+          "max_confidence": 0.946492075920105,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.946492075920105,
+              "xyxy": [
+                190.72572326660156,
+                241.43817138671875,
+                389.1832275390625,
+                367.5201416015625
+              ]
+            }
+          ]
+        }
+      ],
+      "max_at_0_01": 0.946492075920105,
+      "n_at_0_25": 1,
+      "kept_at_application_0_25": [
+        {
+          "class": "bruise",
+          "confidence": 0.946492075920105,
+          "xyxy": [
+            190.72572326660156,
+            241.43817138671875,
+            389.1832275390625,
+            367.5201416015625
+          ]
+        }
+      ]
+    },
+    "val_2_raw_synthetic_wound__syn_wound_0153.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/val/raw_synthetic_wound__syn_wound_0153.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 5,
+          "max_confidence": 0.6104598045349121,
+          "classes": [
+            "bruise",
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.6104598045349121,
+              "xyxy": [
+                222.7827911376953,
+                129.90261840820312,
+                317.36102294921875,
+                249.33993530273438
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.07311573624610901,
+              "xyxy": [
+                219.58877563476562,
+                127.08578491210938,
+                314.3189392089844,
+                252.16448974609375
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.041739512234926224,
+              "xyxy": [
+                177.326904296875,
+                126.6367416381836,
+                311.0338439941406,
+                248.18429565429688
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.013201280497014523,
+              "xyxy": [
+                68.01742553710938,
+                118.09988403320312,
+                398.570556640625,
+                511.0526428222656
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.011533019132912159,
+              "xyxy": [
+                35.02069091796875,
+                125.90647888183594,
+                312.4871520996094,
+                247.21205139160156
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 2,
+          "max_confidence": 0.6104598045349121,
+          "classes": [
+            "bruise",
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.6104598045349121,
+              "xyxy": [
+                222.7827911376953,
+                129.90261840820312,
+                317.36102294921875,
+                249.33993530273438
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.07311573624610901,
+              "xyxy": [
+                219.58877563476562,
+                127.08578491210938,
+                314.3189392089844,
+                252.16448974609375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 1,
+          "max_confidence": 0.6104598045349121,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.6104598045349121,
+              "xyxy": [
+                222.7827911376953,
+                129.90261840820312,
+                317.36102294921875,
+                249.33993530273438
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 1,
+          "max_confidence": 0.6104598045349121,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.6104598045349121,
+              "xyxy": [
+                222.7827911376953,
+                129.90261840820312,
+                317.36102294921875,
+                249.33993530273438
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 1,
+          "max_confidence": 0.6104598045349121,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.6104598045349121,
+              "xyxy": [
+                222.7827911376953,
+                129.90261840820312,
+                317.36102294921875,
+                249.33993530273438
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 1,
+          "max_confidence": 0.6104598045349121,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.6104598045349121,
+              "xyxy": [
+                222.7827911376953,
+                129.90261840820312,
+                317.36102294921875,
+                249.33993530273438
+              ]
+            }
+          ]
+        }
+      ],
+      "max_at_0_01": 0.6104598045349121,
+      "n_at_0_25": 1,
+      "kept_at_application_0_25": [
+        {
+          "class": "bruise",
+          "confidence": 0.6104598045349121,
+          "xyxy": [
+            222.7827911376953,
+            129.90261840820312,
+            317.36102294921875,
+            249.33993530273438
+          ]
+        }
+      ]
+    },
+    "test_0_negative__dummy_test.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/test/negative__dummy_test.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 1,
+          "max_confidence": 0.0116623779758811,
+          "classes": [
+            "bruise"
+          ],
+          "width": 64,
+          "height": 64,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.0116623779758811,
+              "xyxy": [
+                0.0,
+                54.25213623046875,
+                19.744291305541992,
+                64.0
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 64,
+          "height": 64,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.0116623779758811,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "test_1_raw_synthetic_wound__syn_wound_0185.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/test/raw_synthetic_wound__syn_wound_0185.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 5,
+          "max_confidence": 0.9340448379516602,
+          "classes": [
+            "bruise",
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9340448379516602,
+              "xyxy": [
+                219.46859741210938,
+                205.32765197753906,
+                401.2898864746094,
+                399.725341796875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.06279413402080536,
+              "xyxy": [
+                223.42742919921875,
+                201.25335693359375,
+                401.3939208984375,
+                398.3636474609375
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.02231932245194912,
+              "xyxy": [
+                238.70753479003906,
+                258.9515380859375,
+                401.025634765625,
+                399.1910400390625
+              ]
+            },
+            {
+              "class": "bruise",
+              "confidence": 0.021846828982234,
+              "xyxy": [
+                21.460662841796875,
+                207.55361938476562,
+                402.6441345214844,
+                389.4591979980469
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.014231226406991482,
+              "xyxy": [
+                294.6107177734375,
+                208.2202606201172,
+                404.40460205078125,
+                388.97686767578125
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 2,
+          "max_confidence": 0.9340448379516602,
+          "classes": [
+            "bruise",
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9340448379516602,
+              "xyxy": [
+                219.46859741210938,
+                205.32765197753906,
+                401.2898864746094,
+                399.725341796875
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.06279413402080536,
+              "xyxy": [
+                223.42742919921875,
+                201.25335693359375,
+                401.3939208984375,
+                398.3636474609375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 1,
+          "max_confidence": 0.9340448379516602,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9340448379516602,
+              "xyxy": [
+                219.46859741210938,
+                205.32765197753906,
+                401.2898864746094,
+                399.725341796875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 1,
+          "max_confidence": 0.9340448379516602,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9340448379516602,
+              "xyxy": [
+                219.46859741210938,
+                205.32765197753906,
+                401.2898864746094,
+                399.725341796875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 1,
+          "max_confidence": 0.9340448379516602,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9340448379516602,
+              "xyxy": [
+                219.46859741210938,
+                205.32765197753906,
+                401.2898864746094,
+                399.725341796875
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 1,
+          "max_confidence": 0.9340448379516602,
+          "classes": [
+            "bruise"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "bruise",
+              "confidence": 0.9340448379516602,
+              "xyxy": [
+                219.46859741210938,
+                205.32765197753906,
+                401.2898864746094,
+                399.725341796875
+              ]
+            }
+          ]
+        }
+      ],
+      "max_at_0_01": 0.9340448379516602,
+      "n_at_0_25": 1,
+      "kept_at_application_0_25": [
+        {
+          "class": "bruise",
+          "confidence": 0.9340448379516602,
+          "xyxy": [
+            219.46859741210938,
+            205.32765197753906,
+            401.2898864746094,
+            399.725341796875
+          ]
+        }
+      ]
+    },
+    "test_2_raw_synthetic_wound__syn_wound_0186.jpg": {
+      "path": "C:/Users/santh/Capstone Project Code/data/datasets/yolo_retrain_v2/images/test/raw_synthetic_wound__syn_wound_0186.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 2,
+          "max_confidence": 0.0539761558175087,
+          "classes": [
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "wound",
+              "confidence": 0.0539761558175087,
+              "xyxy": [
+                225.45199584960938,
+                191.75442504882812,
+                391.2839050292969,
+                278.9842224121094
+              ]
+            },
+            {
+              "class": "wound",
+              "confidence": 0.01650284230709076,
+              "xyxy": [
+                227.8580780029297,
+                190.16285705566406,
+                389.18475341796875,
+                338.402099609375
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 1,
+          "max_confidence": 0.0539761558175087,
+          "classes": [
+            "wound"
+          ],
+          "width": 640,
+          "height": 640,
+          "detections": [
+            {
+              "class": "wound",
+              "confidence": 0.0539761558175087,
+              "xyxy": [
+                225.45199584960938,
+                191.75442504882812,
+                391.2839050292969,
+                278.9842224121094
+              ]
+            }
+          ]
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 640,
+          "height": 640,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": 0.0539761558175087,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    },
+    "synthetic_uniform_gray": {
+      "path": "data/test_suite/phase3_uniform_gray.jpg",
+      "by_threshold": [
+        {
+          "threshold": 0.01,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.05,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.1,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.25,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.4,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        },
+        {
+          "threshold": 0.5,
+          "n_detections": 0,
+          "max_confidence": null,
+          "classes": [],
+          "width": 300,
+          "height": 300,
+          "detections": []
+        }
+      ],
+      "max_at_0_01": null,
+      "n_at_0_25": 0,
+      "kept_at_application_0_25": []
+    }
+  }
+}

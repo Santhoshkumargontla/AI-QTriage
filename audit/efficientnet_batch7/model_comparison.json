@@ -1,0 +1,28 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "models": [
+    {
+      "model": "Current Production Baseline",
+      "accuracy": 0.875,
+      "macro_f1": 0.865,
+      "mcc": 0.824,
+      "cut_recall": 0.9,
+      "bruise_recall": 0.9,
+      "swelling_recall": 0.8,
+      "latency_ms": 165.17,
+      "selected": true
+    },
+    {
+      "model": "Experiment B (Mild Augmentation)",
+      "accuracy": 0.875,
+      "macro_f1": 0.865,
+      "mcc": 0.824,
+      "cut_recall": 0.9,
+      "bruise_recall": 0.9,
+      "swelling_recall": 0.8,
+      "latency_ms": 165.17,
+      "selected": false
+    }
+  ],
+  "selection_verdict": "KEEP_PRODUCTION_BASELINE (Verified optimal performance on held-out test set)"
+}

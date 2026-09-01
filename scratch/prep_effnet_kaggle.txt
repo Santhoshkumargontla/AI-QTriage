@@ -1,0 +1,72 @@
+{
+  "created_utc": "2026-08-29T14:27:22.639711+00:00",
+  "out_root": "data/datasets/efficientnet_kaggle_v1",
+  "classes": [
+    "abrasion",
+    "bruise",
+    "burn",
+    "cut",
+    "laceration",
+    "wound",
+    "normal",
+    "ood_reject"
+  ],
+  "n_rows": 3039,
+  "distribution": {
+    "train": {
+      "abrasion": 115,
+      "bruise": 164,
+      "burn": 98,
+      "cut": 68,
+      "laceration": 88,
+      "wound": 1406,
+      "normal": 140,
+      "ood_reject": 25
+    },
+    "val": {
+      "abrasion": 29,
+      "bruise": 33,
+      "burn": 25,
+      "cut": 15,
+      "laceration": 20,
+      "wound": 294,
+      "normal": 32,
+      "ood_reject": 14
+    },
+    "test": {
+      "abrasion": 23,
+      "bruise": 46,
+      "burn": 22,
+      "cut": 17,
+      "laceration": 14,
+      "wound": 299,
+      "normal": 46,
+      "ood_reject": 6
+    }
+  },
+  "source_counts": {
+    "yasinpratomo_wound_dataset:abrasion": 85,
+    "yasinpratomo_wound_dataset:bruise": 122,
+    "yasinpratomo_wound_dataset:burn": 59,
+    "yasinpratomo_wound_dataset:cut": 50,
+    "yasinpratomo_wound_dataset:laceration": 61,
+    "yasinpratomo_wound_dataset:wound": 23,
+    "ibrahimfateen_wound_classification:abrasion": 82,
+    "ibrahimfateen_wound_classification:bruise": 121,
+    "ibrahimfateen_wound_classification:burn": 86,
+    "ibrahimfateen_wound_classification:cut": 50,
+    "ibrahimfateen_wound_classification:wound": 1976,
+    "ibrahimfateen_wound_classification:laceration": 61,
+    "ibrahimfateen_wound_classification:normal": 200
+  },
+  "exclusions": 364,
+  "leakage_exact_hash": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "leakage_free": true,
+  "swelling": "NOT_INCLUDED_NO_HONEST_LABELS",
+  "fracture": "NOT_INCLUDED_DIFFERENT_MODALITY_XRAY",
+  "notes": "Kaggle wound folders mapped to taxonomy. Chronic wound types merged into 'wound'. Ingrown nails excluded. Licenses often 'unknown' on Kaggle cards \u2014 research use only."
+}

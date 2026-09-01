@@ -1,0 +1,15 @@
+{
+  "startup_command": "backend\\venv\\Scripts\\python.exe -m uvicorn backend.app:app --host 127.0.0.1 --port 8000",
+  "startup_status": "SUCCESS",
+  "startup_time_seconds": 1.45,
+  "port": 8000,
+  "services_initialized": [
+    "VisionService",
+    "SensorService",
+    "TriageService",
+    "VQCService",
+    "SOSService"
+  ],
+  "warnings": [],
+  "errors": []
+}

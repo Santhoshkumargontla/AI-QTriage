@@ -1,0 +1,356 @@
+{
+  "case_id": "b1c65f3c-fb21-4349-b7f4-5b6bf489fb4c",
+  "created_at": "2026-08-30T08:47:47.971",
+  "status": "analyzed",
+  "image_reference": null,
+  "visible_injury": {},
+  "questionnaire": {
+    "answers": {
+      "pain_level": 5,
+      "mechanism": "impact",
+      "direct_impact": "yes",
+      "visible_bleeding": "no",
+      "movement_limitation": "mild",
+      "weight_bearing": "yes",
+      "crack_pop": "no"
+    },
+    "voice_used": false,
+    "voice_transcript": null,
+    "template_id": null,
+    "template_version": null,
+    "answer_source": "typed"
+  },
+  "sensor_summary": null,
+  "sensor_available": false,
+  "sensor_source_type": "not_provided",
+  "xgboost_prediction": {
+    "class": "MODERATE",
+    "probability": 0.786147952079773,
+    "model_version": "v1.2.0",
+    "model_id": "xgb_option_a_available_modalities",
+    "n_features": 23,
+    "data_provenance": "SYNTHETIC",
+    "data_provenance_detail": "synthetic_multimodal_fusion",
+    "status": "TRAINED",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "label_source": "SYNTHETIC_RULE_LABELS",
+    "paired_clinical_samples": 0,
+    "clinical_claim_blocked": true,
+    "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+  },
+  "quantum_prediction": {
+    "class": "MODERATE",
+    "score": [
+      0.2929674593132615,
+      0.5757460821943302,
+      0.13128645849240833
+    ],
+    "model_version": "v1.4.0",
+    "model_id": "vqc_sim_v1",
+    "status": "EXPERIMENTAL_ONLY",
+    "experimental": true,
+    "experimental_only": true,
+    "used_in_main_decision": false,
+    "data_provenance": "SYNTHETIC",
+    "error": null,
+    "pca_features": [
+      -3.0,
+      2.1302104965652404,
+      -0.6283639072718796,
+      3.0
+    ],
+    "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+  },
+  "agreement_score": "VQC_EXCLUDED_FROM_DECISION",
+  "uncertainty_status": "MODERATE UNCERTAINTY",
+  "uncertainty_reasons": [
+    "Segmentation output was unavailable or below the reliability threshold."
+  ],
+  "safety_information": [
+    "Assigned MODERATE category based on: moderate pain level (5/10), mild/severe movement limitation, reported direct impact to the area."
+  ],
+  "rule_derived_category": "MODERATE",
+  "safety_guidance_level": "MODERATE",
+  "sos_status": "not_triggered",
+  "sos_delivery_mode": null,
+  "sos_delivery_outcome": null,
+  "sos_twilio_sid": null,
+  "sos_delivery_status": null,
+  "sos_provider_status": null,
+  "sos_send_timestamp": null,
+  "sos_failure_reason": null,
+  "sos_twilio_error": null,
+  "sos_twilio_error_code": null,
+  "first_aid_guidance": {
+    "provider": "rule_based_fallback",
+    "status": "fallback",
+    "model": "gemini-3.5-flash-lite",
+    "fallback_reason": "Gemini API exception: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}",
+    "guidance_level": "CONSERVATIVE_CARE",
+    "generated_at": "2026-08-30T14:17:48.456955+05:30",
+    "evidence_hash": "8814ffe4516656c1",
+    "display_message": "AI-generated guidance unavailable. Showing rule-based research guidance.",
+    "structured_evidence": {
+      "questionnaire": {
+        "pain_level": 5,
+        "location": null,
+        "cause": null,
+        "onset_hours": null,
+        "movement_limitation": "mild",
+        "weight_bearing": "yes",
+        "swelling": null,
+        "bruising_discoloration": null,
+        "redness": null,
+        "warmth": null,
+        "open_wound": null,
+        "bleeding": null,
+        "crack_pop": "no",
+        "deformity": null,
+        "numbness_tingling": null,
+        "previous_injury": null,
+        "symptom_progression": null
+      },
+      "yolo": {
+        "finding_detected": false,
+        "finding": null,
+        "confidence": null,
+        "bounding_box": null,
+        "supported_classes": [
+          "cut",
+          "bruise",
+          "abrasion"
+        ]
+      },
+      "research_classifier": {
+        "finding": null,
+        "confidence": null,
+        "category_type": "research_classifier",
+        "status": null
+      },
+      "sensor": {
+        "provided": false,
+        "peak_g_force": null,
+        "post_impact_stabilization_seconds": null
+      },
+      "experimental_models": {
+        "xgboost": "MODERATE",
+        "vqc": "MODERATE",
+        "agreement": "VQC_EXCLUDED_FROM_DECISION",
+        "uncertainty": null,
+        "used_in_main_decision": false
+      },
+      "safety_rules": {
+        "guidance_level": "MODERATE",
+        "warning_signs": []
+      }
+    },
+    "guidance": {
+      "immediate_first_aid_steps": [
+        "Keep the affected area clean, dry, and protected from secondary impact or friction.",
+        "Allow the affected area to rest in a comfortable, supported position to avoid strain."
+      ],
+      "actions_to_avoid": [
+        "Avoid forcing joint movement or aggressively testing weight-bearing capacity.",
+        "Avoid continuing sport, running, or heavy physical activity while pain or swelling persists."
+      ],
+      "symptoms_to_monitor": [
+        "Monitor for expanding redness, localized warmth, or increasing tissue swelling over the next 24–48 hours.",
+        "Watch for infection indicators such as pus, drainage, red streaks, or systemic fever.",
+        "Observe pain trends over time (note if pain score progresses from mild to severe)."
+      ],
+      "urgent_evaluation_warning": [],
+      "professional_evaluation_guidance": [
+        "Based on the reported warning signs, professional medical evaluation is recommended."
+      ],
+      "limitations": [
+        "AI-QTriage is an academic research prototype. Model outputs are experimental and are not a medical diagnosis. An image model failing to detect an injury does not mean that no injury is present."
+      ]
+    },
+    "evidence_summary": [
+      "User-reported pain level: 5/10",
+      "User-reported location: injured area",
+      "YOLO11 object detection: No confident supported-class detection (supported: cut, bruise, abrasion).",
+      "Sensor data was not provided; guidance is based on image/questionnaire evidence."
+    ],
+    "immediate_steps": [
+      "Keep the affected area clean, dry, and protected from secondary impact or friction.",
+      "Allow the affected area to rest in a comfortable, supported position to avoid strain."
+    ],
+    "avoid": [
+      "Avoid forcing joint movement or aggressively testing weight-bearing capacity.",
+      "Avoid continuing sport, running, or heavy physical activity while pain or swelling persists."
+    ],
+    "monitor": [
+      "Monitor for expanding redness, localized warmth, or increasing tissue swelling over the next 24–48 hours.",
+      "Watch for infection indicators such as pus, drainage, red streaks, or systemic fever.",
+      "Observe pain trends over time (note if pain score progresses from mild to severe)."
+    ],
+    "seek_professional_evaluation": true,
+    "urgent_warning_signs": [],
+    "professional_evaluation_warning": "Based on the reported warning signs, professional medical evaluation is recommended.",
+    "model_limitation_statement": "AI-QTriage is an academic research prototype. Model outputs are experimental and are not a medical diagnosis. An image model failing to detect an injury does not mean that no injury is present."
+  },
+  "report_reference": null,
+  "is_demo": false,
+  "modalities_used": [
+    "questionnaire"
+  ],
+  "model_configuration_used": "xgb_option_a_available_modalities",
+  "fusion_label_source": "SYNTHETIC_RULE_LABELS",
+  "clinical_claim_blocked": true,
+  "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS",
+  "paired_clinical_samples": 0,
+  "consistency_analysis": {
+    "score": 85.0,
+    "status": "Highly Consistent",
+    "conflicts": [
+      "Segmentation Warning: No reliable segmentation mask was available for area calculation."
+    ],
+    "agreements": [],
+    "explanation": "Evidence consistency scoring measures alignment between independent data channels and model predictions. It does not validate clinical diagnostic accuracy."
+  },
+  "counterfactual_analysis": {
+    "explanation": "Counterfactual sensitivity analysis. This shows how altering specific inputs (like pain level or sensor peak g-force) shifts the model's output category.",
+    "baseline_predictions": {
+      "classical_xgb": "MODERATE",
+      "quantum_vqc": "MODERATE"
+    },
+    "pain_sensitivity": {
+      "classical_xgb_transitions": [
+        {
+          "pain_level": 0,
+          "new_prediction": "LOW"
+        },
+        {
+          "pain_level": 1,
+          "new_prediction": "LOW"
+        }
+      ],
+      "quantum_vqc_transitions": []
+    },
+    "g_force_sensitivity": {
+      "classical_xgb_transitions": [],
+      "quantum_vqc_transitions": []
+    }
+  },
+  "shap_explanations": [
+    {
+      "feature": "delta_v",
+      "shap_value": 0.24408003687858582,
+      "description": "Feature contribution analysis (SHAP) for delta_v. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "prob_bruise",
+      "shap_value": 0.16445636749267578,
+      "description": "Feature contribution analysis (SHAP) for prob_bruise. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "peak_g_force",
+      "shap_value": -0.13517600297927856,
+      "description": "Feature contribution analysis (SHAP) for peak_g_force. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "stabilization_time",
+      "shap_value": 0.10013951361179352,
+      "description": "Feature contribution analysis (SHAP) for stabilization_time. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "mech_fall",
+      "shap_value": 0.09528475999832153,
+      "description": "Feature contribution analysis (SHAP) for mech_fall. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "prob_cut",
+      "shap_value": 0.07194460183382034,
+      "description": "Feature contribution analysis (SHAP) for prob_cut. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "prob_other",
+      "shap_value": 0.0410565547645092,
+      "description": "Feature contribution analysis (SHAP) for prob_other. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "prob_swelling",
+      "shap_value": 0.02368895336985588,
+      "description": "Feature contribution analysis (SHAP) for prob_swelling. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "visible_bleeding",
+      "shap_value": 0.00933774933218956,
+      "description": "Feature contribution analysis (SHAP) for visible_bleeding. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "questionnaire_present",
+      "shap_value": -0.007979962974786758,
+      "description": "Feature contribution analysis (SHAP) for questionnaire_present. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "sensor_present",
+      "shap_value": 0.006000171415507793,
+      "description": "Feature contribution analysis (SHAP) for sensor_present. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "pain_level",
+      "shap_value": -0.003030620515346527,
+      "description": "Feature contribution analysis (SHAP) for pain_level. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "mech_sharp",
+      "shap_value": 0.0020108954049646854,
+      "description": "Feature contribution analysis (SHAP) for mech_sharp. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "affected_ratio",
+      "shap_value": -0.0008336366154253483,
+      "description": "Feature contribution analysis (SHAP) for affected_ratio. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "vision_present",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for vision_present. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "mech_impact",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for mech_impact. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "mech_sports",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for mech_sports. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "mech_other",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for mech_other. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "direct_impact",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for direct_impact. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "movement_limitation",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for movement_limitation. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "weight_bearing",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for weight_bearing. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "crack_pop",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for crack_pop. This shows how much this variable contributed to the prediction."
+    },
+    {
+      "feature": "lux_drop",
+      "shap_value": 0.0,
+      "description": "Feature contribution analysis (SHAP) for lux_drop. This shows how much this variable contributed to the prediction."
+    }
+  ],
+  "prediction_agreement": null,
+  "uncertainty_level": "MODERATE UNCERTAINTY",
+  "justification": "Assigned MODERATE category based on: moderate pain level (5/10), mild/severe movement limitation, reported direct impact to the area."
+}

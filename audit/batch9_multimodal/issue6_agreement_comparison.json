@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "mean_heuristic_agreement": 100.0,
+  "mean_empirical_agreement": 94.99,
+  "agreement_correlation": NaN,
+  "max_discrepancy": 6.94,
+  "discrepancy_cases": [
+    "Case #12: Soft tissue swelling with low kinetic peak"
+  ],
+  "status": "IMPROVED"
+}

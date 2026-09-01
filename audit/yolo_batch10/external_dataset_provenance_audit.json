@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "source_a": "Roboflow Universe (CC BY 4.0)",
+  "source_b": "WACV WSNet Open Access",
+  "duplicate_overlap_with_internal_train": 0,
+  "duplicate_overlap_with_internal_val": 0,
+  "duplicate_overlap_with_internal_test": 0,
+  "status": "PASS"
+}

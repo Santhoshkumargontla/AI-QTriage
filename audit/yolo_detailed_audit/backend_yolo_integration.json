@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:19:18.267575+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "model_loaded_at_startup": true,
+  "status": "PASS"
+}

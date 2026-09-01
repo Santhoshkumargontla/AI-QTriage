@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:17:24.939494+00:00",
+  "min_latency_ms": 95.0,
+  "avg_latency_ms": 103.94,
+  "max_latency_ms": 120.0,
+  "status": "PASS"
+}

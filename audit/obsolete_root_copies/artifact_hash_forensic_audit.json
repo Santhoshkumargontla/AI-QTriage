@@ -1,0 +1,68 @@
+[
+  {
+    "model_name": "YOLO11 Detection",
+    "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+    "exact_file_size": 5469722,
+    "fresh_sha256": "b2780ea3df84011b38a5dff27c2712ee210da3b46ecebf8c455ccb3e53e1fe44",
+    "registry_sha256": "b2780ea3df84011b38a5dff27c2712ee210da3b46ecebf8c455ccb3e53e1fe44",
+    "hash_match": true,
+    "registry_version": "v1.2.1",
+    "runtime_version": "v1.2.1",
+    "status": "HASH_VERIFIED"
+  },
+  {
+    "model_name": "EfficientNetV2 Classification",
+    "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "exact_file_size": 81626143,
+    "fresh_sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777",
+    "registry_sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777",
+    "hash_match": true,
+    "registry_version": "v1.2.1",
+    "runtime_version": "v1.2.1",
+    "status": "HASH_VERIFIED"
+  },
+  {
+    "model_name": "ResNet34-UNet Segmentation",
+    "artifact_path": "ml/models/vision/unet_injury_best.pt",
+    "exact_file_size": 97918031,
+    "fresh_sha256": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93",
+    "registry_sha256": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93",
+    "hash_match": true,
+    "registry_version": "v1.2.1",
+    "runtime_version": "v1.2.1",
+    "status": "HASH_VERIFIED"
+  },
+  {
+    "model_name": "Sensor Motion Event Classifier",
+    "artifact_path": "ml/models/sensor_motion_best.json",
+    "exact_file_size": 135603,
+    "fresh_sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+    "registry_sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+    "hash_match": true,
+    "registry_version": "v1.2.0",
+    "runtime_version": "v1.2.0",
+    "status": "HASH_VERIFIED"
+  },
+  {
+    "model_name": "XGBoost Multimodal Model",
+    "artifact_path": "ml/models/xgboost_multimodal_best.json",
+    "exact_file_size": 184296,
+    "fresh_sha256": "775d0bf1a7e07f2cbc01250d5d18224fff021415b0e6fa8554bcca0b1d1b2a84",
+    "registry_sha256": "N/A",
+    "hash_match": false,
+    "registry_version": "N/A",
+    "runtime_version": "v1.2.0",
+    "status": "HASH_MISMATCH"
+  },
+  {
+    "model_name": "Experimental 4-Qubit VQC",
+    "artifact_path": "ml/models/vqc/vqc_weights.npz",
+    "exact_file_size": 1086,
+    "fresh_sha256": "8eadc4fd3ecc3406113d3d42e494b0e29a1f5c0229d14f52ba2b92976e44b27a",
+    "registry_sha256": "8eadc4fd3ecc3406113d3d42e494b0e29a1f5c0229d14f52ba2b92976e44b27a",
+    "hash_match": true,
+    "registry_version": "v1.2.0",
+    "runtime_version": "v1.2.0",
+    "status": "HASH_VERIFIED"
+  }
+]

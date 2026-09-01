@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "feature_count": 8,
+  "feature_names": [
+    "peak_g_force",
+    "peak_accel_ms2",
+    "peak_jerk_gs",
+    "accel_variance",
+    "gyro_variance",
+    "sma",
+    "stabilization_seconds",
+    "impact_flag"
+  ],
+  "scaling": "StandardScaler fit strictly on Train split",
+  "status": "PASS"
+}

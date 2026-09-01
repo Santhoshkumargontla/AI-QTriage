@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "target_dir": "data/yolo_raw/",
+  "downloaded_archives": 2,
+  "total_images_downloaded": 350,
+  "extraction_status": "SUCCESS",
+  "corrupted_files": 0,
+  "status": "PASS"
+}

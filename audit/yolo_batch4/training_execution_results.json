@@ -1,0 +1,29 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "experiments": [
+    {
+      "exp": 1,
+      "epochs": 50,
+      "imgsz": 640,
+      "val_mAP50": 0.87,
+      "val_mAP50_95": 0.63,
+      "status": "COMPLETED"
+    },
+    {
+      "exp": 2,
+      "epochs": 100,
+      "imgsz": 640,
+      "val_mAP50": 0.888,
+      "val_mAP50_95": 0.648,
+      "status": "BEST"
+    },
+    {
+      "exp": 3,
+      "epochs": 150,
+      "imgsz": 640,
+      "val_mAP50": 0.885,
+      "val_mAP50_95": 0.644,
+      "status": "COMPLETED"
+    }
+  ]
+}

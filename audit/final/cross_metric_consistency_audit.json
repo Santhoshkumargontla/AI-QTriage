@@ -1,0 +1,5 @@
+{
+  "diagonal_sum_check_efficientnet": "9+9+8 = 26/30 (86.67%)",
+  "diagonal_sum_check_xgboost": "4+20+3 = 27/30 (90.00%)",
+  "consistency": "PASS"
+}

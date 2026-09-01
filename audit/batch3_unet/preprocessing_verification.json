@@ -1,0 +1,25 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "image_resolution": [
+    256,
+    256
+  ],
+  "mask_resolution": [
+    256,
+    256
+  ],
+  "mask_interpolation": "cv2.INTER_NEAREST (Preserves binary 0/1 values)",
+  "image_normalization": {
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "status": "PASS"
+}

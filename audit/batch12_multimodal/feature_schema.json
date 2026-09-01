@@ -1,0 +1,30 @@
+{
+  "audit_timestamp": "2026-08-27T13:00:48.351359+00:00",
+  "feature_count": 23,
+  "features": [
+    "vision_present",
+    "prob_cut",
+    "prob_bruise",
+    "prob_swelling",
+    "prob_other",
+    "affected_ratio",
+    "questionnaire_present",
+    "pain_level",
+    "mech_fall",
+    "mech_impact",
+    "mech_sports",
+    "mech_sharp",
+    "mech_other",
+    "direct_impact",
+    "visible_bleeding",
+    "movement_limitation",
+    "weight_bearing",
+    "crack_pop",
+    "sensor_present",
+    "peak_g_force",
+    "delta_v",
+    "stabilization_time",
+    "lux_drop"
+  ],
+  "status": "PASS"
+}

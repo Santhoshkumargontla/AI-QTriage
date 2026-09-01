@@ -1,0 +1,3691 @@
+{
+  "created_utc": "2026-08-29T02:07:36.982662+00:00",
+  "did_not_retrain": true,
+  "checkpoint": {
+    "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+    "abs_path": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt",
+    "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+    "task": "detect",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "class_list": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "unsupported_not_in_model_names": [
+      "abrasion",
+      "laceration",
+      "swelling"
+    ],
+    "file_size": 5468506
+  },
+  "duplicate_artifacts": [
+    {
+      "path": "ml/models/vision/yolo11_injury_best.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "same_as_canonical": true,
+      "size": 5468506
+    },
+    {
+      "path": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_backup",
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "same_as_canonical": false,
+      "size": 5470810
+    },
+    {
+      "path": "ml/models/yolo11n_best.pt",
+      "sha256": "b2780ea3df84011b38a5dff27c2712ee210da3b46ecebf8c455ccb3e53e1fe44",
+      "same_as_canonical": false,
+      "size": 5469722
+    },
+    {
+      "path": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_backup",
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "same_as_canonical": false,
+      "size": 5470810
+    },
+    {
+      "path": "ml/models/yolo_real_training/run_real_wound/weights/best.pt",
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "same_as_canonical": false,
+      "size": 5470810
+    },
+    {
+      "path": "ml/models/yolo11n_best.pt",
+      "sha256": "b2780ea3df84011b38a5dff27c2712ee210da3b46ecebf8c455ccb3e53e1fe44",
+      "same_as_canonical": false,
+      "size": 5469722
+    },
+    {
+      "path": "ml/models/yolo11n_pretrained.pt",
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+      "same_as_canonical": false,
+      "size": 5613764
+    },
+    {
+      "path": "ml/models/vision/yolo11_injury_real_retrained.pt",
+      "sha256": "080817b4531bbc0d57af7ff2c08d48f353aa42ace53c710662eaa28dce0fd837",
+      "same_as_canonical": false,
+      "size": 5470840
+    },
+    {
+      "path": "ml/models/yolo_processed_training/run_processed/weights/best.pt",
+      "sha256": "5afe49cbbf2dd03abadfd1e089d321b95000b47b270f6ad7482b94fc79a78a48",
+      "same_as_canonical": false,
+      "size": 5470810
+    }
+  ],
+  "training_set_for_this_checkpoint": "yolo_merged (metadata + yolo_baseline_vs_candidate.json). yolo_processed candidate SHA 5afe49cb was not promoted.",
+  "datasets": {
+    "yolo_merged": {
+      "train": {
+        "images": 83,
+        "boxes": {
+          "wound": 288,
+          "bruise": 12,
+          "cut": 15
+        },
+        "images_per_class": {
+          "wound": 56,
+          "bruise": 12,
+          "cut": 15
+        },
+        "exact_pixel_duplicate_groups": {},
+        "annotation": {
+          "missing_label_file": 0,
+          "empty_label": 0,
+          "invalid_class_id": 0,
+          "out_of_range_coords": 0,
+          "gt_border_boxes": 0,
+          "gt_corner_boxes": 0,
+          "gt_tiny_boxes": 251,
+          "boxes_total": 315,
+          "multi_box_images": 23,
+          "max_boxes_on_image": 14,
+          "examples_corner_gt": [],
+          "examples_tiny_gt": [
+            {
+              "image": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "class": "wound",
+              "area_frac": 0.00478
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "class": "wound",
+              "area_frac": 0.00359
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "class": "wound",
+              "area_frac": 0.0061
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            }
+          ]
+        }
+      },
+      "val": {
+        "images": 17,
+        "boxes": {
+          "wound": 70,
+          "cut": 2,
+          "bruise": 1
+        },
+        "images_per_class": {
+          "wound": 14,
+          "cut": 2,
+          "bruise": 1
+        },
+        "exact_pixel_duplicate_groups": {},
+        "annotation": {
+          "missing_label_file": 0,
+          "empty_label": 0,
+          "invalid_class_id": 0,
+          "out_of_range_coords": 0,
+          "gt_border_boxes": 0,
+          "gt_corner_boxes": 0,
+          "gt_tiny_boxes": 61,
+          "boxes_total": 73,
+          "multi_box_images": 5,
+          "max_boxes_on_image": 14,
+          "examples_corner_gt": [],
+          "examples_tiny_gt": [
+            {
+              "image": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+              "class": "wound",
+              "area_frac": 0.00614
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+              "class": "wound",
+              "area_frac": 0.00415
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+              "class": "wound",
+              "area_frac": 0.00502
+            }
+          ]
+        }
+      },
+      "test": {
+        "images": 23,
+        "boxes": {
+          "cut": 5,
+          "bruise": 4,
+          "wound": 65
+        },
+        "images_per_class": {
+          "cut": 5,
+          "bruise": 4,
+          "wound": 14
+        },
+        "exact_pixel_duplicate_groups": {},
+        "annotation": {
+          "missing_label_file": 0,
+          "empty_label": 0,
+          "invalid_class_id": 0,
+          "out_of_range_coords": 0,
+          "gt_border_boxes": 0,
+          "gt_corner_boxes": 0,
+          "gt_tiny_boxes": 56,
+          "boxes_total": 74,
+          "multi_box_images": 5,
+          "max_boxes_on_image": 13,
+          "examples_corner_gt": [],
+          "examples_tiny_gt": [
+            {
+              "image": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "class": "wound",
+              "area_frac": 0.00526
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "class": "wound",
+              "area_frac": 0.00241
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "class": "wound",
+              "area_frac": 0.0044
+            },
+            {
+              "image": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "class": "wound",
+              "area_frac": 0.00383
+            }
+          ]
+        }
+      }
+    },
+    "yolo_processed": {
+      "train": {
+        "images": 87,
+        "boxes": {
+          "bruise": 40,
+          "cut": 47
+        },
+        "images_per_class": {
+          "bruise": 40,
+          "cut": 47
+        },
+        "exact_pixel_duplicate_groups": {},
+        "annotation": {
+          "missing_label_file": 0,
+          "empty_label": 0,
+          "invalid_class_id": 0,
+          "out_of_range_coords": 0,
+          "gt_border_boxes": 0,
+          "gt_corner_boxes": 0,
+          "gt_tiny_boxes": 0,
+          "boxes_total": 87,
+          "multi_box_images": 0,
+          "max_boxes_on_image": 1,
+          "examples_corner_gt": [],
+          "examples_tiny_gt": []
+        }
+      },
+      "val": {
+        "images": 19,
+        "boxes": {
+          "bruise": 13,
+          "cut": 6
+        },
+        "images_per_class": {
+          "bruise": 13,
+          "cut": 6
+        },
+        "exact_pixel_duplicate_groups": {},
+        "annotation": {
+          "missing_label_file": 0,
+          "empty_label": 0,
+          "invalid_class_id": 0,
+          "out_of_range_coords": 0,
+          "gt_border_boxes": 0,
+          "gt_corner_boxes": 0,
+          "gt_tiny_boxes": 0,
+          "boxes_total": 19,
+          "multi_box_images": 0,
+          "max_boxes_on_image": 1,
+          "examples_corner_gt": [],
+          "examples_tiny_gt": []
+        }
+      },
+      "test": {
+        "images": 18,
+        "boxes": {
+          "bruise": 10,
+          "cut": 8
+        },
+        "images_per_class": {
+          "bruise": 10,
+          "cut": 8
+        },
+        "exact_pixel_duplicate_groups": {},
+        "annotation": {
+          "missing_label_file": 0,
+          "empty_label": 0,
+          "invalid_class_id": 0,
+          "out_of_range_coords": 0,
+          "gt_border_boxes": 0,
+          "gt_corner_boxes": 0,
+          "gt_tiny_boxes": 0,
+          "boxes_total": 18,
+          "multi_box_images": 0,
+          "max_boxes_on_image": 1,
+          "examples_corner_gt": [],
+          "examples_tiny_gt": []
+        }
+      }
+    }
+  },
+  "leakage": {
+    "yolo_merged": {
+      "pixel_hash_cross_split": {},
+      "stem_cross_split": {},
+      "near_duplicate_cross_split_hamming_le_6": [
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0006.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0002.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0016.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0118.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0016.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0148.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0016.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0034.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0016.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0046.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0016.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0204.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0118.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0148.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/synthetic_wound_syn_wound_0036.jpg",
+          "b_split": "val",
+          "hamming": 3
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/synthetic_wound_syn_wound_0042.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/synthetic_wound_syn_wound_0111.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/synthetic_wound_syn_wound_0118.jpg",
+          "b_split": "val",
+          "hamming": 3
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/synthetic_wound_syn_wound_0121.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/synthetic_wound_syn_wound_0197.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0013.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0016.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0043.jpg",
+          "b_split": "test",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0169.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0204.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0209.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0040.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0046.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0088.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0046.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0028.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0046.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0034.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0046.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0076.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0046.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0046.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0052.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0118.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0052.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0052.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0034.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0088.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0118.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0002.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0034.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0076.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0046.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0082.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0070.jpg",
+          "b_split": "test",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0094.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0088.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0094.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0046.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0094.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0119.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0100.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0118.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0100.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0148.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0100.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0028.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0100.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0046.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0100.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0119.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0106.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0058.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0106.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/val/public_sample_0118.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0106.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0002.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_merged/images/train/public_sample_0106.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_merged/images/test/public_sample_0034.jpg",
+          "b_split": "test",
+          "hamming": 6
+        }
+      ],
+      "near_duplicate_cross_split_count": 1379,
+      "subject_id_field_present": false,
+      "subject_split_status": "NOT_AVAILABLE \u2014 filenames have no subject_id"
+    },
+    "yolo_processed": {
+      "pixel_hash_cross_split": {},
+      "stem_cross_split": {},
+      "near_duplicate_cross_split_hamming_le_6": [
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0153.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0157.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0161.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0170.jpg",
+          "b_split": "val",
+          "hamming": 3
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0172.jpg",
+          "b_split": "val",
+          "hamming": 1
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0173.jpg",
+          "b_split": "val",
+          "hamming": 3
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0182.jpg",
+          "b_split": "val",
+          "hamming": 3
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0184.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0189.jpg",
+          "b_split": "test",
+          "hamming": 3
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0199.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0206.jpg",
+          "b_split": "test",
+          "hamming": 3
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0207.jpg",
+          "b_split": "test",
+          "hamming": 2
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0001.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0211.jpg",
+          "b_split": "test",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0150.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0153.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0156.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0157.jpg",
+          "b_split": "val",
+          "hamming": 1
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0158.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0161.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0164.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0170.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0171.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0172.jpg",
+          "b_split": "val",
+          "hamming": 2
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0173.jpg",
+          "b_split": "val",
+          "hamming": 0
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0179.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0182.jpg",
+          "b_split": "val",
+          "hamming": 2
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0183.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0184.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0186.jpg",
+          "b_split": "test",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0187.jpg",
+          "b_split": "test",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0189.jpg",
+          "b_split": "test",
+          "hamming": 2
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0195.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0199.jpg",
+          "b_split": "test",
+          "hamming": 2
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0200.jpg",
+          "b_split": "test",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0202.jpg",
+          "b_split": "test",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0206.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0207.jpg",
+          "b_split": "test",
+          "hamming": 3
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0211.jpg",
+          "b_split": "test",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0213.jpg",
+          "b_split": "test",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0216.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0004.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0218.jpg",
+          "b_split": "test",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0153.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0157.jpg",
+          "b_split": "val",
+          "hamming": 5
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0170.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0171.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0172.jpg",
+          "b_split": "val",
+          "hamming": 2
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0173.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0182.jpg",
+          "b_split": "val",
+          "hamming": 4
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/val/raw_synthetic_wound__syn_wound_0184.jpg",
+          "b_split": "val",
+          "hamming": 6
+        },
+        {
+          "a": "data/datasets/yolo_processed/images/train/raw_synthetic_wound__syn_wound_0005.jpg",
+          "a_split": "train",
+          "b": "data/datasets/yolo_processed/images/test/raw_synthetic_wound__syn_wound_0189.jpg",
+          "b_split": "test",
+          "hamming": 2
+        }
+      ],
+      "near_duplicate_cross_split_count": 2459,
+      "subject_id_field_present": false,
+      "subject_split_status": "NOT_AVAILABLE \u2014 filenames have no subject_id"
+    }
+  },
+  "independent_ultralytics_val": {
+    "yolo_merged_val": {
+      "split": "val",
+      "precision": 0.8224310703639396,
+      "recall": 0.5227071713511425,
+      "mAP50": 0.8195661917669056,
+      "mAP50-95": 0.6790820415149159,
+      "per_class": {
+        "cut": {
+          "name": "cut",
+          "precision": 1.0,
+          "recall": 0.0,
+          "mAP50": 0.535,
+          "mAP50-95": 0.31859042553191486
+        },
+        "bruise": {
+          "name": "bruise",
+          "precision": 0.5151811251641303,
+          "recall": 1.0,
+          "mAP50": 0.995,
+          "mAP50-95": 0.8955
+        },
+        "wound": {
+          "name": "wound",
+          "precision": 0.9521120859276886,
+          "recall": 0.5681215140534275,
+          "mAP50": 0.928698575300717,
+          "mAP50-95": 0.8231556990128335
+        }
+      },
+      "nc": 3
+    },
+    "yolo_merged_test": {
+      "split": "test",
+      "precision": 0.7657375389110114,
+      "recall": 0.6137094073290082,
+      "mAP50": 0.7419828725639913,
+      "mAP50-95": 0.5942913436847725,
+      "per_class": {
+        "cut": {
+          "name": "cut",
+          "precision": 1.0,
+          "recall": 0.0,
+          "mAP50": 0.44493619097665343,
+          "mAP50-95": 0.26066034020260903
+        },
+        "bruise": {
+          "name": "bruise",
+          "precision": 0.501085872912021,
+          "recall": 1.0,
+          "mAP50": 0.8878571428571426,
+          "mAP50-95": 0.7621666666666664
+        },
+        "wound": {
+          "name": "wound",
+          "precision": 0.7961267438210129,
+          "recall": 0.8411282219870247,
+          "mAP50": 0.893155283858178,
+          "mAP50-95": 0.7600470241850421
+        }
+      },
+      "nc": 3
+    },
+    "yolo_processed_val": {
+      "split": "val",
+      "precision": 0.9965423563415023,
+      "recall": 0.5,
+      "mAP50": 0.7026190476190475,
+      "mAP50-95": 0.5197370077838828,
+      "per_class": {
+        "cut": {
+          "name": "cut",
+          "precision": 1.0,
+          "recall": 0.0,
+          "mAP50": 0.41023809523809507,
+          "mAP50-95": 0.1916800595238095
+        },
+        "bruise": {
+          "name": "bruise",
+          "precision": 0.9930847126830048,
+          "recall": 1.0,
+          "mAP50": 0.995,
+          "mAP50-95": 0.847793956043956
+        },
+        "wound": {
+          "name": "wound",
+          "mAP50-95": 0.5197370077838828
+        }
+      },
+      "nc": 3
+    },
+    "yolo_processed_test": {
+      "split": "test",
+      "precision": 1.0,
+      "recall": 0.4938481489948705,
+      "mAP50": 0.6644673430564363,
+      "mAP50-95": 0.48079353311102635,
+      "per_class": {
+        "cut": {
+          "name": "cut",
+          "precision": 1.0,
+          "recall": 0.0,
+          "mAP50": 0.3339346861128725,
+          "mAP50-95": 0.11218706622205292
+        },
+        "bruise": {
+          "name": "bruise",
+          "precision": 1.0,
+          "recall": 0.987696297989741,
+          "mAP50": 0.995,
+          "mAP50-95": 0.8493999999999999
+        },
+        "wound": {
+          "name": "wound",
+          "mAP50-95": 0.48079353311102635
+        }
+      },
+      "nc": 3
+    }
+  },
+  "threshold_sweep_summary": {
+    "demo": {
+      "0.01": {
+        "images": 1,
+        "detections": 86,
+        "mean_dets_per_image": 86.0,
+        "border_boxes": 84,
+        "corner_boxes": 32,
+        "class_counts": {
+          "wound": 85,
+          "bruise": 1
+        },
+        "max_conf": 0.2982,
+        "min_conf": 0.0101
+      },
+      "0.05": {
+        "images": 1,
+        "detections": 19,
+        "mean_dets_per_image": 19.0,
+        "border_boxes": 19,
+        "corner_boxes": 10,
+        "class_counts": {
+          "wound": 19
+        },
+        "max_conf": 0.2982,
+        "min_conf": 0.0551
+      },
+      "0.1": {
+        "images": 1,
+        "detections": 13,
+        "mean_dets_per_image": 13.0,
+        "border_boxes": 13,
+        "corner_boxes": 7,
+        "class_counts": {
+          "wound": 13
+        },
+        "max_conf": 0.2982,
+        "min_conf": 0.1109
+      },
+      "0.25": {
+        "images": 1,
+        "detections": 3,
+        "mean_dets_per_image": 3.0,
+        "border_boxes": 3,
+        "corner_boxes": 2,
+        "class_counts": {
+          "wound": 3
+        },
+        "max_conf": 0.2982,
+        "min_conf": 0.2628
+      },
+      "0.4": {
+        "images": 1,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.5": {
+        "images": 1,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      }
+    },
+    "merged_val": {
+      "0.01": {
+        "images": 17,
+        "detections": 216,
+        "mean_dets_per_image": 12.706,
+        "border_boxes": 2,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 190,
+          "bruise": 19,
+          "cut": 7
+        },
+        "max_conf": 0.9725,
+        "min_conf": 0.01
+      },
+      "0.05": {
+        "images": 17,
+        "detections": 98,
+        "mean_dets_per_image": 5.765,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 92,
+          "bruise": 6
+        },
+        "max_conf": 0.9725,
+        "min_conf": 0.0526
+      },
+      "0.1": {
+        "images": 17,
+        "detections": 65,
+        "mean_dets_per_image": 3.824,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 62,
+          "bruise": 3
+        },
+        "max_conf": 0.9725,
+        "min_conf": 0.1092
+      },
+      "0.25": {
+        "images": 17,
+        "detections": 26,
+        "mean_dets_per_image": 1.529,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 25,
+          "bruise": 1
+        },
+        "max_conf": 0.9725,
+        "min_conf": 0.2513
+      },
+      "0.4": {
+        "images": 17,
+        "detections": 11,
+        "mean_dets_per_image": 0.647,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 10,
+          "bruise": 1
+        },
+        "max_conf": 0.9725,
+        "min_conf": 0.4104
+      },
+      "0.5": {
+        "images": 17,
+        "detections": 5,
+        "mean_dets_per_image": 0.294,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 4,
+          "bruise": 1
+        },
+        "max_conf": 0.9725,
+        "min_conf": 0.5201
+      }
+    },
+    "merged_test": {
+      "0.01": {
+        "images": 23,
+        "detections": 277,
+        "mean_dets_per_image": 12.043,
+        "border_boxes": 6,
+        "corner_boxes": 2,
+        "class_counts": {
+          "wound": 223,
+          "bruise": 48,
+          "cut": 6
+        },
+        "max_conf": 0.9187,
+        "min_conf": 0.01
+      },
+      "0.05": {
+        "images": 23,
+        "detections": 98,
+        "mean_dets_per_image": 4.261,
+        "border_boxes": 1,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 86,
+          "bruise": 12
+        },
+        "max_conf": 0.9187,
+        "min_conf": 0.0524
+      },
+      "0.1": {
+        "images": 23,
+        "detections": 72,
+        "mean_dets_per_image": 3.13,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 66,
+          "bruise": 6
+        },
+        "max_conf": 0.9187,
+        "min_conf": 0.1021
+      },
+      "0.25": {
+        "images": 23,
+        "detections": 34,
+        "mean_dets_per_image": 1.478,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 29,
+          "bruise": 5
+        },
+        "max_conf": 0.9187,
+        "min_conf": 0.2523
+      },
+      "0.4": {
+        "images": 23,
+        "detections": 17,
+        "mean_dets_per_image": 0.739,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 13,
+          "bruise": 4
+        },
+        "max_conf": 0.9187,
+        "min_conf": 0.4101
+      },
+      "0.5": {
+        "images": 23,
+        "detections": 10,
+        "mean_dets_per_image": 0.435,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "wound": 7,
+          "bruise": 3
+        },
+        "max_conf": 0.9187,
+        "min_conf": 0.5251
+      }
+    },
+    "processed_val": {
+      "0.01": {
+        "images": 19,
+        "detections": 102,
+        "mean_dets_per_image": 5.368,
+        "border_boxes": 9,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 53,
+          "wound": 44,
+          "cut": 5
+        },
+        "max_conf": 0.9893,
+        "min_conf": 0.01
+      },
+      "0.05": {
+        "images": 19,
+        "detections": 32,
+        "mean_dets_per_image": 1.684,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 18,
+          "wound": 14
+        },
+        "max_conf": 0.9893,
+        "min_conf": 0.0551
+      },
+      "0.1": {
+        "images": 19,
+        "detections": 21,
+        "mean_dets_per_image": 1.105,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 15,
+          "wound": 6
+        },
+        "max_conf": 0.9893,
+        "min_conf": 0.1155
+      },
+      "0.25": {
+        "images": 19,
+        "detections": 14,
+        "mean_dets_per_image": 0.737,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 13,
+          "wound": 1
+        },
+        "max_conf": 0.9893,
+        "min_conf": 0.2832
+      },
+      "0.4": {
+        "images": 19,
+        "detections": 13,
+        "mean_dets_per_image": 0.684,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 13
+        },
+        "max_conf": 0.9893,
+        "min_conf": 0.6105
+      },
+      "0.5": {
+        "images": 19,
+        "detections": 13,
+        "mean_dets_per_image": 0.684,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 13
+        },
+        "max_conf": 0.9893,
+        "min_conf": 0.6105
+      }
+    },
+    "processed_test": {
+      "0.01": {
+        "images": 18,
+        "detections": 109,
+        "mean_dets_per_image": 6.056,
+        "border_boxes": 4,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 47,
+          "wound": 58,
+          "cut": 4
+        },
+        "max_conf": 0.9779,
+        "min_conf": 0.01
+      },
+      "0.05": {
+        "images": 18,
+        "detections": 27,
+        "mean_dets_per_image": 1.5,
+        "border_boxes": 1,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 16,
+          "wound": 11
+        },
+        "max_conf": 0.9779,
+        "min_conf": 0.0524
+      },
+      "0.1": {
+        "images": 18,
+        "detections": 16,
+        "mean_dets_per_image": 0.889,
+        "border_boxes": 1,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 11,
+          "wound": 5
+        },
+        "max_conf": 0.9779,
+        "min_conf": 0.1021
+      },
+      "0.25": {
+        "images": 18,
+        "detections": 10,
+        "mean_dets_per_image": 0.556,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 9,
+          "wound": 1
+        },
+        "max_conf": 0.9779,
+        "min_conf": 0.2573
+      },
+      "0.4": {
+        "images": 18,
+        "detections": 9,
+        "mean_dets_per_image": 0.5,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 9
+        },
+        "max_conf": 0.9779,
+        "min_conf": 0.5512
+      },
+      "0.5": {
+        "images": 18,
+        "detections": 9,
+        "mean_dets_per_image": 0.5,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {
+          "bruise": 9
+        },
+        "max_conf": 0.9779,
+        "min_conf": 0.5512
+      }
+    },
+    "negatives": {
+      "0.01": {
+        "images": 2,
+        "detections": 1,
+        "mean_dets_per_image": 0.5,
+        "border_boxes": 1,
+        "corner_boxes": 1,
+        "class_counts": {
+          "bruise": 1
+        },
+        "max_conf": 0.0117,
+        "min_conf": 0.0117
+      },
+      "0.05": {
+        "images": 2,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.1": {
+        "images": 2,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.25": {
+        "images": 2,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.4": {
+        "images": 2,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.5": {
+        "images": 2,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      }
+    },
+    "unrelated": {
+      "0.01": {
+        "images": 0,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.05": {
+        "images": 0,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.1": {
+        "images": 0,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.25": {
+        "images": 0,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.4": {
+        "images": 0,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      },
+      "0.5": {
+        "images": 0,
+        "detections": 0,
+        "mean_dets_per_image": 0.0,
+        "border_boxes": 0,
+        "corner_boxes": 0,
+        "class_counts": {},
+        "max_conf": null,
+        "min_conf": null
+      }
+    }
+  },
+  "threshold_sweep_demo": [
+    {
+      "image": "data/sample/image/football_injury.jpg",
+      "width": 300,
+      "height": 300,
+      "threshold": 0.01,
+      "n_detections": 86,
+      "detections": [
+        {
+          "class": "wound",
+          "confidence": 0.2982,
+          "xyxy": [
+            0.0,
+            260.14,
+            81.84,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.03624
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2918,
+          "xyxy": [
+            2.22,
+            0.0,
+            98.48,
+            50.21
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0537
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2628,
+          "xyxy": [
+            72.38,
+            0.0,
+            206.93,
+            49.93
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07466
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2466,
+          "xyxy": [
+            0.07,
+            233.77,
+            87.34,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.06423
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2156,
+          "xyxy": [
+            7.45,
+            0.0,
+            124.88,
+            46.19
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.06027
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2087,
+          "xyxy": [
+            7.63,
+            0.0,
+            181.21,
+            48.32
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0932
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2021,
+          "xyxy": [
+            55.1,
+            0.0,
+            188.67,
+            78.9
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.11709
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1768,
+          "xyxy": [
+            79.31,
+            0.0,
+            209.84,
+            75.88
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.11005
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1699,
+          "xyxy": [
+            165.79,
+            174.8,
+            293.53,
+            299.58
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.1771
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1613,
+          "xyxy": [
+            101.43,
+            0.0,
+            227.85,
+            48.17
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.06767
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1563,
+          "xyxy": [
+            48.82,
+            0.0,
+            192.27,
+            44.33
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07065
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1337,
+          "xyxy": [
+            10.42,
+            0.0,
+            179.56,
+            80.65
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.15157
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1109,
+          "xyxy": [
+            6.26,
+            0.0,
+            151.1,
+            68.76
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.11065
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0946,
+          "xyxy": [
+            149.07,
+            0.32,
+            257.28,
+            63.11
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07549
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0924,
+          "xyxy": [
+            127.25,
+            0.0,
+            250.37,
+            47.35
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.06478
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0898,
+          "xyxy": [
+            0.27,
+            0.0,
+            86.8,
+            79.42
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.07636
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0714,
+          "xyxy": [
+            122.05,
+            0.0,
+            239.23,
+            69.57
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.09058
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0653,
+          "xyxy": [
+            0.0,
+            258.87,
+            128.75,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.05884
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0551,
+          "xyxy": [
+            176.97,
+            0.0,
+            299.92,
+            100.67
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.13752
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0489,
+          "xyxy": [
+            57.64,
+            0.0,
+            171.47,
+            90.22
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.11411
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0457,
+          "xyxy": [
+            85.63,
+            0.0,
+            201.75,
+            88.05
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.1136
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0455,
+          "xyxy": [
+            0.02,
+            198.11,
+            113.22,
+            297.27
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.12473
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0428,
+          "xyxy": [
+            132.6,
+            189.58,
+            293.74,
+            295.52
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.18967
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0379,
+          "xyxy": [
+            194.8,
+            190.09,
+            296.45,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.12414
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0375,
+          "xyxy": [
+            172.03,
+            135.57,
+            297.32,
+            292.14
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.21797
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0352,
+          "xyxy": [
+            0.0,
+            0.0,
+            110.04,
+            138.14
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.1689
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0345,
+          "xyxy": [
+            0.58,
+            0.0,
+            65.51,
+            121.96
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.08798
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0341,
+          "xyxy": [
+            147.67,
+            0.54,
+            296.27,
+            46.03
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.07511
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0295,
+          "xyxy": [
+            62.77,
+            0.0,
+            185.26,
+            111.3
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.15149
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0292,
+          "xyxy": [
+            0.63,
+            261.42,
+            170.11,
+            299.97
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0726
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0287,
+          "xyxy": [
+            179.37,
+            0.0,
+            299.44,
+            140.92
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.18801
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0284,
+          "xyxy": [
+            0.46,
+            152.99,
+            103.56,
+            295.13
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.16283
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0282,
+          "xyxy": [
+            40.89,
+            0.0,
+            143.86,
+            91.33
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.10449
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0278,
+          "xyxy": [
+            191.43,
+            205.12,
+            298.18,
+            295.09
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.10671
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0273,
+          "xyxy": [
+            1.9,
+            0.0,
+            122.42,
+            109.54
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.14668
+        },
+        {
+          "class": "wound",
+          "confidence": 0.027,
+          "xyxy": [
+            33.81,
+            0.0,
+            174.68,
+            114.4
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.17905
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0251,
+          "xyxy": [
+            0.23,
+            17.75,
+            100.61,
+            127.19
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.12206
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0236,
+          "xyxy": [
+            30.02,
+            0.0,
+            126.4,
+            31.59
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.03383
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0234,
+          "xyxy": [
+            173.52,
+            0.0,
+            297.84,
+            194.52
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.2687
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0229,
+          "xyxy": [
+            0.0,
+            228.54,
+            155.58,
+            297.8
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.11973
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0228,
+          "xyxy": [
+            11.55,
+            0.0,
+            130.54,
+            85.33
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.11281
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0227,
+          "xyxy": [
+            227.28,
+            0.0,
+            292.93,
+            19.88
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0145
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0224,
+          "xyxy": [
+            0.37,
+            4.19,
+            70.12,
+            143.36
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.10785
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0218,
+          "xyxy": [
+            30.73,
+            2.23,
+            185.98,
+            164.77
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.28038
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0211,
+          "xyxy": [
+            113.32,
+            0.0,
+            217.21,
+            92.7
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.10701
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0209,
+          "xyxy": [
+            0.18,
+            123.1,
+            93.79,
+            250.7
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.13272
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0208,
+          "xyxy": [
+            121.22,
+            207.29,
+            259.66,
+            293.59
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.13274
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0206,
+          "xyxy": [
+            0.0,
+            132.07,
+            132.31,
+            295.02
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.23956
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0203,
+          "xyxy": [
+            81.48,
+            0.0,
+            207.68,
+            116.5
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.16337
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0203,
+          "xyxy": [
+            88.01,
+            0.0,
+            225.78,
+            143.55
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.21975
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0199,
+          "xyxy": [
+            41.57,
+            0.0,
+            173.41,
+            23.0
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.03369
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0198,
+          "xyxy": [
+            20.61,
+            0.0,
+            150.5,
+            25.98
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.03749
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0194,
+          "xyxy": [
+            69.16,
+            0.77,
+            205.84,
+            190.77
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.28856
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0185,
+          "xyxy": [
+            141.31,
+            0.0,
+            294.68,
+            168.83
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.28769
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0179,
+          "xyxy": [
+            138.0,
+            0.0,
+            250.15,
+            97.89
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.12199
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0173,
+          "xyxy": [
+            11.81,
+            0.0,
+            112.58,
+            28.75
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.03219
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0167,
+          "xyxy": [
+            0.0,
+            38.05,
+            106.62,
+            227.24
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.22412
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0159,
+          "xyxy": [
+            169.56,
+            73.95,
+            296.65,
+            291.83
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.30769
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0159,
+          "xyxy": [
+            149.26,
+            0.0,
+            262.99,
+            151.02
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.19084
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0157,
+          "xyxy": [
+            254.03,
+            0.0,
+            291.59,
+            47.66
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.01989
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0156,
+          "xyxy": [
+            11.61,
+            0.0,
+            100.07,
+            16.87
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.01658
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0155,
+          "xyxy": [
+            89.13,
+            0.0,
+            259.8,
+            180.73
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.34272
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0152,
+          "xyxy": [
+            65.4,
+            0.0,
+            203.1,
+            15.03
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.023
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0152,
+          "xyxy": [
+            0.14,
+            53.3,
+            103.12,
+            138.03
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.09695
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0151,
+          "xyxy": [
+            51.93,
+            0.0,
+            163.1,
+            23.26
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.02873
+        },
+        {
+          "class": "wound",
+          "confidence": 0.015,
+          "xyxy": [
+            15.43,
+            259.19,
+            156.5,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.06397
+        },
+        {
+          "class": "wound",
+          "confidence": 0.015,
+          "xyxy": [
+            75.54,
+            0.0,
+            211.83,
+            15.33
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.02322
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0148,
+          "xyxy": [
+            6.78,
+            234.14,
+            193.01,
+            296.05
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.12811
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0146,
+          "xyxy": [
+            146.46,
+            22.73,
+            294.23,
+            266.9
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.4009
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0142,
+          "xyxy": [
+            197.41,
+            0.0,
+            283.32,
+            25.02
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.02388
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0134,
+          "xyxy": [
+            0.0,
+            95.42,
+            106.84,
+            291.67
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.23297
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0128,
+          "xyxy": [
+            0.33,
+            83.46,
+            97.6,
+            243.62
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.1731
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0124,
+          "xyxy": [
+            127.02,
+            130.61,
+            293.51,
+            290.28
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.29535
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0121,
+          "xyxy": [
+            0.0,
+            205.85,
+            201.21,
+            293.92
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.19689
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0116,
+          "xyxy": [
+            111.15,
+            0.0,
+            282.61,
+            192.71
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.36713
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0112,
+          "xyxy": [
+            22.45,
+            12.26,
+            204.04,
+            217.76
+          ],
+          "touches_border": false,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.41463
+        },
+        {
+          "class": "wound",
+          "confidence": 0.011,
+          "xyxy": [
+            185.58,
+            0.0,
+            268.35,
+            24.01
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.02208
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0108,
+          "xyxy": [
+            123.03,
+            232.79,
+            294.27,
+            292.42
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.11346
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0107,
+          "xyxy": [
+            0.32,
+            36.16,
+            95.72,
+            179.92
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.15238
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0107,
+          "xyxy": [
+            105.22,
+            22.36,
+            233.94,
+            220.8
+          ],
+          "touches_border": false,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.28382
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.0104,
+          "xyxy": [
+            114.7,
+            33.09,
+            294.03,
+            267.48
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.46703
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0104,
+          "xyxy": [
+            57.73,
+            212.37,
+            220.86,
+            293.88
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.14774
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0103,
+          "xyxy": [
+            14.73,
+            217.42,
+            169.61,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.14211
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0102,
+          "xyxy": [
+            40.88,
+            157.38,
+            300.0,
+            298.41
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.40605
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0101,
+          "xyxy": [
+            10.07,
+            122.88,
+            282.37,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.53589
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0101,
+          "xyxy": [
+            5.04,
+            175.49,
+            258.31,
+            290.96
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.32494
+        }
+      ],
+      "n_border": 84,
+      "n_corner": 32
+    },
+    {
+      "image": "data/sample/image/football_injury.jpg",
+      "width": 300,
+      "height": 300,
+      "threshold": 0.05,
+      "n_detections": 19,
+      "detections": [
+        {
+          "class": "wound",
+          "confidence": 0.2982,
+          "xyxy": [
+            0.0,
+            260.14,
+            81.84,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.03624
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2918,
+          "xyxy": [
+            2.22,
+            0.0,
+            98.48,
+            50.21
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0537
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2628,
+          "xyxy": [
+            72.38,
+            0.0,
+            206.93,
+            49.93
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07466
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2466,
+          "xyxy": [
+            0.07,
+            233.77,
+            87.34,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.06423
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2156,
+          "xyxy": [
+            7.45,
+            0.0,
+            124.88,
+            46.19
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.06027
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2087,
+          "xyxy": [
+            7.63,
+            0.0,
+            181.21,
+            48.32
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0932
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2021,
+          "xyxy": [
+            55.1,
+            0.0,
+            188.67,
+            78.9
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.11709
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1768,
+          "xyxy": [
+            79.31,
+            0.0,
+            209.84,
+            75.88
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.11005
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1699,
+          "xyxy": [
+            165.79,
+            174.8,
+            293.53,
+            299.58
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.1771
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1613,
+          "xyxy": [
+            101.43,
+            0.0,
+            227.85,
+            48.17
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.06767
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1563,
+          "xyxy": [
+            48.82,
+            0.0,
+            192.27,
+            44.33
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07065
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1337,
+          "xyxy": [
+            10.42,
+            0.0,
+            179.56,
+            80.65
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.15157
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1109,
+          "xyxy": [
+            6.26,
+            0.0,
+            151.1,
+            68.76
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.11065
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0946,
+          "xyxy": [
+            149.07,
+            0.32,
+            257.28,
+            63.11
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07549
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0924,
+          "xyxy": [
+            127.25,
+            0.0,
+            250.37,
+            47.35
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.06478
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0898,
+          "xyxy": [
+            0.27,
+            0.0,
+            86.8,
+            79.42
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.07636
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0714,
+          "xyxy": [
+            122.05,
+            0.0,
+            239.23,
+            69.57
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.09058
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0653,
+          "xyxy": [
+            0.0,
+            258.87,
+            128.75,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.05884
+        },
+        {
+          "class": "wound",
+          "confidence": 0.0551,
+          "xyxy": [
+            176.97,
+            0.0,
+            299.92,
+            100.67
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.13752
+        }
+      ],
+      "n_border": 19,
+      "n_corner": 10
+    },
+    {
+      "image": "data/sample/image/football_injury.jpg",
+      "width": 300,
+      "height": 300,
+      "threshold": 0.1,
+      "n_detections": 13,
+      "detections": [
+        {
+          "class": "wound",
+          "confidence": 0.2982,
+          "xyxy": [
+            0.0,
+            260.14,
+            81.84,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.03624
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2918,
+          "xyxy": [
+            2.22,
+            0.0,
+            98.48,
+            50.21
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0537
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2628,
+          "xyxy": [
+            72.38,
+            0.0,
+            206.93,
+            49.93
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07466
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2466,
+          "xyxy": [
+            0.07,
+            233.77,
+            87.34,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.06423
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2156,
+          "xyxy": [
+            7.45,
+            0.0,
+            124.88,
+            46.19
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.06027
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2087,
+          "xyxy": [
+            7.63,
+            0.0,
+            181.21,
+            48.32
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0932
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2021,
+          "xyxy": [
+            55.1,
+            0.0,
+            188.67,
+            78.9
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.11709
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1768,
+          "xyxy": [
+            79.31,
+            0.0,
+            209.84,
+            75.88
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.11005
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1699,
+          "xyxy": [
+            165.79,
+            174.8,
+            293.53,
+            299.58
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.1771
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1613,
+          "xyxy": [
+            101.43,
+            0.0,
+            227.85,
+            48.17
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.06767
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1563,
+          "xyxy": [
+            48.82,
+            0.0,
+            192.27,
+            44.33
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07065
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1337,
+          "xyxy": [
+            10.42,
+            0.0,
+            179.56,
+            80.65
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.15157
+        },
+        {
+          "class": "wound",
+          "confidence": 0.1109,
+          "xyxy": [
+            6.26,
+            0.0,
+            151.1,
+            68.76
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.11065
+        }
+      ],
+      "n_border": 13,
+      "n_corner": 7
+    },
+    {
+      "image": "data/sample/image/football_injury.jpg",
+      "width": 300,
+      "height": 300,
+      "threshold": 0.25,
+      "n_detections": 3,
+      "detections": [
+        {
+          "class": "wound",
+          "confidence": 0.2982,
+          "xyxy": [
+            0.0,
+            260.14,
+            81.84,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.03624
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2918,
+          "xyxy": [
+            2.22,
+            0.0,
+            98.48,
+            50.21
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0537
+        },
+        {
+          "class": "wound",
+          "confidence": 0.2628,
+          "xyxy": [
+            72.38,
+            0.0,
+            206.93,
+            49.93
+          ],
+          "touches_border": true,
+          "corner_like": false,
+          "tiny": false,
+          "area_frac": 0.07466
+        }
+      ],
+      "n_border": 3,
+      "n_corner": 2
+    },
+    {
+      "image": "data/sample/image/football_injury.jpg",
+      "width": 300,
+      "height": 300,
+      "threshold": 0.4,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/sample/image/football_injury.jpg",
+      "width": 300,
+      "height": 300,
+      "threshold": 0.5,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    }
+  ],
+  "threshold_sweep_negatives": [
+    {
+      "image": "data/datasets/yolo_injury/blank_skin.jpg",
+      "width": 640,
+      "height": 640,
+      "threshold": 0.01,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/dummy_test.jpg",
+      "width": 64,
+      "height": 64,
+      "threshold": 0.01,
+      "n_detections": 1,
+      "detections": [
+        {
+          "class": "bruise",
+          "confidence": 0.0117,
+          "xyxy": [
+            0.0,
+            54.25,
+            19.74,
+            64.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.04699
+        }
+      ],
+      "n_border": 1,
+      "n_corner": 1
+    },
+    {
+      "image": "data/datasets/yolo_injury/blank_skin.jpg",
+      "width": 640,
+      "height": 640,
+      "threshold": 0.05,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/dummy_test.jpg",
+      "width": 64,
+      "height": 64,
+      "threshold": 0.05,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/blank_skin.jpg",
+      "width": 640,
+      "height": 640,
+      "threshold": 0.1,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/dummy_test.jpg",
+      "width": 64,
+      "height": 64,
+      "threshold": 0.1,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/blank_skin.jpg",
+      "width": 640,
+      "height": 640,
+      "threshold": 0.25,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/dummy_test.jpg",
+      "width": 64,
+      "height": 64,
+      "threshold": 0.25,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/blank_skin.jpg",
+      "width": 640,
+      "height": 640,
+      "threshold": 0.4,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/dummy_test.jpg",
+      "width": 64,
+      "height": 64,
+      "threshold": 0.4,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/blank_skin.jpg",
+      "width": 640,
+      "height": 640,
+      "threshold": 0.5,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    },
+    {
+      "image": "data/datasets/yolo_injury/dummy_test.jpg",
+      "width": 64,
+      "height": 64,
+      "threshold": 0.5,
+      "n_detections": 0,
+      "detections": [],
+      "n_border": 0,
+      "n_corner": 0
+    }
+  ],
+  "demo_image": {
+    "path": "data/sample/image/football_injury.jpg",
+    "exists": true,
+    "dims": {
+      "width": 300,
+      "height": 300
+    },
+    "note": "Synthetic demonstration graphic, not a clinical photograph."
+  },
+  "corner_box_examples_at_0.25": {
+    "demo": [
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "wh": [
+          300,
+          300
+        ],
+        "det": {
+          "class": "wound",
+          "confidence": 0.2982,
+          "xyxy": [
+            0.0,
+            260.14,
+            81.84,
+            300.0
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.03624
+        }
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "wh": [
+          300,
+          300
+        ],
+        "det": {
+          "class": "wound",
+          "confidence": 0.2918,
+          "xyxy": [
+            2.22,
+            0.0,
+            98.48,
+            50.21
+          ],
+          "touches_border": true,
+          "corner_like": true,
+          "tiny": false,
+          "area_frac": 0.0537
+        }
+      }
+    ],
+    "merged_val": [],
+    "merged_test": [],
+    "processed_val": [],
+    "processed_test": [],
+    "negatives": [],
+    "unrelated": []
+  }
+}

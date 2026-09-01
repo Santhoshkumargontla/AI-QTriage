@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "train_box_loss": 0.842,
+  "train_cls_loss": 0.518,
+  "train_dfl_loss": 0.912,
+  "val_box_loss": 0.915,
+  "val_cls_loss": 0.584,
+  "val_dfl_loss": 0.985,
+  "best_epoch": 22,
+  "best_val_mAP50": 0.885,
+  "best_val_mAP50_95": 0.642,
+  "best_val_precision": 0.891,
+  "best_val_recall": 0.854
+}

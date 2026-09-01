@@ -1,0 +1,1183 @@
+{
+  "created_utc": "2026-08-29T13:44:23.469589+00:00",
+  "images": {
+    "blank_black": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\blank_black.png",
+    "blank_white": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\blank_white.png",
+    "blank_gray": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\blank_gray.png",
+    "noise": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\noise.png",
+    "normal_skin": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\normal_skin.png",
+    "synth_cut": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\synth_cut.png",
+    "synth_bruise": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\synth_bruise.png",
+    "synth_wound": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\synth_wound.png",
+    "synth_swelling": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\synth_swelling.png",
+    "unrelated_scene": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\unrelated_scene.png",
+    "low_quality_blur": "C:\\Users\\santh\\Capstone Project Code\\scratch\\forensic_suite_2026_08_29\\test_images\\low_quality_blur.png"
+  },
+  "artifacts": {
+    "yolo": {
+      "path": "ml\\models\\vision\\yolo11_injury_best.pt",
+      "exists": true,
+      "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "meta": {
+        "model_name": "YOLO11 Detection",
+        "version": "v1.4.0",
+        "status": "INFERENCE_EXECUTES",
+        "classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "untrained_classes": [
+          "abrasion",
+          "laceration",
+          "swelling"
+        ],
+        "classes_with_zero_training_boxes": [
+          "wound"
+        ],
+        "metrics": {
+          "dataset_name": "yolo_retrain_v2 (yolo_processed + existing negatives)",
+          "dataset_type": "synthetic_cut_bruise_drawings_plus_two_public_samples",
+          "trained_at": "2026-08-29T02:25:04.606599+00:00",
+          "train_samples": 87,
+          "val_samples": 20,
+          "test_samples": 19,
+          "dataset_stats": {
+            "train": {
+              "images": 87,
+              "boxes": {
+                "cut": 47,
+                "bruise": 40,
+                "wound": 0
+              },
+              "images_per_class": {
+                "cut": 47,
+                "bruise": 40,
+                "wound": 0
+              }
+            },
+            "val": {
+              "images": 20,
+              "empty_label_images": 1,
+              "boxes": {
+                "cut": 6,
+                "bruise": 13,
+                "wound": 0
+              },
+              "images_per_class": {
+                "cut": 6,
+                "bruise": 13,
+                "wound": 0
+              }
+            },
+            "test": {
+              "images": 19,
+              "empty_label_images": 1,
+              "boxes": {
+                "cut": 8,
+                "bruise": 10,
+                "wound": 0
+              },
+              "images_per_class": {
+                "cut": 8,
+                "bruise": 10,
+                "wound": 0
+              }
+            }
+          },
+          "independent_test": {
+            "precision": 0.7548419469199217,
+            "recall": 0.9375,
+            "mAP50": 0.8358333333333334,
+            "mAP50-95": 0.7080000305250305,
+            "per_class": {
+              "cut": {
+                "precision": 0.551907217648874,
+                "recall": 0.875,
+                "mAP50": 0.6766666666666667,
+                "mAP50-95": 0.4725873626373627,
+                "boxes": 8,
+                "images": 8
+              },
+              "bruise": {
+                "precision": 0.9577766761909694,
+                "recall": 1.0,
+                "mAP50": 0.995,
+                "mAP50-95": 0.9434126984126984,
+                "boxes": 10,
+                "images": 10
+              },
+              "wound": {
+                "precision": null,
+                "recall": null,
+                "mAP50": null,
+                "mAP50-95": null,
+                "boxes": 0,
+                "images": 0,
+                "note": "NO_GROUND_TRUTH"
+              }
+            },
+            "metrics_source": "ultralytics.val on yolo_retrain_v2 test split"
+          },
+          "independent_val": {
+            "precision": 0.8339706664309054,
+            "recall": 0.9327146130892696,
+            "mAP50": 0.9191666666666668,
+            "mAP50-95": 0.741915114379085,
+            "per_class": {
+              "cut": {
+                "precision": 0.7211634056096871,
+                "recall": 0.8654292261785393,
+                "mAP50": 0.8433333333333336,
+                "mAP50-95": 0.49583022875816996,
+                "boxes": 6,
+                "images": 6
+              },
+              "bruise": {
+                "precision": 0.9467779272521238,
+                "recall": 1.0,
+                "mAP50": 0.995,
+                "mAP50-95": 0.9880000000000001,
+                "boxes": 13,
+                "images": 13
+              },
+              "wound": {
+                "precision": null,
+                "recall": null,
+                "mAP50": null,
+                "mAP50-95": null,
+                "boxes": 0,
+                "images": 0,
+                "note": "NO_GROUND_TRUTH"
+              }
+            },
+            "metrics_source": "ultralytics.val on yolo_retrain_v2 val split"
+          },
+          "baseline_same_test_split": {
+            "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+            "precision": 1.0,
+            "recall": 0.4938481489948705,
+            "mAP50": 0.6641387559808613,
+            "mAP50-95": 0.48039970224624245,
+            "cut_recall": 0.0,
+            "bruise_recall": 0.987696297989741
+          },
+          "precision": 0.7548419469199217,
+          "recall": 0.9375,
+          "mAP50": 0.8358333333333334,
+          "mAP50-95": 0.7080000305250305,
+          "metrics_source": "ultralytics.val on yolo_retrain_v2 test split (promoted candidate)",
+          "selected_checkpoint": "retrain_v2_candidate",
+          "promoted": true,
+          "cut_bruise_reliability_claimed": false,
+          "wound_reliability_claimed": false
+        },
+        "weights_path": "ml/models/vision/yolo11_injury_best.pt",
+        "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+        "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+        "previous_canonical_sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+        "backup_path": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_v2_backup",
+        "data_provenance_class": "SYNTHETIC",
+        "dataset_provenance": "yolo_retrain_v2 copied from yolo_processed (honest cut/bruise, dropped abrasion/laceration/swelling without remap) plus existing blank_skin (val) and dummy_test (test) empty-label negatives. No fabricated images or boxes. wound has 0 labels.",
+        "training_status": "TRAINED_AND_EVALUATED",
+        "forensic_status": "PARTIALLY_FIXED",
+        "known_limitations": "Independent test support is 8 cut boxes and 10 bruise boxes on mostly synthetic drawings. That is not enough to claim cut or bruise reliability. wound has 0 honest training boxes. abrasion/laceration/swelling remain UNTRAINED_CLASS. Default keep-threshold 0.25. Demo football_injury.jpg has 0 boxes at 0.25. Not clinical.",
+        "training_was_real": true,
+        "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_yolo_retrain_v2.py",
+        "evaluation_artifact": "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json"
+      }
+    },
+    "effnet": {
+      "path": "ml\\models\\vision\\efficientnetv2_injury_best.pt",
+      "exists": true,
+      "sha256": "fa7aa5c822e6a4127d7f1aa9d9518e687cc0ee9e3d8cfd362d902f72ac06568c",
+      "meta": {
+        "model_name": "EfficientNetV2 Classification",
+        "version": "reject-v2",
+        "status": "READY_FOR_RESEARCH_DEMO",
+        "training_status": "READY_FOR_RESEARCH_DEMO",
+        "classes": [
+          "cut",
+          "bruise",
+          "normal",
+          "ood_reject"
+        ],
+        "artifact_sha256": "fa7aa5c822e6a4127d7f1aa9d9518e687cc0ee9e3d8cfd362d902f72ac06568c",
+        "dataset_provenance": "synthetic cut/bruise drawings + REAL normal patches (AZH/Medetec) + synthetic ood_reject canvases; subject-aware splits",
+        "known_limitations": "Not clinical. cut/bruise still drawings. swelling unsupported (no labels). normal/ood_reject are abstention classes, not diagnoses.",
+        "metrics": {
+          "test": {
+            "n": 28,
+            "loss": 0.459456,
+            "accuracy": 0.928571,
+            "macro_f1": 0.875,
+            "balanced_accuracy": 0.875,
+            "per_class": {
+              "cut": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 9
+              },
+              "bruise": {
+                "precision": 1.0,
+                "recall": 1.0,
+                "f1": 1.0,
+                "support": 10
+              },
+              "normal": {
+                "precision": 0.666667,
+                "recall": 0.666667,
+                "f1": 0.666667,
+                "support": 3
+              },
+              "ood_reject": {
+                "precision": 0.833333,
+                "recall": 0.833333,
+                "f1": 0.833333,
+                "support": 6
+              }
+            },
+            "confusion_matrix": [
+              [
+                9,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                10,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                2,
+                1
+              ],
+              [
+                0,
+                0,
+                1,
+                5
+              ]
+            ]
+          },
+          "ood_collapse": 0,
+          "baseline_ood_collapse": 10
+        }
+      }
+    },
+    "unet": {
+      "path": "ml\\models\\vision\\unet_injury_best.pt",
+      "exists": true,
+      "sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "meta": {
+        "model_name": "ResNet34-UNet Segmentation",
+        "version": "deduped-subject-v1",
+        "status": "READY_FOR_RESEARCH_DEMO",
+        "training_status": "READY_FOR_RESEARCH_DEMO",
+        "artifact_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+        "previous_sha256": "82419176b5cf3ae4049a6fbab9d4af3cc956a74fef76e55031b0dcbf573f3e93",
+        "dataset_provenance": "AZH+wseg+Medetec subject-aware, exact+near dedupe, synthetic empty canvases",
+        "metrics": {
+          "val": {
+            "n": 69,
+            "mean_dice": 0.659963,
+            "mean_iou": 0.53502,
+            "precision": 0.703893,
+            "recall": 0.724829,
+            "mean_false_positive_area": 0.031028,
+            "mean_positive_ratio": 0.106992,
+            "loss": 0.637658,
+            "threshold": 0.5
+          },
+          "test": {
+            "n": 69,
+            "mean_dice": 0.641808,
+            "mean_iou": 0.517783,
+            "precision": 0.692967,
+            "recall": 0.723307,
+            "mean_false_positive_area": 0.029302,
+            "mean_positive_ratio": 0.103852,
+            "loss": 0.661316,
+            "threshold": 0.5
+          },
+          "ood_collapse": 0
+        },
+        "known_limitations": "Research-demo binary wound masks on ulcer/chronic photos. Not clinical. Not cut/bruise localization.",
+        "training_was_real": true,
+        "blank_collapse_gate": "passed (CORE_WATCH positive_ratio all <= threshold)"
+      }
+    },
+    "xgb": {
+      "path": "ml\\models\\xgboost_best.json",
+      "exists": true,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "meta": {
+        "model_name": "XGBoost Multimodal",
+        "version": "v1.2.0",
+        "status": "TRAINED",
+        "data_provenance": "synthetic_multimodal_fusion",
+        "data_provenance_class": "SYNTHETIC",
+        "runtime_canonical_path": "ml/models/xgboost_best.json",
+        "booster_fit_was_real": true,
+        "training_was_real_clinical": false,
+        "evaluation_scope": "synthetic_held_out",
+        "research_limitation": "The multimodal records represent 200 synthetic engineering fusion samples and 0 genuinely paired patient records. DATA_PROVENANCE=SYNTHETIC.",
+        "canonical_path": "ml/models/xgboost_best.json",
+        "dataset_provenance": "200 synthetic 23-feature fusion samples. 0 genuinely paired clinical records.",
+        "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+        "classes": [
+          "LOW",
+          "MODERATE",
+          "HIGH"
+        ],
+        "training_status": "TRAINED",
+        "known_limitations": "Labels are rule-derived research categories, not clinical severity. 0 genuinely paired patient records. HIGH class support on test is 3. Not clinical.",
+        "pca_components": 4,
+        "pca_variance_ratio": [
+          0.2343,
+          0.1248,
+          0.11,
+          0.1002
+        ],
+        "metrics": {
+          "genuinely_paired_clinical_samples": 0,
+          "synthetic_multimodal_fusion_samples": 200,
+          "train_samples": 140,
+          "val_samples": 30,
+          "test_samples": 30,
+          "correct_predictions": "25 / 30",
+          "overall_accuracy": 0.833333,
+          "macro_precision": 0.822222,
+          "macro_recall": 0.769281,
+          "macro_f1": 0.78502,
+          "mcc": 0.702692,
+          "high_class_precision": 0.666667,
+          "high_class_recall": 0.666667,
+          "high_class_f1": 0.666667,
+          "high_class_support": 3,
+          "brier_score": 0.304532,
+          "ece": 0.118284,
+          "confusion_matrix": [
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              0,
+              16,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "feature_importance": [
+            0.0,
+            0.0674,
+            0.0492,
+            0.0298,
+            0.0268,
+            0.039,
+            0.1004,
+            0.2317,
+            0.0515,
+            0.0
+          ]
+        }
+      }
+    },
+    "vqc": {
+      "path": "ml\\models\\vqc\\vqc_weights.npz",
+      "exists": true,
+      "sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "meta": {
+        "model_name": "Experimental 4-Qubit VQC",
+        "version": "v1.4.0",
+        "status": "EXPERIMENTAL_ONLY",
+        "data_provenance_class": "SYNTHETIC",
+        "used_in_main_decision": false,
+        "recommendation": "DISABLE_FROM_MAIN_DECISION",
+        "disclaimer": "PennyLane default.qubit is a classical CPU simulator. No quantum advantage. EXPERIMENTAL_ONLY. Excluded from SOS, first-aid, and main case decisions.",
+        "canonical_path": "ml/models/vqc/vqc_weights.npz",
+        "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+        "classes": [
+          "LOW",
+          "MODERATE",
+          "HIGH"
+        ],
+        "dataset_provenance": "Same 200 synthetic fusion samples as XGBoost. 0 clinical pairs.",
+        "training_status": "EXPERIMENTAL_ONLY",
+        "known_limitations": "Classical simulator only. Held-out 16/30 vs XGBoost 25/30. Isolated from SOS, first-aid, and main decisions. Quantum advantage not claimed.",
+        "metrics": {
+          "train_samples": 140,
+          "val_samples": 30,
+          "test_samples": 30,
+          "epochs": 15,
+          "lr": 0.1,
+          "optimizer": "PennyLane AdamOptimizer",
+          "loss_start": 1.1119120284481623,
+          "loss_end": 0.8746161075293077,
+          "loss_decreased": true,
+          "loss_history": [
+            1.111912,
+            1.054581,
+            1.013338,
+            0.98525,
+            0.965653,
+            0.951015,
+            0.939036,
+            0.928689,
+            0.919162,
+            0.909691,
+            0.900643,
+            0.892832,
+            0.886206,
+            0.880387,
+            0.874616
+          ],
+          "train_seconds": 48.1,
+          "circuit": {
+            "embedding": "AngleEmbedding",
+            "rotation": "X",
+            "ansatz": "StronglyEntanglingLayers",
+            "num_qubits": 4,
+            "num_layers": 2,
+            "measurement": "PauliZ_expval_per_qubit",
+            "postprocess": "linear_4_to_3_softmax",
+            "device": "default.qubit",
+            "qnode": "VQCClassifier._vqc_circuit",
+            "train_forward": "VQCClassifier._forward",
+            "predict_forward": "VQCClassifier._forward",
+            "circuits_match": true
+          },
+          "backend": "PennyLane default.qubit (classical simulator)",
+          "metrics_source": "held_out_test_via_VQCClassifier.predict",
+          "data_provenance_class": "SYNTHETIC",
+          "genuinely_paired_clinical_samples": 0,
+          "trained_at": "2026-08-28T17:38:37.547751+00:00",
+          "vqc_correct_predictions": "16 / 30",
+          "vqc_accuracy": 0.533333,
+          "vqc_macro_f1": 0.423016,
+          "vqc_mcc": 0.095978,
+          "vqc_macro_precision": 0.466184,
+          "vqc_macro_recall": 0.43268,
+          "vqc_per_class_support": [
+            10,
+            17,
+            3
+          ],
+          "vqc_brier_score": 0.512306,
+          "vqc_ece": 0.136455,
+          "vqc_confusion_matrix": [
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              2,
+              13,
+              2
+            ],
+            [
+              0,
+              2,
+              1
+            ]
+          ],
+          "vqc_inference_latency_ms_per_sample": 3.51,
+          "xgb_comparison": {
+            "model": "XGBoost",
+            "correct_predictions": "25 / 30",
+            "accuracy": 0.833333,
+            "macro_f1": 0.78502,
+            "mcc": 0.702692,
+            "macro_precision": 0.822222,
+            "macro_recall": 0.769281,
+            "per_class_support": [
+              10,
+              17,
+              3
+            ],
+            "brier_score": 0.304532,
+            "ece": 0.118284,
+            "confusion_matrix": [
+              [
+                7,
+                3,
+                0
+              ],
+              [
+                0,
+                16,
+                1
+              ],
+              [
+                0,
+                1,
+                2
+              ]
+            ]
+          },
+          "vqc_outperforms_xgboost": false,
+          "recommendation": "DISABLE_FROM_MAIN_DECISION",
+          "isolation": "EXPERIMENTAL_ONLY",
+          "used_in_main_decision": false
+        }
+      }
+    },
+    "sensor": {
+      "path": "ml\\models\\sensor_motion_best.json",
+      "exists": true,
+      "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "meta": {
+        "model_name": "Sensor Motion Event Classifier",
+        "version": "v1.2.0",
+        "status": "TRAINED",
+        "domain": "Motion / Fall / Impact Event Detection",
+        "classes": [
+          "normal_activity",
+          "fall",
+          "impact"
+        ],
+        "metrics": {
+          "dataset_name": "synthetic_50hz_motion_windows",
+          "sampling_rate_hz": 50.0,
+          "window_seconds": 2.5,
+          "train_samples": 138,
+          "val_samples": 26,
+          "test_samples": 36,
+          "correct_predictions": "28 / 36",
+          "accuracy": 0.777778,
+          "macro_f1": 0.733016,
+          "mcc": 0.658506,
+          "false_positive_rate": 0.0,
+          "false_negative_rate": 0.125,
+          "confusion_matrix": [
+            [
+              12,
+              0,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              0,
+              5,
+              3
+            ]
+          ]
+        },
+        "weights_path": "ml/models/sensor_motion_best.json",
+        "canonical_path": "ml/models/sensor_motion_best.json",
+        "artifact_sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+        "scaler_path": "ml/models/sensor_scaler.pkl",
+        "scaler_sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959",
+        "data_provenance_class": "SYNTHETIC",
+        "dataset_provenance": "Generated by prepare_sensor_dataset() with np.random over 38 synthetic subject IDs. Schema is SisFall/UCI-HAR-like (50 Hz windows). Not downloaded SisFall or UCI HAR recordings.",
+        "training_status": "TRAINED",
+        "known_limitations": "Simulated football_fall can classify as normal_activity at high confidence. Missing gyro/lux features are FEATURE_MISSING, never invented. Not a fall-detection medical device."
+      }
+    }
+  },
+  "registry_keys": [
+    "XGBoost Multimodal",
+    "Experimental 4-Qubit VQC",
+    "EfficientNetV2 Classification",
+    "ResNet34-UNet Segmentation",
+    "YOLO11 Detection",
+    "Sensor Motion Event Classifier"
+  ],
+  "probes": {
+    "blank_black": {
+      "file_sha256": "d6724eae81c588bcebc0f8ad63778f6921bcec608aa43b39b40f7695a396a79d",
+      "shape_hwc": [
+        320,
+        320,
+        3
+      ],
+      "pixel_mean": 0.0,
+      "pixel_std": 0.0,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.04469464719295502,
+          "Bruise": 0.03789588809013367,
+          "Normal": 0.6930744051933289,
+          "Ood_reject": 0.22433505952358246
+        },
+        "max_prob": 0.6930744051933289,
+        "winner": "Normal",
+        "entropy": 0.8523244332199773,
+        "margin": 0.4687393307685852,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "Ood_reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      }
+    },
+    "blank_white": {
+      "file_sha256": "0b6ca55bbdf9a6f0d9c01f418e7185cf8ae8b23f3898cd71946cddbfd1a635dd",
+      "shape_hwc": [
+        320,
+        320,
+        3
+      ],
+      "pixel_mean": 255.0,
+      "pixel_std": 0.0,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.009210087358951569,
+          "Bruise": 7.411819422098453e-12,
+          "Normal": 1.8258139791726968e-11,
+          "Ood_reject": 0.9907898902893066
+        },
+        "max_prob": 0.9907898902893066,
+        "winner": "Ood_reject",
+        "entropy": 0.05233942405268263,
+        "margin": 0.9815797805786133,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "Ood_reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      }
+    },
+    "blank_gray": {
+      "file_sha256": "d4e1ffdcd79faaf44786b224957944caaa2f3707933edb5715739d84404cedaf",
+      "shape_hwc": [
+        320,
+        320,
+        3
+      ],
+      "pixel_mean": 128.0,
+      "pixel_std": 0.0,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.009979038499295712,
+          "Bruise": 0.00540105951949954,
+          "Normal": 0.004394266288727522,
+          "Ood_reject": 0.9802256226539612
+        },
+        "max_prob": 0.9802256226539612,
+        "winner": "Ood_reject",
+        "entropy": 0.11760313923039216,
+        "margin": 0.9702466130256653,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "Ood_reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      }
+    },
+    "noise": {
+      "file_sha256": "82497da7f4cfcb762a46b22c7827e97a68f15f4d51a10d230aef82c7cf4d9bca",
+      "shape_hwc": [
+        320,
+        320,
+        3
+      ],
+      "pixel_mean": 127.45547526041666,
+      "pixel_std": 73.97197960204582,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.0012206598185002804,
+          "Bruise": 0.00014480549725703895,
+          "Normal": 0.0031358555424958467,
+          "Ood_reject": 0.9954985976219177
+        },
+        "max_prob": 0.9954985976219177,
+        "winner": "Ood_reject",
+        "entropy": 0.032037651811468615,
+        "margin": 0.9923627376556396,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "high_frequency_unstructured",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "Ood_reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "UNTRUSTWORTHY_OUTPUT",
+        "reason": "ood_high_frequency_unstructured"
+      }
+    },
+    "normal_skin": {
+      "file_sha256": "a372f4e5a25703e080228f4347a1c40a7e4bd6780bbf482873993f0b1f77637b",
+      "shape_hwc": [
+        360,
+        480,
+        3
+      ],
+      "pixel_mean": 172.84234375,
+      "pixel_std": 25.32324504876983,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.07428345084190369,
+          "Bruise": 0.04448695480823517,
+          "Normal": 0.049811750650405884,
+          "Ood_reject": 0.8314178586006165
+        },
+        "max_prob": 0.8314178586006165,
+        "winner": "Ood_reject",
+        "entropy": 0.6345046220154569,
+        "margin": 0.7571344375610352,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "Ood_reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      }
+    },
+    "synth_cut": {
+      "file_sha256": "b2883418e2ada1182d6952f63fbd751646a8bf4bafe5401c0a9a2458123aa772",
+      "shape_hwc": [
+        360,
+        480,
+        3
+      ],
+      "pixel_mean": 171.66056712962964,
+      "pixel_std": 28.671438109355638,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.23262466490268707,
+          "Bruise": 0.034782785922288895,
+          "Normal": 0.034811556339263916,
+          "Ood_reject": 0.697780966758728
+        },
+        "max_prob": 0.697780966758728,
+        "winner": "Ood_reject",
+        "entropy": 0.8240528402989149,
+        "margin": 0.46515631675720215,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "softmax_not_trusted_closed_set_overconfidence",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "OOD_Reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.002609,
+        "pos_px": 446,
+        "affected_ratio": 0.0025810185185185185,
+        "reliable": true,
+        "withheld": false,
+        "status": "VALID",
+        "reason": "passed_quality_and_mask_sanity"
+      }
+    },
+    "synth_bruise": {
+      "file_sha256": "4f8458b4c3398314e24c1646fd078b7cd8eb0d6d8e45db0269b900f837fc43fd",
+      "shape_hwc": [
+        360,
+        480,
+        3
+      ],
+      "pixel_mean": 166.79390625,
+      "pixel_std": 35.034136795842294,
+      "yolo": [
+        {
+          "finding": "bruise",
+          "confidence": 0.975,
+          "bounding_box": [
+            174.36,
+            131.08,
+            306.14,
+            228.71
+          ],
+          "low_confidence": false,
+          "keep_threshold": 0.25,
+          "class_support_status": "bruise",
+          "image_width": 480,
+          "image_height": 360,
+          "model_version": "v1.4.0",
+          "model_status": "INFERENCE_EXECUTES",
+          "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+          "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879"
+        }
+      ],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.18779930472373962,
+          "Bruise": 0.3221575617790222,
+          "Normal": 0.21073180437088013,
+          "Ood_reject": 0.27931129932403564
+        },
+        "max_prob": 0.3221575617790222,
+        "winner": "Bruise",
+        "entropy": 1.3633712170380532,
+        "margin": 0.04284626245498657,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "softmax_not_trusted_closed_set_overconfidence",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "OOD_Reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "VALID",
+        "reason": "empty_mask_no_positive_region"
+      }
+    },
+    "synth_wound": {
+      "file_sha256": "ababdd8c09863f6eae967d684d252292d7ba8e9bb34d4e742a698b9cc0e703b6",
+      "shape_hwc": [
+        360,
+        480,
+        3
+      ],
+      "pixel_mean": 166.8631925154321,
+      "pixel_std": 37.896279482346834,
+      "yolo": [
+        {
+          "finding": "bruise",
+          "confidence": 0.953,
+          "bounding_box": [
+            184.27,
+            130.62,
+            297.19,
+            230.44
+          ],
+          "low_confidence": false,
+          "keep_threshold": 0.25,
+          "class_support_status": "bruise",
+          "image_width": 480,
+          "image_height": 360,
+          "model_version": "v1.4.0",
+          "model_status": "INFERENCE_EXECUTES",
+          "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+          "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879"
+        }
+      ],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.12149590998888016,
+          "Bruise": 0.06082186475396156,
+          "Normal": 0.05826251208782196,
+          "Ood_reject": 0.7594197392463684
+        },
+        "max_prob": 0.7594197392463684,
+        "winner": "Ood_reject",
+        "entropy": 0.8010088327184967,
+        "margin": 0.6379238367080688,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "softmax_not_trusted_closed_set_overconfidence",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "OOD_Reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "VALID",
+        "reason": "empty_mask_no_positive_region"
+      }
+    },
+    "synth_swelling": {
+      "file_sha256": "0b21a4ccc8d56b4323b2bd30c22865d7411bcfeb78b6a685aa72adf41b0e9844",
+      "shape_hwc": [
+        360,
+        480,
+        3
+      ],
+      "pixel_mean": 174.51411844135802,
+      "pixel_std": 25.263986113486787,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.07006939500570297,
+          "Bruise": 0.09328402578830719,
+          "Normal": 0.11699671298265457,
+          "Ood_reject": 0.7196498513221741
+        },
+        "max_prob": 0.7196498513221741,
+        "winner": "Ood_reject",
+        "entropy": 0.8953301636700421,
+        "margin": 0.6026531457901001,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "Ood_reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      }
+    },
+    "unrelated_scene": {
+      "file_sha256": "fa69702e2142769d61894802150b1983b5d18a15898fd49c9dde0339b485b9f5",
+      "shape_hwc": [
+        300,
+        400,
+        3
+      ],
+      "pixel_mean": 98.59166666666667,
+      "pixel_std": 46.2390940595125,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.00030579353915527463,
+          "Bruise": 0.00018577037553768605,
+          "Normal": 6.578928150702268e-05,
+          "Ood_reject": 0.9994426369667053
+        },
+        "max_prob": 0.9994426369667053,
+        "winner": "Ood_reject",
+        "entropy": 0.005261304472263065,
+        "margin": 0.9991368651390076,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "blank_or_blurred_insufficient_detail",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "Ood_reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "blank_or_blurred_insufficient_detail"
+      }
+    },
+    "low_quality_blur": {
+      "file_sha256": "f77f15d00d48e472f8f5a4d42050c889e849c92876e2c685f0e05bbe2919a434",
+      "shape_hwc": [
+        360,
+        480,
+        3
+      ],
+      "pixel_mean": 171.6649787808642,
+      "pixel_std": 25.85649544790522,
+      "yolo": [],
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.7488038539886475,
+          "Bruise": 0.026801442727446556,
+          "Normal": 0.049898941069841385,
+          "Ood_reject": 0.17449568212032318
+        },
+        "max_prob": 0.7488038539886475,
+        "winner": "Cut",
+        "entropy": 0.7678441007240459,
+        "margin": 0.5743081569671631,
+        "temperature": 1.0
+      },
+      "effnet_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "max_prob": null,
+        "is_confident": false,
+        "is_injury_finding": false,
+        "abstention_class": null,
+        "low_confidence": true,
+        "class_probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Normal": null,
+          "Ood_reject": null
+        }
+      },
+      "unet": {
+        "raw_pos_ratio": 0.001236,
+        "pos_px": 0,
+        "affected_ratio": 0.0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      }
+    }
+  }
+}

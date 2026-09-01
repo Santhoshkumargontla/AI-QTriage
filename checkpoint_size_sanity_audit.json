@@ -1,0 +1,26 @@
+[
+  {
+    "model": "YOLO11 Detection",
+    "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+    "file_size_bytes": 5469722,
+    "file_size_mb": 5.22,
+    "expected_min_mb": 5.0,
+    "sanity_check": "PLAUSIBLE_AND_VERIFIED"
+  },
+  {
+    "model": "EfficientNetV2 Classification",
+    "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "file_size_bytes": 81626143,
+    "file_size_mb": 77.84,
+    "expected_min_mb": 70.0,
+    "sanity_check": "PLAUSIBLE_AND_VERIFIED"
+  },
+  {
+    "model": "ResNet34-UNet Segmentation",
+    "artifact_path": "ml/models/vision/unet_injury_best.pt",
+    "file_size_bytes": 97918031,
+    "file_size_mb": 93.38,
+    "expected_min_mb": 80.0,
+    "sanity_check": "PLAUSIBLE_AND_VERIFIED"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:55.992053+00:00",
+  "model_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt",
+  "sample_image": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "positive_pixel_count": 2486,
+  "total_roi_pixel_count": 4473,
+  "calculated_affected_ratio": 0.5557791191594008,
+  "affected_area_percentage": 55.58,
+  "confidence_status": "confident",
+  "performance_ms": {
+    "runs": [
+      105.89080001227558,
+      94.41580000566319,
+      92.96189999440685,
+      90.95520002301782,
+      86.5203000139445
+    ],
+    "min": 86.5203000139445,
+    "avg": 94.14880000986159,
+    "max": 105.89080001227558
+  },
+  "verification_status": "PASS"
+}

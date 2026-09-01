@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T09:11:43.672550+00:00",
+  "workflow": "Frontend Upload -> FastAPI -> YOLO11 Detector -> Bounding Box Canvas Overlay",
+  "before_fix": "YOLO11: None detected (due to conf=0.25 filtering)",
+  "after_fix": "YOLO11: 'wound' detected (conf=0.1153, bbox=[103.07, 106.88, 198.29, 190.57])",
+  "verification_status": "PASS"
+}

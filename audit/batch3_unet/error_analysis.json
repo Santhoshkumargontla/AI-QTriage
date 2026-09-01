@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "error_sources": [
+    {
+      "issue": "Low contrast wound edges",
+      "effect": "Minor boundary smoothing under-segmentation"
+    },
+    {
+      "issue": "Reflective flash glare",
+      "effect": "Slight false-negative pixel mask gap"
+    }
+  ],
+  "status": "PASS"
+}

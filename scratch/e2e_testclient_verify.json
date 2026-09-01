@@ -1,0 +1,164 @@
+{
+  "yolo_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+  "sos_config": {
+    "enabled": false,
+    "configured": false,
+    "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+    "account_sid_suffix": null,
+    "from_number_set": false,
+    "to_number_set": false,
+    "disclaimer": "RESEARCH PROTOTYPE ONLY: No real emergency services (911/112) are contacted."
+  },
+  "models": [
+    {
+      "model_name": "YOLO11",
+      "status": "INFERENCE_EXECUTES",
+      "yolo11_supported_classes": [
+        "bruise",
+        "cut",
+        "wound"
+      ],
+      "classifier_categories": null,
+      "weights_loaded": true
+    },
+    {
+      "model_name": "EfficientNetV2",
+      "status": "NOT_TRUSTWORTHY",
+      "yolo11_supported_classes": null,
+      "classifier_categories": [
+        "cut",
+        "bruise",
+        "swelling"
+      ],
+      "weights_loaded": true
+    },
+    {
+      "model_name": "U-Net",
+      "status": "MODEL_OUTPUT_NOT_TRUSTWORTHY",
+      "yolo11_supported_classes": null,
+      "classifier_categories": null,
+      "weights_loaded": true
+    },
+    {
+      "model_name": "XGBoost",
+      "status": "TRAINED_AND_EVALUATED",
+      "yolo11_supported_classes": null,
+      "classifier_categories": null,
+      "weights_loaded": true
+    },
+    {
+      "model_name": "VQC",
+      "status": "EXPERIMENTAL",
+      "yolo11_supported_classes": null,
+      "classifier_categories": null,
+      "weights_loaded": true
+    }
+  ],
+  "direct_demo": [
+    {
+      "finding": "wound",
+      "confidence": 0.2982,
+      "bounding_box": [
+        0.0,
+        260.14,
+        81.84,
+        300.0
+      ],
+      "low_confidence": true,
+      "image_width": 300,
+      "image_height": 300,
+      "model_version": "canonical",
+      "model_status": "INFERENCE_EXECUTES",
+      "model_path": "ml\\models\\vision\\yolo11_injury_best.pt"
+    },
+    {
+      "finding": "wound",
+      "confidence": 0.2918,
+      "bounding_box": [
+        2.22,
+        0.0,
+        98.48,
+        50.21
+      ],
+      "low_confidence": true,
+      "image_width": 300,
+      "image_height": 300,
+      "model_version": "canonical",
+      "model_status": "INFERENCE_EXECUTES",
+      "model_path": "ml\\models\\vision\\yolo11_injury_best.pt"
+    },
+    {
+      "finding": "wound",
+      "confidence": 0.2628,
+      "bounding_box": [
+        72.38,
+        0.0,
+        206.93,
+        49.93
+      ],
+      "low_confidence": true,
+      "image_width": 300,
+      "image_height": 300,
+      "model_version": "canonical",
+      "model_status": "INFERENCE_EXECUTES",
+      "model_path": "ml\\models\\vision\\yolo11_injury_best.pt"
+    }
+  ],
+  "case_id": "5d0fdd64-ca2f-4f2e-aa4b-0c529a1744c6",
+  "image_status": 200,
+  "q_status": 200,
+  "sensor_status": 400,
+  "sensor_motion": "{\"detail\":\"Invalid scenario type. Use: football_fall, sudden_fall, sudden_impact, normal_movement\"}",
+  "analyze_status": 200,
+  "stored": {
+    "yolo_finding": "Wound",
+    "yolo_confidence": 0.2982,
+    "bbox": [
+      0.0,
+      260.14,
+      81.84,
+      300.0
+    ],
+    "detected": true
+  },
+  "xgb": {
+    "class": "MODERATE",
+    "probability": 0.7672584652900696,
+    "model_version": "1.0",
+    "model_id": "xgb_image_questionnaire_v1"
+  },
+  "vqc": {
+    "class": "LOW",
+    "score": [
+      0.33941975775381517,
+      0.33036860828630077,
+      0.33021163395988407
+    ],
+    "model_version": "v1.3.0",
+    "model_id": "vqc_sim_v1",
+    "status": "EXPERIMENTAL",
+    "experimental": true,
+    "error": null
+  },
+  "sos_local": {
+    "status": 200,
+    "body": {
+      "message": "SOS countdown started (Local Demo). Simulation only.",
+      "event": {
+        "event_id": "d38fc3da-16c2-4207-91b6-8f546aa01559",
+        "case_id": "5d0fdd64-ca2f-4f2e-aa4b-0c529a1744c6",
+        "sos_status": "countdown",
+        "trigger_source": "demo",
+        "delivery_mode": "local_demo",
+        "twilio_enabled": false,
+        "twilio_configured": false,
+        "demo_only": true,
+        "countdown_seconds": 10,
+        "user_response": null,
+        "created_at": "2026-08-28T14:01:21.383914",
+        "warning": "NO REAL EMERGENCY SERVICES WERE CONTACTED."
+      },
+      "duplicate": false
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "primary_weights": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+  "file_size_bytes": 5470810,
+  "sha256_hash": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+  "registry_registered": true,
+  "status": "PASS"
+}

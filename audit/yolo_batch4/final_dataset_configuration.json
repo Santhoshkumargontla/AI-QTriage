@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "dataset_name": "MedWound Real Cutaneous Injury Corpus V2",
+  "classes": [
+    "cut",
+    "bruise",
+    "abrasion",
+    "laceration",
+    "wound"
+  ],
+  "num_classes": 5,
+  "yaml_path": "data/datasets/yolo_injury/data.yaml",
+  "status": "PASS"
+}

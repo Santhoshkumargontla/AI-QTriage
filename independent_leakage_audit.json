@@ -1,0 +1,25 @@
+{
+  "subject_level_split_audit": {
+    "datasets": [
+      "MedWound Classification",
+      "Kaggle Boundary Mask",
+      "SisFall Telemetry"
+    ],
+    "total_subjects": 40,
+    "train_subject_intersection_test": 0,
+    "val_subject_intersection_test": 0,
+    "subject_leakage_status": "ZERO_SUBJECT_LEAKAGE"
+  },
+  "group_level_split_audit": {
+    "datasets": [
+      "Roboflow Injury BBox"
+    ],
+    "group_intersection_test": 0,
+    "group_leakage_status": "ZERO_GROUP_LEAKAGE"
+  },
+  "image_duplication_audit": {
+    "exact_sha256_duplicates_across_splits": 0,
+    "near_duplicate_cross_split_copies": 0,
+    "duplication_status": "PASS"
+  }
+}

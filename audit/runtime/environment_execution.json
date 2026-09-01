@@ -1,0 +1,19 @@
+{
+  "audit_timestamp": "2026-08-27T08:08:14.829973+00:00",
+  "os": "Windows 11",
+  "python_version": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+  "node_version": "v22.14.0",
+  "npm_version": "10.9.2",
+  "key_packages": {
+    "torch": "2.13.0+cpu",
+    "xgboost": "3.4.0",
+    "pennylane": "0.45.1",
+    "scikit-learn": "1.9.0",
+    "timm": "1.0.15",
+    "segmentation_models_pytorch": "0.4.0",
+    "ultralytics": "8.3.82",
+    "next": "16.3.0",
+    "react": "19.0.0"
+  },
+  "environment_capable": true
+}

@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T13:43:10.965138+00:00",
+  "fused_vector_dimensions": 23,
+  "modality_orthogonality_check": "PASS (Vision probabilities, questionnaire scores, and sensor kinetics reside in separate orthogonal vector indices)",
+  "status": "PASS"
+}

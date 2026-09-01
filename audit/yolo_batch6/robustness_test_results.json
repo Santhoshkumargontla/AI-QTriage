@@ -1,0 +1,42 @@
+{
+  "audit_timestamp": "2026-08-27T12:54:20.247714+00:00",
+  "transformations": [
+    {
+      "type": "Reduced Brightness (-20%)",
+      "orig_det": 1.0,
+      "trans_det": 1.0,
+      "conf_delta": -0.012,
+      "bbox_stability": "STABLE"
+    },
+    {
+      "type": "Increased Brightness (+20%)",
+      "orig_det": 1.0,
+      "trans_det": 1.0,
+      "conf_delta": -0.008,
+      "bbox_stability": "STABLE"
+    },
+    {
+      "type": "Gaussian Blur (k=3)",
+      "orig_det": 1.0,
+      "trans_det": 1.0,
+      "conf_delta": -0.025,
+      "bbox_stability": "STABLE"
+    },
+    {
+      "type": "JPEG Compression (q=50)",
+      "orig_det": 1.0,
+      "trans_det": 1.0,
+      "conf_delta": -0.015,
+      "bbox_stability": "STABLE"
+    },
+    {
+      "type": "Small Rotation (+10 deg)",
+      "orig_det": 1.0,
+      "trans_det": 1.0,
+      "conf_delta": -0.005,
+      "bbox_stability": "STABLE"
+    }
+  ],
+  "overall_robustness_verdict": "HIGHLY ROBUST",
+  "status": "PASS"
+}

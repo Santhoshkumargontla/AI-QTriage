@@ -1,0 +1,67 @@
+{
+  "model_name": "YOLO11 Detection",
+  "version": "v1.3.0",
+  "status": "TRAINED_AND_EVALUATED",
+  "classes": [
+    "cut",
+    "bruise",
+    "wound"
+  ],
+  "untrained_classes": [
+    "abrasion",
+    "laceration",
+    "swelling"
+  ],
+  "metrics": {
+    "dataset_name": "yolo_merged (real_wound + yolo_injury remapped)",
+    "dataset_stats": {
+      "train": {
+        "images": 83,
+        "boxes": {
+          "wound": 288,
+          "bruise": 12,
+          "cut": 15
+        },
+        "images_per_class": {
+          "wound": 56,
+          "bruise": 12,
+          "cut": 15
+        }
+      },
+      "val": {
+        "images": 17,
+        "boxes": {
+          "wound": 70,
+          "cut": 2,
+          "bruise": 1
+        },
+        "images_per_class": {
+          "wound": 14,
+          "cut": 2,
+          "bruise": 1
+        }
+      },
+      "test": {
+        "images": 23,
+        "boxes": {
+          "cut": 5,
+          "bruise": 4,
+          "wound": 65
+        },
+        "images_per_class": {
+          "cut": 5,
+          "bruise": 4,
+          "wound": 14
+        }
+      }
+    },
+    "precision": 0.8224310703639396,
+    "recall": 0.5227071713511425,
+    "mAP50": 0.8195661917669056,
+    "mAP50-95": 0.6790820415149159,
+    "metrics_source": "ultralytics.val on merged val split",
+    "selected_checkpoint": "candidate"
+  },
+  "weights_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+  "training_was_real": true
+}

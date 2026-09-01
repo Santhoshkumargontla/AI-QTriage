@@ -1,0 +1,12 @@
+{
+  "audit_timestamp": "2026-08-27T13:57:32.584745+00:00",
+  "evaluated_cases_count": 30,
+  "mean_heuristic_agreement": 100.0,
+  "mean_empirical_agreement": 95.0,
+  "heuristic_variance": 0.0,
+  "empirical_variance": 16.6667,
+  "correlation": null,
+  "correlation_status": "NOT COMPUTABLE (Zero Variance)",
+  "evidence_classification": "REAL_EXECUTION_VERIFIED",
+  "status": "PASS"
+}

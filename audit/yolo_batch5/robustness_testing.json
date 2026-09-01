@@ -1,0 +1,26 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "test_conditions": [
+    {
+      "condition": "Low light (<40 lux)",
+      "status": "PASS (Flash/gain compensated)"
+    },
+    {
+      "condition": "High contrast sunlight",
+      "status": "PASS"
+    },
+    {
+      "condition": "Sub-15px small injury",
+      "status": "LIMITED (Recall drops 10%)"
+    },
+    {
+      "condition": "Multiple injuries",
+      "status": "PASS"
+    },
+    {
+      "condition": "Aspect ratio variations",
+      "status": "PASS (Letterbox preserved)"
+    }
+  ],
+  "status": "PASS"
+}

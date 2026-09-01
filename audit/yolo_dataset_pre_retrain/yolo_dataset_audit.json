@@ -1,0 +1,1656 @@
+{
+  "audit_utc": "2026-08-28T15:22:50.923880+00:00",
+  "did_not_train": true,
+  "did_not_modify_labels": true,
+  "did_not_duplicate_data": true,
+  "unique_image_definition": "Primary unique count is decoded-pixel SHA-256. JPG and PNG of the same pixels count as one image.",
+  "active_runtime_classes": [
+    "cut",
+    "bruise",
+    "wound"
+  ],
+  "active_training_dataset": "yolo_merged",
+  "canonical_weights": "ml/models/vision/yolo11_injury_best.pt",
+  "datasets": [
+    {
+      "dataset_id": "yolo_merged",
+      "root": "data/datasets/yolo_merged",
+      "present": true,
+      "layout": "images/{split} + labels/{split}",
+      "names": {
+        "0": "cut",
+        "1": "bruise",
+        "2": "wound"
+      },
+      "source_classification": "synthetic",
+      "source_file_counts": {
+        "synthetic": 123
+      },
+      "source_classification_note": "Folder names like public_wound_dataset / yolo_real_wound are not trusted. Classification uses generation scripts, manifests, and filename stems. public_sample_* and yolo_real_wound images are PIL drawings from ml/training/download_public_datasets.py.",
+      "splits": {
+        "train": {
+          "image_files": 83,
+          "unique_stems": 83,
+          "unique_byte_sha256": 83,
+          "unique_pixel_sha256": 83,
+          "boxes_per_class": {
+            "wound": 288,
+            "bruise": 12,
+            "cut": 15
+          },
+          "unique_images_containing_class": {
+            "wound": 56,
+            "bruise": 12,
+            "cut": 15
+          }
+        },
+        "val": {
+          "image_files": 17,
+          "unique_stems": 17,
+          "unique_byte_sha256": 17,
+          "unique_pixel_sha256": 17,
+          "boxes_per_class": {
+            "wound": 70,
+            "cut": 2,
+            "bruise": 1
+          },
+          "unique_images_containing_class": {
+            "wound": 14,
+            "cut": 2,
+            "bruise": 1
+          }
+        },
+        "test": {
+          "image_files": 23,
+          "unique_stems": 23,
+          "unique_byte_sha256": 23,
+          "unique_pixel_sha256": 23,
+          "boxes_per_class": {
+            "cut": 5,
+            "bruise": 4,
+            "wound": 65
+          },
+          "unique_images_containing_class": {
+            "cut": 5,
+            "bruise": 4,
+            "wound": 14
+          }
+        },
+        "unsplit": {
+          "image_files": 0,
+          "unique_stems": 0,
+          "unique_byte_sha256": 0,
+          "unique_pixel_sha256": 0,
+          "boxes_per_class": {},
+          "unique_images_containing_class": {}
+        }
+      },
+      "totals": {
+        "image_files": 123,
+        "unique_stems": 123,
+        "unique_byte_sha256": 123,
+        "unique_pixel_sha256": 123,
+        "label_files": 123,
+        "boxes_per_class": {
+          "wound": 423,
+          "bruise": 17,
+          "cut": 22
+        },
+        "unique_images_containing_class": {
+          "wound": 84,
+          "bruise": 17,
+          "cut": 22
+        }
+      },
+      "class_imbalance": {
+        "boxes_per_class": {
+          "wound": 423,
+          "bruise": 17,
+          "cut": 22
+        },
+        "unique_images_containing_class": {
+          "wound": 84,
+          "bruise": 17,
+          "cut": 22
+        },
+        "box_ratio_max_over_min": 24.882,
+        "dominant_class": "wound",
+        "rarest_class": "bruise"
+      },
+      "duplicate_jpg_png_pairs": [],
+      "duplicate_jpg_png_pair_count": 0,
+      "duplicate_byte_sha256_groups": 0,
+      "duplicate_pixel_sha256_groups": 0,
+      "duplicate_byte_examples": [],
+      "duplicate_pixel_examples": [],
+      "duplicate_stems": {},
+      "duplicate_stem_count": 0,
+      "invalid_labels": [],
+      "invalid_label_count": 0,
+      "empty_labels": [],
+      "empty_label_count": 0,
+      "missing_label_count": 0,
+      "missing_label_examples": [],
+      "boxes_outside_image": [],
+      "boxes_outside_image_count": 0,
+      "zero_area_boxes": [],
+      "zero_area_box_count": 0,
+      "orphan_label_count": 0,
+      "orphan_label_examples": [],
+      "unreadable_image_count": 0,
+      "negative_or_no_injury": {
+        "count": 0,
+        "examples": [],
+        "note": "Empty/missing YOLO labels, blank_skin/dummy_test, or near-uniform pixels."
+      },
+      "train_val_test_leakage": {
+        "exact_pixel_hash_across_splits": [],
+        "exact_stem_across_splits": [],
+        "near_identical_ahash_hamming_le_6_across_splits": [
+          {
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "size": 122,
+            "examples": [
+              "data/datasets/yolo_merged/images/test/public_sample_0001.jpg",
+              "data/datasets/yolo_merged/images/test/public_sample_0002.jpg",
+              "data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+              "data/datasets/yolo_merged/images/test/public_sample_0005.jpg",
+              "data/datasets/yolo_merged/images/test/public_sample_0028.jpg",
+              "data/datasets/yolo_merged/images/test/public_sample_0034.jpg",
+              "data/datasets/yolo_merged/images/test/public_sample_0070.jpg",
+              "data/datasets/yolo_merged/images/test/public_sample_0076.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0003.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0004.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0013.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0016.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0017.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0020.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0043.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0046.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0053.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0119.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0169.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0183.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0204.jpg",
+              "data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0209.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0006.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0016.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0040.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0046.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0052.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0082.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0094.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0100.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0106.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0112.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0124.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0136.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0142.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0154.jpg",
+              "data/datasets/yolo_merged/images/train/public_sample_0160.jpg"
+            ]
+          }
+        ],
+        "near_identical_cluster_count": 1,
+        "near_identical_cross_split_cluster_count": 1
+      },
+      "issue_counts": {},
+      "role": "active_training_dataset_for_canonical_yolo"
+    },
+    {
+      "dataset_id": "yolo_injury",
+      "root": "data/datasets/yolo_injury",
+      "present": true,
+      "layout": "images/{split} + labels/{split}",
+      "names": {
+        "0": "cut",
+        "1": "bruise",
+        "2": "abrasion",
+        "3": "laceration"
+      },
+      "source_classification": "synthetic",
+      "source_file_counts": {
+        "synthetic": 87
+      },
+      "source_classification_note": "Folder names like public_wound_dataset / yolo_real_wound are not trusted. Classification uses generation scripts, manifests, and filename stems. public_sample_* and yolo_real_wound images are PIL drawings from ml/training/download_public_datasets.py.",
+      "splits": {
+        "train": {
+          "image_files": 59,
+          "unique_stems": 59,
+          "unique_byte_sha256": 59,
+          "unique_pixel_sha256": 59,
+          "boxes_per_class": {
+            "abrasion": 18,
+            "bruise": 12,
+            "cut": 15,
+            "laceration": 14
+          },
+          "unique_images_containing_class": {
+            "abrasion": 18,
+            "bruise": 12,
+            "cut": 15,
+            "laceration": 14
+          }
+        },
+        "val": {
+          "image_files": 12,
+          "unique_stems": 12,
+          "unique_byte_sha256": 12,
+          "unique_pixel_sha256": 12,
+          "boxes_per_class": {
+            "laceration": 6,
+            "cut": 2,
+            "bruise": 1,
+            "abrasion": 3
+          },
+          "unique_images_containing_class": {
+            "laceration": 6,
+            "cut": 2,
+            "bruise": 1,
+            "abrasion": 3
+          }
+        },
+        "test": {
+          "image_files": 14,
+          "unique_stems": 14,
+          "unique_byte_sha256": 14,
+          "unique_pixel_sha256": 14,
+          "boxes_per_class": {
+            "abrasion": 4,
+            "cut": 4,
+            "bruise": 3,
+            "laceration": 3
+          },
+          "unique_images_containing_class": {
+            "abrasion": 4,
+            "cut": 4,
+            "bruise": 3,
+            "laceration": 3
+          }
+        },
+        "unsplit": {
+          "image_files": 2,
+          "unique_stems": 2,
+          "unique_byte_sha256": 2,
+          "unique_pixel_sha256": 2,
+          "boxes_per_class": {},
+          "unique_images_containing_class": {}
+        }
+      },
+      "totals": {
+        "image_files": 87,
+        "unique_stems": 87,
+        "unique_byte_sha256": 87,
+        "unique_pixel_sha256": 87,
+        "label_files": 85,
+        "boxes_per_class": {
+          "abrasion": 25,
+          "bruise": 16,
+          "cut": 21,
+          "laceration": 23
+        },
+        "unique_images_containing_class": {
+          "abrasion": 25,
+          "bruise": 16,
+          "cut": 21,
+          "laceration": 23
+        }
+      },
+      "class_imbalance": {
+        "boxes_per_class": {
+          "abrasion": 25,
+          "bruise": 16,
+          "cut": 21,
+          "laceration": 23
+        },
+        "unique_images_containing_class": {
+          "abrasion": 25,
+          "bruise": 16,
+          "cut": 21,
+          "laceration": 23
+        },
+        "box_ratio_max_over_min": 1.562,
+        "dominant_class": "abrasion",
+        "rarest_class": "bruise"
+      },
+      "duplicate_jpg_png_pairs": [],
+      "duplicate_jpg_png_pair_count": 0,
+      "duplicate_byte_sha256_groups": 0,
+      "duplicate_pixel_sha256_groups": 0,
+      "duplicate_byte_examples": [],
+      "duplicate_pixel_examples": [],
+      "duplicate_stems": {},
+      "duplicate_stem_count": 0,
+      "invalid_labels": [],
+      "invalid_label_count": 0,
+      "empty_labels": [],
+      "empty_label_count": 0,
+      "missing_label_count": 2,
+      "missing_label_examples": [
+        "data/datasets/yolo_injury/blank_skin.jpg",
+        "data/datasets/yolo_injury/dummy_test.jpg"
+      ],
+      "boxes_outside_image": [],
+      "boxes_outside_image_count": 0,
+      "zero_area_boxes": [],
+      "zero_area_box_count": 0,
+      "orphan_label_count": 0,
+      "orphan_label_examples": [],
+      "unreadable_image_count": 0,
+      "negative_or_no_injury": {
+        "count": 1,
+        "examples": [
+          {
+            "path": "data/datasets/yolo_injury/dummy_test.jpg",
+            "split": "unsplit",
+            "empty_label": true,
+            "pixel_std": 0.0,
+            "reason": "empty_or_missing_label"
+          }
+        ],
+        "note": "Empty/missing YOLO labels, blank_skin/dummy_test, or near-uniform pixels."
+      },
+      "train_val_test_leakage": {
+        "exact_pixel_hash_across_splits": [],
+        "exact_stem_across_splits": [],
+        "near_identical_ahash_hamming_le_6_across_splits": [
+          {
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "size": 85,
+            "examples": [
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0003.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0004.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0013.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0016.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0017.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0020.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0043.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0046.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0053.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0119.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0169.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0183.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0204.jpg",
+              "data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0209.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0000.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0001.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0002.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0005.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0006.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0007.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0009.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0011.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0012.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0014.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0018.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0019.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0021.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0025.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0026.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0027.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0028.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0030.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0032.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0037.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0045.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0047.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0049.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0052.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0054.jpg",
+              "data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0060.jpg"
+            ]
+          }
+        ],
+        "near_identical_cluster_count": 2,
+        "near_identical_cross_split_cluster_count": 1
+      },
+      "issue_counts": {
+        "missing_label": 2
+      },
+      "role": "merge_source_abrasion_laceration_remapped_to_wound"
+    },
+    {
+      "dataset_id": "yolo_real_wound",
+      "root": "data/datasets/yolo_real_wound",
+      "present": true,
+      "layout": "images/{split} + labels/{split}",
+      "names": {
+        "0": "cut",
+        "1": "bruise",
+        "2": "wound"
+      },
+      "source_classification": "synthetic",
+      "source_file_counts": {
+        "synthetic": 76
+      },
+      "source_classification_note": "Folder names like public_wound_dataset / yolo_real_wound are not trusted. Classification uses generation scripts, manifests, and filename stems. public_sample_* and yolo_real_wound images are PIL drawings from ml/training/download_public_datasets.py.",
+      "splits": {
+        "train": {
+          "image_files": 24,
+          "unique_stems": 24,
+          "unique_byte_sha256": 24,
+          "unique_pixel_sha256": 24,
+          "boxes_per_class": {
+            "wound": 256
+          },
+          "unique_images_containing_class": {
+            "wound": 24
+          }
+        },
+        "val": {
+          "image_files": 5,
+          "unique_stems": 5,
+          "unique_byte_sha256": 5,
+          "unique_pixel_sha256": 5,
+          "boxes_per_class": {
+            "wound": 61
+          },
+          "unique_images_containing_class": {
+            "wound": 5
+          }
+        },
+        "test": {
+          "image_files": 9,
+          "unique_stems": 9,
+          "unique_byte_sha256": 9,
+          "unique_pixel_sha256": 9,
+          "boxes_per_class": {
+            "cut": 1,
+            "bruise": 1,
+            "wound": 58
+          },
+          "unique_images_containing_class": {
+            "cut": 1,
+            "bruise": 1,
+            "wound": 7
+          }
+        },
+        "unsplit": {
+          "image_files": 38,
+          "unique_stems": 38,
+          "unique_byte_sha256": 38,
+          "unique_pixel_sha256": 38,
+          "boxes_per_class": {},
+          "unique_images_containing_class": {}
+        }
+      },
+      "totals": {
+        "image_files": 76,
+        "unique_stems": 76,
+        "unique_byte_sha256": 76,
+        "unique_pixel_sha256": 76,
+        "label_files": 38,
+        "boxes_per_class": {
+          "wound": 375,
+          "cut": 1,
+          "bruise": 1
+        },
+        "unique_images_containing_class": {
+          "wound": 36,
+          "cut": 1,
+          "bruise": 1
+        }
+      },
+      "class_imbalance": {
+        "boxes_per_class": {
+          "wound": 375,
+          "cut": 1,
+          "bruise": 1
+        },
+        "unique_images_containing_class": {
+          "wound": 36,
+          "cut": 1,
+          "bruise": 1
+        },
+        "box_ratio_max_over_min": 375.0,
+        "dominant_class": "wound",
+        "rarest_class": "cut"
+      },
+      "duplicate_jpg_png_pairs": [],
+      "duplicate_jpg_png_pair_count": 0,
+      "duplicate_byte_sha256_groups": 0,
+      "duplicate_pixel_sha256_groups": 0,
+      "duplicate_byte_examples": [],
+      "duplicate_pixel_examples": [],
+      "duplicate_stems": {},
+      "duplicate_stem_count": 0,
+      "invalid_labels": [],
+      "invalid_label_count": 0,
+      "empty_labels": [],
+      "empty_label_count": 0,
+      "missing_label_count": 38,
+      "missing_label_examples": [
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0001.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0002.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0003.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0004.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0005.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0028.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0034.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0070.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0076.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0006.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0010.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0016.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0022.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0040.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0046.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0052.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0064.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0082.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0094.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0100.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0106.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0112.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0124.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0136.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0142.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0154.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0160.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0166.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0172.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0178.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0184.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0190.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_train_public_sample_0196.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_val_public_sample_0058.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_val_public_sample_0088.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_val_public_sample_0118.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_val_public_sample_0130.jpg",
+        "data/datasets/yolo_real_wound/qc_samples/qc_val_public_sample_0148.jpg"
+      ],
+      "boxes_outside_image": [],
+      "boxes_outside_image_count": 0,
+      "zero_area_boxes": [],
+      "zero_area_box_count": 0,
+      "orphan_label_count": 0,
+      "orphan_label_examples": [],
+      "unreadable_image_count": 0,
+      "negative_or_no_injury": {
+        "count": 0,
+        "examples": [],
+        "note": "Empty/missing YOLO labels, blank_skin/dummy_test, or near-uniform pixels."
+      },
+      "train_val_test_leakage": {
+        "exact_pixel_hash_across_splits": [],
+        "exact_stem_across_splits": [],
+        "near_identical_ahash_hamming_le_6_across_splits": [
+          {
+            "splits": [
+              "test",
+              "train",
+              "unsplit",
+              "val"
+            ],
+            "size": 72,
+            "examples": [
+              "data/datasets/yolo_real_wound/images/test/public_sample_0002.jpg",
+              "data/datasets/yolo_real_wound/images/test/public_sample_0004.jpg",
+              "data/datasets/yolo_real_wound/images/test/public_sample_0005.jpg",
+              "data/datasets/yolo_real_wound/images/test/public_sample_0028.jpg",
+              "data/datasets/yolo_real_wound/images/test/public_sample_0034.jpg",
+              "data/datasets/yolo_real_wound/images/test/public_sample_0070.jpg",
+              "data/datasets/yolo_real_wound/images/test/public_sample_0076.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0006.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0010.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0016.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0022.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0040.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0046.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0052.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0064.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0082.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0094.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0100.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0106.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0112.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0124.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0136.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0142.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0154.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0160.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0166.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0172.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0178.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0184.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0190.jpg",
+              "data/datasets/yolo_real_wound/images/train/public_sample_0196.jpg",
+              "data/datasets/yolo_real_wound/images/val/public_sample_0058.jpg",
+              "data/datasets/yolo_real_wound/images/val/public_sample_0088.jpg",
+              "data/datasets/yolo_real_wound/images/val/public_sample_0118.jpg",
+              "data/datasets/yolo_real_wound/images/val/public_sample_0130.jpg",
+              "data/datasets/yolo_real_wound/images/val/public_sample_0148.jpg",
+              "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0002.jpg",
+              "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0004.jpg",
+              "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0005.jpg",
+              "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0028.jpg"
+            ]
+          },
+          {
+            "splits": [
+              "test",
+              "unsplit"
+            ],
+            "size": 2,
+            "examples": [
+              "data/datasets/yolo_real_wound/images/test/public_sample_0003.jpg",
+              "data/datasets/yolo_real_wound/qc_samples/qc_test_public_sample_0003.jpg"
+            ]
+          }
+        ],
+        "near_identical_cluster_count": 2,
+        "near_identical_cross_split_cluster_count": 2
+      },
+      "issue_counts": {
+        "missing_label": 38
+      },
+      "role": "merge_source_claimed_real_public"
+    },
+    {
+      "dataset_id": "raw_synthetic_wound",
+      "root": "data/datasets/raw/synthetic_wound",
+      "present": true,
+      "layout": "{train,valid,test}/images + labels",
+      "names": {
+        "0": "cut",
+        "1": "bruise",
+        "2": "abrasion",
+        "3": "laceration"
+      },
+      "source_classification": "synthetic",
+      "source_file_counts": {
+        "synthetic": 222
+      },
+      "source_classification_note": "Folder names like public_wound_dataset / yolo_real_wound are not trusted. Classification uses generation scripts, manifests, and filename stems. public_sample_* and yolo_real_wound images are PIL drawings from ml/training/download_public_datasets.py.",
+      "splits": {
+        "train": {
+          "image_files": 152,
+          "unique_stems": 152,
+          "unique_byte_sha256": 151,
+          "unique_pixel_sha256": 151,
+          "boxes_per_class": {
+            "abrasion": 31,
+            "bruise": 40,
+            "cut": 47,
+            "laceration": 34
+          },
+          "unique_images_containing_class": {
+            "abrasion": 31,
+            "bruise": 40,
+            "cut": 47,
+            "laceration": 34
+          }
+        },
+        "val": {
+          "image_files": 35,
+          "unique_stems": 35,
+          "unique_byte_sha256": 35,
+          "unique_pixel_sha256": 35,
+          "boxes_per_class": {
+            "bruise": 13,
+            "laceration": 8,
+            "abrasion": 8,
+            "cut": 6
+          },
+          "unique_images_containing_class": {
+            "bruise": 13,
+            "laceration": 8,
+            "abrasion": 8,
+            "cut": 6
+          }
+        },
+        "test": {
+          "image_files": 35,
+          "unique_stems": 35,
+          "unique_byte_sha256": 35,
+          "unique_pixel_sha256": 35,
+          "boxes_per_class": {
+            "bruise": 9,
+            "cut": 7,
+            "abrasion": 8,
+            "laceration": 11
+          },
+          "unique_images_containing_class": {
+            "bruise": 9,
+            "cut": 7,
+            "abrasion": 8,
+            "laceration": 11
+          }
+        },
+        "unsplit": {
+          "image_files": 0,
+          "unique_stems": 0,
+          "unique_byte_sha256": 0,
+          "unique_pixel_sha256": 0,
+          "boxes_per_class": {},
+          "unique_images_containing_class": {}
+        }
+      },
+      "totals": {
+        "image_files": 222,
+        "unique_stems": 222,
+        "unique_byte_sha256": 221,
+        "unique_pixel_sha256": 221,
+        "label_files": 222,
+        "boxes_per_class": {
+          "abrasion": 47,
+          "bruise": 62,
+          "cut": 60,
+          "laceration": 53
+        },
+        "unique_images_containing_class": {
+          "abrasion": 47,
+          "bruise": 62,
+          "cut": 60,
+          "laceration": 53
+        }
+      },
+      "class_imbalance": {
+        "boxes_per_class": {
+          "abrasion": 47,
+          "bruise": 62,
+          "cut": 60,
+          "laceration": 53
+        },
+        "unique_images_containing_class": {
+          "abrasion": 47,
+          "bruise": 62,
+          "cut": 60,
+          "laceration": 53
+        },
+        "box_ratio_max_over_min": 1.319,
+        "dominant_class": "bruise",
+        "rarest_class": "abrasion"
+      },
+      "duplicate_jpg_png_pairs": [],
+      "duplicate_jpg_png_pair_count": 0,
+      "duplicate_byte_sha256_groups": 1,
+      "duplicate_pixel_sha256_groups": 1,
+      "duplicate_byte_examples": [
+        [
+          "data/datasets/raw/synthetic_wound/train/images/syn_wound_0000.jpg",
+          "data/datasets/raw/synthetic_wound/train/images/syn_wound_duplicate.jpg"
+        ]
+      ],
+      "duplicate_pixel_examples": [
+        [
+          "data/datasets/raw/synthetic_wound/train/images/syn_wound_0000.jpg",
+          "data/datasets/raw/synthetic_wound/train/images/syn_wound_duplicate.jpg"
+        ]
+      ],
+      "duplicate_stems": {},
+      "duplicate_stem_count": 0,
+      "invalid_labels": [],
+      "invalid_label_count": 0,
+      "empty_labels": [],
+      "empty_label_count": 0,
+      "missing_label_count": 0,
+      "missing_label_examples": [],
+      "boxes_outside_image": [],
+      "boxes_outside_image_count": 0,
+      "zero_area_boxes": [],
+      "zero_area_box_count": 0,
+      "orphan_label_count": 0,
+      "orphan_label_examples": [],
+      "unreadable_image_count": 0,
+      "negative_or_no_injury": {
+        "count": 0,
+        "examples": [],
+        "note": "Empty/missing YOLO labels, blank_skin/dummy_test, or near-uniform pixels."
+      },
+      "train_val_test_leakage": {
+        "exact_pixel_hash_across_splits": [],
+        "exact_stem_across_splits": [],
+        "near_identical_ahash_hamming_le_6_across_splits": [
+          {
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "size": 222,
+            "examples": [
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0185.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0186.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0187.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0188.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0189.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0190.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0191.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0192.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0193.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0194.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0195.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0196.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0197.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0198.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0199.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0200.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0201.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0202.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0203.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0204.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0205.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0206.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0207.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0208.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0209.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0210.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0211.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0212.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0213.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0214.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0215.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0216.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0217.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0218.jpg",
+              "data/datasets/raw/synthetic_wound/test/images/syn_wound_0219.jpg",
+              "data/datasets/raw/synthetic_wound/train/images/syn_wound_0000.jpg",
+              "data/datasets/raw/synthetic_wound/train/images/syn_wound_0001.jpg",
+              "data/datasets/raw/synthetic_wound/train/images/syn_wound_0002.jpg",
+              "data/datasets/raw/synthetic_wound/train/images/syn_wound_0003.jpg",
+              "data/datasets/raw/synthetic_wound/train/images/syn_wound_0004.jpg"
+            ]
+          }
+        ],
+        "near_identical_cluster_count": 1,
+        "near_identical_cross_split_cluster_count": 1
+      },
+      "issue_counts": {},
+      "role": "synthetic_generator_output_fed_into_yolo_injury"
+    }
+  ],
+  "unlabeled_source_pools": {
+    "public_wound_dataset": {
+      "root": "data/datasets/public_wound_dataset",
+      "image_files": 200,
+      "yolo_labels": 0,
+      "source_classification": "synthetic",
+      "note": "Not YOLO detect. 200 synthetic JPG drawings from ml/training/download_public_datasets.py; 200 PNG masks. Manifest claims Kaggle/Roboflow/WOUNDSEG but images are PIL drawings. Do not count masks as independent training images.",
+      "mask_png_files": 200
+    },
+    "injury_dataset": {
+      "root": "data/datasets/injury_dataset",
+      "image_files": 30,
+      "yolo_labels": 0,
+      "source_classification": "synthetic",
+      "note": "Not YOLO detect. 30 synthetic JPGs + 30 mask PNGs. Manifest: AI-QTriage Synthetic Research Benchmark. Do not count masks as independent training images.",
+      "mask_png_files": 30
+    }
+  },
+  "subject_and_remap_manifests": {
+    "yolo_real_wound": {
+      "present": true,
+      "path": "data/datasets/yolo_real_wound/manifest.csv",
+      "rows": 38,
+      "unique_subjects": 33,
+      "subjects_in_multiple_splits": {},
+      "subjects_in_multiple_splits_count": 0,
+      "raw_to_final_class_remaps": [
+        {
+          "sample_id": "public_sample_0003",
+          "subject_id": "subj_001",
+          "split": "test",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0004",
+          "subject_id": "subj_001",
+          "split": "test",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0005",
+          "subject_id": "subj_001",
+          "split": "test",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0006",
+          "subject_id": "subj_002",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0010",
+          "subject_id": "subj_002",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0016",
+          "subject_id": "subj_004",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0022",
+          "subject_id": "subj_005",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0028",
+          "subject_id": "subj_006",
+          "split": "test",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0034",
+          "subject_id": "subj_007",
+          "split": "test",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0040",
+          "subject_id": "subj_008",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0046",
+          "subject_id": "subj_010",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0052",
+          "subject_id": "subj_011",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0058",
+          "subject_id": "subj_012",
+          "split": "val",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0064",
+          "subject_id": "subj_013",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0070",
+          "subject_id": "subj_014",
+          "split": "test",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0076",
+          "subject_id": "subj_016",
+          "split": "test",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0082",
+          "subject_id": "subj_017",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0088",
+          "subject_id": "subj_018",
+          "split": "val",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0094",
+          "subject_id": "subj_019",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0100",
+          "subject_id": "subj_020",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0106",
+          "subject_id": "subj_022",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0112",
+          "subject_id": "subj_023",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0118",
+          "subject_id": "subj_024",
+          "split": "val",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0124",
+          "subject_id": "subj_025",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0130",
+          "subject_id": "subj_026",
+          "split": "val",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0136",
+          "subject_id": "subj_028",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0142",
+          "subject_id": "subj_029",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0148",
+          "subject_id": "subj_030",
+          "split": "val",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0154",
+          "subject_id": "subj_031",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0160",
+          "subject_id": "subj_032",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0166",
+          "subject_id": "subj_034",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0172",
+          "subject_id": "subj_035",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0178",
+          "subject_id": "subj_036",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0184",
+          "subject_id": "subj_037",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0190",
+          "subject_id": "subj_038",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        },
+        {
+          "sample_id": "public_sample_0196",
+          "subject_id": "subj_040",
+          "split": "train",
+          "raw_class": "swelling",
+          "final_class": "wound"
+        }
+      ],
+      "raw_to_final_class_remap_count": 36,
+      "raw_to_final_counts": {
+        "swelling->wound": 36
+      }
+    },
+    "public_wound_dataset": {
+      "present": true,
+      "path": "data/datasets/public_wound_dataset/manifest.csv",
+      "rows": 200,
+      "unique_subjects": 40,
+      "subjects_in_multiple_splits": {},
+      "subjects_in_multiple_splits_count": 0,
+      "raw_to_final_class_remaps": [],
+      "raw_to_final_class_remap_count": 0,
+      "raw_to_final_counts": {}
+    },
+    "injury_dataset": {
+      "present": true,
+      "path": "data/datasets/injury_dataset/manifest.csv",
+      "rows": 30,
+      "unique_subjects": 15,
+      "subjects_in_multiple_splits": {},
+      "subjects_in_multiple_splits_count": 0,
+      "raw_to_final_class_remaps": [],
+      "raw_to_final_class_remap_count": 0,
+      "raw_to_final_counts": {}
+    }
+  },
+  "cross_dataset": {
+    "exact_pixel_hash_across_datasets": [
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0003.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0003.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0004.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0004.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0013.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0013.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0016.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0016.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0017.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0017.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0020.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0020.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0043.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0043.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0046.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0046.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0053.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0053.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0119.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0119.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0169.jpg",
+        "raw_synthetic_wound:val:data/datasets/raw/synthetic_wound/valid/images/syn_wound_0169.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0183.jpg",
+        "raw_synthetic_wound:val:data/datasets/raw/synthetic_wound/valid/images/syn_wound_0183.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0204.jpg",
+        "raw_synthetic_wound:test:data/datasets/raw/synthetic_wound/test/images/syn_wound_0204.jpg"
+      ],
+      [
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0209.jpg",
+        "raw_synthetic_wound:test:data/datasets/raw/synthetic_wound/test/images/syn_wound_0209.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0000.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0000.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_duplicate.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0001.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0001.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0002.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0002.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0005.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0005.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0006.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0006.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0007.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0007.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0009.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0009.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0011.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0011.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0012.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0012.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0014.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0014.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0018.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0018.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0019.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0019.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0021.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0021.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0025.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0025.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0026.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0026.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0027.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0027.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0028.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0028.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0030.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0030.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0032.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0032.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0037.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0037.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0045.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0045.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0047.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0047.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0049.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0049.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0052.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0052.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0054.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0054.jpg"
+      ],
+      [
+        "yolo_injury:train:data/datasets/yolo_injury/images/train/synthetic_wound_syn_wound_0060.jpg",
+        "raw_synthetic_wound:train:data/datasets/raw/synthetic_wound/train/images/syn_wound_0060.jpg"
+      ]
+    ],
+    "exact_pixel_hash_across_datasets_count": 85,
+    "shared_stems_across_datasets": [
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0001.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0001.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0002.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0002.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0003.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0003.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0004.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0004.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0005.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0005.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0028.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0028.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0034.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0034.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0070.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0070.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/public_sample_0076.jpg",
+        "yolo_real_wound:test:data/datasets/yolo_real_wound/images/test/public_sample_0076.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0003.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0003.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0004.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0004.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0013.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0013.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0016.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0016.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0017.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0017.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0020.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0020.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0043.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0043.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0046.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0046.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0053.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0053.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0119.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0119.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0169.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0169.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0183.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0183.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0204.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0204.jpg"
+      ],
+      [
+        "yolo_merged:test:data/datasets/yolo_merged/images/test/synthetic_wound_syn_wound_0209.jpg",
+        "yolo_injury:test:data/datasets/yolo_injury/images/test/synthetic_wound_syn_wound_0209.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0006.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0006.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0010.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0010.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0016.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0016.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0022.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0022.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0040.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0040.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0046.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0046.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0052.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0052.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0064.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0064.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0082.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0082.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0094.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0094.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0100.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0100.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0106.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0106.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0112.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0112.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0124.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0124.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0136.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0136.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0142.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0142.jpg"
+      ],
+      [
+        "yolo_merged:train:data/datasets/yolo_merged/images/train/public_sample_0154.jpg",
+        "yolo_real_wound:train:data/datasets/yolo_real_wound/images/train/public_sample_0154.jpg"
+      ]
+    ],
+    "shared_stems_across_datasets_count": 123
+  },
+  "must_fix_before_retrain": [
+    {
+      "id": "SYNTHETIC_CLAIMED_AS_REAL_OR_PUBLIC",
+      "severity": "blocker",
+      "problem": "Every YOLO detect image is synthetic. yolo_injury stems are synthetic_wound_syn_wound_*. yolo_real_wound / public_sample_* come from PIL drawings generated by download_public_datasets.py, while manifests claim Kaggle/Roboflow/WOUNDSEG and the folder is named yolo_real_wound.",
+      "evidence": {
+        "yolo_injury_train_prefix": "synthetic_wound_syn_wound_*",
+        "yolo_real_wound_stems": "public_sample_*",
+        "generator": "ml/training/download_public_datasets.py generate_expanded_wound_dataset",
+        "merged_source_classification": "synthetic"
+      },
+      "why_must_fix_before_retrain": "Retraining the canonical detector on this data cannot produce a real-injury model. Metrics would describe drawings, not clinical photos."
+    },
+    {
+      "id": "SWELLING_REMAPPED_TO_WOUND",
+      "severity": "blocker",
+      "problem": "yolo_real_wound manifest remaps raw_class=swelling to final_class=wound. Those boxes train the wound class on swelling drawings.",
+      "evidence": {
+        "remap_count": 36,
+        "remap_pairs": {
+          "swelling->wound": 36
+        }
+      },
+      "why_must_fix_before_retrain": "Active runtime classes are cut/bruise/wound from model.names. Training wound on swelling examples makes wound detections untrustworthy."
+    },
+    {
+      "id": "ABRASION_LACERATION_REMAPPED_TO_WOUND",
+      "severity": "blocker",
+      "problem": "ml/training/train_yolo.py prepare_merged_dataset remaps yolo_injury abrasion(2) and laceration(3) to wound(2). The merged wound class is a mix of wound + abrasion + laceration + remapped swelling.",
+      "evidence": {
+        "remap": {
+          "2": 2,
+          "3": 2
+        },
+        "yolo_injury_names": {
+          "0": "cut",
+          "1": "bruise",
+          "2": "abrasion",
+          "3": "laceration"
+        }
+      },
+      "why_must_fix_before_retrain": "Do not retrain until class definitions are honest. Do not auto-relabel; decide a taxonomy then label to it."
+    },
+    {
+      "id": "SEVERE_CLASS_IMBALANCE",
+      "severity": "blocker",
+      "problem": "cut and bruise have too few unique images to train a three-class detector. wound dominates boxes and images.",
+      "evidence": {
+        "merged_unique_images_containing_class": {
+          "wound": 84,
+          "bruise": 17,
+          "cut": 22
+        },
+        "merged_boxes_per_class": {
+          "wound": 423,
+          "bruise": 17,
+          "cut": 22
+        },
+        "box_ratio_max_over_min": 24.882,
+        "train_unique_images_containing_class": {
+          "wound": 56,
+          "bruise": 12,
+          "cut": 15
+        }
+      },
+      "why_must_fix_before_retrain": "Do not duplicate existing images to inflate counts. Collect additional unique cut and bruise samples (or drop classes). Current counts cannot support a balanced retrain."
+    },
+    {
+      "id": "FRAGMENTED_MULTI_BOX_LABELS",
+      "severity": "blocker",
+      "problem": "yolo_real_wound labels put many tiny boxes on a single drawing (max 14 boxes/image; many w=h=0.049). Train has 256 wound boxes on 24 images.",
+      "evidence": {
+        "train_images": 24,
+        "train_wound_boxes": 256,
+        "val_images": 5,
+        "val_wound_boxes": 61,
+        "max_boxes_in_one_file": 14,
+        "example": "data/datasets/yolo_real_wound/labels/train/public_sample_0082.txt"
+      },
+      "why_must_fix_before_retrain": "Do not auto-rewrite labels. Review by hand. Fragmented boxes teach wound as a spray of tiny squares, not one lesion."
+    },
+    {
+      "id": "INSUFFICIENT_UNIQUE_TRAIN_IMAGES",
+      "severity": "blocker",
+      "problem": "yolo_merged train has only 83 unique pixel hashes. That is too small for a production YOLO11 retrain.",
+      "evidence": {
+        "train_unique_pixel_sha256": 83,
+        "val": 17,
+        "test": 23
+      },
+      "why_must_fix_before_retrain": "Collect more unique images. Do not duplicate JPG/PNG or existing drawings to increase counts."
+    },
+    {
+      "id": "EXACT_DUPLICATE_IN_RAW_SYNTHETIC",
+      "severity": "blocker",
+      "problem": "raw/synthetic_wound train contains an exact pixel duplicate: syn_wound_0000.jpg == syn_wound_duplicate.jpg. 222 files, 221 unique pixels.",
+      "evidence": {
+        "pair": [
+          "data/datasets/raw/synthetic_wound/train/images/syn_wound_0000.jpg",
+          "data/datasets/raw/synthetic_wound/train/images/syn_wound_duplicate.jpg"
+        ],
+        "image_files": 222,
+        "unique_pixel_sha256": 221
+      },
+      "why_must_fix_before_retrain": "Do not treat the duplicate JPG as an independent sample. Do not copy files to increase counts."
+    },
+    {
+      "id": "QC_VISUALIZATIONS_AND_MASKS_NOT_SAMPLES",
+      "severity": "blocker",
+      "problem": "yolo_real_wound/qc_samples has 38 unlabeled visualization JPGs (bbox overlay + printed class name). public_wound_dataset and injury_dataset include mask PNGs. None of these are extra training images. No JPG/PNG pairs inside yolo_merged splits.",
+      "evidence": {
+        "yolo_merged_jpg_png_pairs": 0,
+        "yolo_real_wound_qc_unlabeled": 38,
+        "public_wound_jpg": 200,
+        "public_wound_mask_png": 200,
+        "injury_dataset_jpg": 30,
+        "injury_dataset_mask_png": 30
+      },
+      "why_must_fix_before_retrain": "Do not glob qc_samples or masks into train. Do not treat JPG and PNG of the same case as two samples."
+    },
+    {
+      "id": "SPLIT_HOMOGENEITY_NOT_INDEPENDENT",
+      "severity": "blocker",
+      "problem": "yolo_merged has zero exact pixel-hash or stem leakage across train/val/test. Average-hash still groups 122/123 images together because they are near-identical synthetic canvases. Fake subject_ids do not leak across splits, but they are not real people.",
+      "evidence": {
+        "exact_pixel_hash_across_splits": [],
+        "exact_stem_across_splits": [],
+        "ahash_cross_split_cluster_size": 122,
+        "yolo_real_wound_subjects_in_multiple_splits": 0,
+        "subject_ids_are_generated": true
+      },
+      "why_must_fix_before_retrain": "Val/test cannot prove generalization to real injuries. Collect real photos and split by subject. Do not shuffle these drawings and call it a new split."
+    },
+    {
+      "id": "NO_NEGATIVE_IMAGES_IN_ACTIVE_SPLITS",
+      "severity": "should_fix",
+      "problem": "yolo_merged train/val/test have no empty-label negative images. blank_skin.jpg and dummy_test.jpg sit outside splits in yolo_injury.",
+      "evidence": {
+        "merged_negatives": 0,
+        "yolo_injury_unsplit_files": 2
+      },
+      "why_must_fix_before_retrain": "Without negatives the detector is not trained to abstain on uninjured skin. Add true unlabeled negatives; do not duplicate positives."
+    }
+  ],
+  "near_duplicate_method_note": "Exact split leakage uses pixel SHA-256 and stems (none in yolo_merged). Near-identical uses 8x8 average-hash Hamming<=6. On these flat synthetic canvases aHash is weakly discriminative and collapses almost the whole set into one cluster. That is evidence of visual homogeneity, not 122 byte-identical copies."
+}

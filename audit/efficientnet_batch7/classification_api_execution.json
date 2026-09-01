@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "predicted_class": "Bruise",
+  "confidence": 1.0,
+  "status": "PASS"
+}

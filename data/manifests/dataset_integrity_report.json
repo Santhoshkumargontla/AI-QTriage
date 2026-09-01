@@ -1,0 +1,807 @@
+{
+  "created_utc": "2026-08-30T06:09:42.465345+00:00",
+  "files_inventoried": 7084,
+  "corrupted_or_empty": [
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_010be90cdb520202.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_09980e98d4c0e80e.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_0db3ecb27a8d69c9.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_0e35b5766677f898.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_121c51ee55284892.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_1b53d78fb73ab87d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_1f883934080ec19b.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_2378720aeb957af1.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_256334e58c91d127.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_2a3ebb2b2a5b43bf.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_2dc2d5193ab8017d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_2f27b86025726634.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_43fdc428d7b5dcbb.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_45a75405fc70f164.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_4842cc386546cb3d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_4f7cc5010b9b85d2.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_5cfbfc03ac3c50cb.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_5e50dc64ff0d00e5.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_6cba92d2cc6cea57.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_6f4c7475eba23559.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_7af41cdce38c22e5.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_85cad38f3dd037fe.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_9639d3e79a2ad2ee.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_9c1b6e04555d9119.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_a2042a75f7c8e27b.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_a9491de710cdf883.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_abe8891de7ad1a29.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_b3252c051ffc8ed8.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_bb7746d821df50bf.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_bfbd9a7cc6baaa32.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_d251567b6818896a.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_da2c938f6c81bb82.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_db3a247099547fb5.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_e5c96e74a3171369.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_e61add898f98a2a2.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_fb923d65c3363ae6.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_efficientnet_kaggle_normal_fba4348b1df0891a.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_1a331ce34e1b560b.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_1c30992420c65c7d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_208afa5945adfc1c.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_26b109ec2603c5a9.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_2ec96e274f55a3c1.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_3ffdde0fa31f9e0d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_52bc678c8c1afd84.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_6700264a9627757c.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_7697b4849e59d162.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_7a47a3b5af26c2bd.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_931de38628aea94c.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_9518fb240d906db6.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_a8d075a3e72c7d1e.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_a9ca4cdf1d240a99.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_bb196a88e741caaf.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_bd4a55be37533872.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_bfdc30af8e6b3617.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_c53050223498d5b7.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_c6955a67699e0fcb.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_c9458ba609af4355.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_ccd50813881f7748.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_ibrahimfateen_normal_e79589f25b1fa2ec.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/test/neg_synthetic_blank_8c09e3d764d425b3.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/legacy_negative__blank_skin.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/legacy_negative__dummy_test.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_007f504d7d240cea.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_010decd8a6ec3d53.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_01c11aaab530c523.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_07dd67c68a572aca.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_0f53ae5080e1a55f.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_119a4d0d5a833c34.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_120b0f607eccf6a8.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_12ec25c93d457e22.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_13b3f0d18917e19e.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_17a0785e74e06c50.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_1accb356e83d9314.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_1b91d9131b17ef05.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_1d24bdfa94812714.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_1e04bcecf2c29b77.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_20b88d2f1d468d5c.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_23a5d5dc44a1eaeb.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_245faed572e4bafc.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_256b2730c0540458.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_25f24b184de34d9e.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_2647c244ca474e78.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_2932709cc01f9a39.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_2be7293f2c4adcc4.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_2cc205cd7c2d1e8f.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_2da2c43c49a6f740.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_2e01ebd52efab8a9.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_30ae74fd7e75c10a.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_33930aa2efec7415.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_354d599bd862dbf3.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_371fed1571f78ae8.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_3799a2bc742f7840.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_37db8af7e761492a.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_37dcc75681af58a9.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_3d542a24bdcae31e.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_3df3ae05b7af521f.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_40c4ad7f4cc20e11.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_40f53ff4479cf2a0.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_42726663b35383a9.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_455660caad5511ac.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_46dfc22c826b39ca.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_477c8d22f924b3e0.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_4c087ebf667956af.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_4e5aa17c24d9eb1c.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_54edf4a1d9249663.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_55ed69a435c672df.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_5a834fe1a2b604a3.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_5aa4395553a6b413.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_5ab0f252cbb2750f.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_5ac48721fda91955.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_5bee40942aff648f.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_5fb0ede3b3ce4d9c.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_5fccdbae5585a832.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_601b37a8b1a56aa4.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_60f8a1b15aa03bb4.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_6193d626868b6a3b.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_63883288a804324b.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_657e9155ac549867.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_6810f5a4481d86bc.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_68633ee199773024.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_6918a02feb2a1071.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_6b64912f3efd60c4.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_6de40eeb42f2aec5.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_72c2ff4027a8c24f.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_72d278f5ca78ce15.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_75b1a0a3a1633cea.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_78b17c746e420662.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_79f28b671d1fd4e3.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_7bb6f28ba4b52bcf.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_7e166cf4218e039d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_7e32b84ee2f6c2ea.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_7e37e752e09c13d9.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_7fd30efbc351d0d0.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_815be8d54aceb088.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_8165b8b8674fd8b6.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_825c7a84b1f08115.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_85e191c59ca0fa79.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_89cc80ba35f32a09.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_89ec2bc91eb8bdc2.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_8a0f83f2904c7186.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_8b673d6712f1b5fc.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_8f7e3219498e486e.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_90a0b75c9b3be70d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_91f8440503e98223.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_94de392bf108673c.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_9606c2c52cb19984.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_964d09658b1587cf.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_9cd9870ef0e6fabb.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_9eb991d7093d5696.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_9f3955549d0f1459.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a0d4cfe0b6529b9a.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a14e258fadbda363.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a15cb5fd438458e3.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a1ee5f763eaebede.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a2ea156c46f634b2.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a649bd49fb51b44d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a685dec6851a16be.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a68a1588583412d1.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_a706c142d9083423.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_aa4d7a50c93313ef.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_aadefaf0bf5bcc80.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_ad1a9b3c13c0b5a6.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_ae27242be2c009d4.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_b06c853b2d337eb6.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_b0ca65cb14364e58.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_b2e2ec4bb02b0e24.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_b4f0ab2e06c012aa.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_b7371b4183e5d4ea.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_b94a46f044c898c3.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_b9ea9db988a21524.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_bdb0fc680f784193.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_c37d9552179ca744.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_c43903687b681093.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_c4cd666e892dac6f.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_c5b920c1603b20fd.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_c95397c8c19d3be0.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_ca869108b90c0810.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_cb53ae7bb837a535.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_cb5eeb25e6ca6e19.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_cd52562a5b1c9e25.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_cdbb5c050ea809c8.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_d0ba3e47a8691a01.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_d14c921fc7700ba4.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_d24d84c01eb9d642.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_dbd352b906a77b90.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_e02be375d5af9913.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_e1ab5152d3dc0bd2.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_e2f28dae21ee0df2.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_e4f193e78909524e.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_e6a4d57a966c1bd7.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_ebb22bbfbc6cf56d.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_ec1bf764f9aad436.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_efcaa354ddc199a3.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_f2da2ebd410c4d24.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_f35289e747adaa42.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_f77820613a574823.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_f8dcc4594d734085.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_efficientnet_kaggle_normal_fb050f4ff1f6eae3.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_ibrahimfateen_normal_01fae345c60a153c.txt",
+      "reason": "zero_bytes"
+    },
+    {
+      "path": "data/datasets/yolo_real_skin_v2/labels/train/neg_ibrahimfateen_normal_02fba13d784d10fd.txt",
+      "reason": "zero_bytes"
+    }
+  ],
+  "corrupted_count": 404
+}

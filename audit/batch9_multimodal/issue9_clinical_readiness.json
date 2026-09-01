@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "current_evidence_level": "Academic Research Prototype (Software verified, 200 hybrid simulation samples)",
+  "missing_validation_evidence": [
+    "Prospective multi-center clinical patient trial data",
+    "IRB ethics board protocol approval for patient diagnostic trials",
+    "Diverse clinical skin tone and demographic prospective cohort",
+    "Independent external hospital validation split",
+    "FDA 510(k) / SaMD regulatory clearance documentation"
+  ],
+  "disclaimer": "This system is an academic research prototype and is not clinically validated for diagnosis or emergency decision-making.",
+  "status": "NOT CLINICALLY VALIDATED"
+}

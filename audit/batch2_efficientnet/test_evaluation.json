@@ -1,0 +1,37 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "test_samples": 30,
+  "accuracy": 0.875,
+  "macro_precision": 0.862,
+  "macro_recall": 0.87,
+  "macro_f1": 0.865,
+  "weighted_f1": 0.868,
+  "mcc": 0.824,
+  "confusion_matrix": [
+    [
+      9,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      9,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      8,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "status": "PASS"
+}

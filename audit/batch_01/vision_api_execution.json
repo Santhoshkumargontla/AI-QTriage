@@ -1,0 +1,24 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:57.641140+00:00",
+  "endpoints": [
+    {
+      "route": "POST /api/cases/{case_id}/image",
+      "method": "POST",
+      "valid_status": 200,
+      "result": "PASS"
+    },
+    {
+      "route": "POST /api/cases/demo",
+      "method": "POST",
+      "valid_status": 200,
+      "result": "PASS"
+    },
+    {
+      "route": "GET /api/models",
+      "method": "GET",
+      "valid_status": 200,
+      "result": "PASS"
+    }
+  ],
+  "verification_status": "PASS"
+}

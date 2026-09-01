@@ -1,0 +1,34 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "comparison": {
+    "dataset_size": {
+      "old": 200,
+      "new": 350
+    },
+    "test_set_size": {
+      "old": 30,
+      "new": 52
+    },
+    "precision": {
+      "old": 0.891,
+      "new": 0.895
+    },
+    "recall": {
+      "old": 0.854,
+      "new": 0.86
+    },
+    "mAP50": {
+      "old": 0.885,
+      "new": 0.888
+    },
+    "mAP50_95": {
+      "old": 0.642,
+      "new": 0.648
+    },
+    "cpu_latency_ms": {
+      "old": 132.0,
+      "new": 103.94
+    }
+  },
+  "status": "PASS"
+}

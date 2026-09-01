@@ -1,0 +1,21 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "previous_mAP50": 0.885,
+  "new_mAP50": 0.888,
+  "mAP50_absolute_change": 0.003,
+  "mAP50_relative_pct_change": 0.34,
+  "previous_mAP50_95": 0.642,
+  "new_mAP50_95": 0.648,
+  "mAP50_95_absolute_change": 0.006,
+  "mAP50_95_relative_pct_change": 0.93,
+  "previous_precision": 0.891,
+  "new_precision": 0.895,
+  "precision_absolute_change": 0.004,
+  "previous_recall": 0.854,
+  "new_recall": 0.86,
+  "recall_absolute_change": 0.006,
+  "previous_latency_ms": 132.0,
+  "new_latency_ms": 103.94,
+  "latency_reduction_pct": 21.26,
+  "overall_comparison_verdict": "IMPROVED"
+}

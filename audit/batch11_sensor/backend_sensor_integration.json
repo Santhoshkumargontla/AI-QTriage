@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "service": "backend/services/live_sensor_adapter.py",
+  "feature_compatibility": "8 features (peak_g_force, peak_accel, peak_jerk, accel_var, gyro_var, sma, stabilization, lux_drop)",
+  "validation_rules": "Requires min 10 samples, max 3000 samples, rate >= 40Hz",
+  "status": "PASS"
+}

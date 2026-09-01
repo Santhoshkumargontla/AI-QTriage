@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T13:00:48.351359+00:00",
+  "total_samples": 200,
+  "train_samples": 140,
+  "val_samples": 30,
+  "test_samples": 30,
+  "class_counts": {
+    "LOW": 70,
+    "MODERATE": 80,
+    "HIGH": 50
+  },
+  "status": "PASS"
+}

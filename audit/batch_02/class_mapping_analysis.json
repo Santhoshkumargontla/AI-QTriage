@@ -1,0 +1,31 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.373495+00:00",
+  "mappings": [
+    {
+      "yolo_class": "cut",
+      "effnet_class": "Cut",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "yolo_class": "bruise",
+      "effnet_class": "Bruise",
+      "compatibility": "COMPATIBLE"
+    },
+    {
+      "yolo_class": "abrasion",
+      "effnet_class": "Cut",
+      "compatibility": "COMPATIBLE_SEMANTIC"
+    },
+    {
+      "yolo_class": "laceration",
+      "effnet_class": "Cut",
+      "compatibility": "COMPATIBLE_SEMANTIC"
+    },
+    {
+      "yolo_class": "wound",
+      "effnet_class": "Bruise / Swelling / Cut",
+      "compatibility": "GENERAL_WOUND_SUPERSET"
+    }
+  ],
+  "verification_status": "PASS"
+}

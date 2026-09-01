@@ -1,0 +1,21 @@
+{
+  "audit_timestamp": "2026-08-27T13:02:00.021320+00:00",
+  "total_images": 200,
+  "total_annotations": 240,
+  "class_count": 5,
+  "class_names": [
+    "cut",
+    "bruise",
+    "abrasion",
+    "laceration",
+    "wound"
+  ],
+  "train_images": 140,
+  "val_images": 30,
+  "test_images": 30,
+  "corrupted_images": 0,
+  "duplicate_images": 0,
+  "data_leakage_overlap": 0,
+  "yaml_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\data\\yolo_dataset.yaml",
+  "status": "PASS"
+}

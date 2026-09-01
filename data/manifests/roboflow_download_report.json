@@ -1,0 +1,24 @@
+{
+  "created_utc": "2026-08-30T06:50:02.330545+00:00",
+  "downloads": {
+    "wound2": {
+      "status": "DOWNLOADED",
+      "version": "1",
+      "files": 955,
+      "images": 476,
+      "location": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\roboflow\\wound2"
+    },
+    "aid": {
+      "status": "DOWNLOADED",
+      "version": "2",
+      "files": 521,
+      "images": 259,
+      "location": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\roboflow\\aid"
+    },
+    "injury_detection_v2": {
+      "status": "PRESENT",
+      "files": 1697,
+      "images": 847
+    }
+  }
+}

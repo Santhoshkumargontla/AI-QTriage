@@ -1,0 +1,209 @@
+{
+  "audit_timestamp": "2026-08-27T07:54:25.593906+00:00",
+  "total_artifacts": 29,
+  "artifacts": [
+    {
+      "relative_path": "audit/final/COMPLETE_FINAL_FORENSIC_AUDIT_REPORT.md",
+      "exact_size_bytes": 0,
+      "full_sha256": "N/A",
+      "purpose": "Complete Master Final Forensic Audit Report",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/FINAL_CORRECTED_INDEPENDENT_FORENSIC_AUDIT_REPORT.md",
+      "exact_size_bytes": 32619,
+      "full_sha256": "15ff90be996f438e8e909750031e9cde4fc8cfd455151af5423351819bd0d496",
+      "purpose": "Summary Forensic Audit Report",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/baseline_system_snapshot.json",
+      "exact_size_bytes": 3188,
+      "full_sha256": "a20169f34bc4e63ce8bddbec2fe22d4424e633befd8940996551a3d1b1261bda",
+      "purpose": "System Environment & Library Baseline",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/active_artifact_inventory.json",
+      "exact_size_bytes": 2787,
+      "full_sha256": "c2b8faaf01b746444313bf116ba24e27e1c7ff8601d492b6cf09d2ce6295e918",
+      "purpose": "Active Model Artifact Inventory & Paths",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/artifact_hash_forensic_audit.json",
+      "exact_size_bytes": 2688,
+      "full_sha256": "aea25367480f9834e47ce9a5e052b04b211c6d0cb027e58a702327ee34c2939f",
+      "purpose": "Binary SHA-256 Hash Verification Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/checkpoint_architecture_verification.json",
+      "exact_size_bytes": 1548,
+      "full_sha256": "8d3f174e8b19ab44a4d9970fe3a586559ec7a8f8c07ad873448d18e47e9eb363",
+      "purpose": "PyTorch & XGBoost Architecture Inspection",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/model_parameter_inventory.json",
+      "exact_size_bytes": 1188,
+      "full_sha256": "232ee1da0276eda9958437b7374e97108e974ffab4a44cfdd2149fb26a7fc766",
+      "purpose": "Parameter & Tensor Inventory",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/checkpoint_size_sanity_audit.json",
+      "exact_size_bytes": 575,
+      "full_sha256": "73007d27f5eb55039824f291c256ed5e4fc35308e456e1526ea849f2a578336e",
+      "purpose": "Disk Size Sanity Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/real_inference_audit.json",
+      "exact_size_bytes": 1081,
+      "full_sha256": "a1bb3cfe6ec545ce6974452e6a95d5b24e951115cc0dedd751ed3c3e435e8bd1",
+      "purpose": "Real Forward Pass Inference Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/runtime_active_artifact_proof.json",
+      "exact_size_bytes": 1803,
+      "full_sha256": "3698c597188466faf3bbd9176faad618c8b00e150d214b14bc06ed8f4eeb3727",
+      "purpose": "Runtime Production Loader Verification",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_yolo_evaluation.json",
+      "exact_size_bytes": 149,
+      "full_sha256": "222156d95386f4fc38fcb03d255cbacfea5b5d76a475e4cab085b93932f27069",
+      "purpose": "YOLO11 Detection Evaluation Results",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_efficientnet_evaluation.json",
+      "exact_size_bytes": 295,
+      "full_sha256": "a57e4bf7ecdf58b06bf18bdbafe9080f8ae2666851bf6c6bba5d2bf4f9dcf17c",
+      "purpose": "EfficientNetV2 Classification Evaluation Results",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_unet_evaluation.json",
+      "exact_size_bytes": 115,
+      "full_sha256": "2976ed02d621a22dacdc3f03bd0d3de6e0708f1a1dabaa0f87e67fb2c6495cdf",
+      "purpose": "ResNet34-UNet Segmentation Evaluation Results",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_sensor_model_evaluation.json",
+      "exact_size_bytes": 280,
+      "full_sha256": "bc21bef04c8a77b4c5e1a4f860656ead7ad11f8c0e0c54b208b3483a73af1efb",
+      "purpose": "Sensor Motion Event Classifier Results",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_xgboost_evaluation.json",
+      "exact_size_bytes": 223,
+      "full_sha256": "7b7deedccaf81e8422cddd204471103db57a69bd2bb6500c72fe6e84c87317e5",
+      "purpose": "XGBoost Multimodal Risk Fusion Results",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_vqc_evaluation.json",
+      "exact_size_bytes": 78,
+      "full_sha256": "6c37e1031e6a4381d9f0d448d3e10d65966931da555683fb10a6f8c58cae04df",
+      "purpose": "Experimental 4-Qubit VQC Results",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_metric_reproduction.json",
+      "exact_size_bytes": 1384,
+      "full_sha256": "dba9e8745198d903986ec89a2a8c2176b77a4f978abaf39fece83bcc447791ed",
+      "purpose": "Master Metrics Reproduction Matrix",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/cross_metric_consistency_audit.json",
+      "exact_size_bytes": 153,
+      "full_sha256": "91c0eb07fbfd36bc7c48ba106cf9637509a8c3eb9b61897d7723dd7baba7e596",
+      "purpose": "Cross-Metric Mathematical Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_dataset_provenance_audit.json",
+      "exact_size_bytes": 725,
+      "full_sha256": "99012826a887fe947bcb3c25f36c798ad3baf7ab4afa79dad605fb2a9a89b753",
+      "purpose": "Dataset Provenance & Provenance Verification",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/independent_leakage_audit.json",
+      "exact_size_bytes": 137,
+      "full_sha256": "828adb3861faa309f0cf6cd46c942ed7af461c94b729fd42b2353c551e6e771e",
+      "purpose": "Data Leakage & Duplicate Hash Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/sensor_split_and_window_leakage_audit.json",
+      "exact_size_bytes": 110,
+      "full_sha256": "0909249a6fdd2a87fe6ba84ad751c99f2138f769dd40936e97ca46b2fc759748",
+      "purpose": "Sensor Window Leakage Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/xgboost_high_risk_forensic_audit.json",
+      "exact_size_bytes": 169,
+      "full_sha256": "727e7f35e3d5d23e5ac7199464f38082409b38ba142ae042aca068ac341b3e6c",
+      "purpose": "XGBoost High-Risk Recall Forensic Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/sensor_pipeline_compatibility_audit.json",
+      "exact_size_bytes": 109,
+      "full_sha256": "70896ac8c7abcbe72841d73283aaa707d0944622b7e55d7d8c5e167b8cca2153",
+      "purpose": "Sensor Pipeline Telemetry Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/sos_runtime_safety_audit.json",
+      "exact_size_bytes": 102,
+      "full_sha256": "24906a298e3053d8839e0392c11f2067f30606887f683da017bc6184e8610a94",
+      "purpose": "SOS Safety & Quantum Isolation Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/final_software_execution_audit.json",
+      "exact_size_bytes": 150,
+      "full_sha256": "9df3cce1fcb23aa2f9e779537369c41f3c237f1a97d8491d0edc642740fb1622",
+      "purpose": "Software Test Suite & Build Verification",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/final_end_to_end_execution_audit.json",
+      "exact_size_bytes": 74,
+      "full_sha256": "a383f160dd30446d5ea5593bde0a6548b416f143f2c8ca216a30356b8bee92a7",
+      "purpose": "End-to-End Workflow Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/cross_report_contradiction_audit.json",
+      "exact_size_bytes": 257,
+      "full_sha256": "bf8725eb3bffcf0de63776090d8e2d9079ba724ef872f97d3d11bc3815dd4c9f",
+      "purpose": "Cross-Report Contradiction Audit",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/final_model_registry_audit.json",
+      "exact_size_bytes": 144,
+      "full_sha256": "6c550fddcfd9a06a21c02e09bed9b9be025984e99e29b6180115ec6022312f07",
+      "purpose": "Model Registry Verification",
+      "freshly_generated": true
+    },
+    {
+      "relative_path": "audit/final/FINAL_AUDIT_MANIFEST.json",
+      "exact_size_bytes": 202,
+      "full_sha256": "3b51764eaddd9f28eac7b6b43ea801c49692d5d654d14c6041c79715dbfaaa6e",
+      "purpose": "Summary Audit Manifest File",
+      "freshly_generated": true
+    }
+  ]
+}

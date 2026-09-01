@@ -1,0 +1,7 @@
+{
+  "mean_dice": 0.864,
+  "median_dice": 0.871,
+  "mean_iou": 0.761,
+  "test_pairs": 30,
+  "status": "PASS"
+}

@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:06:03.578076+00:00",
+  "operating_conf_threshold": 0.1,
+  "precision_at_010": 0.931,
+  "recall_at_010": 0.9,
+  "f1_at_010": 0.915,
+  "status": "PASS"
+}

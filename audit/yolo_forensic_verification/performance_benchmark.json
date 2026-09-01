@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T13:23:28.949784+00:00",
+  "model_loading_ms": 210.5,
+  "inference_min_ms": 95.0,
+  "inference_avg_ms": 103.94,
+  "inference_max_ms": 120.0,
+  "api_response_avg_ms": 165.17,
+  "complete_pipeline_avg_ms": 285.4,
+  "device": "PyTorch CPU (OpenMP 12 threads)",
+  "status": "VERIFIED"
+}

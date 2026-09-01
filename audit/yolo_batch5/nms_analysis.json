@@ -1,0 +1,12 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "swept_iou_thresholds": [
+    0.4,
+    0.45,
+    0.5,
+    0.6,
+    0.7
+  ],
+  "selected_iou_threshold": 0.45,
+  "status": "PASS"
+}

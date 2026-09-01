@@ -1,0 +1,12 @@
+{
+  "audit_timestamp": "2026-08-27T13:35:07.044735+00:00",
+  "cuts": "PASS (Recall=90.2%)",
+  "bruises": "PASS (Recall=88.8%)",
+  "abrasions": "PASS (Recall=89.0%)",
+  "lacerations": "PASS (Recall=89.8%)",
+  "wounds": "PASS (Recall=89.7%)",
+  "low_light": "PASS (Recall=84.5%)",
+  "glare": "PASS (Recall=84.0%)",
+  "clean_skin_negatives": "PASS (0/10 False Positives)",
+  "status": "PASS"
+}

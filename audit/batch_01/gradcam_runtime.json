@@ -1,0 +1,28 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:57.640079+00:00",
+  "target_layer": "conv_head",
+  "target_class": "Bruise",
+  "heatmap_stats": {
+    "min": 0,
+    "max": 255,
+    "mean": 18.71
+  },
+  "overlay_shape": [
+    300,
+    300,
+    3
+  ],
+  "performance_ms": {
+    "runs": [
+      354.75860000588,
+      311.8615999701433,
+      299.0368999890052,
+      337.74170000106096,
+      343.4405000298284
+    ],
+    "min": 299.0368999890052,
+    "avg": 329.36785999918357,
+    "max": 354.75860000588
+  },
+  "verification_status": "PASS"
+}

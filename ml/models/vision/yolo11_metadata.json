@@ -1,0 +1,57 @@
+{
+  "model_name": "YOLO11 Detection",
+  "version": "expanded-skin-v1",
+  "status": "INFERENCE_EXECUTES",
+  "classes": [
+    "cut",
+    "bruise",
+    "abrasion",
+    "burn",
+    "wound",
+    "laceration"
+  ],
+  "untrained_classes": [
+    "fracture",
+    "swelling",
+    "Normal",
+    "OOD_Reject"
+  ],
+  "classes_with_zero_training_boxes": [],
+  "metrics": {
+    "dataset_name": "yolo_expanded_v1",
+    "dataset_type": "public_real_photos_merged",
+    "independent_test": {
+      "mAP50": 0.3647109561928457,
+      "mAP50-95": 0.1843856506575686,
+      "precision": 0.5698733190742036,
+      "recall": 0.3905560795462484,
+      "per_class_ap50": {
+        "cut": 0.49874741708742326,
+        "bruise": 0.6883800206132518,
+        "abrasion": 0.6245174647489682,
+        "burn": 0.18673908085780602,
+        "wound": 0.1898817538496253,
+        "laceration": 0.0
+      }
+    },
+    "mAP50": 0.3647109561928457,
+    "mAP50-95": 0.1843856506575686,
+    "precision": 0.5698733190742036,
+    "recall": 0.3905560795462484,
+    "promoted": true,
+    "selected_checkpoint": "yolo_expanded_skin_candidate"
+  },
+  "weights_path": "ml/models/vision/yolo11_injury_best.pt",
+  "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+  "artifact_sha256": "4610d5f05c6d368bbbdd166b7800e2d1bd99dc61993f54191ab5d031f5a0003a",
+  "previous_canonical_sha256": "319a2cbc15d6ced2730060ff6e73baf2968271026611124539ce0b06486a1926",
+  "backup_path": "ml/models/vision/yolo11_injury_best.pt.pre_expanded_v1_backup",
+  "data_provenance_class": "PUBLIC_REAL_PHOTOS",
+  "dataset_provenance": "Roboflow injury_detection_v2+wound2+aid; shubhambaid burns; HF WSEG wound boxes; Stab\u2192laceration; Normal/OOD empty labels",
+  "training_status": "TRAINED_AND_EVALUATED",
+  "forensic_status": "IMPROVED_ON_HAND_CUT",
+  "known_limitations": "Research only. Laceration has few boxes (Stab remap). Fracture is X-ray-only separate model. Normal/OOD are not detection classes. Not clinical.",
+  "training_was_real": true,
+  "training_command": "backend/venv/Scripts/python.exe ml/training/train_yolo_expanded_v1.py --epochs 8 --promote",
+  "evaluation_artifact": "ml/models/yolo_expanded_skin_candidate/TRAIN_EVAL_REPORT.json"
+}

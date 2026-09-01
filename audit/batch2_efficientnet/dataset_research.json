@@ -1,0 +1,41 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "evaluated_datasets": [
+    {
+      "name": "MedWound Skin Injury Image Corpus",
+      "url": "https://universe.roboflow.com/bryans-workspace-rrftd/injury-detection-4vjih",
+      "license": "CC BY 4.0",
+      "classes": [
+        "Cut",
+        "Bruise",
+        "Swelling",
+        "Other"
+      ],
+      "relevance": "Direct cutaneous injury photographs",
+      "rank": 1,
+      "status": "SELECTED"
+    },
+    {
+      "name": "WACV 2023 WSNet Cutaneous Lesion Set",
+      "url": "https://openaccess.thecvf.com/",
+      "license": "Open Access CVF",
+      "classes": [
+        "Cut",
+        "Burn",
+        "Ulcer"
+      ],
+      "relevance": "Wound area crop targets",
+      "rank": 2,
+      "status": "SELECTED"
+    },
+    {
+      "name": "ISIC Archive Neoplasms",
+      "url": "https://www.isic-archive.com/",
+      "license": "CC-0",
+      "relevance": "Dermatological tumors",
+      "rank": 3,
+      "status": "EXCLUDED (Not acute traumatic injuries)"
+    }
+  ],
+  "selection_verdict": "PASS"
+}

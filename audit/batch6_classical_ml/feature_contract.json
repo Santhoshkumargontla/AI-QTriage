@@ -1,0 +1,166 @@
+{
+  "audit_timestamp": "2026-08-27T13:37:55.676611+00:00",
+  "features": [
+    {
+      "index": 0,
+      "feature_name": "vision_present",
+      "training_position": 0,
+      "runtime_position": 0,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 1,
+      "feature_name": "prob_cut",
+      "training_position": 1,
+      "runtime_position": 1,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 2,
+      "feature_name": "prob_bruise",
+      "training_position": 2,
+      "runtime_position": 2,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 3,
+      "feature_name": "prob_swelling",
+      "training_position": 3,
+      "runtime_position": 3,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 4,
+      "feature_name": "prob_other",
+      "training_position": 4,
+      "runtime_position": 4,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 5,
+      "feature_name": "affected_ratio",
+      "training_position": 5,
+      "runtime_position": 5,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 6,
+      "feature_name": "questionnaire_present",
+      "training_position": 6,
+      "runtime_position": 6,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 7,
+      "feature_name": "pain_level",
+      "training_position": 7,
+      "runtime_position": 7,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 8,
+      "feature_name": "mech_fall",
+      "training_position": 8,
+      "runtime_position": 8,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 9,
+      "feature_name": "mech_impact",
+      "training_position": 9,
+      "runtime_position": 9,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 10,
+      "feature_name": "mech_sports",
+      "training_position": 10,
+      "runtime_position": 10,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 11,
+      "feature_name": "mech_sharp",
+      "training_position": 11,
+      "runtime_position": 11,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 12,
+      "feature_name": "mech_other",
+      "training_position": 12,
+      "runtime_position": 12,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 13,
+      "feature_name": "direct_impact",
+      "training_position": 13,
+      "runtime_position": 13,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 14,
+      "feature_name": "visible_bleeding",
+      "training_position": 14,
+      "runtime_position": 14,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 15,
+      "feature_name": "movement_limitation",
+      "training_position": 15,
+      "runtime_position": 15,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 16,
+      "feature_name": "weight_bearing",
+      "training_position": 16,
+      "runtime_position": 16,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 17,
+      "feature_name": "crack_pop",
+      "training_position": 17,
+      "runtime_position": 17,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 18,
+      "feature_name": "sensor_present",
+      "training_position": 18,
+      "runtime_position": 18,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 19,
+      "feature_name": "peak_g_force",
+      "training_position": 19,
+      "runtime_position": 19,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 20,
+      "feature_name": "delta_v",
+      "training_position": 20,
+      "runtime_position": 20,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 21,
+      "feature_name": "stabilization_time",
+      "training_position": 21,
+      "runtime_position": 21,
+      "status": "VERIFIED"
+    },
+    {
+      "index": 22,
+      "feature_name": "lux_drop",
+      "training_position": 22,
+      "runtime_position": 22,
+      "status": "VERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "backend_pytest": {
+    "command": "python -m pytest backend/tests -v",
+    "passed": 92,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 42,
+    "execution_time_seconds": 168.05,
+    "status": "PASS"
+  },
+  "frontend_eslint": {
+    "command": "npm run lint",
+    "errors": 0,
+    "warnings": 37,
+    "status": "PASS_WITH_WARNINGS"
+  },
+  "frontend_next_build": {
+    "command": "npm run build",
+    "result": "Compiled successfully in 33.9s",
+    "typescript_errors": 0,
+    "status": "PASS"
+  }
+}

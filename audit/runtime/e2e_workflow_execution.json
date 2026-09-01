@@ -1,0 +1,57 @@
+{
+  "audit_timestamp": "2026-08-27T08:53:41.808591+00:00",
+  "pipelines_executed": [
+    {
+      "pipeline": "Pipeline 1 \u2014 Image Triage",
+      "input": "data/sample/image/football_injury.jpg",
+      "stages": [
+        "YOLO11 Wound Box",
+        "EfficientNet Bruise",
+        "UNet Mask 55.58%",
+        "Grad-CAM Overlay"
+      ],
+      "result": "PASS"
+    },
+    {
+      "pipeline": "Pipeline 2 \u2014 Sensor Triage",
+      "input": "Simulated telemetry log (4.85g peak)",
+      "stages": [
+        "Telemetry validation",
+        "Parameter extraction",
+        "Sensor event classification"
+      ],
+      "result": "PASS"
+    },
+    {
+      "pipeline": "Pipeline 3 \u2014 Multimodal Risk Triage",
+      "input": "Image + Sensor + Questionnaire (Pain 7, Impact)",
+      "stages": [
+        "Feature Fusion (dim 23)",
+        "XGBoost Classifier",
+        "Risk: MODERATE (0.90)",
+        "SHAP attributions"
+      ],
+      "result": "PASS"
+    },
+    {
+      "pipeline": "Pipeline 4 \u2014 VQC Experimental Inference",
+      "input": "23-dimensional fused vector",
+      "stages": [
+        "PennyLane VQC circuit execution",
+        "VQC score vector [4-qubit]"
+      ],
+      "result": "PASS (Isolated from SOS)"
+    },
+    {
+      "pipeline": "Pipeline 5 \u2014 Emergency SOS Workflow",
+      "input": "Kinetic impact trigger (4.85g > 4.0g, 2.1s > 1.5s)",
+      "stages": [
+        "30s Countdown",
+        "Cancel / Abort action",
+        "Twilio test dispatch"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "verification_status": "PASS"
+}

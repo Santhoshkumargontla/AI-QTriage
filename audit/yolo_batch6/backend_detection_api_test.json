@@ -1,0 +1,24 @@
+{
+  "audit_timestamp": "2026-08-27T12:54:20.247714+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "test_cases": [
+    {
+      "input": "Valid wound image (football_injury.jpg)",
+      "status_code": 200,
+      "detected": true,
+      "finding": "Wound"
+    },
+    {
+      "input": "Clean skin image",
+      "status_code": 200,
+      "detected": false,
+      "finding": null
+    },
+    {
+      "input": "Corrupted file",
+      "status_code": 422,
+      "detail": "Image file is corrupted or unreadable"
+    }
+  ],
+  "status": "PASS"
+}

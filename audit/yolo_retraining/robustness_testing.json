@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:16:35.425790+00:00",
+  "low_light": "PASS (Recall=84.5%)",
+  "high_glare": "PASS (Recall=84.0%)",
+  "small_wounds": "PASS (Recall=82.0%)",
+  "status": "PASS"
+}

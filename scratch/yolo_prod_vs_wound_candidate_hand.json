@@ -1,0 +1,54 @@
+{
+  "hand": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\ac69884f-7a50-48e5-b7cc-a9bea9b20313.jpeg",
+  "prod_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+  "production": {
+    "sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "dets_0.25": [
+      {
+        "cls": "bruise",
+        "conf": 0.7574395537376404,
+        "xyxy": [
+          1.4143790006637573,
+          0.0,
+          405.6142272949219,
+          320.855712890625
+        ]
+      },
+      {
+        "cls": "bruise",
+        "conf": 0.34727203845977783,
+        "xyxy": [
+          942.0635375976562,
+          0.0,
+          1280.5621337890625,
+          373.69451904296875
+        ]
+      }
+    ]
+  },
+  "wound_candidate": {
+    "sha": "76bccb50f3c7db45e22b550f887b83a40c5923248fc78a741e28bb4edd6e5927",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "dets_0.25": [
+      {
+        "cls": "wound",
+        "conf": 0.43200501799583435,
+        "xyxy": [
+          1193.6016845703125,
+          0.0,
+          1282.8095703125,
+          71.4605941772461
+        ]
+      }
+    ]
+  }
+}

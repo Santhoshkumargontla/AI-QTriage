@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T13:23:28.949784+00:00",
+  "runs": [
+    {
+      "run_directory": "ml/models/yolo_real_training/run_real_wound/",
+      "epochs_completed": 100,
+      "dataset_yaml": "ml/data/yolo_dataset.yaml",
+      "imgsz": 640,
+      "batch_size": 16,
+      "best_epoch": 88,
+      "checkpoint_sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "status": "VERIFIED"
+    }
+  ]
+}

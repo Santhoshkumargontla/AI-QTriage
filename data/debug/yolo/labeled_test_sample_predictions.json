@@ -1,0 +1,335 @@
+[
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0001.jpg",
+    "ground_truth_count": 1,
+    "ground_truth_classes": [
+      "cut"
+    ],
+    "prediction_count": 0,
+    "predicted_classes": [],
+    "max_confidence": null,
+    "sample_ground_truth": [
+      {
+        "class_id": 0,
+        "class_name": "cut",
+        "xyxy": [
+          66.000032,
+          38.000032,
+          156.00009599999998,
+          184.00009599999998
+        ]
+      }
+    ],
+    "predictions": []
+  },
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0002.jpg",
+    "ground_truth_count": 1,
+    "ground_truth_classes": [
+      "bruise"
+    ],
+    "prediction_count": 0,
+    "predicted_classes": [],
+    "max_confidence": null,
+    "sample_ground_truth": [
+      {
+        "class_id": 1,
+        "class_name": "bruise",
+        "xyxy": [
+          55.00006400000001,
+          55.00006400000001,
+          166.000128,
+          166.000128
+        ]
+      }
+    ],
+    "predictions": []
+  },
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0003.jpg",
+    "ground_truth_count": 1,
+    "ground_truth_classes": [
+      "wound"
+    ],
+    "prediction_count": 0,
+    "predicted_classes": [],
+    "max_confidence": null,
+    "sample_ground_truth": [
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          45.000144,
+          45.000144,
+          176.00004800000002,
+          176.00004800000002
+        ]
+      }
+    ],
+    "predictions": []
+  },
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0004.jpg",
+    "ground_truth_count": 12,
+    "ground_truth_classes": [
+      "wound"
+    ],
+    "prediction_count": 0,
+    "predicted_classes": [],
+    "max_confidence": null,
+    "sample_ground_truth": [
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          99.999984,
+          146.000064,
+          111.99988800000001,
+          168.0
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          127.00004799999999,
+          144.00008,
+          138.000016,
+          155.000048
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          82.000016,
+          140.000112,
+          92.999984,
+          151.00008
+        ]
+      }
+    ],
+    "predictions": []
+  },
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0005.jpg",
+    "ground_truth_count": 1,
+    "ground_truth_classes": [
+      "wound"
+    ],
+    "prediction_count": 0,
+    "predicted_classes": [],
+    "max_confidence": null,
+    "sample_ground_truth": [
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          80.000144,
+          49.999936000000005,
+          141.000048,
+          161.0
+        ]
+      }
+    ],
+    "predictions": []
+  },
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0028.jpg",
+    "ground_truth_count": 7,
+    "ground_truth_classes": [
+      "wound"
+    ],
+    "prediction_count": 2,
+    "predicted_classes": [
+      "wound",
+      "wound"
+    ],
+    "max_confidence": 0.12600305676460266,
+    "sample_ground_truth": [
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          75.000016,
+          150.999968,
+          91.00011199999999,
+          165.99990400000002
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          87.000032,
+          129.999968,
+          108.000032,
+          143.000032
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          123.99990400000002,
+          127.00004799999999,
+          137.99990400000002,
+          145.999952
+        ]
+      }
+    ],
+    "predictions": [
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "confidence": 0.12600305676460266,
+        "xyxy": [
+          108.08900451660156,
+          85.46234130859375,
+          126.03300476074219,
+          104.939208984375
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "confidence": 0.1042201966047287,
+        "xyxy": [
+          75.17369079589844,
+          151.11376953125,
+          90.81349182128906,
+          165.78262329101562
+        ]
+      }
+    ]
+  },
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0034.jpg",
+    "ground_truth_count": 12,
+    "ground_truth_classes": [
+      "wound"
+    ],
+    "prediction_count": 0,
+    "predicted_classes": [],
+    "max_confidence": null,
+    "sample_ground_truth": [
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          135.99992,
+          151.00008,
+          146.999888,
+          162.000048
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          123.00008,
+          134.999984,
+          134.000048,
+          145.999952
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          95.00008,
+          131.000016,
+          106.00004799999999,
+          141.999984
+        ]
+      }
+    ],
+    "predictions": []
+  },
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0070.jpg",
+    "ground_truth_count": 13,
+    "ground_truth_classes": [
+      "wound"
+    ],
+    "prediction_count": 0,
+    "predicted_classes": [],
+    "max_confidence": null,
+    "sample_ground_truth": [
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          145.000016,
+          152.000016,
+          155.999984,
+          162.999984
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          101.000144,
+          151.00008,
+          120.00004799999999,
+          162.999984
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          60.00008,
+          135.99992,
+          71.00004799999999,
+          146.999888
+        ]
+      }
+    ],
+    "predictions": []
+  },
+  {
+    "image": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0076.jpg",
+    "ground_truth_count": 12,
+    "ground_truth_classes": [
+      "wound"
+    ],
+    "prediction_count": 0,
+    "predicted_classes": [],
+    "max_confidence": null,
+    "sample_ground_truth": [
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          113.00004799999999,
+          159.000016,
+          124.000016,
+          169.999984
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          124.99995200000001,
+          155.000048,
+          135.99992,
+          166.000016
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "wound",
+        "xyxy": [
+          141.999984,
+          147.000112,
+          152.999952,
+          158.00008
+        ]
+      }
+    ],
+    "predictions": []
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:57.641615+00:00",
+  "ui_components": [
+    {
+      "component": "Image View Tabs (Grad-CAM / UNet / Original)",
+      "status": "PASS"
+    },
+    {
+      "component": "YOLO Bounding Box Overlay Canvas",
+      "status": "PASS"
+    },
+    {
+      "component": "EfficientNet Probability Bar Charts",
+      "status": "PASS"
+    },
+    {
+      "component": "UNet Affected Area Percentage Display",
+      "status": "PASS"
+    }
+  ],
+  "verification_status": "PASS"
+}

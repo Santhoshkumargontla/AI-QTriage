@@ -1,0 +1,76 @@
+{
+  "baseline_path": "ml\\models\\vision\\yolo11_injury_best.pt.pre_retrain_backup",
+  "candidate_path": "C:\\Users\\santh\\runs\\detect\\ml\\models\\yolo_candidate_training\\run_merged\\weights\\best.pt",
+  "selected": "candidate",
+  "selected_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+  "baseline_metrics": {
+    "precision": 0.01657835419866151,
+    "recall": 0.638095238095238,
+    "mAP50": 0.3487776696424512,
+    "mAP50_95": 0.2678276038537994,
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "task": "detect"
+  },
+  "candidate_metrics": {
+    "precision": 0.8224310703639396,
+    "recall": 0.5227071713511425,
+    "mAP50": 0.8195661917669056,
+    "mAP50_95": 0.6790820415149159,
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "task": "detect"
+  },
+  "dataset_stats": {
+    "train": {
+      "images": 83,
+      "boxes": {
+        "wound": 288,
+        "bruise": 12,
+        "cut": 15
+      },
+      "images_per_class": {
+        "wound": 56,
+        "bruise": 12,
+        "cut": 15
+      }
+    },
+    "val": {
+      "images": 17,
+      "boxes": {
+        "wound": 70,
+        "cut": 2,
+        "bruise": 1
+      },
+      "images_per_class": {
+        "wound": 14,
+        "cut": 2,
+        "bruise": 1
+      }
+    },
+    "test": {
+      "images": 23,
+      "boxes": {
+        "cut": 5,
+        "bruise": 4,
+        "wound": 65
+      },
+      "images_per_class": {
+        "cut": 5,
+        "bruise": 4,
+        "wound": 14
+      }
+    }
+  },
+  "epochs": 8,
+  "improved": true,
+  "promoted": true,
+  "compared_at": "2026-08-28T13:42:29.028902+00:00",
+  "note": "Promoted only because candidate val mAP50-95 >= baseline on yolo_merged val."
+}

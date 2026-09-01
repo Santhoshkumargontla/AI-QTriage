@@ -1,0 +1,42 @@
+{
+  "football": {
+    "direct_raw": "Swelling",
+    "direct_raw_max": 0.9987,
+    "direct_gate": "Swelling",
+    "direct_status": "VALID",
+    "direct_unet_rel": true,
+    "direct_unet_withheld": false,
+    "direct_unet_status": "VALID",
+    "gradcam": "WITHHELD",
+    "api_clf": null,
+    "api_clf_status": null,
+    "api_clf_model": null,
+    "api_seg_rel": null,
+    "api_cam": null,
+    "api_cam_gen": null,
+    "stored_clf": "Swelling",
+    "stored_seg": true,
+    "match_clf": false,
+    "match_seg": false
+  },
+  "public_wound": {
+    "direct_raw": "Swelling",
+    "direct_raw_max": 1.0,
+    "direct_gate": "Swelling",
+    "direct_status": "VALID",
+    "direct_unet_rel": true,
+    "direct_unet_withheld": false,
+    "direct_unet_status": "VALID",
+    "gradcam": "WITHHELD",
+    "api_clf": null,
+    "api_clf_status": null,
+    "api_clf_model": null,
+    "api_seg_rel": null,
+    "api_cam": null,
+    "api_cam_gen": null,
+    "stored_clf": null,
+    "stored_seg": true,
+    "match_clf": false,
+    "match_seg": false
+  }
+}

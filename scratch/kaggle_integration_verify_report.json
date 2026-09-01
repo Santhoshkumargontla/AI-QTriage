@@ -1,0 +1,166 @@
+{
+  "workspace": "C:\\Users\\santh\\Capstone Project Code",
+  "efficientnet": {
+    "disk_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+    "claimed_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+    "sha_match_claim": true,
+    "wrapper_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+    "registry_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+    "manifest_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+    "chain_agrees": true,
+    "manifest_stale": false,
+    "version": "kaggle-v1",
+    "sidecar_classes": [
+      "abrasion",
+      "bruise",
+      "burn",
+      "cut",
+      "laceration",
+      "wound",
+      "normal",
+      "ood_reject"
+    ],
+    "wrapper_classes": [
+      "abrasion",
+      "bruise",
+      "burn",
+      "cut",
+      "laceration",
+      "wound",
+      "normal",
+      "ood_reject"
+    ],
+    "n_classes": 8
+  },
+  "efficientnet_metrics": {
+    "recomputed": null,
+    "error": "cannot access local variable 'Image' where it is not associated with a value"
+  },
+  "ood_probes": {
+    "black": {
+      "gated_winner": null,
+      "raw_winner": "Ood_reject",
+      "is_confident": false,
+      "model_status": "LOW_QUALITY_INPUT",
+      "raw_top_prob": 0.6574176549911499
+    },
+    "white": {
+      "gated_winner": null,
+      "raw_winner": "Ood_reject",
+      "is_confident": false,
+      "model_status": "LOW_QUALITY_INPUT",
+      "raw_top_prob": 0.9635009169578552
+    },
+    "gray": {
+      "gated_winner": null,
+      "raw_winner": "Ood_reject",
+      "is_confident": false,
+      "model_status": "LOW_QUALITY_INPUT",
+      "raw_top_prob": 0.9999996423721313
+    },
+    "blank_skin": {
+      "gated_winner": null,
+      "raw_winner": "Ood_reject",
+      "is_confident": false,
+      "model_status": "LOW_QUALITY_INPUT",
+      "raw_top_prob": 0.9999969005584717
+    }
+  },
+  "yolo_skin": {
+    "runtime": {
+      "model_name": "YOLO11 Detection",
+      "active_model": "YOLO11 Detection",
+      "model_version": "v1.4.0",
+      "version": "v1.4.0",
+      "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+      "canonical_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+      "ckpt_path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_best.pt",
+      "task": "detect",
+      "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "model_names": {
+        "0": "cut",
+        "1": "bruise",
+        "2": "wound"
+      },
+      "classes": [
+        "cut",
+        "bruise",
+        "wound"
+      ],
+      "training_data": "canonical_yolo11_checkpoint",
+      "supported_classes": [
+        "cut",
+        "bruise",
+        "wound"
+      ],
+      "class_support": {
+        "cut": {
+          "status": "RESEARCH_DEMO_LIMITED",
+          "train_boxes": 47,
+          "val_boxes": 6,
+          "test_boxes": 8,
+          "note": "Present in train/val/test; synthetic provenance; not clinically validated.",
+          "in_model_names": true
+        },
+        "bruise": {
+          "status": "RESEARCH_DEMO_LIMITED",
+          "train_boxes": 40,
+          "val_boxes": 13,
+          "test_boxes": 10,
+          "note": "Present in train/val/test; synthetic provenance; not clinically validated.",
+          "in_model_names": true
+        },
+        "wound": {
+          "status": "UNSUPPORTED",
+          "train_boxes": 0,
+          "val_boxes": 0,
+          "test_boxes": 0,
+          "note": "Head index exists in model.names (nc=3) but production training set has zero honest wound boxes. Do not report wound accuracy or treat wound detections as validated.",
+          "in_model_names": true
+        }
+      },
+      "validated_classes": [
+        "cut",
+        "bruise"
+      ],
+      "unsupported_classes": [
+        "wound"
+      ],
+      "untrained_classes": {
+        "wound": "UNSUPPORTED",
+        "abrasion": "UNTRAINED_CLASS",
+        "laceration": "UNTRAINED_CLASS",
+        "swelling": "UNTRAINED_CLASS"
+      },
+      "unsupported_class_status": "UNTRAINED_CLASS",
+      "promotion_status": "PROMOTION_VALIDATED_WITH_LIMITATIONS",
+      "dataset_provenance": "SYNTHETIC drawings/graphics (126/126 in retrain_v2 manifest); not real clinical photos",
+      "status": "INFERENCE_EXECUTES",
+      "is_trained": true,
+      "clinically_validated": false,
+      "infer_conf": 0.25,
+      "low_confidence_flag": 0.4,
+      "class_thresholds": {},
+      "threshold_env": "YOLO_CONF_THRESHOLD",
+      "recommended_research_demo_threshold": 0.25,
+      "recommended_conservative_threshold": 0.3
+    },
+    "burn_candidate": {
+      "candidate_exists": true,
+      "canonical_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "candidate_sha256": "d26b6b5626e02edb108d1544430141e77626a1e42d1325891d0bb73dc4a9c5da",
+      "promoted": false,
+      "burn_metrics": null
+    }
+  },
+  "fracture_yolo": {
+    "exists": true,
+    "sha256_prefix": "78550094cafbc84f",
+    "loaded_by_skin_yolo": false,
+    "train_report": null
+  },
+  "security_scan": {
+    "credential_pattern_hits_in_repo": [],
+    "hit_count": 0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "audit_timestamp": "2026-08-27T09:22:02.305324+00:00",
+  "service_class": "SOSCountdownService",
+  "trigger_thresholds": {
+    "min_peak_g_force": 4.0,
+    "min_stabilization_seconds": 1.5,
+    "countdown_duration_seconds": 30
+  },
+  "kinetic_trigger_test_pass": {
+    "sos_triggered": true,
+    "countdown_seconds": 30,
+    "reason": "Severe kinetic impact (4.8g) with prolonged stabilization time (1.9s) detected."
+  },
+  "kinetic_trigger_test_fail": {
+    "sos_triggered": false,
+    "countdown_seconds": 0,
+    "reason": "Sensor logs do not satisfy the emergency alert countdown thresholds."
+  },
+  "state_machine_states": [
+    "IDLE",
+    "RISK_EVALUATED",
+    "SOS_ELIGIBLE",
+    "COUNTDOWN_ACTIVE",
+    "CANCELLED",
+    "CONFIRMED",
+    "EMERGENCY_ACTION_EXECUTED",
+    "COMPLETED"
+  ],
+  "safety_disclaimer": "SOS MODE: DEMO \u2014 Emergency action simulated. No emergency service (911) or contact was actually notified without explicit Twilio credentials.",
+  "vqc_weight_isolation": "sos_weight = 0.0 (VQC output mathematically isolated)",
+  "verification_status": "PASS"
+}

@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "selected_model": "ml/models/vision/efficientnetv2_injury_best.pt",
+  "verdict": "BEST_FOR_DEPLOYMENT",
+  "status": "PASS"
+}

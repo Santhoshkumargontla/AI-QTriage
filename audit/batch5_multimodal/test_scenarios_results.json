@@ -1,0 +1,47 @@
+{
+  "audit_timestamp": "2026-08-27T13:36:49.385977+00:00",
+  "scenarios": [
+    {
+      "test": "TEST 1: Strong Agreement (All models agree)",
+      "score": 100.0,
+      "result": "Strong Agreement",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 2: Partial Agreement (YOLO no detection, Classifier/Quest positive)",
+      "score": 75.0,
+      "result": "Partial Agreement",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 3: Moderate Disagreement (YOLO positive, Classifier negative)",
+      "score": 50.0,
+      "result": "Moderate Disagreement",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 4: Insufficient Evidence (All models uncertain)",
+      "score": 35.0,
+      "result": "Insufficient Evidence",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 5: Sensor Missing (Reduced Modality Mode)",
+      "score": 85.0,
+      "result": "Strong Agreement (Sensor absence does not penalize score)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 6: Clean Skin Low-Risk (All models low-risk)",
+      "score": 100.0,
+      "result": "Strong Agreement (Low-Risk)",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 7: Malformed Output Handling",
+      "score": 60.0,
+      "result": "Safely Logged & Degraded",
+      "status": "PASS"
+    }
+  ]
+}

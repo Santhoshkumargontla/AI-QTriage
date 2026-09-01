@@ -1,0 +1,55 @@
+{
+  "audit_timestamp": "2026-08-27T13:37:55.676611+00:00",
+  "tests": [
+    {
+      "test": "TEST 1: Low symptom severity",
+      "predicted": "LOW",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 2: Moderate symptom severity",
+      "predicted": "MODERATE",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 3: High symptom severity",
+      "predicted": "HIGH",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 4: Conflicting questionnaire answers",
+      "predicted": "MODERATE",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 5: Missing sensor data (sensor_present=0)",
+      "predicted": "LOW",
+      "status": "PASS (Does not penalize risk)"
+    },
+    {
+      "test": "TEST 6: Partial sensor data",
+      "predicted": "MODERATE",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 7: Maximum valid feature values",
+      "predicted": "HIGH",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 8: Minimum valid feature values",
+      "predicted": "LOW",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 9: Invalid input values handled",
+      "predicted": "SAFE_FALLBACK",
+      "status": "PASS"
+    },
+    {
+      "test": "TEST 10: Unknown categorical values handled",
+      "predicted": "SAFE_FALLBACK",
+      "status": "PASS"
+    }
+  ]
+}

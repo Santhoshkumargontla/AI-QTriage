@@ -1,0 +1,211 @@
+{
+  "summary": {
+    "created_utc": "2026-08-29T06:54:59.581998+00:00",
+    "n": 521,
+    "kind_counts": {
+      "positive": 490,
+      "empty": 31
+    },
+    "source_counts": {
+      "hf_wseg_dataset": 338,
+      "medetec_foot_ulcer_224": 152,
+      "synthetic_empty_target": 31
+    },
+    "split_sizes": {
+      "train": 363,
+      "test": 79,
+      "val": 79
+    },
+    "split_by_kind": {
+      "train": {
+        "positive": 342,
+        "empty": 21
+      },
+      "val": {
+        "positive": 74,
+        "empty": 5
+      },
+      "test": {
+        "positive": 74,
+        "empty": 5
+      }
+    },
+    "hash_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "leakage_free": true,
+    "exclusions_n": 70,
+    "domain_note": "Binary wound-vs-background. Not cut/bruise/swelling. Foot-ulcer/chronic-wound photographs plus synthetic empty canvases.",
+    "known_limitations": [
+      "wseg is CC-BY-NC-4.0 (academic/non-commercial).",
+      "Medetec is foot-ulcer stock photography, not sports injury.",
+      "Empty canvases are SYNTHETIC_EMPTY_TARGET, not healthy-skin photography.",
+      "Mendeley healthy-feet zip was not downloadable (no public direct URL / 403)."
+    ]
+  },
+  "exclusions_sample": [
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\42463520.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\43311605.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\43788959.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\44057738.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\44239378.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\47017661.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\47631846.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\48674538.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\50304890.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\50507475.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\50564825.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\50869152.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\51617292.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\51673504.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\51734048.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\51957069.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\54397384.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\55813173.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\55995633.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\56039125.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\56168782.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\56297271.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\56475496.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\56500141.jpg"
+    },
+    {
+      "reason": "empty_mask_on_positive",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\56537739.jpg",
+      "area": 0.0035596608282144194
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\56819681.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\58402829.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\58491611.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\58506758.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\58522145.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\58774748.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\58800196.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\59207616.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\59241565.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\59470432.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\59574328.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\59855370.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\59999045.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\60302031.jpg"
+    },
+    {
+      "reason": "dimension_mismatch",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\hf_wseg_dataset\\extracted\\wseg_dataset\\sample\\60724079.jpg"
+    }
+  ]
+}

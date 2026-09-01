@@ -1,0 +1,17 @@
+{
+  "audit_timestamp": "2026-08-27T13:17:24.939494+00:00",
+  "experiments": [
+    {
+      "exp": "Exp 1 (YOLO11n Baseline)",
+      "mAP50": 0.885,
+      "mAP50_95": 0.642,
+      "status": "BASELINE"
+    },
+    {
+      "exp": "Exp 2 (YOLO11n Expanded 2000 images)",
+      "mAP50": 0.895,
+      "mAP50_95": 0.655,
+      "status": "BEST MODEL"
+    }
+  ]
+}

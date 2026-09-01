@@ -1,0 +1,36 @@
+{
+  "audit_timestamp": "2026-08-27T08:41:37.195115+00:00",
+  "state_handling_rules": [
+    {
+      "condition": "YOLO returns valid box and confidence >= 0.10",
+      "ui_state": "DETECTED",
+      "yolo_finding_detected": true,
+      "message": "Valid YOLO bounding box rendered"
+    },
+    {
+      "condition": "YOLO returns no box after correct threshold (e.g. blank skin image)",
+      "ui_state": "NO_DETECTION",
+      "yolo_finding_detected": false,
+      "message": "YOLO11: No confident injury detection (supported: cut, bruise, abrasion, laceration)"
+    },
+    {
+      "condition": "Image fails quality check (blurry, corrupt, overexposed)",
+      "ui_state": "INVALID_IMAGE",
+      "yolo_finding_detected": false,
+      "message": "Image quality is insufficient for reliable research inference"
+    },
+    {
+      "condition": "Vision model inference fails with exception",
+      "ui_state": "MODEL_ERROR",
+      "yolo_finding_detected": false,
+      "message": "Vision pipeline execution failed"
+    }
+  ],
+  "test_image_result": {
+    "image": "football_injury.jpg",
+    "yolo_box_present": true,
+    "ui_state": "DETECTED",
+    "no_detection_falsely_shown": false
+  },
+  "verification_status": "PASS"
+}

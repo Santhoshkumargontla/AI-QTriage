@@ -1,0 +1,62 @@
+{
+  "model_name": "XGBoost Multimodal",
+  "version": "v1.2.0",
+  "status": "TRAINED",
+  "data_provenance": "synthetic_multimodal_fusion",
+  "research_limitation": "The multimodal records represent 200 synthetic engineering fusion samples and 0 genuinely paired patient records.",
+  "pca_components": 4,
+  "pca_variance_ratio": [
+    0.2343,
+    0.1248,
+    0.11,
+    0.1002
+  ],
+  "metrics": {
+    "genuinely_paired_clinical_samples": 0,
+    "synthetic_multimodal_fusion_samples": 200,
+    "train_samples": 140,
+    "val_samples": 30,
+    "test_samples": 30,
+    "correct_predictions": "25 / 30",
+    "overall_accuracy": 0.833333,
+    "macro_precision": 0.822222,
+    "macro_recall": 0.769281,
+    "macro_f1": 0.78502,
+    "mcc": 0.702692,
+    "high_class_precision": 0.666667,
+    "high_class_recall": 0.666667,
+    "high_class_f1": 0.666667,
+    "high_class_support": 3,
+    "brier_score": 0.304532,
+    "ece": 0.118284,
+    "confusion_matrix": [
+      [
+        7,
+        3,
+        0
+      ],
+      [
+        0,
+        16,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "feature_importance": [
+      0.0,
+      0.0674,
+      0.0492,
+      0.0298,
+      0.0268,
+      0.039,
+      0.1004,
+      0.2317,
+      0.0515,
+      0.0
+    ]
+  }
+}

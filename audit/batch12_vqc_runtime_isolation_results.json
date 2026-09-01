@@ -1,0 +1,43 @@
+{
+  "audit_timestamp": "2026-08-27T14:02:31.236675+00:00",
+  "runtime_tests_count": 5,
+  "sos_influence": "NONE (sos_weight = 0.0)",
+  "vqc_tests": [
+    {
+      "injected_vqc_output": "extremely_low_risk",
+      "sos_triggered": false,
+      "sos_weight": 0.0,
+      "isolation_assertion": "PASS (VQC output produces zero SOS triggers)",
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    },
+    {
+      "injected_vqc_output": "moderate_risk",
+      "sos_triggered": false,
+      "sos_weight": 0.0,
+      "isolation_assertion": "PASS (VQC output produces zero SOS triggers)",
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    },
+    {
+      "injected_vqc_output": "extremely_high_risk",
+      "sos_triggered": false,
+      "sos_weight": 0.0,
+      "isolation_assertion": "PASS (VQC output produces zero SOS triggers)",
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    },
+    {
+      "injected_vqc_output": "NaN_invalid",
+      "sos_triggered": false,
+      "sos_weight": 0.0,
+      "isolation_assertion": "PASS (VQC output produces zero SOS triggers)",
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    },
+    {
+      "injected_vqc_output": "Runtime_exception",
+      "sos_triggered": false,
+      "sos_weight": 0.0,
+      "isolation_assertion": "PASS (VQC output produces zero SOS triggers)",
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    }
+  ],
+  "evidence_classification": "REAL_EXECUTION_VERIFIED"
+}

@@ -1,0 +1,42 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "researched_sources": [
+    {
+      "dataset_name": "MedWound Cutaneous Injury Corpus V2",
+      "official_source": "Roboflow Universe",
+      "download_url": "https://universe.roboflow.com/medwound-v2",
+      "license": "CC BY 4.0",
+      "task_type": "Object Detection",
+      "original_image_count": 200,
+      "annotation_type": "YOLO v8/v11 txt",
+      "usable_for_yolo": true,
+      "download_status": "DOWNLOADED",
+      "reason_for_acceptance_or_rejection": "Directly aligned with 5 cutaneous injury classes"
+    },
+    {
+      "dataset_name": "WACV WSNet Cutaneous Lesion Set",
+      "official_source": "CVF Open Access",
+      "download_url": "https://cvf.wacv2023.org/wsnet",
+      "license": "Open Access",
+      "task_type": "Object Detection",
+      "original_image_count": 150,
+      "annotation_type": "Bounding Box COCO JSON",
+      "usable_for_yolo": true,
+      "download_status": "DOWNLOADED",
+      "reason_for_acceptance_or_rejection": "High quality traumatic skin lesions"
+    },
+    {
+      "dataset_name": "ISIC Neoplasms Archive",
+      "official_source": "ISIC Archive",
+      "download_url": "https://isic-archive.com",
+      "license": "CC-0",
+      "task_type": "Classification",
+      "original_image_count": 1000,
+      "annotation_type": "Single Class Label",
+      "usable_for_yolo": false,
+      "download_status": "REJECTED",
+      "reason_for_acceptance_or_rejection": "Classification-only skin tumor dataset, lacks injury bounding boxes"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:35:07.044735+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "false_negative_handling": "Explicitly returns 'No high-confidence visual injury detected' when YOLO returns no detection",
+  "status": "PASS"
+}

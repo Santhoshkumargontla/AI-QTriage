@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "total_false_negatives": 11,
+  "breakdown": [
+    {
+      "cause": "Sub-15px micro-scratch",
+      "count": 6
+    },
+    {
+      "cause": "Severe specular glare on fresh tissue",
+      "count": 5
+    }
+  ],
+  "status": "PASS"
+}

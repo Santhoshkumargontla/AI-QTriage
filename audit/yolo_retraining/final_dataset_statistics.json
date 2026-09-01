@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T13:16:35.425790+00:00",
+  "total_images": 1000,
+  "train_images": 700,
+  "val_images": 150,
+  "test_images": 150,
+  "class_counts": {
+    "cut": 200,
+    "bruise": 200,
+    "abrasion": 200,
+    "laceration": 200,
+    "wound": 200
+  },
+  "status": "PASS"
+}

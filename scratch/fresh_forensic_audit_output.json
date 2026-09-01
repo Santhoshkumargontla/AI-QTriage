@@ -1,0 +1,1585 @@
+{
+  "audit_started": "2026-08-28T12:54:00.434002+00:00",
+  "root": "C:\\Users\\santh\\Capstone Project Code",
+  "artifacts": [
+    {
+      "path": "yolo11n.pt",
+      "exists": true,
+      "size": 5613764,
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1"
+    },
+    {
+      "path": "ml\\models\\artifact_integrity_report.json",
+      "exists": true,
+      "size": 3895,
+      "sha256": "54a4c8f4cb89f60cc6d7a25e6e4daad1d149fbf00b06d88d20a87f7c7a25b216"
+    },
+    {
+      "path": "ml\\models\\efficientnet_v2_best.pt",
+      "exists": true,
+      "size": 81621351,
+      "sha256": "f85ed8b798f6ab02f7a8edc9c9a9d589160668320b1e680e4d3ac6f88e5d7dae"
+    },
+    {
+      "path": "ml\\models\\effnet_best.pt",
+      "exists": true,
+      "size": 81614259,
+      "sha256": "9822f25aad9540a032a990b3021130feda407cb469f5587aa9fe6e048a377895"
+    },
+    {
+      "path": "ml\\models\\model_registry.json",
+      "exists": true,
+      "size": 4754,
+      "sha256": "d2e79df3977d2b83807e239e353676d3b8c818eac24210fdcda5392f589a3635"
+    },
+    {
+      "path": "ml\\models\\pca.pkl",
+      "exists": true,
+      "size": 1431,
+      "sha256": "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b"
+    },
+    {
+      "path": "ml\\models\\scaler.pkl",
+      "exists": true,
+      "size": 1119,
+      "sha256": "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7"
+    },
+    {
+      "path": "ml\\models\\sensor_metadata.json",
+      "exists": true,
+      "size": 884,
+      "sha256": "2d6dee73363bef110373071c31c925e6608b5acba80104350d3a23dfda5f2b25"
+    },
+    {
+      "path": "ml\\models\\sensor_motion_best.json",
+      "exists": true,
+      "size": 135603,
+      "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb"
+    },
+    {
+      "path": "ml\\models\\sensor_scaler.pkl",
+      "exists": true,
+      "size": 775,
+      "sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959"
+    },
+    {
+      "path": "ml\\models\\unet_best.pt",
+      "exists": true,
+      "size": 97916043,
+      "sha256": "92557ce44ce49b25f482b89711257174aea90504b32a36b9fbdc4289e7d5576e"
+    },
+    {
+      "path": "ml\\models\\unet_resnet34_best.pt",
+      "exists": true,
+      "size": 97918663,
+      "sha256": "4379fca78fdf899b0fe81f76b02c92fb052e39bf6ca78ec9e6074d47eda205d8"
+    },
+    {
+      "path": "ml\\models\\xgboost_best.json",
+      "exists": true,
+      "size": 199969,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643"
+    },
+    {
+      "path": "ml\\models\\xgboost_metadata.json",
+      "exists": true,
+      "size": 1335,
+      "sha256": "7907608b520a23262bae2a94c31a11eb68a5f08d6172977554e37a866c34d518"
+    },
+    {
+      "path": "ml\\models\\xgboost_multimodal_best.json",
+      "exists": true,
+      "size": 199969,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643"
+    },
+    {
+      "path": "ml\\models\\yolo11n.pt",
+      "exists": true,
+      "size": 1325,
+      "sha256": "760da77988a8addbd8586d942713e94ba49d4473ebe43605fa806f885df72c8a"
+    },
+    {
+      "path": "ml\\models\\yolo11n_best.pt",
+      "exists": true,
+      "size": 5469722,
+      "sha256": "b2780ea3df84011b38a5dff27c2712ee210da3b46ecebf8c455ccb3e53e1fe44"
+    },
+    {
+      "path": "ml\\models\\yolo11n_pretrained.pt",
+      "exists": true,
+      "size": 5613764,
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1"
+    },
+    {
+      "path": "ml\\models\\yolo11_real_wound_best.pt",
+      "exists": true,
+      "size": 5470810,
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63"
+    },
+    {
+      "path": "ml\\models\\classical\\pca.pkl",
+      "exists": true,
+      "size": 1431,
+      "sha256": "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b"
+    },
+    {
+      "path": "ml\\models\\classical\\scaler.pkl",
+      "exists": true,
+      "size": 1119,
+      "sha256": "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7"
+    },
+    {
+      "path": "ml\\models\\classical\\xgboost_metadata.json",
+      "exists": true,
+      "size": 402,
+      "sha256": "41f6edf27a0bb8b413422ff1b55a70003df9a83d13782345dd2e795117cc1ed6"
+    },
+    {
+      "path": "ml\\models\\classical\\xgboost_multimodal.json",
+      "exists": true,
+      "size": 199969,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643"
+    },
+    {
+      "path": "ml\\models\\vision\\efficientnetv2_injury_best.pt",
+      "exists": true,
+      "size": 81626143,
+      "sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777"
+    },
+    {
+      "path": "ml\\models\\vision\\efficientnetv2_metadata.json",
+      "exists": true,
+      "size": 735,
+      "sha256": "17568b195d6ac0f0a8eb8a7061a2eac0f2b5b12fb37108a6ca7bda4a2efd6e0a"
+    },
+    {
+      "path": "ml\\models\\vision\\unet_injury_best.pt",
+      "exists": true,
+      "size": 97918031,
+      "sha256": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93"
+    },
+    {
+      "path": "ml\\models\\vision\\unet_metadata.json",
+      "exists": true,
+      "size": 485,
+      "sha256": "0a7b3573573dfdc6ee3c494947b71c89468691886bc87ad963a22268ef30574e"
+    },
+    {
+      "path": "ml\\models\\vision\\yolo11_injury_best.pt",
+      "exists": true,
+      "size": 5470810,
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63"
+    },
+    {
+      "path": "ml\\models\\vision\\yolo11_injury_real_retrained.pt",
+      "exists": true,
+      "size": 5470840,
+      "sha256": "080817b4531bbc0d57af7ff2c08d48f353aa42ace53c710662eaa28dce0fd837"
+    },
+    {
+      "path": "ml\\models\\vision\\yolo11_metadata.json",
+      "exists": true,
+      "size": 523,
+      "sha256": "239ebef34e12c14ccb12159b94ee7e9895cc53ed5da18a36f10519e475546e12"
+    },
+    {
+      "path": "ml\\models\\vqc\\pca.pkl",
+      "exists": true,
+      "size": 1198,
+      "sha256": "31f893c5098795969f50e922efa2b94ce56ec0d550aca581141001cca6b59b35"
+    },
+    {
+      "path": "ml\\models\\vqc\\scaler.pkl",
+      "exists": true,
+      "size": 960,
+      "sha256": "3acc8704114c055d8c4a6168942257ca304e161d3346a52b0a714f6aac6782fa"
+    },
+    {
+      "path": "ml\\models\\vqc\\vqc_metadata.json",
+      "exists": true,
+      "size": 875,
+      "sha256": "de420512a0354bb3b62402db18fc4ac641219f6adbb022301d461de92447397d"
+    },
+    {
+      "path": "ml\\models\\vqc\\vqc_weights.npy",
+      "exists": true,
+      "size": 192,
+      "sha256": "681bd96713cf8866bcbd8aeddc4dff7d9d142b3adefea4c978989e842511db97"
+    },
+    {
+      "path": "ml\\models\\vqc\\vqc_weights.npz",
+      "exists": true,
+      "size": 1086,
+      "sha256": "8eadc4fd3ecc3406113d3d42e494b0e29a1f5c0229d14f52ba2b92976e44b27a"
+    },
+    {
+      "path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+      "exists": true,
+      "size": 5470810,
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63"
+    },
+    {
+      "path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\last.pt",
+      "exists": true,
+      "size": 5470810,
+      "sha256": "140037ee21294847af40fa6050da0f20c13b424c6d586b6a6c9ead6adfc759db"
+    },
+    {
+      "path": "ml\\models\\yolo_training\\training_metadata.json",
+      "exists": true,
+      "size": 494,
+      "sha256": "61271e22e6b605ae25d7a4e4f853cdd99f2660fd191cb60572ccb3f32747bc06"
+    }
+  ],
+  "datasets": {
+    "yolo_real_wound": {
+      "exists": true,
+      "yaml_files": [
+        "data\\datasets\\yolo_real_wound\\yolo_real.yaml"
+      ],
+      "splits": {
+        "train": {
+          "images": 48,
+          "label_files": 24,
+          "class_label_counts": {
+            "2": 512
+          },
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": [
+            "data\\datasets\\yolo_real_wound\\images\\train\\public_sample_0006.jpg",
+            "data\\datasets\\yolo_real_wound\\images\\train\\public_sample_0010.jpg",
+            "data\\datasets\\yolo_real_wound\\images\\train\\public_sample_0016.jpg"
+          ]
+        },
+        "val": {
+          "images": 10,
+          "label_files": 5,
+          "class_label_counts": {
+            "2": 122
+          },
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": [
+            "data\\datasets\\yolo_real_wound\\images\\val\\public_sample_0058.jpg",
+            "data\\datasets\\yolo_real_wound\\images\\val\\public_sample_0088.jpg",
+            "data\\datasets\\yolo_real_wound\\images\\val\\public_sample_0118.jpg"
+          ]
+        },
+        "test": {
+          "images": 18,
+          "label_files": 9,
+          "class_label_counts": {
+            "0": 2,
+            "1": 2,
+            "2": 116
+          },
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": [
+            "data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0001.jpg",
+            "data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0002.jpg",
+            "data\\datasets\\yolo_real_wound\\images\\test\\public_sample_0003.jpg"
+          ]
+        }
+      }
+    },
+    "yolo_injury": {
+      "exists": true,
+      "yaml_files": [
+        "data\\datasets\\yolo_injury\\yolo11.yaml"
+      ],
+      "splits": {
+        "train": {
+          "images": 118,
+          "label_files": 59,
+          "class_label_counts": {
+            "2": 36,
+            "1": 24,
+            "0": 30,
+            "3": 28
+          },
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": [
+            "data\\datasets\\yolo_injury\\images\\train\\synthetic_wound_syn_wound_0000.jpg",
+            "data\\datasets\\yolo_injury\\images\\train\\synthetic_wound_syn_wound_0001.jpg",
+            "data\\datasets\\yolo_injury\\images\\train\\synthetic_wound_syn_wound_0002.jpg"
+          ]
+        },
+        "val": {
+          "images": 24,
+          "label_files": 12,
+          "class_label_counts": {
+            "3": 12,
+            "0": 4,
+            "1": 2,
+            "2": 6
+          },
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": [
+            "data\\datasets\\yolo_injury\\images\\val\\synthetic_wound_syn_wound_0036.jpg",
+            "data\\datasets\\yolo_injury\\images\\val\\synthetic_wound_syn_wound_0042.jpg",
+            "data\\datasets\\yolo_injury\\images\\val\\synthetic_wound_syn_wound_0044.jpg"
+          ]
+        },
+        "test": {
+          "images": 28,
+          "label_files": 14,
+          "class_label_counts": {
+            "2": 8,
+            "0": 8,
+            "1": 6,
+            "3": 6
+          },
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": [
+            "data\\datasets\\yolo_injury\\images\\test\\synthetic_wound_syn_wound_0003.jpg",
+            "data\\datasets\\yolo_injury\\images\\test\\synthetic_wound_syn_wound_0004.jpg",
+            "data\\datasets\\yolo_injury\\images\\test\\synthetic_wound_syn_wound_0013.jpg"
+          ]
+        }
+      }
+    },
+    "synthetic_wound": {
+      "exists": true,
+      "yaml_files": [
+        "data\\datasets\\raw\\synthetic_wound\\data.yaml"
+      ],
+      "splits": {
+        "train": {
+          "images": 0,
+          "label_files": 0,
+          "class_label_counts": {},
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": []
+        },
+        "val": {
+          "images": 0,
+          "label_files": 0,
+          "class_label_counts": {},
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": []
+        },
+        "test": {
+          "images": 0,
+          "label_files": 0,
+          "class_label_counts": {},
+          "empty_labels": 0,
+          "invalid_coords": 0,
+          "missing_label_files": 0,
+          "images_without_ann": 0,
+          "sample_images": []
+        }
+      }
+    }
+  },
+  "dataset_dir_file_counts": {
+    "injury_dataset": 61,
+    "manifests": 1,
+    "processed": 1,
+    "public_wound_dataset": 401,
+    "raw": 445,
+    "yolo_injury": 178,
+    "yolo_real_wound": 119
+  },
+  "test_image_paths": {
+    "known_or_demo_injury": "data\\sample\\image\\football_injury.jpg",
+    "dataset_image": "data\\datasets\\yolo_real_wound\\images\\val\\public_sample_0058.jpg",
+    "dataset_image_2": "data\\datasets\\yolo_real_wound\\images\\val\\public_sample_0088.jpg",
+    "non_injury_uniform_gray": "data\\debug\\yolo\\forensic_non_injury.png",
+    "app_upload": "data\\uploads\\0047fcef-5885-4467-a4d8-39e82247b167.jpg"
+  },
+  "yolo": {
+    "wrapper_info": {
+      "active_model": "real_data_yolo11",
+      "model_version": "real_data_experimental",
+      "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+      "training_data": "real_public_dataset",
+      "supported_classes": [
+        "abrasion",
+        "bruise",
+        "cut",
+        "laceration",
+        "wound"
+      ],
+      "status": "TRAINED / LOADED",
+      "is_trained": true,
+      "clinically_validated": false
+    },
+    "model_is_none": false,
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "task": "detect",
+    "overrides": {
+      "task": "detect",
+      "data": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound\\yolo_real.yaml",
+      "imgsz": 640,
+      "single_cls": false,
+      "model": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt"
+    },
+    "ckpt_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt"
+  },
+  "yolo_raw_predict": {
+    "known_or_demo_injury": {
+      "0.01": {
+        "n_detections": 2,
+        "class_ids": [
+          2,
+          2
+        ],
+        "class_names": [
+          "wound",
+          "wound"
+        ],
+        "confidences": [
+          0.1153,
+          0.0149
+        ],
+        "boxes": [
+          [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ],
+          [
+            105.06,
+            104.74,
+            292.93,
+            195.37
+          ]
+        ]
+      },
+      "0.05": {
+        "n_detections": 1,
+        "class_ids": [
+          2
+        ],
+        "class_names": [
+          "wound"
+        ],
+        "confidences": [
+          0.1153
+        ],
+        "boxes": [
+          [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ]
+        ]
+      },
+      "0.1": {
+        "n_detections": 1,
+        "class_ids": [
+          2
+        ],
+        "class_names": [
+          "wound"
+        ],
+        "confidences": [
+          0.1153
+        ],
+        "boxes": [
+          [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ]
+        ]
+      },
+      "0.25": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.5": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      }
+    },
+    "dataset_image": {
+      "0.01": {
+        "n_detections": 6,
+        "class_ids": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "class_names": [
+          "wound",
+          "wound",
+          "wound",
+          "wound",
+          "wound",
+          "wound"
+        ],
+        "confidences": [
+          0.0956,
+          0.0537,
+          0.0181,
+          0.0148,
+          0.0138,
+          0.0132
+        ],
+        "boxes": [
+          [
+            61.83,
+            74.35,
+            79.69,
+            87.54
+          ],
+          [
+            89.64,
+            124.41,
+            103.01,
+            139.5
+          ],
+          [
+            146.92,
+            155.72,
+            158.11,
+            166.93
+          ],
+          [
+            129.08,
+            58.56,
+            161.7,
+            79.62
+          ],
+          [
+            82.25,
+            61.09,
+            93.17,
+            72.33
+          ],
+          [
+            109.44,
+            141.4,
+            123.77,
+            162.82
+          ]
+        ]
+      },
+      "0.05": {
+        "n_detections": 2,
+        "class_ids": [
+          2,
+          2
+        ],
+        "class_names": [
+          "wound",
+          "wound"
+        ],
+        "confidences": [
+          0.0956,
+          0.0537
+        ],
+        "boxes": [
+          [
+            61.83,
+            74.35,
+            79.69,
+            87.54
+          ],
+          [
+            89.64,
+            124.41,
+            103.01,
+            139.5
+          ]
+        ]
+      },
+      "0.1": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.25": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.5": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      }
+    },
+    "dataset_image_2": {
+      "0.01": {
+        "n_detections": 8,
+        "class_ids": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "class_names": [
+          "wound",
+          "wound",
+          "wound",
+          "wound",
+          "wound",
+          "wound",
+          "wound",
+          "wound"
+        ],
+        "confidences": [
+          0.056,
+          0.0395,
+          0.0121,
+          0.012,
+          0.0117,
+          0.0112,
+          0.0109,
+          0.0101
+        ],
+        "boxes": [
+          [
+            76.66,
+            143.15,
+            91.67,
+            160.45
+          ],
+          [
+            86.4,
+            107.19,
+            99.48,
+            129.66
+          ],
+          [
+            136.7,
+            61.47,
+            157.07,
+            81.21
+          ],
+          [
+            125.06,
+            131.16,
+            135.96,
+            142.37
+          ],
+          [
+            73.33,
+            78.04,
+            84.22,
+            89.43
+          ],
+          [
+            138.33,
+            145.6,
+            149.16,
+            156.93
+          ],
+          [
+            120.29,
+            151.14,
+            131.51,
+            161.95
+          ],
+          [
+            146.27,
+            110.76,
+            157.04,
+            121.86
+          ]
+        ]
+      },
+      "0.05": {
+        "n_detections": 1,
+        "class_ids": [
+          2
+        ],
+        "class_names": [
+          "wound"
+        ],
+        "confidences": [
+          0.056
+        ],
+        "boxes": [
+          [
+            76.66,
+            143.15,
+            91.67,
+            160.45
+          ]
+        ]
+      },
+      "0.1": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.25": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.5": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      }
+    },
+    "non_injury_uniform_gray": {
+      "0.01": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.05": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.1": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.25": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.5": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      }
+    },
+    "app_upload": {
+      "0.01": {
+        "n_detections": 2,
+        "class_ids": [
+          2,
+          2
+        ],
+        "class_names": [
+          "wound",
+          "wound"
+        ],
+        "confidences": [
+          0.1153,
+          0.0149
+        ],
+        "boxes": [
+          [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ],
+          [
+            105.06,
+            104.74,
+            292.93,
+            195.37
+          ]
+        ]
+      },
+      "0.05": {
+        "n_detections": 1,
+        "class_ids": [
+          2
+        ],
+        "class_names": [
+          "wound"
+        ],
+        "confidences": [
+          0.1153
+        ],
+        "boxes": [
+          [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ]
+        ]
+      },
+      "0.1": {
+        "n_detections": 1,
+        "class_ids": [
+          2
+        ],
+        "class_names": [
+          "wound"
+        ],
+        "confidences": [
+          0.1153
+        ],
+        "boxes": [
+          [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ]
+        ]
+      },
+      "0.25": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      },
+      "0.5": {
+        "n_detections": 0,
+        "class_ids": [],
+        "class_names": [],
+        "confidences": [],
+        "boxes": []
+      }
+    }
+  },
+  "yolo_wrapper_detect": {
+    "known_or_demo_injury": {
+      "wrapper_detect_conf0.10_filtered": [
+        {
+          "finding": "wound",
+          "confidence": 0.1153,
+          "bounding_box": [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ],
+          "low_confidence": true,
+          "image_width": 300,
+          "image_height": 300,
+          "model_version": "real_data_experimental",
+          "model_status": "TRAINED / LOADED",
+          "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt"
+        }
+      ]
+    },
+    "dataset_image": {
+      "wrapper_detect_conf0.10_filtered": []
+    },
+    "dataset_image_2": {
+      "wrapper_detect_conf0.10_filtered": []
+    },
+    "non_injury_uniform_gray": {
+      "wrapper_detect_conf0.10_filtered": []
+    },
+    "app_upload": {
+      "wrapper_detect_conf0.10_filtered": [
+        {
+          "finding": "wound",
+          "confidence": 0.1153,
+          "bounding_box": [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ],
+          "low_confidence": true,
+          "image_width": 300,
+          "image_height": 300,
+          "model_version": "real_data_experimental",
+          "model_status": "TRAINED / LOADED",
+          "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt"
+        }
+      ]
+    }
+  },
+  "vision_other": {
+    "effnet_loaded": true,
+    "effnet_classes": [
+      "cut",
+      "bruise",
+      "swelling",
+      "other"
+    ],
+    "effnet_path_guess": "ml\\models\\vision\\efficientnetv2_injury_best.pt",
+    "unet_loaded": true,
+    "effnet_param_count": 20182612,
+    "unet_param_count": 24436369,
+    "inference": {
+      "known_or_demo_injury": {
+        "logits": [
+          -58018.2031,
+          -24387.9062,
+          -31924.6055,
+          -26675.832
+        ],
+        "softmax_via_wrapper": {
+          "Cut": 0.0,
+          "Bruise": 1.0,
+          "Swelling": 0.0,
+          "Other": 0.0,
+          "__is_confident": true,
+          "__max_prob": 1.0,
+          "__winner": "Bruise",
+          "__low_confidence": false
+        },
+        "unet": {
+          "pixel_count": 51309,
+          "affected_ratio": 0.5701,
+          "mask_shape": [
+            300,
+            300
+          ],
+          "mask_min": 0,
+          "mask_max": 1,
+          "debug": {
+            "checkpoint_status": "loaded",
+            "original_image_shape": "300x300",
+            "preprocessed_roi_shape": "300x300",
+            "model_input_shape": [
+              1,
+              3,
+              256,
+              256
+            ],
+            "raw_output_min": 0.0,
+            "raw_output_max": 1.0,
+            "raw_output_mean": 0.5563,
+            "threshold_used": 0.5,
+            "positive_pixels": 51309,
+            "total_pixels": 90000,
+            "affected_area_percentage": 57.01,
+            "confidence_status": "confident",
+            "display_message": "\u2713 Segmentation mask identified.",
+            "denominator_type": "full_image"
+          }
+        },
+        "gradcam": {
+          "heatmap_shape": [
+            300,
+            300
+          ],
+          "overlay_shape": [
+            300,
+            300,
+            3
+          ],
+          "heatmap_mean": 18.713,
+          "heatmap_max": 255,
+          "layer": "Conv2d"
+        }
+      },
+      "dataset_image": {
+        "logits": [
+          -7781.5542,
+          2871.5374,
+          7310.5967,
+          -3821.6445
+        ],
+        "softmax_via_wrapper": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0,
+          "Other": 0.0,
+          "__is_confident": true,
+          "__max_prob": 1.0,
+          "__winner": "Swelling",
+          "__low_confidence": false
+        },
+        "unet": {
+          "pixel_count": 28910,
+          "affected_ratio": 0.576172,
+          "mask_shape": [
+            224,
+            224
+          ],
+          "mask_min": 0,
+          "mask_max": 1,
+          "debug": {
+            "checkpoint_status": "loaded",
+            "original_image_shape": "224x224",
+            "preprocessed_roi_shape": "224x224",
+            "model_input_shape": [
+              1,
+              3,
+              256,
+              256
+            ],
+            "raw_output_min": 0.0003,
+            "raw_output_max": 0.9996,
+            "raw_output_mean": 0.5521,
+            "threshold_used": 0.5,
+            "positive_pixels": 28910,
+            "total_pixels": 50176,
+            "affected_area_percentage": 57.62,
+            "confidence_status": "confident",
+            "display_message": "\u2713 Segmentation mask identified.",
+            "denominator_type": "full_image"
+          }
+        },
+        "gradcam": {
+          "heatmap_shape": [
+            224,
+            224
+          ],
+          "overlay_shape": [
+            224,
+            224,
+            3
+          ],
+          "heatmap_mean": 121.206,
+          "heatmap_max": 252,
+          "layer": "Conv2d"
+        }
+      },
+      "dataset_image_2": {
+        "logits": [
+          -11736.7949,
+          -9.8958,
+          3475.5964,
+          -3461.5996
+        ],
+        "softmax_via_wrapper": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0,
+          "Other": 0.0,
+          "__is_confident": true,
+          "__max_prob": 1.0,
+          "__winner": "Swelling",
+          "__low_confidence": false
+        },
+        "unet": {
+          "pixel_count": 29462,
+          "affected_ratio": 0.587173,
+          "mask_shape": [
+            224,
+            224
+          ],
+          "mask_min": 0,
+          "mask_max": 1,
+          "debug": {
+            "checkpoint_status": "loaded",
+            "original_image_shape": "224x224",
+            "preprocessed_roi_shape": "224x224",
+            "model_input_shape": [
+              1,
+              3,
+              256,
+              256
+            ],
+            "raw_output_min": 0.0006,
+            "raw_output_max": 0.9995,
+            "raw_output_mean": 0.5644,
+            "threshold_used": 0.5,
+            "positive_pixels": 29462,
+            "total_pixels": 50176,
+            "affected_area_percentage": 58.72,
+            "confidence_status": "confident",
+            "display_message": "\u2713 Segmentation mask identified.",
+            "denominator_type": "full_image"
+          }
+        },
+        "gradcam": {
+          "heatmap_shape": [
+            224,
+            224
+          ],
+          "overlay_shape": [
+            224,
+            224,
+            3
+          ],
+          "heatmap_mean": 84.165,
+          "heatmap_max": 254,
+          "layer": "Conv2d"
+        }
+      },
+      "non_injury_uniform_gray": {
+        "logits": [
+          -99770.2578,
+          81938.0938,
+          113486.1094,
+          26403.6895
+        ],
+        "softmax_via_wrapper": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0,
+          "Other": 0.0,
+          "__is_confident": true,
+          "__max_prob": 1.0,
+          "__winner": "Swelling",
+          "__low_confidence": false
+        },
+        "unet": {
+          "pixel_count": 155501,
+          "affected_ratio": 0.506188,
+          "mask_shape": [
+            480,
+            640
+          ],
+          "mask_min": 0,
+          "mask_max": 1,
+          "debug": {
+            "checkpoint_status": "loaded",
+            "original_image_shape": "480x640",
+            "preprocessed_roi_shape": "480x640",
+            "model_input_shape": [
+              1,
+              3,
+              256,
+              256
+            ],
+            "raw_output_min": 0.0,
+            "raw_output_max": 1.0,
+            "raw_output_mean": 0.5074,
+            "threshold_used": 0.5,
+            "positive_pixels": 155501,
+            "total_pixels": 307200,
+            "affected_area_percentage": 50.62,
+            "confidence_status": "confident",
+            "display_message": "\u2713 Segmentation mask identified.",
+            "denominator_type": "full_image"
+          }
+        },
+        "gradcam": {
+          "heatmap_shape": [
+            480,
+            640
+          ],
+          "overlay_shape": [
+            480,
+            640,
+            3
+          ],
+          "heatmap_mean": 129.717,
+          "heatmap_max": 254,
+          "layer": "Conv2d"
+        }
+      },
+      "app_upload": {
+        "logits": [
+          -58018.2031,
+          -24387.9062,
+          -31924.6055,
+          -26675.832
+        ],
+        "softmax_via_wrapper": {
+          "Cut": 0.0,
+          "Bruise": 1.0,
+          "Swelling": 0.0,
+          "Other": 0.0,
+          "__is_confident": true,
+          "__max_prob": 1.0,
+          "__winner": "Bruise",
+          "__low_confidence": false
+        },
+        "unet": {
+          "pixel_count": 51309,
+          "affected_ratio": 0.5701,
+          "mask_shape": [
+            300,
+            300
+          ],
+          "mask_min": 0,
+          "mask_max": 1,
+          "debug": {
+            "checkpoint_status": "loaded",
+            "original_image_shape": "300x300",
+            "preprocessed_roi_shape": "300x300",
+            "model_input_shape": [
+              1,
+              3,
+              256,
+              256
+            ],
+            "raw_output_min": 0.0,
+            "raw_output_max": 1.0,
+            "raw_output_mean": 0.5563,
+            "threshold_used": 0.5,
+            "positive_pixels": 51309,
+            "total_pixels": 90000,
+            "affected_area_percentage": 57.01,
+            "confidence_status": "confident",
+            "display_message": "\u2713 Segmentation mask identified.",
+            "denominator_type": "full_image"
+          }
+        },
+        "gradcam": {
+          "heatmap_shape": [
+            300,
+            300
+          ],
+          "overlay_shape": [
+            300,
+            300,
+            3
+          ],
+          "heatmap_mean": 18.713,
+          "heatmap_max": 255,
+          "layer": "Conv2d"
+        }
+      }
+    }
+  },
+  "xgboost": {
+    "fusion_vector_shape": [
+      23
+    ],
+    "len_feature_names": 23,
+    "feature_names": [
+      "vision_present",
+      "prob_cut",
+      "prob_bruise",
+      "prob_swelling",
+      "prob_other",
+      "affected_ratio",
+      "questionnaire_present",
+      "pain_level",
+      "mech_fall",
+      "mech_impact",
+      "mech_sports",
+      "mech_sharp",
+      "mech_other",
+      "direct_impact",
+      "visible_bleeding",
+      "movement_limitation",
+      "weight_bearing",
+      "crack_pop",
+      "sensor_present",
+      "peak_g_force",
+      "delta_v",
+      "stabilization_time",
+      "lux_drop"
+    ],
+    "loaded_from": "ml/models/xgboost_best.json",
+    "is_trained": true,
+    "n_features_in_": 23,
+    "wrapper_feature_names_len": 23,
+    "sample_pred": {
+      "idx": 1,
+      "probs": [
+        0.0263,
+        0.4917,
+        0.482
+      ]
+    },
+    "pca_root": {
+      "exists": true,
+      "type": "PCA",
+      "n_features_in_": 23,
+      "n_components_": 4,
+      "explained_variance_ratio_": [
+        0.2343,
+        0.1248,
+        0.11,
+        0.1002
+      ]
+    },
+    "pca_classical": {
+      "exists": true,
+      "type": "PCA",
+      "n_features_in_": 23,
+      "n_components_": 4,
+      "explained_variance_ratio_": [
+        0.2343,
+        0.1248,
+        0.11,
+        0.1002
+      ]
+    },
+    "pca_vqc": {
+      "exists": true,
+      "type": "PCA",
+      "n_features_in_": 23,
+      "n_components_": 4,
+      "explained_variance_ratio_": [
+        0.0938,
+        0.0831,
+        0.0752,
+        0.0699
+      ]
+    },
+    "scaler_root": {
+      "exists": true,
+      "type": "StandardScaler",
+      "n_features_in_": 23
+    },
+    "scaler_classical": {
+      "exists": true,
+      "type": "StandardScaler",
+      "n_features_in_": 23
+    },
+    "scaler_vqc": {
+      "exists": true,
+      "type": "StandardScaler",
+      "n_features_in_": 23
+    }
+  },
+  "vqc": {
+    "is_trained": true,
+    "num_qubits": 4,
+    "q_weights_shape": [
+      2,
+      4,
+      3
+    ],
+    "lin_weights_shape": [
+      3,
+      4
+    ],
+    "scaler_n_features": 23,
+    "pca_n_features": 23,
+    "pca_n_components": 4,
+    "split_sizes": {
+      "train": 140,
+      "val": 30,
+      "test": 30
+    },
+    "train_equals_test": false,
+    "len_y_test": 30,
+    "len_xgb_predictions": 30,
+    "len_vqc_predictions": 30,
+    "xgb_fresh": {
+      "confusion_matrix": [
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "correct_predictions": 25,
+      "n": 30,
+      "accuracy": 0.833333,
+      "macro_precision": 0.822222,
+      "macro_recall": 0.769281,
+      "macro_f1": 0.78502,
+      "mcc": 0.702692,
+      "brier": 0.304532,
+      "ece": 0.118284
+    },
+    "vqc_fresh": {
+      "confusion_matrix": [
+        [
+          3,
+          1,
+          6
+        ],
+        [
+          4,
+          9,
+          4
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "correct_predictions": 14,
+      "n": 30,
+      "accuracy": 0.466667,
+      "macro_precision": 0.47114,
+      "macro_recall": 0.498693,
+      "macro_f1": 0.420822,
+      "mcc": 0.234155,
+      "brier": 0.653107,
+      "ece": 0.116501
+    }
+  },
+  "sensor": {
+    "is_trained": true,
+    "n_features_in_": 8,
+    "demo_csv_exists": true,
+    "demo_summary_keys": [
+      "timeline_label",
+      "peak_g_force",
+      "peak_acceleration",
+      "peak_time_offset",
+      "pre_impact_delta_v",
+      "post_impact_stabilization_seconds",
+      "optical_lux_drop",
+      "events",
+      "motion_classification"
+    ],
+    "demo_key_metrics": {
+      "peak_g_force": 5.17,
+      "pre_impact_delta_v": 10.83,
+      "post_impact_stabilization_seconds": 0.02,
+      "optical_lux_drop": false,
+      "peak_acceleration": 50.72
+    },
+    "demo_classifier_pred": {
+      "predicted_motion_class": "fall",
+      "confidence": 0.9780948758125305,
+      "probabilities": {
+        "normal_activity": 0.013032728806138039,
+        "fall": 0.9780948758125305,
+        "impact": 0.008872440084815025
+      },
+      "status": "classified"
+    }
+  },
+  "twilio_env": {
+    "TWILIO_ENABLED": {
+      "configured": false,
+      "length": 0
+    },
+    "TWILIO_ACCOUNT_SID": {
+      "configured": false,
+      "length": 0
+    },
+    "TWILIO_AUTH_TOKEN": {
+      "configured": false,
+      "length": 0
+    },
+    "TWILIO_PHONE_NUMBER": {
+      "configured": false,
+      "length": 0
+    },
+    "EMERGENCY_PHONE_NUMBER": {
+      "configured": false,
+      "length": 0
+    },
+    "EMERGENCY_CONTACT_PHONE": {
+      "configured": false,
+      "length": 0
+    },
+    "TWILIO_FROM_NUMBER": {
+      "configured": false,
+      "length": 0
+    },
+    "TWILIO_TO_NUMBER": {
+      "configured": false,
+      "length": 0
+    },
+    "TWILIO_WHATSAPP_FROM": {
+      "configured": false,
+      "length": 0
+    },
+    "TWILIO_WHATSAPP_TO": {
+      "configured": false,
+      "length": 0
+    }
+  },
+  "twilio_service": {
+    "is_configured": false,
+    "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+    "status_info": {
+      "enabled": false,
+      "configured": false,
+      "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+      "account_sid_suffix": null,
+      "from_number_set": false,
+      "to_number_set": false,
+      "disclaimer": "RESEARCH PROTOTYPE ONLY: No real emergency services (911/112) are contacted."
+    }
+  },
+  "yolo_training_artifacts": {
+    "dir_exists": true,
+    "files": {
+      "results.csv": true,
+      "args.yaml": true,
+      "confusion_matrix.png": true,
+      "confusion_matrix_normalized.png": true,
+      "PR_curve.png": false,
+      "F1_curve.png": false,
+      "P_curve.png": false,
+      "R_curve.png": false,
+      "labels.jpg": true,
+      "results.png": true,
+      "BoxP_curve.png": true
+    },
+    "all_files": [
+      "ml\\models\\yolo_real_training\\run_real_wound\\args.yaml",
+      "ml\\models\\yolo_real_training\\run_real_wound\\BoxF1_curve.png",
+      "ml\\models\\yolo_real_training\\run_real_wound\\BoxPR_curve.png",
+      "ml\\models\\yolo_real_training\\run_real_wound\\BoxP_curve.png",
+      "ml\\models\\yolo_real_training\\run_real_wound\\BoxR_curve.png",
+      "ml\\models\\yolo_real_training\\run_real_wound\\confusion_matrix.png",
+      "ml\\models\\yolo_real_training\\run_real_wound\\confusion_matrix_normalized.png",
+      "ml\\models\\yolo_real_training\\run_real_wound\\labels.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\results.csv",
+      "ml\\models\\yolo_real_training\\run_real_wound\\results.png",
+      "ml\\models\\yolo_real_training\\run_real_wound\\train_batch0.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\train_batch1.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\train_batch2.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\train_batch45.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\train_batch46.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\train_batch47.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\val_batch0_labels.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\val_batch0_pred.jpg",
+      "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+      "ml\\models\\yolo_real_training\\run_real_wound\\weights\\last.pt"
+    ]
+  },
+  "sample_files": {
+    "football_injury.jpg": true,
+    "football_fall.csv": true
+  },
+  "audit_finished": "2026-08-28T12:55:07.433874+00:00"
+}

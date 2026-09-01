@@ -1,0 +1,102 @@
+{
+  "recorded_at": "2026-08-28T14:25:41.661891+00:00",
+  "yolo_canonical_constant": "ml/models/vision/yolo11_injury_best.pt",
+  "yolo_wrapper_loaded_path": "ml/models/vision/yolo11_injury_best.pt",
+  "yolo_wrapper_info": {
+    "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "ckpt_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "task": "detect",
+    "model_names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "status": "INFERENCE_EXECUTES",
+    "model_version": "canonical",
+    "supported_classes": [
+      "bruise",
+      "cut",
+      "wound"
+    ],
+    "untrained_classes": [
+      "abrasion",
+      "laceration",
+      "swelling"
+    ]
+  },
+  "yolo_env": null,
+  "runtime_hashes": [
+    {
+      "name": "YOLO11",
+      "path": "ml/models/vision/yolo11_injury_best.pt",
+      "exists": true,
+      "size_bytes": 5468506,
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "used_at_runtime_by_default": true
+    },
+    {
+      "name": "EfficientNetV2",
+      "path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "exists": true,
+      "size_bytes": 81621023,
+      "sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+      "used_at_runtime_by_default": true
+    },
+    {
+      "name": "U-Net",
+      "path": "ml/models/vision/unet_injury_best.pt",
+      "exists": true,
+      "size_bytes": 97918031,
+      "sha256": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+      "used_at_runtime_by_default": true
+    },
+    {
+      "name": "XGBoost",
+      "path": "ml/models/xgboost_best.json",
+      "exists": true,
+      "size_bytes": 199969,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "used_at_runtime_by_default": true
+    },
+    {
+      "name": "VQC weights",
+      "path": "ml/models/vqc/vqc_weights.npz",
+      "exists": true,
+      "size_bytes": 1086,
+      "sha256": "7d8febd0256dfcad793cbf1a1a2303d746c39e03ed4513536eb574dea73e027d",
+      "used_at_runtime_by_default": true
+    },
+    {
+      "name": "VQC scaler",
+      "path": "ml/models/vqc/scaler.pkl",
+      "exists": true,
+      "size_bytes": 960,
+      "sha256": "94f1e85b1e45f6c2443312dfd7d98becb9fa4de13bd87d2c229316eb8c1fb4f8",
+      "used_at_runtime_by_default": true
+    },
+    {
+      "name": "VQC pca",
+      "path": "ml/models/vqc/pca.pkl",
+      "exists": true,
+      "size_bytes": 1198,
+      "sha256": "a12c32c26238a4188d621454cc77b6ae2e11ecff2528dd2f50439db4751acac8",
+      "used_at_runtime_by_default": true
+    },
+    {
+      "name": "Sensor model",
+      "path": "ml/models/sensor_motion_best.json",
+      "exists": true,
+      "size_bytes": 135603,
+      "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "used_at_runtime_by_default": true
+    },
+    {
+      "name": "Sensor scaler",
+      "path": "ml/models/sensor_scaler.pkl",
+      "exists": true,
+      "size_bytes": 775,
+      "sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959",
+      "used_at_runtime_by_default": true
+    }
+  ]
+}

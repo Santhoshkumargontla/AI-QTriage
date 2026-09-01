@@ -1,0 +1,75 @@
+{
+  "audit_timestamp": "2026-08-27T08:42:32.517635+00:00",
+  "matrix": [
+    {
+      "endpoint": "/api/health",
+      "method": "GET",
+      "valid_status": 200,
+      "frontend_caller": "api.getHealth()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/cases",
+      "method": "POST",
+      "valid_status": 200,
+      "frontend_caller": "api.createCase()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{case_id}",
+      "method": "GET",
+      "valid_status": 200,
+      "frontend_caller": "api.getCase()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{case_id}/image",
+      "method": "POST",
+      "valid_status": 200,
+      "frontend_caller": "handleImageUpload()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{case_id}/questionnaire",
+      "method": "POST",
+      "valid_status": 200,
+      "frontend_caller": "api.submitQuestionnaire()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{case_id}/sensor/demo",
+      "method": "POST",
+      "valid_status": 200,
+      "frontend_caller": "api.loadDemoSensor()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/demo",
+      "method": "POST",
+      "valid_status": 200,
+      "frontend_caller": "api.runCompleteDemo()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/models",
+      "method": "GET",
+      "valid_status": 200,
+      "frontend_caller": "api.getModels()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/evaluation/comparison",
+      "method": "GET",
+      "valid_status": 200,
+      "frontend_caller": "api.getComparison()",
+      "final_status": "PASS"
+    },
+    {
+      "endpoint": "/api/cases/{case_id}/sos/demo/trigger",
+      "method": "POST",
+      "valid_status": 200,
+      "frontend_caller": "api.triggerDemoSOS()",
+      "final_status": "PASS"
+    }
+  ]
+}

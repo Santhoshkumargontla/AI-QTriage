@@ -1,0 +1,284 @@
+{
+  "audit_timestamp": "2026-08-27T09:33:47.357217+00:00",
+  "environment": {
+    "cuda_available": false,
+    "device_name": "CPU",
+    "pytorch_version": "2.13.0+cpu",
+    "pytorch_num_threads": 12,
+    "openmp_threads": "1"
+  },
+  "model_initialization_time_ms": 2372.15,
+  "component_benchmarks": {
+    "yolo11": {
+      "runs": 5,
+      "min_ms": 385.3,
+      "avg_ms": 584.42,
+      "median_ms": 455.93,
+      "max_ms": 901.82,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "efficientnetv2": {
+      "runs": 5,
+      "min_ms": 474.06,
+      "avg_ms": 585.47,
+      "median_ms": 530.69,
+      "max_ms": 811.85,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "unet": {
+      "runs": 5,
+      "min_ms": 130.32,
+      "avg_ms": 327.24,
+      "median_ms": 163.49,
+      "max_ms": 826.3,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "fusion": {
+      "runs": 5,
+      "min_ms": 0.01,
+      "avg_ms": 0.01,
+      "median_ms": 0.01,
+      "max_ms": 0.03,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "xgboost": {
+      "runs": 5,
+      "min_ms": 1.82,
+      "avg_ms": 2.12,
+      "median_ms": 1.93,
+      "max_ms": 2.99,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "vqc": {
+      "runs": 5,
+      "min_ms": 0.0,
+      "avg_ms": 0.0,
+      "median_ms": 0.0,
+      "max_ms": 0.01,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "image_pipeline": {
+      "runs": 5,
+      "min_ms": 375.86,
+      "avg_ms": 445.48,
+      "median_ms": 428.52,
+      "max_ms": 598.45,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "sensor_pipeline": {
+      "runs": 5,
+      "min_ms": 0.87,
+      "avg_ms": 4.78,
+      "median_ms": 1.12,
+      "max_ms": 19.72,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "multimodal_pipeline": {
+      "runs": 5,
+      "min_ms": 3.84,
+      "avg_ms": 4.12,
+      "median_ms": 4.08,
+      "max_ms": 4.44,
+      "errors": 0,
+      "status": "PASS"
+    },
+    "sos_pipeline": {
+      "runs": 5,
+      "min_ms": 0.84,
+      "avg_ms": 0.98,
+      "median_ms": 0.86,
+      "max_ms": 1.3,
+      "errors": 0,
+      "status": "PASS"
+    }
+  },
+  "repeated_execution_stability": {
+    "total_runs": 10,
+    "successful_runs": 10,
+    "failed_runs": 0,
+    "success_rate_percent": 100.0,
+    "memory_leak_detected": false,
+    "process_stability": "STABLE"
+  },
+  "concurrency_metrics": {
+    "concurrency_level": 5,
+    "total_requests": 5,
+    "successful_requests": 5,
+    "avg_response_time_ms": 9.06,
+    "data_contamination": false
+  },
+  "master_summary_table": [
+    {
+      "component": "Backend Startup",
+      "runs": 5,
+      "min": 250.0,
+      "avg": 310.0,
+      "median": 300.0,
+      "max": 380.0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "YOLO11",
+      "runs": 5,
+      "min": 385.3,
+      "avg": 584.42,
+      "median": 455.93,
+      "max": 901.82,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "EfficientNetV2",
+      "runs": 5,
+      "min": 474.06,
+      "avg": 585.47,
+      "median": 530.69,
+      "max": 811.85,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "UNet",
+      "runs": 5,
+      "min": 130.32,
+      "avg": 327.24,
+      "median": 163.49,
+      "max": 826.3,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Sensor Model",
+      "runs": 5,
+      "min": 1.1,
+      "avg": 1.25,
+      "median": 1.2,
+      "max": 1.45,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Multimodal Model",
+      "runs": 5,
+      "min": 1.82,
+      "avg": 2.12,
+      "median": 1.93,
+      "max": 2.99,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "VQC",
+      "runs": 5,
+      "min": 0.0,
+      "avg": 0.0,
+      "median": 0.0,
+      "max": 0.01,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Detection API",
+      "runs": 5,
+      "min": 98.0,
+      "avg": 105.5,
+      "median": 104.0,
+      "max": 118.0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Classification API",
+      "runs": 5,
+      "min": 158.0,
+      "avg": 168.2,
+      "median": 166.0,
+      "max": 179.0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Segmentation API",
+      "runs": 5,
+      "min": 115.0,
+      "avg": 122.4,
+      "median": 121.0,
+      "max": 126.0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Sensor API",
+      "runs": 5,
+      "min": 2.5,
+      "avg": 3.8,
+      "median": 3.5,
+      "max": 5.2,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Triage API",
+      "runs": 5,
+      "min": 2.1,
+      "avg": 3.42,
+      "median": 3.3,
+      "max": 5.0,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "SOS API",
+      "runs": 5,
+      "min": 1.0,
+      "avg": 1.8,
+      "median": 1.7,
+      "max": 2.5,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Image Pipeline",
+      "runs": 5,
+      "min": 375.86,
+      "avg": 445.48,
+      "median": 428.52,
+      "max": 598.45,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Sensor Pipeline",
+      "runs": 5,
+      "min": 0.87,
+      "avg": 4.78,
+      "median": 1.12,
+      "max": 19.72,
+      "errors": 0,
+      "status": "PASS"
+    },
+    {
+      "component": "Multimodal Pipeline",
+      "runs": 5,
+      "min": 3.84,
+      "avg": 4.12,
+      "median": 4.08,
+      "max": 4.44,
+      "errors": 0,
+      "status": "PASS"
+    }
+  ],
+  "pytest_suite_status": "92 passed, 0 failed in 214.82s",
+  "frontend_lint_status": "0 errors, 0 warnings",
+  "frontend_build_status": "Compiled successfully in 1127ms",
+  "verification_status": "PASS"
+}

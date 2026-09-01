@@ -1,0 +1,22 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "normal_activity": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 14
+  },
+  "fall": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 14
+  },
+  "impact": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "support": 8
+  },
+  "status": "PASS"
+}

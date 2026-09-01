@@ -1,0 +1,43 @@
+{
+  "model_name": "Sensor Motion Event Classifier",
+  "version": "v1.2.0",
+  "status": "TRAINED",
+  "domain": "Motion / Fall / Impact Event Detection",
+  "classes": [
+    "normal_activity",
+    "fall",
+    "impact"
+  ],
+  "metrics": {
+    "dataset_name": "SisFall & UCI HAR Motion Telemetry",
+    "sampling_rate_hz": 50.0,
+    "window_seconds": 2.5,
+    "train_samples": 138,
+    "val_samples": 26,
+    "test_samples": 36,
+    "correct_predictions": "28 / 36",
+    "accuracy": 0.777778,
+    "macro_f1": 0.733016,
+    "mcc": 0.658506,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.125,
+    "confusion_matrix": [
+      [
+        12,
+        0,
+        0
+      ],
+      [
+        3,
+        13,
+        0
+      ],
+      [
+        0,
+        5,
+        3
+      ]
+    ]
+  },
+  "weights_path": "ml\\models\\sensor_motion_best.json"
+}

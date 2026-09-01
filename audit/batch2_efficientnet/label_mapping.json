@@ -1,0 +1,10 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "mapping": {
+    "cut_laceration": "Cut",
+    "bruise_contusion": "Bruise",
+    "swelling_edema": "Swelling",
+    "unclassified_skin": "Other"
+  },
+  "verification_status": "PASS"
+}

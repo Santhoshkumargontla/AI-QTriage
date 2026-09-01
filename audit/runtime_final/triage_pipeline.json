@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "multimodal_feature_vector_dim": 23,
+  "xgboost_prediction": "MODERATE",
+  "risk_score": 0.9,
+  "status": "PASS"
+}

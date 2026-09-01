@@ -1,0 +1,40 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "mappings": [
+    {
+      "source_dataset": "MedWound V2",
+      "original_class": "cut",
+      "mapped_class": "cut",
+      "mapping_reason": "Exact match",
+      "number_of_annotations": 60
+    },
+    {
+      "source_dataset": "MedWound V2",
+      "original_class": "bruise",
+      "mapped_class": "bruise",
+      "mapping_reason": "Exact match",
+      "number_of_annotations": 60
+    },
+    {
+      "source_dataset": "MedWound V2",
+      "original_class": "abrasion",
+      "mapped_class": "abrasion",
+      "mapping_reason": "Exact match",
+      "number_of_annotations": 60
+    },
+    {
+      "source_dataset": "WACV WSNet",
+      "original_class": "laceration",
+      "mapped_class": "laceration",
+      "mapping_reason": "Exact match",
+      "number_of_annotations": 30
+    },
+    {
+      "source_dataset": "WACV WSNet",
+      "original_class": "open_wound",
+      "mapped_class": "wound",
+      "mapping_reason": "Broad category match",
+      "number_of_annotations": 30
+    }
+  ]
+}

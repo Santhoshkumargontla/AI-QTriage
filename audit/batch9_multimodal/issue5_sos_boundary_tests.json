@@ -1,0 +1,45 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "threshold_origin": "Software engineering prototype kinetic threshold (Derived from biomechanical impact research literature)",
+  "threshold_name_alias": "RESEARCH_PROTOTYPE_SAFETY_THRESHOLD",
+  "threshold_evidence_available": true,
+  "threshold_clinically_validated": false,
+  "boundary_tests": [
+    {
+      "g_force": 3.99,
+      "stabilization_time": 1.5,
+      "sos_triggered": false,
+      "expected_triggered": false,
+      "passed": true
+    },
+    {
+      "g_force": 4.0,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected_triggered": true,
+      "passed": true
+    },
+    {
+      "g_force": 4.01,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected_triggered": true,
+      "passed": true
+    },
+    {
+      "g_force": 5.0,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected_triggered": true,
+      "passed": true
+    },
+    {
+      "g_force": 8.5,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected_triggered": true,
+      "passed": true
+    }
+  ],
+  "status": "IMPROVED"
+}

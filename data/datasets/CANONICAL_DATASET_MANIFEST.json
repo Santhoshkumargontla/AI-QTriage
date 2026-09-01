@@ -1,0 +1,2373 @@
+{
+  "audit_utc": "2026-08-29T03:26:21.808422+00:00",
+  "workspace": "C:/Users/santh/Capstone Project Code",
+  "method": {
+    "file_hash": "SHA-256 of file bytes",
+    "pixel_hash": "SHA-256 of RGB pixels plus WxH",
+    "near_duplicate": "8x8 average hash Hamming <= 5",
+    "tabular_hash": "SHA-256 of float32 feature bytes",
+    "subject_rule": "Missing or synthetic generator IDs => SUBJECT_LEAKAGE_NOT_VERIFIABLE. Never claim ZERO_SUBJECT_LEAKAGE for real patients.",
+    "np_random_is_not_real_world": true
+  },
+  "prior_documents_rejected": {
+    "data/datasets/DATASET_PROVENANCE_AUDIT.json": "Incorrectly labels PIL drawings as MedWound/Kaggle public downloads and np.random sensor windows as SisFall & UCI HAR. Those claims are rejected.",
+    "data/datasets/LEAKAGE_AUDIT.json": "Claimed ZERO_SUBJECT_LEAKAGE and 0 SHA-256 duplicates. Generator subject IDs are not patients. public_wound_dataset has exact pixel-hash groups across splits."
+  },
+  "labels_used": [
+    "REAL",
+    "SYNTHETIC",
+    "SIMULATED",
+    "PUBLIC",
+    "DEMO"
+  ],
+  "no_dataset_labeled_REAL": true,
+  "no_dataset_labeled_PUBLIC_as_downloaded": true,
+  "models": [
+    {
+      "model": "YOLO11 Detection",
+      "production_dataset": "yolo_retrain_v2",
+      "metadata_dataset_name": "yolo_retrain_v2 (yolo_processed + existing negatives)",
+      "data_provenance": "SYNTHETIC",
+      "split_sizes": {
+        "test": 19,
+        "train": 87,
+        "val": 20
+      },
+      "subject_counts": 0,
+      "duplicate_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "near_duplicate_cross_split_pairs": 1153,
+      "leakage_status": {
+        "exact_hash": "NO_EXACT_HASH_CROSS_SPLIT",
+        "near_duplicate": "NEAR_DUP_CROSS_SPLIT",
+        "subject": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "flags": [
+          "NEAR_DUPLICATE_CROSS_SPLIT",
+          "SUBJECT_LEAKAGE_NOT_VERIFIABLE"
+        ]
+      },
+      "final_conclusion": "SYNTHETIC drawings. No subject_id. Exact-hash splits copied from yolo_processed. SUBJECT_LEAKAGE_NOT_VERIFIABLE. Near-duplicate canvases remain a generalization risk."
+    },
+    {
+      "model": "EfficientNetV2 Classification",
+      "production_dataset": "public_wound_dataset",
+      "metadata_dataset_name": "public_wound_dataset",
+      "candidate_dataset_not_loaded": "efficientnet_processed",
+      "data_provenance": "SYNTHETIC",
+      "split_sizes": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "subject_counts": 40,
+      "duplicate_overlap": {
+        "train_val": 5,
+        "train_test": 5,
+        "val_test": 5
+      },
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "near_duplicate_cross_split_pairs": 2736,
+      "leakage_status": {
+        "exact_hash": "LEAKAGE",
+        "near_duplicate": "NEAR_DUP_CROSS_SPLIT",
+        "subject": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "flags": [
+          "EXACT_HASH_CROSS_SPLIT",
+          "NEAR_DUPLICATE_CROSS_SPLIT",
+          "SOURCE_ID_CROSS_SPLIT",
+          "SUBJECT_LEAKAGE_NOT_VERIFIABLE"
+        ]
+      },
+      "final_conclusion": "Production weights trained on PIL drawings with generator subject_ids. Pixel-hash and near-dup leakage across splits. Do not call this PUBLIC or REAL. SUBJECT_LEAKAGE_NOT_VERIFIABLE."
+    },
+    {
+      "model": "ResNet34-UNet Segmentation",
+      "production_dataset": "public_wound_dataset",
+      "metadata_dataset_name": "public_wound_dataset",
+      "candidate_dataset_not_loaded": "unet_processed",
+      "data_provenance": "SYNTHETIC",
+      "split_sizes": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "subject_counts": 40,
+      "duplicate_overlap": {
+        "train_val": 5,
+        "train_test": 5,
+        "val_test": 5
+      },
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "near_duplicate_cross_split_pairs": 2736,
+      "leakage_status": {
+        "exact_hash": "LEAKAGE",
+        "near_duplicate": "NEAR_DUP_CROSS_SPLIT",
+        "subject": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "flags": [
+          "EXACT_HASH_CROSS_SPLIT",
+          "NEAR_DUPLICATE_CROSS_SPLIT",
+          "SOURCE_ID_CROSS_SPLIT",
+          "SUBJECT_LEAKAGE_NOT_VERIFIABLE"
+        ]
+      },
+      "final_conclusion": "Same production train set as EfficientNet. Unique-hash unet_processed is a later candidate, not the live SHA. SUBJECT_LEAKAGE_NOT_VERIFIABLE."
+    },
+    {
+      "model": "XGBoost Multimodal",
+      "production_dataset": "synthetic_multimodal_fusion",
+      "metadata_dataset_name": "synthetic_multimodal_fusion",
+      "data_provenance": "SYNTHETIC",
+      "split_sizes": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "subject_counts": 0,
+      "duplicate_overlap": {
+        "train_val": 1,
+        "train_test": 1,
+        "val_test": 0
+      },
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "leakage_status": {
+        "exact_hash": "LEAKAGE",
+        "subject": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "scaler_pca": {
+          "scaler_fitted_on_train_only": true,
+          "pca_fitted_on_train_only": true,
+          "pca_used_for_booster": false,
+          "booster_trained_on_raw_unscaled_X_train": true,
+          "scaler_saved_to_disk": false,
+          "feature_selection_present": false,
+          "hyperparameter_search_on_test": false,
+          "hyperparameters": "hardcoded n_estimators=60 max_depth=3 learning_rate=0.08; no GridSearch/RandomizedSearch",
+          "val_used_for_early_stopping_or_tuning": false,
+          "val_merged_into_test_eval": false,
+          "test_eval_uses_X_test_only": true,
+          "inference_uses_scaler": false,
+          "notes": [
+            "StandardScaler is fitted on train then discarded; the booster is fit on raw X_train.",
+            "PCA is fitted on train-scaled features and written to metadata variance only; not used at train or infer.",
+            "Validation split is allocated but not used for early stopping or hyperparameter search.",
+            "Held-out metrics use X[170:] only."
+          ]
+        }
+      },
+      "final_conclusion": "np.random 23-d vectors. Not real-world. No subject_id. Scaler/PCA fitted on train then unused by the booster. Test slice [170:] not merged with val. SUBJECT_LEAKAGE_NOT_VERIFIABLE."
+    },
+    {
+      "model": "Experimental 4-Qubit VQC",
+      "production_dataset": "synthetic_multimodal_fusion (same generator/split as XGBoost)",
+      "metadata_dataset_name": "Same 200 synthetic fusion samples as XGBoost. 0 clinical pairs.",
+      "data_provenance": "SYNTHETIC",
+      "quantum_backend": "SIMULATED",
+      "split_sizes": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "subject_counts": 0,
+      "duplicate_overlap": {
+        "train_val": 1,
+        "train_test": 1,
+        "val_test": 0
+      },
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "leakage_status": {
+        "exact_hash": "LEAKAGE",
+        "subject": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "scaler_pca": {
+          "scaler_fitted_on_train_only": true,
+          "pca_fitted_on_train_only": true,
+          "on_disk_scaler_n_samples_seen": 140,
+          "on_disk_pca_n_samples": 140,
+          "on_disk_matches_train_n_140": true,
+          "feature_selection_present": false,
+          "optimization_on_train_only": true,
+          "val_assigned_in_trainer": false,
+          "val_merged_into_test_eval": false,
+          "test_eval_uses_X_test_only": true,
+          "hyperparameter_search_on_test": false,
+          "quantum_backend": "PennyLane default.qubit \u2014 classical SIMULATED circuit, not a QPU",
+          "notes": [
+            "train_vqc.py never materializes X_val; samples 140:170 are unused, not merged into test.",
+            "VQCClassifier.train fits scaler+PCA on the array it is given (X_train, n=140).",
+            "On-disk scaler.pkl / pca.pkl n_samples_seen should equal 140."
+          ]
+        }
+      },
+      "final_conclusion": "Same SYNTHETIC matrix as XGBoost. Scaler+PCA+Adam on train n=140 only. Val unused, not in test. default.qubit is simulated. SUBJECT_LEAKAGE_NOT_VERIFIABLE."
+    },
+    {
+      "model": "Sensor Motion Event Classifier",
+      "production_dataset": "synthetic_50hz_motion_windows",
+      "metadata_dataset_name": "synthetic_50hz_motion_windows",
+      "data_provenance": "SYNTHETIC",
+      "also": "SIMULATED",
+      "split_sizes": {
+        "train": 138,
+        "val": 26,
+        "test": 36
+      },
+      "subject_counts": 38,
+      "duplicate_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "leakage_status": {
+        "exact_hash": "NO_EXACT_VECTOR_CROSS_SPLIT",
+        "subject": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "scaler": {
+          "fitted_on_train_only": true,
+          "val_and_test_transform_only": true,
+          "feature_selection_present": false,
+          "hyperparameter_search_on_test": false,
+          "val_merged_into_test_eval": false,
+          "saved_scaler": "ml/models/sensor_scaler.pkl"
+        }
+      },
+      "final_conclusion": "np.random 50 Hz windows with synthetic subj_001\u2026 IDs. Not SisFall/UCI HAR files (raw dir missing). Generator IDs may be disjoint; real-patient leakage is SUBJECT_LEAKAGE_NOT_VERIFIABLE. Scaler fit on train only."
+    }
+  ],
+  "datasets": {
+    "yolo_retrain_v2": {
+      "dataset_name": "yolo_retrain_v2",
+      "n": 126,
+      "missing_files": 0,
+      "split_sizes": {
+        "test": 19,
+        "train": 87,
+        "val": 20
+      },
+      "provenance": {
+        "class": "SYNTHETIC",
+        "demo_files": [
+          "blank_skin.jpg (val empty-label)",
+          "dummy_test.jpg (test empty-label)"
+        ],
+        "synthetic_or_real": "synthetic",
+        "simulated_or_real": "synthetic_drawings",
+        "origin": "yolo_processed cut/bruise drawings from data/datasets/raw/synthetic_wound plus two existing negative files",
+        "production_for": "YOLO11 Detection v1.4.0"
+      },
+      "file_hash_leakage": {
+        "unique_hashes": 126,
+        "duplicate_hash_groups": 0,
+        "cross_split_hash_groups": 0,
+        "cross_split_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "cross_split_groups_sample": [],
+        "leakage": false
+      },
+      "pixel_hash_leakage": {
+        "unique_hashes": 126,
+        "duplicate_hash_groups": 0,
+        "cross_split_hash_groups": 0,
+        "cross_split_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "cross_split_groups_sample": [],
+        "leakage": false
+      },
+      "near_duplicate_ahash": {
+        "threshold_bits": 5,
+        "pair_count": 1153,
+        "pairs_sample": [
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0001",
+            "b": "raw_synthetic_wound__syn_wound_0161"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "raw_synthetic_wound__syn_wound_0001",
+            "b": "raw_synthetic_wound__syn_wound_0170"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "raw_synthetic_wound__syn_wound_0001",
+            "b": "raw_synthetic_wound__syn_wound_0172"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "raw_synthetic_wound__syn_wound_0001",
+            "b": "raw_synthetic_wound__syn_wound_0182"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0001",
+            "b": "raw_synthetic_wound__syn_wound_0184"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0153"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0157"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0158"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 1,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0161"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0164"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0170"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0171"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0172"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0173"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0179"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0181"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0182"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0183"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "raw_synthetic_wound__syn_wound_0184"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "raw_synthetic_wound__syn_wound_0004",
+            "b": "negative__blank_skin"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0005",
+            "b": "raw_synthetic_wound__syn_wound_0153"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0005",
+            "b": "raw_synthetic_wound__syn_wound_0157"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0005",
+            "b": "raw_synthetic_wound__syn_wound_0161"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "raw_synthetic_wound__syn_wound_0005",
+            "b": "raw_synthetic_wound__syn_wound_0170"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0005",
+            "b": "raw_synthetic_wound__syn_wound_0171"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0005",
+            "b": "raw_synthetic_wound__syn_wound_0172"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0005",
+            "b": "raw_synthetic_wound__syn_wound_0182"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 1,
+            "a": "raw_synthetic_wound__syn_wound_0006",
+            "b": "raw_synthetic_wound__syn_wound_0153"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0006",
+            "b": "raw_synthetic_wound__syn_wound_0157"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0006",
+            "b": "raw_synthetic_wound__syn_wound_0161"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0006",
+            "b": "raw_synthetic_wound__syn_wound_0164"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "raw_synthetic_wound__syn_wound_0006",
+            "b": "raw_synthetic_wound__syn_wound_0171"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0006",
+            "b": "raw_synthetic_wound__syn_wound_0173"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 1,
+            "a": "raw_synthetic_wound__syn_wound_0006",
+            "b": "raw_synthetic_wound__syn_wound_0183"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0006",
+            "b": "negative__blank_skin"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "raw_synthetic_wound__syn_wound_0007",
+            "b": "raw_synthetic_wound__syn_wound_0150"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0007",
+            "b": "raw_synthetic_wound__syn_wound_0156"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "raw_synthetic_wound__syn_wound_0007",
+            "b": "raw_synthetic_wound__syn_wound_0163"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0008",
+            "b": "raw_synthetic_wound__syn_wound_0153"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "raw_synthetic_wound__syn_wound_0008",
+            "b": "raw_synthetic_wound__syn_wound_0157"
+          }
+        ]
+      },
+      "source_overlap_n": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "subjects": {
+        "subject_id_field_present": false,
+        "subject_id_kind": null,
+        "unique_subject_ids": 0,
+        "subjects_by_split": {},
+        "subject_overlap": {
+          "train_val": [],
+          "train_test": [],
+          "val_test": []
+        },
+        "subject_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "subject_leakage_status": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "note": "No subject_id field. Do not claim zero subject leakage."
+      },
+      "leakage_flags": [
+        "NEAR_DUPLICATE_CROSS_SPLIT",
+        "SUBJECT_LEAKAGE_NOT_VERIFIABLE"
+      ],
+      "exact_hash_status": "LEAKAGE_PRESENT"
+    },
+    "public_wound_dataset": {
+      "dataset_name": "public_wound_dataset",
+      "n": 200,
+      "missing_files": 0,
+      "split_sizes": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "provenance": {
+        "class": "SYNTHETIC",
+        "claimed_in_csv_source": "Kaggle/Roboflow/WOUNDSEG Public Wound Taxonomy",
+        "actual_origin": "ml/training/download_public_datasets.py::generate_expanded_wound_dataset PIL drawings",
+        "not_downloaded_kaggle": true,
+        "synthetic_or_real": "synthetic",
+        "simulated_or_real": "synthetic_drawings",
+        "do_not_label_PUBLIC": "CSV source/license text is a taxonomy label, not a download receipt.",
+        "production_for": [
+          "EfficientNetV2 Classification v1.3.0",
+          "ResNet34-UNet Segmentation v1.3.0"
+        ]
+      },
+      "file_hash_leakage": {
+        "unique_hashes": 38,
+        "duplicate_hash_groups": 5,
+        "cross_split_hash_groups": 5,
+        "cross_split_overlap_n": {
+          "train_val": 5,
+          "train_test": 5,
+          "val_test": 5
+        },
+        "cross_split_groups_sample": [
+          {
+            "hash": "56294535b00ba9e34bb210d3b636bc2df8b532d0161fd7fc12d6f96aab44500b",
+            "n": 34,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0001",
+              "public_sample_0007",
+              "public_sample_0013",
+              "public_sample_0019",
+              "public_sample_0025",
+              "public_sample_0031",
+              "public_sample_0037",
+              "public_sample_0043"
+            ]
+          },
+          {
+            "hash": "fe46d4db54a79a59bc7e6645e1db90842fb1df503ba7f8d66eef1f67af218a45",
+            "n": 34,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0002",
+              "public_sample_0008",
+              "public_sample_0014",
+              "public_sample_0020",
+              "public_sample_0026",
+              "public_sample_0032",
+              "public_sample_0038",
+              "public_sample_0044"
+            ]
+          },
+          {
+            "hash": "0312925c3b2a3744e10b53691c2aaaea5de72dc251364f018edc3439d11acc7c",
+            "n": 33,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0003",
+              "public_sample_0009",
+              "public_sample_0015",
+              "public_sample_0021",
+              "public_sample_0027",
+              "public_sample_0033",
+              "public_sample_0039",
+              "public_sample_0045"
+            ]
+          },
+          {
+            "hash": "420415fca390a294438b222850c465f54e2571d5194fd8a785f0210ee664fac7",
+            "n": 33,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0005",
+              "public_sample_0011",
+              "public_sample_0017",
+              "public_sample_0023",
+              "public_sample_0029",
+              "public_sample_0035",
+              "public_sample_0041",
+              "public_sample_0047"
+            ]
+          },
+          {
+            "hash": "bde3b9fae6a61553638ce51b69c10c313cea3f914e75f6bdc4b9514fe9572a5f",
+            "n": 33,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0006",
+              "public_sample_0012",
+              "public_sample_0018",
+              "public_sample_0024",
+              "public_sample_0030",
+              "public_sample_0036",
+              "public_sample_0042",
+              "public_sample_0048"
+            ]
+          }
+        ],
+        "leakage": true
+      },
+      "pixel_hash_leakage": {
+        "unique_hashes": 38,
+        "duplicate_hash_groups": 5,
+        "cross_split_hash_groups": 5,
+        "cross_split_overlap_n": {
+          "train_val": 5,
+          "train_test": 5,
+          "val_test": 5
+        },
+        "cross_split_groups_sample": [
+          {
+            "hash": "1d901627a860f30c283371f6645fc76b70b3de6fd3188d54e6686ff6be91e265",
+            "n": 34,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0001",
+              "public_sample_0007",
+              "public_sample_0013",
+              "public_sample_0019",
+              "public_sample_0025",
+              "public_sample_0031",
+              "public_sample_0037",
+              "public_sample_0043"
+            ]
+          },
+          {
+            "hash": "a668ab2a9cb7e065e02379e5985564a0c94ecb262c9608c6bfe25d170de409bd",
+            "n": 34,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0002",
+              "public_sample_0008",
+              "public_sample_0014",
+              "public_sample_0020",
+              "public_sample_0026",
+              "public_sample_0032",
+              "public_sample_0038",
+              "public_sample_0044"
+            ]
+          },
+          {
+            "hash": "c0ae1a675795081cb00a1c1424291a96a0d8d28197586b23834c4eb6a1305c2d",
+            "n": 33,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0003",
+              "public_sample_0009",
+              "public_sample_0015",
+              "public_sample_0021",
+              "public_sample_0027",
+              "public_sample_0033",
+              "public_sample_0039",
+              "public_sample_0045"
+            ]
+          },
+          {
+            "hash": "84245b6070a3bfff44bdd1231840fb80fbacc1734d26b3ce43a83eefddfcf8a8",
+            "n": 33,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0005",
+              "public_sample_0011",
+              "public_sample_0017",
+              "public_sample_0023",
+              "public_sample_0029",
+              "public_sample_0035",
+              "public_sample_0041",
+              "public_sample_0047"
+            ]
+          },
+          {
+            "hash": "9977eca76901da0626c9884681a8dffd147b76abc8097adee1c4f8018d8e556b",
+            "n": 33,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "public_sample_0006",
+              "public_sample_0012",
+              "public_sample_0018",
+              "public_sample_0024",
+              "public_sample_0030",
+              "public_sample_0036",
+              "public_sample_0042",
+              "public_sample_0048"
+            ]
+          }
+        ],
+        "leakage": true
+      },
+      "near_duplicate_ahash": {
+        "threshold_bits": 5,
+        "pair_count": 2736,
+        "pairs_sample": [
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0001",
+            "b": "public_sample_0145"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0001",
+            "b": "public_sample_0151"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0001",
+            "b": "public_sample_0157"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0001",
+            "b": "public_sample_0163"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0001",
+            "b": "public_sample_0169"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_sample_0002",
+            "b": "public_sample_0142"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0002",
+            "b": "public_sample_0144"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0002",
+            "b": "public_sample_0146"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0002",
+            "b": "public_sample_0150"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0002",
+            "b": "public_sample_0152"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_sample_0002",
+            "b": "public_sample_0154"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0002",
+            "b": "public_sample_0156"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0002",
+            "b": "public_sample_0158"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_sample_0002",
+            "b": "public_sample_0160"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0002",
+            "b": "public_sample_0162"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0002",
+            "b": "public_sample_0164"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0002",
+            "b": "public_sample_0168"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0002",
+            "b": "public_sample_0170"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0003",
+            "b": "public_sample_0141"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0003",
+            "b": "public_sample_0147"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0003",
+            "b": "public_sample_0153"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0003",
+            "b": "public_sample_0159"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_sample_0003",
+            "b": "public_sample_0165"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_sample_0004",
+            "b": "public_sample_0142"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_sample_0004",
+            "b": "public_sample_0143"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_sample_0004",
+            "b": "public_sample_0144"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0004",
+            "b": "public_sample_0146"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_sample_0004",
+            "b": "public_sample_0149"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_sample_0004",
+            "b": "public_sample_0150"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0004",
+            "b": "public_sample_0152"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_sample_0004",
+            "b": "public_sample_0155"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_sample_0004",
+            "b": "public_sample_0156"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0004",
+            "b": "public_sample_0158"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_sample_0004",
+            "b": "public_sample_0160"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_sample_0004",
+            "b": "public_sample_0161"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_sample_0004",
+            "b": "public_sample_0162"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0004",
+            "b": "public_sample_0164"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_sample_0004",
+            "b": "public_sample_0167"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_sample_0004",
+            "b": "public_sample_0168"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_sample_0004",
+            "b": "public_sample_0170"
+          }
+        ]
+      },
+      "source_overlap_n": {
+        "train_val": 1,
+        "train_test": 1,
+        "val_test": 1
+      },
+      "subjects": {
+        "subject_id_field_present": true,
+        "subject_id_kind": "SYNTHETIC_GENERATOR_LABEL",
+        "unique_subject_ids": 40,
+        "subjects_by_split": {
+          "train": 28,
+          "val": 6,
+          "test": 6
+        },
+        "subject_overlap": {
+          "train_val": [],
+          "train_test": [],
+          "val_test": []
+        },
+        "subject_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "subject_leakage_status": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "note": "subject_id values exist but are synthetic generator labels, not patient IDs. Generator-id overlap counts: {'train_val': 0, 'train_test': 0, 'val_test': 0}. Real-patient leakage cannot be verified."
+      },
+      "leakage_flags": [
+        "EXACT_HASH_CROSS_SPLIT",
+        "NEAR_DUPLICATE_CROSS_SPLIT",
+        "SOURCE_ID_CROSS_SPLIT",
+        "SUBJECT_LEAKAGE_NOT_VERIFIABLE"
+      ],
+      "exact_hash_status": "LEAKAGE_PRESENT"
+    },
+    "injury_dataset": {
+      "dataset_name": "injury_dataset",
+      "n": 30,
+      "missing_files": 0,
+      "split_sizes": {
+        "train": 20,
+        "val": 4,
+        "test": 6
+      },
+      "provenance": {
+        "class": "SYNTHETIC",
+        "origin": "ml/training/prepare_dataset.py synthetic drawings",
+        "synthetic_or_real": "synthetic",
+        "used_by": "unet_processed unique-hash pool (not production U-Net SHA)"
+      },
+      "file_hash_leakage": {
+        "unique_hashes": 3,
+        "duplicate_hash_groups": 3,
+        "cross_split_hash_groups": 3,
+        "cross_split_overlap_n": {
+          "train_val": 3,
+          "train_test": 3,
+          "val_test": 3
+        },
+        "cross_split_groups_sample": [
+          {
+            "hash": "8be95311d822c7614174fad055004944409abc95c30acabb190e58ebab27a554",
+            "n": 10,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "sample_0001",
+              "sample_0004",
+              "sample_0007",
+              "sample_0010",
+              "sample_0013",
+              "sample_0016",
+              "sample_0019",
+              "sample_0022"
+            ]
+          },
+          {
+            "hash": "edb4fe15d80d9c5eb50a716d9f355fea58ad4f4e255c71a20a62c25521877601",
+            "n": 10,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "sample_0002",
+              "sample_0005",
+              "sample_0008",
+              "sample_0011",
+              "sample_0014",
+              "sample_0017",
+              "sample_0020",
+              "sample_0023"
+            ]
+          },
+          {
+            "hash": "7d146e60b89a841ebf1ee4554472c0ee6aa4772b5be5323b34990ccb8aae97ff",
+            "n": 10,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "sample_0003",
+              "sample_0006",
+              "sample_0009",
+              "sample_0012",
+              "sample_0015",
+              "sample_0018",
+              "sample_0021",
+              "sample_0024"
+            ]
+          }
+        ],
+        "leakage": true
+      },
+      "pixel_hash_leakage": {
+        "unique_hashes": 3,
+        "duplicate_hash_groups": 3,
+        "cross_split_hash_groups": 3,
+        "cross_split_overlap_n": {
+          "train_val": 3,
+          "train_test": 3,
+          "val_test": 3
+        },
+        "cross_split_groups_sample": [
+          {
+            "hash": "b22e9e8613385a3bbca49f842c2b2c3ad3b8735e59880bb9c0a3d9722a7972dc",
+            "n": 10,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "sample_0001",
+              "sample_0004",
+              "sample_0007",
+              "sample_0010",
+              "sample_0013",
+              "sample_0016",
+              "sample_0019",
+              "sample_0022"
+            ]
+          },
+          {
+            "hash": "d1d3852651eef6b2c5c7de56ea561766beef284ed0f2035c2f1e030b88f1ed82",
+            "n": 10,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "sample_0002",
+              "sample_0005",
+              "sample_0008",
+              "sample_0011",
+              "sample_0014",
+              "sample_0017",
+              "sample_0020",
+              "sample_0023"
+            ]
+          },
+          {
+            "hash": "0a5002c34bda2022f8cc28ac1997b43ca1f4505bb766f162935d0dc7db20b4dd",
+            "n": 10,
+            "splits": [
+              "test",
+              "train",
+              "val"
+            ],
+            "ids": [
+              "sample_0003",
+              "sample_0006",
+              "sample_0009",
+              "sample_0012",
+              "sample_0015",
+              "sample_0018",
+              "sample_0021",
+              "sample_0024"
+            ]
+          }
+        ],
+        "leakage": true
+      },
+      "near_duplicate_ahash": {
+        "threshold_bits": 5,
+        "pair_count": 74,
+        "pairs_sample": [
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0001",
+            "b": "sample_0022"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0002",
+            "b": "sample_0023"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0003",
+            "b": "sample_0021"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0003",
+            "b": "sample_0024"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0004",
+            "b": "sample_0022"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0005",
+            "b": "sample_0023"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0006",
+            "b": "sample_0021"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0006",
+            "b": "sample_0024"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0007",
+            "b": "sample_0022"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0008",
+            "b": "sample_0023"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0009",
+            "b": "sample_0021"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0009",
+            "b": "sample_0024"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0010",
+            "b": "sample_0022"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0011",
+            "b": "sample_0023"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0012",
+            "b": "sample_0021"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0012",
+            "b": "sample_0024"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0013",
+            "b": "sample_0022"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0014",
+            "b": "sample_0023"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0015",
+            "b": "sample_0021"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0015",
+            "b": "sample_0024"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0016",
+            "b": "sample_0022"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0017",
+            "b": "sample_0023"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0018",
+            "b": "sample_0021"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0018",
+            "b": "sample_0024"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0019",
+            "b": "sample_0022"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "sample_0020",
+            "b": "sample_0023"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0001",
+            "b": "sample_0025"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0001",
+            "b": "sample_0028"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0002",
+            "b": "sample_0026"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0002",
+            "b": "sample_0029"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0003",
+            "b": "sample_0027"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0003",
+            "b": "sample_0030"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0004",
+            "b": "sample_0025"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0004",
+            "b": "sample_0028"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0005",
+            "b": "sample_0026"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0005",
+            "b": "sample_0029"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0006",
+            "b": "sample_0027"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0006",
+            "b": "sample_0030"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0007",
+            "b": "sample_0025"
+          },
+          {
+            "splits": "train/test",
+            "hamming": 0,
+            "a": "sample_0007",
+            "b": "sample_0028"
+          }
+        ]
+      },
+      "source_overlap_n": {
+        "train_val": 1,
+        "train_test": 1,
+        "val_test": 1
+      },
+      "subjects": {
+        "subject_id_field_present": true,
+        "subject_id_kind": "SYNTHETIC_GENERATOR_LABEL",
+        "unique_subject_ids": 15,
+        "subjects_by_split": {
+          "train": 10,
+          "val": 2,
+          "test": 3
+        },
+        "subject_overlap": {
+          "train_val": [],
+          "train_test": [],
+          "val_test": []
+        },
+        "subject_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "subject_leakage_status": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "note": "subject_id values exist but are synthetic generator labels, not patient IDs. Generator-id overlap counts: {'train_val': 0, 'train_test': 0, 'val_test': 0}. Real-patient leakage cannot be verified."
+      },
+      "leakage_flags": [
+        "EXACT_HASH_CROSS_SPLIT",
+        "NEAR_DUPLICATE_CROSS_SPLIT",
+        "SOURCE_ID_CROSS_SPLIT",
+        "SUBJECT_LEAKAGE_NOT_VERIFIABLE"
+      ],
+      "exact_hash_status": "LEAKAGE_PRESENT"
+    },
+    "efficientnet_processed": {
+      "dataset_name": "efficientnet_processed",
+      "n": 126,
+      "missing_files": 0,
+      "split_sizes": {
+        "test": 19,
+        "train": 88,
+        "val": 19
+      },
+      "provenance": {
+        "class": "SYNTHETIC",
+        "role": "candidate training set; production EfficientNet was trained on public_wound_dataset",
+        "synthetic_or_real": "synthetic"
+      },
+      "file_hash_leakage": {
+        "unique_hashes": 126,
+        "duplicate_hash_groups": 0,
+        "cross_split_hash_groups": 0,
+        "cross_split_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "cross_split_groups_sample": [],
+        "leakage": false
+      },
+      "pixel_hash_leakage": {
+        "unique_hashes": 126,
+        "duplicate_hash_groups": 0,
+        "cross_split_hash_groups": 0,
+        "cross_split_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "cross_split_groups_sample": [],
+        "leakage": false
+      },
+      "near_duplicate_ahash": {
+        "threshold_bits": 5,
+        "pair_count": 1090,
+        "pairs_sample": [
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "injury_sample_0002",
+            "b": "yolo_yolo_real_wound__public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0007",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0128"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0007",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0163"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0007",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0033"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0007",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0145"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0012",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0047"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0012",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0163"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0012",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0033"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0012",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0145"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0001"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0037"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0047"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0075"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0167"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0004"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0033"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0081"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0134"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0017",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0145"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 1,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0020",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0001"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0020",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0028"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0020",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0037"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0020",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0004"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0020",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0081"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0027",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0080"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0027",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0128"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0027",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0030"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0027",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0133"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0039",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0001"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0039",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0037"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0039",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0047"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0039",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0075"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 1,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0039",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0004"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0039",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0033"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0039",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0081"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0039",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0134"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0041",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0128"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 1,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0041",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0163"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0041",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0133"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "yolo_raw_synthetic_wound__syn_wound_0065",
+            "b": "yolo_raw_synthetic_wound__syn_wound_0001"
+          }
+        ]
+      },
+      "source_overlap_n": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "subjects": {
+        "subject_id_field_present": false,
+        "subject_id_kind": null,
+        "unique_subject_ids": 0,
+        "subjects_by_split": {},
+        "subject_overlap": {
+          "train_val": [],
+          "train_test": [],
+          "val_test": []
+        },
+        "subject_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "subject_leakage_status": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "note": "No subject_id field. Do not claim zero subject leakage."
+      },
+      "leakage_flags": [
+        "NEAR_DUPLICATE_CROSS_SPLIT",
+        "SUBJECT_LEAKAGE_NOT_VERIFIABLE"
+      ],
+      "exact_hash_status": "LEAKAGE_PRESENT"
+    },
+    "unet_processed": {
+      "dataset_name": "unet_processed",
+      "n": 41,
+      "missing_files": 0,
+      "split_sizes": {
+        "test": 6,
+        "train": 29,
+        "val": 6
+      },
+      "provenance": {
+        "class": "SYNTHETIC",
+        "role": "candidate training set; production U-Net was trained on public_wound_dataset",
+        "synthetic_or_real": "synthetic"
+      },
+      "file_hash_leakage": {
+        "unique_hashes": 41,
+        "duplicate_hash_groups": 0,
+        "cross_split_hash_groups": 0,
+        "cross_split_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "cross_split_groups_sample": [],
+        "leakage": false
+      },
+      "pixel_hash_leakage": {
+        "unique_hashes": 41,
+        "duplicate_hash_groups": 0,
+        "cross_split_hash_groups": 0,
+        "cross_split_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "cross_split_groups_sample": [],
+        "leakage": false
+      },
+      "near_duplicate_ahash": {
+        "threshold_bits": 5,
+        "pair_count": 163,
+        "pairs_sample": [
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "injury_sample_0002",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "injury_sample_0002",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "injury_sample_0002",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "injury_sample_0002",
+            "b": "public_public_sample_0196"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_public_sample_0004",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_public_sample_0004",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_public_sample_0004",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_public_sample_0004",
+            "b": "public_public_sample_0196"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_public_sample_0006",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0006",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0006",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_public_sample_0006",
+            "b": "public_public_sample_0196"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0010",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0010",
+            "b": "public_public_sample_0196"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_public_sample_0016",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0016",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0016",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_public_sample_0022",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_public_sample_0022",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_public_sample_0022",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0022",
+            "b": "public_public_sample_0130"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_public_sample_0022",
+            "b": "public_public_sample_0196"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_public_sample_0028",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0028",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0028",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 2,
+            "a": "public_public_sample_0034",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_public_sample_0034",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0034",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_public_sample_0034",
+            "b": "public_public_sample_0196"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_public_sample_0046",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_public_sample_0046",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0046",
+            "b": "public_public_sample_0196"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0052",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0052",
+            "b": "public_public_sample_0196"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 4,
+            "a": "public_public_sample_0058",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 1,
+            "a": "public_public_sample_0058",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 0,
+            "a": "public_public_sample_0070",
+            "b": "public_public_sample_0002"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_public_sample_0070",
+            "b": "public_public_sample_0064"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 3,
+            "a": "public_public_sample_0070",
+            "b": "public_public_sample_0094"
+          },
+          {
+            "splits": "train/val",
+            "hamming": 5,
+            "a": "public_public_sample_0070",
+            "b": "public_public_sample_0130"
+          }
+        ]
+      },
+      "source_overlap_n": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "subjects": {
+        "subject_id_field_present": false,
+        "subject_id_kind": null,
+        "unique_subject_ids": 0,
+        "subjects_by_split": {},
+        "subject_overlap": {
+          "train_val": [],
+          "train_test": [],
+          "val_test": []
+        },
+        "subject_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "subject_leakage_status": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "note": "No subject_id field. Do not claim zero subject leakage."
+      },
+      "leakage_flags": [
+        "NEAR_DUPLICATE_CROSS_SPLIT",
+        "SUBJECT_LEAKAGE_NOT_VERIFIABLE"
+      ],
+      "exact_hash_status": "LEAKAGE_PRESENT"
+    },
+    "synthetic_multimodal_fusion": {
+      "dataset_name": "synthetic_multimodal_fusion",
+      "origin": "ml/training/train_xgboost.py::generate_multimodal_dataset",
+      "provenance": {
+        "class": "SYNTHETIC",
+        "synthetic_or_real": "synthetic",
+        "simulated_or_real": "simulated",
+        "np_random": true,
+        "not_real_world": true,
+        "subject_ids": false,
+        "genuinely_paired_clinical_samples": 0
+      },
+      "n": 200,
+      "split_sizes": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "split_method": "index_slice seed=42  [:140] / [140:170] / [170:]",
+      "unique_feature_vectors": 198,
+      "duplicate_vectors": 2,
+      "vector_hash_leakage": {
+        "unique_hashes": 198,
+        "duplicate_hash_groups": 2,
+        "cross_split_hash_groups": 2,
+        "cross_split_overlap_n": {
+          "train_val": 1,
+          "train_test": 1,
+          "val_test": 0
+        },
+        "cross_split_groups_sample": [
+          {
+            "hash": "627b5ed14111103a9eeb857388fe3fa8c8756cd04f6d5005a3fc901b9cf05d70",
+            "n": 2,
+            "splits": [
+              "train",
+              "val"
+            ],
+            "ids": [
+              "mm_008",
+              "mm_143"
+            ]
+          },
+          {
+            "hash": "0140eb82c3ae7be4ae1cbad7c3a596a52dc1a726c057a70f2791114299234005",
+            "n": 2,
+            "splits": [
+              "test",
+              "train"
+            ],
+            "ids": [
+              "mm_054",
+              "mm_191"
+            ]
+          }
+        ],
+        "leakage": true
+      },
+      "subjects": {
+        "subject_id_field_present": false,
+        "subject_id_kind": null,
+        "unique_subject_ids": 0,
+        "subjects_by_split": {},
+        "subject_overlap": {
+          "train_val": [],
+          "train_test": [],
+          "val_test": []
+        },
+        "subject_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "subject_leakage_status": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "note": "No subject_id field. Do not claim zero subject leakage."
+      },
+      "xgboost": {
+        "scaler_fitted_on_train_only": true,
+        "pca_fitted_on_train_only": true,
+        "pca_used_for_booster": false,
+        "booster_trained_on_raw_unscaled_X_train": true,
+        "scaler_saved_to_disk": false,
+        "feature_selection_present": false,
+        "hyperparameter_search_on_test": false,
+        "hyperparameters": "hardcoded n_estimators=60 max_depth=3 learning_rate=0.08; no GridSearch/RandomizedSearch",
+        "val_used_for_early_stopping_or_tuning": false,
+        "val_merged_into_test_eval": false,
+        "test_eval_uses_X_test_only": true,
+        "inference_uses_scaler": false,
+        "notes": [
+          "StandardScaler is fitted on train then discarded; the booster is fit on raw X_train.",
+          "PCA is fitted on train-scaled features and written to metadata variance only; not used at train or infer.",
+          "Validation split is allocated but not used for early stopping or hyperparameter search.",
+          "Held-out metrics use X[170:] only."
+        ]
+      },
+      "vqc": {
+        "scaler_fitted_on_train_only": true,
+        "pca_fitted_on_train_only": true,
+        "on_disk_scaler_n_samples_seen": 140,
+        "on_disk_pca_n_samples": 140,
+        "on_disk_matches_train_n_140": true,
+        "feature_selection_present": false,
+        "optimization_on_train_only": true,
+        "val_assigned_in_trainer": false,
+        "val_merged_into_test_eval": false,
+        "test_eval_uses_X_test_only": true,
+        "hyperparameter_search_on_test": false,
+        "quantum_backend": "PennyLane default.qubit \u2014 classical SIMULATED circuit, not a QPU",
+        "notes": [
+          "train_vqc.py never materializes X_val; samples 140:170 are unused, not merged into test.",
+          "VQCClassifier.train fits scaler+PCA on the array it is given (X_train, n=140).",
+          "On-disk scaler.pkl / pca.pkl n_samples_seen should equal 140."
+        ]
+      }
+    },
+    "synthetic_50hz_motion_windows": {
+      "dataset_name": "synthetic_50hz_motion_windows",
+      "manifest": "data/datasets/manifests/sensor_manifest.csv",
+      "origin": "ml/data/prepare_sensor_dataset.py::prepare_sensor_dataset (np.random windows)",
+      "sisfall_uci_har_raw_dir_exists": false,
+      "source_dataset_column_value": "SisFall / UCI HAR Motion Telemetry",
+      "source_column_is_schema_label_not_download": true,
+      "provenance": {
+        "class": "SYNTHETIC",
+        "also": "SIMULATED",
+        "synthetic_or_real": "synthetic",
+        "simulated_or_real": "simulated",
+        "np_random": true,
+        "not_downloaded_sisfall_or_uci_har": true,
+        "not_real_world": true
+      },
+      "n": 200,
+      "split_sizes": {
+        "train": 138,
+        "val": 26,
+        "test": 36
+      },
+      "vector_hash_leakage": {
+        "unique_hashes": 200,
+        "duplicate_hash_groups": 0,
+        "cross_split_hash_groups": 0,
+        "cross_split_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "cross_split_groups_sample": [],
+        "leakage": false
+      },
+      "subjects": {
+        "subject_id_field_present": true,
+        "subject_id_kind": "SYNTHETIC_GENERATOR_LABEL",
+        "unique_subject_ids": 38,
+        "subjects_by_split": {
+          "train": 26,
+          "val": 5,
+          "test": 7
+        },
+        "subject_overlap": {
+          "train_val": [],
+          "train_test": [],
+          "val_test": []
+        },
+        "subject_overlap_n": {
+          "train_val": 0,
+          "train_test": 0,
+          "val_test": 0
+        },
+        "subject_leakage_status": "SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "note": "subject_id values exist but are synthetic generator labels, not patient IDs. Generator-id overlap counts: {'train_val': 0, 'train_test': 0, 'val_test': 0}. Real-patient leakage cannot be verified."
+      },
+      "source_overlap_n": {
+        "train_val": 1,
+        "train_test": 1,
+        "val_test": 1
+      },
+      "scaler": {
+        "fitted_on_train_only": true,
+        "val_and_test_transform_only": true,
+        "feature_selection_present": false,
+        "hyperparameter_search_on_test": false,
+        "val_merged_into_test_eval": false,
+        "saved_scaler": "ml/models/sensor_scaler.pkl"
+      }
+    },
+    "demo_and_eval_only_files": {
+      "dataset_name": "demo_and_eval_only_files",
+      "provenance": {
+        "class": "DEMO"
+      },
+      "files": [
+        {
+          "path": "data/sample/image/football_injury.jpg",
+          "role": "DEMO photograph used in UI/OOD probes",
+          "exists": true
+        },
+        {
+          "path": "data/datasets/yolo_injury/blank_skin.jpg",
+          "role": "existing no-injury file; YOLO val empty-label; EfficientNet/U-Net eval-only",
+          "exists": true
+        },
+        {
+          "path": "data/datasets/yolo_injury/dummy_test.jpg",
+          "role": "existing no-injury file; YOLO test empty-label; EfficientNet/U-Net eval-only",
+          "exists": true
+        }
+      ]
+    }
+  }
+}

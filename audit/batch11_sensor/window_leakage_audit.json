@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "time_window_sec": 2.5,
+  "sampling_rate_hz": 50.0,
+  "cross_split_window_overlap": 0,
+  "status": "PASS"
+}

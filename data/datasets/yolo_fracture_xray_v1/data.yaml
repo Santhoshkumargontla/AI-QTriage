@@ -1,0 +1,13 @@
+path: C:/Users/santh/Capstone Project Code/data/datasets/yolo_fracture_xray_v1
+train: images/train
+val: images/val
+test: images/test
+nc: 7
+names:
+- elbow positive
+- fingers positive
+- forearm fracture
+- humerus fracture
+- humerus
+- shoulder fracture
+- wrist positive

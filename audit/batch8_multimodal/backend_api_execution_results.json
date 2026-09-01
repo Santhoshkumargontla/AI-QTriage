@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T13:43:10.965138+00:00",
+  "endpoint_test": "GET /api/cases",
+  "http_status": 200,
+  "status": "PASS"
+}

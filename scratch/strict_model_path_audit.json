@@ -1,0 +1,1240 @@
+{
+  "started": "2026-08-29T04:18:23.749689+00:00",
+  "root": "C:\\Users\\santh\\Capstone Project Code",
+  "file_count": 63,
+  "alignment": [
+    {
+      "model_name": "YOLO11 Detection",
+      "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+      "disk_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "registry_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "manifest_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "wrapper": "ml.vision.yolo_wrapper.YOLO11Detector",
+      "evaluation_artifact": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+      "eval_exists": true,
+      "registry_path_match": true,
+      "sha_aligned": true
+    },
+    {
+      "model_name": "EfficientNetV2 Classification",
+      "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "disk_sha": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+      "registry_sha": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+      "manifest_sha": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+      "wrapper": "ml.vision.efficientnet_wrapper.EfficientNetV2Classifier",
+      "evaluation_artifact": "ml/models/vision/efficientnetv2_metadata.json",
+      "eval_exists": true,
+      "registry_path_match": true,
+      "sha_aligned": true
+    },
+    {
+      "model_name": "ResNet34-UNet Segmentation",
+      "canonical_path": "ml/models/vision/unet_injury_best.pt",
+      "disk_sha": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+      "registry_sha": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+      "manifest_sha": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+      "wrapper": "ml.vision.unet_wrapper.UNetSegmenter",
+      "evaluation_artifact": "ml/models/vision/unet_metadata.json",
+      "eval_exists": true,
+      "registry_path_match": true,
+      "sha_aligned": true
+    },
+    {
+      "model_name": "XGBoost Multimodal",
+      "canonical_path": "ml/models/xgboost_best.json",
+      "disk_sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "registry_sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "manifest_sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "wrapper": "ml.classifiers.xgboost_classifier.XGBoostClassifier",
+      "evaluation_artifact": "data/results/canonical_held_out_evaluation.json",
+      "eval_exists": true,
+      "registry_path_match": true,
+      "sha_aligned": true
+    },
+    {
+      "model_name": "Experimental 4-Qubit VQC",
+      "canonical_path": "ml/models/vqc/vqc_weights.npz",
+      "disk_sha": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "registry_sha": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "manifest_sha": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "wrapper": "ml.classifiers.vqc_classifier.VQCClassifier",
+      "evaluation_artifact": "data/results/canonical_held_out_evaluation.json",
+      "eval_exists": true,
+      "registry_path_match": true,
+      "sha_aligned": true
+    },
+    {
+      "model_name": "Sensor Motion Event Classifier",
+      "canonical_path": "ml/models/sensor_motion_best.json",
+      "disk_sha": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "registry_sha": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "manifest_sha": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "wrapper": "ml.classifiers.sensor_classifier.SensorClassifier",
+      "evaluation_artifact": "ml/models/sensor_metadata.json",
+      "eval_exists": true,
+      "registry_path_match": true,
+      "sha_aligned": true
+    }
+  ],
+  "cwd_probes": {
+    "project_root": {
+      "cwd": "C:\\Users\\santh\\Capstone Project Code",
+      "loads": {
+        "yolo": {
+          "loaded": true,
+          "sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+          "path": "ml/models/vision/yolo11_injury_best.pt",
+          "status": "INFERENCE_EXECUTES"
+        },
+        "xgb": {
+          "loaded": true,
+          "sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/xgboost_best.json"
+        },
+        "effnet": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/vision/efficientnetv2_injury_best.pt"
+        },
+        "unet": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/vision/unet_injury_best.pt"
+        },
+        "vqc": {
+          "loaded": true,
+          "status": "EXPERIMENTAL_ONLY",
+          "dir": "C:/Users/santh/Capstone Project Code/ml/models/vqc"
+        },
+        "sensor": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/sensor_motion_best.json"
+        }
+      },
+      "exists_rel_yolo": true,
+      "resolve_yolo": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt"
+    },
+    "backend_dir": {
+      "cwd": "C:\\Users\\santh\\Capstone Project Code\\backend",
+      "loads": {
+        "yolo": {
+          "loaded": true,
+          "sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+          "path": "ml/models/vision/yolo11_injury_best.pt",
+          "status": "INFERENCE_EXECUTES"
+        },
+        "xgb": {
+          "loaded": true,
+          "sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/xgboost_best.json"
+        },
+        "effnet": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/vision/efficientnetv2_injury_best.pt"
+        },
+        "unet": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/vision/unet_injury_best.pt"
+        },
+        "vqc": {
+          "loaded": true,
+          "status": "EXPERIMENTAL_ONLY",
+          "dir": "C:/Users/santh/Capstone Project Code/ml/models/vqc"
+        },
+        "sensor": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/sensor_motion_best.json"
+        }
+      },
+      "exists_rel_yolo": false,
+      "resolve_yolo": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt"
+    },
+    "foreign_cwd": {
+      "cwd": "C:\\Users\\santh\\AppData\\Local\\Temp\\aiq_cwd_002ts2sa",
+      "loads": {
+        "yolo": {
+          "loaded": true,
+          "sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+          "path": "ml/models/vision/yolo11_injury_best.pt",
+          "status": "INFERENCE_EXECUTES"
+        },
+        "xgb": {
+          "loaded": true,
+          "sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/xgboost_best.json"
+        },
+        "effnet": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/vision/efficientnetv2_injury_best.pt"
+        },
+        "unet": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/vision/unet_injury_best.pt"
+        },
+        "vqc": {
+          "loaded": true,
+          "status": "EXPERIMENTAL_ONLY",
+          "dir": "C:/Users/santh/Capstone Project Code/ml/models/vqc"
+        },
+        "sensor": {
+          "loaded": true,
+          "path": "C:/Users/santh/Capstone Project Code/ml/models/sensor_motion_best.json"
+        }
+      },
+      "exists_rel_yolo": false,
+      "resolve_yolo": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt"
+    }
+  },
+  "classified": [
+    {
+      "rel": "ml/models/_archive/artifact_integrity_report.json",
+      "sha256": "54a4c8f4cb89f60cc6d7a25e6e4daad1d149fbf00b06d88d20a87f7c7a25b216",
+      "size": 3895,
+      "in_archive": true,
+      "basename": "artifact_integrity_report.json",
+      "code_mentions": [
+        "ml/models/_archive/README.md"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/classical/pca.pkl",
+      "sha256": "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b",
+      "size": 1431,
+      "in_archive": true,
+      "basename": "pca.pkl",
+      "code_mentions": [
+        "ml/classifiers/vqc_classifier.py",
+        "ml/evaluation/run_all.py",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/models/_archive/README.md",
+        "backend/tests/test_api_phase10.py",
+        "backend/tests/test_vqc_pipeline.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/classical/scaler.pkl",
+      "sha256": "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7",
+      "size": 1119,
+      "in_archive": true,
+      "basename": "scaler.pkl",
+      "code_mentions": [
+        "ml/classifiers/vqc_classifier.py",
+        "ml/evaluation/run_all.py",
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/sensor_metadata.json",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/models/_archive/README.md",
+        "ml/training/train_sensor_model.py",
+        "backend/tests/test_api_phase10.py",
+        "backend/tests/test_vqc_pipeline.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/classical/xgboost_metadata.json",
+      "sha256": "41f6edf27a0bb8b413422ff1b55a70003df9a83d13782345dd2e795117cc1ed6",
+      "size": 402,
+      "in_archive": true,
+      "basename": "xgboost_metadata.json",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py",
+        "ml/models/_archive/README.md",
+        "ml/training/train_xgboost.py",
+        "backend/main.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/classical/xgboost_multimodal.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "size": 199969,
+      "in_archive": true,
+      "basename": "xgboost_multimodal.json",
+      "code_mentions": [
+        "ml/models/_archive/README.md",
+        "ml/models/_archive/classical/xgboost_metadata.json"
+      ],
+      "role": "already_archived",
+      "duplicate_of": [
+        "ml/models/xgboost_best.json"
+      ]
+    },
+    {
+      "rel": "ml/models/_archive/efficientnet_v2_best.pt",
+      "sha256": "f85ed8b798f6ab02f7a8edc9c9a9d589160668320b1e680e4d3ac6f88e5d7dae",
+      "size": 81621351,
+      "in_archive": true,
+      "basename": "efficientnet_v2_best.pt",
+      "code_mentions": [
+        "ml/models/_archive/README.md"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/effnet_best.pt",
+      "sha256": "9822f25aad9540a032a990b3021130feda407cb469f5587aa9fe6e048a377895",
+      "size": 81614259,
+      "in_archive": true,
+      "basename": "effnet_best.pt",
+      "code_mentions": [
+        "ml/models/_archive/README.md",
+        "scripts/forensic_model_audit.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/pca.pkl",
+      "sha256": "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b",
+      "size": 1431,
+      "in_archive": true,
+      "basename": "pca.pkl",
+      "code_mentions": [
+        "ml/classifiers/vqc_classifier.py",
+        "ml/evaluation/run_all.py",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/models/_archive/README.md",
+        "backend/tests/test_api_phase10.py",
+        "backend/tests/test_vqc_pipeline.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/scaler.pkl",
+      "sha256": "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7",
+      "size": 1119,
+      "in_archive": true,
+      "basename": "scaler.pkl",
+      "code_mentions": [
+        "ml/classifiers/vqc_classifier.py",
+        "ml/evaluation/run_all.py",
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/sensor_metadata.json",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/models/_archive/README.md",
+        "ml/training/train_sensor_model.py",
+        "backend/tests/test_api_phase10.py",
+        "backend/tests/test_vqc_pipeline.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/unet_best.pt",
+      "sha256": "92557ce44ce49b25f482b89711257174aea90504b32a36b9fbdc4289e7d5576e",
+      "size": 97916043,
+      "in_archive": true,
+      "basename": "unet_best.pt",
+      "code_mentions": [
+        "ml/models/_archive/README.md"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/unet_resnet34_best.pt",
+      "sha256": "4379fca78fdf899b0fe81f76b02c92fb052e39bf6ca78ec9e6074d47eda205d8",
+      "size": 97918663,
+      "in_archive": true,
+      "basename": "unet_resnet34_best.pt",
+      "code_mentions": [
+        "ml/models/_archive/README.md"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/vision/yolo11_merged_candidate.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size": 5468506,
+      "in_archive": true,
+      "basename": "yolo11_merged_candidate.pt",
+      "code_mentions": [
+        "ml/models/_archive/README.md"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/xgboost_multimodal_best.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "size": 199969,
+      "in_archive": true,
+      "basename": "xgboost_multimodal_best.json",
+      "code_mentions": [
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/models/_archive/README.md"
+      ],
+      "role": "already_archived",
+      "duplicate_of": [
+        "ml/models/xgboost_best.json"
+      ]
+    },
+    {
+      "rel": "ml/models/_archive/yolo11_real_wound_best.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size": 5468506,
+      "in_archive": true,
+      "basename": "yolo11_real_wound_best.pt",
+      "code_mentions": [
+        "ml/models/_archive/README.md",
+        "scripts/compare_yolo_baselines.py",
+        "scripts/evaluate_real_yolo11.py",
+        "scripts/train_real_yolo11.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/yolo11n.pt",
+      "sha256": "760da77988a8addbd8586d942713e94ba49d4473ebe43605fa806f885df72c8a",
+      "size": 1325,
+      "in_archive": true,
+      "basename": "yolo11n.pt",
+      "code_mentions": [
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/models/_archive/README.md",
+        "ml/training/train_yolo.py",
+        "ml/training/train_yolo_processed.py",
+        "backend/tests/test_yolo_reliability.py",
+        "scripts/train_real_yolo11.py",
+        "scripts/train_yolo11.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/yolo_candidate_training/run_merged/weights/best.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size": 5468506,
+      "in_archive": true,
+      "basename": "best.pt",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/vision/efficientnetv2_metadata.json",
+        "ml/models/vision/unet_metadata.json",
+        "ml/models/vision/yolo11_metadata.json",
+        "ml/models/vision/yolo_baseline_vs_candidate.json",
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+        "ml/models/yolo_retrain_v2/FOUR_WAY_VERIFY.json",
+        "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/_archive/yolo_training/training_metadata.json",
+      "sha256": "61271e22e6b605ae25d7a4e4f853cdd99f2660fd191cb60572ccb3f32747bc06",
+      "size": 494,
+      "in_archive": true,
+      "basename": "training_metadata.json",
+      "code_mentions": [
+        "ml/models/_archive/README.md",
+        "scripts/train_yolo11.py"
+      ],
+      "role": "already_archived",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/canonical_manifest.json",
+      "sha256": "c7f4ba84152a3acb5599f570fae4360043d2a400815e051ff9007842f215092b",
+      "size": 3826,
+      "in_archive": false,
+      "basename": "canonical_manifest.json",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py"
+      ],
+      "role": "metadata_or_registry",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/efficientnet_processed_training/PROMOTION.json",
+      "sha256": "737275d5b99c877feb0624aa46d0bf1778bb72d1211f4de7882ea55f7fdedf84",
+      "size": 1111,
+      "in_archive": false,
+      "basename": "PROMOTION.json",
+      "code_mentions": [
+        "ml/training/train_efficientnet.py",
+        "ml/training/train_unet.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/efficientnet_processed_training/TRAINING_EVAL_REPORT.json",
+      "sha256": "e968678e56738ca64f6efd9fef8a66e87c3e8d78631509e57afa67ba69a7f358",
+      "size": 12093,
+      "in_archive": false,
+      "basename": "TRAINING_EVAL_REPORT.json",
+      "code_mentions": [
+        "ml/models/efficientnet_processed_training/PROMOTION.json",
+        "ml/models/unet_processed_training/PROMOTION.json",
+        "ml/training/train_efficientnet.py",
+        "ml/training/train_unet.py",
+        "ml/training/train_yolo_processed.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/efficientnet_processed_training/efficientnet_classes.json",
+      "sha256": "9893115a1665251239fef1f1e5d26e3f55d641d3f2d7740f1b125895ab736cef",
+      "size": 26,
+      "in_archive": false,
+      "basename": "efficientnet_classes.json",
+      "code_mentions": [
+        "ml/training/train_efficientnet.py",
+        "ml/vision/efficientnet_wrapper.py"
+      ],
+      "role": "other",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/efficientnet_processed_training/efficientnetv2_candidate.pt",
+      "sha256": "0080565d653cbe4a9ff8f1e83f47a95fdc08c8e606673ecec64e4167b453a8a4",
+      "size": 81614327,
+      "in_archive": false,
+      "basename": "efficientnetv2_candidate.pt",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/efficientnet_processed_training/PROMOTION.json",
+        "ml/models/efficientnet_processed_training/TRAINING_EVAL_REPORT.json"
+      ],
+      "role": "unpromoted_candidate",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/efficientnet_reliability/EFFICIENTNET_RELIABILITY_REPORT.json",
+      "sha256": "34deaa5fbaafe979c97573b287bf7d32e70d8acb2aa24639e353f13944b93e3b",
+      "size": 26678,
+      "in_archive": false,
+      "basename": "EFFICIENTNET_RELIABILITY_REPORT.json",
+      "code_mentions": [
+        "ml/evaluation/efficientnet_reliability_eval.py",
+        "ml/models/canonical_paths.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/model_registry.json",
+      "sha256": "f779a59af0b6e709e6f5bbff2670b56739f8f3a447a7e5591d111f5814c30f03",
+      "size": 23237,
+      "in_archive": false,
+      "basename": "model_registry.json",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py",
+        "ml/models/model_registry_manager.py",
+        "ml/training/train_sensor_model.py",
+        "backend/main.py",
+        "backend/tests/test_api_phase18.py",
+        "backend/tests/test_xgboost_audit.py"
+      ],
+      "role": "metadata_or_registry",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/sensor_metadata.json",
+      "sha256": "4429ed55f5979aa63f7218901c25fdaefa613552883aac309f21ec8341e95643",
+      "size": 1647,
+      "in_archive": false,
+      "basename": "sensor_metadata.json",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py",
+        "ml/models/model_registry.json",
+        "ml/training/train_sensor_model.py"
+      ],
+      "role": "metadata_or_registry",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/sensor_motion_best.json",
+      "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "size": 135603,
+      "in_archive": false,
+      "basename": "sensor_motion_best.json",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/sensor_metadata.json",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/training/train_sensor_model.py"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": [
+        "ml/models/sensor_motion_best.json"
+      ]
+    },
+    {
+      "rel": "ml/models/sensor_scaler.pkl",
+      "sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959",
+      "size": 775,
+      "in_archive": false,
+      "basename": "sensor_scaler.pkl",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/sensor_metadata.json",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/training/train_sensor_model.py"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/unet_processed_training/PROMOTION.json",
+      "sha256": "a36a2a3aea13ba90542a7cffa6c6eba3a115f46c4e0b98ef1cd8411f88f1127b",
+      "size": 665,
+      "in_archive": false,
+      "basename": "PROMOTION.json",
+      "code_mentions": [
+        "ml/training/train_efficientnet.py",
+        "ml/training/train_unet.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/unet_processed_training/TRAINING_EVAL_REPORT.json",
+      "sha256": "e2664bf72dd1b2f59181809d427e67f46e05f970b999cdebb7c4b77ab8395e30",
+      "size": 20643,
+      "in_archive": false,
+      "basename": "TRAINING_EVAL_REPORT.json",
+      "code_mentions": [
+        "ml/models/efficientnet_processed_training/PROMOTION.json",
+        "ml/models/unet_processed_training/PROMOTION.json",
+        "ml/training/train_efficientnet.py",
+        "ml/training/train_unet.py",
+        "ml/training/train_yolo_processed.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/unet_processed_training/unet_candidate.pt",
+      "sha256": "2d7c37d9298525d8925ca77730cbc7f9283670591ba976db6056077dc8562362",
+      "size": 97917463,
+      "in_archive": false,
+      "basename": "unet_candidate.pt",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/unet_processed_training/PROMOTION.json",
+        "ml/models/unet_processed_training/TRAINING_EVAL_REPORT.json"
+      ],
+      "role": "unpromoted_candidate",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/unet_reliability/UNET_RELIABILITY_REPORT.json",
+      "sha256": "cca6b3b24e8834973956895e5be478589b82c87e28829caa546c7a09e730d8b1",
+      "size": 24406,
+      "in_archive": false,
+      "basename": "UNET_RELIABILITY_REPORT.json",
+      "code_mentions": [
+        "ml/evaluation/unet_reliability_eval.py",
+        "ml/models/canonical_paths.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+      "size": 81621023,
+      "in_archive": false,
+      "basename": "efficientnetv2_injury_best.pt",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/vision/efficientnetv2_metadata.json",
+        "ml/models/_archive/artifact_integrity_report.json"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": [
+        "ml/models/vision/efficientnetv2_injury_best.pt"
+      ]
+    },
+    {
+      "rel": "ml/models/vision/efficientnetv2_injury_best.pt.pre_retrain_backup",
+      "sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777",
+      "size": 81626143,
+      "in_archive": false,
+      "basename": "efficientnetv2_injury_best.pt.pre_retrain_backup",
+      "code_mentions": [],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/efficientnetv2_metadata.json",
+      "sha256": "e7ad988ed965af676fd09ca74222210c6323df959005255276c8c7b9b39b70a1",
+      "size": 3514,
+      "in_archive": false,
+      "basename": "efficientnetv2_metadata.json",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py",
+        "ml/models/model_registry.json",
+        "ml/training/train_efficientnet.py"
+      ],
+      "role": "metadata_or_registry",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/unet_injury_best.pt",
+      "sha256": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+      "size": 97918031,
+      "in_archive": false,
+      "basename": "unet_injury_best.pt",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/vision/unet_metadata.json",
+        "ml/models/_archive/artifact_integrity_report.json"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": [
+        "ml/models/vision/unet_injury_best.pt"
+      ]
+    },
+    {
+      "rel": "ml/models/vision/unet_injury_best.pt.pre_retrain_backup",
+      "sha256": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93",
+      "size": 97918031,
+      "in_archive": false,
+      "basename": "unet_injury_best.pt.pre_retrain_backup",
+      "code_mentions": [],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/unet_metadata.json",
+      "sha256": "43a4b92f472eeee0dcaabcbb7b7b3361821fcfb7a8d68edae4216858371dbb74",
+      "size": 2580,
+      "in_archive": false,
+      "basename": "unet_metadata.json",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py",
+        "ml/models/model_registry.json",
+        "ml/training/train_unet.py"
+      ],
+      "role": "metadata_or_registry",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/yolo11_injury_best.pt",
+      "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "size": 5470234,
+      "in_archive": false,
+      "basename": "yolo11_injury_best.pt",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/vision/yolo11_metadata.json",
+        "ml/models/vision/yolo_baseline_vs_candidate.json",
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+        "ml/models/yolo_retrain_v2/FOUR_WAY_VERIFY.json",
+        "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json",
+        "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+        "ml/models/_archive/artifact_integrity_report.json"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": [
+        "ml/models/vision/yolo11_injury_best.pt"
+      ]
+    },
+    {
+      "rel": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_backup",
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "size": 5470810,
+      "in_archive": false,
+      "basename": "yolo11_injury_best.pt.pre_retrain_backup",
+      "code_mentions": [
+        "ml/models/vision/yolo_baseline_vs_candidate.json"
+      ],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_v2_backup",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size": 5468506,
+      "in_archive": false,
+      "basename": "yolo11_injury_best.pt.pre_retrain_v2_backup",
+      "code_mentions": [
+        "ml/models/vision/yolo11_metadata.json",
+        "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+        "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json"
+      ],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/yolo11_injury_real_retrained.pt",
+      "sha256": "080817b4531bbc0d57af7ff2c08d48f353aa42ace53c710662eaa28dce0fd837",
+      "size": 5470840,
+      "in_archive": false,
+      "basename": "yolo11_injury_real_retrained.pt",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/_archive/README.md",
+        "backend/tests/test_canonical_paths.py"
+      ],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/yolo11_metadata.json",
+      "sha256": "bb47bf1ff4405bcf51d4b10833f2894e436fbcdfd529a79d57ab291411503a65",
+      "size": 5508,
+      "in_archive": false,
+      "basename": "yolo11_metadata.json",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py",
+        "ml/training/train_yolo.py"
+      ],
+      "role": "metadata_or_registry",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vision/yolo_baseline_vs_candidate.json",
+      "sha256": "61999ec8692c3cca7a99bc065377875ab369970d903da65a96d6df5c09309cc3",
+      "size": 1804,
+      "in_archive": false,
+      "basename": "yolo_baseline_vs_candidate.json",
+      "code_mentions": [
+        "ml/training/train_yolo.py"
+      ],
+      "role": "other",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vqc/pca.pkl",
+      "sha256": "16caccddd838bc045e9180cf0de116a0d904541fb516a4bc618ab8011ac12a50",
+      "size": 1198,
+      "in_archive": false,
+      "basename": "pca.pkl",
+      "code_mentions": [
+        "ml/classifiers/vqc_classifier.py",
+        "ml/evaluation/run_all.py",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/models/_archive/README.md",
+        "backend/tests/test_api_phase10.py",
+        "backend/tests/test_vqc_pipeline.py"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vqc/scaler.pkl",
+      "sha256": "506c818dee106b512fd861642def1d388801f1efc9fe14312cfdd67634d6e2d9",
+      "size": 960,
+      "in_archive": false,
+      "basename": "scaler.pkl",
+      "code_mentions": [
+        "ml/classifiers/vqc_classifier.py",
+        "ml/evaluation/run_all.py",
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/sensor_metadata.json",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/models/_archive/README.md",
+        "ml/training/train_sensor_model.py",
+        "backend/tests/test_api_phase10.py",
+        "backend/tests/test_vqc_pipeline.py"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vqc/vqc_metadata.json",
+      "sha256": "8d44507680cb5ac0fc3385213cea7993c3261ae506863f00352ca9f57e9183bd",
+      "size": 3616,
+      "in_archive": false,
+      "basename": "vqc_metadata.json",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py",
+        "ml/training/train_vqc.py",
+        "backend/main.py"
+      ],
+      "role": "metadata_or_registry",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/vqc/vqc_weights.npz",
+      "sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "size": 1086,
+      "in_archive": false,
+      "basename": "vqc_weights.npz",
+      "code_mentions": [
+        "ml/classifiers/vqc_classifier.py",
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/vqc/vqc_metadata.json",
+        "ml/models/_archive/artifact_integrity_report.json",
+        "ml/training/train_vqc.py",
+        "backend/tests/test_api_phase10.py",
+        "backend/tests/test_vqc_pipeline.py"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": [
+        "ml/models/vqc/vqc_weights.npz"
+      ]
+    },
+    {
+      "rel": "ml/models/xgboost_best.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "size": 199969,
+      "in_archive": false,
+      "basename": "xgboost_best.json",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/xgboost_metadata.json",
+        "ml/models/_archive/README.md",
+        "backend/main.py",
+        "backend/tests/test_api_phase7.py",
+        "backend/tests/test_api_phase9.py",
+        "backend/tests/test_canonical_paths.py"
+      ],
+      "role": "runtime_canonical",
+      "duplicate_of": [
+        "ml/models/xgboost_best.json"
+      ]
+    },
+    {
+      "rel": "ml/models/xgboost_metadata.json",
+      "sha256": "c37499693d1786f283bab566650f084e7fe2e8af0eeecffa84a936d859390c57",
+      "size": 2083,
+      "in_archive": false,
+      "basename": "xgboost_metadata.json",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/generate_registry.py",
+        "ml/models/_archive/README.md",
+        "ml/training/train_xgboost.py",
+        "backend/main.py"
+      ],
+      "role": "metadata_or_registry",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo11n_best.pt",
+      "sha256": "b2780ea3df84011b38a5dff27c2712ee210da3b46ecebf8c455ccb3e53e1fe44",
+      "size": 5469722,
+      "in_archive": false,
+      "basename": "yolo11n_best.pt",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/_archive/README.md",
+        "ml/models/_archive/yolo_training/training_metadata.json",
+        "backend/tests/test_real_yolo_upgrade.py",
+        "scripts/compare_yolo_baselines.py",
+        "scripts/evaluate_yolo11.py",
+        "scripts/forensic_model_audit.py",
+        "scripts/train_real_yolo11.py",
+        "scripts/train_yolo11.py"
+      ],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo11n_pretrained.pt",
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+      "size": 5613764,
+      "in_archive": false,
+      "basename": "yolo11n_pretrained.pt",
+      "code_mentions": [
+        "ml/models/canonical_paths.py",
+        "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+        "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json",
+        "ml/models/_archive/README.md",
+        "ml/models/_archive/yolo_training/training_metadata.json",
+        "ml/training/train_yolo.py",
+        "ml/training/train_yolo_processed.py",
+        "ml/training/train_yolo_retrain_v2.py",
+        "scripts/train_real_yolo11.py",
+        "scripts/train_yolo11.py"
+      ],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+      "sha256": "34d75feb99f7bc6adba13f9a635da80fbe53e386ef8732daa677666d6f73a916",
+      "size": 17191,
+      "in_archive": false,
+      "basename": "TRAINING_EVAL_REPORT.json",
+      "code_mentions": [
+        "ml/models/efficientnet_processed_training/PROMOTION.json",
+        "ml/models/unet_processed_training/PROMOTION.json",
+        "ml/training/train_efficientnet.py",
+        "ml/training/train_unet.py",
+        "ml/training/train_yolo_processed.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+      "sha256": "34d75feb99f7bc6adba13f9a635da80fbe53e386ef8732daa677666d6f73a916",
+      "size": 17191,
+      "in_archive": false,
+      "basename": "TRAINING_EVAL_REPORT.json",
+      "code_mentions": [
+        "ml/models/efficientnet_processed_training/PROMOTION.json",
+        "ml/models/unet_processed_training/PROMOTION.json",
+        "ml/training/train_efficientnet.py",
+        "ml/training/train_unet.py",
+        "ml/training/train_yolo_processed.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_processed_training/run_processed/weights/best.pt",
+      "sha256": "5afe49cbbf2dd03abadfd1e089d321b95000b47b270f6ad7482b94fc79a78a48",
+      "size": 5470810,
+      "in_archive": false,
+      "basename": "best.pt",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/vision/efficientnetv2_metadata.json",
+        "ml/models/vision/unet_metadata.json",
+        "ml/models/vision/yolo11_metadata.json",
+        "ml/models/vision/yolo_baseline_vs_candidate.json",
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+        "ml/models/yolo_retrain_v2/FOUR_WAY_VERIFY.json",
+        "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json"
+      ],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_processed_training/run_processed/weights/last.pt",
+      "sha256": "6274b4525be623b49960a8f692bd860362969c549159ed35c45f5a3321e72bf2",
+      "size": 5470810,
+      "in_archive": false,
+      "basename": "last.pt",
+      "code_mentions": [
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/training/train_yolo_processed.py",
+        "ml/training/train_yolo_retrain_v2.py",
+        "scripts/train_real_yolo11.py"
+      ],
+      "role": "other",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_real_training/run_real_wound/weights/best.pt",
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "size": 5470810,
+      "in_archive": false,
+      "basename": "best.pt",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/vision/efficientnetv2_metadata.json",
+        "ml/models/vision/unet_metadata.json",
+        "ml/models/vision/yolo11_metadata.json",
+        "ml/models/vision/yolo_baseline_vs_candidate.json",
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+        "ml/models/yolo_retrain_v2/FOUR_WAY_VERIFY.json",
+        "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json"
+      ],
+      "role": "valid_backup",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_real_training/run_real_wound/weights/last.pt",
+      "sha256": "140037ee21294847af40fa6050da0f20c13b424c6d586b6a6c9ead6adfc759db",
+      "size": 5470810,
+      "in_archive": false,
+      "basename": "last.pt",
+      "code_mentions": [
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/training/train_yolo_processed.py",
+        "ml/training/train_yolo_retrain_v2.py",
+        "scripts/train_real_yolo11.py"
+      ],
+      "role": "other",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+      "sha256": "9cc46c09b4031241db9c8bb333015f9c6c55a473329b533a1366d7f28baa8795",
+      "size": 1074,
+      "in_archive": false,
+      "basename": "FINAL_STATUS.json",
+      "code_mentions": [],
+      "role": "other",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_retrain_v2/FOUR_WAY_VERIFY.json",
+      "sha256": "9cef7cdb775e5c73c49e85cbd428265c5a4d5e76d2601845bf74f49510f55998",
+      "size": 2326,
+      "in_archive": false,
+      "basename": "FOUR_WAY_VERIFY.json",
+      "code_mentions": [],
+      "role": "other",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json",
+      "sha256": "04112cc96adbc8d987ab9db9a05e36c4c1320d90fac7fb2cdd659372f1b00a12",
+      "size": 57408,
+      "in_archive": false,
+      "basename": "RETRAIN_V2_REPORT.json",
+      "code_mentions": [
+        "ml/models/vision/yolo11_metadata.json",
+        "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+        "ml/training/train_yolo_retrain_v2.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_retrain_v2/run_v2/weights/best.pt",
+      "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "size": 5470234,
+      "in_archive": false,
+      "basename": "best.pt",
+      "code_mentions": [
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/models/vision/efficientnetv2_metadata.json",
+        "ml/models/vision/unet_metadata.json",
+        "ml/models/vision/yolo11_metadata.json",
+        "ml/models/vision/yolo_baseline_vs_candidate.json",
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+        "ml/models/yolo_retrain_v2/FOUR_WAY_VERIFY.json",
+        "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json"
+      ],
+      "role": "byte_duplicate_of_canonical",
+      "duplicate_of": [
+        "ml/models/vision/yolo11_injury_best.pt"
+      ]
+    },
+    {
+      "rel": "ml/models/yolo_retrain_v2/run_v2/weights/last.pt",
+      "sha256": "79c7f154007d320db043cfa889df4a6392ac58a2a15bbaf1067839df22bbbf25",
+      "size": 5470234,
+      "in_archive": false,
+      "basename": "last.pt",
+      "code_mentions": [
+        "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+        "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+        "ml/training/train_yolo_processed.py",
+        "ml/training/train_yolo_retrain_v2.py",
+        "scripts/train_real_yolo11.py"
+      ],
+      "role": "other",
+      "duplicate_of": []
+    },
+    {
+      "rel": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+      "sha256": "88ae2d554cc883d5a525c9dbab46b7cbd106850a6cd70c15370d9a9591443a64",
+      "size": 3402,
+      "in_archive": false,
+      "basename": "THRESHOLD_SWEEP_REPORT.json",
+      "code_mentions": [
+        "ml/evaluation/verify_yolo_threshold.py",
+        "ml/evaluation/yolo_threshold_sweep.py",
+        "ml/models/canonical_manifest.json",
+        "ml/models/canonical_paths.py",
+        "ml/models/model_registry.json",
+        "ml/vision/yolo_wrapper.py",
+        "backend/config.py"
+      ],
+      "role": "evaluation_or_training_report",
+      "duplicate_of": []
+    }
+  ],
+  "hash_groups": {
+    "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b": [
+      "ml/models/_archive/classical/pca.pkl",
+      "ml/models/_archive/pca.pkl"
+    ],
+    "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7": [
+      "ml/models/_archive/classical/scaler.pkl",
+      "ml/models/_archive/scaler.pkl"
+    ],
+    "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643": [
+      "ml/models/_archive/classical/xgboost_multimodal.json",
+      "ml/models/_archive/xgboost_multimodal_best.json",
+      "ml/models/xgboost_best.json"
+    ],
+    "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f": [
+      "ml/models/_archive/vision/yolo11_merged_candidate.pt",
+      "ml/models/_archive/yolo11_real_wound_best.pt",
+      "ml/models/_archive/yolo_candidate_training/run_merged/weights/best.pt",
+      "ml/models/vision/yolo11_injury_best.pt.pre_retrain_v2_backup"
+    ],
+    "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879": [
+      "ml/models/vision/yolo11_injury_best.pt",
+      "ml/models/yolo_retrain_v2/run_v2/weights/best.pt"
+    ],
+    "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63": [
+      "ml/models/vision/yolo11_injury_best.pt.pre_retrain_backup",
+      "ml/models/yolo_real_training/run_real_wound/weights/best.pt"
+    ],
+    "34d75feb99f7bc6adba13f9a635da80fbe53e386ef8732daa677666d6f73a916": [
+      "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+      "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json"
+    ]
+  },
+  "unused_duplicate_candidates": [],
+  "eval_artifacts": {
+    "held_out": "data/results/canonical_held_out_evaluation.json",
+    "results": "data/results/evaluation_results.json",
+    "compare": "data/results/vqc_xgb_comparison.json",
+    "yolo_threshold": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json"
+  }
+}

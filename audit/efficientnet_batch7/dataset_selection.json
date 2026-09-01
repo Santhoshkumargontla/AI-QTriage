@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "strategy": "Class-mapped merge of Roboflow MedWound and WACV WSNet cutaneous injury sets",
+  "mapped_classes": {
+    "cut": "Cut",
+    "laceration": "Cut",
+    "bruise": "Bruise",
+    "contusion": "Bruise",
+    "edema": "Swelling",
+    "swelling": "Swelling",
+    "other": "Other"
+  },
+  "status": "PASS"
+}

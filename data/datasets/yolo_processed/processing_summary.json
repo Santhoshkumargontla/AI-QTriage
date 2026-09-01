@@ -1,0 +1,95 @@
+{
+  "created_utc": "2026-08-28T15:32:27.718193+00:00",
+  "did_not_train": true,
+  "did_not_modify_raw_sources": true,
+  "did_not_fabricate_images": true,
+  "did_not_oversample_minority_classes": true,
+  "provenance": "SYNTHETIC",
+  "class_mapping": {
+    "0": "cut",
+    "1": "bruise",
+    "2": "wound",
+    "dropped_not_remapped": [
+      "abrasion",
+      "blister",
+      "burn",
+      "laceration",
+      "other",
+      "swelling"
+    ],
+    "silent_remap": false
+  },
+  "final_unique_image_count": 124,
+  "train_val_test_counts": {
+    "test": 18,
+    "train": 87,
+    "val": 19
+  },
+  "boxes_per_class": {
+    "bruise": 63,
+    "cut": 61
+  },
+  "images_per_class": {
+    "bruise": 63,
+    "cut": 61
+  },
+  "boxes_per_class_by_split": {
+    "test": {
+      "bruise": 10,
+      "cut": 8
+    },
+    "train": {
+      "bruise": 40,
+      "cut": 47
+    },
+    "val": {
+      "bruise": 13,
+      "cut": 6
+    }
+  },
+  "images_per_class_by_split": {
+    "test": {
+      "bruise": 10,
+      "cut": 8
+    },
+    "train": {
+      "bruise": 40,
+      "cut": 47
+    },
+    "val": {
+      "bruise": 13,
+      "cut": 6
+    }
+  },
+  "duplicate_removal": {
+    "exact_pixel_duplicate": 37,
+    "exact_byte_duplicate": 0,
+    "duplicate_stem": 0,
+    "overlapping_same_class_boxes_merged_away": 0
+  },
+  "exclusions": {
+    "no_supported_class_boxes": 148,
+    "exact_pixel_duplicate": 37,
+    "unsupported_source_class": 36
+  },
+  "dropped_unsupported_class_box_or_image_counts": {
+    "abrasion": 72,
+    "laceration": 76,
+    "swelling": 36
+  },
+  "split_overlap_pixel": [],
+  "split_overlap_stem": [],
+  "remaining_imbalance": {
+    "box_ratio_max_over_min": null,
+    "classes_with_zero_boxes": [
+      "wound"
+    ],
+    "note": "Minority classes were not duplicated. wound is empty if no source image was originally labeled wound (swelling/abrasion/laceration were dropped)."
+  },
+  "paths": {
+    "root": "data/datasets/yolo_processed",
+    "yaml": "data/datasets/yolo_processed/data.yaml",
+    "manifest": "data/datasets/yolo_processed/manifest.csv",
+    "exclusions": "data/datasets/yolo_processed/exclusions.csv"
+  }
+}

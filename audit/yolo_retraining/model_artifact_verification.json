@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:17:24.939494+00:00",
+  "file_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_real_retrained.pt",
+  "file_size_bytes": 5470840,
+  "sha256": "080817b4531bbc0d57af7ff2c08d48f353aa42ace53c710662eaa28dce0fd837",
+  "hashes_different": true,
+  "status": "PASS"
+}

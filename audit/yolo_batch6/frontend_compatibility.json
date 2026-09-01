@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:54:20.247714+00:00",
+  "bounding_box_schema": "[x1, y1, x2, y2]",
+  "coordinate_scaling": "display_x = orig_x * display_w / orig_w",
+  "rendering_status": "PASS",
+  "status": "PASS"
+}

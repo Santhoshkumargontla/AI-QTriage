@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-08-29T14:27:51.093887+00:00",
+  "out_root": "data/datasets/yolo_fracture_xray_v1",
+  "yaml": "data/datasets/yolo_fracture_xray_v1/data.yaml",
+  "names": [
+    "elbow positive",
+    "fingers positive",
+    "forearm fracture",
+    "humerus fracture",
+    "humerus",
+    "shoulder fracture",
+    "wrist positive"
+  ],
+  "split_image_counts": {
+    "train": 3631,
+    "val": 348,
+    "test": 169
+  },
+  "box_counts_by_class_id": {
+    "0": 385,
+    "1": 606,
+    "2": 373,
+    "3": 3,
+    "4": 362,
+    "5": 397,
+    "6": 262
+  },
+  "license": "CC BY 4.0 (Roboflow / pkdarabi Bone Fracture Detection)",
+  "modality": "XRAY_NOT_SKIN_PHOTO",
+  "notes": "Polygons converted to AABB. Do not promote into skin YOLO canonical."
+}

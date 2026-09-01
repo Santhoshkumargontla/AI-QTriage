@@ -1,0 +1,77 @@
+{
+  "created_utc": "2026-08-29T02:14:16.298360+00:00",
+  "did_not_fabricate_images": true,
+  "did_not_remap_dropped_classes": true,
+  "silent_remap": false,
+  "source": "yolo_processed + existing negative files",
+  "negatives_added": [
+    {
+      "sample_id": "negative__blank_skin",
+      "split": "val",
+      "dest_image": "data/datasets/yolo_retrain_v2/images/val/negative__blank_skin.jpg",
+      "dest_label": "data/datasets/yolo_retrain_v2/labels/val/negative__blank_skin.txt",
+      "source_dataset": "yolo_injury_negative",
+      "source_path": "data/datasets/yolo_injury/blank_skin.jpg",
+      "kept_classes": "",
+      "boxes_out": "0",
+      "retrain_v2": "existing_negative_empty_label",
+      "provenance": "SYNTHETIC"
+    },
+    {
+      "sample_id": "negative__dummy_test",
+      "split": "test",
+      "dest_image": "data/datasets/yolo_retrain_v2/images/test/negative__dummy_test.jpg",
+      "dest_label": "data/datasets/yolo_retrain_v2/labels/test/negative__dummy_test.txt",
+      "source_dataset": "yolo_injury_negative",
+      "source_path": "data/datasets/yolo_injury/dummy_test.jpg",
+      "kept_classes": "",
+      "boxes_out": "0",
+      "retrain_v2": "existing_negative_empty_label",
+      "provenance": "SYNTHETIC"
+    }
+  ],
+  "empty_label_images_by_split": {
+    "val": 1,
+    "test": 1
+  },
+  "boxes_per_class_by_split": {
+    "train": {
+      "bruise": 40,
+      "cut": 47
+    },
+    "val": {
+      "bruise": 13,
+      "cut": 6
+    },
+    "test": {
+      "bruise": 10,
+      "cut": 8
+    }
+  },
+  "images_per_class_by_split": {
+    "train": {
+      "bruise": 40,
+      "cut": 47
+    },
+    "val": {
+      "bruise": 13,
+      "cut": 6
+    },
+    "test": {
+      "bruise": 10,
+      "cut": 8
+    }
+  },
+  "image_counts": {
+    "train": 87,
+    "val": 20,
+    "test": 19
+  },
+  "known_limitation": "No legitimate original wound boxes exist in-repo after dropping swelling/abrasion/laceration remaps. cut/bruise remain SYNTHETIC drawings plus two public samples.",
+  "yaml": "data/datasets/yolo_retrain_v2/data.yaml",
+  "leakage": {
+    "exact_file_hash_across_splits": {},
+    "stem_across_splits": {},
+    "note": "Subject IDs are NOT_AVAILABLE on synthetic filenames. Split membership copied from yolo_processed."
+  }
+}

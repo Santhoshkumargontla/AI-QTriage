@@ -1,0 +1,20 @@
+{
+  "case_id": "e9462285-0958-4d05-81ff-a2a57b52a424",
+  "sha": "ecc73bbb90b09970606d8bf3419f32ed840e5abfdfbe8010a1939655fbb8a41f",
+  "mongo_sha": "ecc73bbb90b09970606d8bf3419f32ed840e5abfdfbe8010a1939655fbb8a41f",
+  "api": {
+    "yolo_finding": null,
+    "yolo_confidence": null,
+    "yolo_bounding_box": null,
+    "classifier_finding": null,
+    "classifier_is_confident": false,
+    "classifier_abstention_class": null,
+    "segmentation_reliable": true,
+    "gradcam_explanation_status": "WITHHELD",
+    "source_type": "uploaded",
+    "image_sha256": "ecc73bbb90b09970606d8bf3419f32ed840e5abfdfbe8010a1939655fbb8a41f"
+  },
+  "xgb": "HIGH",
+  "vqc": false,
+  "clinical": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+}

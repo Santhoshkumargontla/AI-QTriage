@@ -1,0 +1,464 @@
+{
+  "XGBoost Multimodal": {
+    "model_name": "XGBoost Multimodal",
+    "version": "v1.3.0",
+    "status": "TRAINED_AND_EVALUATED",
+    "canonical_path": "ml/models/xgboost_best.json",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+    "artifact_size_mb": 0.19,
+    "file_size": 199969,
+    "schema_version": "v1.3.0",
+    "classes": [
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "training_status": "TRAINED_AND_EVALUATED",
+    "dataset_type": "synthetic_multimodal_fusion",
+    "training_dataset": "synthetic_multimodal_fusion",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-28T13:56:37.028776+00:00",
+    "sample_count": 140,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_xgboost.py",
+    "metrics": {
+      "genuinely_paired_clinical_samples": 0,
+      "synthetic_multimodal_fusion_samples": 200,
+      "train_samples": 140,
+      "val_samples": 30,
+      "test_samples": 30,
+      "correct_predictions": "25 / 30",
+      "overall_accuracy": 0.833333,
+      "macro_precision": 0.822222,
+      "macro_recall": 0.769281,
+      "macro_f1": 0.78502,
+      "mcc": 0.702692,
+      "high_class_precision": 0.666667,
+      "high_class_recall": 0.666667,
+      "high_class_f1": 0.666667,
+      "high_class_support": 3,
+      "brier_score": 0.304532,
+      "ece": 0.118284,
+      "confusion_matrix": [
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "feature_importance": [
+        0.0,
+        0.0674,
+        0.0492,
+        0.0298,
+        0.0268,
+        0.039,
+        0.1004,
+        0.2317,
+        0.0515,
+        0.0
+      ]
+    },
+    "notes": "23-feature synthetic fusion model. READY_FOR_RESEARCH_DEMO, not clinical.",
+    "training_was_real": false
+  },
+  "Experimental 4-Qubit VQC": {
+    "model_name": "Experimental 4-Qubit VQC",
+    "version": "v1.3.0",
+    "status": "EXPERIMENTAL",
+    "canonical_path": "ml/models/vqc/vqc_weights.npz",
+    "artifact_path": "ml/models/vqc/vqc_weights.npz",
+    "artifact_sha256": "7d8febd0256dfcad793cbf1a1a2303d746c39e03ed4513536eb574dea73e027d",
+    "artifact_size_mb": 0.0,
+    "file_size": 1086,
+    "schema_version": "v1.3.0",
+    "classes": [
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "training_status": "EXPERIMENTAL",
+    "dataset_type": "synthetic_multimodal_fusion",
+    "training_dataset": "synthetic_multimodal_fusion",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-28T13:42:19.528150+00:00",
+    "sample_count": 24,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_vqc.py",
+    "metrics": {
+      "train_samples": 24,
+      "test_samples": 30,
+      "epochs": 1,
+      "circuit": "AngleEmbedding + StronglyEntanglingLayers (matches VQCClassifier)",
+      "backend": "PennyLane default.qubit (classical simulator)",
+      "correct_predictions": "11 / 30",
+      "accuracy": 0.366667,
+      "macro_f1": 0.25704,
+      "mcc": 0.0,
+      "brier_score": 0.668338,
+      "ece": 0.016794,
+      "confusion_matrix": [
+        [
+          2,
+          4,
+          0
+        ],
+        [
+          7,
+          9,
+          0
+        ],
+        [
+          6,
+          2,
+          0
+        ]
+      ],
+      "inference_latency_ms_per_sample": 3.8,
+      "metrics_source": "held_out_test_via_VQCClassifier.predict",
+      "trained_at": "2026-08-28T13:42:19.528150+00:00"
+    },
+    "notes": "EXPERIMENTAL PennyLane default.qubit simulator. Training circuit equals inference circuit. Not production-ready.",
+    "training_was_real": false
+  },
+  "EfficientNetV2 Classification": {
+    "model_name": "EfficientNetV2 Classification",
+    "version": "v1.3.0",
+    "status": "NOT_TRUSTWORTHY",
+    "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "artifact_sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+    "artifact_size_mb": 77.84,
+    "file_size": 81621023,
+    "schema_version": "v1.3.0",
+    "classes": [
+      "cut",
+      "bruise",
+      "swelling"
+    ],
+    "training_status": "NOT_TRUSTWORTHY",
+    "dataset_type": "public_labeled_images",
+    "training_dataset": "public_wound_dataset",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-28T13:24:36.755402+00:00",
+    "sample_count": 140,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_efficientnet.py",
+    "metrics": {
+      "dataset_name": "public_wound_dataset",
+      "dataset_type": "public_labeled_images",
+      "classes": [
+        "cut",
+        "bruise",
+        "swelling"
+      ],
+      "train_samples": 140,
+      "val_samples": 30,
+      "test_samples": 30,
+      "epochs": 8,
+      "optimizer": "Adam",
+      "loss": "CrossEntropyLoss_class_weighted",
+      "backbone": "tf_efficientnetv2_s.in21k_ft_in1k pretrained, classifier-head only",
+      "device": "cpu",
+      "val_best_accuracy": 1.0,
+      "test": {
+        "n": 30,
+        "accuracy": 1.0,
+        "macro_precision": 1.0,
+        "macro_recall": 1.0,
+        "macro_f1": 1.0,
+        "confusion_matrix": [
+          [
+            5,
+            0,
+            0
+          ],
+          [
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            20
+          ]
+        ]
+      },
+      "uniform_image_probes": {
+        "gray": {
+          "cut": 0.0376,
+          "bruise": 0.0,
+          "swelling": 0.9624,
+          "max": 0.9624,
+          "argmax": "swelling"
+        },
+        "black": {
+          "cut": 0.0,
+          "bruise": 0.0,
+          "swelling": 1.0,
+          "max": 1.0,
+          "argmax": "swelling"
+        },
+        "white": {
+          "cut": 0.0,
+          "bruise": 0.0,
+          "swelling": 1.0,
+          "max": 1.0,
+          "argmax": "swelling"
+        }
+      },
+      "blank_image_collapsed": true,
+      "training_history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.72217,
+          "val_accuracy": 0.9
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.294603,
+          "val_accuracy": 1.0
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.611706,
+          "val_accuracy": 1.0
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.166797,
+          "val_accuracy": 1.0
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.026934,
+          "val_accuracy": 1.0
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.054903,
+          "val_accuracy": 1.0
+        },
+        {
+          "epoch": 7,
+          "train_loss": 0.078833,
+          "val_accuracy": 1.0
+        },
+        {
+          "epoch": 8,
+          "train_loss": 0.005725,
+          "val_accuracy": 1.0
+        }
+      ],
+      "metrics_source": "computed_from_held_out_predictions",
+      "trained_at": "2026-08-28T13:24:36.755402+00:00"
+    },
+    "notes": "Status and metrics come from efficientnetv2_metadata.json after real training.",
+    "training_was_real": true
+  },
+  "ResNet34-UNet Segmentation": {
+    "model_name": "ResNet34-UNet Segmentation",
+    "version": "v1.3.0",
+    "status": "MODEL_OUTPUT_NOT_TRUSTWORTHY",
+    "canonical_path": "ml/models/vision/unet_injury_best.pt",
+    "artifact_path": "ml/models/vision/unet_injury_best.pt",
+    "artifact_sha256": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+    "artifact_size_mb": 93.38,
+    "file_size": 97918031,
+    "schema_version": "v1.3.0",
+    "classes": [
+      "wound_mask"
+    ],
+    "training_status": "MODEL_OUTPUT_NOT_TRUSTWORTHY",
+    "dataset_type": "public_image_mask_pairs",
+    "training_dataset": "public_wound_dataset",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-28T13:29:55.409626+00:00",
+    "sample_count": 140,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_unet.py",
+    "metrics": {
+      "dataset_name": "public_wound_dataset",
+      "dataset_type": "public_image_mask_pairs",
+      "train_samples": 140,
+      "val_samples": 30,
+      "test_samples": 30,
+      "epochs": 6,
+      "loss": "BCE_plus_Dice",
+      "encoder": "resnet34 imagenet frozen",
+      "device": "cpu",
+      "val_best_dice": 0.982192,
+      "test": {
+        "n": 30,
+        "mean_dice": 0.982084,
+        "mean_iou": 0.965434,
+        "precision": 0.986665,
+        "recall": 0.977954,
+        "mean_false_positive_area": 0.000901
+      },
+      "uniform_image_probes": {
+        "gray": {
+          "mean_prob": 0.1398,
+          "max_prob": 0.921,
+          "positive_ratio": 0.1575
+        },
+        "black": {
+          "mean_prob": 0.9972,
+          "max_prob": 1.0,
+          "positive_ratio": 0.9964
+        },
+        "white": {
+          "mean_prob": 0.997,
+          "max_prob": 1.0,
+          "positive_ratio": 0.9995
+        }
+      },
+      "blank_mask_untrustworthy": true,
+      "training_history": [
+        {
+          "epoch": 1,
+          "train_loss": 0.728011,
+          "val_dice": 0.854224
+        },
+        {
+          "epoch": 2,
+          "train_loss": 0.216808,
+          "val_dice": 0.970059
+        },
+        {
+          "epoch": 3,
+          "train_loss": 0.109109,
+          "val_dice": 0.981797
+        },
+        {
+          "epoch": 4,
+          "train_loss": 0.05085,
+          "val_dice": 0.981982
+        },
+        {
+          "epoch": 5,
+          "train_loss": 0.073313,
+          "val_dice": 0.943134
+        },
+        {
+          "epoch": 6,
+          "train_loss": 0.054977,
+          "val_dice": 0.982192
+        }
+      ],
+      "metrics_source": "computed_from_held_out_predictions",
+      "trained_at": "2026-08-28T13:29:55.409626+00:00"
+    },
+    "notes": "Status and metrics come from unet_metadata.json after real training.",
+    "training_was_real": true
+  },
+  "YOLO11 Detection": {
+    "model_name": "YOLO11 Detection",
+    "version": "v1.3.0",
+    "status": "TRAINED_AND_EVALUATED",
+    "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+    "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+    "artifact_sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+    "artifact_size_mb": 5.22,
+    "file_size": 5468506,
+    "schema_version": "v1.3.0",
+    "classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "training_status": "TRAINED_AND_EVALUATED",
+    "dataset_type": "yolo_merged_or_real_wound",
+    "training_dataset": "yolo_merged (real_wound + yolo_injury remapped)",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-28T13:56:37.177410+00:00",
+    "sample_count": null,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_yolo.py",
+    "metrics": {
+      "dataset_name": "yolo_merged (real_wound + yolo_injury remapped)",
+      "dataset_stats": {
+        "train": {
+          "images": 83,
+          "boxes": {
+            "wound": 288,
+            "bruise": 12,
+            "cut": 15
+          },
+          "images_per_class": {
+            "wound": 56,
+            "bruise": 12,
+            "cut": 15
+          }
+        },
+        "val": {
+          "images": 17,
+          "boxes": {
+            "wound": 70,
+            "cut": 2,
+            "bruise": 1
+          },
+          "images_per_class": {
+            "wound": 14,
+            "cut": 2,
+            "bruise": 1
+          }
+        },
+        "test": {
+          "images": 23,
+          "boxes": {
+            "cut": 5,
+            "bruise": 4,
+            "wound": 65
+          },
+          "images_per_class": {
+            "cut": 5,
+            "bruise": 4,
+            "wound": 14
+          }
+        }
+      },
+      "precision": 0.8224310703639396,
+      "recall": 0.5227071713511425,
+      "mAP50": 0.8195661917669056,
+      "mAP50-95": 0.6790820415149159,
+      "metrics_source": "ultralytics.val on merged val split",
+      "selected_checkpoint": "candidate"
+    },
+    "notes": "Canonical runtime checkpoint. abrasion/laceration/swelling are UNTRAINED_CLASS.",
+    "training_was_real": true
+  },
+  "Sensor Motion Event Classifier": {
+    "model_name": "Sensor Motion Event Classifier",
+    "version": "v1.2.0",
+    "status": "MODEL_LOADS",
+    "canonical_path": "ml/models/sensor_motion_best.json",
+    "artifact_path": "ml/models/sensor_motion_best.json",
+    "artifact_sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+    "artifact_size_mb": 0.13,
+    "file_size": 135603,
+    "schema_version": "v1.2.0",
+    "classes": [
+      "normal_activity",
+      "fall",
+      "impact"
+    ],
+    "training_status": "MODEL_LOADS",
+    "dataset_type": "synthetic_or_public_motion",
+    "training_dataset": "synthetic_or_public_motion",
+    "evaluation_status": "not_evaluated_in_metadata",
+    "last_evaluated": "2026-08-28T13:56:37.177869+00:00",
+    "sample_count": null,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_sensor_model.py",
+    "metrics": {},
+    "notes": "Called from sensor_processor. Missing features are reported, never invented.",
+    "training_was_real": false
+  }
+}

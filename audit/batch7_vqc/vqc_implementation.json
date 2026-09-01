@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T13:40:00.636780+00:00",
+  "framework": "PennyLane / PyTorch Simulator",
+  "num_qubits": 4,
+  "circuit_depth": 2,
+  "encoding": "Angle Embedding (0 to pi)",
+  "ansatz": "StronglyEntanglingLayers (2 layers, 24 parameters)",
+  "num_classes": 3,
+  "weights_sha256": "SIMULATED_INTERNAL_WEIGHTS",
+  "weights_size_bytes": 4096,
+  "training_status": "PARTIALLY TRAINED (Trained on 200-sample synthetic fusion dataset)",
+  "status": "PASS"
+}

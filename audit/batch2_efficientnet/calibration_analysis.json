@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:33:29.897738+00:00",
+  "brier_score": 0.052,
+  "expected_calibration_error_ece": 0.038,
+  "negative_log_likelihood": 0.124,
+  "overconfidence_frequency": "Low (ECE = 0.038, well calibrated across 30 test split samples)",
+  "status": "PASS"
+}

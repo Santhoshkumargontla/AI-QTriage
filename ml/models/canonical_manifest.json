@@ -1,0 +1,120 @@
+{
+  "source": "ml.models.canonical_paths.RUNTIME_MODELS + live SHA-256",
+  "generated_at": "2026-08-30T10:54:47.012914+00:00",
+  "models": [
+    {
+      "model_name": "YOLO11 Detection",
+      "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+      "sha256": "4610d5f05c6d368bbbdd166b7800e2d1bd99dc61993f54191ab5d031f5a0003a",
+      "version": "roboflow-v1",
+      "classes": [
+        "cut",
+        "bruise",
+        "abrasion",
+        "burn",
+        "wound",
+        "laceration"
+      ],
+      "training_status": "TRAINED_AND_EVALUATED",
+      "evaluation_artifact": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+      "readiness_status": "INFERENCE_EXECUTES",
+      "wrapper": "ml.vision.yolo_wrapper.YOLO11Detector",
+      "used_by_runtime": true
+    },
+    {
+      "model_name": "EfficientNetV2 Classification",
+      "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "version": "kaggle-v1",
+      "classes": [
+        "abrasion",
+        "bruise",
+        "burn",
+        "cut",
+        "laceration",
+        "wound",
+        "normal",
+        "ood_reject"
+      ],
+      "training_status": "READY_FOR_RESEARCH_DEMO",
+      "evaluation_artifact": "ml/models/vision/efficientnetv2_metadata.json",
+      "readiness_status": "READY_FOR_RESEARCH_DEMO",
+      "wrapper": "ml.vision.efficientnet_wrapper.EfficientNetV2Classifier",
+      "used_by_runtime": true
+    },
+    {
+      "model_name": "ResNet34-UNet Segmentation",
+      "canonical_path": "ml/models/vision/unet_injury_best.pt",
+      "sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "version": "deduped-subject-v1",
+      "classes": [
+        "wound_mask"
+      ],
+      "training_status": "READY_FOR_RESEARCH_DEMO",
+      "evaluation_artifact": "ml/models/vision/unet_metadata.json",
+      "readiness_status": "READY_FOR_RESEARCH_DEMO",
+      "wrapper": "ml.vision.unet_wrapper.UNetSegmenter",
+      "used_by_runtime": true
+    },
+    {
+      "model_name": "XGBoost Multimodal",
+      "canonical_path": "ml/models/xgboost_best.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "version": "v1.2.0",
+      "classes": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "training_status": "TRAINED",
+      "evaluation_artifact": "data/results/canonical_held_out_evaluation.json",
+      "readiness_status": "TRAINED",
+      "wrapper": "ml.classifiers.xgboost_classifier.XGBoostClassifier",
+      "used_by_runtime": true
+    },
+    {
+      "model_name": "Experimental 4-Qubit VQC",
+      "canonical_path": "ml/models/vqc/vqc_weights.npz",
+      "sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "version": "v1.4.0",
+      "classes": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "training_status": "EXPERIMENTAL_ONLY",
+      "evaluation_artifact": "data/results/canonical_held_out_evaluation.json",
+      "readiness_status": "EXPERIMENTAL_ONLY",
+      "wrapper": "ml.classifiers.vqc_classifier.VQCClassifier",
+      "used_by_runtime": true,
+      "sidecars": [
+        {
+          "path": "ml/models/vqc/scaler.pkl",
+          "sha256": "506c818dee106b512fd861642def1d388801f1efc9fe14312cfdd67634d6e2d9"
+        },
+        {
+          "path": "ml/models/vqc/pca.pkl",
+          "sha256": "16caccddd838bc045e9180cf0de116a0d904541fb516a4bc618ab8011ac12a50"
+        }
+      ]
+    },
+    {
+      "model_name": "Sensor Motion Event Classifier",
+      "canonical_path": "ml/models/sensor_motion_best.json",
+      "sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d",
+      "version": "v2.0.0-real",
+      "classes": [
+        "normal_activity",
+        "fall",
+        "impact"
+      ],
+      "training_status": "TRAINED",
+      "evaluation_artifact": "ml/models/sensor_metadata.json",
+      "readiness_status": "TRAINED",
+      "wrapper": "ml.classifiers.sensor_classifier.SensorClassifier",
+      "used_by_runtime": true,
+      "sidecar_path": "ml/models/sensor_scaler.pkl",
+      "sidecar_sha256": "43ab14c958dd887cc1a23be87cb056e82b646ee42c7363bb438add5891c09aef"
+    }
+  ]
+}

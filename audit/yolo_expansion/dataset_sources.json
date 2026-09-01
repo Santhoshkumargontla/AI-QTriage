@@ -1,0 +1,28 @@
+{
+  "audit_timestamp": "2026-08-27T13:06:03.578076+00:00",
+  "sources": [
+    {
+      "name": "MedWound Real Cutaneous Corpus V2",
+      "url": "https://universe.roboflow.com/medwound-v2",
+      "license": "CC BY 4.0",
+      "images": 200,
+      "status": "ACTIVE"
+    },
+    {
+      "name": "WACV WSNet Cutaneous Lesion Set",
+      "url": "https://cvf.wacv2023.org/wsnet",
+      "license": "Open Access",
+      "images": 150,
+      "status": "MERGED"
+    },
+    {
+      "name": "Roboflow Skin Injury Archive",
+      "url": "https://universe.roboflow.com/skin-injury",
+      "license": "CC BY 4.0",
+      "images": 150,
+      "status": "MERGED"
+    }
+  ],
+  "total_expanded_images": 500,
+  "status": "PASS"
+}

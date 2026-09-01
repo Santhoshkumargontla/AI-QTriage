@@ -1,0 +1,202 @@
+{
+  "evaluation": {
+    "status": "evaluated",
+    "timestamp": "2026-08-29T05:40:25.822563+00:00",
+    "test_sample_count": 30,
+    "disclaimer": "SYNTHETIC held-out split. VQC is EXPERIMENTAL_ONLY.",
+    "quantum_simulator_notice": "PennyLane default.qubit is a classical simulator. No quantum advantage claimed.",
+    "metrics_comparison": {
+      "xgb_correct": "25 / 30",
+      "vqc_correct": "16 / 30",
+      "test_sample_count": 30,
+      "xgb_accuracy": 0.833333,
+      "vqc_accuracy": 0.533333,
+      "xgb_precision": 0.822222,
+      "vqc_precision": 0.466184,
+      "xgb_recall": 0.769281,
+      "vqc_recall": 0.43268,
+      "xgb_macro_f1": 0.78502,
+      "vqc_macro_f1": 0.423016,
+      "xgb_mcc": 0.702692,
+      "vqc_mcc": 0.095978,
+      "xgb_brier": 0.304532,
+      "vqc_brier": 0.512306,
+      "xgb_ece": 0.118284,
+      "vqc_ece": 0.136455,
+      "xgb_confusion_matrix": [
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "vqc_confusion_matrix": [
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          13,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ]
+    },
+    "recommendation": "DISABLE_FROM_MAIN_DECISION",
+    "used_in_main_decision": false,
+    "vqc_outperforms_xgboost": false,
+    "ablation_study": [],
+    "metrics_source": "live_held_out_predictions",
+    "class_order": [
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "class_indices": [
+      0,
+      1,
+      2
+    ],
+    "leakage_audit": {
+      "train_samples": 140,
+      "val_samples": 30,
+      "test_samples": 30,
+      "val_excluded_from_test": true,
+      "same_rows_for_xgb_and_vqc": true,
+      "vqc_scaler_pca_fit_on": "train[:140] only (saved in vqc/scaler.pkl, vqc/pca.pkl)",
+      "xgboost_inference_uses_unscaled_23d": true,
+      "xgboost_train_script_scaler_pca": "fitted on train only; not used by XGBoostClassifier.predict",
+      "subjects": "synthetic vectors have no subject_id; SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+      "exact_row_hash_overlap": {
+        "train_val": 1,
+        "train_test": 1,
+        "val_test": 0
+      }
+    },
+    "artifacts": {
+      "xgboost_path": "ml/models/xgboost_best.json",
+      "xgboost_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "vqc_path": "ml/models/vqc/vqc_weights.npz",
+      "vqc_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e"
+    }
+  },
+  "comparison": {
+    "held_out_test_samples": 30,
+    "split": "generate_multimodal_dataset(200, seed=42) train[:140] val[140:170] test[170:]",
+    "class_order": [
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "class_indices": [
+      0,
+      1,
+      2
+    ],
+    "data_provenance_class": "SYNTHETIC",
+    "leakage_audit": {
+      "train_samples": 140,
+      "val_samples": 30,
+      "test_samples": 30,
+      "val_excluded_from_test": true,
+      "same_rows_for_xgb_and_vqc": true,
+      "vqc_scaler_pca_fit_on": "train[:140] only (saved in vqc/scaler.pkl, vqc/pca.pkl)",
+      "xgboost_inference_uses_unscaled_23d": true,
+      "xgboost_train_script_scaler_pca": "fitted on train only; not used by XGBoostClassifier.predict",
+      "subjects": "synthetic vectors have no subject_id; SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+      "exact_row_hash_overlap": {
+        "train_val": 1,
+        "train_test": 1,
+        "val_test": 0
+      }
+    },
+    "vqc": {
+      "model": "VQC",
+      "correct_predictions": "16 / 30",
+      "correct_count": 16,
+      "test_sample_count": 30,
+      "accuracy": 0.533333,
+      "macro_precision": 0.466184,
+      "macro_recall": 0.43268,
+      "macro_f1": 0.423016,
+      "mcc": 0.095978,
+      "brier_score": 0.512306,
+      "ece": 0.136455,
+      "confusion_matrix": [
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          13,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "status": "EXPERIMENTAL_ONLY"
+    },
+    "xgboost": {
+      "model": "XGBoost",
+      "correct_predictions": "25 / 30",
+      "correct_count": 25,
+      "test_sample_count": 30,
+      "accuracy": 0.833333,
+      "macro_precision": 0.822222,
+      "macro_recall": 0.769281,
+      "macro_f1": 0.78502,
+      "mcc": 0.702692,
+      "brier_score": 0.304532,
+      "ece": 0.118284,
+      "confusion_matrix": [
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "vqc_outperforms_xgboost": false,
+    "recommendation": "DISABLE_FROM_MAIN_DECISION",
+    "used_in_main_decision": false,
+    "compared_at": "2026-08-29T05:40:25.822563+00:00",
+    "metrics_source": "live_held_out_predictions",
+    "artifacts": {
+      "xgboost_path": "ml/models/xgboost_best.json",
+      "xgboost_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "vqc_path": "ml/models/vqc/vqc_weights.npz",
+      "vqc_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e"
+    }
+  }
+}

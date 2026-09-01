@@ -1,0 +1,12 @@
+{
+  "task": "binary_wound_mask",
+  "trained_classes": [
+    "wound_mask"
+  ],
+  "empty_mask_class_trained": false,
+  "existing_negatives_eval_only": [
+    "data/datasets/yolo_injury/blank_skin.jpg",
+    "data/datasets/yolo_injury/dummy_test.jpg"
+  ],
+  "reason_no_empty_class": "Only two existing no-injury files were found. They are eval-only. Empty medical scenes and random empty textures were not generated."
+}

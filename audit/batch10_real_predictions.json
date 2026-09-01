@@ -1,0 +1,366 @@
+{
+  "audit_timestamp": "2026-08-27T13:57:32.584745+00:00",
+  "sample_count": 30,
+  "predictions": [
+    {
+      "case_id": "held_out_sample_01",
+      "raw_probabilities": [
+        0.011009999550879002,
+        0.8821619749069214,
+        0.1068279966711998
+      ],
+      "max_confidence": 0.8821619749069214,
+      "predicted_label": 1,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_02",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_03",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_04",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_05",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_06",
+      "raw_probabilities": [
+        0.011009999550879002,
+        0.8821619749069214,
+        0.1068279966711998
+      ],
+      "max_confidence": 0.8821619749069214,
+      "predicted_label": 1,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_07",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_08",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_09",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_10",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 0,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_11",
+      "raw_probabilities": [
+        0.011009999550879002,
+        0.8821619749069214,
+        0.1068279966711998
+      ],
+      "max_confidence": 0.8821619749069214,
+      "predicted_label": 1,
+      "ground_truth_label": 1,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_12",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 1,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_13",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 1,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_14",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 1,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_15",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 1,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_16",
+      "raw_probabilities": [
+        0.011009999550879002,
+        0.8821619749069214,
+        0.1068279966711998
+      ],
+      "max_confidence": 0.8821619749069214,
+      "predicted_label": 1,
+      "ground_truth_label": 1,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_17",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 1,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_18",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 1,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_19",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 1,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_20",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 1,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_21",
+      "raw_probabilities": [
+        0.011009999550879002,
+        0.8821619749069214,
+        0.1068279966711998
+      ],
+      "max_confidence": 0.8821619749069214,
+      "predicted_label": 1,
+      "ground_truth_label": 2,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_22",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 2,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_23",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 2,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_24",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 2,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_25",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 2,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_26",
+      "raw_probabilities": [
+        0.011009999550879002,
+        0.8821619749069214,
+        0.1068279966711998
+      ],
+      "max_confidence": 0.8821619749069214,
+      "predicted_label": 1,
+      "ground_truth_label": 2,
+      "correct": false
+    },
+    {
+      "case_id": "held_out_sample_27",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 2,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_28",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 2,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_29",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 2,
+      "correct": true
+    },
+    {
+      "case_id": "held_out_sample_30",
+      "raw_probabilities": [
+        0.005962000228464603,
+        0.19715699553489685,
+        0.7968800067901611
+      ],
+      "max_confidence": 0.7968800067901611,
+      "predicted_label": 2,
+      "ground_truth_label": 2,
+      "correct": true
+    }
+  ]
+}

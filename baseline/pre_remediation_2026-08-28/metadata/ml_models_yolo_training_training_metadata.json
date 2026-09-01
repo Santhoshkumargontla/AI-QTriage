@@ -1,0 +1,18 @@
+{
+    "model_architecture": "YOLO11n Fine-Tuned",
+    "pretrained_base": "yolo11n_pretrained.pt",
+    "epochs_completed": 14,
+    "batch_size": 16,
+    "device": "cpu",
+    "gpu_available": false,
+    "training_duration_seconds": 335.74,
+    "training_dataset_size": 85,
+    "class_distribution": {
+        "cut": 17,
+        "bruise": 17,
+        "abrasion": 13,
+        "laceration": 12
+    },
+    "weights_path": "ml/models/yolo11n_best.pt",
+    "file_size_bytes": 5469722
+}

@@ -1,0 +1,133 @@
+{
+  "audit_timestamp": "2026-08-27T09:28:47.806938+00:00",
+  "backend_url": "http://127.0.0.1:8000",
+  "active_endpoints_count": 10,
+  "endpoint_inventory": [
+    {
+      "route": "GET /api/health",
+      "type": "Health Check",
+      "status": 200
+    },
+    {
+      "route": "GET /api/models",
+      "type": "Model Registry List",
+      "status": 200
+    },
+    {
+      "route": "POST /api/cases",
+      "type": "Case Creation",
+      "status": 200
+    },
+    {
+      "route": "GET /api/cases",
+      "type": "List Cases",
+      "status": 200
+    },
+    {
+      "route": "GET /api/cases/{id}",
+      "type": "Get Case Details",
+      "status": 200
+    },
+    {
+      "route": "POST /api/cases/{id}/image",
+      "type": "Vision Pipeline Upload",
+      "status": 200
+    },
+    {
+      "route": "POST /api/cases/{id}/questionnaire",
+      "type": "Questionnaire Submission",
+      "status": 200
+    },
+    {
+      "route": "POST /api/cases/{id}/sensor",
+      "type": "Sensor Log Upload",
+      "status": 200
+    },
+    {
+      "route": "POST /api/cases/{id}/sos/trigger",
+      "type": "SOS Kinetic Trigger",
+      "status": 200
+    },
+    {
+      "route": "POST /api/cases/{id}/sos/abort",
+      "type": "SOS Countdown Abort",
+      "status": 200
+    }
+  ],
+  "endpoint_execution_results": [
+    {
+      "route": "GET /api/health",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "GET /api/models",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "POST /api/cases",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "GET /api/cases",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "GET /api/cases/{id}",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "POST /api/cases/{id}/image",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "POST /api/cases/{id}/questionnaire",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "POST /api/cases/{id}/sensor",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "POST /api/cases/{id}/sos/trigger",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "POST /api/cases/{id}/sos/abort",
+      "http_status": 200,
+      "status": "PASS"
+    }
+  ],
+  "invalid_input_results": [
+    {
+      "test": "POST /api/cases/test_case/image with text file",
+      "expected_status": 400,
+      "actual_status": 400,
+      "result": "PASS"
+    },
+    {
+      "test": "POST /api/cases/test_case/sensor with corrupt CSV (<40Hz)",
+      "expected_status": 422,
+      "actual_status": 422,
+      "result": "PASS"
+    },
+    {
+      "test": "GET /api/cases/non_existent_id",
+      "expected_status": 404,
+      "actual_status": 404,
+      "result": "PASS"
+    }
+  ],
+  "pytest_suite_status": "92 passed, 0 failed in 139.83s",
+  "frontend_lint_status": "0 errors, 0 warnings",
+  "frontend_build_status": "Compiled successfully in 1127ms",
+  "verification_status": "PASS"
+}

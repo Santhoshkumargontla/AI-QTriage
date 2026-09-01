@@ -1,0 +1,30 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "evaluated_architectures": [
+    {
+      "model": "ResNet34-UNet",
+      "params": "24.4M",
+      "mean_dice": 0.864,
+      "mean_iou": 0.761,
+      "latency_ms": 120.73,
+      "selected": true
+    },
+    {
+      "model": "EfficientNet-UNet",
+      "params": "21.1M",
+      "mean_dice": 0.852,
+      "mean_iou": 0.748,
+      "latency_ms": 135.4,
+      "selected": false
+    },
+    {
+      "model": "ResNet50-UNet",
+      "params": "32.5M",
+      "mean_dice": 0.868,
+      "mean_iou": 0.765,
+      "latency_ms": 168.2,
+      "selected": false
+    }
+  ],
+  "selection_verdict": "PASS"
+}

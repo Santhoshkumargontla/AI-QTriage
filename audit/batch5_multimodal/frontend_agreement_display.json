@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:36:49.385977+00:00",
+  "component": "frontend/app/cases/[id]/page.tsx",
+  "agreement_badge": "Rendered with clear score percentage (e.g., 'Partial Agreement (75%)')",
+  "disclaimer": "Research prototype interpretation, not a clinical diagnosis",
+  "status": "PASS"
+}

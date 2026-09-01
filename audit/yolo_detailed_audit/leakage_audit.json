@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T13:19:18.267575+00:00",
+  "train_val_overlap": 0,
+  "train_test_overlap": 0,
+  "val_test_overlap": 0,
+  "image_leakage": "VERIFIED (0% overlap)",
+  "subject_leakage": "VERIFIED (Grouped by subject)",
+  "status": "PASS"
+}

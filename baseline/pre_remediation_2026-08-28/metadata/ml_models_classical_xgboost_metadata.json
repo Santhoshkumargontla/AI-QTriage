@@ -1,0 +1,16 @@
+{
+  "model_name": "XGBoost Multimodal",
+  "status": "TRAINED",
+  "train_samples": 84,
+  "val_samples": 18,
+  "test_samples": 18,
+  "test_accuracy": 0.9444444444444444,
+  "pca_components": 4,
+  "pca_variance_ratio": [
+    0.20964070424586825,
+    0.1627320599639374,
+    0.1343946607724348,
+    0.08421821837204957
+  ],
+  "weights_path": "ml\\models\\classical\\xgboost_multimodal.json"
+}

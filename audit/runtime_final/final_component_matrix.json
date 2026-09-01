@@ -1,0 +1,252 @@
+[
+  {
+    "component": "Backend",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Frontend",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "YOLO11",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "EfficientNetV2",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "UNet",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Sensor Model",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Multimodal Model",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "VQC",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "EXPERIMENTAL"
+  },
+  {
+    "component": "Detection API",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Classification API",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Segmentation API",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Sensor API",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Triage API",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "VQC API",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "EXPERIMENTAL"
+  },
+  {
+    "component": "SOS API",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Image Upload UI",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Vision Results UI",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Sensor UI",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Risk UI",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "SOS UI",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Complete Vision Pipeline",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Complete Sensor Pipeline",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Complete Multimodal Pipeline",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Complete SOS Pipeline",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "PASS"
+  },
+  {
+    "component": "Complete Application",
+    "starts": "YES",
+    "loads": "YES",
+    "real_input": "YES",
+    "real_execution": "YES",
+    "output_verified": "YES",
+    "integrated": "YES",
+    "final_status": "WORKING_WITH_LIMITATIONS"
+  }
+]

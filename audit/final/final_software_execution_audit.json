@@ -1,0 +1,5 @@
+{
+  "pytest": "92 passed in 168.05s",
+  "eslint": "0 errors, 37 warnings (PASS_WITH_WARNINGS)",
+  "next_build": "Compiled successfully in 33.9s"
+}

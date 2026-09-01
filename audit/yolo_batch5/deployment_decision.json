@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "decision": "KEEP_NEW_MODEL",
+  "rationale": "Retrained YOLO11 model improves mAP@50 (+0.34%) and mAP@50-95 (+0.93%) while reducing CPU latency by 21.26% with 0 regressions across PyTest suite",
+  "status": "PASS"
+}

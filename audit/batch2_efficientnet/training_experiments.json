@@ -1,0 +1,21 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "experiments": [
+    {
+      "id": 1,
+      "lr": 0.001,
+      "batch_size": 16,
+      "val_acc": 0.875,
+      "val_f1": 0.865,
+      "status": "BEST"
+    },
+    {
+      "id": 2,
+      "lr": 0.0001,
+      "batch_size": 16,
+      "val_acc": 0.84,
+      "val_f1": 0.83,
+      "status": "COMPLETED"
+    }
+  ]
+}

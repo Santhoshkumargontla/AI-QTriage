@@ -1,0 +1,669 @@
+{
+  "generated_at": "2026-08-30T05:28:00.786968+00:00",
+  "five_way": [
+    {
+      "model": "YOLO11 Detection",
+      "disk_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "registry_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "manifest_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "disk_eq_registry": true,
+      "disk_eq_manifest": true,
+      "registry_status": "INFERENCE_EXECUTES",
+      "manifest_status": "INFERENCE_EXECUTES",
+      "classes_registry": [
+        "cut",
+        "bruise",
+        "wound"
+      ],
+      "classes_manifest": [
+        "cut",
+        "bruise",
+        "wound"
+      ]
+    },
+    {
+      "model": "EfficientNetV2 Classification",
+      "disk_sha": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "registry_sha": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "manifest_sha": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "disk_eq_registry": true,
+      "disk_eq_manifest": true,
+      "registry_status": "READY_FOR_RESEARCH_DEMO",
+      "manifest_status": "READY_FOR_RESEARCH_DEMO",
+      "classes_registry": [
+        "abrasion",
+        "bruise",
+        "burn",
+        "cut",
+        "laceration",
+        "wound",
+        "normal",
+        "ood_reject"
+      ],
+      "classes_manifest": [
+        "abrasion",
+        "bruise",
+        "burn",
+        "cut",
+        "laceration",
+        "wound",
+        "normal",
+        "ood_reject"
+      ]
+    },
+    {
+      "model": "ResNet34-UNet Segmentation",
+      "disk_sha": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "registry_sha": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "manifest_sha": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "disk_eq_registry": true,
+      "disk_eq_manifest": true,
+      "registry_status": "READY_FOR_RESEARCH_DEMO",
+      "manifest_status": "READY_FOR_RESEARCH_DEMO",
+      "classes_registry": [
+        "wound_mask"
+      ],
+      "classes_manifest": [
+        "wound_mask"
+      ]
+    },
+    {
+      "model": "XGBoost Multimodal",
+      "disk_sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "registry_sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "manifest_sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "disk_eq_registry": true,
+      "disk_eq_manifest": true,
+      "registry_status": "TRAINED",
+      "manifest_status": "TRAINED",
+      "classes_registry": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "classes_manifest": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ]
+    },
+    {
+      "model": "Experimental 4-Qubit VQC",
+      "disk_sha": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "registry_sha": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "manifest_sha": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "disk_eq_registry": true,
+      "disk_eq_manifest": true,
+      "registry_status": "EXPERIMENTAL_ONLY",
+      "manifest_status": "EXPERIMENTAL_ONLY",
+      "classes_registry": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "classes_manifest": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ]
+    },
+    {
+      "model": "Sensor Motion Event Classifier",
+      "disk_sha": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "registry_sha": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "manifest_sha": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "disk_eq_registry": true,
+      "disk_eq_manifest": true,
+      "registry_status": "TRAINED",
+      "manifest_status": "TRAINED",
+      "classes_registry": [
+        "normal_activity",
+        "fall",
+        "impact"
+      ],
+      "classes_manifest": [
+        "normal_activity",
+        "fall",
+        "impact"
+      ]
+    }
+  ],
+  "yolo": {
+    "wrapper_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "wrapper_sha_claimed": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "disk_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "task": "detect",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "supported_classes": [
+      "bruise",
+      "cut",
+      "wound"
+    ],
+    "untrained_classes": {
+      "wound": "UNSUPPORTED",
+      "abrasion": "UNTRAINED_CLASS",
+      "laceration": "UNTRAINED_CLASS",
+      "swelling": "UNTRAINED_CLASS"
+    },
+    "status": "INFERENCE_EXECUTES",
+    "images": {
+      "blank": {
+        "wrapper_n": 0,
+        "direct_n": 0,
+        "wrapper_top": [],
+        "direct_top": [],
+        "match_top": []
+      },
+      "demo": {
+        "wrapper_n": 0,
+        "direct_n": 0,
+        "wrapper_top": [],
+        "direct_top": [],
+        "match_top": []
+      }
+    }
+  },
+  "effnet": {
+    "disk_sha": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+    "classes": [
+      "abrasion",
+      "bruise",
+      "burn",
+      "cut",
+      "laceration",
+      "wound",
+      "normal",
+      "ood_reject"
+    ],
+    "is_loaded": true,
+    "probes": {
+      "gray": {
+        "Abrasion": null,
+        "Bruise": null,
+        "Burn": null,
+        "Cut": null,
+        "Laceration": null,
+        "Wound": null,
+        "Normal": null,
+        "Ood_reject": null,
+        "__is_confident": false,
+        "__max_prob": null,
+        "__winner": null,
+        "__low_confidence": true,
+        "__status": "LOW_QUALITY_INPUT",
+        "__reason": "uniform_or_blank_image",
+        "__entropy": null,
+        "__margin": null,
+        "__temperature": 1.5,
+        "__min_confidence": 0.8,
+        "__quality": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "black": {
+        "Abrasion": null,
+        "Bruise": null,
+        "Burn": null,
+        "Cut": null,
+        "Laceration": null,
+        "Wound": null,
+        "Normal": null,
+        "Ood_reject": null,
+        "__is_confident": false,
+        "__max_prob": null,
+        "__winner": null,
+        "__low_confidence": true,
+        "__status": "LOW_QUALITY_INPUT",
+        "__reason": "uniform_or_blank_image",
+        "__entropy": null,
+        "__margin": null,
+        "__temperature": 1.5,
+        "__min_confidence": 0.8,
+        "__quality": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "white": {
+        "Abrasion": null,
+        "Bruise": null,
+        "Burn": null,
+        "Cut": null,
+        "Laceration": null,
+        "Wound": null,
+        "Normal": null,
+        "Ood_reject": null,
+        "__is_confident": false,
+        "__max_prob": null,
+        "__winner": null,
+        "__low_confidence": true,
+        "__status": "LOW_QUALITY_INPUT",
+        "__reason": "uniform_or_blank_image",
+        "__entropy": null,
+        "__margin": null,
+        "__temperature": 1.5,
+        "__min_confidence": 0.8,
+        "__quality": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "demo": {
+        "Abrasion": null,
+        "Bruise": null,
+        "Burn": null,
+        "Cut": null,
+        "Laceration": null,
+        "Wound": null,
+        "Normal": null,
+        "OOD_Reject": null,
+        "__is_confident": false,
+        "__max_prob": 0.4498,
+        "__winner": null,
+        "__is_injury_finding": false,
+        "__abstention_class": null,
+        "__low_confidence": true,
+        "__status": "OUT_OF_DISTRIBUTION",
+        "__reason": "softmax_not_trusted_closed_set_overconfidence",
+        "__entropy": 1.4006,
+        "__margin": 0.228,
+        "__temperature": 1.5,
+        "__min_confidence": 0.8,
+        "__quality": {
+          "height": 300,
+          "width": 300,
+          "std": 39.4124,
+          "ptp": 208.0,
+          "unique16": 14,
+          "laplacian_var": 4626.6447,
+          "edge_frac": 0.203922,
+          "skin_frac": 0.951567,
+          "red_frac": 0.822956
+        },
+        "__raw_winner": "Bruise",
+        "__raw_max_prob": 0.4498
+      }
+    },
+    "metadata": "READY_FOR_RESEARCH_DEMO",
+    "meta_sha": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+    "meta_classes": [
+      "abrasion",
+      "bruise",
+      "burn",
+      "cut",
+      "laceration",
+      "wound",
+      "normal",
+      "ood_reject"
+    ]
+  },
+  "unet": {
+    "disk_sha": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+    "is_loaded": true,
+    "probes": {
+      "gray": {
+        "positive_pixels": 0,
+        "ratio": 0.0,
+        "trust": "LOW_QUALITY_INPUT",
+        "message": "Low-quality input \u2014 segmentation withheld (uniform_or_blank_image).",
+        "raw_mean": 0.0023,
+        "raw_max": 0.0713
+      },
+      "black": {
+        "positive_pixels": 0,
+        "ratio": 0.0,
+        "trust": "LOW_QUALITY_INPUT",
+        "message": "Low-quality input \u2014 segmentation withheld (uniform_or_blank_image).",
+        "raw_mean": 0.0019,
+        "raw_max": 0.0783
+      },
+      "white": {
+        "positive_pixels": 0,
+        "ratio": 0.0,
+        "trust": "LOW_QUALITY_INPUT",
+        "message": "Low-quality input \u2014 segmentation withheld (uniform_or_blank_image).",
+        "raw_mean": 0.0039,
+        "raw_max": 0.0668
+      }
+    },
+    "meta_status": "READY_FOR_RESEARCH_DEMO",
+    "meta_sha": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1"
+  },
+  "xgb_vqc": {
+    "xgb_sha": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+    "xgb_n_features": 23,
+    "xgb_acc": 0.8333333333333334,
+    "xgb_correct": "25 / 30",
+    "vqc_sha": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+    "vqc_trained": true,
+    "vqc_acc": 0.5333333333333333,
+    "vqc_correct": "16 / 30",
+    "vqc_errors": 0,
+    "vqc_predict_has_fake_015": false,
+    "vqc_predict_has_except_Exception": false,
+    "vqc_macro_f1": 0.423015873015873,
+    "vqc_mcc": 0.09597764365189904
+  },
+  "sensor": {
+    "sha": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+    "is_trained": true,
+    "empty": {
+      "predicted_motion_class": null,
+      "confidence": null,
+      "probabilities": null,
+      "status": "FEATURE_MISSING",
+      "classifier_status": "FEATURE_MISSING",
+      "missing_features": [
+        "peak_g_force",
+        "peak_acceleration",
+        "peak_jerk_gs",
+        "accel_variance",
+        "gyro_variance",
+        "sma",
+        "post_impact_stabilization_seconds"
+      ]
+    },
+    "processor_calls_classifier": true,
+    "demo_summary_keys": [
+      "timeline_label",
+      "peak_g_force",
+      "peak_acceleration",
+      "peak_jerk_gs",
+      "accel_variance",
+      "gyro_variance",
+      "sma",
+      "peak_time_offset",
+      "pre_impact_delta_v",
+      "post_impact_stabilization_seconds",
+      "optical_lux_drop",
+      "lux_feature_available",
+      "gyro_feature_available",
+      "sample_count",
+      "recording_duration_seconds",
+      "events",
+      "motion_classification",
+      "predicted_motion_class",
+      "motion_confidence",
+      "motion_probabilities",
+      "classifier_status"
+    ],
+    "demo_motion": "fall",
+    "demo_status": "classified"
+  },
+  "twilio": {
+    "configured": false,
+    "message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+    "status_info": {
+      "enabled": false,
+      "configured": false,
+      "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+      "canonical_env": [
+        "TWILIO_ENABLED",
+        "TWILIO_ACCOUNT_SID",
+        "TWILIO_AUTH_TOKEN",
+        "TWILIO_FROM_NUMBER",
+        "TWILIO_TO_NUMBER"
+      ],
+      "legacy_aliases": {
+        "TWILIO_PHONE_NUMBER": "TWILIO_FROM_NUMBER",
+        "EMERGENCY_CONTACT_PHONE": "TWILIO_TO_NUMBER",
+        "EMERGENCY_PHONE_NUMBER": "TWILIO_TO_NUMBER"
+      },
+      "missing_fields": [
+        "TWILIO_ENABLED"
+      ],
+      "delivery_outcomes": [
+        "LOCAL_SIMULATION",
+        "TWILIO_NOT_CONFIGURED",
+        "TWILIO_REQUEST_QUEUED",
+        "TWILIO_FAILED"
+      ],
+      "account_sid_suffix": null,
+      "from_number_set": false,
+      "to_number_set": false,
+      "real_sms_tested": false,
+      "disclaimer": "RESEARCH PROTOTYPE ONLY: No real emergency services (911/112) are contacted. TWILIO_REQUEST_QUEUED means the API returned a SID, not that a handset received SMS."
+    },
+    "has_FROM": true,
+    "has_TO": true,
+    "has_PHONE_alias": true,
+    "has_hardcoded_SMS_SENT": true
+  },
+  "api": {
+    "models": [
+      {
+        "model_name": "YOLO11",
+        "model_version": "v1.4.0",
+        "version": "v1.4.0",
+        "status": "INFERENCE_EXECUTES",
+        "weights_loaded": true,
+        "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+        "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+        "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+        "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+        "task": "detect",
+        "classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "supported_classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "yolo_supported_classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "yolo11_supported_classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "validated_classes": [
+          "cut",
+          "bruise"
+        ],
+        "unsupported_classes": [
+          "wound"
+        ],
+        "class_support": {
+          "cut": {
+            "status": "RESEARCH_DEMO_LIMITED",
+            "train_boxes": 47,
+            "val_boxes": 6,
+            "test_boxes": 8,
+            "note": "Present in train/val/test; synthetic provenance; not clinically validated.",
+            "in_model_names": true
+          },
+          "bruise": {
+            "status": "RESEARCH_DEMO_LIMITED",
+            "train_boxes": 40,
+            "val_boxes": 13,
+            "test_boxes": 10,
+            "note": "Present in train/val/test; synthetic provenance; not clinically validated.",
+            "in_model_names": true
+          },
+          "wound": {
+            "status": "UNSUPPORTED",
+            "train_boxes": 0,
+            "val_boxes": 0,
+            "test_boxes": 0,
+            "note": "Head index exists in model.names (nc=3) but production training set has zero honest wound boxes. Do not report wound accuracy or treat wound detections as validated.",
+            "in_model_names": true
+          }
+        },
+        "promotion_status": "PROMOTION_VALIDATED_WITH_LIMITATIONS",
+        "dataset_provenance": "SYNTHETIC drawings/graphics (126/126 in retrain_v2 manifest); not real clinical photos",
+        "untrained_classes": {
+          "wound": "UNSUPPORTED",
+          "abrasion": "UNTRAINED_CLASS",
+          "laceration": "UNTRAINED_CLASS",
+          "swelling": "UNTRAINED_CLASS"
+        },
+        "untrained_class_status": "UNTRAINED_CLASS",
+        "swelling_yolo_coverage": "UNTRAINED_CLASS",
+        "swelling_note": "Swelling is UNTRAINED_CLASS for YOLO11 (not in model.names). The active EfficientNet kaggle-v1 head (8 classes) also does not include swelling (no honest labeled swelling training data). User-reported swelling in the questionnaire is separate from classifier predictions.",
+        "wound_note": "Wound appears in model.names but has zero honest training boxes in the production retrain_v2 dataset. Status=UNSUPPORTED \u2014 do not claim wound accuracy.",
+        "training_dataset": "canonical_yolo11_checkpoint",
+        "clinically_validated": false,
+        "runtime_status": "INFERENCE_EXECUTES"
+      },
+      {
+        "model_name": "EfficientNetV2",
+        "model_version": "kaggle-v1",
+        "version": "kaggle-v1",
+        "status": "READY_FOR_RESEARCH_DEMO",
+        "training_status": "READY_FOR_RESEARCH_DEMO",
+        "weights_loaded": true,
+        "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+        "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+        "model_path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+        "artifact_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+        "classes": [
+          "abrasion",
+          "bruise",
+          "burn",
+          "cut",
+          "laceration",
+          "wound",
+          "normal",
+          "ood_reject"
+        ],
+        "classifier_categories": [
+          "abrasion",
+          "bruise",
+          "burn",
+          "cut",
+          "laceration",
+          "wound",
+          "normal",
+          "ood_reject"
+        ],
+        "category_type": "research_classifier",
+        "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present.",
+        "note": "EfficientNetV2 kaggle-v1 classes: abrasion, bruise, burn, cut, laceration, wound, normal, ood_reject. normal and ood_reject are abstention classes, not diagnoses. swelling is not in the active classifier head (no labeled swelling data). These categories are NOT equivalent to YOLO11 detections. Mixed real-photo Kaggle sources \u2014 research demo only, not clinical."
+      },
+      {
+        "model_name": "U-Net",
+        "model_version": "deduped-subject-v1",
+        "version": "deduped-subject-v1",
+        "status": "READY_FOR_RESEARCH_DEMO",
+        "training_status": "READY_FOR_RESEARCH_DEMO",
+        "weights_loaded": true,
+        "canonical_path": "ml/models/vision/unet_injury_best.pt",
+        "artifact_path": "ml/models/vision/unet_injury_best.pt",
+        "model_path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt",
+        "artifact_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+        "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present. Overlay gates withhold blank/OOD masks; they do not certify photographs."
+      },
+      {
+        "model_name": "XGBoost",
+        "model_version": "v1.2.0",
+        "status": "TRAINED",
+        "weights_loaded": true,
+        "schema_features": 23,
+        "canonical_path": "ml/models/xgboost_best.json",
+        "artifact_path": "ml/models/xgboost_best.json",
+        "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+        "data_provenance": "SYNTHETIC",
+        "data_provenance_detail": "synthetic_multimodal_fusion",
+        "training_dataset": "synthetic_multimodal_fusion",
+        "status_note": "Missing canonical artifact is MODEL_ARTIFACT_MISSING. File existence is not TRAINED_AND_EVALUATED. Status comes from xgboost_metadata.json."
+      },
+      {
+        "model_name": "VQC",
+        "model_version": "v1.4.0",
+        "status": "EXPERIMENTAL_ONLY",
+        "weights_loaded": true,
+        "canonical_path": "ml/models/vqc/vqc_weights.npz",
+        "artifact_path": "ml/models/vqc/vqc_weights.npz",
+        "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+        "data_provenance": "SYNTHETIC",
+        "used_in_main_decision": false,
+        "experimental_only": true,
+        "recommendation": "DISABLE_FROM_MAIN_DECISION",
+        "status_note": "EXPERIMENTAL_ONLY. Isolated from SOS, first-aid, and main case decisions. Missing artifact is MODEL_UNAVAILABLE, not a fabricated class."
+      }
+    ],
+    "sos": {
+      "enabled": false,
+      "configured": false,
+      "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+      "canonical_env": [
+        "TWILIO_ENABLED",
+        "TWILIO_ACCOUNT_SID",
+        "TWILIO_AUTH_TOKEN",
+        "TWILIO_FROM_NUMBER",
+        "TWILIO_TO_NUMBER"
+      ],
+      "legacy_aliases": {
+        "TWILIO_PHONE_NUMBER": "TWILIO_FROM_NUMBER",
+        "EMERGENCY_CONTACT_PHONE": "TWILIO_TO_NUMBER",
+        "EMERGENCY_PHONE_NUMBER": "TWILIO_TO_NUMBER"
+      },
+      "missing_fields": [
+        "TWILIO_ENABLED"
+      ],
+      "delivery_outcomes": [
+        "LOCAL_SIMULATION",
+        "TWILIO_NOT_CONFIGURED",
+        "TWILIO_REQUEST_QUEUED",
+        "TWILIO_FAILED"
+      ],
+      "account_sid_suffix": null,
+      "from_number_set": false,
+      "to_number_set": false,
+      "real_sms_tested": false,
+      "disclaimer": "RESEARCH PROTOTYPE ONLY: No real emergency services (911/112) are contacted. TWILIO_REQUEST_QUEUED means the API returned a SID, not that a handset received SMS."
+    },
+    "health": {
+      "status": "healthy",
+      "database": "connected",
+      "timestamp": "2026-08-30T05:35:04.458714"
+    }
+  },
+  "frontend_swelling_files": [
+    "frontend/.next/dev/server/chunks/ssr/_0dttmrs._.js",
+    "frontend/.next/dev/server/chunks/ssr/_1849sgz._.js",
+    "frontend/.next/dev/server/chunks/ssr/_1g-a4xb._.js",
+    "frontend/.next/dev/server/chunks/ssr/_1xp4reh._.js",
+    "frontend/.next/dev/static/chunks/_0c2or44._.js",
+    "frontend/.next/dev/static/chunks/_0j_lgzf._.js",
+    "frontend/.next/dev/static/chunks/_0nnssto._.js",
+    "frontend/.next/dev/static/chunks/_0wp41ta._.js",
+    "frontend/.next/dev/static/chunks/_192480y._.js",
+    "frontend/.next/dev/static/chunks/_19wd74c._.js",
+    "frontend/.next/server/chunks/ssr/app_create-case_page_tsx_023m88w._.js",
+    "frontend/.next/static/chunks/3x64bv86h5wue.js",
+    "frontend/app/create-case/page.tsx"
+  ]
+}

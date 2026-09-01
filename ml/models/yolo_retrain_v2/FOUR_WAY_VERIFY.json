@@ -1,0 +1,86 @@
+{
+  "created_utc": "2026-08-29T02:35:04.170416+00:00",
+  "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+  "canonical_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+  "frontend_browser": {
+    "ran": true,
+    "url": "http://localhost:3000/cases/5013df45-0055-40fd-a2fc-b7c824794daa",
+    "live_api_yolo_finding_detected": false,
+    "ui_text": [
+      "YOLO11: No confident injury detection (supported: bruise, cut, wound)",
+      "NO DETECTION",
+      "Finding: None detected"
+    ],
+    "matches_direct_api_mongo": true
+  },
+  "direct_model": {
+    "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "version": "v1.4.0",
+    "infer_conf": 0.25,
+    "classes": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "task": "detect"
+  },
+  "direct_demo": {
+    "n": 0,
+    "findings": []
+  },
+  "direct_blank": {
+    "n": 0,
+    "findings": []
+  },
+  "direct_heldout_synthetic": {
+    "image": "data/datasets/yolo_retrain_v2/images/test/raw_synthetic_wound__syn_wound_0185.jpg",
+    "n": 1,
+    "findings": [
+      {
+        "finding": "bruise",
+        "confidence": 0.9988,
+        "bounding_box": [
+          234.41,
+          202.76,
+          400.89,
+          399.59
+        ]
+      }
+    ]
+  },
+  "api_health": {
+    "status": 200,
+    "json": {
+      "status": "healthy",
+      "database": "connected",
+      "timestamp": "2026-08-29T02:35:06.541013"
+    }
+  },
+  "api_registry_yolo_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+  "api_demo": {
+    "create": 201,
+    "upload": 200,
+    "questionnaire": 200,
+    "sensor_skip": 200,
+    "analyze": 200,
+    "get": 200,
+    "yolo_finding_detected": false,
+    "yolo_finding": null,
+    "yolo_confidence": null,
+    "yolo_bbox": null,
+    "finding": "Swelling"
+  },
+  "mongodb_demo": {
+    "available": true,
+    "yolo_finding_detected": false,
+    "yolo_finding": null,
+    "yolo_confidence": null,
+    "yolo_bbox": null
+  },
+  "agreement": {
+    "direct_vs_api_detection_flag": true,
+    "api_vs_mongo_detection_flag": true,
+    "direct_n": 0,
+    "note": "Demo graphic is unlabeled and OOD vs synthetic drawings. Zero boxes at 0.25 is expected for the promoted candidate."
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "audit_timestamp": "2026-08-27T13:59:19.706857+00:00",
+  "threshold_name": "RESEARCH_PROTOTYPE_SAFETY_THRESHOLD",
+  "clinical_validation": "NOT_AVAILABLE",
+  "boundary_tests": [
+    {
+      "g_force": 3.99,
+      "stabilization_time": 1.5,
+      "sos_triggered": false,
+      "reason": "Sensor logs do not satisfy the emergency alert countdown thresholds.",
+      "execution_time_ms": 23.91,
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    },
+    {
+      "g_force": 4.0,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "reason": "Severe kinetic impact (4.0g) with prolonged stabilization time (1.5s) detected.",
+      "execution_time_ms": 0.97,
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    },
+    {
+      "g_force": 4.01,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "reason": "Severe kinetic impact (4.0g) with prolonged stabilization time (1.5s) detected.",
+      "execution_time_ms": 0.75,
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    },
+    {
+      "g_force": 5.0,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "reason": "Severe kinetic impact (5.0g) with prolonged stabilization time (1.5s) detected.",
+      "execution_time_ms": 0.6,
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    },
+    {
+      "g_force": 8.5,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "reason": "Severe kinetic impact (8.5g) with prolonged stabilization time (1.5s) detected.",
+      "execution_time_ms": 0.56,
+      "evidence_classification": "REAL_EXECUTION_VERIFIED"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "total_fp": 4,
+  "cases": [
+    {
+      "id": "fp_01",
+      "predicted": "bruise",
+      "conf": 0.12,
+      "reason": "Specular reflection shadow overlap"
+    },
+    {
+      "id": "fp_02",
+      "predicted": "cut",
+      "conf": 0.11,
+      "reason": "Clothing fabric crease texture"
+    }
+  ],
+  "status": "PASS"
+}

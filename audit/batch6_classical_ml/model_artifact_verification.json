@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T13:37:55.676611+00:00",
+  "model_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\xgboost_multimodal_best.json",
+  "file_size_bytes": 299276,
+  "sha256": "3302606df1c82dffbf79ce8dd726c148978fc92cee8e5e8071348a249f6d4d9f",
+  "algorithm": "XGBoost Multimodal Risk Classifier (Gradient Boosted Decision Trees)",
+  "num_features": 23,
+  "num_classes": 3,
+  "classes": [
+    "LOW",
+    "MODERATE",
+    "HIGH"
+  ],
+  "status": "PASS"
+}

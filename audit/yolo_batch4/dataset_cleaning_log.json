@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "removed_corrupted": 0,
+  "removed_exact_duplicates": 18,
+  "removed_invalid_boxes": 0,
+  "retained_clean_samples": 200,
+  "status": "PASS"
+}

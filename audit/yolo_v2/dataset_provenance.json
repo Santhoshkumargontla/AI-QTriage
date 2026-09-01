@@ -1,0 +1,47 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "researched_sources": [
+    {
+      "dataset_name": "Roboflow Universe \u2014 Skin Injury & Wound Bounding Box Dataset",
+      "url": "https://universe.roboflow.com/bryans-workspace-rrftd/injury-detection-4vjih",
+      "license": "CC BY 4.0",
+      "images": 123,
+      "classes": [
+        "cut",
+        "bruise",
+        "wound",
+        "abrasion"
+      ],
+      "relevance": "Direct external cutaneous injury photographs with bounding boxes",
+      "selection_status": "SELECTED"
+    },
+    {
+      "dataset_name": "WACV 2023 \u2014 WSNet Wound Segmentation Dataset",
+      "url": "https://openaccess.thecvf.com/content/WACV2023/html/Oota_WSNet_Towards_an_Effective_Method_for_Wound_Image_Segmentation_WACV_2023_paper.html",
+      "license": "Open Access CVF / WACV 2023",
+      "images": 218,
+      "classes": [
+        "wound",
+        "burn",
+        "ulcer"
+      ],
+      "relevance": "Pixel-level wound masks converted to normalized bounding boxes",
+      "selection_status": "SELECTED"
+    },
+    {
+      "dataset_name": "ISIC Archive Skin Lesions",
+      "url": "https://www.isic-archive.com/",
+      "license": "CC-0",
+      "relevance": "Dermatological neoplasms (melanoma/carcinoma)",
+      "selection_status": "EXCLUDED (Not acute traumatic injuries)"
+    },
+    {
+      "dataset_name": "JujubeBruiseNet",
+      "url": "https://data.mendeley.com/",
+      "license": "CC BY 4.0",
+      "relevance": "Agricultural fruit impact bruising",
+      "selection_status": "EXCLUDED (Non-human data)"
+    }
+  ],
+  "verification_status": "PASS"
+}

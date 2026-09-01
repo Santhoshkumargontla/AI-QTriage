@@ -1,0 +1,29 @@
+{
+  "audit_timestamp": "2026-08-27T13:33:29.897738+00:00",
+  "class_mappings": [
+    {
+      "index": 0,
+      "training_class": "cut",
+      "backend_label": "Cut",
+      "frontend_label": "Cut"
+    },
+    {
+      "index": 1,
+      "training_class": "bruise",
+      "backend_label": "Bruise",
+      "frontend_label": "Bruise"
+    },
+    {
+      "index": 2,
+      "training_class": "swelling",
+      "backend_label": "Swelling",
+      "frontend_label": "Swelling"
+    },
+    {
+      "index": 3,
+      "training_class": "other",
+      "backend_label": "Other",
+      "frontend_label": "Other injury"
+    }
+  ]
+}

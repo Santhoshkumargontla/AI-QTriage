@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T13:37:55.676611+00:00",
+  "test_samples": 30,
+  "accuracy": 0.9,
+  "macro_precision": 0.91,
+  "macro_recall": 0.9,
+  "macro_f1": 0.905,
+  "high_risk_recall": 1.0,
+  "expected_calibration_error_ece": 0.045,
+  "status": "PASS"
+}

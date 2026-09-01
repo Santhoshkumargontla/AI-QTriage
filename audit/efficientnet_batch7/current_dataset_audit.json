@@ -1,0 +1,20 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "dataset_name": "MedWound Skin Injury Image Corpus",
+  "total_images": 200,
+  "classes": [
+    "Cut",
+    "Bruise",
+    "Swelling",
+    "Other"
+  ],
+  "images_per_class": {
+    "Cut": 50,
+    "Bruise": 50,
+    "Swelling": 50,
+    "Other": 50
+  },
+  "duplicate_images": 0,
+  "corrupted_images": 0,
+  "status": "PASS"
+}

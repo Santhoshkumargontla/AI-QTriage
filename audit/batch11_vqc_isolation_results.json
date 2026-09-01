@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:59:19.706857+00:00",
+  "vqc_sos_weight": 0.0,
+  "vqc_can_trigger_sos": false,
+  "vqc_can_cancel_sos": false,
+  "vqc_can_override_safety_rules": false,
+  "evidence_classification": "REAL_EXECUTION_VERIFIED"
+}

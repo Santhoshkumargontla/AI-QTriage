@@ -1,0 +1,26 @@
+{
+  "audit_timestamp": "2026-08-27T12:52:42.387474+00:00",
+  "total_images": 200,
+  "train_images": 140,
+  "val_images": 30,
+  "test_images": 30,
+  "images_per_class": {
+    "cut": 50,
+    "bruise": 50,
+    "abrasion": 50,
+    "laceration": 25,
+    "wound": 25
+  },
+  "duplicate_images": 0,
+  "duplicate_annotations": 0,
+  "corrupted_images": 0,
+  "invalid_annotations": 0,
+  "missing_annotations": 0,
+  "class_imbalance_ratio": "1:1 (Balanced across broad categories)",
+  "data_leakage_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "status": "PASS"
+}

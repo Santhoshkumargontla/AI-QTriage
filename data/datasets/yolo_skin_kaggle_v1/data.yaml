@@ -1,0 +1,9 @@
+path: C:/Users/santh/Capstone Project Code/data/datasets/yolo_skin_kaggle_v1
+train: images/train
+val: images/val
+test: images/test
+nc: 3
+names:
+- cut
+- bruise
+- burn

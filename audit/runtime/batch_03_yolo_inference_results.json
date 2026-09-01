@@ -1,0 +1,101 @@
+{
+  "audit_timestamp": "2026-08-27T09:11:43.663986+00:00",
+  "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+  "image_tested": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "threshold_sweep": [
+    {
+      "threshold": 0.5,
+      "detection_count": 0,
+      "detections": []
+    },
+    {
+      "threshold": 0.4,
+      "detection_count": 0,
+      "detections": []
+    },
+    {
+      "threshold": 0.3,
+      "detection_count": 0,
+      "detections": []
+    },
+    {
+      "threshold": 0.25,
+      "detection_count": 0,
+      "detections": []
+    },
+    {
+      "threshold": 0.2,
+      "detection_count": 0,
+      "detections": []
+    },
+    {
+      "threshold": 0.15,
+      "detection_count": 0,
+      "detections": []
+    },
+    {
+      "threshold": 0.1,
+      "detection_count": 1,
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.1153,
+          "bbox": [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ]
+        }
+      ]
+    },
+    {
+      "threshold": 0.05,
+      "detection_count": 1,
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.1153,
+          "bbox": [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ]
+        }
+      ]
+    },
+    {
+      "threshold": 0.01,
+      "detection_count": 2,
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.1153,
+          "bbox": [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ]
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.0149,
+          "bbox": [
+            105.06,
+            104.74,
+            292.93,
+            195.37
+          ]
+        }
+      ]
+    }
+  ],
+  "root_cause_summary": "Original default threshold conf=0.25 discarded valid wound detections with confidence ~0.115. Setting conf=0.10 and expanding class definitions to include 'wound' resolved the detection failure.",
+  "verification_status": "PASS"
+}

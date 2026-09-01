@@ -1,0 +1,1822 @@
+[
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (1).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (10).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (11).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (12).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (13).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (14).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (15).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (16).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (17).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (18).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (19).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (2).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (20).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (22).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (23).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (24).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (25).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (26).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (27).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (28).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (29).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (3).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (30).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (31).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (32).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (33).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (34).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (35).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (36).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (37).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (38).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (39).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (4).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (40).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (41).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (42).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (43).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (44).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (45).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (46).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (47).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (48).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (49).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (5).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (50).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (51).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (52).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (53).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (54).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (55).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (56).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (57).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (58).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (59).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (6).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (60).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (63).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (64).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (65).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (66).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (67).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (68).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (69).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (7).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (70).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (71).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (72).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (73).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (74).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (75).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (76).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (77).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (78).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (79).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (8).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (80).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (81).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (82).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (83).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (84).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (85).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Abrasions\\abrasions (9).jpg",
+    "class": "abrasion"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (1).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (10).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (100).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (101).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (102).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (103).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (104).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (105).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (106).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (107).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (108).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (109).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (11).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (110).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (111).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (112).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (113).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (114).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (115).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (116).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (117).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (118).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (119).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (12).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (120).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (121).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (122).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (13).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (14).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (15).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (16).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (17).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (18).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (19).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (2).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (20).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (21).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (22).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (23).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (24).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (25).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (26).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (27).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (28).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (29).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (3).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (30).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (31).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (32).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (33).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (34).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (35).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (36).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (38).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (39).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (4).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (40).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (41).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (42).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (43).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (44).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (45).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (46).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (47).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (48).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (49).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (5).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (50).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (51).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (52).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (53).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (54).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (55).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (56).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (57).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (58).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (59).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (6).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (60).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (61).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (62).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (63).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (64).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (65).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (66).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (67).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (68).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (69).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (7).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (70).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (71).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (72).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (73).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (74).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (75).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (76).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (77).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (78).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (79).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (8).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (80).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (81).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (82).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (83).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (84).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (85).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (86).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (87).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (88).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (89).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (9).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (90).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (91).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (92).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (93).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (94).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (95).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (96).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (97).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (98).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Bruises\\bruises (99).jpg",
+    "class": "bruise"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (1).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (10).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (11).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (12).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (13).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (14).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (15).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (16).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (17).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (18).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (19).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (2).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (20).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (21).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (22).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (23).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (24).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (25).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (26).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (27).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (28).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (29).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (3).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (30).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (31).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (32).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (33).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (34).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (35).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (36).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (37).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (38).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (39).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (4).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (40).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (41).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (42).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (43).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (5).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (51).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (53).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (54).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (55).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (56).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (6).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (7).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (8).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Burns\\burns (9).jpg",
+    "class": "burn"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (1).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (10).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (11).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (12).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (13).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (14).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (15).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (16).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (17).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (18).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (19).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (2).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (20).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (21).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (22).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (23).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (24).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (25).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (26).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (27).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (28).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (29).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (3).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (30).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (31).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (32).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (33).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (34).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (35).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (36).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (37).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (38).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (39).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (4).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (40).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (41).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (42).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (43).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (44).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (45).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (46).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (47).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (48).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (49).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (5).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (50).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (6).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (7).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (8).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Cut\\cut (9).jpg",
+    "class": "cut"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (1).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (10).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (11).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (12).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (13).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (14).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (15).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (16).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (17).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (18).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (19).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (2).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (20).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (21).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (22).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (23).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (24).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (25).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (26).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (27).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (28).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (29).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (3).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (30).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (31).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (32).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (33).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (34).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (35).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (36).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (37).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (38).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (39).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (4).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (40).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (41).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (42).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (43).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (44).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (45).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (46).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (47).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (48).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (49).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (5).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (50).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (51).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (52).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (53).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (54).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (55).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (56).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (57).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (58).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (59).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (6).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (60).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (61).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (7).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (8).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Laseration\\laseration (9).jpg",
+    "class": "laceration"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Surgical Wounds\\99_0.jpg",
+    "class": "wound"
+  },
+  {
+    "reason": "exact_dup",
+    "source": "C:\\Users\\santh\\Capstone Project Code\\data\\raw\\kaggle\\ibrahimfateen_wound_classification\\Wound_dataset copy\\Surgical Wounds\\mirrored_99_0.jpg",
+    "class": "wound"
+  }
+]

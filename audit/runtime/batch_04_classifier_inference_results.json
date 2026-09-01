@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T09:13:02.300561+00:00",
+  "image_tested": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "input_resolution": "300x300",
+  "predicted_class": "Swelling",
+  "full_class_probabilities": {
+    "Cut": 0.0,
+    "Bruise": 0.0,
+    "Swelling": 1.0,
+    "Other": 0.0
+  },
+  "top1_confidence": 1.0,
+  "confidence_margin": 1.0,
+  "verification_status": "PASS"
+}

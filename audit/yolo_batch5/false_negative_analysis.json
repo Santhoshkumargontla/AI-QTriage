@@ -1,0 +1,17 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "total_false_negatives": 4,
+  "breakdown": [
+    {
+      "cause": "Sub-15px micro-scratch (<15px area)",
+      "count": 2,
+      "root_cause": "Resolution downsampling"
+    },
+    {
+      "cause": "Extreme camera motion blur",
+      "count": 2,
+      "root_cause": "Edge degradation"
+    }
+  ],
+  "status": "PASS"
+}

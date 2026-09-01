@@ -1,0 +1,41 @@
+{
+  "audit_timestamp": "2026-08-27T08:51:34.568143+00:00",
+  "sos_weight": 0.0,
+  "vqc_mathematical_contribution": 0.0,
+  "vqc_isolation_verified": true,
+  "runtime_tests": [
+    {
+      "test_id": 1,
+      "inputs": {
+        "peak_g_force": 4.85,
+        "stabilization_time": 2.1,
+        "vqc_output": "HIGH"
+      },
+      "result_triggered": true,
+      "expected_triggered": true
+    },
+    {
+      "test_id": 2,
+      "inputs": {
+        "peak_g_force": 4.85,
+        "stabilization_time": 2.1,
+        "vqc_output": "LOW"
+      },
+      "result_triggered": true,
+      "expected_triggered": true,
+      "decision_changed_by_vqc": false
+    },
+    {
+      "test_id": 3,
+      "inputs": {
+        "peak_g_force": 2.1,
+        "stabilization_time": 0.5,
+        "vqc_output": "HIGH"
+      },
+      "result_triggered": false,
+      "expected_triggered": false,
+      "decision_changed_by_vqc": false
+    }
+  ],
+  "verification_status": "PASS"
+}

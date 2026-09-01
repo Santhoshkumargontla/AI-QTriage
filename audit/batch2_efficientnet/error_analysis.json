@@ -1,0 +1,24 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "confusion_patterns": [
+    {
+      "true": "Cut",
+      "pred": "Bruise",
+      "count": 1,
+      "cause": "High-contrast dark edge similarity"
+    },
+    {
+      "true": "Bruise",
+      "pred": "Cut",
+      "count": 1,
+      "cause": "Linear skin trauma boundary"
+    },
+    {
+      "true": "Swelling",
+      "pred": "Bruise",
+      "count": 2,
+      "cause": "Erythema discoloration overlap"
+    }
+  ],
+  "status": "PASS"
+}

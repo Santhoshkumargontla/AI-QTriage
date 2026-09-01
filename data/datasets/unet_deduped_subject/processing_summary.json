@@ -1,0 +1,259 @@
+{
+  "summary": {
+    "created_utc": "2026-08-30T06:11:40.015541+00:00",
+    "root": "data\\datasets\\unet_deduped_subject",
+    "manifest": "data/datasets/unet_deduped_subject/manifest.csv",
+    "n": 464,
+    "kind_counts": {
+      "positive": 444,
+      "empty": 20
+    },
+    "source_counts": {
+      "azh_patches": 30,
+      "hf_wseg_dataset": 302,
+      "medetec_foot_ulcer_224": 112,
+      "synthetic_empty_target": 20
+    },
+    "split_sizes": {
+      "test": 69,
+      "train": 326,
+      "val": 69
+    },
+    "split_by_kind": {
+      "train": {
+        "positive": 312,
+        "empty": 14
+      },
+      "val": {
+        "positive": 66,
+        "empty": 3
+      },
+      "test": {
+        "positive": 66,
+        "empty": 3
+      }
+    },
+    "subjects": 463,
+    "subject_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "hash_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "near_dup_hamming": 5,
+    "leakage_free": true,
+    "exclusions_n": 1175,
+    "blank_collapse_gate": "CORE_WATCH positive_ratio <= 0.05 required for promotion",
+    "known_limitations": [
+      "Binary wound vs background on chronic/ulcer photos + synthetic empty canvases.",
+      "Not sports-injury cut/bruise segmentation.",
+      "wseg is CC-BY-NC-4.0."
+    ]
+  },
+  "exclusions_sample": [
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/00be2ad4736f6657b767683186615f3f_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00437234527092743faeb39bc59bd7ee_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/00d87e85e220404257d75a9c6d574e0b_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/026d4acc83cb338c02ade317e0816f61_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/0272003ec882522e7bec012aac93cc26_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/0272003ec882522e7bec012aac93cc26_1.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/0272003ec882522e7bec012aac93cc26_2.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/0272003ec882522e7bec012aac93cc26_3.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/02858ff80779671801b922af42c72df6_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00437234527092743faeb39bc59bd7ee_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/0301eae58a63514483f1f05436437ac2_1.png",
+      "kept": "data/datasets/external/azh_patches/train/images/01289b5d0d3f47b0de56c003ec81614a_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/030f458bd12ad589f1c2d6ae4cc245e0_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/035b9aff921b413432a9b2b6d68e4c50_2.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00437234527092743faeb39bc59bd7ee_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/03722f11a500f35511add8b2ecf54e61_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/03a29338d44c41efd1856034029cb9cb_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/03a29338d44c41efd1856034029cb9cb_1.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/03a29338d44c41efd1856034029cb9cb_2.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/03b7f4b22ab4357bbf58da1540daf836_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/04475f8d2c89fbf998cf4713d234ce50_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/045069bee69b9a6b457a69c564589895_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00437234527092743faeb39bc59bd7ee_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/045069bee69b9a6b457a69c564589895_1.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/045897ff55447150716a26960a3b8fd6_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00437234527092743faeb39bc59bd7ee_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/04f5a57ec361e6c807bb168dadcaa8ab_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/04f64bf046561f6838a4b0edb8a995d4_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/04ff12bacbf32cde2df83fc1199518d8_1.png",
+      "kept": "data/datasets/external/azh_patches/train/images/002985bcbd572241a950bf39b4188d70_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/051d7c68ec44d127707d220a2f8a6c09_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/054008cac63fbda02ca31e4c9cd5ee46_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/06252257a775dfbd3a1272509efeca03_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/06d5643601a23d986ce7a24ca4bb2152_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/07752ea4874089617a42d82cf2ae00fb_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/07971964f7d48992be468a95390f365f_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/07a31c50fc96dcf841177d2c832767b9_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00437234527092743faeb39bc59bd7ee_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/07a31c50fc96dcf841177d2c832767b9_1.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/07cd49d4077e7392d36501f291706ddb_1.png",
+      "kept": "data/datasets/external/azh_patches/train/images/035b9aff921b413432a9b2b6d68e4c50_1.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/08b680ecad190d66a8295c5255550bbf_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00437234527092743faeb39bc59bd7ee_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/08e0afdaf1c0ee8199bbab7ccd91dc4b_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/09174d2f9d9ac1b948ba8fb889081e88_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00bf40d77104c2b4d6d55e431ca009b9_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/093bb62edcdb3f3c91316300d2278434_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/01289b5d0d3f47b0de56c003ec81614a_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/095919973cde59672f21c88850a4aa09_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/00437234527092743faeb39bc59bd7ee_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/09b2942c518c46e4937296e182decfaa_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/09bca41d50cde9fb565a929c69ea6459_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    },
+    {
+      "reason": "near_dup",
+      "source": "data/datasets/external/azh_patches/train/images/0a1522cbd777cdcea28293c46f717a6e_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/0020126b06a719c36fed196c2c71f2f0_0.png"
+    }
+  ]
+}

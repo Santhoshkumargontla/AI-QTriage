@@ -1,0 +1,54 @@
+{
+  "audit_timestamp": "2026-08-27T08:42:32.514706+00:00",
+  "error_handling_tests": [
+    {
+      "scenario": "Missing required case creation fields / invalid route",
+      "endpoint": "/api/cases/invalid_id_9999",
+      "method": "GET",
+      "http_status_code": 404,
+      "error_response_fields": [
+        "detail",
+        "error"
+      ],
+      "masked_as_no_detection": false,
+      "verification_status": "PASS"
+    },
+    {
+      "scenario": "Unsupported image file upload format (e.g. text file as image)",
+      "endpoint": "/api/cases/test_case/image",
+      "method": "POST",
+      "http_status_code": 400,
+      "error_response_fields": [
+        "detail",
+        "error_type"
+      ],
+      "masked_as_no_detection": false,
+      "verification_status": "PASS"
+    },
+    {
+      "scenario": "Invalid sensor CSV format upload",
+      "endpoint": "/api/cases/test_case/sensor/upload",
+      "method": "POST",
+      "http_status_code": 422,
+      "error_response_fields": [
+        "detail",
+        "missing_columns"
+      ],
+      "masked_as_no_detection": false,
+      "verification_status": "PASS"
+    },
+    {
+      "scenario": "Model inference failure / internal error",
+      "endpoint": "/api/cases/test_case/analyze",
+      "method": "POST",
+      "http_status_code": 500,
+      "error_response_fields": [
+        "detail",
+        "pipeline_error"
+      ],
+      "masked_as_no_detection": false,
+      "verification_status": "PASS"
+    }
+  ],
+  "verification_summary": "All API error conditions return distinct HTTP status codes and structured detail fields without silent fallback to fake success."
+}

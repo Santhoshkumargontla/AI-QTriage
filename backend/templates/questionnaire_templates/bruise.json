@@ -1,0 +1,54 @@
+{
+  "template_id": "bruise",
+  "template_version": "1.0",
+  "finding": "bruise",
+  "description": "Assessment questions for visible bruise/contusion findings.",
+  "questions": [
+    {
+      "id": "location",
+      "text": "Where is the bruise located on the body?",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "pain",
+      "text": "What is your pain level from 0 to 10?",
+      "type": "number",
+      "min": 0,
+      "max": 10,
+      "required": true
+    },
+    {
+      "id": "mechanism",
+      "text": "How did the injury occur? (e.g., fall, blunt impact, collision)",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "size_estimate",
+      "text": "How large does the bruise appear?",
+      "type": "select",
+      "options": ["small (coin-sized)", "medium (palm-sized)", "large (larger than palm)", "unsure"],
+      "required": false
+    },
+    {
+      "id": "movement_limitation",
+      "text": "Is there any limitation in movement near the bruised area?",
+      "type": "select",
+      "options": ["none", "mild", "moderate", "severe"],
+      "required": true
+    },
+    {
+      "id": "numbness",
+      "text": "Is there any numbness or tingling near the injury?",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "id": "direct_impact",
+      "text": "Was there a direct impact to the area?",
+      "type": "boolean",
+      "required": true
+    }
+  ]
+}

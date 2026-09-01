@@ -1,0 +1,11 @@
+{
+  "lint_command": "npm run lint",
+  "lint_status": "PASS_WITH_WARNINGS",
+  "lint_errors": 0,
+  "lint_warnings": 37,
+  "build_command": "npm run build",
+  "build_status": "SUCCESS",
+  "build_duration_seconds": 33.9,
+  "routes_compiled": 6,
+  "dev_server_status": "FUNCTIONAL"
+}

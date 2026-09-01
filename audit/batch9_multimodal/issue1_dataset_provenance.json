@@ -1,0 +1,30 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "real_multimodal_sample_count": 0,
+  "synthetic_multimodal_sample_count": 0,
+  "hybrid_multimodal_sample_count": 200,
+  "train_count": 140,
+  "validation_count": 30,
+  "test_count": 30,
+  "leakage_status": "VERIFIED (0% overlap across train/val/test splits)",
+  "real_data_metrics": {
+    "accuracy": null,
+    "note": "No clinical patient datasets available"
+  },
+  "synthetic_data_metrics": {
+    "accuracy": null,
+    "note": "No pure synthetic datasets used in final evaluation"
+  },
+  "hybrid_data_metrics": {
+    "accuracy": 0.9,
+    "precision": 0.91,
+    "recall": 0.9,
+    "f1": 0.905
+  },
+  "combined_metrics": {
+    "accuracy": 0.9,
+    "f1": 0.905
+  },
+  "real_world_validation_level": "LIMITED",
+  "status": "DATA LIMITED"
+}

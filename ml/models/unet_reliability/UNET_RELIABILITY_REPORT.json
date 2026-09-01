@@ -1,0 +1,792 @@
+{
+  "created_utc": "2026-08-28T16:48:22.991708+00:00",
+  "not_clinical_accuracy": true,
+  "weights_status": "MODEL_OUTPUT_NOT_TRUSTWORTHY",
+  "inference_gates_only": true,
+  "dataset_audit": {
+    "n_manifest": 200,
+    "missing_images": 0,
+    "missing_masks": 0,
+    "dimension_mismatches": 0,
+    "empty_masks": 0,
+    "nonbinary_masks": 0,
+    "negative_no_wound_examples": 0,
+    "class_balance_all": {
+      "cut": 34,
+      "bruise": 34,
+      "swelling": 132
+    },
+    "split_sizes": {
+      "train": 140,
+      "val": 30,
+      "test": 30
+    },
+    "split_class_counts": {
+      "train": {
+        "cut": 24,
+        "bruise": 24,
+        "swelling": 92
+      },
+      "val": {
+        "swelling": 20,
+        "cut": 5,
+        "bruise": 5
+      },
+      "test": {
+        "swelling": 20,
+        "cut": 5,
+        "bruise": 5
+      }
+    },
+    "subject_overlap": {
+      "train_val": [],
+      "train_test": [],
+      "val_test": []
+    },
+    "exact_duplicate_groups": 5,
+    "exact_duplicate_images": 167,
+    "cross_split_exact_duplicate_groups": 5,
+    "cross_split_near_duplicate_group_count": 5,
+    "mask_area": {
+      "min": 0.025191,
+      "max": 0.268435,
+      "mean": 0.139541,
+      "p50": 0.13909
+    },
+    "source_field": "Kaggle/Roboflow/WOUNDSEG Public Wound Taxonomy",
+    "known_synthetic_generator": "ml/training/download_public_datasets.py generate_expanded_wound_dataset",
+    "leakage_free": false,
+    "image_mask_pairs_ok": true
+  },
+  "loss_function": "BCE_plus_Dice (decoder fine-tune, encoder frozen)",
+  "thresholding": "fixed 0.5; adaptive 0.85*max removed because it created extra false positives",
+  "postprocessing": "3x3 morphological opening; largest connected component if it is >=80% of positives; max area 0.70",
+  "probes": [
+    {
+      "name": "black",
+      "group": "uniform",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "raw": {
+        "positive_ratio": 0.996429443359375,
+        "mean_prob": 0.9972325563430786,
+        "max_prob": 0.9999922513961792,
+        "min_prob": 0.26602423191070557
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.996429,
+        "false_positive_area": 0.996429
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "white",
+      "group": "uniform",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "raw": {
+        "positive_ratio": 0.9994659423828125,
+        "mean_prob": 0.996989369392395,
+        "max_prob": 0.9999991655349731,
+        "min_prob": 0.20126980543136597
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.999466,
+        "false_positive_area": 0.999466
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "gray",
+      "group": "uniform",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "raw": {
+        "positive_ratio": 0.157470703125,
+        "mean_prob": 0.13980484008789062,
+        "max_prob": 0.9209981560707092,
+        "min_prob": 0.0012389844050630927
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.157471,
+        "false_positive_area": 0.157471
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "noisy_gray_std5",
+      "group": "uniform",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 3.3535,
+        "ptp": 28.0,
+        "unique16": 3,
+        "laplacian_var": 223.6144,
+        "edge_frac": 0.0,
+        "skin_frac": 0.078783,
+        "red_frac": 0.0
+      },
+      "raw": {
+        "positive_ratio": 0.0792083740234375,
+        "mean_prob": 0.07106103003025055,
+        "max_prob": 0.9175929427146912,
+        "min_prob": 0.0010500026401132345
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.079208,
+        "false_positive_area": 0.079208
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "uniform_skin",
+      "group": "normal_skin",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 1.0
+      },
+      "raw": {
+        "positive_ratio": 0.0,
+        "mean_prob": 0.002113626804202795,
+        "max_prob": 0.10662893950939178,
+        "min_prob": 0.00037487279041670263
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.0,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "noisy_skin",
+      "group": "normal_skin",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 2.692,
+        "ptp": 23.0,
+        "unique16": 3,
+        "laplacian_var": 143.6189,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 0.567144
+      },
+      "raw": {
+        "positive_ratio": 0.0,
+        "mean_prob": 0.0020682800095528364,
+        "max_prob": 0.10688763111829758,
+        "min_prob": 0.0003405609750188887
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.0,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "blank_skin.jpg",
+      "group": "normal_skin",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 640,
+        "width": 640,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 0.0
+      },
+      "raw": {
+        "positive_ratio": 0.4290618896484375,
+        "mean_prob": 0.4774048328399658,
+        "max_prob": 0.9978163242340088,
+        "min_prob": 0.003444095142185688
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.429062,
+        "false_positive_area": 0.429062
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "synthetic_cut_template",
+      "group": "wound",
+      "quality_status": "VALID",
+      "quality_reason": "passed_input_quality_gates",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 14.1609,
+        "ptp": 84.0,
+        "unique16": 2,
+        "laplacian_var": 232.875,
+        "edge_frac": 0.006896,
+        "skin_frac": 0.970723,
+        "red_frac": 1.0
+      },
+      "raw": {
+        "positive_ratio": 0.04046630859375,
+        "mean_prob": 0.04258814454078674,
+        "max_prob": 0.9999996423721313,
+        "min_prob": 0.00036219225148670375
+      },
+      "gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_mask_sanity",
+        "is_reliable": true,
+        "mask_withheld": false,
+        "displayed_positive_ratio": 0.040357940051020405,
+        "displayed_pixel_count": 2025,
+        "affected_ratio": 0.040357940051020405,
+        "raw_positive_ratio": 0.040466,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "blurred_cut",
+      "group": "blurred",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 7.7492,
+        "ptp": 39.0,
+        "unique16": 3,
+        "laplacian_var": 0.4096,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 1.0
+      },
+      "raw": {
+        "positive_ratio": 0.033538818359375,
+        "mean_prob": 0.035021618008613586,
+        "max_prob": 0.9851047396659851,
+        "min_prob": 0.00026996235828846693
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.033539,
+        "false_positive_area": 0.033539
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "heavily_blurred_cut",
+      "group": "blurred",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 5.5529,
+        "ptp": 22.0,
+        "unique16": 2,
+        "laplacian_var": 0.5289,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 1.0
+      },
+      "raw": {
+        "positive_ratio": 0.0,
+        "mean_prob": 0.002310266485437751,
+        "max_prob": 0.10648591816425323,
+        "min_prob": 0.0003239969373680651
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.0,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "blue_unrelated",
+      "group": "unrelated",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "raw": {
+        "positive_ratio": 0.996063232421875,
+        "mean_prob": 0.9962867498397827,
+        "max_prob": 0.9999860525131226,
+        "min_prob": 0.19514404237270355
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.996063,
+        "false_positive_area": 0.996063
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "green_unrelated",
+      "group": "unrelated",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "raw": {
+        "positive_ratio": 0.0,
+        "mean_prob": 0.0008778796764090657,
+        "max_prob": 0.13989311456680298,
+        "min_prob": 0.0001559136580908671
+      },
+      "gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.0,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "blue_striped_unrelated",
+      "group": "unrelated",
+      "quality_status": "OUT_OF_DISTRIBUTION",
+      "quality_reason": "high_frequency_unstructured",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 39.4085,
+        "ptp": 105.0,
+        "unique16": 2,
+        "laplacian_var": 11320.3125,
+        "edge_frac": 0.334821,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "raw": {
+        "positive_ratio": 0.995208740234375,
+        "mean_prob": 0.9917225241661072,
+        "max_prob": 0.9999996423721313,
+        "min_prob": 0.07261708378791809
+      },
+      "gated": {
+        "status": "UNTRUSTWORTHY_OUTPUT",
+        "reason": "ood_high_frequency_unstructured",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.995209,
+        "false_positive_area": 0.995209
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "high_frequency_noise",
+      "group": "unrelated",
+      "quality_status": "OUT_OF_DISTRIBUTION",
+      "quality_reason": "high_frequency_unstructured",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 49.612,
+        "ptp": 251.0,
+        "unique16": 16,
+        "laplacian_var": 49722.0542,
+        "edge_frac": 0.368603,
+        "skin_frac": 0.128966,
+        "red_frac": 0.114896
+      },
+      "raw": {
+        "positive_ratio": 0.0285797119140625,
+        "mean_prob": 0.06634804606437683,
+        "max_prob": 0.9912229776382446,
+        "min_prob": 0.00019203824922442436
+      },
+      "gated": {
+        "status": "UNTRUSTWORTHY_OUTPUT",
+        "reason": "ood_high_frequency_unstructured",
+        "is_reliable": false,
+        "mask_withheld": true,
+        "displayed_positive_ratio": 0.0,
+        "displayed_pixel_count": 0,
+        "affected_ratio": null,
+        "raw_positive_ratio": 0.02858,
+        "false_positive_area": 0.02858
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "football_injury.jpg",
+      "group": "wound",
+      "quality_status": "VALID",
+      "quality_reason": "passed_input_quality_gates",
+      "quality_metrics": {
+        "height": 300,
+        "width": 300,
+        "std": 39.4124,
+        "ptp": 208.0,
+        "unique16": 14,
+        "laplacian_var": 4626.6447,
+        "edge_frac": 0.203922,
+        "skin_frac": 0.951567,
+        "red_frac": 0.822956
+      },
+      "raw": {
+        "positive_ratio": 0.4329681396484375,
+        "mean_prob": 0.4192870259284973,
+        "max_prob": 0.9968733191490173,
+        "min_prob": 0.00013754022074863315
+      },
+      "gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_mask_sanity",
+        "is_reliable": true,
+        "mask_withheld": false,
+        "displayed_positive_ratio": 0.3594333333333333,
+        "displayed_pixel_count": 32349,
+        "affected_ratio": 0.3594333333333333,
+        "raw_positive_ratio": 0.432968,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "val_public_sample_0141_swelling",
+      "group": "wound",
+      "quality_status": "VALID",
+      "quality_reason": "passed_input_quality_gates",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 10.7694,
+        "ptp": 68.0,
+        "unique16": 6,
+        "laplacian_var": 36.8621,
+        "edge_frac": 0.018435,
+        "skin_frac": 1.0,
+        "red_frac": 0.730389
+      },
+      "raw": {
+        "positive_ratio": 0.26715087890625,
+        "mean_prob": 0.26754313707351685,
+        "max_prob": 0.9996923208236694,
+        "min_prob": 0.00034440061426721513
+      },
+      "gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_mask_sanity",
+        "is_reliable": true,
+        "mask_withheld": false,
+        "displayed_positive_ratio": 0.26682079081632654,
+        "displayed_pixel_count": 13388,
+        "affected_ratio": 0.26682079081632654,
+        "raw_positive_ratio": 0.267151,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "val_public_sample_0142_swelling",
+      "group": "wound",
+      "quality_status": "VALID",
+      "quality_reason": "passed_input_quality_gates",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 11.4219,
+        "ptp": 116.0,
+        "unique16": 9,
+        "laplacian_var": 149.8704,
+        "edge_frac": 0.011201,
+        "skin_frac": 0.991091,
+        "red_frac": 0.986647
+      },
+      "raw": {
+        "positive_ratio": 0.026702880859375,
+        "mean_prob": 0.029167573899030685,
+        "max_prob": 0.9999256134033203,
+        "min_prob": 0.0003515241842251271
+      },
+      "gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_mask_sanity",
+        "is_reliable": true,
+        "mask_withheld": false,
+        "displayed_positive_ratio": 0.026486766581632654,
+        "displayed_pixel_count": 1329,
+        "affected_ratio": 0.026486766581632654,
+        "raw_positive_ratio": 0.026703,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "val_public_sample_0143_swelling",
+      "group": "wound",
+      "quality_status": "VALID",
+      "quality_reason": "passed_input_quality_gates",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 27.9984,
+        "ptp": 142.0,
+        "unique16": 9,
+        "laplacian_var": 178.0342,
+        "edge_frac": 0.0056,
+        "skin_frac": 0.914521,
+        "red_frac": 0.991091
+      },
+      "raw": {
+        "positive_ratio": 0.0856475830078125,
+        "mean_prob": 0.08770506083965302,
+        "max_prob": 0.9999996423721313,
+        "min_prob": 0.0003905279445461929
+      },
+      "gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_mask_sanity",
+        "is_reliable": true,
+        "mask_withheld": false,
+        "displayed_positive_ratio": 0.08557876275510204,
+        "displayed_pixel_count": 4294,
+        "affected_ratio": 0.08557876275510204,
+        "raw_positive_ratio": 0.085648,
+        "false_positive_area": 0.0
+      },
+      "failure_hidden": false
+    }
+  ],
+  "blank_ood_false_positive_area": {
+    "black": {
+      "raw_positive_ratio": 0.996429443359375,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.996429
+    },
+    "white": {
+      "raw_positive_ratio": 0.9994659423828125,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.999466
+    },
+    "gray": {
+      "raw_positive_ratio": 0.157470703125,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.157471
+    },
+    "noisy_gray_std5": {
+      "raw_positive_ratio": 0.0792083740234375,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.079208
+    },
+    "uniform_skin": {
+      "raw_positive_ratio": 0.0,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.0
+    },
+    "noisy_skin": {
+      "raw_positive_ratio": 0.0,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.0
+    },
+    "blank_skin.jpg": {
+      "raw_positive_ratio": 0.4290618896484375,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.429062
+    },
+    "blurred_cut": {
+      "raw_positive_ratio": 0.033538818359375,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.033539
+    },
+    "heavily_blurred_cut": {
+      "raw_positive_ratio": 0.0,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.0
+    },
+    "blue_unrelated": {
+      "raw_positive_ratio": 0.996063232421875,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.996063
+    },
+    "green_unrelated": {
+      "raw_positive_ratio": 0.0,
+      "gated_status": "LOW_QUALITY_INPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.0
+    },
+    "blue_striped_unrelated": {
+      "raw_positive_ratio": 0.995208740234375,
+      "gated_status": "UNTRUSTWORTHY_OUTPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.995209
+    },
+    "high_frequency_noise": {
+      "raw_positive_ratio": 0.0285797119140625,
+      "gated_status": "UNTRUSTWORTHY_OUTPUT",
+      "displayed_positive_ratio": 0.0,
+      "false_positive_area": 0.02858
+    }
+  },
+  "still_reliable_on_invalid": [],
+  "hidden_false_positives": [],
+  "remaining_dataset_gaps": [
+    "Zero empty masks and zero labeled no-wound examples in public_wound_dataset.",
+    "All 200 images are PIL drawings from generate_expanded_wound_dataset, not clinical photos.",
+    "Exact/near-duplicate templates span train/val/test (subject IDs are disjoint; pixels are not).",
+    "Abrasion/laceration/burn were remapped to swelling in the manifest class field.",
+    "Held-out Dice ~0.98 is template reconstruction, not generalization."
+  ],
+  "retraining_recommendation": [
+    "Do not promote new U-Net weights until blank/white/black raw positive_ratio is < 0.05 without inference gates.",
+    "Add empty-mask negatives: uniform fills, blank skin, cluttered non-injury photos.",
+    "Keep image/mask pairs unique across splits; drop exact duplicates.",
+    "Train with empty-mask examples in the Dice+BCE loss so background is a first-class class.",
+    "Keep current production weights plus these gates until that dataset exists."
+  ]
+}

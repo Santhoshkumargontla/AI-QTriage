@@ -1,0 +1,66 @@
+{
+  "audit_timestamp": "2026-08-27T13:52:21.008840+00:00",
+  "uncertainty_formula": "HIGH if (not models_agree or reasons>=2); MODERATE if reasons==1; LOW otherwise",
+  "executed_uncertainty_tests": [
+    {
+      "case_name": "1. Strong agreement all modalities",
+      "calculated_level": "LOW UNCERTAINTY",
+      "expected_level": "LOW UNCERTAINTY",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "case_name": "2. Moderate disagreement",
+      "calculated_level": "HIGH UNCERTAINTY",
+      "expected_level": "HIGH UNCERTAINTY",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "case_name": "3. Severe disagreement",
+      "calculated_level": "HIGH UNCERTAINTY",
+      "expected_level": "HIGH UNCERTAINTY",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "case_name": "4. One modality missing (Sensor missing)",
+      "calculated_level": "LOW UNCERTAINTY",
+      "expected_level": "LOW UNCERTAINTY",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "case_name": "5. Two modalities missing",
+      "calculated_level": "MODERATE UNCERTAINTY",
+      "expected_level": "MODERATE UNCERTAINTY",
+      "match": true,
+      "status": "PASS"
+    },
+    {
+      "case_name": "6. Three modalities missing / Model failure",
+      "calculated_level": "HIGH UNCERTAINTY",
+      "expected_level": "HIGH UNCERTAINTY",
+      "match": true,
+      "status": "PASS"
+    }
+  ],
+  "degraded_mode_matrix": [
+    {
+      "missing_modality": "Sensor",
+      "handling": "Reduced Modality Mode (sensor_present=0, no false risk penalty)",
+      "status": "PASS"
+    },
+    {
+      "missing_modality": "Segmentation",
+      "handling": "Fallback full-image classification (seg_reliable=False, increases uncertainty)",
+      "status": "PASS"
+    },
+    {
+      "missing_modality": "YOLO Detection",
+      "handling": "Finding detected=False, explicit false-negative disclaimer emitted",
+      "status": "PASS"
+    }
+  ],
+  "status": "PASS"
+}

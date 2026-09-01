@@ -1,0 +1,503 @@
+{
+  "audit_timestamp": "2026-08-27T14:15:27.222457+00:00",
+  "sha256_recomputation": {
+    "YOLO11": {
+      "path": "ml\\models\\vision\\yolo11_injury_best.pt",
+      "exists": true,
+      "file_size_bytes": 5470810,
+      "mtime_utc": "2026-08-27T12:40:03.100287+00:00",
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63"
+    },
+    "EfficientNetV2": {
+      "path": "ml\\models\\vision\\efficientnetv2_injury_best.pt",
+      "exists": true,
+      "file_size_bytes": 81626143,
+      "mtime_utc": "2026-08-27T07:25:39.709359+00:00",
+      "sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777"
+    },
+    "UNet": {
+      "path": "ml\\models\\vision\\unet_injury_best.pt",
+      "exists": true,
+      "file_size_bytes": 97918031,
+      "mtime_utc": "2026-08-27T07:25:50.674705+00:00",
+      "sha256": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93"
+    },
+    "XGBoost": {
+      "path": "ml\\models\\xgboost_multimodal_best.json",
+      "exists": true,
+      "file_size_bytes": 299276,
+      "mtime_utc": "2026-08-27T13:00:50.902323+00:00",
+      "sha256": "3302606df1c82dffbf79ce8dd726c148978fc92cee8e5e8071348a249f6d4d9f"
+    }
+  },
+  "sha_discrepancies": [
+    {
+      "model": "UNet",
+      "previous_claim": "1b89ef43c0912a789bc10234fe789bc10234fe789bc10234fe789bc10234fe78",
+      "actual_sha256": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93",
+      "status": "PREVIOUS SHA-256 CLAIM NOT REPRODUCED"
+    },
+    {
+      "model": "XGBoost",
+      "previous_claim": "5c90b21a87e341f2908b7a6c5d4e3f21098b7a6c5d4e3f21098b7a6c5d4e3f21",
+      "actual_sha256": "3302606df1c82dffbf79ce8dd726c148978fc92cee8e5e8071348a249f6d4d9f",
+      "status": "PREVIOUS SHA-256 CLAIM NOT REPRODUCED"
+    }
+  ],
+  "model_runtime_results": {
+    "YOLO11": {
+      "artifact_status": "MODEL_ARTIFACT_PRESENT",
+      "load_status": "MODEL_LOAD_VERIFIED",
+      "inference_status": "MODEL_RUNTIME_INFERENCE_VERIFIED",
+      "wrapper_status": "PRODUCTION_WRAPPER_VERIFIED",
+      "input_shape": [
+        1,
+        640,
+        640,
+        3
+      ],
+      "output_detections": 0,
+      "latency_ms": 3341.93
+    },
+    "EfficientNetV2": {
+      "status": "FAILED (cannot import name 'EfficientNetInjuryClassifier' from 'ml.vision.efficientnet_wrapper' (c:\\Users\\santh\\Capstone Project Code\\ml\\vision\\efficientnet_wrapper.py))"
+    },
+    "UNet": {
+      "artifact_status": "MODEL_ARTIFACT_PRESENT",
+      "load_status": "MODEL_LOAD_VERIFIED",
+      "inference_status": "MODEL_RUNTIME_INFERENCE_VERIFIED",
+      "wrapper_status": "PRODUCTION_WRAPPER_VERIFIED",
+      "input_shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "output_shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "affected_area_ratio": 0.12,
+      "latency_ms": 15.1
+    },
+    "XGBoost": {
+      "artifact_status": "MODEL_ARTIFACT_PRESENT",
+      "load_status": "MODEL_LOAD_VERIFIED",
+      "inference_status": "MODEL_RUNTIME_INFERENCE_VERIFIED",
+      "wrapper_status": "PRODUCTION_WRAPPER_VERIFIED",
+      "input_shape": [
+        1,
+        23
+      ],
+      "output_probabilities": {
+        "LOW": 0.7523999810218811,
+        "MODERATE": 0.24560000002384186,
+        "HIGH": 0.0020000000949949026
+      },
+      "latency_ms": 2.52
+    }
+  },
+  "fusion_23d_results": [
+    {
+      "scenario": "Full modalities",
+      "vector_length": 23,
+      "feature_count_matches_23": true,
+      "has_nan": false,
+      "has_inf": false,
+      "handled_safely": true,
+      "evidence_classification": "SOFTWARE_RULE_VERIFIED"
+    },
+    {
+      "scenario": "Missing sensor",
+      "vector_length": 23,
+      "feature_count_matches_23": true,
+      "has_nan": false,
+      "has_inf": false,
+      "handled_safely": true,
+      "evidence_classification": "SOFTWARE_RULE_VERIFIED"
+    },
+    {
+      "scenario": "Missing vision",
+      "vector_length": 23,
+      "feature_count_matches_23": true,
+      "has_nan": false,
+      "has_inf": false,
+      "handled_safely": true,
+      "evidence_classification": "SOFTWARE_RULE_VERIFIED"
+    },
+    {
+      "scenario": "Missing questionnaire",
+      "vector_length": 23,
+      "feature_count_matches_23": true,
+      "has_nan": false,
+      "has_inf": false,
+      "handled_safely": true,
+      "evidence_classification": "SOFTWARE_RULE_VERIFIED"
+    },
+    {
+      "scenario": "Two modalities missing",
+      "vector_length": 23,
+      "feature_count_matches_23": true,
+      "has_nan": false,
+      "has_inf": false,
+      "handled_safely": true,
+      "evidence_classification": "SOFTWARE_RULE_VERIFIED"
+    },
+    {
+      "scenario": "Invalid numeric values",
+      "vector_length": 23,
+      "feature_count_matches_23": true,
+      "has_nan": false,
+      "has_inf": false,
+      "handled_safely": true,
+      "evidence_classification": "SOFTWARE_RULE_VERIFIED"
+    },
+    {
+      "scenario": "NaN values",
+      "vector_length": 23,
+      "feature_count_matches_23": true,
+      "has_nan": true,
+      "has_inf": false,
+      "handled_safely": true,
+      "evidence_classification": "SOFTWARE_RULE_VERIFIED"
+    },
+    {
+      "scenario": "Infinity values",
+      "vector_length": 23,
+      "feature_count_matches_23": true,
+      "has_nan": false,
+      "has_inf": true,
+      "handled_safely": true,
+      "evidence_classification": "SOFTWARE_RULE_VERIFIED"
+    }
+  ],
+  "sos_boundary_results": [
+    {
+      "peak_g_force": 3.99,
+      "stabilization_time": 1.49,
+      "expected_sos": false,
+      "actual_sos": false,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 3.99,
+      "stabilization_time": 1.5,
+      "expected_sos": false,
+      "actual_sos": false,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 4.0,
+      "stabilization_time": 1.49,
+      "expected_sos": false,
+      "actual_sos": false,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 4.0,
+      "stabilization_time": 1.5,
+      "expected_sos": true,
+      "actual_sos": true,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 4.0,
+      "stabilization_time": 1.51,
+      "expected_sos": true,
+      "actual_sos": true,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 4.01,
+      "stabilization_time": 1.5,
+      "expected_sos": true,
+      "actual_sos": true,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 5.0,
+      "stabilization_time": 1.5,
+      "expected_sos": true,
+      "actual_sos": true,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 8.5,
+      "stabilization_time": 6.0,
+      "expected_sos": true,
+      "actual_sos": true,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 0.0,
+      "stabilization_time": 0.0,
+      "expected_sos": false,
+      "actual_sos": false,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": -4.0,
+      "stabilization_time": 1.5,
+      "expected_sos": false,
+      "actual_sos": false,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 100.0,
+      "stabilization_time": 100.0,
+      "expected_sos": true,
+      "actual_sos": true,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 4.0,
+      "stabilization_time": 0.0,
+      "expected_sos": false,
+      "actual_sos": false,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    },
+    {
+      "peak_g_force": 0.0,
+      "stabilization_time": 1.5,
+      "expected_sos": false,
+      "actual_sos": false,
+      "passed": true,
+      "classification": "RESEARCH_PROTOTYPE_SAFETY_RULE"
+    }
+  ],
+  "vqc_isolation_results": [
+    {
+      "vqc_output": "strong_HIGH",
+      "below_threshold_sos": false,
+      "above_threshold_sos": true,
+      "weight": 0.0,
+      "isolation_verified": true,
+      "classification": "VQC_PRODUCTION_PATH_ISOLATION_VERIFIED"
+    },
+    {
+      "vqc_output": "strong_LOW",
+      "below_threshold_sos": false,
+      "above_threshold_sos": true,
+      "weight": 0.0,
+      "isolation_verified": true,
+      "classification": "VQC_PRODUCTION_PATH_ISOLATION_VERIFIED"
+    },
+    {
+      "vqc_output": "NaN",
+      "below_threshold_sos": false,
+      "above_threshold_sos": true,
+      "weight": 0.0,
+      "isolation_verified": true,
+      "classification": "VQC_PRODUCTION_PATH_ISOLATION_VERIFIED"
+    },
+    {
+      "vqc_output": "missing",
+      "below_threshold_sos": false,
+      "above_threshold_sos": true,
+      "weight": 0.0,
+      "isolation_verified": true,
+      "classification": "VQC_PRODUCTION_PATH_ISOLATION_VERIFIED"
+    },
+    {
+      "vqc_output": "adversarial_extreme",
+      "below_threshold_sos": false,
+      "above_threshold_sos": true,
+      "weight": 0.0,
+      "isolation_verified": true,
+      "classification": "VQC_PRODUCTION_PATH_ISOLATION_VERIFIED"
+    }
+  ],
+  "backend_route_audit": {
+    "total_discovered_routes": 33,
+    "tested_routes_count": 4,
+    "details": [
+      {
+        "route": "/docs/oauth2-redirect",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/sos/demo",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/ai/gemini/status",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/report/json",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sos/demo/respond",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sensor/demo",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/redoc",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sensor/simulate",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sos/abort",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sos/demo/trigger",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/questionnaire/template",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/questionnaire",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/report",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/openapi.json",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/evaluation/comparison",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/models/registry",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases",
+        "status": "ROUTE_RUNTIME_VERIFIED",
+        "http_code": 200
+      },
+      {
+        "route": "/api/cases/{case_id}",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/sos/config",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sensor",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/analyze",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/models",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/health",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/evaluation",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/demo",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/evaluation/ablation",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sensor/skip",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sensor/live/upload",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/docs",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/uploads",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/report/pdf",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/image",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      },
+      {
+        "route": "/api/cases/{case_id}/sos/status",
+        "status": "ROUTE_NOT_TESTED",
+        "http_code": null
+      }
+    ]
+  },
+  "sensor_pipeline_audit": {
+    "JSON_TELEMETRY_INGESTION": "SOFTWARE_RULE_VERIFIED",
+    "SENSOR_FEATURE_PROCESSING": "SOFTWARE_RULE_VERIFIED",
+    "SOS_DECISION_LOGIC": "SOFTWARE_RULE_VERIFIED",
+    "PHYSICAL_SMARTPHONE_SENSOR_HARDWARE": "SMARTPHONE_SENSOR_HARDWARE_NOT_VERIFIED"
+  },
+  "frontend_status": "FRONTEND_SOURCE_INSPECTED_ONLY",
+  "final_verdict": "PARTIALLY_RUNTIME_VERIFIED"
+}

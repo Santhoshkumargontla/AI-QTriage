@@ -1,0 +1,506 @@
+{
+  "created_utc": "2026-08-30T06:09:42.475435+00:00",
+  "count": 7084,
+  "sample": [
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/manifest.csv",
+      "size_bytes": 921676,
+      "sha256": null
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/0c6fd223981e01b2.jpg",
+      "size_bytes": 52141,
+      "sha256": "dab075c0bf3de2d51c778eb5613030ba735f3f920d36dd68d5d814e5f7917e16"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/1a13337b7ef4062f.jpg",
+      "size_bytes": 58882,
+      "sha256": "e64ebea933e8a349fec856abf050f0e373cea9eaaf3d84aacc2ede6f934b0c14"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/1e4d5603cf22523c.jpg",
+      "size_bytes": 64298,
+      "sha256": "ce5bd2c684ebd3946ee78c69d4663f15ef1a1da0a3f91628d5aa6008b2db56c6"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/1f24413004e8d920.jpg",
+      "size_bytes": 47857,
+      "sha256": "d14edc69f29f9353cb4a30308cc991e2ad61b0a282e1a947409be9b1410f1cee"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/212c9af5da5453fe.jpg",
+      "size_bytes": 64298,
+      "sha256": "546a60111e148475f2a7da3c494b6bba4c08ca039b6deec00c398395f9d59dd3"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/39cb8f339a920986.jpg",
+      "size_bytes": 105179,
+      "sha256": "5ddf6312d55a13c7e85b10ed06bb54a8d290fa9c22cc279bf7f0a1a759cee8c0"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/3a32f9cd67bb30ec.jpg",
+      "size_bytes": 36659,
+      "sha256": "c7e8ea0c4ec9d1478a17b6cdabb212dcdbbeec0131aa1777b1e4c1f6251729f1"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/3fa38f59100fc5a5.jpg",
+      "size_bytes": 52140,
+      "sha256": "57340c3f823d77345913bae869bde15238dae8914445f308e0b88fc06fe73fe1"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/4a0ba53ac33e56e8.jpg",
+      "size_bytes": 71442,
+      "sha256": "5fa5dbbc2b141426df15dd49fe1ca99a8ff7a6bb54f3c8d21faa953c433ae00c"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/53da6a3fea192db0.jpg",
+      "size_bytes": 58729,
+      "sha256": "f12867a2846498d75f035e262cd307678080a2a9a9858fd31800c3858b90ca37"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/578814468cb4574e.jpg",
+      "size_bytes": 79966,
+      "sha256": "1908d9b82563e8138add7193bbf7d3b72301893aa7d3ee3c01d1fedd738581b9"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/5996cdaeaf34ad5e.jpg",
+      "size_bytes": 78370,
+      "sha256": "b2e1018fc2860e371316a98c08b8d73346edec18db8d989f379a9cff56fec046"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/5c02328589a8623e.jpg",
+      "size_bytes": 57444,
+      "sha256": "c07849cdcae3c4bc53885c9270f2205cfcf94a38f98a1fe60bb888260bc65ee1"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/5c975d40157b5e17.jpg",
+      "size_bytes": 94594,
+      "sha256": "1c8af9c19479b56ed8b1ad4f9b18a079d05e948de4d2fbd40b754495bdde8290"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/666da8d521995991.jpg",
+      "size_bytes": 41644,
+      "sha256": "f204c88c76cc4c361c04afe065063de9cc5b98331eacb3f328e95c1fe5a23ce6"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/7c6d864385b97603.jpg",
+      "size_bytes": 47489,
+      "sha256": "52f698410b9ddfcecfc30c60cf1f2b5a0716c6d4c0701e882996457d7c4fd640"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/80c29821d88b3061.jpg",
+      "size_bytes": 47187,
+      "sha256": "4cccd5890fdc473d68a481204b0f5e7d1c4d482f1eb51ca0d87a54dcf08d591d"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/85ea39834d10536a.jpg",
+      "size_bytes": 60947,
+      "sha256": "1f6078d89349b29e42fd6c6ea93c07647813233416a8ac774361ec027f037d33"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/9ea76d26dc340628.jpg",
+      "size_bytes": 57185,
+      "sha256": "b36428a32285d64d33633675ac3a01e2ab0df2222ecd8f41a836f90917eeac1f"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/aa691b9f419a8336.jpg",
+      "size_bytes": 36716,
+      "sha256": "07a3fe4dcae8fbcd8a249327a3c7d78a42d96f129e035b5d987faf4154a8a866"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/be6145af049ced93.jpg",
+      "size_bytes": 54908,
+      "sha256": "bfa4ff5cf9e5eaeba291c38295c9cd25d3ff84b7bd43b086f5cc5136204d018f"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/c4d22d9ef7911fba.jpg",
+      "size_bytes": 58432,
+      "sha256": "d8aafeaa9256db7bee9c935da7bc4ad9eaddc7e51f89294e9322c910468052aa"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/d3059ac2029c85b7.jpg",
+      "size_bytes": 50315,
+      "sha256": "2f4c4e90dfba1a3f3b4eeb949d0255c0e15f5d88ebe9e0643fdbcb8dfc2d850d"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/d648e46339f44f94.jpg",
+      "size_bytes": 60769,
+      "sha256": "fba574aa83491475b0c81827a224794c7a403244c14177db50f30fe776dbb9fc"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/e0c8d987fd00710c.jpg",
+      "size_bytes": 58744,
+      "sha256": "dd8ba5aecdf9d5d86a0dfb77b19aff7706c411aa1d156ab518d7ed202acd078f"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/e13873d7376ccc0c.jpg",
+      "size_bytes": 46128,
+      "sha256": "13fdf9ec1d86675750f1342d48cc55afb9948fcb2a60739bc67f7c0013b3fffb"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/eb92d1fbbd8890fe.jpg",
+      "size_bytes": 58419,
+      "sha256": "16ddfebb4061c2b14c4fbe24eabf13dfadd6f407501397d24c6f55c4078b6e62"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/ec4380de89728699.jpg",
+      "size_bytes": 96601,
+      "sha256": "bf00d624ab4897a5c799252b0d8de669c3a9552440018737da27e11f7a6c0a59"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/abrasion/f6901b8e221c43c2.jpg",
+      "size_bytes": 64569,
+      "sha256": "5f337862eeedf17e5efc243621cf09dc1efe6acbc29ffe8ab3159573c85d9b19"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/27a50580dbe9bafe.jpg",
+      "size_bytes": 35714,
+      "sha256": "13acac961e395d670f5533c617f8d07a1daccca9eb3fc3d30d4be708e1bd7a52"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/28205390772eb017.jpg",
+      "size_bytes": 29899,
+      "sha256": "099fab657a584c6d18c2fea2e09e596c80e68ce3209d34504c73bc683a8b83b8"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/3eb446506f78bfb8.jpg",
+      "size_bytes": 38717,
+      "sha256": "b49d43dd6c980ef37eead0935379c32efc75b287bbbde3788a394b8a311b2502"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/41ab3ae967ccef4a.jpg",
+      "size_bytes": 69259,
+      "sha256": "ac8c72ae8760865fba8e12761687239864a6e7ef09bc9e6808841e05145801b5"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/41aee1471386c7a0.jpg",
+      "size_bytes": 56304,
+      "sha256": "92534f10e312e73bcccc2515a7cf70061077685585dcb5e9263ad345aae1ab45"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/4771851d67f87daa.jpg",
+      "size_bytes": 56889,
+      "sha256": "7051b0f05a1f549561f43335b945697d198ef22a88b822d6a18791aae777c131"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/52e95638b84c052f.jpg",
+      "size_bytes": 35320,
+      "sha256": "fc6a6fd68f37a240d4f4649a0e5c39e6aa3464cbbc0b45c34c06d694669b892f"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/583acef6b3298081.jpg",
+      "size_bytes": 51224,
+      "sha256": "18208d43590be201d9cba3e5a74ee22e231b7e0d5731cf16c7c862d7738a3f1b"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/5c0d9c6b9a009b5f.jpg",
+      "size_bytes": 47839,
+      "sha256": "1fb5c02a065e2a2b2f78edd1a61a25aa63f20837b722372ad73aca5102177e6e"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/5f836bf9ebd8af2b.jpg",
+      "size_bytes": 46504,
+      "sha256": "17d9f69cd7c5106843a83d7aaddcbceee8d9260ab7e28f5569c6c12bb7ec92bc"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/6340344c80d8e833.jpg",
+      "size_bytes": 33337,
+      "sha256": "8b6551f255f99fe613616b78afa027162d141efb25021d17114e20c3e4f943af"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/63d81f571afb89aa.jpg",
+      "size_bytes": 36519,
+      "sha256": "d4e73ecc646b56724368071333f26ca41302fb722272f45048573fca7d6c5e4a"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/64c87b584c3033a1.jpg",
+      "size_bytes": 36541,
+      "sha256": "e169188a7be20162f5c51a9abdfd22993788152bdfa2db75560e4a61d04e4868"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/6e5015a53001719e.jpg",
+      "size_bytes": 34972,
+      "sha256": "7a4518acaa20c810635a598671a09e0a8bc15573636b33c11d8a144f2c3d36c6"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/82a8b37eafe78e8f.jpg",
+      "size_bytes": 62451,
+      "sha256": "e0c8d0a11d416c54e7c4ee09a62dec98bd245b4bea205e0995bcf3db77cd3ef8"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/8a1df5cea690fd42.jpg",
+      "size_bytes": 90514,
+      "sha256": "bd9ff0cb61182bee84fa17c403ea43cf44e1ef2edc45c6149d654a3999b97b78"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/8fe2daf93ac6e705.jpg",
+      "size_bytes": 44655,
+      "sha256": "1bffb75bce1b952385d95d31b69f09a474f92472f4e58aa9f4148c8ac064ac18"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/96c00d1e794cd622.jpg",
+      "size_bytes": 97182,
+      "sha256": "6e25fc9aa1f29c71e06c15da41187e0308740d0609e4d6bac2ef5b209dbac658"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/a8499319c312a8b6.jpg",
+      "size_bytes": 30154,
+      "sha256": "41821e08db4cb243be7d73cc249e78d4c2d1819c6f1f1da3232b7a44904137b7"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/b5964fa391fca220.jpg",
+      "size_bytes": 33663,
+      "sha256": "704588c26110b096b01a5fdaed83ebe896109b4b7b7052b726b6db00b0c120ca"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/bceacf3484c414ba.jpg",
+      "size_bytes": 72856,
+      "sha256": "5de313f0bb07eba16a9bf907e98997743dbd7eeb2cec4013cf079b5c7ca54796"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/bd88d843a8c12de3.jpg",
+      "size_bytes": 55270,
+      "sha256": "56b2945c806e7773d6d49d7c065c058a56ac6d224fa2b4ad3cf908b649c2b3d3"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/beb59bf0d28af3e7.jpg",
+      "size_bytes": 60389,
+      "sha256": "9011f18989f1988d829476c99ffb6bbb01aa9f207ca4fc34b5800d32741e8b26"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/cac373b8b336444a.jpg",
+      "size_bytes": 77596,
+      "sha256": "fcc1227b2bf87703652419c38095ab4e77e54687ce3ea95ae6ef3a9b5e40cb9a"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/cc27158654fb490c.jpg",
+      "size_bytes": 67758,
+      "sha256": "29d373dc276ba699e485e4c240b39595749f384d098f884656fc2dbb11ae95f7"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/d39432b08a0bedb7.jpg",
+      "size_bytes": 67115,
+      "sha256": "889781163c4f7bc4b89ff9ac00dc6e216100fe5a21f9a2703dc9a3eeebbd464b"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/d8757730fa26e9cb.jpg",
+      "size_bytes": 97352,
+      "sha256": "c40a39bae2e48d614a13a9fec27728fa5bee01442793c271767792d26d9da4fa"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/d8d7ae1fe77179f1.jpg",
+      "size_bytes": 42145,
+      "sha256": "6900daeca549bd21c3a652c7465adb20cc1c3892e7e599e310010693d30e39da"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/debb9aad9ce7fd7d.jpg",
+      "size_bytes": 54274,
+      "sha256": "af165981bdcf219fb4104a6d452b4621d4636528b5c5508cc71dd195d1b94dc2"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/eb323790a8df9e1b.jpg",
+      "size_bytes": 55774,
+      "sha256": "2680f4eaa2dc6decac2dd1ff81c66f2c3e4822c2c215d3d013fac43836e54dc3"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/f08bf5d6acdfe7b4.jpg",
+      "size_bytes": 66350,
+      "sha256": "f3e006b8d31aa61e9d0327cafd9b3b1e4e32cef0ee4d716f52576f006f0d25e9"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/f7bcbaf6d6e75886.jpg",
+      "size_bytes": 77839,
+      "sha256": "754d49018d7857c71ab45053add171f2f354cfc13bae0b3c5523e0772ef465b4"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/bruise/f8798c6efdb8eb83.jpg",
+      "size_bytes": 36968,
+      "sha256": "43c3d81e98e726672ac6d87cc95bcb5c2fb725f089f165ef6d74fb3ae228da62"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/09da0568fdd2f8d3.jpg",
+      "size_bytes": 50028,
+      "sha256": "99de26bd18c55c4b2352f87144163e06a9c5fa07f18da1ddce3ceaa45eb30dd8"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/25921277250b1fe7.jpg",
+      "size_bytes": 36982,
+      "sha256": "66759f2b4f397df1071c1e05c22d648b894fe05b2c4c9c9fc017f49d3ee48372"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/2af7252fbf3b82d9.jpg",
+      "size_bytes": 8453,
+      "sha256": "44214c3566c0fc42661a650b684d1f2dcc3f14d679ce7245091af17a64c06143"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/33738eac99654e9b.jpg",
+      "size_bytes": 39030,
+      "sha256": "c4260ca5ecad673a7daaf9eb71485f97f310fbf40f7614359948e3759d65a9c5"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/338857bf49244d64.jpg",
+      "size_bytes": 51915,
+      "sha256": "50d1fdb2a1f5142bf82a028c12be58681dacc0c904f18e469a5523e2f1e77a40"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/48ea33eeca1623de.jpg",
+      "size_bytes": 43526,
+      "sha256": "264a94edc0f3da39ceae175096127b08e56057dfcf9d876939b3f2d66581ab7a"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/48eadd156db8cfd3.jpg",
+      "size_bytes": 55512,
+      "sha256": "1250c3c8bba7cff4d617267e07f0d2f477d7f051a5266bfda5131c4e39065c3f"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/5eaa86f433b1cd38.jpg",
+      "size_bytes": 74907,
+      "sha256": "401505ec89a1a48872d0ad2f8a5f0a4009b98cf74ec00e5dcc93190df3bd0472"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/72208fbdb0a3ba66.jpg",
+      "size_bytes": 7885,
+      "sha256": "122ecc3b4915ccdbd078381f26ac0670745dd63d8a36a7b6986ae03d6ed3153d"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/75ec0261e3c3acb6.jpg",
+      "size_bytes": 89062,
+      "sha256": "8e1e17632fd05ea60356ae95b540bd45a163b2a177de19a358e4b9bc19e7a3bf"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/7c1b59ecbaa1c76e.jpg",
+      "size_bytes": 7852,
+      "sha256": "9be33df8f59dcb349364dbe12f133744de0a2a9ed1f7117cbc4553448af17410"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/857d3612bc58de6d.jpg",
+      "size_bytes": 7134,
+      "sha256": "b148d7b15c154129d8338c56b8e08730afcccd3e62d311fac1c20c2ea77e6822"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/865c74e394766e9a.jpg",
+      "size_bytes": 106678,
+      "sha256": "59f04b7ff04896db4b252f56d2cfba8663baade15d141263843cd1ea972d0652"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/95c8c6d095b1a928.jpg",
+      "size_bytes": 41334,
+      "sha256": "328e58b868d5c1e0d9498ca64b0087d1c8a8bd51a9240ef256fcb8ac93a78db3"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/96c755f86f9aba7e.jpg",
+      "size_bytes": 57997,
+      "sha256": "51935959e6e777073be9495e5d87ac7624dc134960e984e9c965fbb49ca2e570"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/99bd4dd4a3523c63.jpg",
+      "size_bytes": 8427,
+      "sha256": "35275ee91b6e25a84ecf0c47d3e13f1a9ce6f97b6fbb2f7a3cf99d25dacb2799"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/99ec5030d98b307d.jpg",
+      "size_bytes": 51933,
+      "sha256": "4d602cbb1ab112e861a629ae5170f3af6ccc2a0e348110e65c06905caf2244ee"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/9b526c685da54fcd.jpg",
+      "size_bytes": 53227,
+      "sha256": "07a5a77b7f58756ea4f2b67dbc734558808fcbd5b7fcb0c7b0255c2e995556a1"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/a8ef438ca43eb30e.jpg",
+      "size_bytes": 64976,
+      "sha256": "8c87082ba8de1d272a5cefd0e03d7df275554ec3eb0142401293da34a6126fec"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/b7c80ea3b372343f.jpg",
+      "size_bytes": 73218,
+      "sha256": "7fa34f4abf4bfb38593314373393cf3b783755f969dab8536fa2a5ff1081f5f6"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/bd91d822402c8d5c.jpg",
+      "size_bytes": 55359,
+      "sha256": "5c04f127be65510a7b0222f14c30a1c9bef21201bf2e33c79d3bc0e4d6bfc840"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/c6a390495e43a80a.jpg",
+      "size_bytes": 9699,
+      "sha256": "129a7f9d835801a69065c13536ef2dc07211d4d09096f7a6797ffb3e52cd2608"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/ec1936b102e6359c.jpg",
+      "size_bytes": 52951,
+      "sha256": "a525eed4534560f34652c58610200486d06f6d742d948dcaf86ab2d168e20f71"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/ef1bde2b6496c405.jpg",
+      "size_bytes": 45976,
+      "sha256": "af901d3abbfa04bc4b1fdaccec864830bdda3fd9d3a28d47eb10ce62b6d5fb04"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/burn/f26e24e24d54cf91.jpg",
+      "size_bytes": 50993,
+      "sha256": "9b829009613d6a66bac56441bd37bbad3977e2b7e02bac413252b47664df2f8f"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/1c0d7891acd4b620.jpg",
+      "size_bytes": 73910,
+      "sha256": "7bf63a681a7df9adb10a5765630aa91c0e9664bd895c89592f38bfbee3568cf9"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/224a3d34716c2fe8.jpg",
+      "size_bytes": 65228,
+      "sha256": "d088f4068e78f76eeb540307127c760cdd13ce46e44123d288f01fc893821784"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/2b4e732485a51092.jpg",
+      "size_bytes": 94784,
+      "sha256": "799b97394a55468589eda3671c0bafbb93489724951a20158e881fcc59d3ba0a"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/39f6ca624af3798a.jpg",
+      "size_bytes": 68149,
+      "sha256": "98f66c4b89a39cc0911e47652f52fd681ad674aee865814312ca58ec6ea9d3d3"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/4424eb887e0caa8a.jpg",
+      "size_bytes": 104344,
+      "sha256": "6f76e04f00610a30a5110dbce105ba76ab918963b0e1e07d543fc7bf94681bbb"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/5796dfc4ed128dd6.jpg",
+      "size_bytes": 65213,
+      "sha256": "30c24e61a2738a2b8674fd4f2c8d189d553facdc42e410d0bbba7113e6173439"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/60a4c56ab7b6fc31.jpg",
+      "size_bytes": 47129,
+      "sha256": "c42fc316fac65b16bb7516042a968dd936e460ad8e3696422f8e29b49387acbb"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/706029e6072c1af9.jpg",
+      "size_bytes": 76949,
+      "sha256": "5ea654d95752835c837fb1fa0001302c1a4975838de25bb0c403025bb87a3f8e"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/8aa0fba08bc25904.jpg",
+      "size_bytes": 31401,
+      "sha256": "58fccbc5643b6dd7c83ab67ec93f774c55fef37d2fcef65faa8dbba49a807247"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/b55e92dd9bea0bb2.jpg",
+      "size_bytes": 37884,
+      "sha256": "aa929ee5901ad6ef076370b09484a02b9828520ae160756e4ecfbdf3d3d3be67"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/b6ab9f034affa982.jpg",
+      "size_bytes": 83358,
+      "sha256": "4362f7c72a90c8060c67d87cdc80f2f98d4c31905454172383a02f5ee6dfdd73"
+    },
+    {
+      "path": "data/datasets/efficientnet_kaggle_v1/val/cut/c00e41a4c6e1f9b3.jpg",
+      "size_bytes": 48883,
+      "sha256": "97cfc032ac84984faa6b27aa2fc387e519caa1c1d2afb804f8bae910f6db5053"
+    }
+  ]
+}

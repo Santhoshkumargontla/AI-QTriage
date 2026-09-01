@@ -1,0 +1,212 @@
+{
+  "audit_timestamp": "2026-08-27T13:51:26.471298+00:00",
+  "agreement_formula": "score = max(0, min(100, 100 - deductions))",
+  "modality_feature_mapping": [
+    {
+      "modality": "Vision Indicator",
+      "feature_indices": [
+        0
+      ],
+      "feature_names": [
+        "vision_present"
+      ]
+    },
+    {
+      "modality": "EfficientNet Classifier Probabilities",
+      "feature_indices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "feature_names": [
+        "prob_cut",
+        "prob_bruise",
+        "prob_swelling",
+        "prob_other"
+      ]
+    },
+    {
+      "modality": "UNet Segmentation Area Ratio",
+      "feature_indices": [
+        5
+      ],
+      "feature_names": [
+        "affected_ratio"
+      ]
+    },
+    {
+      "modality": "Questionnaire Indicator & Pain",
+      "feature_indices": [
+        6,
+        7
+      ],
+      "feature_names": [
+        "questionnaire_present",
+        "pain_level"
+      ]
+    },
+    {
+      "modality": "Questionnaire Injury Mechanism (One-Hot)",
+      "feature_indices": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "feature_names": [
+        "mech_fall",
+        "mech_impact",
+        "mech_sports",
+        "mech_sharp",
+        "mech_other"
+      ]
+    },
+    {
+      "modality": "Questionnaire Clinical Symptoms",
+      "feature_indices": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "feature_names": [
+        "direct_impact",
+        "visible_bleeding",
+        "movement_limitation",
+        "weight_bearing",
+        "crack_pop"
+      ]
+    },
+    {
+      "modality": "Sensor Indicator & Kinetics",
+      "feature_indices": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "feature_names": [
+        "sensor_present",
+        "peak_g_force",
+        "delta_v",
+        "stabilization_time",
+        "lux_drop"
+      ]
+    }
+  ],
+  "double_counting_found": false,
+  "executed_10_conflict_scenarios": [
+    {
+      "scenario_id": 1,
+      "description": "1. YOLO + EfficientNet agree on Cut",
+      "calculated_agreement_score": 100.0,
+      "status_label": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 2,
+      "description": "2. YOLO detects Cut, EfficientNet predicts Swelling",
+      "calculated_agreement_score": 100.0,
+      "status_label": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 3,
+      "description": "3. Vision indicates mild injury, Sensor peak_g=4.2g",
+      "calculated_agreement_score": 100.0,
+      "status_label": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 4,
+      "description": "4. Questionnaire pain=9/10, Vision affected_ratio=0.0",
+      "calculated_agreement_score": 60.0,
+      "status_label": "Partially Consistent",
+      "conflicts_count": 1,
+      "agreements_count": 1,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 5,
+      "description": "5. Classical XGBoost HIGH risk, Sensor peak_g=1.1g",
+      "calculated_agreement_score": 60.0,
+      "status_label": "Partially Consistent",
+      "conflicts_count": 1,
+      "agreements_count": 1,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 6,
+      "description": "6. VQC strongly disagrees (VQC=HIGH, XGB=LOW)",
+      "calculated_agreement_score": 60.0,
+      "status_label": "Partially Consistent",
+      "conflicts_count": 1,
+      "agreements_count": 1,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 7,
+      "description": "7. UNet segmentation unavailable",
+      "calculated_agreement_score": 85.0,
+      "status_label": "Highly Consistent",
+      "conflicts_count": 1,
+      "agreements_count": 2,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 8,
+      "description": "8. Sensor data missing",
+      "calculated_agreement_score": 100.0,
+      "status_label": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 9,
+      "description": "9. Sensor & Questionnaire missing",
+      "calculated_agreement_score": 100.0,
+      "status_label": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "score_in_bounds": true,
+      "passed": true
+    },
+    {
+      "scenario_id": 10,
+      "description": "10. All major modalities strongly agree",
+      "calculated_agreement_score": 100.0,
+      "status_label": "Highly Consistent",
+      "conflicts_count": 0,
+      "agreements_count": 2,
+      "score_in_bounds": true,
+      "passed": true
+    }
+  ],
+  "randomized_100_tests_summary": {
+    "total_runs": 100,
+    "min_score": 15.0,
+    "max_score": 100.0,
+    "mean_score": 61.3,
+    "all_scores_in_0_100_bounds": true
+  },
+  "status": "PASS"
+}

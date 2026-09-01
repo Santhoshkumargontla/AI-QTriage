@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "weights_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+  "file_size_bytes": 81626143,
+  "sha256_hash": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777",
+  "architecture": "tf_efficientnetv2_s.in21k_ft_in1k",
+  "num_classes": 4,
+  "class_order": [
+    "Cut",
+    "Bruise",
+    "Swelling",
+    "Other"
+  ],
+  "state_dict_keys": 482,
+  "status": "PASS"
+}

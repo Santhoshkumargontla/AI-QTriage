@@ -1,0 +1,26 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.372439+00:00",
+  "confidence_scales": [
+    {
+      "model": "YOLO11",
+      "scale": "Confidence 0.0 - 1.0 (Threshold: 0.10)",
+      "status": "CONFIDENCE_PRODUCED"
+    },
+    {
+      "model": "EfficientNetV2",
+      "scale": "Softmax Probability 0.0 - 1.0",
+      "status": "PROBABILITY_PRODUCED"
+    },
+    {
+      "model": "ResNet34-UNet",
+      "scale": "Lesion Area Ratio 0.0 - 1.0",
+      "status": "RATIO_PRODUCED"
+    },
+    {
+      "model": "Grad-CAM",
+      "scale": "Normalized Saliency 0 - 255",
+      "status": "HEATMAP_PRODUCED"
+    }
+  ],
+  "verification_status": "PASS"
+}

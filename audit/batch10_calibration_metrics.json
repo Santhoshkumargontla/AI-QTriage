@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:57:32.584745+00:00",
+  "sample_count": 30,
+  "expected_calibration_error_ece": 0.4806,
+  "brier_score": 0.3435,
+  "evidence_classification": "REAL_EXECUTION_VERIFIED",
+  "calibration_status": "LIMITED (Derived from 30 held-out test split predictions)"
+}

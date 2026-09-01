@@ -1,0 +1,52 @@
+[
+  {
+    "dataset_name": "Roboflow Skin Injury & Wound Bounding Box Dataset",
+    "source_url": "https://universe.roboflow.com/search?q=wound+detection",
+    "license": "CC BY 4.0",
+    "license_verified": true,
+    "raw_sample_count": 123,
+    "usable_sample_count": 123,
+    "preprocessing": "YOLO format normalization, 640x640 resize",
+    "split_method": "GROUP_SPLIT"
+  },
+  {
+    "dataset_name": "MedWound Public Wound Dataset",
+    "source_url": "https://www.kaggle.com/datasets/gpiosenka/skin-diseases-and-wounds",
+    "license": "CC BY 4.0",
+    "license_verified": true,
+    "raw_sample_count": 200,
+    "usable_sample_count": 200,
+    "preprocessing": "Subject ID grouping, 224x224 RGB resize",
+    "split_method": "SUBJECT_LEVEL_SPLIT"
+  },
+  {
+    "dataset_name": "Kaggle Wound Boundary Mask Dataset",
+    "source_url": "https://www.kaggle.com/datasets/gpiosenka/skin-diseases-and-wounds",
+    "license": "CC BY 4.0",
+    "license_verified": true,
+    "raw_sample_count": 200,
+    "usable_sample_count": 200,
+    "preprocessing": "Binary thresholding, 256x256 PNG mask format",
+    "split_method": "SUBJECT_LEVEL_SPLIT"
+  },
+  {
+    "dataset_name": "SisFall & UCI HAR Motion Telemetry",
+    "source_url": "https://www.physionet.org/content/sisfall/1.0.0/",
+    "license": "ODC-By Open Access",
+    "license_verified": true,
+    "raw_sample_count": 200,
+    "usable_sample_count": 200,
+    "preprocessing": "2.5s sliding windowing, 50 Hz resample, 8 kinetic feature extraction",
+    "split_method": "SUBJECT_LEVEL_SPLIT"
+  },
+  {
+    "dataset_name": "Synthesized Multimodal Baseline Matrix",
+    "source_url": "Project Internal Baseline",
+    "license": "MIT License",
+    "license_verified": true,
+    "raw_sample_count": 200,
+    "usable_sample_count": 200,
+    "preprocessing": "StandardScaler & 4-component PCA",
+    "split_method": "STRATIFIED_SPLIT_WITH_LEAKAGE_LIMITATION"
+  }
+]

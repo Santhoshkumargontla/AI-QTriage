@@ -1,0 +1,50 @@
+[
+  {
+    "model": "YOLO11 Detection",
+    "version": "v1.2.1",
+    "total_parameters": 2600000,
+    "trainable_parameters": 2600000,
+    "tensor_count": 225,
+    "dtype": "float32"
+  },
+  {
+    "model": "EfficientNetV2 Classification",
+    "version": "v1.2.1",
+    "total_parameters": 20182612,
+    "trainable_parameters": 20182612,
+    "tensor_count": 782,
+    "dtype": "float32"
+  },
+  {
+    "model": "ResNet34-UNet Segmentation",
+    "version": "v1.2.1",
+    "total_parameters": 24436369,
+    "trainable_parameters": 24436369,
+    "tensor_count": 278,
+    "dtype": "float32"
+  },
+  {
+    "model": "Sensor Motion Event Classifier",
+    "version": "v1.2.0",
+    "total_parameters": 600,
+    "trainable_parameters": 600,
+    "tensor_count": 60,
+    "dtype": "float32"
+  },
+  {
+    "model": "XGBoost Multimodal Model",
+    "version": "v1.2.0",
+    "total_parameters": 500,
+    "trainable_parameters": 500,
+    "tensor_count": 60,
+    "dtype": "float32"
+  },
+  {
+    "model": "Experimental 4-Qubit VQC",
+    "version": "v1.2.0",
+    "total_parameters": 24,
+    "trainable_parameters": 24,
+    "tensor_count": 3,
+    "dtype": "float64"
+  }
+]

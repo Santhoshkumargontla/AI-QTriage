@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "total_false_negatives": 4,
+  "causes": [
+    {
+      "category": "Small wound area (<15px)",
+      "count": 2
+    },
+    {
+      "category": "Low contrast skin specular reflection",
+      "count": 2
+    }
+  ],
+  "status": "PASS"
+}

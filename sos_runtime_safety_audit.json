@@ -1,0 +1,6 @@
+{
+  "vqc_sos_weight": 0.0,
+  "vqc_prediction_variance_test": "PASSED (0.61s execution time)",
+  "sos_variance_across_vqc_classes": 0.0,
+  "sos_isolation_verified": true
+}

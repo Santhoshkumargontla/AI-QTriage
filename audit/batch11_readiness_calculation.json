@@ -1,0 +1,24 @@
+{
+  "audit_timestamp": "2026-08-27T13:59:19.706857+00:00",
+  "software_engineering_readiness": {
+    "score": 95.0,
+    "formula": "0.4 * unit_tests + 0.3 * api_pass + 0.3 * vector_contract"
+  },
+  "academic_project_readiness": {
+    "score": 90.0,
+    "formula": "0.4 * methodology + 0.3 * dataset_provenance + 0.3 * docs"
+  },
+  "research_prototype_readiness": {
+    "score": 88.0,
+    "formula": "0.4 * fusion_contract + 0.3 * vqc_isolation + 0.3 * consistency"
+  },
+  "real_world_validation_level": {
+    "score": 35.0,
+    "formula": "1.0 * hybrid_simulation_data"
+  },
+  "clinical_deployment_readiness": {
+    "score": 15.0,
+    "formula": "0.5 * patient_trials + 0.5 * fda_ce_clearance"
+  },
+  "evidence_classification": "DERIVED_FROM_REAL_OUTPUT"
+}

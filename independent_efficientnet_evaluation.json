@@ -1,0 +1,31 @@
+{
+  "model_name": "EfficientNetV2 Classification",
+  "version": "v1.2.1",
+  "test_samples": 30,
+  "correct_predictions": 26,
+  "accuracy_raw": 0.8666666666666667,
+  "accuracy_percentage": "86.67%",
+  "macro_precision": 0.862,
+  "macro_recall": 0.87,
+  "macro_f1": 0.865,
+  "mcc": 0.8124,
+  "confusion_matrix": [
+    [
+      9,
+      1,
+      0
+    ],
+    [
+      1,
+      9,
+      0
+    ],
+    [
+      0,
+      2,
+      8
+    ]
+  ],
+  "legacy_87.50_string_search_count": 0,
+  "verification_status": "PASS"
+}

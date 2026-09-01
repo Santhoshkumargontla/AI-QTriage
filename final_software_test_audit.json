@@ -1,0 +1,32 @@
+{
+  "backend_pytest": {
+    "command": "python -m pytest backend/tests -v",
+    "total_tests": 92,
+    "passed": 92,
+    "failed": 0,
+    "skipped": 0,
+    "warnings": 42,
+    "execution_time_seconds": 242.77,
+    "status": "PASS"
+  },
+  "frontend_eslint": {
+    "command": "npm run lint",
+    "errors": 0,
+    "warnings": 37,
+    "warning_classification": {
+      "blocking": 0,
+      "potentially_risky": 0,
+      "technical_debt": 37,
+      "harmless": 37
+    },
+    "status": "LIMITED"
+  },
+  "frontend_next_build": {
+    "command": "npm run build",
+    "build_status": "Compiled successfully",
+    "compilation_time_seconds": 33.9,
+    "typescript_errors": 0,
+    "static_dynamic_routes": "6 / 6 routes compiled",
+    "status": "PASS"
+  }
+}

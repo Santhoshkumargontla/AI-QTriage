@@ -1,0 +1,78 @@
+{
+  "yolo11": {
+    "mAP_50": 0.885,
+    "mAP_50_95": 0.642,
+    "precision": 0.891,
+    "recall": 0.854,
+    "test_images": 20,
+    "status": "PASS_WITH_LIMITATIONS"
+  },
+  "efficientnetv2": {
+    "accuracy_fraction": "26/30",
+    "accuracy_percentage": "86.67%",
+    "macro_f1": 0.865,
+    "mcc": 0.8124,
+    "confusion_matrix": [
+      [
+        9,
+        1,
+        0
+      ],
+      [
+        1,
+        9,
+        0
+      ],
+      [
+        0,
+        2,
+        8
+      ]
+    ],
+    "status": "PASS"
+  },
+  "unet": {
+    "mean_dice": 0.864,
+    "median_dice": 0.871,
+    "mean_iou": 0.761,
+    "test_pairs": 30,
+    "status": "PASS"
+  },
+  "sensor_motion": {
+    "accuracy_fraction": "28/36",
+    "accuracy_percentage": "77.78%",
+    "macro_f1": 0.7721,
+    "confusion_matrix": [
+      [
+        13,
+        1,
+        0
+      ],
+      [
+        2,
+        10,
+        2
+      ],
+      [
+        1,
+        2,
+        5
+      ]
+    ],
+    "status": "PASS"
+  },
+  "xgboost": {
+    "accuracy_fraction": "27/30",
+    "accuracy_percentage": "90.00%",
+    "macro_f1": 0.8625,
+    "high_risk_recall": "100.0% (3/3)",
+    "high_risk_support": 3,
+    "paired_clinical_patient_records": 0,
+    "status": "PASS"
+  },
+  "vqc": {
+    "accuracy": 0.3667,
+    "latency_ms": 8.92,
+    "status": "EXPERIMENTAL"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "functional_failures": [],
+  "technical_debt": [
+    {
+      "type": "Frontend ESLint Warnings",
+      "count": 37,
+      "severity": "LOW",
+      "impact": "Non-blocking static analysis warnings"
+    }
+  ],
+  "limitations": [
+    {
+      "type": "Small YOLO Dataset",
+      "count": 123,
+      "severity": "MODERATE",
+      "impact": "Bounding box localization precision bounded"
+    },
+    {
+      "type": "Synthetic Multimodal Fusion Data",
+      "count": 200,
+      "severity": "HIGH",
+      "impact": "Paired clinical telemetry & vision patient data unavailable"
+    },
+    {
+      "type": "HIGH-Risk Sample Size",
+      "count": 3,
+      "severity": "HIGH",
+      "impact": "High statistical uncertainty on HIGH-risk recall"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "small_objects": {
+    "count": 10,
+    "precision": 0.875,
+    "recall": 0.8
+  },
+  "medium_objects": {
+    "count": 20,
+    "precision": 0.9,
+    "recall": 0.88
+  },
+  "large_objects": {
+    "count": 12,
+    "precision": 0.915,
+    "recall": 0.9
+  },
+  "status": "PASS"
+}

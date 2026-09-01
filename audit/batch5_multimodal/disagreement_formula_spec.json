@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T13:36:49.385977+00:00",
+  "formula": "Agreement Score (%) = 100.0 - Deductions (Model Disagreement -40%, Unreliable Seg -15%, Feature Conflicts -20% to -30%)",
+  "thresholds": {
+    "80_100": "Strong Agreement",
+    "60_79": "Partial Agreement",
+    "40_59": "Moderate Disagreement",
+    "0_39": "Strong Disagreement"
+  },
+  "status": "PASS"
+}

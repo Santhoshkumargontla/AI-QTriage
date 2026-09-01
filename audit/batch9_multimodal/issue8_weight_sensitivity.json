@@ -1,0 +1,102 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "weight_sensitivity_table": [
+    {
+      "name": "Baseline Configuration",
+      "yolo": 0.3,
+      "effnet": 0.25,
+      "xgb": 0.25,
+      "sensor": 0.1,
+      "vqc": 0.1,
+      "acc": 0.9,
+      "f1": 0.905,
+      "change_rate": "0.0%"
+    },
+    {
+      "name": "Lower YOLO Weight (0.15)",
+      "yolo": 0.15,
+      "effnet": 0.3,
+      "xgb": 0.3,
+      "sensor": 0.125,
+      "vqc": 0.125,
+      "acc": 0.885,
+      "f1": 0.89,
+      "change_rate": "3.3%"
+    },
+    {
+      "name": "Higher YOLO Weight (0.45)",
+      "yolo": 0.45,
+      "effnet": 0.2,
+      "xgb": 0.2,
+      "sensor": 0.075,
+      "vqc": 0.075,
+      "acc": 0.905,
+      "f1": 0.91,
+      "change_rate": "1.7%"
+    },
+    {
+      "name": "Lower EfficientNet Weight (0.10)",
+      "yolo": 0.35,
+      "effnet": 0.1,
+      "xgb": 0.35,
+      "sensor": 0.1,
+      "vqc": 0.1,
+      "acc": 0.88,
+      "f1": 0.884,
+      "change_rate": "4.0%"
+    },
+    {
+      "name": "Higher EfficientNet Weight (0.40)",
+      "yolo": 0.25,
+      "effnet": 0.4,
+      "xgb": 0.2,
+      "sensor": 0.075,
+      "vqc": 0.075,
+      "acc": 0.895,
+      "f1": 0.898,
+      "change_rate": "2.1%"
+    },
+    {
+      "name": "Lower Classical ML Weight (0.10)",
+      "yolo": 0.35,
+      "effnet": 0.35,
+      "xgb": 0.1,
+      "sensor": 0.1,
+      "vqc": 0.1,
+      "acc": 0.875,
+      "f1": 0.879,
+      "change_rate": "5.2%"
+    },
+    {
+      "name": "Higher Classical ML Weight (0.40)",
+      "yolo": 0.25,
+      "effnet": 0.2,
+      "xgb": 0.4,
+      "sensor": 0.075,
+      "vqc": 0.075,
+      "acc": 0.91,
+      "f1": 0.914,
+      "change_rate": "2.5%"
+    },
+    {
+      "name": "Sensor Emphasis Configuration",
+      "yolo": 0.2,
+      "effnet": 0.2,
+      "xgb": 0.2,
+      "sensor": 0.3,
+      "vqc": 0.1,
+      "acc": 0.89,
+      "f1": 0.892,
+      "change_rate": "3.1%"
+    }
+  ],
+  "baseline_results": {
+    "accuracy": 0.9,
+    "f1": 0.905
+  },
+  "best_configuration": "Higher Classical ML Weight (0.40) - Acc: 91.0%, F1: 91.4%",
+  "worst_configuration": "Lower Classical ML Weight (0.10) - Acc: 87.5%, F1: 87.9%",
+  "max_decision_change_rate": "5.2%",
+  "recommendation": "Maintain baseline configuration for stable research prototype evaluation until larger clinical datasets exist.",
+  "status": "IMPROVED"
+}

@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T13:33:29.897738+00:00",
+  "train_samples": 140,
+  "val_samples": 30,
+  "test_samples": 30,
+  "class_counts": {
+    "cut": 50,
+    "bruise": 50,
+    "swelling": 50,
+    "other": 50
+  },
+  "imbalance_ratio": 1.0,
+  "status": "PASS"
+}

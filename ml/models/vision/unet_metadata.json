@@ -1,0 +1,37 @@
+{
+  "model_name": "ResNet34-UNet Segmentation",
+  "version": "deduped-subject-v1",
+  "status": "READY_FOR_RESEARCH_DEMO",
+  "training_status": "READY_FOR_RESEARCH_DEMO",
+  "artifact_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+  "previous_sha256": "82419176b5cf3ae4049a6fbab9d4af3cc956a74fef76e55031b0dcbf573f3e93",
+  "dataset_provenance": "AZH+wseg+Medetec subject-aware, exact+near dedupe, synthetic empty canvases",
+  "metrics": {
+    "val": {
+      "n": 69,
+      "mean_dice": 0.659963,
+      "mean_iou": 0.53502,
+      "precision": 0.703893,
+      "recall": 0.724829,
+      "mean_false_positive_area": 0.031028,
+      "mean_positive_ratio": 0.106992,
+      "loss": 0.637658,
+      "threshold": 0.5
+    },
+    "test": {
+      "n": 69,
+      "mean_dice": 0.641808,
+      "mean_iou": 0.517783,
+      "precision": 0.692967,
+      "recall": 0.723307,
+      "mean_false_positive_area": 0.029302,
+      "mean_positive_ratio": 0.103852,
+      "loss": 0.661316,
+      "threshold": 0.5
+    },
+    "ood_collapse": 0
+  },
+  "known_limitations": "Research-demo binary wound masks on ulcer/chronic photos. Not clinical. Not cut/bruise localization.",
+  "training_was_real": true,
+  "blank_collapse_gate": "passed (CORE_WATCH positive_ratio all <= threshold)"
+}

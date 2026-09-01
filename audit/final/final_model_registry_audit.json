@@ -1,0 +1,5 @@
+{
+  "registry_file": "ml/models/model_registry.json",
+  "deployment": "Mixed v1.2.1 vision + v1.2.0 sensor/multimodal",
+  "status": "PASS"
+}

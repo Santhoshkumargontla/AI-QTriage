@@ -1,0 +1,21 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.375258+00:00",
+  "endpoints": [
+    {
+      "route": "POST /api/cases/demo",
+      "response_fields": [
+        "consistency_analysis",
+        "agreement_status"
+      ],
+      "result": "PASS"
+    },
+    {
+      "route": "GET /api/evaluation/comparison",
+      "response_fields": [
+        "overall_agreement_rate"
+      ],
+      "result": "PASS"
+    }
+  ],
+  "verification_status": "PASS"
+}

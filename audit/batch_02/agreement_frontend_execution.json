@@ -1,0 +1,18 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.375695+00:00",
+  "ui_components": [
+    {
+      "component": "Evidence Consistency Badge & Score",
+      "status": "PASS"
+    },
+    {
+      "component": "Model Agreement / Disagreement Alert Box",
+      "status": "PASS"
+    },
+    {
+      "component": "SHAP Attribution Feature Contribution List",
+      "status": "PASS"
+    }
+  ],
+  "verification_status": "PASS"
+}

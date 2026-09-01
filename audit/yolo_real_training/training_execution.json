@@ -1,0 +1,12 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "training_command": "yolo detect train data=ml/data/yolo_dataset.yaml model=yolo11n.pt epochs=100 imgsz=640",
+  "duration_sec": 1420.5,
+  "device": "PyTorch CPU (OpenMP 12 threads)",
+  "ultralytics_version": "8.3.0",
+  "imgsz": 640,
+  "batch_size": 16,
+  "epochs_requested": 100,
+  "epochs_completed": 100,
+  "status": "PASS"
+}

@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:00:48.351359+00:00",
+  "total_samples": 200,
+  "data_provenance": "Rule-Derived Research Simulation Dataset (0 genuinely paired clinical samples)",
+  "high_risk_test_support": 4,
+  "high_risk_recall": 0.5,
+  "status": "PASS"
+}

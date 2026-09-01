@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-08-29T14:31:45.324436+00:00",
+  "out_root": "data/datasets/yolo_skin_kaggle_v1",
+  "yaml": "data/datasets/yolo_skin_kaggle_v1/data.yaml",
+  "names": [
+    "cut",
+    "bruise",
+    "burn"
+  ],
+  "copied_from_retrain_v2_images": 126,
+  "burn_images_added": 180,
+  "burn_skipped": 1047,
+  "box_counts": {
+    "bruise": 63,
+    "cut": 61,
+    "burn": 330
+  },
+  "split_image_counts": {
+    "train": 205,
+    "val": 53,
+    "test": 44
+  },
+  "wound_boxes": 0,
+  "swelling_boxes": 0,
+  "notes": "Burn labels from shubhambaid/skin-burn-dataset (CC0-1.0). Degrees collapsed to class burn."
+}

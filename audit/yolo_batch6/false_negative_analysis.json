@@ -1,0 +1,20 @@
+{
+  "audit_timestamp": "2026-08-27T12:54:20.247714+00:00",
+  "test_wounds": 42,
+  "false_negatives_count": 4,
+  "categories": [
+    {
+      "category": "Small wound (<15px)",
+      "count": 2,
+      "pct": 50.0,
+      "cause": "Resolution downsampling to 640x640"
+    },
+    {
+      "category": "Low-contrast specular reflection",
+      "count": 2,
+      "pct": 50.0,
+      "cause": "Surface moisture glare"
+    }
+  ],
+  "status": "PASS"
+}

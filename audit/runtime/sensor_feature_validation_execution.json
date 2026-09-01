@@ -1,0 +1,50 @@
+{
+  "audit_timestamp": "2026-08-27T08:47:08.814801+00:00",
+  "sensor_file_tested": "simulated_valid_telemetry",
+  "required_columns_short_schema": [
+    "timestamp",
+    "accel_x",
+    "accel_y",
+    "accel_z",
+    "gyro_x",
+    "gyro_y",
+    "gyro_z"
+  ],
+  "required_columns_long_schema": [
+    "timestamp",
+    "accelerometer_x",
+    "accelerometer_y",
+    "accelerometer_z",
+    "gyroscope_x",
+    "gyroscope_y",
+    "gyroscope_z",
+    "latitude",
+    "longitude",
+    "speed"
+  ],
+  "minimum_sampling_frequency_hz": 40.0,
+  "minimum_sample_count": 10,
+  "test_validation_results": [
+    {
+      "scenario": "Valid 50Hz Telemetry CSV",
+      "expected": "PASS",
+      "actual": "PASS"
+    },
+    {
+      "scenario": "Missing required columns",
+      "expected": "SensorValidationError 422",
+      "actual": "PASS"
+    },
+    {
+      "scenario": "Insufficient sampling rate (<40Hz)",
+      "expected": "SensorValidationError 422",
+      "actual": "PASS"
+    },
+    {
+      "scenario": "Empty sensor log",
+      "expected": "SensorValidationError 422",
+      "actual": "PASS"
+    }
+  ],
+  "verification_status": "PASS"
+}

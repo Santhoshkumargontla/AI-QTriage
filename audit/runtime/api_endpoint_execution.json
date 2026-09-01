@@ -1,0 +1,52 @@
+{
+  "endpoints": [
+    {
+      "route": "/api/vision/detect",
+      "method": "POST",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "/api/vision/classify",
+      "method": "POST",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "/api/vision/segment",
+      "method": "POST",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "/api/sensor/predict",
+      "method": "POST",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "/api/triage/assess",
+      "method": "POST",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "/api/vqc/predict",
+      "method": "POST",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "/api/sos/trigger",
+      "method": "POST",
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "route": "/health",
+      "method": "GET",
+      "http_status": 200,
+      "status": "PASS"
+    }
+  ]
+}

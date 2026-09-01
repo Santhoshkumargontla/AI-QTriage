@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T13:19:18.267575+00:00",
+  "size_score": 92.0,
+  "class_balance_score": 95.0,
+  "annotation_quality_score": 96.0,
+  "image_quality_score": 95.0,
+  "diversity_score": 92.0,
+  "leakage_protection_score": 100.0,
+  "overall_dataset_strength_pct": 94.5,
+  "status": "PASS"
+}

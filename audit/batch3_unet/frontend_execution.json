@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "component": "frontend/app/cases/[id]/page.tsx",
+  "rendering_status": "PASS",
+  "mask_overlay_scaling": "display_x = orig_x * display_w / orig_w",
+  "spatial_alignment": "PASS",
+  "status": "PASS"
+}

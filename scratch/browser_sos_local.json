@@ -1,0 +1,45 @@
+{
+  "case_id": "6baddf5e-6a5f-46aa-a959-b8a67c9ab1d8",
+  "config": {
+    "enabled": false,
+    "configured": false,
+    "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+    "canonical_env": [
+      "TWILIO_ENABLED",
+      "TWILIO_ACCOUNT_SID",
+      "TWILIO_AUTH_TOKEN",
+      "TWILIO_FROM_NUMBER",
+      "TWILIO_TO_NUMBER"
+    ],
+    "legacy_aliases": {
+      "TWILIO_PHONE_NUMBER": "TWILIO_FROM_NUMBER",
+      "EMERGENCY_CONTACT_PHONE": "TWILIO_TO_NUMBER",
+      "EMERGENCY_PHONE_NUMBER": "TWILIO_TO_NUMBER"
+    },
+    "missing_fields": [
+      "TWILIO_ENABLED"
+    ],
+    "delivery_outcomes": [
+      "LOCAL_SIMULATION",
+      "TWILIO_NOT_CONFIGURED",
+      "TWILIO_REQUEST_QUEUED",
+      "TWILIO_FAILED"
+    ],
+    "real_sms_tested": false,
+    "from_number_set": false,
+    "to_number_set": false,
+    "account_sid_suffix": null
+  },
+  "respond": {
+    "sos_status": "LOCAL_SIMULATION",
+    "delivery_outcome": "LOCAL_SIMULATION",
+    "delivery_mode": "local_demo",
+    "message": "LOCAL_SIMULATION recorded. No SMS was sent.",
+    "twilio_message_sid": null,
+    "provider_status": null,
+    "timestamp": null,
+    "failure_reason": null,
+    "twilio_result": null,
+    "warning": "NO REAL EMERGENCY SERVICES WERE CONTACTED."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "created_utc": "2026-08-30T06:15:37.987459+00:00",
+  "status": "OK",
+  "rows": 10299,
+  "label_mapping_limitation": "UCI HAR provides normal ADL only. Fall/impact labels require KFall/MobiFall \u2014 not downloaded.",
+  "usable_for": "normal_activity baseline features",
+  "manifest": "data/manifests/sensor_uci_har_manifest.csv"
+}

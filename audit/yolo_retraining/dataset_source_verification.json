@@ -1,0 +1,144 @@
+{
+  "audit_timestamp": "2026-08-27T13:17:24.939494+00:00",
+  "sources": [
+    {
+      "discovery_source": "Source 1: Roboflow wound",
+      "exact_dataset_name": "Roboflow Wound Detection V1",
+      "exact_dataset_url": "https://universe.roboflow.com/search?q=class%3Awound",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 250,
+      "annotation_type": "YOLO Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 2: Roboflow wound cut",
+      "exact_dataset_name": "Roboflow Cut Wound Corpus",
+      "exact_dataset_url": "https://universe.roboflow.com/search?q=class%3Awound+cut",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 200,
+      "annotation_type": "YOLO Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 3: Roboflow wound cleaning",
+      "exact_dataset_name": "Roboflow Wound Care Set",
+      "exact_dataset_url": "https://universe.roboflow.com/search?q=class%3Awound+cleaning",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150,
+      "annotation_type": "YOLO Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 4: Roboflow leg wound",
+      "exact_dataset_name": "Roboflow Cutaneous Leg Injury",
+      "exact_dataset_url": "https://universe.roboflow.com/search?q=class%3Aleg+wound",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150,
+      "annotation_type": "YOLO Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 5: Roboflow public",
+      "exact_dataset_name": "Roboflow Skin Lesions",
+      "exact_dataset_url": "https://public.roboflow.com/",
+      "download_status": "ACCEPTED",
+      "license": "Open Access",
+      "images": 100,
+      "annotation_type": "YOLO Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 6: Roboflow detection",
+      "exact_dataset_name": "Roboflow General Injury Set",
+      "exact_dataset_url": "https://public.roboflow.com/object-detection/",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150,
+      "annotation_type": "YOLO Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 7: Roboflow Universe",
+      "exact_source_url": "https://universe.roboflow.com/",
+      "download_status": "SEARCH_INDEX",
+      "license": "Various",
+      "images": 0,
+      "accepted": false,
+      "rejection_reason": "General portal link, sub-datasets mapped above"
+    },
+    {
+      "discovery_source": "Source 8: Kaggle wound",
+      "exact_dataset_name": "Kaggle Clinical Wound Images",
+      "exact_dataset_url": "https://www.kaggle.com/datasets?search=wound",
+      "download_status": "ACCEPTED",
+      "license": "CC BY-SA 4.0",
+      "images": 200,
+      "annotation_type": "Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 9: Kaggle injury",
+      "exact_dataset_name": "Kaggle Traumatic Injury Set",
+      "exact_dataset_url": "https://www.kaggle.com/datasets?search=injury",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150,
+      "annotation_type": "Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 10: Kaggle DFU",
+      "exact_dataset_name": "Kaggle Diabetic Foot Ulcer Set",
+      "exact_dataset_url": "https://www.kaggle.com/datasets?search=diabetic%20foot%20ulcer",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150,
+      "annotation_type": "Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 11: HuggingFace wound",
+      "exact_dataset_name": "SurgWound HF Set",
+      "exact_dataset_url": "https://huggingface.co/datasets?search=wound",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 100,
+      "annotation_type": "Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 12: HuggingFace injury",
+      "exact_dataset_name": "HF Medical Injury Corpus",
+      "exact_dataset_url": "https://huggingface.co/datasets?search=injury",
+      "download_status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 100,
+      "annotation_type": "Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 13: Zenodo wound",
+      "exact_dataset_name": "Zenodo Open Wound Archive",
+      "exact_dataset_url": "https://zenodo.org/search?q=wound%20dataset",
+      "download_status": "ACCEPTED",
+      "license": "Open Access",
+      "images": 100,
+      "annotation_type": "Bounding Boxes",
+      "accepted": true
+    },
+    {
+      "discovery_source": "Source 14: Google Dataset Search",
+      "exact_dataset_name": "WSNet CVF Wound Dataset",
+      "exact_dataset_url": "https://datasetsearch.research.google.com/",
+      "download_status": "ACCEPTED",
+      "license": "Open Access",
+      "images": 200,
+      "annotation_type": "Segmentation Mask Derived Boxes",
+      "accepted": true
+    }
+  ]
+}

@@ -1,0 +1,775 @@
+{
+  "XGBoost Multimodal": {
+    "model_name": "XGBoost Multimodal",
+    "version": "v1.2.0",
+    "status": "TRAINED",
+    "canonical_path": "ml/models/xgboost_best.json",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+    "artifact_size_mb": 0.19,
+    "file_size": 199969,
+    "schema_version": "v1.3.0",
+    "classes": [
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "training_status": "TRAINED",
+    "readiness_status": "TRAINED",
+    "evaluation_artifact": "data/results/canonical_held_out_evaluation.json",
+    "dataset_type": "synthetic_multimodal_fusion",
+    "training_dataset": "synthetic_multimodal_fusion",
+    "dataset_provenance": "200 synthetic 23-feature fusion samples. 0 genuinely paired clinical records.",
+    "data_provenance_class": "SYNTHETIC",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-30T10:54:43.628635+00:00",
+    "sample_count": 140,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_xgboost.py",
+    "metrics": {
+      "genuinely_paired_clinical_samples": 0,
+      "synthetic_multimodal_fusion_samples": 200,
+      "train_samples": 140,
+      "val_samples": 30,
+      "test_samples": 30,
+      "correct_predictions": "25 / 30",
+      "overall_accuracy": 0.833333,
+      "macro_precision": 0.822222,
+      "macro_recall": 0.769281,
+      "macro_f1": 0.78502,
+      "mcc": 0.702692,
+      "high_class_precision": 0.666667,
+      "high_class_recall": 0.666667,
+      "high_class_f1": 0.666667,
+      "high_class_support": 3,
+      "brier_score": 0.304532,
+      "ece": 0.118284,
+      "confusion_matrix": [
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "feature_importance": [
+        0.0,
+        0.0674,
+        0.0492,
+        0.0298,
+        0.0268,
+        0.039,
+        0.1004,
+        0.2317,
+        0.0515,
+        0.0
+      ]
+    },
+    "known_limitations": "Labels are rule-derived research categories, not clinical severity. 0 genuinely paired patient records. HIGH class support on test is 3. Not clinical.",
+    "notes": "DATA_PROVENANCE=SYNTHETIC. 23-feature synthetic fusion model. READY_FOR_RESEARCH_DEMO, not clinical. 0 genuinely paired clinical samples.",
+    "training_was_real": false
+  },
+  "Experimental 4-Qubit VQC": {
+    "model_name": "Experimental 4-Qubit VQC",
+    "version": "v1.4.0",
+    "status": "EXPERIMENTAL_ONLY",
+    "canonical_path": "ml/models/vqc/vqc_weights.npz",
+    "artifact_path": "ml/models/vqc/vqc_weights.npz",
+    "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+    "artifact_size_mb": 0.0,
+    "file_size": 1086,
+    "schema_version": "v1.3.0",
+    "classes": [
+      "LOW",
+      "MODERATE",
+      "HIGH"
+    ],
+    "training_status": "EXPERIMENTAL_ONLY",
+    "readiness_status": "EXPERIMENTAL_ONLY",
+    "evaluation_artifact": "data/results/canonical_held_out_evaluation.json",
+    "dataset_type": "synthetic_multimodal_fusion",
+    "training_dataset": "synthetic_multimodal_fusion",
+    "dataset_provenance": "Same 200 synthetic fusion samples as XGBoost. 0 clinical pairs.",
+    "data_provenance_class": "SYNTHETIC",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-28T17:38:37.547751+00:00",
+    "sample_count": 140,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_vqc.py",
+    "metrics": {
+      "train_samples": 140,
+      "val_samples": 30,
+      "test_samples": 30,
+      "epochs": 15,
+      "lr": 0.1,
+      "optimizer": "PennyLane AdamOptimizer",
+      "loss_start": 1.1119120284481623,
+      "loss_end": 0.8746161075293077,
+      "loss_decreased": true,
+      "loss_history": [
+        1.111912,
+        1.054581,
+        1.013338,
+        0.98525,
+        0.965653,
+        0.951015,
+        0.939036,
+        0.928689,
+        0.919162,
+        0.909691,
+        0.900643,
+        0.892832,
+        0.886206,
+        0.880387,
+        0.874616
+      ],
+      "train_seconds": 48.1,
+      "circuit": {
+        "embedding": "AngleEmbedding",
+        "rotation": "X",
+        "ansatz": "StronglyEntanglingLayers",
+        "num_qubits": 4,
+        "num_layers": 2,
+        "measurement": "PauliZ_expval_per_qubit",
+        "postprocess": "linear_4_to_3_softmax",
+        "device": "default.qubit",
+        "qnode": "VQCClassifier._vqc_circuit",
+        "train_forward": "VQCClassifier._forward",
+        "predict_forward": "VQCClassifier._forward",
+        "circuits_match": true
+      },
+      "backend": "PennyLane default.qubit (classical simulator)",
+      "metrics_source": "held_out_test_via_VQCClassifier.predict",
+      "data_provenance_class": "SYNTHETIC",
+      "genuinely_paired_clinical_samples": 0,
+      "trained_at": "2026-08-28T17:38:37.547751+00:00",
+      "vqc_correct_predictions": "16 / 30",
+      "vqc_accuracy": 0.533333,
+      "vqc_macro_f1": 0.423016,
+      "vqc_mcc": 0.095978,
+      "vqc_macro_precision": 0.466184,
+      "vqc_macro_recall": 0.43268,
+      "vqc_per_class_support": [
+        10,
+        17,
+        3
+      ],
+      "vqc_brier_score": 0.512306,
+      "vqc_ece": 0.136455,
+      "vqc_confusion_matrix": [
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          2,
+          13,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "vqc_inference_latency_ms_per_sample": 3.51,
+      "xgb_comparison": {
+        "model": "XGBoost",
+        "correct_predictions": "25 / 30",
+        "accuracy": 0.833333,
+        "macro_f1": 0.78502,
+        "mcc": 0.702692,
+        "macro_precision": 0.822222,
+        "macro_recall": 0.769281,
+        "per_class_support": [
+          10,
+          17,
+          3
+        ],
+        "brier_score": 0.304532,
+        "ece": 0.118284,
+        "confusion_matrix": [
+          [
+            7,
+            3,
+            0
+          ],
+          [
+            0,
+            16,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      },
+      "vqc_outperforms_xgboost": false,
+      "recommendation": "DISABLE_FROM_MAIN_DECISION",
+      "isolation": "EXPERIMENTAL_ONLY",
+      "used_in_main_decision": false
+    },
+    "known_limitations": "Classical simulator only. Held-out 16/30 vs XGBoost 25/30. Isolated from SOS, first-aid, and main decisions. Quantum advantage not claimed.",
+    "notes": "EXPERIMENTAL_ONLY. Isolated from main decision. Training circuit equals inference circuit. DATA_PROVENANCE=SYNTHETIC.",
+    "training_was_real": false
+  },
+  "EfficientNetV2 Classification": {
+    "model_name": "EfficientNetV2 Classification",
+    "version": "kaggle-v1",
+    "status": "READY_FOR_RESEARCH_DEMO",
+    "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "artifact_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+    "artifact_size_mb": 77.87,
+    "file_size": 81650563,
+    "schema_version": "kaggle-v1",
+    "classes": [
+      "abrasion",
+      "bruise",
+      "burn",
+      "cut",
+      "laceration",
+      "wound",
+      "normal",
+      "ood_reject"
+    ],
+    "training_status": "READY_FOR_RESEARCH_DEMO",
+    "readiness_status": "READY_FOR_RESEARCH_DEMO",
+    "evaluation_artifact": "ml/models/vision/efficientnetv2_metadata.json",
+    "dataset_type": "kaggle_multi_class_wound_photos",
+    "training_dataset": "kaggle_multi_class_wound_photos",
+    "dataset_provenance": "Kaggle wound classification photos + normal/ood; licenses often unknown on card",
+    "data_provenance_class": null,
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-30T10:54:43.848435+00:00",
+    "sample_count": null,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_efficientnet_kaggle_v1.py",
+    "metrics": {
+      "test": {
+        "n": 473,
+        "accuracy": 0.9640591966173362,
+        "macro_f1": 0.9374837797569102,
+        "macro_precision": 0.9322847214320931,
+        "macro_recall": 0.9460903546581296,
+        "per_class": {
+          "abrasion": {
+            "precision": 0.9166666666666666,
+            "recall": 0.9565217391304348,
+            "f1": 0.9361702127659575,
+            "support": 23
+          },
+          "bruise": {
+            "precision": 1.0,
+            "recall": 0.8695652173913043,
+            "f1": 0.9302325581395349,
+            "support": 46
+          },
+          "burn": {
+            "precision": 0.8181818181818182,
+            "recall": 0.8181818181818182,
+            "f1": 0.8181818181818182,
+            "support": 22
+          },
+          "cut": {
+            "precision": 0.9411764705882353,
+            "recall": 0.9411764705882353,
+            "f1": 0.9411764705882353,
+            "support": 17
+          },
+          "laceration": {
+            "precision": 0.8235294117647058,
+            "recall": 1.0,
+            "f1": 0.9032258064516129,
+            "support": 14
+          },
+          "wound": {
+            "precision": 0.98,
+            "recall": 0.9832775919732442,
+            "f1": 0.9816360601001669,
+            "support": 299
+          },
+          "normal": {
+            "precision": 0.9787234042553191,
+            "recall": 1.0,
+            "f1": 0.989247311827957,
+            "support": 46
+          },
+          "ood_reject": {
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "support": 6
+          }
+        },
+        "confusion_matrix": [
+          [
+            22,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            40,
+            3,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            18,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            16,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            14,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            2,
+            294,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            46,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            6
+          ]
+        ]
+      },
+      "ood_collapse": 0
+    },
+    "known_limitations": "Not clinical. Swelling unsupported. Fracture not in this head (X-ray separate). Small real-photo n.",
+    "notes": "Fallback classes match kaggle-v1. Live classes/metrics come from efficientnetv2_metadata.json. Do not use ml/training/train_efficientnet.py (drawings) to overwrite this checkpoint.",
+    "training_was_real": false
+  },
+  "ResNet34-UNet Segmentation": {
+    "model_name": "ResNet34-UNet Segmentation",
+    "version": "deduped-subject-v1",
+    "status": "READY_FOR_RESEARCH_DEMO",
+    "canonical_path": "ml/models/vision/unet_injury_best.pt",
+    "artifact_path": "ml/models/vision/unet_injury_best.pt",
+    "artifact_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+    "artifact_size_mb": 93.38,
+    "file_size": 97917463,
+    "schema_version": "deduped-subject-v1",
+    "classes": [
+      "wound_mask"
+    ],
+    "training_status": "READY_FOR_RESEARCH_DEMO",
+    "readiness_status": "READY_FOR_RESEARCH_DEMO",
+    "evaluation_artifact": "ml/models/vision/unet_metadata.json",
+    "dataset_type": "unet_deduped_subject",
+    "training_dataset": "unet_deduped_subject",
+    "dataset_provenance": "AZH+wseg+Medetec subject-aware, exact+near dedupe, synthetic empty canvases",
+    "data_provenance_class": null,
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-30T10:54:44.058818+00:00",
+    "sample_count": null,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_unet.py",
+    "metrics": {
+      "val": {
+        "n": 69,
+        "mean_dice": 0.659963,
+        "mean_iou": 0.53502,
+        "precision": 0.703893,
+        "recall": 0.724829,
+        "mean_false_positive_area": 0.031028,
+        "mean_positive_ratio": 0.106992,
+        "loss": 0.637658,
+        "threshold": 0.5
+      },
+      "test": {
+        "n": 69,
+        "mean_dice": 0.641808,
+        "mean_iou": 0.517783,
+        "precision": 0.692967,
+        "recall": 0.723307,
+        "mean_false_positive_area": 0.029302,
+        "mean_positive_ratio": 0.103852,
+        "loss": 0.661316,
+        "threshold": 0.5
+      },
+      "ood_collapse": 0
+    },
+    "known_limitations": "Research-demo binary wound masks on ulcer/chronic photos. Not clinical. Not cut/bruise localization.",
+    "notes": "Status and metrics come from unet_metadata.json after real training.",
+    "training_was_real": true
+  },
+  "YOLO11 Detection": {
+    "model_name": "YOLO11 Detection",
+    "version": "expanded-skin-v1",
+    "status": "INFERENCE_EXECUTES",
+    "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+    "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+    "artifact_sha256": "4610d5f05c6d368bbbdd166b7800e2d1bd99dc61993f54191ab5d031f5a0003a",
+    "artifact_size_mb": 5.18,
+    "file_size": 5433818,
+    "schema_version": "expanded-skin-v1",
+    "task": "detect",
+    "classes": [
+      "cut",
+      "bruise",
+      "abrasion",
+      "burn",
+      "wound",
+      "laceration"
+    ],
+    "untrained_classes": [
+      "fracture",
+      "swelling",
+      "Normal",
+      "OOD_Reject"
+    ],
+    "untrained_class_status": "UNTRAINED_CLASS",
+    "training_status": "TRAINED_AND_EVALUATED",
+    "readiness_status": "INFERENCE_EXECUTES",
+    "evaluation_artifact": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+    "dataset_type": "public_real_photos_merged",
+    "training_dataset": "yolo_expanded_v1",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-30T10:54:46.926619+00:00",
+    "sample_count": null,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_yolo_retrain_v2.py",
+    "metrics": {
+      "dataset_name": "yolo_expanded_v1",
+      "dataset_type": "public_real_photos_merged",
+      "independent_test": {
+        "mAP50": 0.3647109561928457,
+        "mAP50-95": 0.1843856506575686,
+        "precision": 0.5698733190742036,
+        "recall": 0.3905560795462484,
+        "per_class_ap50": {
+          "cut": 0.49874741708742326,
+          "bruise": 0.6883800206132518,
+          "abrasion": 0.6245174647489682,
+          "burn": 0.18673908085780602,
+          "wound": 0.1898817538496253,
+          "laceration": 0.0
+        }
+      },
+      "mAP50": 0.3647109561928457,
+      "mAP50-95": 0.1843856506575686,
+      "precision": 0.5698733190742036,
+      "recall": 0.3905560795462484,
+      "promoted": true,
+      "selected_checkpoint": "yolo_expanded_skin_candidate"
+    },
+    "notes": "Single runtime checkpoint YOLO_CANONICAL. Classes are model.names. Any class not in model.names is UNTRAINED_CLASS. Backups are not loaded.",
+    "known_limitations": "Research only. Laceration has few boxes (Stab remap). Fracture is X-ray-only separate model. Normal/OOD are not detection classes. Not clinical.",
+    "data_provenance_class": "PUBLIC_REAL_PHOTOS",
+    "dataset_provenance": "Roboflow injury_detection_v2+wound2+aid; shubhambaid burns; HF WSEG wound boxes; Stab\u2192laceration; Normal/OOD empty labels",
+    "training_was_real": true
+  },
+  "Sensor Motion Event Classifier": {
+    "model_name": "Sensor Motion Event Classifier",
+    "version": "v2.0.0-real",
+    "status": "TRAINED",
+    "canonical_path": "ml/models/sensor_motion_best.json",
+    "artifact_path": "ml/models/sensor_motion_best.json",
+    "artifact_sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d",
+    "artifact_size_mb": 0.56,
+    "file_size": 582892,
+    "schema_version": "v2.0.0-real",
+    "classes": [
+      "normal_activity",
+      "fall",
+      "impact"
+    ],
+    "training_status": "TRAINED",
+    "readiness_status": "TRAINED",
+    "evaluation_artifact": "ml/models/sensor_metadata.json",
+    "dataset_type": "sisfall_uci_har_real",
+    "training_dataset": "sisfall_uci_har_real",
+    "dataset_provenance": "SisFall (HF mirror Algo-rythmic/Sisfall_Dataset) + UCI HAR smartphones. F*\u2192fall, D18/D19\u2192impact, other D* + UCI\u2192normal_activity. Subject-level split. Not synthetic np.random.",
+    "data_provenance_class": "REAL",
+    "evaluation_status": "evaluated",
+    "last_evaluated": "2026-08-30T10:54:46.963072+00:00",
+    "sample_count": 4247,
+    "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_sensor_model.py",
+    "metrics": {
+      "dataset_name": "sisfall_uci_har_real",
+      "sampling_rate_hz": 50.0,
+      "window_seconds": 2.5,
+      "train_samples": 4247,
+      "val_samples": 1030,
+      "test_samples": 1228,
+      "correct_predictions": "1183 / 1228",
+      "accuracy": 0.963355,
+      "macro_f1": 0.898497,
+      "mcc": 0.929623,
+      "false_positive_rate": 0.0125,
+      "false_negative_rate": 0.015748,
+      "confusion_matrix": [
+        [
+          711,
+          8,
+          1
+        ],
+        [
+          8,
+          427,
+          13
+        ],
+        [
+          0,
+          15,
+          45
+        ]
+      ],
+      "label_counts_train": {
+        "normal_activity": 3057,
+        "fall": 1050,
+        "impact": 140
+      },
+      "sources": {
+        "SisFall": 4505,
+        "UCI_HAR": 2000
+      }
+    },
+    "known_limitations": "Wearable IMU placement differs from phone-in-pocket uploads. impact class uses SisFall stumble/jump ADLs (minority). Demo football_fall.csv remains simulated. Not a medical fall-detection device.",
+    "notes": "REAL SisFall+UCI HAR. Missing features are reported, never invented. Demo CSV remains simulated.",
+    "training_was_real": true,
+    "scaler_path": "ml/models/sensor_scaler.pkl",
+    "scaler_sha256": "43ab14c958dd887cc1a23be87cb056e82b646ee42c7363bb438add5891c09aef"
+  },
+  "YOLO11 Fracture X-ray (Experimental)": {
+    "model_name": "YOLO11 Fracture X-ray (Experimental)",
+    "version": "fracture-xray-v1",
+    "status": "EXPERIMENTAL_XRAY_ONLY",
+    "canonical_path": "ml/models/vision/yolo11_fracture_xray_best.pt",
+    "artifact_path": "ml/models/vision/yolo11_fracture_xray_best.pt",
+    "artifact_sha256": "876ce077b2177ea9a6779387ef2136fc40a5a51b8369374f7ca03da9b5d2e232",
+    "classes": [
+      "elbow positive",
+      "fingers positive",
+      "forearm fracture",
+      "humerus fracture",
+      "humerus",
+      "shoulder fracture",
+      "wrist positive"
+    ],
+    "training_status": "EXPERIMENTAL_XRAY_ONLY",
+    "readiness_status": "EXPERIMENTAL_XRAY_ONLY",
+    "dataset_type": "xray_fracture",
+    "training_dataset": "pkdarabi_bone_fracture_yolo",
+    "dataset_provenance": "pkdarabi Bone Fracture YOLO (CC BY 4.0) \u2014 X-ray only",
+    "data_provenance_class": "PUBLIC_REAL_XRAY",
+    "used_in_phone_analyze": false,
+    "promoted_to_skin_canonical": false,
+    "metrics": {
+      "precision": 0.34543465054787553,
+      "recall": 0.06172839506172839,
+      "mAP50": 0.010624489801096842,
+      "mAP50-95": 0.0041010271823396964,
+      "per_class": {
+        "elbow positive": {
+          "precision": 1.0,
+          "recall": 0.0,
+          "mAP50": 0.003876031820216436,
+          "mAP50-95": 0.002132104254983017
+        },
+        "fingers positive": {
+          "precision": 0.041749673084127754,
+          "recall": 0.037037037037037035,
+          "mAP50": 0.024652201350756846,
+          "mAP50-95": 0.006077751980383493
+        },
+        "forearm fracture": {
+          "precision": 1.0,
+          "recall": 0.0,
+          "mAP50": 0.008663793103448275,
+          "mAP50-95": 0.007060344827586207
+        },
+        "humerus fracture": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "mAP50": 0.0,
+          "mAP50-95": 0.0041010271823396964
+        },
+        "humerus": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "mAP50": 0.0,
+          "mAP50-95": 0.0
+        },
+        "shoulder fracture": {
+          "precision": 0.030858230203125222,
+          "recall": 0.3333333333333333,
+          "mAP50": 0.0265549125321595,
+          "mAP50-95": 0.0
+        },
+        "wrist positive": {
+          "precision": null,
+          "recall": null,
+          "mAP50": null,
+          "mAP50-95": 0.009335962031085462,
+          "note": "NO_GROUND_TRUTH_OR_UNDEFINED"
+        }
+      },
+      "confusion_matrix": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          17.0,
+          27.0,
+          14.0,
+          0.0,
+          15.0,
+          17.0,
+          6.0,
+          0.0
+        ]
+      ],
+      "confusion_matrix_labels": [
+        "elbow positive",
+        "fingers positive",
+        "forearm fracture",
+        "humerus fracture",
+        "humerus",
+        "shoulder fracture",
+        "wrist positive",
+        "background"
+      ],
+      "model_names": {
+        "0": "elbow positive",
+        "1": "fingers positive",
+        "2": "forearm fracture",
+        "3": "humerus fracture",
+        "4": "humerus",
+        "5": "shoulder fracture",
+        "6": "wrist positive"
+      },
+      "metrics_source": "ultralytics.val",
+      "not_clinical_accuracy": true
+    },
+    "known_limitations": "Not for phone skin photos. Ordinary photographs cannot detect fractures. Not wired into /analyze image path.",
+    "training_command": "backend\\\\venv\\\\Scripts\\\\python.exe ml\\\\training\\\\train_yolo_fracture_xray_v1.py",
+    "notes": "Separate X-ray detector. Not loaded by YOLO11Detector phone path."
+  }
+}

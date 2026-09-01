@@ -1,0 +1,1092 @@
+{
+  "created_utc": "2026-08-29T06:15:42.031018+00:00",
+  "yolo_runtime": {
+    "canonical": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "disk_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "wrapper_sha": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "names": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "task": "detect",
+    "infer_conf": 0.25,
+    "swelling_in_yolo_names": false,
+    "status": "INFERENCE_EXECUTES"
+  },
+  "effnet_runtime": {
+    "path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+    "disk_sha": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+    "classes": [
+      "cut",
+      "bruise",
+      "swelling"
+    ],
+    "n_classes": 3,
+    "loaded": true
+  },
+  "unet_runtime": {
+    "path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt",
+    "disk_sha": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+    "loaded": true
+  },
+  "per_image": {
+    "demo_football": {
+      "path": "data/sample/image/football_injury.jpg",
+      "width": 300,
+      "height": 300,
+      "wrapper_detect": [],
+      "raw_at_0_25": [],
+      "raw_at_0_01_n": 23,
+      "raw_at_0_01_max": 0.07722003012895584,
+      "raw_at_0_01_classes": [
+        "bruise",
+        "cut"
+      ],
+      "threshold_sweep": {
+        "0.01": {
+          "n": 23,
+          "max": 0.07722003012895584,
+          "classes": [
+            "bruise",
+            "cut"
+          ]
+        },
+        "0.05": {
+          "n": 2,
+          "max": 0.07722003012895584,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.1": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.15": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.2": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.25": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.3": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.4": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.5": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        }
+      },
+      "effnet_gated": {
+        "winner": "Swelling",
+        "raw_winner": "Swelling",
+        "raw_max": 0.9882420897483826,
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "confident": true
+      },
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.0012861761497333646,
+          "Bruise": 4.7432064320673817e-07,
+          "Swelling": 0.9987133741378784
+        },
+        "max_prob": 0.9987133741378784,
+        "winner": "Swelling",
+        "entropy": 0.009853622451158183,
+        "margin": 0.997427225112915,
+        "temperature": 1.0
+      },
+      "unet_positive_ratio": 0.3594333333333333,
+      "unet_pixel_count": 32349,
+      "unet_affected_ratio": 0.3594333333333333,
+      "unet_debug_status": "VALID",
+      "preprocess_meta": {
+        "original_width": 300,
+        "original_height": 300,
+        "target_width": 224,
+        "target_height": 224,
+        "resized_width": 224,
+        "resized_height": 224,
+        "scale": 0.7466666666666667,
+        "pad_x": 0,
+        "pad_y": 0,
+        "aspect_ratio_preserved": true,
+        "preprocessing_version": "img-v2-letterbox",
+        "normalized": true
+      },
+      "swelling_in_yolo_raw": false
+    },
+    "forensic_upload": {
+      "path": "data/uploads/3e0dbd17-7475-487d-9f10-e7f9d6800238.jpg",
+      "width": 300,
+      "height": 167,
+      "wrapper_detect": [],
+      "raw_at_0_25": [],
+      "raw_at_0_01_n": 35,
+      "raw_at_0_01_max": 0.20360051095485687,
+      "raw_at_0_01_classes": [
+        "bruise",
+        "cut"
+      ],
+      "threshold_sweep": {
+        "0.01": {
+          "n": 35,
+          "max": 0.20360051095485687,
+          "classes": [
+            "bruise",
+            "cut"
+          ]
+        },
+        "0.05": {
+          "n": 8,
+          "max": 0.20360051095485687,
+          "classes": [
+            "bruise",
+            "cut"
+          ]
+        },
+        "0.1": {
+          "n": 4,
+          "max": 0.20360051095485687,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.15": {
+          "n": 2,
+          "max": 0.20360051095485687,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.2": {
+          "n": 1,
+          "max": 0.20360051095485687,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.25": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.3": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.4": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.5": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        }
+      },
+      "effnet_gated": {
+        "winner": "Swelling",
+        "raw_winner": "Swelling",
+        "raw_max": 0.999738872051239,
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "confident": true
+      },
+      "effnet_raw": {
+        "probs": {
+          "Cut": 3.5414786907495e-06,
+          "Bruise": 1.5455493951321841e-07,
+          "Swelling": 0.9999963045120239
+        },
+        "max_prob": 0.9999963045120239,
+        "winner": "Swelling",
+        "entropy": 5.0568847406059014e-05,
+        "margin": 0.9999927878379822,
+        "temperature": 1.0
+      },
+      "unet_positive_ratio": 0.6193812375249501,
+      "unet_pixel_count": 31031,
+      "unet_affected_ratio": 0.6193812375249501,
+      "unet_debug_status": "VALID",
+      "preprocess_meta": {
+        "original_width": 300,
+        "original_height": 167,
+        "target_width": 224,
+        "target_height": 224,
+        "resized_width": 224,
+        "resized_height": 125,
+        "scale": 0.7466666666666667,
+        "pad_x": 0,
+        "pad_y": 49,
+        "aspect_ratio_preserved": true,
+        "preprocessing_version": "img-v2-letterbox",
+        "normalized": true
+      },
+      "swelling_in_yolo_raw": false
+    },
+    "heldout_bruise": {
+      "path": "data/datasets/yolo_retrain_v2/images/test/raw_synthetic_wound__syn_wound_0185.jpg",
+      "width": 640,
+      "height": 640,
+      "wrapper_detect": [
+        {
+          "finding": "bruise",
+          "confidence": 0.9988,
+          "bounding_box": [
+            234.41,
+            202.76,
+            400.89,
+            399.59
+          ],
+          "low_confidence": false,
+          "keep_threshold": 0.25,
+          "image_width": 640,
+          "image_height": 640,
+          "model_version": "v1.4.0",
+          "model_status": "INFERENCE_EXECUTES",
+          "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+          "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879"
+        }
+      ],
+      "raw_at_0_25": [
+        {
+          "class_id": 1,
+          "class_name": "bruise",
+          "confidence": 0.9988032579421997,
+          "xyxy": [
+            234.41107177734375,
+            202.76023864746094,
+            400.89398193359375,
+            399.5867919921875
+          ]
+        }
+      ],
+      "raw_at_0_01_n": 4,
+      "raw_at_0_01_max": 0.9988032579421997,
+      "raw_at_0_01_classes": [
+        "bruise",
+        "cut"
+      ],
+      "threshold_sweep": {
+        "0.01": {
+          "n": 4,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise",
+            "cut"
+          ]
+        },
+        "0.05": {
+          "n": 1,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.1": {
+          "n": 1,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.15": {
+          "n": 1,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.2": {
+          "n": 1,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.25": {
+          "n": 1,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.3": {
+          "n": 1,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.4": {
+          "n": 1,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ]
+        },
+        "0.5": {
+          "n": 1,
+          "max": 0.9988032579421997,
+          "classes": [
+            "bruise"
+          ]
+        }
+      },
+      "effnet_gated": {
+        "winner": null,
+        "raw_winner": "Swelling",
+        "raw_max": 0.7060384154319763,
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "softmax_not_trusted_closed_set_overconfidence",
+        "confident": false
+      },
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.0001366497454000637,
+          "Bruise": 0.2098665088415146,
+          "Swelling": 0.7899968028068542
+        },
+        "max_prob": 0.7899968028068542,
+        "winner": "Swelling",
+        "entropy": 0.5151001331451149,
+        "margin": 0.5801302790641785,
+        "temperature": 1.0
+      },
+      "unet_positive_ratio": 0.545302734375,
+      "unet_pixel_count": 223356,
+      "unet_affected_ratio": 0.545302734375,
+      "unet_debug_status": "VALID",
+      "preprocess_meta": {
+        "original_width": 640,
+        "original_height": 640,
+        "target_width": 224,
+        "target_height": 224,
+        "resized_width": 224,
+        "resized_height": 224,
+        "scale": 0.35,
+        "pad_x": 0,
+        "pad_y": 0,
+        "aspect_ratio_preserved": true,
+        "preprocessing_version": "img-v2-letterbox",
+        "normalized": true
+      },
+      "swelling_in_yolo_raw": false
+    },
+    "heldout_cut": {
+      "path": "data/datasets/yolo_retrain_v2/images/test/raw_synthetic_wound__syn_wound_0186.jpg",
+      "width": 640,
+      "height": 640,
+      "wrapper_detect": [
+        {
+          "finding": "cut",
+          "confidence": 0.5069,
+          "bounding_box": [
+            229.11,
+            138.96,
+            391.86,
+            308.57
+          ],
+          "low_confidence": false,
+          "keep_threshold": 0.25,
+          "image_width": 640,
+          "image_height": 640,
+          "model_version": "v1.4.0",
+          "model_status": "INFERENCE_EXECUTES",
+          "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+          "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879"
+        },
+        {
+          "finding": "cut",
+          "confidence": 0.3283,
+          "bounding_box": [
+            227.45,
+            166.54,
+            387.47,
+            282.83
+          ],
+          "low_confidence": true,
+          "keep_threshold": 0.25,
+          "image_width": 640,
+          "image_height": 640,
+          "model_version": "v1.4.0",
+          "model_status": "INFERENCE_EXECUTES",
+          "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+          "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879"
+        }
+      ],
+      "raw_at_0_25": [
+        {
+          "class_id": 0,
+          "class_name": "cut",
+          "confidence": 0.5069368481636047,
+          "xyxy": [
+            229.10836791992188,
+            138.9566650390625,
+            391.8593444824219,
+            308.5743103027344
+          ]
+        },
+        {
+          "class_id": 0,
+          "class_name": "cut",
+          "confidence": 0.3283132314682007,
+          "xyxy": [
+            227.44784545898438,
+            166.5413818359375,
+            387.4749450683594,
+            282.82513427734375
+          ]
+        }
+      ],
+      "raw_at_0_01_n": 7,
+      "raw_at_0_01_max": 0.5069368481636047,
+      "raw_at_0_01_classes": [
+        "cut"
+      ],
+      "threshold_sweep": {
+        "0.01": {
+          "n": 7,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.05": {
+          "n": 2,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.1": {
+          "n": 2,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.15": {
+          "n": 2,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.2": {
+          "n": 2,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.25": {
+          "n": 2,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.3": {
+          "n": 2,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.4": {
+          "n": 1,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.5": {
+          "n": 1,
+          "max": 0.5069368481636047,
+          "classes": [
+            "cut"
+          ]
+        }
+      },
+      "effnet_gated": {
+        "winner": "Swelling",
+        "raw_winner": "Swelling",
+        "raw_max": 0.9999089241027832,
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "confident": true
+      },
+      "effnet_raw": {
+        "probs": {
+          "Cut": 2.0814781009903527e-09,
+          "Bruise": 8.458600291305629e-07,
+          "Swelling": 0.9999991655349731
+        },
+        "max_prob": 0.9999991655349731,
+        "winner": "Swelling",
+        "entropy": 1.2717136427365914e-05,
+        "margin": 0.9999983310699463,
+        "temperature": 1.0
+      },
+      "unet_positive_ratio": 0.33513671875,
+      "unet_pixel_count": 137272,
+      "unet_affected_ratio": 0.33513671875,
+      "unet_debug_status": "VALID",
+      "preprocess_meta": {
+        "original_width": 640,
+        "original_height": 640,
+        "target_width": 224,
+        "target_height": 224,
+        "resized_width": 224,
+        "resized_height": 224,
+        "scale": 0.35,
+        "pad_x": 0,
+        "pad_y": 0,
+        "aspect_ratio_preserved": true,
+        "preprocessing_version": "img-v2-letterbox",
+        "normalized": true
+      },
+      "swelling_in_yolo_raw": false
+    },
+    "blank_skin": {
+      "path": "data/datasets/yolo_injury/blank_skin.jpg",
+      "width": 640,
+      "height": 640,
+      "wrapper_detect": [],
+      "raw_at_0_25": [],
+      "raw_at_0_01_n": 0,
+      "raw_at_0_01_max": null,
+      "raw_at_0_01_classes": [],
+      "threshold_sweep": {
+        "0.01": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.05": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.1": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.15": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.2": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.25": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.3": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.4": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.5": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        }
+      },
+      "effnet_gated": {
+        "winner": null,
+        "raw_winner": null,
+        "raw_max": null,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "confident": false
+      },
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.0036321936640888453,
+          "Bruise": 0.0073019955307245255,
+          "Swelling": 0.9890657663345337
+        },
+        "max_prob": 0.9890657663345337,
+        "winner": "Swelling",
+        "entropy": 0.06720251511233195,
+        "margin": 0.9817637801170349,
+        "temperature": 1.0
+      },
+      "unet_positive_ratio": 0.0,
+      "unet_pixel_count": 0,
+      "unet_affected_ratio": 0.0,
+      "unet_debug_status": "LOW_QUALITY_INPUT",
+      "preprocess_meta": {
+        "original_width": 640,
+        "original_height": 640,
+        "target_width": 224,
+        "target_height": 224,
+        "resized_width": 224,
+        "resized_height": 224,
+        "scale": 0.35,
+        "pad_x": 0,
+        "pad_y": 0,
+        "aspect_ratio_preserved": true,
+        "preprocessing_version": "img-v2-letterbox",
+        "normalized": true
+      },
+      "swelling_in_yolo_raw": false
+    },
+    "gray": {
+      "path": "data/test_suite/forensic_gray.jpg",
+      "width": 224,
+      "height": 224,
+      "wrapper_detect": [],
+      "raw_at_0_25": [],
+      "raw_at_0_01_n": 0,
+      "raw_at_0_01_max": null,
+      "raw_at_0_01_classes": [],
+      "threshold_sweep": {
+        "0.01": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.05": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.1": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.15": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.2": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.25": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.3": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.4": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.5": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        }
+      },
+      "effnet_gated": {
+        "winner": null,
+        "raw_winner": null,
+        "raw_max": null,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "confident": false
+      },
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.03669266402721405,
+          "Bruise": 1.197674009745242e-05,
+          "Swelling": 0.9632953405380249
+        },
+        "max_prob": 0.9632953405380249,
+        "winner": "Swelling",
+        "entropy": 0.1574341601848192,
+        "margin": 0.9266026616096497,
+        "temperature": 1.0
+      },
+      "unet_positive_ratio": 0.0,
+      "unet_pixel_count": 0,
+      "unet_affected_ratio": 0.0,
+      "unet_debug_status": "LOW_QUALITY_INPUT",
+      "preprocess_meta": {
+        "original_width": 224,
+        "original_height": 224,
+        "target_width": 224,
+        "target_height": 224,
+        "resized_width": 224,
+        "resized_height": 224,
+        "scale": 1.0,
+        "pad_x": 0,
+        "pad_y": 0,
+        "aspect_ratio_preserved": true,
+        "preprocessing_version": "img-v2-letterbox",
+        "normalized": true
+      },
+      "swelling_in_yolo_raw": false
+    },
+    "black": {
+      "path": "data/test_suite/forensic_black.jpg",
+      "width": 224,
+      "height": 224,
+      "wrapper_detect": [],
+      "raw_at_0_25": [],
+      "raw_at_0_01_n": 1,
+      "raw_at_0_01_max": 0.010593828745186329,
+      "raw_at_0_01_classes": [
+        "cut"
+      ],
+      "threshold_sweep": {
+        "0.01": {
+          "n": 1,
+          "max": 0.010593828745186329,
+          "classes": [
+            "cut"
+          ]
+        },
+        "0.05": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.1": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.15": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.2": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.25": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.3": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.4": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.5": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        }
+      },
+      "effnet_gated": {
+        "winner": null,
+        "raw_winner": null,
+        "raw_max": null,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "confident": false
+      },
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "max_prob": 1.0,
+        "winner": "Swelling",
+        "entropy": 5.726199798830833e-11,
+        "margin": 1.0,
+        "temperature": 1.0
+      },
+      "unet_positive_ratio": 0.0,
+      "unet_pixel_count": 0,
+      "unet_affected_ratio": 0.0,
+      "unet_debug_status": "LOW_QUALITY_INPUT",
+      "preprocess_meta": {
+        "original_width": 224,
+        "original_height": 224,
+        "target_width": 224,
+        "target_height": 224,
+        "resized_width": 224,
+        "resized_height": 224,
+        "scale": 1.0,
+        "pad_x": 0,
+        "pad_y": 0,
+        "aspect_ratio_preserved": true,
+        "preprocessing_version": "img-v2-letterbox",
+        "normalized": true
+      },
+      "swelling_in_yolo_raw": false
+    },
+    "white": {
+      "path": "data/test_suite/forensic_white.jpg",
+      "width": 224,
+      "height": 224,
+      "wrapper_detect": [],
+      "raw_at_0_25": [],
+      "raw_at_0_01_n": 0,
+      "raw_at_0_01_max": null,
+      "raw_at_0_01_classes": [],
+      "threshold_sweep": {
+        "0.01": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.05": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.1": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.15": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.2": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.25": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.3": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.4": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        },
+        "0.5": {
+          "n": 0,
+          "max": null,
+          "classes": []
+        }
+      },
+      "effnet_gated": {
+        "winner": null,
+        "raw_winner": null,
+        "raw_max": null,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "confident": false
+      },
+      "effnet_raw": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "max_prob": 1.0,
+        "winner": "Swelling",
+        "entropy": 5.726199798830833e-11,
+        "margin": 1.0,
+        "temperature": 1.0
+      },
+      "unet_positive_ratio": 0.0,
+      "unet_pixel_count": 0,
+      "unet_affected_ratio": 0.0,
+      "unet_debug_status": "LOW_QUALITY_INPUT",
+      "preprocess_meta": {
+        "original_width": 224,
+        "original_height": 224,
+        "target_width": 224,
+        "target_height": 224,
+        "resized_width": 224,
+        "resized_height": 224,
+        "scale": 1.0,
+        "pad_x": 0,
+        "pad_y": 0,
+        "aspect_ratio_preserved": true,
+        "preprocessing_version": "img-v2-letterbox",
+        "normalized": true
+      },
+      "swelling_in_yolo_raw": false
+    }
+  },
+  "e2e": {
+    "demo_football": {
+      "case_id": "f28b0753-57b1-46bd-883b-f83b03945e23",
+      "analyze_status": 200,
+      "direct_n": 0,
+      "direct_class": [],
+      "direct_conf": [],
+      "direct_bbox": [],
+      "api_yolo_detected": false,
+      "api_yolo_finding": null,
+      "api_yolo_conf": null,
+      "api_yolo_bbox": null,
+      "api_finding_legacy": "Swelling",
+      "api_classifier_finding": "Swelling",
+      "api_classifier_status": "VALID",
+      "api_bbox": null,
+      "api_overlay_wh": [
+        300,
+        300
+      ],
+      "api_original_wh": [
+        300,
+        300
+      ],
+      "mongo_yolo_finding": null,
+      "mongo_yolo_detected": false,
+      "mongo_yolo_bbox": null,
+      "mongo_classifier_finding": "Swelling",
+      "direct_equals_api_bbox": true,
+      "api_equals_mongo_bbox": true,
+      "api_equals_mongo_class": true,
+      "xgb": null
+    },
+    "heldout_bruise": {
+      "case_id": "0d1cea8d-c734-4ff4-93a8-87d4e8da9ff4",
+      "analyze_status": 200,
+      "direct_n": 1,
+      "direct_class": [
+        "bruise"
+      ],
+      "direct_conf": [
+        0.9988
+      ],
+      "direct_bbox": [
+        [
+          234.41,
+          202.76,
+          400.89,
+          399.59
+        ]
+      ],
+      "api_yolo_detected": true,
+      "api_yolo_finding": "Bruise",
+      "api_yolo_conf": 0.9988,
+      "api_yolo_bbox": [
+        234.41,
+        202.76,
+        400.89,
+        399.59
+      ],
+      "api_finding_legacy": "Bruise",
+      "api_classifier_finding": null,
+      "api_classifier_status": "OUT_OF_DISTRIBUTION",
+      "api_bbox": [
+        234.41,
+        202.76,
+        400.89,
+        399.59
+      ],
+      "api_overlay_wh": [
+        640,
+        640
+      ],
+      "api_original_wh": [
+        640,
+        640
+      ],
+      "mongo_yolo_finding": "Bruise",
+      "mongo_yolo_detected": true,
+      "mongo_yolo_bbox": [
+        234.41,
+        202.76,
+        400.89,
+        399.59
+      ],
+      "mongo_classifier_finding": null,
+      "direct_equals_api_bbox": true,
+      "api_equals_mongo_bbox": true,
+      "api_equals_mongo_class": true,
+      "xgb": null
+    }
+  },
+  "sos_config": {
+    "enabled": false,
+    "configured": false,
+    "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+    "canonical_env": [
+      "TWILIO_ENABLED",
+      "TWILIO_ACCOUNT_SID",
+      "TWILIO_AUTH_TOKEN",
+      "TWILIO_FROM_NUMBER",
+      "TWILIO_TO_NUMBER"
+    ],
+    "legacy_aliases": {
+      "TWILIO_PHONE_NUMBER": "TWILIO_FROM_NUMBER",
+      "EMERGENCY_CONTACT_PHONE": "TWILIO_TO_NUMBER",
+      "EMERGENCY_PHONE_NUMBER": "TWILIO_TO_NUMBER"
+    },
+    "missing_fields": [
+      "TWILIO_ENABLED"
+    ],
+    "delivery_outcomes": [
+      "LOCAL_SIMULATION",
+      "TWILIO_NOT_CONFIGURED",
+      "TWILIO_REQUEST_QUEUED",
+      "TWILIO_FAILED"
+    ],
+    "account_sid_suffix": null,
+    "from_number_set": false,
+    "to_number_set": false,
+    "real_sms_tested": false,
+    "disclaimer": "RESEARCH PROTOTYPE ONLY: No real emergency services (911/112) are contacted. TWILIO_REQUEST_QUEUED means the API returned a SID, not that a handset received SMS."
+  },
+  "api_models_yolo_names": null,
+  "health": {
+    "status": "healthy",
+    "database": "connected",
+    "timestamp": "2026-08-29T06:16:12.365061"
+  }
+}

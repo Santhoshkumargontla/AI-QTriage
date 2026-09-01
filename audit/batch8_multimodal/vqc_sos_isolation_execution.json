@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T13:43:10.965138+00:00",
+  "sos_weight": 0.0,
+  "vqc_low_risk_sos_triggered": false,
+  "vqc_high_risk_sos_triggered": false,
+  "isolation_assertion": "PASS (VQC has zero ability to trigger or cancel emergency countdowns)",
+  "status": "PASS"
+}

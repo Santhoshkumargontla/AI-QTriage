@@ -1,0 +1,23 @@
+{
+  "audit_timestamp": "2026-08-27T09:11:43.666444+00:00",
+  "dataset_directory": "c:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_injury",
+  "train_images": 218,
+  "val_images": 42,
+  "test_images": 25,
+  "supported_classes": [
+    "cut",
+    "bruise",
+    "abrasion",
+    "laceration",
+    "wound"
+  ],
+  "class_distribution": {
+    "cut": 65,
+    "bruise": 82,
+    "abrasion": 44,
+    "laceration": 31,
+    "wound": 38
+  },
+  "dataset_quality": "ADEQUATE for research prototype detection",
+  "verification_status": "PASS"
+}

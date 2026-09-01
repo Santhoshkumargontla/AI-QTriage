@@ -1,0 +1,14 @@
+{
+  "sisfall_contribution": "38 subjects, 160 trials (Falls, Impacts, Walking)",
+  "uci_har_contribution": "30 subjects, 40 trials (Normal Daily Physical Activities)",
+  "sampling_rate_hz": 50.0,
+  "window_size_seconds": 2.5,
+  "supported_modes": [
+    "Upload Log",
+    "Demo Data",
+    "Simulate Data",
+    "Continue Without Data",
+    "Capture Real-Time Mobile Data"
+  ],
+  "pipeline_compatibility": "PASS"
+}

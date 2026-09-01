@@ -1,0 +1,44 @@
+[
+  {
+    "model": "YOLO11 Detection",
+    "runtime_loader_used": true,
+    "forward_pass": true,
+    "output": "Valid Detections List",
+    "status": "PASS"
+  },
+  {
+    "model": "EfficientNetV2 Classification",
+    "runtime_loader_used": true,
+    "forward_pass": true,
+    "output": "Class Probabilities Dict",
+    "status": "PASS"
+  },
+  {
+    "model": "ResNet34-UNet Segmentation",
+    "runtime_loader_used": true,
+    "forward_pass": true,
+    "output": "Binary Segmentation Mask",
+    "status": "PASS"
+  },
+  {
+    "model": "Sensor Motion Event Classifier",
+    "runtime_loader_used": true,
+    "forward_pass": true,
+    "output": "Motion Event Label",
+    "status": "PASS"
+  },
+  {
+    "model": "XGBoost Multimodal Model",
+    "runtime_loader_used": true,
+    "forward_pass": true,
+    "output": "Clinical Risk Category",
+    "status": "PASS"
+  },
+  {
+    "model": "Experimental 4-Qubit VQC",
+    "runtime_loader_used": true,
+    "forward_pass": true,
+    "output": "Quantum Expectation Vector",
+    "status": "EXPERIMENTAL"
+  }
+]

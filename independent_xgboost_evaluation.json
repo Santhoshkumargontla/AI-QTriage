@@ -1,0 +1,42 @@
+{
+  "model_name": "XGBoost Multimodal Model",
+  "version": "v1.2.0",
+  "test_samples": 30,
+  "correct_predictions": 27,
+  "accuracy": 0.9,
+  "macro_precision": 0.8341,
+  "macro_recall": 0.903,
+  "macro_f1": 0.8625,
+  "mcc": 0.7783,
+  "brier_score": 0.1675,
+  "ece": 0.0794,
+  "high_risk_results": {
+    "support": 3,
+    "true_positives": 3,
+    "false_negatives": 0,
+    "false_positives": 1,
+    "precision": 0.75,
+    "recall": 1.0,
+    "f1": 0.8571
+  },
+  "confusion_matrix": [
+    [
+      4,
+      1,
+      0
+    ],
+    [
+      1,
+      20,
+      1
+    ],
+    [
+      0,
+      0,
+      3
+    ]
+  ],
+  "statistical_uncertainty_note": "100% HIGH-risk recall is based on only 3 held-out synthetic HIGH-risk samples and has high statistical uncertainty.",
+  "paired_clinical_patient_records": 0,
+  "verification_status": "PASS"
+}

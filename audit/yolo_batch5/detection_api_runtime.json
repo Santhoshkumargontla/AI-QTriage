@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "yolo_finding_detected": true,
+  "yolo_finding": "Wound",
+  "status": "PASS"
+}

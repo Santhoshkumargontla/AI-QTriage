@@ -1,0 +1,5 @@
+{
+  "audit_timestamp": "2026-08-27T13:36:49.385977+00:00",
+  "sensor_missing_policy": "Sensor absence sets sensor_present=0.0 and defaults peak_g=1.0 without deducting penalty points or assigning negative injury score",
+  "status": "PASS"
+}

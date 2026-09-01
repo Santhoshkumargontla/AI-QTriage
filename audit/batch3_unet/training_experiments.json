@@ -1,0 +1,21 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "experiments": [
+    {
+      "id": 1,
+      "loss": "BCE_Dice_Loss",
+      "lr": 0.001,
+      "val_dice": 0.864,
+      "val_iou": 0.761,
+      "status": "BEST"
+    },
+    {
+      "id": 2,
+      "loss": "BCE_Loss",
+      "lr": 0.001,
+      "val_dice": 0.832,
+      "val_iou": 0.72,
+      "status": "COMPLETED"
+    }
+  ]
+}

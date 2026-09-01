@@ -1,0 +1,22 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "dataset_name": "Kaggle Wound Boundary Mask Dataset",
+  "total_images": 200,
+  "train_images": 140,
+  "val_images": 30,
+  "test_images": 30,
+  "classes": [
+    "wound_mask"
+  ],
+  "architecture": "smp.Unet(resnet34)",
+  "parameter_count": 24436577,
+  "mean_dice_score": 0.864,
+  "median_dice_score": 0.872,
+  "mean_iou": 0.761,
+  "median_iou": 0.773,
+  "precision": 0.878,
+  "recall": 0.852,
+  "artifact_hash": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93",
+  "artifact_size_bytes": 97918031,
+  "runtime_compatibility": "PASS"
+}

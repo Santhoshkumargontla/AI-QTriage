@@ -1,0 +1,1051 @@
+{
+  "created_utc": "2026-08-30T06:21:17.293826+00:00",
+  "not_clinical_accuracy": true,
+  "do_not_trust_held_out_accuracy": true,
+  "dataset_audit": {
+    "root": "data\\datasets\\public_wound_dataset",
+    "provenance": "SYNTHETIC_PIL_DRAWINGS \u2014 generator remaps abrasion/laceration/burn to swelling; manifest source field is not a real download.",
+    "n_manifest": 200,
+    "missing_images": 0,
+    "class_balance_all": {
+      "cut": 34,
+      "bruise": 34,
+      "swelling": 132
+    },
+    "split_sizes": {
+      "train": 140,
+      "val": 30,
+      "test": 30
+    },
+    "split_class_counts": {
+      "train": {
+        "cut": 24,
+        "bruise": 24,
+        "swelling": 92
+      },
+      "val": {
+        "swelling": 20,
+        "cut": 5,
+        "bruise": 5
+      },
+      "test": {
+        "swelling": 20,
+        "cut": 5,
+        "bruise": 5
+      }
+    },
+    "subject_counts": {
+      "train": 28,
+      "val": 6,
+      "test": 6
+    },
+    "subject_overlap": {
+      "train_val": [],
+      "train_test": [],
+      "val_test": []
+    },
+    "exact_pixel_duplicate_groups": 5,
+    "exact_duplicate_images": 167,
+    "cross_split_exact_duplicate_groups": 5,
+    "near_duplicate_dhash_groups": 5,
+    "cross_split_near_duplicate_groups": [
+      {
+        "count": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "cut"
+        ]
+      },
+      {
+        "count": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "bruise"
+        ]
+      },
+      {
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      },
+      {
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      },
+      {
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      }
+    ],
+    "cross_split_near_duplicate_group_count": 5,
+    "negative_or_no_injury_labeled": 0,
+    "needs_negative_class": true,
+    "note": "Held-out accuracy is not evidence of generalization: templates are near-duplicates across splits."
+  },
+  "inference": {
+    "min_confidence": 0.8,
+    "temperature": 1.5,
+    "model_loaded": true,
+    "classes": [
+      "abrasion",
+      "bruise",
+      "burn",
+      "cut",
+      "laceration",
+      "wound",
+      "normal",
+      "ood_reject"
+    ]
+  },
+  "probe_groups": {
+    "uniform": [
+      {
+        "name": "gray",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9999995231628418,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "black",
+        "before_winner": "Ood_reject",
+        "before_max": 0.6574176549911499,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "white",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9635009169578552,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "noisy_gray_std5",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9999983310699463,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      }
+    ],
+    "no_injury": [
+      {
+        "name": "skin_tone_uniform",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9999957084655762,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "skin_tone_noisy",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9999991655349731,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "blank_skin.jpg",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9999980926513672,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      }
+    ],
+    "in_distribution": [
+      {
+        "name": "synthetic_cut_template",
+        "before_winner": "Ood_reject",
+        "before_max": 0.8466218113899231,
+        "after_status": "OUT_OF_DISTRIBUTION",
+        "after_winner": null,
+        "after_confident": false
+      }
+    ],
+    "blurred": [
+      {
+        "name": "blurred_cut_template",
+        "before_winner": "Cut",
+        "before_max": 0.5334030985832214,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "heavily_blurred_cut_template",
+        "before_winner": "Ood_reject",
+        "before_max": 0.6243072748184204,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      }
+    ],
+    "unrelated": [
+      {
+        "name": "blue_unrelated",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9998602867126465,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "green_unrelated",
+        "before_winner": "Ood_reject",
+        "before_max": 1.0,
+        "after_status": "LOW_QUALITY_INPUT",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "blue_striped_unrelated",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9985927939414978,
+        "after_status": "OUT_OF_DISTRIBUTION",
+        "after_winner": null,
+        "after_confident": false
+      },
+      {
+        "name": "high_frequency_noise",
+        "before_winner": "Ood_reject",
+        "before_max": 0.9999963045120239,
+        "after_status": "OUT_OF_DISTRIBUTION",
+        "after_winner": null,
+        "after_confident": false
+      }
+    ],
+    "real_photo": [
+      {
+        "name": "football_injury.jpg",
+        "before_winner": "Bruise",
+        "before_max": 0.5710345506668091,
+        "after_status": "OUT_OF_DISTRIBUTION",
+        "after_winner": null,
+        "after_confident": false
+      }
+    ],
+    "held_out_val": [
+      {
+        "name": "val_public_sample_0141_swelling",
+        "before_winner": "Ood_reject",
+        "before_max": 0.48414304852485657,
+        "after_status": "OUT_OF_DISTRIBUTION",
+        "after_winner": null,
+        "after_confident": false
+      }
+    ]
+  },
+  "probes": [
+    {
+      "name": "gray",
+      "group": "uniform",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 1.3250073260806516e-10,
+          "Bruise": 3.394657888122765e-09,
+          "Burn": 2.93809790719024e-07,
+          "Cut": 5.006614567371059e-10,
+          "Laceration": 1.8436188042869617e-07,
+          "Wound": 2.281509399806869e-13,
+          "Normal": 3.575457985238728e-11,
+          "Ood_reject": 0.9999995231628418
+        },
+        "max_prob": 0.9999995231628418,
+        "winner": "Ood_reject",
+        "entropy": 7.840838399319633e-06,
+        "margin": 0.9999992251396179,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "black",
+      "group": "uniform",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 1.7279867847719288e-07,
+          "Bruise": 0.00028502827626653016,
+          "Burn": 0.0051703196950256824,
+          "Cut": 1.5154340871958993e-05,
+          "Laceration": 4.14650967286434e-05,
+          "Wound": 4.401628395100943e-09,
+          "Normal": 0.33707019686698914,
+          "Ood_reject": 0.6574176549911499
+        },
+        "max_prob": 0.6574176549911499,
+        "winner": "Ood_reject",
+        "entropy": 0.6724330293201846,
+        "margin": 0.32034745812416077,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "white",
+      "group": "uniform",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 0.00024187436792999506,
+          "Bruise": 0.010246099904179573,
+          "Burn": 0.00028881532489322126,
+          "Cut": 3.539020553944283e-06,
+          "Laceration": 0.007414032705128193,
+          "Wound": 2.6997082347435253e-10,
+          "Normal": 0.018304690718650818,
+          "Ood_reject": 0.9635009169578552
+        },
+        "max_prob": 0.9635009169578552,
+        "winner": "Ood_reject",
+        "entropy": 0.19676389062555466,
+        "margin": 0.9451962113380432,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "noisy_gray_std5",
+      "group": "uniform",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 3.369,
+        "ptp": 30.0,
+        "unique16": 3,
+        "laplacian_var": 227.8119,
+        "edge_frac": 0.0,
+        "skin_frac": 0.079779,
+        "red_frac": 0.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 6.239232464011479e-10,
+          "Bruise": 2.843268553931466e-08,
+          "Burn": 3.2684167194929614e-07,
+          "Cut": 6.531735863291033e-08,
+          "Laceration": 1.2095085821783869e-06,
+          "Wound": 7.91096008145864e-11,
+          "Normal": 1.2851504582744866e-11,
+          "Ood_reject": 0.9999983310699463
+        },
+        "max_prob": 0.9999983310699463,
+        "winner": "Ood_reject",
+        "entropy": 2.4581749461440642e-05,
+        "margin": 0.9999971389770508,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "skin_tone_uniform",
+      "group": "no_injury",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 1.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 3.8131182122924656e-07,
+          "Bruise": 2.7354238341104065e-07,
+          "Burn": 3.219554855604656e-06,
+          "Cut": 8.313720378794187e-09,
+          "Laceration": 3.266544865709875e-07,
+          "Wound": 4.70851569539521e-12,
+          "Normal": 1.1822407941508573e-07,
+          "Ood_reject": 0.9999957084655762
+        },
+        "max_prob": 0.9999957084655762,
+        "winner": "Ood_reject",
+        "entropy": 6.173125547573147e-05,
+        "margin": 0.9999924898147583,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "skin_tone_noisy",
+      "group": "no_injury",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 2.6916,
+        "ptp": 24.0,
+        "unique16": 2,
+        "laplacian_var": 145.8663,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 0.571429
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 9.960243296802673e-09,
+          "Bruise": 1.4405120651872494e-08,
+          "Burn": 2.443326820866787e-07,
+          "Cut": 4.182967749954969e-09,
+          "Laceration": 5.951527555225766e-07,
+          "Wound": 6.322456447271918e-11,
+          "Normal": 1.3915144037035532e-10,
+          "Ood_reject": 0.9999991655349731
+        },
+        "max_prob": 0.9999991655349731,
+        "winner": "Ood_reject",
+        "entropy": 1.364827191055843e-05,
+        "margin": 0.9999985694885254,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "blank_skin.jpg",
+      "group": "no_injury",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 640,
+        "width": 640,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 0.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 2.2319362358302897e-08,
+          "Bruise": 8.00118513666348e-08,
+          "Burn": 1.3710165376323857e-06,
+          "Cut": 1.4951015980813054e-09,
+          "Laceration": 4.163533731116331e-07,
+          "Wound": 1.3630787470964023e-11,
+          "Normal": 6.95467594624688e-09,
+          "Ood_reject": 0.9999980926513672
+        },
+        "max_prob": 0.9999980926513672,
+        "winner": "Ood_reject",
+        "entropy": 2.83858386954966e-05,
+        "margin": 0.9999967217445374,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "synthetic_cut_template",
+      "group": "in_distribution",
+      "quality_status": "VALID",
+      "quality_reason": "passed_input_quality_gates",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 14.1609,
+        "ptp": 84.0,
+        "unique16": 2,
+        "laplacian_var": 232.875,
+        "edge_frac": 0.006896,
+        "skin_frac": 0.970723,
+        "red_frac": 1.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 0.00013583326654043049,
+          "Bruise": 0.00030493209487758577,
+          "Burn": 0.08366761356592178,
+          "Cut": 0.023961717262864113,
+          "Laceration": 0.04494403302669525,
+          "Wound": 2.5842712148005376e-06,
+          "Normal": 0.00036155423731543124,
+          "Ood_reject": 0.8466218113899231
+        },
+        "max_prob": 0.8466218113899231,
+        "winner": "Ood_reject",
+        "entropy": 0.5839513090167279,
+        "margin": 0.7629541754722595,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "softmax_not_trusted_closed_set_overconfidence",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": 0.6841015219688416,
+        "raw_winner": "OOD_Reject",
+        "raw_max_prob": 0.6841015219688416,
+        "entropy": 0.996743,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "blurred_cut_template",
+      "group": "blurred",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 7.7492,
+        "ptp": 39.0,
+        "unique16": 3,
+        "laplacian_var": 0.4096,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 1.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 0.014352330937981606,
+          "Bruise": 0.0022335201501846313,
+          "Burn": 0.10327469557523727,
+          "Cut": 0.5334030985832214,
+          "Laceration": 0.05286036804318428,
+          "Wound": 0.0002492533531039953,
+          "Normal": 0.0026591268833726645,
+          "Ood_reject": 0.29096752405166626
+        },
+        "max_prob": 0.5334030985832214,
+        "winner": "Cut",
+        "entropy": 1.1767089124480232,
+        "margin": 0.24243557453155518,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "heavily_blurred_cut_template",
+      "group": "blurred",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 5.5529,
+        "ptp": 22.0,
+        "unique16": 2,
+        "laplacian_var": 0.5289,
+        "edge_frac": 0.0,
+        "skin_frac": 1.0,
+        "red_frac": 1.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 0.014109492301940918,
+          "Bruise": 0.017780253663659096,
+          "Burn": 0.21960489451885223,
+          "Cut": 0.06861837953329086,
+          "Laceration": 0.04989061877131462,
+          "Wound": 0.00019883648201357573,
+          "Normal": 0.005490316078066826,
+          "Ood_reject": 0.6243072748184204
+        },
+        "max_prob": 0.6243072748184204,
+        "winner": "Ood_reject",
+        "entropy": 1.1224720946258495,
+        "margin": 0.404702365398407,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "blue_unrelated",
+      "group": "unrelated",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 3.3202936927656523e-12,
+          "Bruise": 1.3624485539764919e-08,
+          "Burn": 0.00013912058784626424,
+          "Cut": 1.654786169202893e-10,
+          "Laceration": 5.240194127509312e-07,
+          "Wound": 3.6818798335690184e-13,
+          "Normal": 5.174168520938674e-14,
+          "Ood_reject": 0.9998602867126465
+        },
+        "max_prob": 0.9998602867126465,
+        "winner": "Ood_reject",
+        "entropy": 0.001382891973296696,
+        "margin": 0.9997211694717407,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "green_unrelated",
+      "group": "unrelated",
+      "quality_status": "LOW_QUALITY_INPUT",
+      "quality_reason": "uniform_or_blank_image",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 0.0,
+        "ptp": 0.0,
+        "unique16": 1,
+        "laplacian_var": 0.0,
+        "edge_frac": 0.0,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 2.218682696060719e-14,
+          "Bruise": 3.111867534488777e-12,
+          "Burn": 1.1973407154641791e-08,
+          "Cut": 8.763068124872236e-14,
+          "Laceration": 4.11957614687708e-08,
+          "Wound": 3.683119218530188e-16,
+          "Normal": 2.2013149631036275e-15,
+          "Ood_reject": 1.0
+        },
+        "max_prob": 1.0,
+        "winner": "Ood_reject",
+        "entropy": 9.723021288520185e-07,
+        "margin": 0.9999999403953552,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "blue_striped_unrelated",
+      "group": "unrelated",
+      "quality_status": "OUT_OF_DISTRIBUTION",
+      "quality_reason": "high_frequency_unstructured",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 39.4085,
+        "ptp": 105.0,
+        "unique16": 2,
+        "laplacian_var": 11320.3125,
+        "edge_frac": 0.334821,
+        "skin_frac": 0.0,
+        "red_frac": 0.0
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 3.832772765832715e-09,
+          "Bruise": 4.654213262256235e-05,
+          "Burn": 2.8339809432509355e-06,
+          "Cut": 4.9228724208205676e-08,
+          "Laceration": 0.0013575084740296006,
+          "Wound": 5.709763217787156e-11,
+          "Normal": 2.921963186963694e-07,
+          "Ood_reject": 0.9985927939414978
+        },
+        "max_prob": 0.9985927939414978,
+        "winner": "Ood_reject",
+        "entropy": 0.010874417533265223,
+        "margin": 0.9972352981567383,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "high_frequency_unstructured",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "high_frequency_noise",
+      "group": "unrelated",
+      "quality_status": "OUT_OF_DISTRIBUTION",
+      "quality_reason": "high_frequency_unstructured",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 49.4859,
+        "ptp": 249.0,
+        "unique16": 16,
+        "laplacian_var": 49208.2859,
+        "edge_frac": 0.368682,
+        "skin_frac": 0.129843,
+        "red_frac": 0.112345
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 2.138670197382453e-06,
+          "Bruise": 2.5376647272423725e-07,
+          "Burn": 3.092574445417995e-07,
+          "Cut": 1.785987002733691e-08,
+          "Laceration": 2.472806954756379e-07,
+          "Wound": 3.240611334831556e-08,
+          "Normal": 6.985813456594769e-07,
+          "Ood_reject": 0.9999963045120239
+        },
+        "max_prob": 0.9999963045120239,
+        "winner": "Ood_reject",
+        "entropy": 5.464938696709862e-05,
+        "margin": 0.999994158744812,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "high_frequency_unstructured",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": null,
+        "raw_winner": null,
+        "raw_max_prob": null,
+        "entropy": null,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "football_injury.jpg",
+      "group": "real_photo",
+      "quality_status": "VALID",
+      "quality_reason": "passed_input_quality_gates",
+      "quality_metrics": {
+        "height": 300,
+        "width": 300,
+        "std": 39.4124,
+        "ptp": 208.0,
+        "unique16": 14,
+        "laplacian_var": 4626.6447,
+        "edge_frac": 0.203922,
+        "skin_frac": 0.951567,
+        "red_frac": 0.822956
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 0.045721385627985,
+          "Bruise": 0.5710345506668091,
+          "Burn": 0.17815467715263367,
+          "Cut": 0.0027427775785326958,
+          "Laceration": 0.0006758840754628181,
+          "Wound": 0.002636117860674858,
+          "Normal": 0.0012235009344294667,
+          "Ood_reject": 0.19781118631362915
+        },
+        "max_prob": 0.5710345506668091,
+        "winner": "Bruise",
+        "entropy": 1.133861708154134,
+        "margin": 0.37322336435317993,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "softmax_not_trusted_closed_set_overconfidence",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": 0.4498407244682312,
+        "raw_winner": "Bruise",
+        "raw_max_prob": 0.4498407244682312,
+        "entropy": 1.400563,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    },
+    {
+      "name": "val_public_sample_0141_swelling",
+      "group": "held_out_val",
+      "quality_status": "VALID",
+      "quality_reason": "passed_input_quality_gates",
+      "quality_metrics": {
+        "height": 224,
+        "width": 224,
+        "std": 10.7694,
+        "ptp": 68.0,
+        "unique16": 6,
+        "laplacian_var": 36.8621,
+        "edge_frac": 0.018435,
+        "skin_frac": 1.0,
+        "red_frac": 0.730389
+      },
+      "before_raw_softmax": {
+        "probs": {
+          "Abrasion": 0.018463406711816788,
+          "Bruise": 0.086784228682518,
+          "Burn": 0.010259512811899185,
+          "Cut": 0.054886262863874435,
+          "Laceration": 0.010176129639148712,
+          "Wound": 0.0037558097392320633,
+          "Normal": 0.3315316438674927,
+          "Ood_reject": 0.48414304852485657
+        },
+        "max_prob": 0.48414304852485657,
+        "winner": "Ood_reject",
+        "entropy": 1.2769914987518247,
+        "margin": 0.1526114046573639,
+        "temperature": 1.0
+      },
+      "after_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "softmax_not_trusted_closed_set_overconfidence",
+        "winner": null,
+        "is_confident": false,
+        "max_prob": 0.3796095550060272,
+        "raw_winner": "OOD_Reject",
+        "raw_max_prob": 0.3796095550060272,
+        "entropy": 1.60141,
+        "Cut": null,
+        "Bruise": null,
+        "Swelling": null
+      },
+      "failure_hidden": false
+    }
+  ],
+  "still_confident_on_invalid": [],
+  "retraining_requirements": [
+    "Add a real negative / no-injury class (blank skin, uniform, cluttered non-injury photos). Current set has 0.",
+    "Stop remapping abrasion/laceration/burn into swelling.",
+    "Replace deterministic PIL templates; current train/val/test share identical or near-identical drawings.",
+    "Enforce uniqueness: no exact or dHash duplicates across splits.",
+    "Train with uniform/blank/blur augmentations labeled as negative or rejected, not as swelling.",
+    "Do not treat 1.0 test accuracy on 30 near-duplicate drawings as generalization."
+  ]
+}

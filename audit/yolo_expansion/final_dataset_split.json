@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T13:06:03.578076+00:00",
+  "total_images": 500,
+  "train_images": 350,
+  "val_images": 75,
+  "test_images": 75,
+  "split_ratio": "70 / 15 / 15 Subject-Isolated",
+  "status": "PASS"
+}

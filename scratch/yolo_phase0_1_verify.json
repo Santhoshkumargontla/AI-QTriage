@@ -1,0 +1,321 @@
+{
+  "phase": "0-1 baseline and forensic verify",
+  "baseline": {
+    "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+    "disk_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "expected_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "sha_match": true,
+    "wrapper_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "registry_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "manifest_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "model_names": [
+      "cut",
+      "bruise",
+      "wound"
+    ],
+    "keep_threshold": 0.25,
+    "class_support_yolo_retrain_v2": {
+      "train": {
+        "bruise": 40,
+        "cut": 47
+      },
+      "val": {
+        "bruise": 13,
+        "cut": 6
+      },
+      "test": {
+        "bruise": 10,
+        "cut": 8
+      }
+    },
+    "wound_honest_support": true
+  },
+  "forensic_hand": {
+    "path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\3f629ca8-dd98-427d-a708-f976e2042555.jpeg",
+    "exists": true,
+    "sha256": "87a76147983d0cdb3a63c9f3d3988b0e16ba8157085513f63463de26a559b446",
+    "dimensions_hw": [
+      700,
+      1283
+    ],
+    "threshold_sweep": {
+      "0.01": [
+        {
+          "class": "bruise",
+          "confidence": 0.7574,
+          "bounding_box": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.3473,
+          "bounding_box": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.1071,
+          "bounding_box": [
+            960.29,
+            279.72,
+            1281.02,
+            700.0
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.1,
+          "bounding_box": [
+            771.19,
+            0.0,
+            1283.0,
+            372.34
+          ]
+        },
+        {
+          "class": "cut",
+          "confidence": 0.0818,
+          "bounding_box": [
+            557.9,
+            250.78,
+            738.89,
+            456.48
+          ]
+        },
+        {
+          "class": "cut",
+          "confidence": 0.0342,
+          "bounding_box": [
+            550.26,
+            199.67,
+            742.79,
+            476.02
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.0256,
+          "bounding_box": [
+            1024.21,
+            0.25,
+            1283.0,
+            340.49
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.0202,
+          "bounding_box": [
+            806.28,
+            266.58,
+            1283.0,
+            700.0
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.0154,
+          "bounding_box": [
+            1043.81,
+            298.22,
+            1281.59,
+            695.31
+          ]
+        }
+      ],
+      "0.05": [
+        {
+          "class": "bruise",
+          "confidence": 0.7574,
+          "bounding_box": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.3473,
+          "bounding_box": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.1071,
+          "bounding_box": [
+            960.29,
+            279.72,
+            1281.02,
+            700.0
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.1,
+          "bounding_box": [
+            771.19,
+            0.0,
+            1283.0,
+            372.34
+          ]
+        },
+        {
+          "class": "cut",
+          "confidence": 0.0818,
+          "bounding_box": [
+            557.9,
+            250.78,
+            738.89,
+            456.48
+          ]
+        }
+      ],
+      "0.1": [
+        {
+          "class": "bruise",
+          "confidence": 0.7574,
+          "bounding_box": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.3473,
+          "bounding_box": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.1071,
+          "bounding_box": [
+            960.29,
+            279.72,
+            1281.02,
+            700.0
+          ]
+        }
+      ],
+      "0.25": [
+        {
+          "class": "bruise",
+          "confidence": 0.7574,
+          "bounding_box": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ]
+        },
+        {
+          "class": "bruise",
+          "confidence": 0.3473,
+          "bounding_box": [
+            942.06,
+            0.0,
+            1280.56,
+            373.69
+          ]
+        }
+      ],
+      "0.4": [
+        {
+          "class": "bruise",
+          "confidence": 0.7574,
+          "bounding_box": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ]
+        }
+      ],
+      "0.5": [
+        {
+          "class": "bruise",
+          "confidence": 0.7574,
+          "bounding_box": [
+            1.41,
+            0.0,
+            405.61,
+            320.86
+          ]
+        }
+      ]
+    },
+    "wrapper_at_default_threshold": [
+      {
+        "finding": "bruise",
+        "confidence": 0.7574,
+        "bounding_box": [
+          1.41,
+          0.0,
+          405.61,
+          320.86
+        ],
+        "low_confidence": false,
+        "keep_threshold": 0.25,
+        "class_support_status": "bruise",
+        "image_width": 1283,
+        "image_height": 700,
+        "coordinate_space": "original_image_xyxy",
+        "model_version": "v1.4.0",
+        "model_status": "INFERENCE_EXECUTES",
+        "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+        "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879"
+      },
+      {
+        "finding": "bruise",
+        "confidence": 0.3473,
+        "bounding_box": [
+          942.06,
+          0.0,
+          1280.56,
+          373.69
+        ],
+        "low_confidence": true,
+        "keep_threshold": 0.25,
+        "class_support_status": "bruise",
+        "image_width": 1283,
+        "image_height": 700,
+        "coordinate_space": "original_image_xyxy",
+        "model_version": "v1.4.0",
+        "model_status": "INFERENCE_EXECUTES",
+        "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+        "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879"
+      }
+    ],
+    "api": {
+      "yolo_finding": "Bruise",
+      "yolo_confidence": 0.7574,
+      "bounding_box": [
+        1.41,
+        0.0,
+        405.61,
+        320.86
+      ],
+      "original_width": 1283,
+      "original_height": 700
+    },
+    "api_matches_direct": true
+  }
+}

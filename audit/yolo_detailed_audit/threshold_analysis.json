@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T13:19:18.267575+00:00",
+  "evaluated_thresholds": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.4,
+    0.5
+  ],
+  "selected_threshold": 0.1,
+  "assessment": "OPTIMAL for high triage sensitivity",
+  "status": "PASS"
+}

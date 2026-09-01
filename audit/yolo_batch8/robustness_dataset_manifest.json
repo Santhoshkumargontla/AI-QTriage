@@ -1,0 +1,28 @@
+{
+  "audit_timestamp": "2026-08-27T12:56:40.451981+00:00",
+  "total_images": 30,
+  "categories": [
+    {
+      "name": "Different Skin Tones",
+      "count": 6
+    },
+    {
+      "name": "Low Light / Specular Glare",
+      "count": 6
+    },
+    {
+      "name": "Sub-15px Small Wounds",
+      "count": 6
+    },
+    {
+      "name": "Complex Backgrounds & Occlusion",
+      "count": 6
+    },
+    {
+      "name": "Hard Negative Non-Injury Controls",
+      "count": 6
+    }
+  ],
+  "leakage_check": "PASS (0% Train/Val overlap)",
+  "status": "PASS"
+}

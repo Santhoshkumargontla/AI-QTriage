@@ -1,0 +1,163 @@
+{
+  "model_name": "EfficientNetV2 Classification",
+  "version": "kaggle-v1",
+  "status": "READY_FOR_RESEARCH_DEMO",
+  "training_status": "READY_FOR_RESEARCH_DEMO",
+  "classes": [
+    "abrasion",
+    "bruise",
+    "burn",
+    "cut",
+    "laceration",
+    "wound",
+    "normal",
+    "ood_reject"
+  ],
+  "artifact_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+  "metrics": {
+    "test": {
+      "n": 473,
+      "accuracy": 0.9640591966173362,
+      "macro_f1": 0.9374837797569102,
+      "macro_precision": 0.9322847214320931,
+      "macro_recall": 0.9460903546581296,
+      "per_class": {
+        "abrasion": {
+          "precision": 0.9166666666666666,
+          "recall": 0.9565217391304348,
+          "f1": 0.9361702127659575,
+          "support": 23
+        },
+        "bruise": {
+          "precision": 1.0,
+          "recall": 0.8695652173913043,
+          "f1": 0.9302325581395349,
+          "support": 46
+        },
+        "burn": {
+          "precision": 0.8181818181818182,
+          "recall": 0.8181818181818182,
+          "f1": 0.8181818181818182,
+          "support": 22
+        },
+        "cut": {
+          "precision": 0.9411764705882353,
+          "recall": 0.9411764705882353,
+          "f1": 0.9411764705882353,
+          "support": 17
+        },
+        "laceration": {
+          "precision": 0.8235294117647058,
+          "recall": 1.0,
+          "f1": 0.9032258064516129,
+          "support": 14
+        },
+        "wound": {
+          "precision": 0.98,
+          "recall": 0.9832775919732442,
+          "f1": 0.9816360601001669,
+          "support": 299
+        },
+        "normal": {
+          "precision": 0.9787234042553191,
+          "recall": 1.0,
+          "f1": 0.989247311827957,
+          "support": 46
+        },
+        "ood_reject": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 6
+        }
+      },
+      "confusion_matrix": [
+        [
+          22,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          40,
+          3,
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          18,
+          0,
+          0,
+          4,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          16,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          14,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          2,
+          294,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          46,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          6
+        ]
+      ]
+    },
+    "ood_collapse": 0
+  },
+  "dataset_provenance": "Kaggle wound classification photos + normal/ood; licenses often unknown on card",
+  "known_limitations": "Not clinical. Swelling unsupported. Fracture not in this head (X-ray separate). Small real-photo n.",
+  "evaluation_artifact": "ml/models/efficientnet_kaggle_v1_training/TRAIN_REPORT.json",
+  "last_evaluated": "2026-08-29T18:38:34.922508+00:00"
+}

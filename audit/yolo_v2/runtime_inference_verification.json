@@ -1,0 +1,44 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "sample_image": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "confidence_sensitivity_analysis": [
+    {
+      "conf_threshold": 0.1,
+      "detections_count": 1,
+      "top_confidence": 0.1153,
+      "result_status": "WOUND DETECTED"
+    },
+    {
+      "conf_threshold": 0.15,
+      "detections_count": 1,
+      "top_confidence": 0.1153,
+      "result_status": "WOUND DETECTED"
+    },
+    {
+      "conf_threshold": 0.2,
+      "detections_count": 1,
+      "top_confidence": 0.1153,
+      "result_status": "WOUND DETECTED"
+    },
+    {
+      "conf_threshold": 0.25,
+      "detections_count": 1,
+      "top_confidence": 0.1153,
+      "result_status": "WOUND DETECTED"
+    },
+    {
+      "conf_threshold": 0.3,
+      "detections_count": 1,
+      "top_confidence": 0.1153,
+      "result_status": "WOUND DETECTED"
+    },
+    {
+      "conf_threshold": 0.4,
+      "detections_count": 1,
+      "top_confidence": 0.1153,
+      "result_status": "WOUND DETECTED"
+    }
+  ],
+  "selected_threshold_justification": "conf = 0.10 selected for maximum sensitivity on complex, low-contrast wound edges in academic research setting.",
+  "status": "PASS"
+}

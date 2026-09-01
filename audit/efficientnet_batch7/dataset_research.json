@@ -1,0 +1,39 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "evaluated_datasets": [
+    {
+      "name": "Roboflow Skin Injury Dataset",
+      "license": "CC BY 4.0",
+      "images": 200,
+      "classes": [
+        "Cut",
+        "Bruise",
+        "Swelling",
+        "Other"
+      ],
+      "rank": 1,
+      "status": "SELECTED"
+    },
+    {
+      "name": "WACV 2023 Cutaneous Lesion Set",
+      "license": "Open Access CVF",
+      "images": 150,
+      "classes": [
+        "Cut",
+        "Burn",
+        "Ulcer"
+      ],
+      "rank": 2,
+      "status": "SELECTED"
+    },
+    {
+      "name": "ISIC Neoplasms Archive",
+      "license": "CC-0",
+      "images": 1000,
+      "relevance": "Dermatological tumors",
+      "rank": 3,
+      "status": "EXCLUDED"
+    }
+  ],
+  "selection_verdict": "PASS"
+}

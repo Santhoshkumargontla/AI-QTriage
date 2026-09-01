@@ -1,0 +1,35 @@
+{
+  "normal_movement": {
+    "case_id": "ee0d6a31-3347-4147-a487-52014a3009c5",
+    "class": "normal_activity",
+    "status": "classified",
+    "g": 1.04,
+    "get_class": "normal_activity"
+  },
+  "sudden_fall": {
+    "case_id": "40cf35a7-6510-4c6e-a899-566c37dce79b",
+    "class": "normal_activity",
+    "status": "classified",
+    "g": 4.04,
+    "get_class": "normal_activity"
+  },
+  "football_fall": {
+    "case_id": "a9fcd9f3-e645-422f-aa0a-d4438247b2de",
+    "class": "normal_activity",
+    "status": "classified",
+    "g": 4.62,
+    "get_class": "normal_activity"
+  },
+  "sudden_impact": {
+    "case_id": "21d6ae43-40b6-4604-947b-d36125dffffb",
+    "class": "fall",
+    "status": "classified",
+    "g": 5.61,
+    "get_class": "fall"
+  },
+  "skip": {
+    "case_id": "9965d140-d9a7-4895-a1ac-5171f392a815",
+    "sensor_summary": null,
+    "sensor_available": false
+  }
+}

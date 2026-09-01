@@ -1,0 +1,252 @@
+=== EfficientNet forensic audit (no retrain) ===
+canonical=ml/models/vision/efficientnetv2_injury_best.pt
+sha256=6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83
+n_classes=3 wrapper_classes=['cut', 'bruise', 'swelling']
+metadata_sha_match=True registry_sha_match=True
+candidate_equals_production=False
+
+=== Dataset ===
+{
+  "class_balance": {
+    "cut": 34,
+    "bruise": 34,
+    "swelling": 132
+  },
+  "splits": {
+    "train": 140,
+    "val": 30,
+    "test": 30
+  },
+  "split_class": {
+    "train": {
+      "cut": 24,
+      "bruise": 24,
+      "swelling": 92
+    },
+    "val": {
+      "swelling": 20,
+      "cut": 5,
+      "bruise": 5
+    },
+    "test": {
+      "swelling": 20,
+      "cut": 5,
+      "bruise": 5
+    }
+  },
+  "unique_templates": {
+    "cut": 1,
+    "bruise": 1,
+    "swelling": 36
+  },
+  "cross_split_exact_groups": 5,
+  "subject_overlap": {
+    "train_val": [],
+    "train_test": [],
+    "val_test": []
+  },
+  "negatives": 0
+}
+
+=== Live held-out (raw T=1.0) ===
+{
+  "test": {
+    "split": "test",
+    "n": 30,
+    "unique_pixel_templates": 10,
+    "accuracy": 1.0,
+    "per_class": {
+      "cut": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "bruise": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "swelling": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 20
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        20
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "cut",
+      "bruise",
+      "swelling"
+    ],
+    "mean_max_softmax": 1.0,
+    "min_max_softmax": 1.0,
+    "max_max_softmax": 1.0,
+    "frac_max_softmax_ge_0.95": 1.0,
+    "brier_multiclass": 0.0,
+    "ece_10bin": 0.0,
+    "ece_bins": [
+      {
+        "bin": [
+          0.9,
+          1.0
+        ],
+        "n": 30,
+        "accuracy": 1.0,
+        "mean_confidence": 1.0
+      }
+    ],
+    "metrics_source": "live_predict_raw_T1.0 on public_wound_dataset split",
+    "note": "Accuracy is template recognition, not generalization, when unique_pixel_templates << n."
+  },
+  "val": {
+    "split": "val",
+    "n": 30,
+    "unique_pixel_templates": 10,
+    "accuracy": 1.0,
+    "per_class": {
+      "cut": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "bruise": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "swelling": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 20
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        20
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "cut",
+      "bruise",
+      "swelling"
+    ],
+    "mean_max_softmax": 1.0,
+    "min_max_softmax": 1.0,
+    "max_max_softmax": 1.0,
+    "frac_max_softmax_ge_0.95": 1.0,
+    "brier_multiclass": 0.0,
+    "ece_10bin": 0.0,
+    "ece_bins": [
+      {
+        "bin": [
+          0.9,
+          1.0
+        ],
+        "n": 30,
+        "accuracy": 1.0,
+        "mean_confidence": 1.0
+      }
+    ],
+    "metrics_source": "live_predict_raw_T1.0 on public_wound_dataset split",
+    "note": "Accuracy is template recognition, not generalization, when unique_pixel_templates << n."
+  }
+}
+
+=== RAW softmax T=1.0 complete arrays ===
+class_order=['Cut', 'Bruise', 'Swelling']
+gray                                       group=uniform                          array=[0.037578, 0.0, 0.962422] winner=Swelling max=0.962422 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+black                                      group=uniform                          array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+white                                      group=uniform                          array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+blank_midgray                              group=blank                            array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+blank_skin.jpg                             group=no_injury_existing               array=[0.003632, 0.007302, 0.989066] winner=Swelling max=0.989066 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+dummy_test.jpg                             group=no_injury_existing               array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+skin_tone_uniform                          group=no_injury_generated              array=[0.000238, 9e-06, 0.999753] winner=Swelling max=0.999753 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+skin_tone_noisy                            group=no_injury_generated              array=[0.376427, 0.03534, 0.588233] winner=Swelling max=0.588233 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+blue_unrelated                             group=unrelated_synthetic              array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+green_unrelated                            group=unrelated_synthetic              array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+blue_striped_unrelated                     group=unrelated_synthetic              array=[0.006685, 5e-06, 0.993309] winner=Swelling max=0.993309 gate=OUT_OF_DISTRIBUTION/OUT_OF_DISTRIBUTION app_winner=None
+high_frequency_noise                       group=unrelated_synthetic              array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=OUT_OF_DISTRIBUTION/OUT_OF_DISTRIBUTION app_winner=None
+football_injury.jpg                        group=unrelated_or_photo               array=[0.001286, 0.0, 0.998713] winner=Swelling max=0.998713 gate=VALID/VALID app_winner=Swelling
+qa_swelling_offcenter.jpg                  group=unrelated_or_photo               array=[0.134855, 0.0, 0.865145] winner=Swelling max=0.865145 gate=VALID/OUT_OF_DISTRIBUTION app_winner=None
+upload_forensic_no_detection.jpg           group=unrelated_or_photo               array=[4e-06, 0.0, 0.999996] winner=Swelling max=0.999996 gate=VALID/VALID app_winner=Swelling
+upload_0047fcef.jpg                        group=unrelated_or_photo               array=[0.001286, 0.0, 0.998713] winner=Swelling max=0.998713 gate=VALID/VALID app_winner=Swelling
+synthetic_swollen_ankle.jpg                group=unrelated_or_photo               array=[8.3e-05, 5.9e-05, 0.999858] winner=Swelling max=0.999858 gate=VALID/VALID app_winner=Swelling
+train_unique_cut_public_sample_0001        group=in_domain_unique_template        array=[1.0, 0.0, 0.0] winner=Cut max=1.000000 gate=VALID/VALID app_winner=Cut
+train_unique_bruise_public_sample_0002     group=in_domain_unique_template        array=[0.0, 1.0, 0.0] winner=Bruise max=1.000000 gate=VALID/VALID app_winner=Bruise
+train_unique_swelling_public_sample_0003   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0004   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0005   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0006   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0010   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0016   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0022   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0028   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0034   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0040   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0046   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0052   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0058   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0064   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0070   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0076   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0082   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0088   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0094   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0100   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0106   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0112   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0118   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0124   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0130   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+train_unique_swelling_public_sample_0136   group=in_domain_unique_template        array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_swelling_public_sample_0171    group=in_domain_heldout_template       array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_swelling_public_sample_0172    group=in_domain_heldout_template       array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_swelling_public_sample_0173    group=in_domain_heldout_template       array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_swelling_public_sample_0174    group=in_domain_heldout_template       array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_cut_public_sample_0175         group=in_domain_heldout_template       array=[1.0, 0.0, 0.0] winner=Cut max=1.000000 gate=VALID/VALID app_winner=Cut
+test_unique_bruise_public_sample_0176      group=in_domain_heldout_template       array=[0.0, 1.0, 0.0] winner=Bruise max=1.000000 gate=VALID/VALID app_winner=Bruise
+test_duplicate_copy_swelling_public_sample_0177 group=in_domain_heldout_duplicate_copy array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_swelling_public_sample_0178    group=in_domain_heldout_template       array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_duplicate_copy_swelling_public_sample_0179 group=in_domain_heldout_duplicate_copy array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_swelling_public_sample_0184    group=in_domain_heldout_template       array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_swelling_public_sample_0190    group=in_domain_heldout_template       array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+test_unique_swelling_public_sample_0196    group=in_domain_heldout_template       array=[0.0, 0.0, 1.0] winner=Swelling max=1.000000 gate=VALID/VALID app_winner=Swelling
+synthetic_cut_template_redrawn             group=in_domain_redrawn_generator      array=[0.982052, 0.001703, 0.016245] winner=Cut max=0.982052 gate=VALID/VALID app_winner=Cut
+blurred_cut_template                       group=blurred                          array=[0.000504, 0.0, 0.999496] winner=Swelling max=0.999496 gate=LOW_QUALITY_INPUT/LOW_QUALITY_INPUT app_winner=None
+
+gate_hides_raw_injury_argmax=['gray', 'black', 'white', 'blank_midgray', 'blank_skin.jpg', 'dummy_test.jpg', 'skin_tone_uniform', 'blue_unrelated', 'green_unrelated', 'blue_striped_unrelated', 'high_frequency_noise', 'blurred_cut_template']
+still_confident_on_ood_or_blank=['football_injury.jpg', 'upload_forensic_no_detection.jpg', 'upload_0047fcef.jpg', 'synthetic_swollen_ankle.jpg']

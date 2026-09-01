@@ -1,0 +1,28 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "threshold_sweep": [
+    {
+      "threshold": 0.3,
+      "val_dice": 0.84,
+      "val_iou": 0.73
+    },
+    {
+      "threshold": 0.4,
+      "val_dice": 0.858,
+      "val_iou": 0.752
+    },
+    {
+      "threshold": 0.5,
+      "val_dice": 0.864,
+      "val_iou": 0.761,
+      "selected": true
+    },
+    {
+      "threshold": 0.6,
+      "val_dice": 0.851,
+      "val_iou": 0.745
+    }
+  ],
+  "selected_threshold": 0.5,
+  "status": "PASS"
+}

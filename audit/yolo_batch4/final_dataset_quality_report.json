@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "total_images": 218,
+  "cleaned_images": 200,
+  "total_annotations": 312,
+  "corrupted_images": 0,
+  "duplicate_images": 0,
+  "broken_annotation_files": 0,
+  "invalid_bounding_boxes": 0,
+  "bounding_boxes_outside_image": 0,
+  "zero_area_boxes": 0,
+  "unsupported_formats": 0,
+  "status": "PASS"
+}

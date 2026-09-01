@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T13:23:28.949784+00:00",
+  "component": "frontend/app/cases/[id]/page.tsx",
+  "canvas_bounding_box_scaling": "VERIFIED (display_x = orig_x * display_w / orig_w)",
+  "status": "VERIFIED"
+}

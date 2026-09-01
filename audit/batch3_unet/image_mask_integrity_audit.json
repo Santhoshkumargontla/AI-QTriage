@@ -1,0 +1,10 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "unpaired_images": 0,
+  "unpaired_masks": 0,
+  "corrupted_images": 0,
+  "corrupted_masks": 0,
+  "dimension_mismatches": 0,
+  "binary_mask_verification": "PASS (cv2.INTER_NEAREST used for mask resizing)",
+  "status": "PASS"
+}

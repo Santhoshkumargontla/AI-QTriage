@@ -1,0 +1,26 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "mappings": [
+    {
+      "external": "laceration",
+      "ai_qtriage": "cut",
+      "status": "DIRECT_MATCH"
+    },
+    {
+      "external": "contusion",
+      "ai_qtriage": "bruise",
+      "status": "DIRECT_MATCH"
+    },
+    {
+      "external": "abrasion",
+      "ai_qtriage": "abrasion",
+      "status": "DIRECT_MATCH"
+    },
+    {
+      "external": "open_wound",
+      "ai_qtriage": "wound",
+      "status": "BROAD_CATEGORY_MATCH"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:33:29.897738+00:00",
+  "clean_skin_samples_tested": 10,
+  "false_swelling_predictions": 0,
+  "confidence_gate_activation": "PASS (__is_confident=False, fallback to 'Uncertain' for OOD non-injury skin)",
+  "status": "PASS"
+}

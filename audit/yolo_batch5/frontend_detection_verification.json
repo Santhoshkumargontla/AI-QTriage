@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "component": "frontend/app/cases/[id]/page.tsx",
+  "bounding_box_scaling": "display_x = orig_x * display_w / orig_w",
+  "coordinate_alignment": "PASS",
+  "status": "PASS"
+}

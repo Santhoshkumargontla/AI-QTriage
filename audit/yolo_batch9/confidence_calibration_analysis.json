@@ -1,0 +1,28 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "operating_conf_threshold": 0.1,
+  "calibration_bins": [
+    {
+      "bin": "0.10-0.20",
+      "count": 8,
+      "tp": 7,
+      "fp": 1,
+      "observed_precision": 0.875
+    },
+    {
+      "bin": "0.20-0.50",
+      "count": 14,
+      "tp": 13,
+      "fp": 1,
+      "observed_precision": 0.929
+    },
+    {
+      "bin": "0.50-1.00",
+      "count": 20,
+      "tp": 18,
+      "fp": 2,
+      "observed_precision": 0.9
+    }
+  ],
+  "status": "PASS"
+}

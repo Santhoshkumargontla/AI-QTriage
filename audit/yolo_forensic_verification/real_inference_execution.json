@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T13:23:28.949784+00:00",
+  "tested_images_count": 20,
+  "sample_image": "football_injury.jpg",
+  "predicted_class": "wound",
+  "confidence": 0.1153,
+  "bounding_box": [
+    103.07,
+    106.88,
+    198.29,
+    190.57
+  ],
+  "inference_time_ms": 103.94,
+  "status": "VERIFIED"
+}

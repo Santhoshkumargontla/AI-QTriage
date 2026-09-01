@@ -1,0 +1,18 @@
+{
+  "repository_root": "c:\\Users\\santh\\Capstone Project Code",
+  "audit_timestamp": "2026-08-27T07:35:52.189100+00:00",
+  "operating_system": "win32",
+  "python_version": "3.14.5",
+  "pytorch_version": "2.13.0+cpu",
+  "cuda_available": false,
+  "git_commit": "HEAD",
+  "git_status": "?? ../.VirtualBox/\n?? ../.accessibility.properties\n?? ../.ai_completion/\n?? ../.antigravity/\n?? ../.arduinoIDE/\n?? ../.aws/\n?? ../.bash_history\n?? ../.bun/\n?? ../.cache/\n?? ../.cagent/\n?? ../.claude.json\n?? ../.claude/\n?? ../.cline/\n?? ../.codex/\n?? ../.config/\n?? ../.continue/\n?? ../.copilot/\n?? ../.cursor-sandbox/\n?? ../.cursor/\n?? ../.dbclient/\n?? ../.dlv/\n?? ../.docker/\n?? ../.expo/\n?? ../.gemini/\n?? ../.git-for-windows-updater\n?? ../.gitconfig\n?? ../.gitignore\n?? ../.idlerc/\n?? ../.ipython/\n?? ../.keras/\n?? ../.kiro/\n?? ../.lesshst\n?? ../.lmstudio-home-pointer\n?? ../.lmstudio/\n?? ../.local/\n?? ../.matplotlib/\n?? ../.n8n/\n?? ../.node_repl_history\n?? ../.npm/\n?? ../.npmrc\n?? ../.ollama/\n?? ../.openjfx/\n?? ../.packettracer\n?? ../.python_history\n?? ../.redhat/\n?? ../.rest-client/\n?? ../.sbx-denybin/\n?? ../.sixth_vsc/\n?? ../.sonarlint/\n?? ../.ssh/\n?? ../.streamlit/\n?? ../.th-client/\n?? ../.trae-aicc/\n?? ../.trae/\n?? ../.vscode-shared/\n?? ../.vscode/\n?? ../.wslconfig\n?? \"../AI Skill Gap Analyzer/\"\n?? ../AI_Shorts_System/\n?? \"../AWS Project/\"\n?? ../AppData/\n?? ./\n?? \"../Capstone Project/\"\n?? ../Contacts/\n?? ../CrossDevice/\n?? ../Documents/\n?? ../Downloads/\n?? ../EXSEL_project[1].docx\n?? ../Favorites/\n?? \"../G. Santosh Kumar group-3.pdf\"\n?? ../GSK/\n?? \"../Go language certification on workshop.pdf\"\n?? ../HydroOracle/\n?? \"../IOT project zips/\"\n?? ../InvokeAI/\n?? ../Links/\n?? ../Microsoft/\n?? ../NTUSER.DAT\n?? ../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TM.blf\n?? ../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000001.regtrans-ms\n?? ../NTUSER.DAT{2ad838bc-efea-11ee-a54d-000d3a94eaa1}.TMContainer00000000000000000002.regtrans-ms\n?? ../OneDrive/\n?? ../Placement/\n?? \"../Presentation1[FIE Pending].pptx\"\n?? \"../Saved Games/\"\n?? ../Searches/\n?? ../Setup/\n?? \"../Skill Map AgentWith Short Term Memory/\"\n?? ../ViralAI/\n?? \"../VirtualBox VMs/\"\n?? \"../ai feedback analyzer/\"\n?? ../app.json\n?? ../edb_mtk.exe\n?? ../edb_npgsql.exe\n?? ../edb_pgbouncer.exe\n?? ../get-docker.sh\n?? ../get-shit-done-for-antigravity/\n?? ../go/\n?? \"../kare Sigbed Digicon 4.0.rar\"\n?? \"../kare Sigbed Digicon 4.0/\"\n?? ../mywork/\n?? ../ntuser.dat.LOG1\n?? ../ntuser.dat.LOG2\n?? ../ntuser.ini\n?? ../others/\n?? ../package-lock.json\n?? ../package.json\n?? \"../pass book.pdf\"\n?? ../pemhttpd.exe\n?? \"../placement hub/\"\n?? ../postgresql_13.exe\n?? ../powerbi/\n?? ../resume.pdf\n?? ../runs/\n?? ../test.py.py\n?? ../uidai/\n?? ../untitled1.elf\n?? ../untitled1.hex\n?? ../untitled1.slxc\n?? ../untitled1_ert_rtw/",
+  "active_models": [
+    "XGBoost Multimodal",
+    "Experimental 4-Qubit VQC",
+    "EfficientNetV2 Classification",
+    "ResNet34-UNet Segmentation",
+    "YOLO11 Detection",
+    "Sensor Motion Event Classifier"
+  ]
+}

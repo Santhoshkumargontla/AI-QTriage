@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "internal_mAP50": 0.888,
+  "external_mAP50": 0.854,
+  "delta_mAP50": -0.034,
+  "delta_pct": -3.83,
+  "domain_shift_impact": "MODERATE / ACCEPTABLE (Only 3.83% mAP50 degradation on unseen external domains)",
+  "status": "PASS"
+}

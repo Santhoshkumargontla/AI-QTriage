@@ -1,0 +1,26 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "transformations": [
+    {
+      "type": "Brightness (-20%)",
+      "stability": "STABLE",
+      "conf_delta": -0.01
+    },
+    {
+      "type": "Brightness (+20%)",
+      "stability": "STABLE",
+      "conf_delta": -0.005
+    },
+    {
+      "type": "Gaussian Blur (k=3)",
+      "stability": "STABLE",
+      "conf_delta": -0.02
+    },
+    {
+      "type": "JPEG Compression (q=50)",
+      "stability": "STABLE",
+      "conf_delta": -0.012
+    }
+  ],
+  "status": "PASS"
+}

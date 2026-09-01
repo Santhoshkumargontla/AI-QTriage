@@ -1,0 +1,10 @@
+{
+  "audit_timestamp": "2026-08-27T13:37:20.817084+00:00",
+  "backend_fields": {
+    "segmentation_available": true,
+    "affected_area_ratio": 0.125,
+    "denominator_label": "detected region"
+  },
+  "frontend_rendering": "Displays 'Estimated Segmented Area Within Analyzed Region: 12.5%' with separate Grad-CAM attention overlay",
+  "status": "PASS"
+}

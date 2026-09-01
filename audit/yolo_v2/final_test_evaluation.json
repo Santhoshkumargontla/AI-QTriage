@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "test_images_count": 20,
+  "ground_truth_boxes": 32,
+  "predicted_boxes": 30,
+  "test_mAP50": 0.885,
+  "test_mAP50_95": 0.642,
+  "test_precision": 0.891,
+  "test_recall": 0.854,
+  "evaluation_status": "PASS"
+}

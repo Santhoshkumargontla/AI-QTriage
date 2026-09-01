@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T13:23:28.949784+00:00",
+  "train_val_overlap": 0,
+  "train_test_overlap": 0,
+  "val_test_overlap": 0,
+  "image_level_leakage": "VERIFIED (0% overlap)",
+  "subject_level_leakage": "NOT_VERIFIABLE (No clinical patient metadata)",
+  "status": "VERIFIED"
+}

@@ -1,0 +1,199 @@
+{
+  "audit_timestamp": "2026-08-27T09:14:05.919439+00:00",
+  "batch": 5,
+  "files_inspected": [
+    "frontend/app/create-case/page.tsx",
+    "frontend/app/cases/[id]/page.tsx",
+    "backend/main.py",
+    "ml/vision/preprocess.py",
+    "ml/vision/yolo_wrapper.py",
+    "ml/vision/efficientnet_wrapper.py",
+    "ml/vision/unet_wrapper.py"
+  ],
+  "files_modified": [
+    "frontend/app/create-case/page.tsx",
+    "frontend/app/cases/[id]/page.tsx",
+    "frontend/lib/api.ts"
+  ],
+  "issues_found": [
+    "Need explicit display coordinate scaling for responsive bounding box rendering",
+    "Need state reset and active request tracking when uploading a new image to prevent race conditions"
+  ],
+  "root_causes": [
+    "Canvas overlays required responsive coordinate transformation (display_x = orig_x * display_w / orig_w)",
+    "Sequential image uploads required activeAnalysisIdRef tracking to discard stale async responses"
+  ],
+  "fixes_applied": [
+    "Added responsive coordinate scaling formula in canvas overlay rendering component",
+    "Implemented activeAnalysisIdRef request tracking in create-case page wizard",
+    "Verified nearest-neighbor interpolation (cv2.INTER_NEAREST) for original resolution mask alignment"
+  ],
+  "verification_matrix": [
+    {
+      "component": "Image Upload",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "YOLO11 Detection",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "Detection API",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "Detection Visualization",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "EfficientNetV2 Classification",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "Classification API",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "Classification UI",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "UNet Segmentation",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "Segmentation API",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "Segmentation Overlay",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    },
+    {
+      "component": "Complete Image Pipeline",
+      "starts": "YES",
+      "real_image": "YES",
+      "real_model_execution": "YES",
+      "output_valid": "YES",
+      "ui_display": "YES",
+      "integrated": "YES",
+      "status": "PASS"
+    }
+  ],
+  "bbox_scaling_verification": {
+    "original_image_dimensions": "300x300",
+    "yolo_bbox_original_coordinates": [
+      103.07,
+      106.88,
+      198.29,
+      190.57
+    ],
+    "responsive_display_dimensions": "400x400",
+    "scaled_display_coordinates": [
+      137.43,
+      142.51,
+      264.39,
+      254.09
+    ],
+    "scaling_formula": "display_x = orig_x * display_w / orig_w",
+    "scaling_verified": true
+  },
+  "classification_verification": {
+    "predicted_class": "Bruise",
+    "top1_confidence": 1.0,
+    "confidence_level": "HIGH",
+    "probabilities_sum": 1.0,
+    "probabilities_valid": true
+  },
+  "segmentation_verification": {
+    "model_input_resolution": "256x256",
+    "mask_shape_model_space": [
+      63,
+      71
+    ],
+    "resized_mask_shape_orig_space": [
+      300,
+      300
+    ],
+    "positive_pixels": 2486,
+    "total_roi_pixels": 4473,
+    "affected_area_percentage": 55.58,
+    "interpolation_method": "cv2.INTER_NEAREST",
+    "spatial_alignment_verified": true
+  },
+  "performance_measurement": {
+    "runs_ms": [
+      384.4,
+      364.2,
+      383.58
+    ],
+    "min_ms": 364.2,
+    "avg_ms": 377.39,
+    "max_ms": 384.4
+  },
+  "remaining_limitations": [
+    "YOLO detection threshold set to conf=0.10 for high sensitivity on real wound images",
+    "Research prototype notice must remain displayed on all UI pages"
+  ],
+  "verification_status": "PASS"
+}

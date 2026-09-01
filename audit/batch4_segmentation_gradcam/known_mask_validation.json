@@ -1,0 +1,45 @@
+{
+  "audit_timestamp": "2026-08-27T13:37:20.817084+00:00",
+  "known_mask_tests": [
+    {
+      "target_percentage": "0%",
+      "total_pixels": 50176,
+      "positive_pixels": 0,
+      "calculated_ratio": 0.0,
+      "calculated_percentage": "0.0%",
+      "status": "PASS"
+    },
+    {
+      "target_percentage": "25%",
+      "total_pixels": 50176,
+      "positive_pixels": 12544,
+      "calculated_ratio": 0.25,
+      "calculated_percentage": "25.0%",
+      "status": "PASS"
+    },
+    {
+      "target_percentage": "50%",
+      "total_pixels": 50176,
+      "positive_pixels": 25088,
+      "calculated_ratio": 0.5,
+      "calculated_percentage": "50.0%",
+      "status": "PASS"
+    },
+    {
+      "target_percentage": "75%",
+      "total_pixels": 50176,
+      "positive_pixels": 37632,
+      "calculated_ratio": 0.75,
+      "calculated_percentage": "75.0%",
+      "status": "PASS"
+    },
+    {
+      "target_percentage": "100%",
+      "total_pixels": 50176,
+      "positive_pixels": 50176,
+      "calculated_ratio": 1.0,
+      "calculated_percentage": "100.0%",
+      "status": "PASS"
+    }
+  ]
+}

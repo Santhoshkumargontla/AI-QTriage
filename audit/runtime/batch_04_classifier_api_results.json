@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T09:13:02.304829+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "classification_payload": {
+    "finding": "Swelling",
+    "confidence": 1.0,
+    "probabilities": {
+      "Cut": 0.0,
+      "Bruise": 0.0,
+      "Swelling": 1.0,
+      "Other": 0.0
+    }
+  },
+  "verification_status": "PASS"
+}

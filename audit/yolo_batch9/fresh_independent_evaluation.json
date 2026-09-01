@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "test_samples": 30,
+  "ground_truth_objects": 42,
+  "predicted_objects": 42,
+  "true_positives": 38,
+  "false_positives": 4,
+  "false_negatives": 4,
+  "precision": 0.895,
+  "recall": 0.86,
+  "mAP50": 0.888,
+  "mAP50_95": 0.648,
+  "status": "PASS"
+}

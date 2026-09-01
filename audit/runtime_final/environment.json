@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "os": "Windows",
+  "python_version": "3.14.5",
+  "node_version": "v24.16.0",
+  "npm_version": "11.11.1",
+  "next_version": "16.3.0",
+  "react_version": "19.2.8",
+  "pytorch_version": "2.13.0+cpu",
+  "cuda_available": false,
+  "backend_url": "http://127.0.0.1:8000",
+  "frontend_url": "http://localhost:3000",
+  "status": "PASS"
+}

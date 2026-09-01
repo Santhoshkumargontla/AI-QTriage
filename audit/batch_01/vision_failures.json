@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:57.643063+00:00",
+  "unresolved_failures": [],
+  "model_limitations": [
+    "YOLO11 real wound detector produces detections with confidence threshold ~0.10 for real wound images",
+    "Grad-CAM localization shows general attention over lesion region rather than pixel-level boundaries"
+  ],
+  "verification_status": "PASS"
+}

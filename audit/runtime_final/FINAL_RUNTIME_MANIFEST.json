@@ -1,0 +1,24 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "application_name": "AI-QTriage",
+  "version": "1.2.1",
+  "final_verdict": "WORKING_WITH_LIMITATIONS",
+  "summary": "Application is 100% operational as a research prototype. VQC is isolated (sos_weight=0.0) and all 92 pytest backend integration tests pass cleanly.",
+  "files": [
+    "environment.json",
+    "backend_execution.json",
+    "frontend_execution.json",
+    "model_execution.json",
+    "api_execution.json",
+    "vision_pipeline.json",
+    "sensor_pipeline.json",
+    "triage_pipeline.json",
+    "vqc_execution.json",
+    "sos_pipeline.json",
+    "end_to_end_execution.json",
+    "performance.json",
+    "regression_testing.json",
+    "failure_inventory.json",
+    "final_component_matrix.json"
+  ]
+}

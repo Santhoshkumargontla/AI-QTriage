@@ -1,0 +1,29 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "comparison": [
+    {
+      "model": "XGBoost Classifier (n_estimators=60, max_depth=3)",
+      "accuracy": 1.0,
+      "macro_f1": 1.0,
+      "fall_recall": 1.0,
+      "impact_recall": 1.0,
+      "selected": true
+    },
+    {
+      "model": "Random Forest Classifier",
+      "accuracy": 0.972,
+      "macro_f1": 0.968,
+      "fall_recall": 0.95,
+      "impact_recall": 1.0,
+      "selected": false
+    },
+    {
+      "model": "Logistic Regression Baseline",
+      "accuracy": 0.888,
+      "macro_f1": 0.875,
+      "fall_recall": 0.85,
+      "impact_recall": 0.9,
+      "selected": false
+    }
+  ]
+}

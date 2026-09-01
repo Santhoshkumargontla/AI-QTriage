@@ -1,0 +1,17 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "total_false_positives": 4,
+  "breakdown": [
+    {
+      "cause": "Normal skin pigment spot resemblance",
+      "count": 2,
+      "root_cause": "Low-contrast specular reflection"
+    },
+    {
+      "cause": "Clothing border shadow overlap",
+      "count": 2,
+      "root_cause": "High background clutter"
+    }
+  ],
+  "status": "PASS"
+}

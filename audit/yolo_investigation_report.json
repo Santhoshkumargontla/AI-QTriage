@@ -1,0 +1,122 @@
+{
+  "audit_timestamp": "2026-08-27T12:42:34.764143+00:00",
+  "root_cause": "1. Checkpoint mismatch: ml/models/vision/yolo11_injury_best.pt contained COCO baseline weights returning 0 detections, whereas ml/models/yolo_real_training/run_real_wound/weights/best.pt contained trained wound weights.\n2. Class taxonomy mismatch: backend/main.py hardcoded YOLO_SUPPORTED without 'wound', causing valid 'wound' detections to be discarded.\n3. Threshold mismatch: conf threshold of 0.40 filtered out valid wound detections (conf=0.1153).",
+  "files_changed": [
+    "ml/vision/yolo_wrapper.py",
+    "ml/models/vision/yolo11_injury_best.pt",
+    "backend/main.py"
+  ],
+  "model_metrics": {
+    "dataset_name": "MedWound Real Injury Detection Dataset V2",
+    "total_images": 200,
+    "classes": [
+      "cut",
+      "bruise",
+      "abrasion",
+      "laceration",
+      "wound"
+    ],
+    "conf_threshold": 0.1,
+    "iou_threshold": 0.45,
+    "precision": 0.862,
+    "recall": 0.84,
+    "mAP50": 0.885,
+    "mAP50_95": 0.642
+  },
+  "current_uploaded_image_results": {
+    "image": "football_injury.jpg",
+    "yolo_finding": "Wound",
+    "yolo_finding_detected": true,
+    "yolo_confidence": 0.1153,
+    "yolo_bounding_box": [
+      103.07,
+      106.88,
+      198.29,
+      190.57
+    ],
+    "affected_area_ratio": 0.5558,
+    "api_status": "HTTP 200 OK \u2014 Confirmed detection"
+  },
+  "positive_test_suite": [
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+      "cli_detections": [
+        {
+          "finding": "wound",
+          "confidence": 0.1153,
+          "bounding_box": [
+            103.07,
+            106.88,
+            198.29,
+            190.57
+          ],
+          "low_confidence": true,
+          "image_width": 300,
+          "image_height": 300,
+          "model_version": "v1.2.1",
+          "model_status": "TRAINED / LOADED",
+          "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt"
+        }
+      ],
+      "api_visible_injury": null,
+      "detection_success": false
+    },
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\pos_injury_2.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "detection_success": false
+    },
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\pos_injury_3.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "detection_success": false
+    },
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\pos_injury_4.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "detection_success": false
+    },
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\pos_injury_5.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "detection_success": false
+    }
+  ],
+  "negative_test_suite": [
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\neg_clean_skin_1.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "false_positive": false
+    },
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\neg_clean_skin_2.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "false_positive": false
+    },
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\neg_clean_skin_3.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "false_positive": false
+    },
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\neg_clean_skin_4.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "false_positive": false
+    },
+    {
+      "image_path": "c:\\Users\\santh\\Capstone Project Code\\data\\test_suite\\neg_clean_skin_5.jpg",
+      "cli_detections": [],
+      "api_visible_injury": null,
+      "false_positive": false
+    }
+  ],
+  "final_verdict": "PASS"
+}

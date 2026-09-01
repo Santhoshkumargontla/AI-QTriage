@@ -1,0 +1,135 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "e2e_total": 25,
+  "e2e_passed": 25,
+  "e2e_failed": 0,
+  "e2e_skipped": 0,
+  "details": [
+    {
+      "case_id": 1,
+      "description": "1. All modalities available and agree",
+      "passed": true
+    },
+    {
+      "case_id": 2,
+      "description": "2. Vision models disagree",
+      "passed": true
+    },
+    {
+      "case_id": 3,
+      "description": "3. Questionnaire conflicts with vision",
+      "passed": true
+    },
+    {
+      "case_id": 4,
+      "description": "4. Sensor severe impact, vision mild",
+      "passed": true
+    },
+    {
+      "case_id": 5,
+      "description": "5. Sensor data missing",
+      "passed": true
+    },
+    {
+      "case_id": 6,
+      "description": "6. YOLO detection missing",
+      "passed": true
+    },
+    {
+      "case_id": 7,
+      "description": "7. EfficientNet failure",
+      "passed": true
+    },
+    {
+      "case_id": 8,
+      "description": "8. Classical ML failure",
+      "passed": true
+    },
+    {
+      "case_id": 9,
+      "description": "9. Multiple modalities missing",
+      "passed": true
+    },
+    {
+      "case_id": 10,
+      "description": "10. Invalid/malformed sensor values",
+      "passed": true
+    },
+    {
+      "case_id": 11,
+      "description": "11. NaN input handling",
+      "passed": true
+    },
+    {
+      "case_id": 12,
+      "description": "12. Infinity input handling",
+      "passed": true
+    },
+    {
+      "case_id": 13,
+      "description": "13. Empty questionnaire",
+      "passed": true
+    },
+    {
+      "case_id": 14,
+      "description": "14. Image with no injury",
+      "passed": true
+    },
+    {
+      "case_id": 15,
+      "description": "15. High-confidence severe injury",
+      "passed": true
+    },
+    {
+      "case_id": 16,
+      "description": "16. Low-confidence ambiguous injury",
+      "passed": true
+    },
+    {
+      "case_id": 17,
+      "description": "17. SOS threshold boundary 3.99g",
+      "passed": true
+    },
+    {
+      "case_id": 18,
+      "description": "18. SOS threshold 4.00g",
+      "passed": true
+    },
+    {
+      "case_id": 19,
+      "description": "19. SOS threshold 4.01g",
+      "passed": true
+    },
+    {
+      "case_id": 20,
+      "description": "20. Backend API mock response",
+      "passed": true
+    },
+    {
+      "case_id": 21,
+      "description": "21. Frontend rendering mock state",
+      "passed": true
+    },
+    {
+      "case_id": 22,
+      "description": "22. Model timeout simulation",
+      "passed": true
+    },
+    {
+      "case_id": 23,
+      "description": "23. Corrupted image upload handling",
+      "passed": true
+    },
+    {
+      "case_id": 24,
+      "description": "24. Large image upload handling",
+      "passed": true
+    },
+    {
+      "case_id": 25,
+      "description": "25. Multiple injuries in one image",
+      "passed": true
+    }
+  ],
+  "status": "IMPROVED"
+}

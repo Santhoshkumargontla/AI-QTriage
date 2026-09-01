@@ -1,0 +1,3 @@
+sample_id,path,source_dataset,used_as_training_label,note
+blank_skin,data/datasets/yolo_injury/blank_skin.jpg,yolo_injury,False,Eval-only OOD; not a training normal class member.
+dummy_test,data/datasets/yolo_injury/dummy_test.jpg,yolo_injury,False,Eval-only OOD; not a training normal class member.

@@ -1,0 +1,20 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.374669+00:00",
+  "feature_vector_dimension": 23,
+  "modalities_fused": [
+    "vision",
+    "questionnaire",
+    "sensor"
+  ],
+  "vector_head": [
+    1.0,
+    0.0,
+    1.0,
+    0.0,
+    0.0,
+    0.5558000206947327,
+    1.0,
+    0.699999988079071
+  ],
+  "verification_status": "PASS"
+}

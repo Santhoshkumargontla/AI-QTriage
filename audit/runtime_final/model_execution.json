@@ -1,0 +1,36 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "models": [
+    {
+      "name": "YOLO11 Wound Detector",
+      "artifact": "ml/models/yolo_real_training/run_real_wound/weights/best.pt",
+      "status": "PASS"
+    },
+    {
+      "name": "EfficientNetV2 Classifier",
+      "artifact": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "status": "PASS"
+    },
+    {
+      "name": "ResNet34-UNet Segmenter",
+      "artifact": "ml/models/vision/unet_injury_best.pt",
+      "status": "PASS"
+    },
+    {
+      "name": "Sensor XGBoost Model",
+      "artifact": "ml/models/sensor_motion_best.json",
+      "status": "PASS"
+    },
+    {
+      "name": "Multimodal XGBoost Model",
+      "artifact": "ml/models/classical/xgboost_multimodal.json",
+      "status": "PASS"
+    },
+    {
+      "name": "Variational Quantum Classifier (VQC)",
+      "architecture": "4-qubit Pennylane simulator",
+      "status": "EXPERIMENTAL"
+    }
+  ],
+  "status": "PASS"
+}

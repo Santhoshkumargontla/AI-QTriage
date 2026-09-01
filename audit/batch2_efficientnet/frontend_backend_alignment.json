@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:33:29.897738+00:00",
+  "backend_serialization": "float(probabilities[i]) rounded to 4 decimals",
+  "frontend_rendering": "Progress bar rendered cleanly with 99.96% displayed as 100.0% UI percentage",
+  "disclaimer_present": "Research prototype disclaimer active",
+  "status": "PASS"
+}

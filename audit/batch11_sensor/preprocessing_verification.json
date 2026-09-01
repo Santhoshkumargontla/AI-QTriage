@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "resampling_frequency_hz": 50.0,
+  "signal_filtering": "Butterworth Low-Pass Filter (Fc = 20 Hz)",
+  "units": "Acceleration (m/s^2), Gyroscope (rad/s)",
+  "status": "PASS"
+}

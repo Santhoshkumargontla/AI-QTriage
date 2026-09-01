@@ -1,0 +1,31 @@
+[
+  {
+    "dataset_name": "Roboflow Skin Injury BBox Dataset",
+    "usable_samples": 123,
+    "license": "CC BY 4.0"
+  },
+  {
+    "dataset_name": "MedWound Public Wound Dataset",
+    "usable_samples": 200,
+    "license": "CC BY 4.0",
+    "subject_count": 40
+  },
+  {
+    "dataset_name": "Kaggle Wound Boundary Mask Dataset",
+    "usable_samples": 200,
+    "license": "CC BY 4.0",
+    "subject_count": 40
+  },
+  {
+    "dataset_name": "SisFall & UCI HAR Telemetry",
+    "usable_samples": 200,
+    "license": "ODC-By / CC BY 4.0",
+    "subject_count": 38
+  },
+  {
+    "dataset_name": "Synthesized Multimodal Baseline Matrix",
+    "usable_samples": 200,
+    "license": "MIT",
+    "paired_clinical_samples": 0
+  }
+]

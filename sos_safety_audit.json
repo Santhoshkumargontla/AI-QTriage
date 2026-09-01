@@ -1,0 +1,8 @@
+{
+  "vqc_sos_weight": 0.0,
+  "vqc_variance_test_passed": true,
+  "sos_isolation_verified": true,
+  "cancellation_countdown_seconds": 10,
+  "credential_isolation": "Isolated in .env file",
+  "verification_status": "PASS"
+}

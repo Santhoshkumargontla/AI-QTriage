@@ -1,0 +1,18 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.373023+00:00",
+  "image_tested": "football_injury.jpg",
+  "yolo_bbox_orig": [
+    103.07,
+    106.88,
+    198.29,
+    190.57
+  ],
+  "unet_roi_bbox": [
+    103.07,
+    106.88,
+    198.29,
+    190.57
+  ],
+  "spatial_overlap_percentage": "100.0% (UNet ROI mapped directly from YOLO bounding box)",
+  "verification_status": "PASS"
+}

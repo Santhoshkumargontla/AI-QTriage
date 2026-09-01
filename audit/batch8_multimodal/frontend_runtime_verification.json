@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T13:43:10.965138+00:00",
+  "component": "frontend/app/cases/[id]/page.tsx",
+  "rendering_check": "Displays agreement badge, uncertainty status, and research prototype disclaimer",
+  "status": "PASS"
+}

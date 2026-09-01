@@ -1,0 +1,21 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "mappings": [
+    {
+      "source": "SisFall D01-D19 (ADLs)",
+      "target": "normal_activity",
+      "class_id": 0
+    },
+    {
+      "source": "SisFall F01-F15 (Falls)",
+      "target": "fall",
+      "class_id": 1
+    },
+    {
+      "source": "UCI HAR Impact Collisions",
+      "target": "impact",
+      "class_id": 2
+    }
+  ],
+  "status": "PASS"
+}

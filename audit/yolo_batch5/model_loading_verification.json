@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "independent_ultralytics_loader": "PASS (Classes: {0: 'cut', 1: 'bruise', 2: 'wound'})",
+  "application_runtime_loader": "PASS (Supported: ['abrasion', 'bruise', 'cut', 'laceration', 'wound'])",
+  "loader_parity": "PASS",
+  "status": "PASS"
+}

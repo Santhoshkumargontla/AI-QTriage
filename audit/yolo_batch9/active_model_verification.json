@@ -1,0 +1,10 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "active_checkpoint_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_best.pt",
+  "file_size_bytes": 5470810,
+  "sha256_hash": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+  "architecture": "YOLO11n (Ultralytics v8.3)",
+  "parameter_count": 2590000,
+  "runtime_loader_chain": "backend -> vision_service -> yolo_wrapper -> yolo11_injury_best.pt",
+  "status": "PASS"
+}

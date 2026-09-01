@@ -1,0 +1,57 @@
+{
+  "yolo": [
+    "Bruise",
+    0.7574,
+    [
+      1.41,
+      0.0,
+      405.61,
+      320.86
+    ]
+  ],
+  "source_type": "uploaded",
+  "data_provenance": "user_provided",
+  "display_message": "User-uploaded image. Sensor data for this case is demo/synthetic; modalities are not clinically paired. Research/demo only.",
+  "image_sha256": "87a76147983d0cdb3a63c9f3d3988b0e16ba8157085513f63463de26a559b446",
+  "gradcam": {
+    "status": "WITHHELD",
+    "generated": false,
+    "reason": "classifier_model_not_trustworthy",
+    "model_status": "NOT_TRUSTWORTHY",
+    "overlay_url": null
+  },
+  "classifier": {
+    "finding": "Swelling",
+    "model_status": "NOT_TRUSTWORTHY",
+    "gate": "VALID"
+  },
+  "seg": {
+    "reliable": false,
+    "reason": "Empty mask \u2014 no positive region identified."
+  },
+  "xgb": {
+    "class": "HIGH",
+    "probability": 0.9249866604804993,
+    "model_version": "v1.2.0",
+    "model_id": "xgb_full_v1",
+    "n_features": 23,
+    "data_provenance": "SYNTHETIC",
+    "data_provenance_detail": "synthetic_multimodal_fusion",
+    "status": "TRAINED",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "label_source": "SYNTHETIC_RULE_LABELS",
+    "paired_clinical_samples": 0,
+    "clinical_claim_blocked": true,
+    "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+  },
+  "vqc": {
+    "class": "MODERATE",
+    "status": "EXPERIMENTAL_ONLY",
+    "experimental_only": true,
+    "used_in_main_decision": false
+  },
+  "sensor": "demo",
+  "is_demo": false,
+  "overlay_exists": false,
+  "disk_sha_match": true
+}

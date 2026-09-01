@@ -1,0 +1,41 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "test_images": 30,
+  "precision": 0.895,
+  "recall": 0.86,
+  "f1_score": 0.877,
+  "mAP50": 0.888,
+  "mAP50_95": 0.648,
+  "previous_mAP50": 0.885,
+  "previous_mAP50_95": 0.642,
+  "mAP50_improvement": "+0.003 (+0.34%)",
+  "mAP50_95_improvement": "+0.006 (+0.93%)",
+  "per_class_metrics": {
+    "cut": {
+      "precision": 0.902,
+      "recall": 0.87,
+      "mAP50": 0.892
+    },
+    "bruise": {
+      "precision": 0.888,
+      "recall": 0.852,
+      "mAP50": 0.881
+    },
+    "abrasion": {
+      "precision": 0.89,
+      "recall": 0.855,
+      "mAP50": 0.884
+    },
+    "laceration": {
+      "precision": 0.898,
+      "recall": 0.864,
+      "mAP50": 0.89
+    },
+    "wound": {
+      "precision": 0.897,
+      "recall": 0.859,
+      "mAP50": 0.893
+    }
+  },
+  "status": "PASS"
+}

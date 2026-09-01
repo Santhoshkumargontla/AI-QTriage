@@ -1,0 +1,66 @@
+{
+  "model_name": "Sensor Motion Event Classifier",
+  "version": "v2.0.0-real",
+  "status": "TRAINED",
+  "domain": "Motion / Fall / Impact Event Detection",
+  "classes": [
+    "normal_activity",
+    "fall",
+    "impact"
+  ],
+  "metrics": {
+    "dataset_name": "sisfall_uci_har_real",
+    "sampling_rate_hz": 50.0,
+    "window_seconds": 2.5,
+    "train_samples": 4247,
+    "val_samples": 1030,
+    "test_samples": 1228,
+    "correct_predictions": "1183 / 1228",
+    "accuracy": 0.963355,
+    "macro_f1": 0.898497,
+    "mcc": 0.929623,
+    "false_positive_rate": 0.0125,
+    "false_negative_rate": 0.015748,
+    "confusion_matrix": [
+      [
+        711,
+        8,
+        1
+      ],
+      [
+        8,
+        427,
+        13
+      ],
+      [
+        0,
+        15,
+        45
+      ]
+    ],
+    "label_counts_train": {
+      "normal_activity": 3057,
+      "fall": 1050,
+      "impact": 140
+    },
+    "sources": {
+      "SisFall": 4505,
+      "UCI_HAR": 2000
+    }
+  },
+  "weights_path": "ml/models/sensor_motion_best.json",
+  "canonical_path": "ml/models/sensor_motion_best.json",
+  "artifact_sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d",
+  "scaler_path": "ml/models/sensor_scaler.pkl",
+  "scaler_sha256": "43ab14c958dd887cc1a23be87cb056e82b646ee42c7363bb438add5891c09aef",
+  "data_provenance_class": "REAL",
+  "dataset_provenance": "SisFall (HF mirror Algo-rythmic/Sisfall_Dataset) + UCI HAR smartphones. F*\u2192fall, D18/D19\u2192impact, other D* + UCI\u2192normal_activity. Subject-level split. Not synthetic np.random.",
+  "training_status": "TRAINED",
+  "training_was_real": true,
+  "archived_synthetic_artifacts": [
+    "ml/models/_archive/synthetic_sensor_v1.2.0_20260830T083517Z_sensor_motion_best.json",
+    "ml/models/_archive/synthetic_sensor_v1.2.0_20260830T083517Z_sensor_scaler.pkl",
+    "ml/models/_archive/synthetic_sensor_v1.2.0_20260830T083517Z_sensor_metadata.json"
+  ],
+  "known_limitations": "Wearable IMU placement differs from phone-in-pocket uploads. impact class uses SisFall stumble/jump ADLs (minority). Demo football_fall.csv remains simulated. Not a medical fall-detection device."
+}

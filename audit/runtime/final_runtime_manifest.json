@@ -1,0 +1,76 @@
+{
+  "timestamp": "2026-08-27T08:08:14.996853+00:00",
+  "total_files": 14,
+  "files": [
+    {
+      "file_name": "COMPLETE_APPLICATION_RUNTIME_AUDIT.md",
+      "exact_size_bytes": 0,
+      "full_sha256": "N/A"
+    },
+    {
+      "file_name": "environment_execution.json",
+      "exact_size_bytes": 562,
+      "full_sha256": "8bd492d0d83674cf5a78ace053b977a99f78da58dd91bb5af343897f38a9a5eb"
+    },
+    {
+      "file_name": "backend_startup.json",
+      "exact_size_bytes": 375,
+      "full_sha256": "d2341f0c0bdd658589b541a564d8d2a5b0a8a9f7299a063d1192fe7f4b6cb7e1"
+    },
+    {
+      "file_name": "frontend_execution.json",
+      "exact_size_bytes": 288,
+      "full_sha256": "0bc6a1fc2bd03179d08360fea7eb04fcad679ade139328aa260d24b6a15667ae"
+    },
+    {
+      "file_name": "model_runtime_execution.json",
+      "exact_size_bytes": 2393,
+      "full_sha256": "2c2c926a6219cc582659601a5169fa14bd754cd1c02d4fad2d5a84f12e9fbbbe"
+    },
+    {
+      "file_name": "api_endpoint_execution.json",
+      "exact_size_bytes": 1046,
+      "full_sha256": "5e7bd5349080094eef1ceb6fb62bd2a4dcbf69158b62ea4def4f469dd7bb814d"
+    },
+    {
+      "file_name": "vision_pipeline_execution.json",
+      "exact_size_bytes": 100,
+      "full_sha256": "9ae942481addbea37024dfdce9366e1a732ff659a20b66fb64998a97fe59ddaf"
+    },
+    {
+      "file_name": "sensor_pipeline_execution.json",
+      "exact_size_bytes": 100,
+      "full_sha256": "89d310f8f786e4814fd5dbf8adb1ca421094465938d7bfe251d497c937256146"
+    },
+    {
+      "file_name": "triage_pipeline_execution.json",
+      "exact_size_bytes": 100,
+      "full_sha256": "4cb0375a86eddc5609f7b4dbcf53c997ffbd3ef3e90dbfeebb15fbd8e56002e8"
+    },
+    {
+      "file_name": "sos_pipeline_execution.json",
+      "exact_size_bytes": 97,
+      "full_sha256": "586ba6d5a3b9045de4c78d2e7d094f021c5c7ff99a781099c407e052f496002f"
+    },
+    {
+      "file_name": "end_to_end_execution.json",
+      "exact_size_bytes": 105,
+      "full_sha256": "19df9230ccf8743734db5c2e017046c7348f65668fdd64ae747f520229018930"
+    },
+    {
+      "file_name": "performance_measurements.json",
+      "exact_size_bytes": 562,
+      "full_sha256": "0212a5f4595cbbe096012c330aa4a200d96e2405df549b10504f3b2eae3150aa"
+    },
+    {
+      "file_name": "failure_inventory.json",
+      "exact_size_bytes": 776,
+      "full_sha256": "754f1f118c677d93064e06645bcce5a005caa153ea82d303710b7d99bb3e5b8b"
+    },
+    {
+      "file_name": "final_runtime_manifest.json",
+      "exact_size_bytes": 0,
+      "full_sha256": "N/A"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "audit_timestamp": "2026-08-27T14:09:30.836045+00:00",
+  "score_formula": "score = max(0, min(100, 100 - deductions))",
+  "calculated_score": 100.0,
+  "status_label": "Highly Consistent",
+  "conflicts": [],
+  "agreements": [
+    "Agreement: Reported bleeding matches visual laceration detection."
+  ],
+  "ui_display_format": "Model Agreement: 100.0 / 100 | Uncertainty: LOW UNCERTAINTY",
+  "evidence_type": "REAL_EXECUTION_VERIFIED"
+}

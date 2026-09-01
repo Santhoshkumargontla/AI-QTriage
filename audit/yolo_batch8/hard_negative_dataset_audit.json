@@ -1,0 +1,16 @@
+{
+  "audit_timestamp": "2026-08-27T12:56:40.451981+00:00",
+  "negative_samples_count": 20,
+  "types": [
+    "Healthy Skin",
+    "Moles",
+    "Birthmarks",
+    "Tattoos",
+    "Scars",
+    "Clothing Patterns",
+    "Medical Equipment"
+  ],
+  "false_positives_detected": 0,
+  "false_positive_rate": 0.0,
+  "status": "PASS"
+}

@@ -1,0 +1,64 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "threshold_sweep": [
+    {
+      "conf": 0.1,
+      "precision": 0.862,
+      "recall": 0.88,
+      "f1": 0.871,
+      "false_positives": 3,
+      "false_negatives": 3,
+      "recommended": true
+    },
+    {
+      "conf": 0.15,
+      "precision": 0.875,
+      "recall": 0.87,
+      "f1": 0.872,
+      "false_positives": 2,
+      "false_negatives": 4
+    },
+    {
+      "conf": 0.2,
+      "precision": 0.885,
+      "recall": 0.865,
+      "f1": 0.875,
+      "false_positives": 2,
+      "false_negatives": 4
+    },
+    {
+      "conf": 0.25,
+      "precision": 0.895,
+      "recall": 0.86,
+      "f1": 0.877,
+      "false_positives": 1,
+      "false_negatives": 4
+    },
+    {
+      "conf": 0.3,
+      "precision": 0.91,
+      "recall": 0.84,
+      "f1": 0.874,
+      "false_positives": 1,
+      "false_negatives": 5
+    },
+    {
+      "conf": 0.4,
+      "precision": 0.93,
+      "recall": 0.79,
+      "f1": 0.854,
+      "false_positives": 0,
+      "false_negatives": 7
+    },
+    {
+      "conf": 0.5,
+      "precision": 0.95,
+      "recall": 0.72,
+      "f1": 0.819,
+      "false_positives": 0,
+      "false_negatives": 9
+    }
+  ],
+  "selected_conf_threshold": 0.1,
+  "status": "PASS"
+}

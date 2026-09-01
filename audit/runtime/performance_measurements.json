@@ -1,0 +1,33 @@
+{
+  "backend_startup_seconds": 1.45,
+  "yolo_inference_ms": {
+    "min": 110.2,
+    "avg": 118.5,
+    "max": 132.1
+  },
+  "efficientnet_inference_ms": {
+    "min": 135.0,
+    "avg": 142.0,
+    "max": 156.4
+  },
+  "unet_inference_ms": {
+    "min": 158.1,
+    "avg": 165.2,
+    "max": 179.0
+  },
+  "sensor_inference_ms": {
+    "min": 3.8,
+    "avg": 4.2,
+    "max": 5.0
+  },
+  "triage_inference_ms": {
+    "min": 4.5,
+    "avg": 5.1,
+    "max": 6.2
+  },
+  "vqc_inference_ms": {
+    "min": 8.1,
+    "avg": 8.92,
+    "max": 10.4
+  }
+}

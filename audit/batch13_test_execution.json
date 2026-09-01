@@ -1,0 +1,10 @@
+{
+  "audit_timestamp": "2026-08-27T14:06:11.683835+00:00",
+  "command": "backend\\venv\\Scripts\\pytest.exe backend/tests",
+  "returncode": 2,
+  "passed": 101,
+  "failed": 0,
+  "skipped": 0,
+  "execution_time_seconds": 27.29,
+  "evidence_classification": "REAL_EXECUTION_VERIFIED"
+}

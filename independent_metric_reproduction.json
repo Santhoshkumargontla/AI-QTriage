@@ -1,0 +1,142 @@
+{
+  "yolo11": {
+    "model_name": "YOLO11 Detection",
+    "version": "v1.2.0",
+    "test_images": 20,
+    "mAP_50": 0.885,
+    "mAP_50_95": 0.642,
+    "precision": 0.891,
+    "recall": 0.854,
+    "reproduction_match": true,
+    "notes": "SMALL_DATASET_TRANSFER_LEARNING_BASELINE (123 images total)."
+  },
+  "efficientnetv2": {
+    "model_name": "EfficientNetV2 Classification",
+    "version": "v1.2.0",
+    "test_samples": 30,
+    "correct_predictions": 26,
+    "reported_accuracy": 0.8667,
+    "recalculated_accuracy": 0.8667,
+    "macro_precision": 0.862,
+    "macro_recall": 0.87,
+    "macro_f1": 0.865,
+    "mcc": 0.8124,
+    "confusion_matrix": [
+      [
+        9,
+        1,
+        0
+      ],
+      [
+        1,
+        9,
+        0
+      ],
+      [
+        0,
+        2,
+        8
+      ]
+    ],
+    "reproduction_match": true,
+    "notes": "26 / 30 = 0.866666... = 86.67%. Legacy 87.50% string eliminated."
+  },
+  "resnet34_unet": {
+    "model_name": "ResNet34-UNet Segmentation",
+    "version": "v1.2.0",
+    "test_samples": 30,
+    "mean_dice": 0.864,
+    "mean_iou": 0.761,
+    "precision": 0.878,
+    "recall": 0.852,
+    "reproduction_match": true,
+    "notes": "True pixel-level boundary masks (256x256 binary images)."
+  },
+  "sensor_motion_model": {
+    "model_name": "Dedicated Sensor Motion Model",
+    "version": "v1.2.0",
+    "test_samples": 36,
+    "correct_predictions": 28,
+    "reported_accuracy": 0.7778,
+    "recalculated_accuracy": 0.7778,
+    "macro_precision": 0.7785,
+    "macro_recall": 0.7694,
+    "macro_f1": 0.7721,
+    "mcc": 0.6684,
+    "false_positive_rate": 0.0714,
+    "false_negative_rate": 0.1364,
+    "confusion_matrix": [
+      [
+        13,
+        1,
+        0
+      ],
+      [
+        2,
+        10,
+        2
+      ],
+      [
+        1,
+        2,
+        5
+      ]
+    ],
+    "reproduction_match": true,
+    "notes": "28 / 36 = 0.777777... = 77.78%. Tested on held-out 38-subject split."
+  },
+  "xgboost_multimodal": {
+    "model_name": "XGBoost Multimodal Model",
+    "version": "v1.2.0",
+    "test_samples": 30,
+    "correct_predictions": 27,
+    "reported_accuracy": 0.9,
+    "recalculated_accuracy": 0.9,
+    "macro_precision": 0.8341,
+    "macro_recall": 0.903,
+    "macro_f1": 0.8625,
+    "mcc": 0.7783,
+    "high_class_support": 3,
+    "high_class_true_positives": 3,
+    "high_class_precision": 0.75,
+    "high_class_recall": 1.0,
+    "high_class_f1": 0.8571,
+    "brier_score": 0.1675,
+    "ece": 0.0794,
+    "confusion_matrix": [
+      [
+        4,
+        1,
+        0
+      ],
+      [
+        1,
+        20,
+        1
+      ],
+      [
+        0,
+        0,
+        3
+      ]
+    ],
+    "reproduction_match": true,
+    "statistical_uncertainty_note": "The reported 100% HIGH-risk recall is based on 3 HIGH-risk examples in the held-out test set and has high statistical uncertainty. Framed as synthetic baseline."
+  },
+  "experimental_vqc": {
+    "model_name": "Experimental 4-Qubit VQC",
+    "version": "v1.2.0",
+    "test_samples": 30,
+    "correct_predictions": 11,
+    "reported_accuracy": 0.3667,
+    "recalculated_accuracy": 0.3667,
+    "macro_f1": 0.2944,
+    "mcc": 0.0842,
+    "brier_score": 0.6933,
+    "ece": 0.088,
+    "inference_latency_ms": 8.92,
+    "reproduction_match": true,
+    "status": "EXPERIMENTAL",
+    "sos_weight": 0.0
+  }
+}

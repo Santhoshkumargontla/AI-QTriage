@@ -1,0 +1,10 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "device": "CPU (Intel/AMD 12 threads)",
+  "preprocessing_latency_ms": 9.3,
+  "model_inference_latency_ms": 103.94,
+  "postprocessing_latency_ms": 9.7,
+  "total_yolo_latency_ms": 122.94,
+  "api_response_latency_ms": 165.17,
+  "status": "PASS"
+}

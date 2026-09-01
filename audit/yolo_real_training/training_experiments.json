@@ -1,0 +1,17 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "experiments": [
+    {
+      "exp": "Exp 1 (COCO Base)",
+      "mAP50": 0.0,
+      "mAP50_95": 0.0,
+      "status": "COCO BASE"
+    },
+    {
+      "exp": "Exp 2 (Real Wound Training)",
+      "mAP50": 0.888,
+      "mAP50_95": 0.648,
+      "status": "BEST MODEL"
+    }
+  ]
+}

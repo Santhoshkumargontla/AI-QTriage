@@ -1,0 +1,40 @@
+{
+  "audit_timestamp": "2026-08-27T12:55:46.658083+00:00",
+  "experiments": [
+    {
+      "exp": "A",
+      "description": "Baseline reproduction",
+      "val_acc": 0.875,
+      "val_f1": 0.865,
+      "status": "COMPLETED"
+    },
+    {
+      "exp": "B",
+      "description": "Mild augmentation (flip, rotation \u00b115 deg, color jitter)",
+      "val_acc": 0.88,
+      "val_f1": 0.872,
+      "status": "BEST"
+    },
+    {
+      "exp": "C",
+      "description": "Class weighted cross-entropy loss",
+      "val_acc": 0.87,
+      "val_f1": 0.86,
+      "status": "COMPLETED"
+    },
+    {
+      "exp": "D",
+      "description": "Full backbone fine-tuning",
+      "val_acc": 0.865,
+      "val_f1": 0.855,
+      "status": "COMPLETED"
+    },
+    {
+      "exp": "E",
+      "description": "Cosine annealing learning rate schedule",
+      "val_acc": 0.875,
+      "val_f1": 0.868,
+      "status": "COMPLETED"
+    }
+  ]
+}

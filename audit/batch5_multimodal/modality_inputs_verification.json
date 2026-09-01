@@ -1,0 +1,49 @@
+{
+  "audit_timestamp": "2026-08-27T13:36:49.385977+00:00",
+  "inputs": {
+    "A_YOLO11": {
+      "fields": [
+        "yolo_finding",
+        "yolo_finding_detected",
+        "yolo_confidence",
+        "yolo_bounding_box"
+      ],
+      "status": "VERIFIED"
+    },
+    "B_UNet": {
+      "fields": [
+        "segmentation_available",
+        "affected_ratio",
+        "affected_area_ratio"
+      ],
+      "status": "VERIFIED"
+    },
+    "C_EfficientNet": {
+      "fields": [
+        "classifier_finding",
+        "classifier_probability",
+        "classification_dict"
+      ],
+      "status": "VERIFIED"
+    },
+    "D_Questionnaire": {
+      "fields": [
+        "pain_level",
+        "injury_mechanism",
+        "visible_bleeding",
+        "movement_limitation"
+      ],
+      "status": "VERIFIED"
+    },
+    "E_Sensor": {
+      "fields": [
+        "sensor_available",
+        "peak_g_force",
+        "pre_impact_delta_v",
+        "optical_lux_drop"
+      ],
+      "status": "VERIFIED"
+    }
+  },
+  "status": "PASS"
+}

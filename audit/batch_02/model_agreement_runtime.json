@@ -1,0 +1,17 @@
+{
+  "audit_timestamp": "2026-08-27T09:10:54.371565+00:00",
+  "test_case_1": {
+    "input_summary": "Bruise image + Impact telemetry 4.85g + Pain 7/10",
+    "xgb_prediction": "HIGH",
+    "vqc_prediction": "MODERATE",
+    "consistency_score": 60.0,
+    "consistency_status": "Partially Consistent",
+    "agreements": [
+      "Agreement: Subjective direct impact is corroborated by sensor kinetic metrics."
+    ],
+    "conflicts": [
+      "Model Disagreement: Classical XGBoost (HIGH) and Quantum VQC (MODERATE) predicted different severity classes."
+    ]
+  },
+  "verification_status": "PASS"
+}

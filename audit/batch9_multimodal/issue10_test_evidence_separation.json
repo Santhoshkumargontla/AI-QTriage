@@ -1,0 +1,36 @@
+{
+  "audit_timestamp": "2026-08-27T13:54:47.254352+00:00",
+  "categories": {
+    "SOFTWARE_TESTS": {
+      "total": 101,
+      "passed": 101,
+      "failed": 0,
+      "status": "PASS"
+    },
+    "MODEL_TESTS": {
+      "total": 30,
+      "passed": 30,
+      "failed": 0,
+      "status": "PASS"
+    },
+    "DATA_QUALITY_TESTS": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0,
+      "status": "PASS"
+    },
+    "ROBUSTNESS_TESTS": {
+      "total": 25,
+      "passed": 25,
+      "failed": 0,
+      "status": "PASS"
+    },
+    "CLINICAL_VALIDATION_TESTS": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "status": "NOT AVAILABLE"
+    }
+  },
+  "status": "IMPROVED"
+}

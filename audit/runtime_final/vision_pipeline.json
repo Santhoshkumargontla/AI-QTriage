@@ -1,0 +1,22 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "yolo_detection": {
+    "finding": "wound",
+    "confidence": 0.1153,
+    "bbox": [
+      103.07,
+      106.88,
+      198.29,
+      190.57
+    ]
+  },
+  "efficientnet_classification": {
+    "finding": "Bruise",
+    "confidence": 1.0
+  },
+  "unet_segmentation": {
+    "affected_area_ratio": 0.5558,
+    "pixels": 2486
+  },
+  "status": "PASS"
+}

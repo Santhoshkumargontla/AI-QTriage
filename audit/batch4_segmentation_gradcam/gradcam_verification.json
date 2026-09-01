@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:37:20.817084+00:00",
+  "target_model": "EfficientNetV2Classifier (Final Conv Layer)",
+  "purpose": "Model Attention Explanation (NOT physical injury area segmentation)",
+  "separation_status": "VERIFIED (Grad-CAM heatmap is rendered as attention overlay; Affected Area is calculated solely from U-Net mask)",
+  "status": "PASS"
+}

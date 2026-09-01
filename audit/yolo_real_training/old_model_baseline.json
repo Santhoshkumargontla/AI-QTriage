@@ -1,0 +1,12 @@
+{
+  "audit_timestamp": "2026-08-27T13:09:31.605018+00:00",
+  "model_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_best.pt",
+  "file_size_bytes": 5470810,
+  "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+  "precision": 0.891,
+  "recall": 0.854,
+  "mAP50": 0.885,
+  "mAP50_95": 0.642,
+  "inference_latency_ms": 132.0,
+  "status": "PASS"
+}

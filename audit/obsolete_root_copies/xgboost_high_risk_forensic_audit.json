@@ -1,0 +1,9 @@
+{
+  "active_artifact": "ml/models/xgboost_multimodal_best.json",
+  "sample_weighting": "compute_sample_weight('balanced', y_train)",
+  "high_class_support": 3,
+  "high_class_recall": 1.0,
+  "test_set_leakage_check": "PASSED (Class weighting applied strictly to training data only)",
+  "statistical_honesty_statement": "100% HIGH-risk recall is evaluated on 3 held-out synthetic HIGH-risk samples and has high statistical uncertainty.",
+  "paired_clinical_patient_records": 0
+}

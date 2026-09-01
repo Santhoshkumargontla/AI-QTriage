@@ -1,0 +1,8 @@
+{
+  "sisfall_contribution": "38 subjects, 160 trials (Falls, Impacts, Walking)",
+  "uci_har_contribution": "30 subjects, 40 trials (Normal Daily Physical Activities)",
+  "subject_level_split": true,
+  "window_leakage": 0,
+  "trial_leakage": 0,
+  "verification_status": "PASS"
+}

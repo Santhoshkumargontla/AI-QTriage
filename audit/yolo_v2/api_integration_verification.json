@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "detection_payload_keys": [
+    "finding",
+    "confidence",
+    "bounding_box",
+    "all_detections"
+  ],
+  "frontend_rendering_compatibility": "PASS",
+  "status": "PASS"
+}

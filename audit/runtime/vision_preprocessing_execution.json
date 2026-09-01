@@ -1,0 +1,41 @@
+{
+  "audit_timestamp": "2026-08-27T08:41:36.510856+00:00",
+  "test_image": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "original_dimensions": "300x300",
+  "models_preprocessing": [
+    {
+      "model_name": "YOLO11 Detection",
+      "model_input_size": "640x640",
+      "color_format": "RGB",
+      "normalization": "0-1 floating point",
+      "letterbox_padding": true,
+      "tensor_shape": "[1, 3, 640, 640]",
+      "device": "cpu"
+    },
+    {
+      "model_name": "EfficientNetV2 Classification",
+      "model_input_size": "224x224",
+      "color_format": "RGB",
+      "normalization": "ImageNet mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]",
+      "tensor_shape": "[1, 3, 224, 224]",
+      "device": "cpu"
+    },
+    {
+      "model_name": "ResNet34-UNet Segmentation",
+      "model_input_size": "256x256",
+      "color_format": "RGB",
+      "normalization": "ImageNet mean=[0.485,0.456,0.406], std=[0.229,0.224,0.225]",
+      "tensor_shape": "[1, 3, 256, 256]",
+      "device": "cpu"
+    },
+    {
+      "model_name": "Grad-CAM Explainability",
+      "model_input_size": "224x224 for gradients; resized to original dimensions for overlay",
+      "color_format": "RGB",
+      "target_layer": "conv_head (EfficientNetV2-S final feature block)",
+      "overlay_dimensions": "300x300",
+      "device": "cpu"
+    }
+  ],
+  "verification_status": "PASS"
+}

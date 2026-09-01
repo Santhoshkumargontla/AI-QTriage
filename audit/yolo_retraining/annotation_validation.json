@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T13:16:35.425790+00:00",
+  "total_images": 1000,
+  "total_boxes": 1250,
+  "valid_boxes": 1250,
+  "invalid_boxes": 0,
+  "images_without_annotations": 0,
+  "status": "PASS"
+}

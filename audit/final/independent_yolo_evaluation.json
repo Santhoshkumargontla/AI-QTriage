@@ -1,0 +1,8 @@
+{
+  "mAP_50": 0.885,
+  "mAP_50_95": 0.642,
+  "precision": 0.891,
+  "recall": 0.854,
+  "test_images": 20,
+  "status": "PASS_WITH_LIMITATIONS"
+}

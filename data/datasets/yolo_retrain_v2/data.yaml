@@ -1,0 +1,14 @@
+path: C:\Users\santh\Capstone Project Code\data\datasets\yolo_retrain_v2
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: cut
+  1: bruise
+  2: wound
+provenance: SYNTHETIC
+notes: |
+  Honest cut/bruise from yolo_processed. wound has 0 labels.
+  swelling/abrasion/laceration were not remapped.
+  Existing blank_skin (val) and dummy_test (test) added as empty-label negatives.
+  Raw sources were not modified. No fabricated boxes.

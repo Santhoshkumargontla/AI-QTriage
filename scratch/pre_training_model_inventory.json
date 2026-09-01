@@ -1,0 +1,722 @@
+{
+  "created_utc": "2026-08-30T06:16:35.115227+00:00",
+  "artifact_count": 96,
+  "artifacts": [
+    {
+      "path": "ml/models/_archive/artifact_integrity_report.json",
+      "size_bytes": 3895,
+      "sha256": "54a4c8f4cb89f60cc6d7a25e6e4daad1d149fbf00b06d88d20a87f7c7a25b216",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T07:16:50.156013+00:00"
+    },
+    {
+      "path": "ml/models/_archive/classical/pca.pkl",
+      "size_bytes": 1431,
+      "sha256": "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T15:31:06.172960+00:00"
+    },
+    {
+      "path": "ml/models/_archive/classical/scaler.pkl",
+      "size_bytes": 1119,
+      "sha256": "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T15:31:06.165268+00:00"
+    },
+    {
+      "path": "ml/models/_archive/classical/xgboost_metadata.json",
+      "size_bytes": 402,
+      "sha256": "41f6edf27a0bb8b413422ff1b55a70003df9a83d13782345dd2e795117cc1ed6",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-14T07:03:31.533341+00:00"
+    },
+    {
+      "path": "ml/models/_archive/classical/xgboost_multimodal.json",
+      "size_bytes": 199969,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T15:32:41.277924+00:00"
+    },
+    {
+      "path": "ml/models/_archive/efficientnet_v2_best.pt",
+      "size_bytes": 81621351,
+      "sha256": "f85ed8b798f6ab02f7a8edc9c9a9d589160668320b1e680e4d3ac6f88e5d7dae",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T07:25:39.906528+00:00"
+    },
+    {
+      "path": "ml/models/_archive/effnet_best.pt",
+      "size_bytes": 81614259,
+      "sha256": "9822f25aad9540a032a990b3021130feda407cb469f5587aa9fe6e048a377895",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-13T16:52:21.343827+00:00"
+    },
+    {
+      "path": "ml/models/_archive/pca.pkl",
+      "size_bytes": 1431,
+      "sha256": "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T15:31:06.171961+00:00"
+    },
+    {
+      "path": "ml/models/_archive/scaler.pkl",
+      "size_bytes": 1119,
+      "sha256": "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T15:31:06.164267+00:00"
+    },
+    {
+      "path": "ml/models/_archive/unet_best.pt",
+      "size_bytes": 97916043,
+      "sha256": "92557ce44ce49b25f482b89711257174aea90504b32a36b9fbdc4289e7d5576e",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-13T16:52:20.631522+00:00"
+    },
+    {
+      "path": "ml/models/_archive/unet_resnet34_best.pt",
+      "size_bytes": 97918663,
+      "sha256": "4379fca78fdf899b0fe81f76b02c92fb052e39bf6ca78ec9e6074d47eda205d8",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T07:25:50.784115+00:00"
+    },
+    {
+      "path": "ml/models/_archive/vision/yolo11_merged_candidate.pt",
+      "size_bytes": 5468506,
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T13:36:35.181105+00:00"
+    },
+    {
+      "path": "ml/models/_archive/xgboost_multimodal_best.json",
+      "size_bytes": 199969,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T15:31:06.360570+00:00"
+    },
+    {
+      "path": "ml/models/_archive/yolo11_real_wound_best.pt",
+      "size_bytes": 5468506,
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T13:36:35.181105+00:00"
+    },
+    {
+      "path": "ml/models/_archive/yolo11n.pt",
+      "size_bytes": 1325,
+      "sha256": "760da77988a8addbd8586d942713e94ba49d4473ebe43605fa806f885df72c8a",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T06:48:45.783724+00:00"
+    },
+    {
+      "path": "ml/models/_archive/yolo_candidate_training/run_merged/weights/best.pt",
+      "size_bytes": 5468506,
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T13:36:35.181105+00:00"
+    },
+    {
+      "path": "ml/models/_archive/yolo_training/training_metadata.json",
+      "size_bytes": 494,
+      "sha256": "61271e22e6b605ae25d7a4e4f853cdd99f2660fd191cb60572ccb3f32747bc06",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-14T12:53:12.492712+00:00"
+    },
+    {
+      "path": "ml/models/canonical_manifest.json",
+      "size_bytes": 4290,
+      "sha256": "4907234c1875fe630ae428ba8aa10215341ee6df6c25780e3552c01d20f71eb6",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.302345+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_kaggle_v1_training/efficientnet_classes.json",
+      "size_bytes": 111,
+      "sha256": "bec7cec0a972ed580957ca682522b7cab702f54da507e85263100080144275e2",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T18:38:05.159212+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_kaggle_v1_training/efficientnetv2_kaggle_candidate.pt",
+      "size_bytes": 81650563,
+      "sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T18:38:05.150215+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_kaggle_v1_training/TRAIN_REPORT.json",
+      "size_bytes": 32320,
+      "sha256": "79859b5bcedb533680bb3e238e1dd78e8daabfef24f932108115dc03787f0d3a",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T18:38:35.023720+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_normal_training/efficientnet_classes.json",
+      "size_bytes": 39,
+      "sha256": "81abbcd95adb82caa5fb7a91415c46c054ea4c9b0e4a3008e2eb34062b25b815",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T06:54:47.279631+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_normal_training/efficientnetv2_candidate.pt",
+      "size_bytes": 81619447,
+      "sha256": "b569e6cc044f7560027b1fe0638a8213f2738f7080ff816f7c3744705d7f62c3",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T06:54:47.276624+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_normal_training/PROMOTION.json",
+      "size_bytes": 545,
+      "sha256": "24e1dca9f0c2334aeee4fce46b208569c35b7b82ef8abadefc48e866a9e29da6",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T06:54:47.601675+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_normal_training/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 8506,
+      "sha256": "26a35e49544c7e66e2ead2c41ad86da3ed556e96a6374fbd322066b9915dca91",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T06:54:47.604785+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_processed_training/efficientnet_classes.json",
+      "size_bytes": 26,
+      "sha256": "9893115a1665251239fef1f1e5d26e3f55d641d3f2d7740f1b125895ab736cef",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T02:53:10.759518+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_processed_training/efficientnetv2_candidate.pt",
+      "size_bytes": 81614327,
+      "sha256": "0080565d653cbe4a9ff8f1e83f47a95fdc08c8e606673ecec64e4167b453a8a4",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T02:53:10.758519+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_processed_training/PROMOTION.json",
+      "size_bytes": 1093,
+      "sha256": "6c56fe46ac06a4abd402a712edd5fd03380e83861031a5dcf0082201b2025b4e",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.303345+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_processed_training/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 12093,
+      "sha256": "e968678e56738ca64f6efd9fef8a66e87c3e8d78631509e57afa67ba69a7f358",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T02:56:02.251783+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_reject_v2_training/efficientnet_classes.json",
+      "size_bytes": 56,
+      "sha256": "15089d54df99607ca7ad9a61af054dec9e051d5c31507961bfb92010f7a390ba",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T13:16:54.352607+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_reject_v2_training/efficientnetv2_candidate.pt",
+      "size_bytes": 81624567,
+      "sha256": "fa7aa5c822e6a4127d7f1aa9d9518e687cc0ee9e3d8cfd362d902f72ac06568c",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T13:16:54.345605+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_reject_v2_training/PROMOTION.json",
+      "size_bytes": 398,
+      "sha256": "5f5dcdef2e94cfef7452b0d1dd6071d845afc06ed10b748c9532b0795b4c4e9e",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T13:16:54.974751+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_reject_v2_training/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 10353,
+      "sha256": "d9e41ab83d0a539feeab5ae634a4a78cc2eadab83c351a975f9f5f2467c06612",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T13:16:54.973747+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_reliability/EFFICIENTNET_RELIABILITY_REPORT.json",
+      "size_bytes": 26678,
+      "sha256": "34deaa5fbaafe979c97573b287bf7d32e70d8acb2aa24639e353f13944b93e3b",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T16:29:52.208775+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_subject_training/efficientnet_classes.json",
+      "size_bytes": 39,
+      "sha256": "81abbcd95adb82caa5fb7a91415c46c054ea4c9b0e4a3008e2eb34062b25b815",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:53:50.184328+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_subject_training/efficientnetv2_candidate.pt",
+      "size_bytes": 81619447,
+      "sha256": "7d86ad9b0001e9b0e98ee94cf230c7af6032b226a2929354ea2d38bf6a9958ae",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:53:50.182308+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_subject_training/PROMOTION.json",
+      "size_bytes": 521,
+      "sha256": "06b2e8c4e3f8ceec385b185a5ce68fa3deff32f1b2547c138cdd1c6420c99b8b",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:53:50.489699+00:00"
+    },
+    {
+      "path": "ml/models/efficientnet_subject_training/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 8205,
+      "sha256": "20d0e566318363b86148b66ef4d2760dd37e71f38979f7a648723d3b96b1a8e7",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:53:50.492230+00:00"
+    },
+    {
+      "path": "ml/models/model_registry.json",
+      "size_bytes": 22120,
+      "sha256": "f10f8e2f770e98bfea6ce86665864b52459646fce36ddeb66fdbcea0613018f7",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.129224+00:00"
+    },
+    {
+      "path": "ml/models/sensor_metadata.json",
+      "size_bytes": 1597,
+      "sha256": "9c89418f5c37ccbffbae79330f233bb8324334b4ada3bf6872ba34a43a0f9a2d",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.118225+00:00"
+    },
+    {
+      "path": "ml/models/sensor_motion_best.json",
+      "size_bytes": 135603,
+      "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-27T12:59:51.165679+00:00"
+    },
+    {
+      "path": "ml/models/sensor_scaler.pkl",
+      "size_bytes": 775,
+      "sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T12:59:50.961041+00:00"
+    },
+    {
+      "path": "ml/models/unet_deduped_training/PROMOTION.json",
+      "size_bytes": 567,
+      "sha256": "c6d100acaf6ce4979dedfba7507a4472345f120b93768d35d26a8b9e91733abb",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:27:33.028763+00:00"
+    },
+    {
+      "path": "ml/models/unet_deduped_training/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 9646,
+      "sha256": "0c31371504140ee6349003deb95c8f42bf32dd3547a57f5abc51c65cb0453091",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:24:21.305757+00:00"
+    },
+    {
+      "path": "ml/models/unet_deduped_training/unet_candidate.pt",
+      "size_bytes": 97917463,
+      "sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:24:20.947750+00:00"
+    },
+    {
+      "path": "ml/models/unet_processed_training/PROMOTION.json",
+      "size_bytes": 665,
+      "sha256": "a36a2a3aea13ba90542a7cffa6c6eba3a115f46c4e0b98ef1cd8411f88f1127b",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T03:16:20.969551+00:00"
+    },
+    {
+      "path": "ml/models/unet_processed_training/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 20643,
+      "sha256": "e2664bf72dd1b2f59181809d427e67f46e05f970b999cdebb7c4b77ab8395e30",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T03:16:20.969551+00:00"
+    },
+    {
+      "path": "ml/models/unet_processed_training/unet_candidate.pt",
+      "size_bytes": 97917463,
+      "sha256": "2d7c37d9298525d8925ca77730cbc7f9283670591ba976db6056077dc8562362",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T03:16:20.745443+00:00"
+    },
+    {
+      "path": "ml/models/unet_public_training/PROMOTION.json",
+      "size_bytes": 553,
+      "sha256": "6454c67ff6b9a4edb98dc08e2f10dba8f72f95e1fdab7cc9fe119b1d91fcf2ce",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T07:08:16.339113+00:00"
+    },
+    {
+      "path": "ml/models/unet_public_training/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 9706,
+      "sha256": "3182af311670b5b171a73231cfe2433b34a8098076e8926c4bf9cf09874a89b0",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T07:08:16.341655+00:00"
+    },
+    {
+      "path": "ml/models/unet_public_training/unet_candidate.pt",
+      "size_bytes": 97917463,
+      "sha256": "82419176b5cf3ae4049a6fbab9d4af3cc956a74fef76e55031b0dcbf573f3e93",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T07:08:15.777695+00:00"
+    },
+    {
+      "path": "ml/models/unet_reliability/UNET_RELIABILITY_REPORT.json",
+      "size_bytes": 24406,
+      "sha256": "cca6b3b24e8834973956895e5be478589b82c87e28829caa546c7a09e730d8b1",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T16:48:22.994545+00:00"
+    },
+    {
+      "path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "size_bytes": 81650563,
+      "sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-29T18:38:05.150215+00:00"
+    },
+    {
+      "path": "ml/models/vision/efficientnetv2_injury_best_classes.json",
+      "size_bytes": 111,
+      "sha256": "bec7cec0a972ed580957ca682522b7cab702f54da507e85263100080144275e2",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.118225+00:00"
+    },
+    {
+      "path": "ml/models/vision/efficientnetv2_metadata.json",
+      "size_bytes": 3362,
+      "sha256": "3111656e0bd80f38a8b14675262d5e21add17b316ee1cd0eb0cf281ff0f22941",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.178244+00:00"
+    },
+    {
+      "path": "ml/models/vision/unet_injury_best.pt",
+      "size_bytes": 97917463,
+      "sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-29T08:24:20.947750+00:00"
+    },
+    {
+      "path": "ml/models/vision/unet_metadata.json",
+      "size_bytes": 1283,
+      "sha256": "0b724187e3aef5f9de27e7d2d2d7f3becdc12208cc0c74b5f37273c2271bba9f",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.275823+00:00"
+    },
+    {
+      "path": "ml/models/vision/yolo11_class_support.json",
+      "size_bytes": 1642,
+      "sha256": "087a60e447e0a2549b894360fafb4a2ae793fb035b0e960fe922ae9106e4fe38",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.139227+00:00"
+    },
+    {
+      "path": "ml/models/vision/yolo11_fracture_xray_best.pt",
+      "size_bytes": 5432986,
+      "sha256": "78550094cafbc84f409f18ae0c9eedba7e41cb2d0c3a6e313bb5ebf82f809d78",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T20:22:14.542103+00:00"
+    },
+    {
+      "path": "ml/models/vision/yolo11_injury_best.pt",
+      "size_bytes": 5470234,
+      "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-29T02:24:40.330596+00:00"
+    },
+    {
+      "path": "ml/models/vision/yolo11_injury_real_retrained.pt",
+      "size_bytes": 5470840,
+      "sha256": "080817b4531bbc0d57af7ff2c08d48f353aa42ace53c710662eaa28dce0fd837",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-27T13:15:52.008051+00:00"
+    },
+    {
+      "path": "ml/models/vision/yolo11_metadata.json",
+      "size_bytes": 5340,
+      "sha256": "043958de9460862bde4bffe84e8fce7cb9f00198978f0e3340b4a03cae937c8e",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.317161+00:00"
+    },
+    {
+      "path": "ml/models/vision/yolo_baseline_vs_candidate.json",
+      "size_bytes": 1804,
+      "sha256": "61999ec8692c3cca7a99bc065377875ab369970d903da65a96d6df5c09309cc3",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T13:42:29.029278+00:00"
+    },
+    {
+      "path": "ml/models/vqc/pca.pkl",
+      "size_bytes": 1198,
+      "sha256": "16caccddd838bc045e9180cf0de116a0d904541fb516a4bc618ab8011ac12a50",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T17:38:37.336107+00:00"
+    },
+    {
+      "path": "ml/models/vqc/scaler.pkl",
+      "size_bytes": 960,
+      "sha256": "506c818dee106b512fd861642def1d388801f1efc9fe14312cfdd67634d6e2d9",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T17:38:37.336107+00:00"
+    },
+    {
+      "path": "ml/models/vqc/vqc_metadata.json",
+      "size_bytes": 3486,
+      "sha256": "ead01cf41a3a97dbba8c8052f909db86de4bcd373d66e17a69facb2fe3ffc9c9",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.275823+00:00"
+    },
+    {
+      "path": "ml/models/vqc/vqc_weights.npz",
+      "size_bytes": 1086,
+      "sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-28T17:38:37.338100+00:00"
+    },
+    {
+      "path": "ml/models/xgboost_best.json",
+      "size_bytes": 199969,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-27T15:32:41.276972+00:00"
+    },
+    {
+      "path": "ml/models/xgboost_metadata.json",
+      "size_bytes": 2011,
+      "sha256": "96a0627371398614c24db4b5d820057595d76a03f82bc9d7796ef052be7aadee",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.244809+00:00"
+    },
+    {
+      "path": "ml/models/yolo11n_best.pt",
+      "size_bytes": 5469722,
+      "sha256": "b2780ea3df84011b38a5dff27c2712ee210da3b46ecebf8c455ccb3e53e1fe44",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-14T12:52:46.505495+00:00"
+    },
+    {
+      "path": "ml/models/yolo11n_pretrained.pt",
+      "size_bytes": 5613764,
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-14T12:23:24.323435+00:00"
+    },
+    {
+      "path": "ml/models/yolo_fracture_xray_v1/run_v1/weights/best.pt",
+      "size_bytes": 5432986,
+      "sha256": "78550094cafbc84f409f18ae0c9eedba7e41cb2d0c3a6e313bb5ebf82f809d78",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T20:22:14.542103+00:00"
+    },
+    {
+      "path": "ml/models/yolo_fracture_xray_v1/TRAIN_REPORT.json",
+      "size_bytes": 4427,
+      "sha256": "893249e572bdfaa4c6956bd040dc8d0a06da2208a5b6710daf480f375bceeec0",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T03:43:08.807896+00:00"
+    },
+    {
+      "path": "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 17191,
+      "sha256": "34d75feb99f7bc6adba13f9a635da80fbe53e386ef8732daa677666d6f73a916",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T16:08:25.515044+00:00"
+    },
+    {
+      "path": "ml/models/yolo_processed_training/run_processed/weights/best.pt",
+      "size_bytes": 5470810,
+      "sha256": "5afe49cbbf2dd03abadfd1e089d321b95000b47b270f6ad7482b94fc79a78a48",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T16:07:57.722515+00:00"
+    },
+    {
+      "path": "ml/models/yolo_processed_training/run_processed/weights/last.pt",
+      "size_bytes": 5470810,
+      "sha256": "6274b4525be623b49960a8f692bd860362969c549159ed35c45f5a3321e72bf2",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T16:07:57.502591+00:00"
+    },
+    {
+      "path": "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 17191,
+      "sha256": "34d75feb99f7bc6adba13f9a635da80fbe53e386ef8732daa677666d6f73a916",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-28T16:08:25.515044+00:00"
+    },
+    {
+      "path": "ml/models/yolo_real_skin_candidate_v1/PROMOTION.json",
+      "size_bytes": 359,
+      "sha256": "4e32a3a0bd728f3d1233906491dccc6dfdac0ca6d01879e7ef319411a8cc090c",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T04:55:40.823382+00:00"
+    },
+    {
+      "path": "ml/models/yolo_real_skin_candidate_v1/run_v1/weights/best.pt",
+      "size_bytes": 5461082,
+      "sha256": "88faeea91e2d2d251149d3058a3d03d8797ed0337ec77bfaa7a4da29e552ab2c",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T04:52:55.683256+00:00"
+    },
+    {
+      "path": "ml/models/yolo_real_skin_candidate_v1/run_v1/weights/last.pt",
+      "size_bytes": 5461082,
+      "sha256": "376c19fb7296ffe20f4a84b2e1d5b945c50fca112f1b61f2e0e5d7739606e8ce",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T04:52:55.401179+00:00"
+    },
+    {
+      "path": "ml/models/yolo_real_skin_candidate_v1/TRAIN_EVAL_REPORT.json",
+      "size_bytes": 25373,
+      "sha256": "cff0e06dfe40f17ddd51f6929ea3a8290fd8fc33d0739cb3f3c0755d77852f81",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T04:55:40.821381+00:00"
+    },
+    {
+      "path": "ml/models/yolo_real_training/run_real_wound/weights/best.pt",
+      "size_bytes": 5470810,
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-20T13:28:03.215719+00:00"
+    },
+    {
+      "path": "ml/models/yolo_real_training/run_real_wound/weights/last.pt",
+      "size_bytes": 5470810,
+      "sha256": "140037ee21294847af40fa6050da0f20c13b424c6d586b6a6c9ead6adfc759db",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-20T13:28:02.941725+00:00"
+    },
+    {
+      "path": "ml/models/yolo_retrain_v2/FINAL_STATUS.json",
+      "size_bytes": 1074,
+      "sha256": "9cc46c09b4031241db9c8bb333015f9c6c55a473329b533a1366d7f28baa8795",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.278823+00:00"
+    },
+    {
+      "path": "ml/models/yolo_retrain_v2/FOUR_WAY_VERIFY.json",
+      "size_bytes": 2241,
+      "sha256": "d955aedd301816ee4ff44cbc3e89c9b8fbde0c9fb4f3837e2195801d98258c72",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.163226+00:00"
+    },
+    {
+      "path": "ml/models/yolo_retrain_v2/RETRAIN_V2_REPORT.json",
+      "size_bytes": 57408,
+      "sha256": "04112cc96adbc8d987ab9db9a05e36c4c1320d90fac7fb2cdd659372f1b00a12",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T02:25:04.644740+00:00"
+    },
+    {
+      "path": "ml/models/yolo_retrain_v2/run_v2/weights/best.pt",
+      "size_bytes": 5470234,
+      "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T02:24:40.330596+00:00"
+    },
+    {
+      "path": "ml/models/yolo_retrain_v2/run_v2/weights/last.pt",
+      "size_bytes": 5470234,
+      "sha256": "79c7f154007d320db043cfa889df4a6392ac58a2a15bbaf1067839df22bbbf25",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T02:24:40.208763+00:00"
+    },
+    {
+      "path": "ml/models/yolo_skin_kaggle_v1/run_v1/weights/best.pt",
+      "size_bytes": 5456282,
+      "sha256": "d26b6b5626e02edb108d1544430141e77626a1e42d1325891d0bb73dc4a9c5da",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T19:05:45.168262+00:00"
+    },
+    {
+      "path": "ml/models/yolo_skin_kaggle_v1/run_v1/weights/last.pt",
+      "size_bytes": 5456282,
+      "sha256": "55d8ec121849cc388a78688dd53a20ce7d2547e8ee5b16adc434758c480cf10d",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T19:05:45.025781+00:00"
+    },
+    {
+      "path": "ml/models/yolo_skin_kaggle_v1/TRAIN_REPORT.json",
+      "size_bytes": 1802,
+      "sha256": "b9da81ac56e11118f4b5460d7be018b40c94ecd139315a43a3addaf5b8f61d7e",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T19:44:00.573372+00:00"
+    },
+    {
+      "path": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+      "size_bytes": 3323,
+      "sha256": "838bc45d97a2b9289bfb8c0da0e7d4464184aae18bde7797a3210d27a73b38fb",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-30T05:31:25.301346+00:00"
+    },
+    {
+      "path": "ml/models/yolo_wound_boxes_v1/PROMOTION.json",
+      "size_bytes": 999,
+      "sha256": "f33735f9425acc0032a6aee71876d113058e4f6644c74c4adc4d057614bcc6c6",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T09:00:10.675681+00:00"
+    },
+    {
+      "path": "ml/models/yolo_wound_boxes_v1/run_wound_v1/weights/best.pt",
+      "size_bytes": 21244643,
+      "sha256": "76bccb50f3c7db45e22b550f887b83a40c5923248fc78a741e28bb4edd6e5927",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:48:09.446729+00:00"
+    },
+    {
+      "path": "ml/models/yolo_wound_boxes_v1/run_wound_v1/weights/last.pt",
+      "size_bytes": 21244643,
+      "sha256": "76bccb50f3c7db45e22b550f887b83a40c5923248fc78a741e28bb4edd6e5927",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:48:09.422414+00:00"
+    },
+    {
+      "path": "ml/models/yolo_wound_boxes_v1/TRAINING_EVAL_REPORT.json",
+      "size_bytes": 980,
+      "sha256": "97a4602e025fa9f57bdfb1152e6e28a75e2c4ab4d9b5ced392d10d7a7888aabc",
+      "is_runtime_canonical": false,
+      "modified_utc": "2026-08-29T08:56:31.228443+00:00"
+    }
+  ],
+  "runtime_canonical": [
+    {
+      "path": "ml/models/sensor_motion_best.json",
+      "size_bytes": 135603,
+      "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-27T12:59:51.165679+00:00"
+    },
+    {
+      "path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "size_bytes": 81650563,
+      "sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-29T18:38:05.150215+00:00"
+    },
+    {
+      "path": "ml/models/vision/unet_injury_best.pt",
+      "size_bytes": 97917463,
+      "sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-29T08:24:20.947750+00:00"
+    },
+    {
+      "path": "ml/models/vision/yolo11_injury_best.pt",
+      "size_bytes": 5470234,
+      "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-29T02:24:40.330596+00:00"
+    },
+    {
+      "path": "ml/models/vqc/vqc_weights.npz",
+      "size_bytes": 1086,
+      "sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-28T17:38:37.338100+00:00"
+    },
+    {
+      "path": "ml/models/xgboost_best.json",
+      "size_bytes": 199969,
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "is_runtime_canonical": true,
+      "modified_utc": "2026-08-27T15:32:41.276972+00:00"
+    }
+  ]
+}

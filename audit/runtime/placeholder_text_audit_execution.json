@@ -1,0 +1,31 @@
+{
+  "audit_timestamp": "2026-08-27T08:51:34.571923+00:00",
+  "ui_states": [
+    {
+      "state": "BEFORE_ANALYSIS",
+      "rendered_text": "New Assessment Initial Instance / Select image file",
+      "implies_fake_prediction": false
+    },
+    {
+      "state": "DURING_ANALYSIS",
+      "rendered_text": "Retrieving case assessment files... / Loader2 spinner",
+      "implies_fake_prediction": false
+    },
+    {
+      "state": "AFTER_SUCCESS",
+      "rendered_text": "Renders exact model probabilities and bounding boxes",
+      "implies_fake_prediction": false
+    },
+    {
+      "state": "AFTER_FAILURE",
+      "rendered_text": "Error Retrieving Case / Red AlertOctagon message",
+      "implies_fake_prediction": false
+    },
+    {
+      "state": "AFTER_EMPTY_RESULT",
+      "rendered_text": "YOLO11: No confident injury detection (supported: cut, bruise, abrasion, laceration)",
+      "implies_fake_prediction": false
+    }
+  ],
+  "verification_status": "PASS"
+}

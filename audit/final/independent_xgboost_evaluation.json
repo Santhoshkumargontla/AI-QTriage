@@ -1,0 +1,9 @@
+{
+  "accuracy_fraction": "27/30",
+  "accuracy_percentage": "90.00%",
+  "macro_f1": 0.8625,
+  "high_risk_recall": "100.0% (3/3)",
+  "high_risk_support": 3,
+  "paired_clinical_patient_records": 0,
+  "status": "PASS"
+}

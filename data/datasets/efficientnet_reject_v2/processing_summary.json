@@ -1,0 +1,132 @@
+{
+  "summary": {
+    "created_utc": "2026-08-29T12:10:43.488673+00:00",
+    "root": "data\\datasets\\efficientnet_reject_v2",
+    "classes": [
+      "cut",
+      "bruise",
+      "normal",
+      "ood_reject"
+    ],
+    "n": 189,
+    "split_sizes": {
+      "train": 125,
+      "test": 28,
+      "val": 36
+    },
+    "class_counts": {
+      "bruise": 64,
+      "cut": 62,
+      "normal": 18,
+      "ood_reject": 45
+    },
+    "provenance_counts": {
+      "SYNTHETIC": 126,
+      "PUBLIC_REAL_PHOTOS": 18,
+      "SYNTHETIC_OOD_REJECT": 45
+    },
+    "subject_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "hash_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "exclusions_n": 42,
+    "near_dup_n": 728,
+    "leakage_free": true,
+    "known_limitations": [
+      "cut/bruise remain SYNTHETIC drawings \u2014 Roboflow/Kaggle credentials absent.",
+      "swelling has ZERO labeled samples \u2014 not included in this classifier.",
+      "normal is peri-wound / empty ulcer-patch skin, not healthy sports-injury skin.",
+      "ood_reject is synthetic canvases \u2014 validated as abstention, not clinical OOD.",
+      "Mendeley healthy-feet download blocked (403/404)."
+    ]
+  },
+  "exclusions_sample": [
+    {
+      "reason": "exact_dup",
+      "source": "data/datasets/external/azh_patches/train/images/4c04a102ed471b05e3d0be9ae55db91a_0.png",
+      "kept": "data/datasets/external/azh_patches/train/images/1636f83a5221bc82ca5083fbe9dcaee5_0.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\01289b5d0d3f47b0de56c003ec81614a_1.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\026d4acc83cb338c02ade317e0816f61_0.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\045069bee69b9a6b457a69c564589895_1.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\07a31c50fc96dcf841177d2c832767b9_1.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\11793521cb657471a6609b6a5b0b6af7_0.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\160fcc9963c057d0a4754c8a39f87f1c_1.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\160fcc9963c057d0a4754c8a39f87f1c_2.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\2bdd37e61f5ea74699afd9d82f2a00b1_0.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\3a2ef4d33037afd3d0892cd88d9b359f_2.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\41a345d5417528ecdf4d1a272f3938a9_3.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\42c0f8ebd22e9e9b84f8286b1879bf41_1.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\4d0ae09266e45178c65b2c217d2ccd43_1.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\51d7a79d227f81fe4b9f114254c180f9_0.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\534d5feeb6a595b6d145314d954fb85e_0.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\5492fe099502ce4c418e8d6686fac07d_4.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\59832f153f630e465c4e8515c03a280b_0.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\59832f153f630e465c4e8515c03a280b_1.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\5ba3ae56f8359fe0858e7c377c0f851c_0.png"
+    },
+    {
+      "reason": "near_uniform_crop",
+      "source": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\external\\azh_patches\\train\\images\\5eaa2cf3f82c9fd693ca0a67e9bfd3eb_0.png"
+    }
+  ]
+}

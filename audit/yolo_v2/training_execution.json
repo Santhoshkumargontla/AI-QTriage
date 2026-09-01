@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T09:59:18.422767+00:00",
+  "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_yolo.py",
+  "architecture": "YOLO11n (2.6M parameters)",
+  "pretrained_weights": "yolo11n.pt (COCO Pretrained Transfer Learning)",
+  "device": "CPU (Intel/AMD 12 IntraOp threads)",
+  "img_size": 640,
+  "batch_size": 8,
+  "epochs_trained": 25,
+  "optimizer": "AdamW (lr0=0.01, lrf=0.01)",
+  "augmentation": "HSV-H 0.015, HSV-S 0.7, HSV-V 0.4, Translate 0.1, Scale 0.5, Flips 0.5",
+  "training_duration_seconds": 184.2,
+  "status": "COMPLETED"
+}

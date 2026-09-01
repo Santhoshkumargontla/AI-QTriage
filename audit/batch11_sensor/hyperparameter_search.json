@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T12:59:48.790279+00:00",
+  "best_params": {
+    "n_estimators": 60,
+    "max_depth": 3,
+    "learning_rate": 0.08,
+    "random_state": 42
+  },
+  "tuning_split": "Validation Split",
+  "status": "PASS"
+}

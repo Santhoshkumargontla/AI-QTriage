@@ -1,0 +1,27 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "evaluated_backbones": [
+    {
+      "model": "tf_efficientnetv2_s.in21k_ft_in1k",
+      "params": "20.2M",
+      "accuracy": 0.875,
+      "cpu_inference_ms": 165.17,
+      "selected": true
+    },
+    {
+      "model": "efficientnet_b3",
+      "params": "12.2M",
+      "accuracy": 0.85,
+      "cpu_inference_ms": 142.1,
+      "selected": false
+    },
+    {
+      "model": "convnext_tiny",
+      "params": "28.6M",
+      "accuracy": 0.865,
+      "cpu_inference_ms": 210.4,
+      "selected": false
+    }
+  ],
+  "selection_verdict": "PASS"
+}

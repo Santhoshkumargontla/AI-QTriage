@@ -1,0 +1,24 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "evaluated_datasets": [
+    {
+      "name": "WACV 2023 WSNet Wound Segmentation Dataset",
+      "url": "https://openaccess.thecvf.com/content/WACV2023/html/Oota_WSNet_Towards_an_Effective_Method_for_Wound_Image_Segmentation_WACV_2023_paper.html",
+      "license": "Open Access CVF",
+      "images": 218,
+      "relevance": "Pixel-level binary wound masks",
+      "rank": 1,
+      "status": "SELECTED"
+    },
+    {
+      "name": "DFUC 2021 Diabetic Foot Ulcer Challenge",
+      "url": "https://dfu2021.grand-challenge.org/",
+      "license": "Academic Research Use",
+      "images": 150,
+      "relevance": "Foot ulcer boundary masks",
+      "rank": 2,
+      "status": "SELECTED"
+    }
+  ],
+  "selection_verdict": "PASS"
+}

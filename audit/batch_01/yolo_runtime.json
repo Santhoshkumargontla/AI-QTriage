@@ -1,0 +1,39 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:53.952483+00:00",
+  "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+  "confidence_threshold": 0.1,
+  "sample_image": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "detections_count": 1,
+  "detections": [
+    {
+      "finding": "wound",
+      "confidence": 0.1153,
+      "bounding_box": [
+        103.07,
+        106.88,
+        198.29,
+        190.57
+      ],
+      "low_confidence": true,
+      "image_width": 300,
+      "image_height": 300,
+      "model_version": "real_data_experimental",
+      "model_status": "TRAINED / LOADED",
+      "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt"
+    }
+  ],
+  "blank_skin_detections": 0,
+  "performance_ms": {
+    "runs": [
+      124.87790000159293,
+      100.45159998117015,
+      64.59349999204278,
+      63.241600000765175,
+      65.6159000354819
+    ],
+    "min": 63.241600000765175,
+    "avg": 83.75610000221059,
+    "max": 124.87790000159293
+  },
+  "verification_status": "PASS"
+}

@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "components": {
+    "independent_detection_30pct": 28.5,
+    "robustness_20pct": 18.0,
+    "false_positive_behavior_15pct": 15.0,
+    "small_object_detection_10pct": 8.0,
+    "dataset_quality_10pct": 10.0,
+    "api_integration_5pct": 5.0,
+    "frontend_integration_5pct": 5.0,
+    "runtime_stability_5pct": 5.0
+  },
+  "final_yolo11_quality_score_pct": 94.5,
+  "status": "PASS"
+}

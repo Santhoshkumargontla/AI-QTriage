@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T13:00:48.351359+00:00",
+  "brier_score": 0.2225,
+  "expected_calibration_error": 0.128,
+  "status": "PASS"
+}

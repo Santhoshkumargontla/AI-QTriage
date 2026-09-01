@@ -1,0 +1,36 @@
+{
+  "audit_timestamp": "2026-08-27T13:52:21.008840+00:00",
+  "held_out_sample_count": 30,
+  "calculated_ece": 0.043,
+  "calculated_brier_score": 0.087,
+  "calibration_status": "VERIFIED (Derived from 30 held-out test predictions)",
+  "api_execution": {
+    "endpoint": "GET /api/cases",
+    "http_status": 200,
+    "response_type": "JSON"
+  },
+  "sos_scenario_execution": [
+    {
+      "peak_g_force": 1.0,
+      "stabilization_time": 0.0,
+      "sos_triggered": false,
+      "expected_sos": false,
+      "passed": true
+    },
+    {
+      "peak_g_force": 4.0,
+      "stabilization_time": 1.5,
+      "sos_triggered": true,
+      "expected_sos": true,
+      "passed": true
+    },
+    {
+      "peak_g_force": 8.5,
+      "stabilization_time": 6.0,
+      "sos_triggered": true,
+      "expected_sos": true,
+      "passed": true
+    }
+  ],
+  "status": "PASS"
+}

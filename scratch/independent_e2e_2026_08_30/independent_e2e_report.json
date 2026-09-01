@@ -1,0 +1,335 @@
+{
+  "created_utc": "2026-08-29T19:54:48.077288+00:00",
+  "probes": {
+    "cut": {
+      "tag": "controlled_cut",
+      "path": "C:\\Users\\santh\\Capstone Project Code\\scratch\\independent_e2e_2026_08_30\\controlled_cut_bottom_right.png",
+      "sha256": "11116a4a0b81ac9485b62ee82265145960f5f1c1901261eb2d6a9242cb2c0a69",
+      "gt": [
+        680,
+        480,
+        860,
+        620
+      ],
+      "image_shape_hw": [
+        720,
+        960
+      ],
+      "findings": [
+        {
+          "finding": "bruise",
+          "confidence": 0.8289,
+          "bounding_box": [
+            687.21,
+            490.76,
+            856.33,
+            607.36
+          ],
+          "low_confidence": false,
+          "keep_threshold": 0.25,
+          "class_support_status": "bruise",
+          "image_width": 960,
+          "image_height": 720,
+          "model_version": "v1.4.0",
+          "model_status": "INFERENCE_EXECUTES",
+          "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+          "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+          "iou_vs_gt": 0.7825
+        }
+      ],
+      "overlay": "C:\\Users\\santh\\Capstone Project Code\\scratch\\independent_e2e_2026_08_30\\controlled_cut_yolo_overlay.jpg",
+      "best_iou": 0.7825,
+      "coord_system_note": "Ultralytics xyxy vs GT in original pixel space"
+    },
+    "bruise": {
+      "tag": "controlled_bruise",
+      "path": "C:\\Users\\santh\\Capstone Project Code\\scratch\\independent_e2e_2026_08_30\\controlled_bruise_center.png",
+      "sha256": "e625c2abab32c41baf62dab94f57f59e553003a7a28bde81540a7ec23b82e5a9",
+      "gt": [
+        220,
+        220,
+        420,
+        420
+      ],
+      "image_shape_hw": [
+        640,
+        640
+      ],
+      "findings": [
+        {
+          "finding": "bruise",
+          "confidence": 0.9974,
+          "bounding_box": [
+            217.85,
+            239.35,
+            413.43,
+            400.03
+          ],
+          "low_confidence": false,
+          "keep_threshold": 0.25,
+          "class_support_status": "bruise",
+          "image_width": 640,
+          "image_height": 640,
+          "model_version": "v1.4.0",
+          "model_status": "INFERENCE_EXECUTES",
+          "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+          "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+          "iou_vs_gt": 0.7704
+        }
+      ],
+      "overlay": "C:\\Users\\santh\\Capstone Project Code\\scratch\\independent_e2e_2026_08_30\\controlled_bruise_yolo_overlay.jpg",
+      "best_iou": 0.7704,
+      "coord_system_note": "Ultralytics xyxy vs GT in original pixel space"
+    }
+  },
+  "e2e": [
+    {
+      "tag": "controlled_cut",
+      "case_id": "ad548d59-0e52-47e0-99c9-ddd18db21c9f",
+      "file_sha": "11116a4a0b81ac9485b62ee82265145960f5f1c1901261eb2d6a9242cb2c0a69",
+      "upload_status": 422,
+      "upload_detail": {
+        "detail": "Image quality is insufficient for reliable research inference (contrast is too low. StdDev: 14.0, Threshold: 15.0)."
+      },
+      "questionnaire_status": 200,
+      "sensor_status": 200,
+      "analyze_status": 200,
+      "analyze_detail": {
+        "message": "Multimodal analysis completed successfully",
+        "xgboost": {
+          "class": "MODERATE",
+          "probability": 0.777664065361023,
+          "model_version": "v1.2.0",
+          "model_id": "xgb_option_a_available_modalities",
+          "n_features": 23,
+          "data_provenance": "SYNTHETIC",
+          "data_provenance_detail": "synthetic_multimodal_fusion",
+          "status": "TRAINED",
+          "artifact_path": "ml/models/xgboost_best.json",
+          "label_source": "SYNTHETIC_RULE_LABELS",
+          "paired_clinical_samples": 0,
+          "clinical_claim_blocked": true,
+          "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+        },
+        "quantum": {
+          "class": "MODERATE",
+          "score": [
+            0.33655325752424486,
+            0.5771098145928245,
+            0.08633692788293068
+          ],
+          "model_version": "v1.4.0",
+          "model_id": "vqc_sim_v1",
+          "status": "EXPERIMENTAL_ONLY",
+          "experimental": true,
+          "experimental_only": true,
+          "used_in_main_decision": false,
+          "data_provenance": "SYNTHETIC",
+          "error": null,
+          "pca_features": [
+            -3.0,
+            2.20281547227376,
+            -1.3109327663164934,
+            1.8144542912883743
+          ],
+          "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+        },
+        "consistency": {
+          "score": 85.0,
+          "status": "Highly Consistent",
+          "conflicts": [
+            "Segmentation Warning: No reliable segmentation mask was available for area calculation."
+          ],
+          "agreements": [],
+          "explanation": "Evidence consistency scoring measures alignment between independent data channels and model predictions. It does not validate clinical diagnostic accuracy."
+        },
+        "modalities_used": [
+          "questionnaire"
+        ],
+        "model_configuration_used": "xgb_option_a_available_modalities",
+        "clinical_claim_blocked": true,
+        "fusion_label_source": "SYNTHETIC_RULE_LABELS",
+        "paired_clinical_samples": 0,
+        "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+      },
+      "get_status": 200,
+      "api": {
+        "image_sha256": null,
+        "yolo_finding": null,
+        "yolo_confidence": null,
+        "yolo_bounding_box": null,
+        "bounding_box": null,
+        "original_width": null,
+        "original_height": null,
+        "overlay_width": null,
+        "overlay_height": null,
+        "classifier_finding": null,
+        "classifier_is_confident": null,
+        "classifier_status": null,
+        "source_type": null,
+        "data_provenance": null,
+        "segmentation_reliable": null
+      },
+      "xgb": "MODERATE",
+      "vqc_used": false,
+      "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS",
+      "modalities": [
+        "questionnaire"
+      ]
+    },
+    {
+      "tag": "controlled_bruise",
+      "case_id": "bf7b0098-a8ba-459e-af93-f3371c736816",
+      "file_sha": "e625c2abab32c41baf62dab94f57f59e553003a7a28bde81540a7ec23b82e5a9",
+      "upload_status": 200,
+      "upload_detail": {
+        "message": "Image uploaded and verified successfully",
+        "path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\bf7b0098-a8ba-459e-af93-f3371c736816.png",
+        "image_sha256": "e625c2abab32c41baf62dab94f57f59e553003a7a28bde81540a7ec23b82e5a9",
+        "quality_metrics": {
+          "width": 640,
+          "height": 640,
+          "aspect_ratio_preserved": true,
+          "preprocessing_note": "Image dimensions will be adjusted automatically while preserving original aspect ratio using letterbox padding.",
+          "status_message": "\u2713 Image prepared for AI analysis",
+          "blur_variance": 345.3,
+          "mean_brightness": 182.65,
+          "std_contrast": 26.29
+        }
+      },
+      "questionnaire_status": 200,
+      "sensor_status": 200,
+      "analyze_status": 200,
+      "analyze_detail": {
+        "message": "Multimodal analysis completed successfully",
+        "xgboost": {
+          "class": "MODERATE",
+          "probability": 0.777664065361023,
+          "model_version": "v1.2.0",
+          "model_id": "xgb_image_questionnaire_v1",
+          "n_features": 23,
+          "data_provenance": "SYNTHETIC",
+          "data_provenance_detail": "synthetic_multimodal_fusion",
+          "status": "TRAINED",
+          "artifact_path": "ml/models/xgboost_best.json",
+          "label_source": "SYNTHETIC_RULE_LABELS",
+          "paired_clinical_samples": 0,
+          "clinical_claim_blocked": true,
+          "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+        },
+        "quantum": {
+          "class": "MODERATE",
+          "score": [
+            0.30702586075275123,
+            0.6240545328072838,
+            0.06891960643996495
+          ],
+          "model_version": "v1.4.0",
+          "model_id": "vqc_sim_v1",
+          "status": "EXPERIMENTAL_ONLY",
+          "experimental": true,
+          "experimental_only": true,
+          "used_in_main_decision": false,
+          "data_provenance": "SYNTHETIC",
+          "error": null,
+          "pca_features": [
+            -3.0,
+            1.323470255078706,
+            -1.7584571744609003,
+            1.682749915753256
+          ],
+          "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+        },
+        "consistency": {
+          "score": 100.0,
+          "status": "Highly Consistent",
+          "conflicts": [],
+          "agreements": [],
+          "explanation": "Evidence consistency scoring measures alignment between independent data channels and model predictions. It does not validate clinical diagnostic accuracy."
+        },
+        "modalities_used": [
+          "image",
+          "questionnaire"
+        ],
+        "model_configuration_used": "xgb_image_questionnaire_v1",
+        "clinical_claim_blocked": true,
+        "fusion_label_source": "SYNTHETIC_RULE_LABELS",
+        "paired_clinical_samples": 0,
+        "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+      },
+      "get_status": 200,
+      "api": {
+        "image_sha256": "e625c2abab32c41baf62dab94f57f59e553003a7a28bde81540a7ec23b82e5a9",
+        "yolo_finding": "Bruise",
+        "yolo_confidence": 0.9974,
+        "yolo_bounding_box": [
+          217.85,
+          239.35,
+          413.43,
+          400.03
+        ],
+        "bounding_box": [
+          217.85,
+          239.35,
+          413.43,
+          400.03
+        ],
+        "original_width": 640,
+        "original_height": 640,
+        "overlay_width": 640,
+        "overlay_height": 640,
+        "classifier_finding": "OOD_Reject",
+        "classifier_is_confident": false,
+        "classifier_status": "VALID",
+        "source_type": "uploaded",
+        "data_provenance": "user_provided",
+        "segmentation_reliable": true
+      },
+      "xgb": "MODERATE",
+      "vqc_used": false,
+      "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS",
+      "modalities": [
+        "image",
+        "questionnaire"
+      ],
+      "direct_vs_api_box_match": true,
+      "direct_box": [
+        217.85,
+        239.35,
+        413.43,
+        400.03
+      ],
+      "api_box": [
+        217.85,
+        239.35,
+        413.43,
+        400.03
+      ]
+    }
+  ],
+  "fe_sim": {
+    "object_fill_matching_aspect": {
+      "fit": "fill",
+      "display_box": [
+        163.3875,
+        179.5125,
+        310.07250000000005,
+        300.0225
+      ],
+      "aligned": true
+    },
+    "object_contain_mismatched_aspect": {
+      "fit": "contain",
+      "display_box": [
+        192.1171875,
+        112.1953125,
+        283.7953125,
+        187.5140625
+      ],
+      "aligned": false,
+      "pad_x": 90.0,
+      "pad_y": 0.0,
+      "scale": 0.46875
+    }
+  }
+}

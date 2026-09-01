@@ -1,0 +1,1539 @@
+{
+  "started": "2026-08-29T07:28:51.580643+00:00",
+  "health": {
+    "status": 200,
+    "json": {
+      "status": "healthy",
+      "database": "connected",
+      "timestamp": "2026-08-29T07:28:51.603888"
+    }
+  },
+  "models": {
+    "status": 200,
+    "json": [
+      {
+        "model_name": "YOLO11",
+        "model_version": "v1.4.0",
+        "version": "v1.4.0",
+        "status": "INFERENCE_EXECUTES",
+        "weights_loaded": true,
+        "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+        "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+        "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+        "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+        "task": "detect",
+        "classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "supported_classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "yolo_supported_classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "yolo11_supported_classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "untrained_classes": {
+          "abrasion": "UNTRAINED_CLASS",
+          "laceration": "UNTRAINED_CLASS",
+          "swelling": "UNTRAINED_CLASS"
+        },
+        "untrained_class_status": "UNTRAINED_CLASS",
+        "swelling_yolo_coverage": "UNTRAINED_CLASS",
+        "swelling_note": "Swelling is an EfficientNetV2 research classifier category only. It is UNTRAINED_CLASS for YOLO11. Classes come from model.names.",
+        "training_dataset": "canonical_yolo11_checkpoint",
+        "clinically_validated": false,
+        "runtime_status": "INFERENCE_EXECUTES"
+      },
+      {
+        "model_name": "EfficientNetV2",
+        "model_version": "v1.0.0",
+        "status": "NOT_TRUSTWORTHY",
+        "training_status": "NOT_TRUSTWORTHY",
+        "weights_loaded": true,
+        "classifier_categories": [
+          "cut",
+          "bruise",
+          "swelling"
+        ],
+        "category_type": "research_classifier",
+        "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present.",
+        "note": "EfficientNetV2 classifier categories include 'swelling' as a research category. These are NOT equivalent to YOLO11 object-detection results. YOLO11 classes are exactly model.names on the loaded checkpoint."
+      },
+      {
+        "model_name": "U-Net",
+        "model_version": "v1.0.0",
+        "status": "READY_FOR_RESEARCH_DEMO",
+        "training_status": "READY_FOR_RESEARCH_DEMO",
+        "weights_loaded": true,
+        "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present. Overlay gates withhold blank/OOD masks; they do not certify photographs."
+      },
+      {
+        "model_name": "XGBoost",
+        "model_version": "v1.2.0",
+        "status": "TRAINED",
+        "weights_loaded": true,
+        "schema_features": 23,
+        "canonical_path": "ml/models/xgboost_best.json",
+        "artifact_path": "ml/models/xgboost_best.json",
+        "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+        "data_provenance": "SYNTHETIC",
+        "data_provenance_detail": "synthetic_multimodal_fusion",
+        "training_dataset": "synthetic_multimodal_fusion",
+        "status_note": "Missing canonical artifact is MODEL_ARTIFACT_MISSING. File existence is not TRAINED_AND_EVALUATED. Status comes from xgboost_metadata.json."
+      },
+      {
+        "model_name": "VQC",
+        "model_version": "v1.4.0",
+        "status": "EXPERIMENTAL_ONLY",
+        "weights_loaded": true,
+        "canonical_path": "ml/models/vqc/vqc_weights.npz",
+        "data_provenance": "SYNTHETIC",
+        "used_in_main_decision": false,
+        "experimental_only": true,
+        "recommendation": "DISABLE_FROM_MAIN_DECISION",
+        "status_note": "EXPERIMENTAL_ONLY. Isolated from SOS, first-aid, and main case decisions. Missing artifact is MODEL_UNAVAILABLE, not a fabricated class."
+      }
+    ]
+  },
+  "registry": {
+    "status": 200,
+    "json": {
+      "XGBoost Multimodal": {
+        "model_name": "XGBoost Multimodal",
+        "version": "v1.2.0",
+        "status": "TRAINED",
+        "canonical_path": "ml/models/xgboost_best.json",
+        "artifact_path": "ml/models/xgboost_best.json",
+        "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+        "artifact_size_mb": 0.19,
+        "file_size": 199969,
+        "schema_version": "v1.3.0",
+        "classes": [
+          "LOW",
+          "MODERATE",
+          "HIGH"
+        ],
+        "training_status": "TRAINED",
+        "readiness_status": "TRAINED",
+        "evaluation_artifact": "data/results/canonical_held_out_evaluation.json",
+        "dataset_type": "synthetic_multimodal_fusion",
+        "training_dataset": "synthetic_multimodal_fusion",
+        "dataset_provenance": "200 synthetic 23-feature fusion samples. 0 genuinely paired clinical records.",
+        "data_provenance_class": "SYNTHETIC",
+        "evaluation_status": "evaluated",
+        "last_evaluated": "2026-08-29T07:25:25.632908+00:00",
+        "sample_count": 140,
+        "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_xgboost.py",
+        "metrics": {
+          "genuinely_paired_clinical_samples": 0,
+          "synthetic_multimodal_fusion_samples": 200,
+          "train_samples": 140,
+          "val_samples": 30,
+          "test_samples": 30,
+          "correct_predictions": "25 / 30",
+          "overall_accuracy": 0.833333,
+          "macro_precision": 0.822222,
+          "macro_recall": 0.769281,
+          "macro_f1": 0.78502,
+          "mcc": 0.702692,
+          "high_class_precision": 0.666667,
+          "high_class_recall": 0.666667,
+          "high_class_f1": 0.666667,
+          "high_class_support": 3,
+          "brier_score": 0.304532,
+          "ece": 0.118284,
+          "confusion_matrix": [
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              0,
+              16,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ]
+          ],
+          "feature_importance": [
+            0.0,
+            0.0674,
+            0.0492,
+            0.0298,
+            0.0268,
+            0.039,
+            0.1004,
+            0.2317,
+            0.0515,
+            0.0
+          ]
+        },
+        "known_limitations": "Labels are rule-derived research categories, not clinical severity. 0 genuinely paired patient records. HIGH class support on test is 3. Not clinical.",
+        "notes": "DATA_PROVENANCE=SYNTHETIC. 23-feature synthetic fusion model. READY_FOR_RESEARCH_DEMO, not clinical. 0 genuinely paired clinical samples.",
+        "training_was_real": false
+      },
+      "Experimental 4-Qubit VQC": {
+        "model_name": "Experimental 4-Qubit VQC",
+        "version": "v1.4.0",
+        "status": "EXPERIMENTAL_ONLY",
+        "canonical_path": "ml/models/vqc/vqc_weights.npz",
+        "artifact_path": "ml/models/vqc/vqc_weights.npz",
+        "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+        "artifact_size_mb": 0.0,
+        "file_size": 1086,
+        "schema_version": "v1.3.0",
+        "classes": [
+          "LOW",
+          "MODERATE",
+          "HIGH"
+        ],
+        "training_status": "EXPERIMENTAL_ONLY",
+        "readiness_status": "EXPERIMENTAL_ONLY",
+        "evaluation_artifact": "data/results/canonical_held_out_evaluation.json",
+        "dataset_type": "synthetic_multimodal_fusion",
+        "training_dataset": "synthetic_multimodal_fusion",
+        "dataset_provenance": "Same 200 synthetic fusion samples as XGBoost. 0 clinical pairs.",
+        "data_provenance_class": "SYNTHETIC",
+        "evaluation_status": "evaluated",
+        "last_evaluated": "2026-08-28T17:38:37.547751+00:00",
+        "sample_count": 140,
+        "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_vqc.py",
+        "metrics": {
+          "train_samples": 140,
+          "val_samples": 30,
+          "test_samples": 30,
+          "epochs": 15,
+          "lr": 0.1,
+          "optimizer": "PennyLane AdamOptimizer",
+          "loss_start": 1.1119120284481623,
+          "loss_end": 0.8746161075293077,
+          "loss_decreased": true,
+          "loss_history": [
+            1.111912,
+            1.054581,
+            1.013338,
+            0.98525,
+            0.965653,
+            0.951015,
+            0.939036,
+            0.928689,
+            0.919162,
+            0.909691,
+            0.900643,
+            0.892832,
+            0.886206,
+            0.880387,
+            0.874616
+          ],
+          "train_seconds": 48.1,
+          "circuit": {
+            "embedding": "AngleEmbedding",
+            "rotation": "X",
+            "ansatz": "StronglyEntanglingLayers",
+            "num_qubits": 4,
+            "num_layers": 2,
+            "measurement": "PauliZ_expval_per_qubit",
+            "postprocess": "linear_4_to_3_softmax",
+            "device": "default.qubit",
+            "qnode": "VQCClassifier._vqc_circuit",
+            "train_forward": "VQCClassifier._forward",
+            "predict_forward": "VQCClassifier._forward",
+            "circuits_match": true
+          },
+          "backend": "PennyLane default.qubit (classical simulator)",
+          "metrics_source": "held_out_test_via_VQCClassifier.predict",
+          "data_provenance_class": "SYNTHETIC",
+          "genuinely_paired_clinical_samples": 0,
+          "trained_at": "2026-08-28T17:38:37.547751+00:00",
+          "vqc_correct_predictions": "16 / 30",
+          "vqc_accuracy": 0.533333,
+          "vqc_macro_f1": 0.423016,
+          "vqc_mcc": 0.095978,
+          "vqc_macro_precision": 0.466184,
+          "vqc_macro_recall": 0.43268,
+          "vqc_per_class_support": [
+            10,
+            17,
+            3
+          ],
+          "vqc_brier_score": 0.512306,
+          "vqc_ece": 0.136455,
+          "vqc_confusion_matrix": [
+            [
+              2,
+              8,
+              0
+            ],
+            [
+              2,
+              13,
+              2
+            ],
+            [
+              0,
+              2,
+              1
+            ]
+          ],
+          "vqc_inference_latency_ms_per_sample": 3.51,
+          "xgb_comparison": {
+            "model": "XGBoost",
+            "correct_predictions": "25 / 30",
+            "accuracy": 0.833333,
+            "macro_f1": 0.78502,
+            "mcc": 0.702692,
+            "macro_precision": 0.822222,
+            "macro_recall": 0.769281,
+            "per_class_support": [
+              10,
+              17,
+              3
+            ],
+            "brier_score": 0.304532,
+            "ece": 0.118284,
+            "confusion_matrix": [
+              [
+                7,
+                3,
+                0
+              ],
+              [
+                0,
+                16,
+                1
+              ],
+              [
+                0,
+                1,
+                2
+              ]
+            ]
+          },
+          "vqc_outperforms_xgboost": false,
+          "recommendation": "DISABLE_FROM_MAIN_DECISION",
+          "isolation": "EXPERIMENTAL_ONLY",
+          "used_in_main_decision": false
+        },
+        "known_limitations": "Classical simulator only. Held-out 16/30 vs XGBoost 25/30. Isolated from SOS, first-aid, and main decisions. Quantum advantage not claimed.",
+        "notes": "EXPERIMENTAL_ONLY. Isolated from main decision. Training circuit equals inference circuit. DATA_PROVENANCE=SYNTHETIC.",
+        "training_was_real": false
+      },
+      "EfficientNetV2 Classification": {
+        "model_name": "EfficientNetV2 Classification",
+        "version": "v1.3.0",
+        "status": "NOT_TRUSTWORTHY",
+        "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+        "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+        "artifact_sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+        "artifact_size_mb": 77.84,
+        "file_size": 81621023,
+        "schema_version": "v1.3.0",
+        "classes": [
+          "cut",
+          "bruise",
+          "swelling"
+        ],
+        "training_status": "NOT_TRUSTWORTHY",
+        "readiness_status": "NOT_TRUSTWORTHY",
+        "evaluation_artifact": "ml/models/vision/efficientnetv2_metadata.json",
+        "dataset_type": "public_labeled_images",
+        "training_dataset": "public_wound_dataset",
+        "dataset_provenance": "public_wound_dataset classification images. Held-out test n=30. Not paired clinical records. Forensic audit: images are synthetic PIL drawings, not downloaded clinical photos.",
+        "data_provenance_class": "PUBLIC",
+        "evaluation_status": "evaluated",
+        "last_evaluated": "2026-08-28T13:24:36.755402+00:00",
+        "sample_count": 140,
+        "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_efficientnet.py",
+        "metrics": {
+          "dataset_name": "public_wound_dataset",
+          "dataset_type": "public_labeled_images",
+          "classes": [
+            "cut",
+            "bruise",
+            "swelling"
+          ],
+          "train_samples": 140,
+          "val_samples": 30,
+          "test_samples": 30,
+          "epochs": 8,
+          "optimizer": "Adam",
+          "loss": "CrossEntropyLoss_class_weighted",
+          "backbone": "tf_efficientnetv2_s.in21k_ft_in1k pretrained, classifier-head only",
+          "device": "cpu",
+          "val_best_accuracy": 1.0,
+          "test": {
+            "n": 30,
+            "accuracy": 1.0,
+            "macro_precision": 1.0,
+            "macro_recall": 1.0,
+            "macro_f1": 1.0,
+            "confusion_matrix": [
+              [
+                5,
+                0,
+                0
+              ],
+              [
+                0,
+                5,
+                0
+              ],
+              [
+                0,
+                0,
+                20
+              ]
+            ]
+          },
+          "uniform_image_probes": {
+            "gray": {
+              "cut": 0.0376,
+              "bruise": 0.0,
+              "swelling": 0.9624,
+              "max": 0.9624,
+              "argmax": "swelling"
+            },
+            "black": {
+              "cut": 0.0,
+              "bruise": 0.0,
+              "swelling": 1.0,
+              "max": 1.0,
+              "argmax": "swelling"
+            },
+            "white": {
+              "cut": 0.0,
+              "bruise": 0.0,
+              "swelling": 1.0,
+              "max": 1.0,
+              "argmax": "swelling"
+            }
+          },
+          "blank_image_collapsed": true,
+          "training_history": [
+            {
+              "epoch": 1,
+              "train_loss": 0.72217,
+              "val_accuracy": 0.9
+            },
+            {
+              "epoch": 2,
+              "train_loss": 0.294603,
+              "val_accuracy": 1.0
+            },
+            {
+              "epoch": 3,
+              "train_loss": 0.611706,
+              "val_accuracy": 1.0
+            },
+            {
+              "epoch": 4,
+              "train_loss": 0.166797,
+              "val_accuracy": 1.0
+            },
+            {
+              "epoch": 5,
+              "train_loss": 0.026934,
+              "val_accuracy": 1.0
+            },
+            {
+              "epoch": 6,
+              "train_loss": 0.054903,
+              "val_accuracy": 1.0
+            },
+            {
+              "epoch": 7,
+              "train_loss": 0.078833,
+              "val_accuracy": 1.0
+            },
+            {
+              "epoch": 8,
+              "train_loss": 0.005725,
+              "val_accuracy": 1.0
+            }
+          ],
+          "metrics_source": "computed_from_held_out_predictions",
+          "trained_at": "2026-08-28T13:24:36.755402+00:00"
+        },
+        "known_limitations": "Held-out accuracy 1.0 on 30 images coexists with blank-image collapse to swelling (~0.96\u20131.0 raw softmax). Quality gates withhold blanks; they are not a clinical filter. Swelling is not a YOLO class. 2026-08-29 candidate (2-class unique-hash drawings) was not promoted: remaining OOD probes still collapse to an injury class at >=0.95.",
+        "notes": "Status and metrics come from efficientnetv2_metadata.json after real training.",
+        "training_was_real": true
+      },
+      "ResNet34-UNet Segmentation": {
+        "model_name": "ResNet34-UNet Segmentation",
+        "version": "public-wseg-medetec-v1",
+        "status": "READY_FOR_RESEARCH_DEMO",
+        "canonical_path": "ml/models/vision/unet_injury_best.pt",
+        "artifact_path": "ml/models/vision/unet_injury_best.pt",
+        "artifact_sha256": "82419176b5cf3ae4049a6fbab9d4af3cc956a74fef76e55031b0dcbf573f3e93",
+        "artifact_size_mb": 93.38,
+        "file_size": 97917463,
+        "schema_version": "v1.3.0",
+        "classes": [
+          "wound_mask"
+        ],
+        "training_status": "READY_FOR_RESEARCH_DEMO",
+        "readiness_status": "READY_FOR_RESEARCH_DEMO",
+        "evaluation_artifact": "ml/models/vision/unet_metadata.json",
+        "dataset_type": "public_wound_photos_plus_synthetic_empty",
+        "training_dataset": "unet_public_real",
+        "dataset_provenance": "HuggingFace subbareddyoota/wseg_dataset CC-BY-NC-4.0 (338 unique subsampled pairs) + UWM Medetec_foot_ulcer_224 (152 pairs) + 31 SYNTHETIC_EMPTY_TARGET canvases. Hash-disjoint splits. Not sports-injury cut/bruise/swelling.",
+        "data_provenance_class": "PUBLIC_MIXED_SYNTHETIC_EMPTY",
+        "evaluation_status": "evaluated",
+        "last_evaluated": "2026-08-29T07:09:28.931Z",
+        "sample_count": 363,
+        "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_unet.py",
+        "metrics": {
+          "dataset_name": "unet_public_real",
+          "dataset_type": "public_wound_photos_plus_synthetic_empty",
+          "train_samples": 363,
+          "val_samples": 79,
+          "test_samples": 79,
+          "epochs_run": 8,
+          "best_epoch": 6,
+          "loss": "unweighted_BCE_plus_Dice",
+          "encoder": "resnet34 imagenet; decoder+layer4 trained",
+          "device": "cpu",
+          "val": {
+            "n": 79,
+            "mean_dice": 0.693751,
+            "mean_iou": 0.569681,
+            "precision": 0.730982,
+            "recall": 0.775967,
+            "mean_false_positive_area": 0.026385
+          },
+          "test": {
+            "n": 79,
+            "mean_dice": 0.716938,
+            "mean_iou": 0.591249,
+            "precision": 0.745538,
+            "recall": 0.775761,
+            "mean_false_positive_area": 0.023026
+          },
+          "uniform_image_probes": {
+            "black": {
+              "mean_prob": 0.0011,
+              "max_prob": 0.0781,
+              "positive_ratio": 0.0
+            },
+            "white": {
+              "mean_prob": 0.0039,
+              "max_prob": 0.1072,
+              "positive_ratio": 0.0
+            },
+            "gray": {
+              "mean_prob": 0.0021,
+              "max_prob": 0.0913,
+              "positive_ratio": 0.0
+            }
+          },
+          "blank_mask_untrustworthy": false,
+          "metrics_source": "computed_from_held_out_predictions",
+          "trained_at": "2026-08-29T07:09:28.931Z"
+        },
+        "known_limitations": "Research-demo binary wound segmentation on chronic/foot-ulcer photographs. Not clinically validated. Not a cut/bruise/swelling localizer. Empty canvases are synthetic, not healthy-skin photos. Previous checkpoint SHA 2b4967aa... kept as unet_injury_best.pt.pre_public_real_backup.",
+        "notes": "Status and metrics come from unet_metadata.json after real training.",
+        "training_was_real": true
+      },
+      "YOLO11 Detection": {
+        "model_name": "YOLO11 Detection",
+        "version": "v1.4.0",
+        "status": "INFERENCE_EXECUTES",
+        "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+        "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+        "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+        "artifact_size_mb": 5.22,
+        "file_size": 5470234,
+        "schema_version": "v1.4.0",
+        "task": "detect",
+        "classes": [
+          "cut",
+          "bruise",
+          "wound"
+        ],
+        "untrained_class_status": "UNTRAINED_CLASS",
+        "training_status": "TRAINED_AND_EVALUATED",
+        "readiness_status": "INFERENCE_EXECUTES",
+        "evaluation_artifact": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+        "dataset_type": "synthetic_cut_bruise_drawings_plus_two_public_samples",
+        "training_dataset": "yolo_retrain_v2 (yolo_processed + existing negatives)",
+        "evaluation_status": "evaluated",
+        "last_evaluated": "2026-08-29T02:25:04.606599+00:00",
+        "sample_count": 87,
+        "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_yolo_retrain_v2.py",
+        "metrics": {
+          "dataset_name": "yolo_retrain_v2 (yolo_processed + existing negatives)",
+          "dataset_type": "synthetic_cut_bruise_drawings_plus_two_public_samples",
+          "trained_at": "2026-08-29T02:25:04.606599+00:00",
+          "train_samples": 87,
+          "val_samples": 20,
+          "test_samples": 19,
+          "dataset_stats": {
+            "train": {
+              "images": 87,
+              "boxes": {
+                "cut": 47,
+                "bruise": 40,
+                "wound": 0
+              },
+              "images_per_class": {
+                "cut": 47,
+                "bruise": 40,
+                "wound": 0
+              }
+            },
+            "val": {
+              "images": 20,
+              "empty_label_images": 1,
+              "boxes": {
+                "cut": 6,
+                "bruise": 13,
+                "wound": 0
+              },
+              "images_per_class": {
+                "cut": 6,
+                "bruise": 13,
+                "wound": 0
+              }
+            },
+            "test": {
+              "images": 19,
+              "empty_label_images": 1,
+              "boxes": {
+                "cut": 8,
+                "bruise": 10,
+                "wound": 0
+              },
+              "images_per_class": {
+                "cut": 8,
+                "bruise": 10,
+                "wound": 0
+              }
+            }
+          },
+          "independent_test": {
+            "precision": 0.7548419469199217,
+            "recall": 0.9375,
+            "mAP50": 0.8358333333333334,
+            "mAP50-95": 0.7080000305250305,
+            "per_class": {
+              "cut": {
+                "precision": 0.551907217648874,
+                "recall": 0.875,
+                "mAP50": 0.6766666666666667,
+                "mAP50-95": 0.4725873626373627,
+                "boxes": 8,
+                "images": 8
+              },
+              "bruise": {
+                "precision": 0.9577766761909694,
+                "recall": 1.0,
+                "mAP50": 0.995,
+                "mAP50-95": 0.9434126984126984,
+                "boxes": 10,
+                "images": 10
+              },
+              "wound": {
+                "precision": null,
+                "recall": null,
+                "mAP50": null,
+                "mAP50-95": null,
+                "boxes": 0,
+                "images": 0,
+                "note": "NO_GROUND_TRUTH"
+              }
+            },
+            "metrics_source": "ultralytics.val on yolo_retrain_v2 test split"
+          },
+          "independent_val": {
+            "precision": 0.8339706664309054,
+            "recall": 0.9327146130892696,
+            "mAP50": 0.9191666666666668,
+            "mAP50-95": 0.741915114379085,
+            "per_class": {
+              "cut": {
+                "precision": 0.7211634056096871,
+                "recall": 0.8654292261785393,
+                "mAP50": 0.8433333333333336,
+                "mAP50-95": 0.49583022875816996,
+                "boxes": 6,
+                "images": 6
+              },
+              "bruise": {
+                "precision": 0.9467779272521238,
+                "recall": 1.0,
+                "mAP50": 0.995,
+                "mAP50-95": 0.9880000000000001,
+                "boxes": 13,
+                "images": 13
+              },
+              "wound": {
+                "precision": null,
+                "recall": null,
+                "mAP50": null,
+                "mAP50-95": null,
+                "boxes": 0,
+                "images": 0,
+                "note": "NO_GROUND_TRUTH"
+              }
+            },
+            "metrics_source": "ultralytics.val on yolo_retrain_v2 val split"
+          },
+          "baseline_same_test_split": {
+            "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+            "precision": 1.0,
+            "recall": 0.4938481489948705,
+            "mAP50": 0.6641387559808613,
+            "mAP50-95": 0.48039970224624245,
+            "cut_recall": 0.0,
+            "bruise_recall": 0.987696297989741
+          },
+          "precision": 0.7548419469199217,
+          "recall": 0.9375,
+          "mAP50": 0.8358333333333334,
+          "mAP50-95": 0.7080000305250305,
+          "metrics_source": "ultralytics.val on yolo_retrain_v2 test split (promoted candidate)",
+          "selected_checkpoint": "retrain_v2_candidate",
+          "promoted": true,
+          "cut_bruise_reliability_claimed": false,
+          "wound_reliability_claimed": false
+        },
+        "notes": "Single runtime checkpoint YOLO_CANONICAL. Classes are model.names. Any class not in model.names is UNTRAINED_CLASS. Backups are not loaded.",
+        "known_limitations": "Independent test support is 8 cut boxes and 10 bruise boxes on mostly synthetic drawings. That is not enough to claim cut or bruise reliability. wound has 0 honest training boxes. abrasion/laceration/swelling remain UNTRAINED_CLASS. Default keep-threshold 0.25. Demo football_injury.jpg has 0 boxes at 0.25. Not clinical.",
+        "data_provenance_class": "SYNTHETIC",
+        "dataset_provenance": "yolo_retrain_v2 copied from yolo_processed (honest cut/bruise, dropped abrasion/laceration/swelling without remap) plus existing blank_skin (val) and dummy_test (test) empty-label negatives. No fabricated images or boxes. wound has 0 labels.",
+        "training_was_real": true
+      },
+      "Sensor Motion Event Classifier": {
+        "model_name": "Sensor Motion Event Classifier",
+        "version": "v1.2.0",
+        "status": "TRAINED",
+        "canonical_path": "ml/models/sensor_motion_best.json",
+        "artifact_path": "ml/models/sensor_motion_best.json",
+        "artifact_sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+        "artifact_size_mb": 0.13,
+        "file_size": 135603,
+        "schema_version": "v1.2.0",
+        "classes": [
+          "normal_activity",
+          "fall",
+          "impact"
+        ],
+        "training_status": "TRAINED",
+        "readiness_status": "TRAINED",
+        "evaluation_artifact": "ml/models/sensor_metadata.json",
+        "dataset_type": "synthetic_or_public_motion",
+        "training_dataset": "synthetic_50hz_motion_windows",
+        "dataset_provenance": "Generated by prepare_sensor_dataset() with np.random over 38 synthetic subject IDs. Schema is SisFall/UCI-HAR-like (50 Hz windows). Not downloaded SisFall or UCI HAR recordings.",
+        "data_provenance_class": "SYNTHETIC",
+        "evaluation_status": "evaluated",
+        "last_evaluated": "2026-08-29T07:25:36.147053+00:00",
+        "sample_count": 138,
+        "training_command": "backend\\venv\\Scripts\\python.exe ml\\training\\train_sensor_model.py",
+        "metrics": {
+          "dataset_name": "synthetic_50hz_motion_windows",
+          "sampling_rate_hz": 50.0,
+          "window_seconds": 2.5,
+          "train_samples": 138,
+          "val_samples": 26,
+          "test_samples": 36,
+          "correct_predictions": "28 / 36",
+          "accuracy": 0.777778,
+          "macro_f1": 0.733016,
+          "mcc": 0.658506,
+          "false_positive_rate": 0.0,
+          "false_negative_rate": 0.125,
+          "confusion_matrix": [
+            [
+              12,
+              0,
+              0
+            ],
+            [
+              3,
+              13,
+              0
+            ],
+            [
+              0,
+              5,
+              3
+            ]
+          ]
+        },
+        "known_limitations": "Simulated football_fall can classify as normal_activity at high confidence. Missing gyro/lux features are FEATURE_MISSING, never invented. Not a fall-detection medical device.",
+        "notes": "Called from sensor_processor. Missing features are reported, never invented.",
+        "training_was_real": false,
+        "scaler_path": "ml/models/sensor_scaler.pkl",
+        "scaler_sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959"
+      }
+    }
+  },
+  "evaluation": {
+    "status": 200,
+    "json": {
+      "status": "evaluated",
+      "timestamp": "2026-08-29T05:40:25.822563+00:00",
+      "test_sample_count": 30,
+      "disclaimer": "SYNTHETIC held-out split. VQC is EXPERIMENTAL_ONLY.",
+      "quantum_simulator_notice": "PennyLane default.qubit is a classical simulator. No quantum advantage claimed.",
+      "metrics_comparison": {
+        "xgb_correct": "25 / 30",
+        "vqc_correct": "16 / 30",
+        "test_sample_count": 30,
+        "xgb_accuracy": 0.833333,
+        "vqc_accuracy": 0.533333,
+        "xgb_precision": 0.822222,
+        "vqc_precision": 0.466184,
+        "xgb_recall": 0.769281,
+        "vqc_recall": 0.43268,
+        "xgb_macro_f1": 0.78502,
+        "vqc_macro_f1": 0.423016,
+        "xgb_mcc": 0.702692,
+        "vqc_mcc": 0.095978,
+        "xgb_brier": 0.304532,
+        "vqc_brier": 0.512306,
+        "xgb_ece": 0.118284,
+        "vqc_ece": 0.136455,
+        "xgb_confusion_matrix": [
+          [
+            7,
+            3,
+            0
+          ],
+          [
+            0,
+            16,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "vqc_confusion_matrix": [
+          [
+            2,
+            8,
+            0
+          ],
+          [
+            2,
+            13,
+            2
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ]
+      },
+      "recommendation": "DISABLE_FROM_MAIN_DECISION",
+      "used_in_main_decision": false,
+      "vqc_outperforms_xgboost": false,
+      "ablation_study": [],
+      "metrics_source": "live_held_out_predictions",
+      "class_order": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "class_indices": [
+        0,
+        1,
+        2
+      ],
+      "leakage_audit": {
+        "train_samples": 140,
+        "val_samples": 30,
+        "test_samples": 30,
+        "val_excluded_from_test": true,
+        "same_rows_for_xgb_and_vqc": true,
+        "vqc_scaler_pca_fit_on": "train[:140] only (saved in vqc/scaler.pkl, vqc/pca.pkl)",
+        "xgboost_inference_uses_unscaled_23d": true,
+        "xgboost_train_script_scaler_pca": "fitted on train only; not used by XGBoostClassifier.predict",
+        "subjects": "synthetic vectors have no subject_id; SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "exact_row_hash_overlap": {
+          "train_val": 1,
+          "train_test": 1,
+          "val_test": 0
+        }
+      },
+      "artifacts": {
+        "xgboost_path": "ml/models/xgboost_best.json",
+        "xgboost_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+        "vqc_path": "ml/models/vqc/vqc_weights.npz",
+        "vqc_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e"
+      }
+    }
+  },
+  "sos_config": {
+    "status": 200,
+    "json": {
+      "enabled": false,
+      "configured": false,
+      "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+      "canonical_env": [
+        "TWILIO_ENABLED",
+        "TWILIO_ACCOUNT_SID",
+        "TWILIO_AUTH_TOKEN",
+        "TWILIO_FROM_NUMBER",
+        "TWILIO_TO_NUMBER"
+      ],
+      "legacy_aliases": {
+        "TWILIO_PHONE_NUMBER": "TWILIO_FROM_NUMBER",
+        "EMERGENCY_CONTACT_PHONE": "TWILIO_TO_NUMBER",
+        "EMERGENCY_PHONE_NUMBER": "TWILIO_TO_NUMBER"
+      },
+      "missing_fields": [
+        "TWILIO_ENABLED"
+      ],
+      "delivery_outcomes": [
+        "LOCAL_SIMULATION",
+        "TWILIO_NOT_CONFIGURED",
+        "TWILIO_REQUEST_QUEUED",
+        "TWILIO_FAILED"
+      ],
+      "account_sid_suffix": null,
+      "from_number_set": false,
+      "to_number_set": false,
+      "real_sms_tested": false,
+      "disclaimer": "RESEARCH PROTOTYPE ONLY: No real emergency services (911/112) are contacted. TWILIO_REQUEST_QUEUED means the API returned a SID, not that a handset received SMS."
+    }
+  },
+  "direct_yolo": {
+    "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "n": 0,
+    "findings": []
+  },
+  "create_case": {
+    "status": 201,
+    "json": {
+      "case_id": "ef953f3b-10cb-4064-9fab-6969e8634930",
+      "created_at": "2026-08-29T07:28:57.180624",
+      "status": "created",
+      "image_reference": null,
+      "visible_injury": null,
+      "questionnaire": null,
+      "sensor_summary": null,
+      "sensor_available": false,
+      "sensor_source_type": "not_provided",
+      "xgboost_prediction": null,
+      "quantum_prediction": null,
+      "agreement_score": null,
+      "uncertainty_status": null,
+      "uncertainty_reasons": null,
+      "safety_information": [],
+      "rule_derived_category": null,
+      "safety_guidance_level": null,
+      "sos_status": "not_triggered",
+      "sos_delivery_mode": null,
+      "sos_delivery_outcome": null,
+      "sos_twilio_sid": null,
+      "sos_delivery_status": null,
+      "sos_provider_status": null,
+      "sos_send_timestamp": null,
+      "sos_failure_reason": null,
+      "sos_twilio_error": null,
+      "sos_twilio_error_code": null,
+      "first_aid_guidance": null,
+      "report_reference": null,
+      "is_demo": false,
+      "modalities_used": [],
+      "model_configuration_used": null
+    }
+  },
+  "upload_image": {
+    "status": 200,
+    "json": {
+      "message": "Image uploaded and verified successfully",
+      "path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\ef953f3b-10cb-4064-9fab-6969e8634930.jpg",
+      "quality_metrics": {
+        "width": 300,
+        "height": 300,
+        "aspect_ratio_preserved": true,
+        "preprocessing_note": "Image dimensions will be adjusted automatically while preserving original aspect ratio using letterbox padding.",
+        "status_message": "\u2713 Image prepared for AI analysis",
+        "blur_variance": 4626.64,
+        "mean_brightness": 163.24,
+        "std_contrast": 39.41
+      }
+    }
+  },
+  "questionnaire": {
+    "status": 200,
+    "json": {
+      "message": "Questionnaire submitted successfully"
+    }
+  },
+  "sensor_skip": {
+    "status": 200,
+    "json": {
+      "message": "Sensor data not provided. Analysis will use the available modalities.",
+      "sensor_available": false,
+      "sensor_source_type": "not_provided"
+    }
+  },
+  "analyze": {
+    "status": 200,
+    "json": {
+      "message": "Multimodal analysis completed successfully",
+      "xgboost": {
+        "class": "MODERATE",
+        "probability": 0.49192309379577637,
+        "model_version": "v1.2.0",
+        "model_id": "xgb_image_questionnaire_v1",
+        "n_features": 23,
+        "data_provenance": "SYNTHETIC",
+        "data_provenance_detail": "synthetic_multimodal_fusion",
+        "status": "TRAINED",
+        "artifact_path": "ml/models/xgboost_best.json"
+      },
+      "quantum": {
+        "class": "HIGH",
+        "score": [
+          0.17648854262376998,
+          0.4079376511813296,
+          0.4155738061949005
+        ],
+        "model_version": "v1.4.0",
+        "model_id": "vqc_sim_v1",
+        "status": "EXPERIMENTAL_ONLY",
+        "experimental": true,
+        "experimental_only": true,
+        "used_in_main_decision": false,
+        "data_provenance": "SYNTHETIC",
+        "error": null,
+        "pca_features": [
+          -1.391779370485709,
+          1.4492269288580009,
+          -3.0,
+          1.0246456470267418
+        ],
+        "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+      },
+      "consistency": {
+        "score": 100.0,
+        "status": "Highly Consistent",
+        "conflicts": [],
+        "agreements": [],
+        "explanation": "Evidence consistency scoring measures alignment between independent data channels and model predictions. It does not validate clinical diagnostic accuracy."
+      },
+      "modalities_used": [
+        "image",
+        "questionnaire"
+      ],
+      "model_configuration_used": "xgb_image_questionnaire_v1"
+    }
+  },
+  "get_case": {
+    "status": 200,
+    "json": {
+      "case_id": "ef953f3b-10cb-4064-9fab-6969e8634930",
+      "created_at": "2026-08-29T07:28:57.180000",
+      "status": "analyzed",
+      "image_reference": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\ef953f3b-10cb-4064-9fab-6969e8634930.jpg",
+      "visible_injury": {
+        "yolo_finding": null,
+        "yolo_finding_detected": false,
+        "yolo_supported_classes": [
+          "bruise",
+          "cut",
+          "wound"
+        ],
+        "yolo_confidence": null,
+        "yolo_bounding_box": null,
+        "classifier_finding": "Swelling",
+        "classifier_probability": 0.9882420897483826,
+        "classifier_status": "VALID",
+        "classifier_model_status": "NOT_TRUSTWORTHY",
+        "classifier_reason": "passed_quality_and_confidence_gates",
+        "classifier_category_type": "research_classifier",
+        "classifier_yolo_coverage": "NOT AVAILABLE",
+        "segmentation_model_status": "READY_FOR_RESEARCH_DEMO",
+        "classifier_low_confidence": false,
+        "classifier_confidence_status": "Confident",
+        "classifier_is_confident": true,
+        "classifier_max_prob": 0.9882420897483826,
+        "finding": null,
+        "raw_finding": "Swelling",
+        "finding_detected": false,
+        "detection_message": "Visible finding not confidently detected by YOLO11 (supported: bruise, cut, wound). Research classifier category: Swelling.",
+        "confidence": null,
+        "bounding_box": null,
+        "affected_ratio": 0.021444444444444443,
+        "affected_area_ratio": 0.021444444444444443,
+        "segmentation_available": true,
+        "segmentation_reliable": true,
+        "segmentation_reason": "Segmentation mask identified.",
+        "classification": {
+          "Cut": 0.011697768233716488,
+          "Bruise": 6.015671533532441e-05,
+          "Swelling": 0.9882420897483826
+        },
+        "overlay_path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\ef953f3b-10cb-4064-9fab-6969e8634930_overlay.jpg",
+        "overlay_url": "/uploads/ef953f3b-10cb-4064-9fab-6969e8634930_overlay.jpg",
+        "overlay_width": 300,
+        "overlay_height": 300,
+        "gradcam_source_model": "EfficientNetV2",
+        "gradcam_predicted_class": "Swelling",
+        "gradcam_confidence": 0.9882420897483826,
+        "gradcam_model_status": "VALID",
+        "gradcam_explanation_status": "GENERATED",
+        "gradcam_label": "MODEL VISUALIZATION",
+        "gradcam_explanation": "NOT CLINICAL EXPLANATION",
+        "gradcam_reliability": "NOT_CLINICAL_EXPLANATION",
+        "gradcam_overlay_generated": true,
+        "gradcam_withheld_reason": "passed_quality_and_confidence_gates",
+        "mask_path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\ef953f3b-10cb-4064-9fab-6969e8634930_mask.png",
+        "mask_url": "/uploads/ef953f3b-10cb-4064-9fab-6969e8634930_mask.png",
+        "image_url": "/uploads/ef953f3b-10cb-4064-9fab-6969e8634930.jpg",
+        "original_width": 300,
+        "original_height": 300,
+        "preprocessing_meta": {
+          "original_width": 300,
+          "original_height": 300,
+          "target_width": 224,
+          "target_height": 224,
+          "resized_width": 224,
+          "resized_height": 224,
+          "scale": 0.7466666666666667,
+          "pad_x": 0,
+          "pad_y": 0,
+          "aspect_ratio_preserved": true,
+          "preprocessing_version": "img-v2-letterbox",
+          "normalized": true
+        },
+        "segmentation_debug": {
+          "checkpoint_status": "loaded",
+          "original_image_shape": "300x300",
+          "preprocessed_roi_shape": "300x300",
+          "model_input_shape": [
+            1,
+            3,
+            256,
+            256
+          ],
+          "raw_output_min": 0.0009,
+          "raw_output_max": 0.7217,
+          "raw_output_mean": 0.032,
+          "raw_positive_pixels": 1419,
+          "raw_positive_ratio": 0.021652,
+          "false_positive_area": 0.0,
+          "threshold_used": 0.5,
+          "positive_pixels": 1930,
+          "total_pixels": 90000,
+          "affected_area_percentage": 2.14,
+          "confidence_status": "confident",
+          "status": "VALID",
+          "reason": "passed_quality_and_mask_sanity",
+          "is_reliable": true,
+          "mask_withheld": false,
+          "trust_status": "VALID",
+          "display_message": "Segmentation mask identified.",
+          "denominator_type": "full_image",
+          "quality": {
+            "height": 300,
+            "width": 300,
+            "std": 39.4124,
+            "ptp": 208.0,
+            "unique16": 14,
+            "laplacian_var": 4626.6447,
+            "edge_frac": 0.203922,
+            "skin_frac": 0.951567,
+            "red_frac": 0.822956
+          },
+          "max_reasonable_area": 0.7
+        },
+        "segmentation_status": "VALID",
+        "segmentation_message": "Segmentation mask identified.",
+        "denominator_label": "full image",
+        "segmentation_trust": "VALID"
+      },
+      "questionnaire": {
+        "answers": {
+          "pain_level": 6,
+          "cause": "fall",
+          "bleeding": "mild",
+          "movement": "limited",
+          "limb_use": "with_pain",
+          "location": "left ankle"
+        },
+        "voice_used": false,
+        "voice_transcript": null,
+        "template_id": null,
+        "template_version": null,
+        "answer_source": "typed"
+      },
+      "sensor_summary": null,
+      "sensor_available": false,
+      "sensor_source_type": "not_provided",
+      "xgboost_prediction": {
+        "class": "MODERATE",
+        "probability": 0.49192309379577637,
+        "model_version": "v1.2.0",
+        "model_id": "xgb_image_questionnaire_v1",
+        "n_features": 23,
+        "data_provenance": "SYNTHETIC",
+        "data_provenance_detail": "synthetic_multimodal_fusion",
+        "status": "TRAINED",
+        "artifact_path": "ml/models/xgboost_best.json"
+      },
+      "quantum_prediction": {
+        "class": "HIGH",
+        "score": [
+          0.17648854262376998,
+          0.4079376511813296,
+          0.4155738061949005
+        ],
+        "model_version": "v1.4.0",
+        "model_id": "vqc_sim_v1",
+        "status": "EXPERIMENTAL_ONLY",
+        "experimental": true,
+        "experimental_only": true,
+        "used_in_main_decision": false,
+        "data_provenance": "SYNTHETIC",
+        "error": null,
+        "pca_features": [
+          -1.391779370485709,
+          1.4492269288580009,
+          -3.0,
+          1.0246456470267418
+        ],
+        "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+      },
+      "agreement_score": "VQC_EXCLUDED_FROM_DECISION",
+      "uncertainty_status": "MODERATE UNCERTAINTY",
+      "uncertainty_reasons": [
+        "XGBoost model confidence is moderate (49.2%)."
+      ],
+      "safety_information": [
+        "Assigned MODERATE category based on: moderate pain level (6/10), mild/severe movement limitation, partial/full weight-bearing limitation, visible bleeding."
+      ],
+      "rule_derived_category": "MODERATE",
+      "safety_guidance_level": "MODERATE",
+      "sos_status": "not_triggered",
+      "sos_delivery_mode": null,
+      "sos_delivery_outcome": null,
+      "sos_twilio_sid": null,
+      "sos_delivery_status": null,
+      "sos_provider_status": null,
+      "sos_send_timestamp": null,
+      "sos_failure_reason": null,
+      "sos_twilio_error": null,
+      "sos_twilio_error_code": null,
+      "first_aid_guidance": {
+        "provider": "rule_based_fallback",
+        "status": "fallback",
+        "model": "gemini-3.5-flash-lite",
+        "fallback_reason": "Gemini API exception: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'INVALID_ARGUMENT', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'API_KEY_INVALID', 'domain': 'googleapis.com', 'metadata': {'service': 'generativelanguage.googleapis.com'}}, {'@type': 'type.googleapis.com/google.rpc.LocalizedMessage', 'locale': 'en-US', 'message': 'API key not valid. Please pass a valid API key.'}]}}",
+        "guidance_level": "CONSERVATIVE_CARE",
+        "generated_at": "2026-08-29T07:29:01.801010+00:00",
+        "evidence_hash": "c3398f7e154e610a",
+        "display_message": "AI-generated guidance unavailable. Showing rule-based research guidance.",
+        "structured_evidence": {
+          "questionnaire": {
+            "pain_level": 6,
+            "location": "left ankle",
+            "cause": "fall",
+            "onset_hours": null,
+            "movement_limitation": null,
+            "weight_bearing": null,
+            "swelling": null,
+            "bruising_discoloration": null,
+            "redness": null,
+            "warmth": null,
+            "open_wound": null,
+            "bleeding": "mild",
+            "crack_pop": null,
+            "deformity": null,
+            "numbness_tingling": null,
+            "previous_injury": null,
+            "symptom_progression": null
+          },
+          "yolo": {
+            "finding_detected": false,
+            "finding": null,
+            "confidence": null,
+            "bounding_box": null,
+            "supported_classes": [
+              "cut",
+              "bruise",
+              "wound"
+            ]
+          },
+          "research_classifier": {
+            "finding": "Swelling",
+            "confidence": null,
+            "category_type": "research_classifier"
+          },
+          "sensor": {
+            "provided": false,
+            "peak_g_force": null,
+            "post_impact_stabilization_seconds": null
+          },
+          "experimental_models": {
+            "xgboost": "MODERATE",
+            "vqc": "HIGH",
+            "agreement": "VQC_EXCLUDED_FROM_DECISION",
+            "uncertainty": null,
+            "used_in_main_decision": false
+          },
+          "safety_rules": {
+            "guidance_level": "MODERATE",
+            "warning_signs": []
+          }
+        },
+        "guidance": {
+          "immediate_first_aid_steps": [
+            "Clean the open area gently with clean water, apply a sterile protective dressing, and apply light pressure if bleeding is active.",
+            "Rest the affected area in a comfortable, elevated position and consider applying a wrapped cold compress for 15\u201320 minutes."
+          ],
+          "actions_to_avoid": [
+            "Avoid forcing joint movement or aggressively testing weight-bearing capacity.",
+            "Avoid applying unsterile powders, home remedies, or touching open wound edges with unwashed hands.",
+            "Avoid continuing sport, running, or heavy physical activity while pain or swelling persists."
+          ],
+          "symptoms_to_monitor": [
+            "Monitor for expanding redness, localized warmth, or increasing tissue swelling over the next 24\u201348 hours.",
+            "Watch for infection indicators such as pus, drainage, red streaks, or systemic fever.",
+            "Observe pain trends over time (note if pain score progresses from mild to severe)."
+          ],
+          "urgent_evaluation_warning": [],
+          "professional_evaluation_guidance": [
+            "Based on the reported warning signs, professional medical evaluation is recommended."
+          ],
+          "limitations": [
+            "AI-QTriage is an academic research prototype. Model outputs are experimental and are not a medical diagnosis. An image model failing to detect an injury does not mean that no injury is present."
+          ]
+        },
+        "evidence_summary": [
+          "User-reported pain level: 6/10",
+          "User-reported location: left ankle",
+          "User-reported bleeding: mild",
+          "YOLO11 object detection: No confident supported-class detection (supported: cut, bruise, wound).",
+          "Research image classifier category: Swelling",
+          "Sensor data was not provided; guidance is based on image/questionnaire evidence."
+        ],
+        "immediate_steps": [
+          "Clean the open area gently with clean water, apply a sterile protective dressing, and apply light pressure if bleeding is active.",
+          "Rest the affected area in a comfortable, elevated position and consider applying a wrapped cold compress for 15\u201320 minutes."
+        ],
+        "avoid": [
+          "Avoid forcing joint movement or aggressively testing weight-bearing capacity.",
+          "Avoid applying unsterile powders, home remedies, or touching open wound edges with unwashed hands.",
+          "Avoid continuing sport, running, or heavy physical activity while pain or swelling persists."
+        ],
+        "monitor": [
+          "Monitor for expanding redness, localized warmth, or increasing tissue swelling over the next 24\u201348 hours.",
+          "Watch for infection indicators such as pus, drainage, red streaks, or systemic fever.",
+          "Observe pain trends over time (note if pain score progresses from mild to severe)."
+        ],
+        "seek_professional_evaluation": true,
+        "urgent_warning_signs": [],
+        "professional_evaluation_warning": "Based on the reported warning signs, professional medical evaluation is recommended.",
+        "model_limitation_statement": "AI-QTriage is an academic research prototype. Model outputs are experimental and are not a medical diagnosis. An image model failing to detect an injury does not mean that no injury is present."
+      },
+      "report_reference": null,
+      "is_demo": false,
+      "modalities_used": [
+        "image",
+        "questionnaire"
+      ],
+      "model_configuration_used": "xgb_image_questionnaire_v1"
+    }
+  },
+  "layer_compare_demo_image": {
+    "direct_n": 0,
+    "direct_class": [],
+    "direct_conf": [],
+    "direct_bbox": [],
+    "api_yolo_finding_detected": false,
+    "api_yolo_finding": null,
+    "api_yolo_confidence": null,
+    "api_yolo_bbox": null,
+    "api_finding": null,
+    "api_finding_detected": false,
+    "api_bbox": null,
+    "api_classifier_finding": "Swelling",
+    "api_classifier_probability": 0.9882420897483826,
+    "api_overlay_url": "/uploads/ef953f3b-10cb-4064-9fab-6969e8634930_overlay.jpg",
+    "api_mask_url": "/uploads/ef953f3b-10cb-4064-9fab-6969e8634930_mask.png",
+    "api_affected_ratio": 0.021444444444444443,
+    "api_model_path": null,
+    "mongo_status": "analyzed",
+    "xgboost": {
+      "class": "MODERATE",
+      "probability": 0.49192309379577637,
+      "model_version": "v1.2.0",
+      "model_id": "xgb_image_questionnaire_v1",
+      "n_features": 23,
+      "data_provenance": "SYNTHETIC",
+      "data_provenance_detail": "synthetic_multimodal_fusion",
+      "status": "TRAINED",
+      "artifact_path": "ml/models/xgboost_best.json"
+    },
+    "vqc": {
+      "class": "HIGH",
+      "score": [
+        0.17648854262376998,
+        0.4079376511813296,
+        0.4155738061949005
+      ],
+      "model_version": "v1.4.0",
+      "model_id": "vqc_sim_v1",
+      "status": "EXPERIMENTAL_ONLY",
+      "experimental": true,
+      "experimental_only": true,
+      "used_in_main_decision": false,
+      "data_provenance": "SYNTHETIC",
+      "error": null,
+      "pca_features": [
+        -1.391779370485709,
+        1.4492269288580009,
+        -3.0,
+        1.0246456470267418
+      ],
+      "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+    }
+  },
+  "layer_compare_val_image": {
+    "direct_n": 0,
+    "direct_findings": [],
+    "analyze_status": 200,
+    "api_yolo_finding_detected": null,
+    "api_yolo_finding": null,
+    "api_yolo_confidence": null,
+    "api_bbox": null,
+    "api_classifier_finding": null,
+    "api_classifier_probability": null
+  },
+  "sensor_normal_movement": {
+    "status": 200,
+    "peak_g_force": 1.04,
+    "delta_v": 10.03,
+    "stabilization": 0.0,
+    "lux_drop": null,
+    "source_type": "simulated",
+    "sos_triggered": false,
+    "has_motion_class": true
+  },
+  "sensor_football_fall": {
+    "status": 200,
+    "peak_g_force": 4.62,
+    "delta_v": 10.72,
+    "stabilization": 0.02,
+    "lux_drop": null,
+    "source_type": "simulated",
+    "sos_triggered": false,
+    "has_motion_class": true
+  },
+  "sensor_sudden_impact": {
+    "status": 200,
+    "peak_g_force": 5.61,
+    "delta_v": 10.92,
+    "stabilization": 0.02,
+    "lux_drop": null,
+    "source_type": "simulated",
+    "sos_triggered": false,
+    "has_motion_class": true
+  },
+  "sos_trigger_local": {
+    "status": 200,
+    "json": {
+      "message": "SOS countdown started (Local Demo). Simulation only.",
+      "event": {
+        "event_id": "e01e242c-7f4b-4bb0-8d97-5e0c86306084",
+        "case_id": "ef953f3b-10cb-4064-9fab-6969e8634930",
+        "sos_status": "countdown",
+        "trigger_source": "demo",
+        "delivery_mode": "local_demo",
+        "twilio_enabled": false,
+        "twilio_configured": false,
+        "demo_only": true,
+        "countdown_seconds": 10,
+        "user_response": null,
+        "created_at": "2026-08-29T07:29:04.394556",
+        "warning": "NO REAL EMERGENCY SERVICES WERE CONTACTED."
+      },
+      "duplicate": false
+    }
+  },
+  "sos_trigger_twilio_attempt": {
+    "status": 200,
+    "json": {
+      "message": "An active SOS countdown already exists for this case.",
+      "event": {
+        "event_id": "e01e242c-7f4b-4bb0-8d97-5e0c86306084",
+        "case_id": "ef953f3b-10cb-4064-9fab-6969e8634930",
+        "sos_status": "countdown",
+        "trigger_source": "demo",
+        "delivery_mode": "local_demo",
+        "twilio_enabled": false,
+        "twilio_configured": false,
+        "demo_only": true,
+        "countdown_seconds": 10,
+        "user_response": null,
+        "created_at": "2026-08-29T07:29:04.394556",
+        "warning": "NO REAL EMERGENCY SERVICES WERE CONTACTED."
+      },
+      "duplicate": true
+    }
+  },
+  "mongodb_stored": {
+    "yolo_finding_detected": false,
+    "yolo_finding": null,
+    "yolo_confidence": null,
+    "yolo_bbox": null,
+    "xgboost": {
+      "class": "MODERATE",
+      "probability": 0.49192309379577637,
+      "model_version": "v1.2.0",
+      "model_id": "xgb_image_questionnaire_v1",
+      "n_features": 23,
+      "data_provenance": "SYNTHETIC",
+      "data_provenance_detail": "synthetic_multimodal_fusion",
+      "status": "TRAINED",
+      "artifact_path": "ml/models/xgboost_best.json"
+    },
+    "vqc": {
+      "class": "HIGH",
+      "score": [
+        0.17648854262376998,
+        0.4079376511813296,
+        0.4155738061949005
+      ],
+      "model_version": "v1.4.0",
+      "model_id": "vqc_sim_v1",
+      "status": "EXPERIMENTAL_ONLY",
+      "experimental": true,
+      "experimental_only": true,
+      "used_in_main_decision": false,
+      "data_provenance": "SYNTHETIC",
+      "error": null,
+      "pca_features": [
+        -1.391779370485709,
+        1.4492269288580009,
+        -3.0,
+        1.0246456470267418
+      ],
+      "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+    },
+    "sos_status": "countdown"
+  }
+}

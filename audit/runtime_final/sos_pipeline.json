@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T09:37:46.410591+00:00",
+  "kinetic_thresholds": "Peak G >= 4.0g AND Stabilization >= 1.5s",
+  "countdown_seconds": 30,
+  "active_mode": "local_demo",
+  "status": "PASS"
+}

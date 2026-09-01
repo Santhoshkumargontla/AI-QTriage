@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-08-29T02:40:00+00:00",
+  "final_status": "PARTIALLY_FIXED",
+  "also": "REQUIRES_MORE_DATA",
+  "not": ["VERIFIED_FIXED", "REQUIRES_RETRAINING"],
+  "promoted": true,
+  "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+  "canonical_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+  "previous_canonical_sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+  "backup_path": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_v2_backup",
+  "training_was_real": true,
+  "init_weights": "ml/models/yolo11n_pretrained.pt",
+  "did_not_copy_production_as_candidate": true,
+  "did_not_fabricate_images_or_metrics": true,
+  "cut_bruise_reliability_claimed": false,
+  "wound_reliability_claimed": false,
+  "reason": "Independent yolo_retrain_v2 test improved cut recall 0.0 -> 0.875 vs the previous canonical checkpoint on the same split. Support is 8 cut boxes and 10 bruise boxes, mostly synthetic drawings. wound has 0 honest labels. That is not enough to claim reliability."
+}

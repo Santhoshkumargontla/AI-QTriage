@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T13:37:55.676611+00:00",
+  "probabilities_6_decimals": {
+    "LOW": 0.009662999771535397,
+    "MODERATE": 0.8924819827079773,
+    "HIGH": 0.09785500168800354
+  },
+  "sum_check": 1.0,
+  "predicted_class": "MODERATE",
+  "status": "PASS"
+}

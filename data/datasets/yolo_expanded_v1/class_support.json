@@ -1,0 +1,46 @@
+{
+  "classes": {
+    "cut": {
+      "status": "SUPPORTED",
+      "train_boxes": 81,
+      "val_boxes": 24,
+      "test_boxes": 24,
+      "total_boxes": 129
+    },
+    "bruise": {
+      "status": "SUPPORTED",
+      "train_boxes": 458,
+      "val_boxes": 87,
+      "test_boxes": 101,
+      "total_boxes": 646
+    },
+    "abrasion": {
+      "status": "SUPPORTED",
+      "train_boxes": 425,
+      "val_boxes": 97,
+      "test_boxes": 94,
+      "total_boxes": 616
+    },
+    "burn": {
+      "status": "SUPPORTED",
+      "train_boxes": 1503,
+      "val_boxes": 340,
+      "test_boxes": 343,
+      "total_boxes": 2186
+    },
+    "wound": {
+      "status": "SUPPORTED",
+      "train_boxes": 194,
+      "val_boxes": 51,
+      "test_boxes": 53,
+      "total_boxes": 298
+    },
+    "laceration": {
+      "status": "SUPPORTED",
+      "train_boxes": 14,
+      "val_boxes": 3,
+      "test_boxes": 4,
+      "total_boxes": 21
+    }
+  }
+}

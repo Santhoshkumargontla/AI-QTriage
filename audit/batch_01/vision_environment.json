@@ -1,0 +1,27 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:53.131836+00:00",
+  "python_version": "3.14.5 (tags/v3.14.5:5607950, May 10 2026, 10:43:50) [MSC v.1944 64 bit (AMD64)]",
+  "pytorch_version": "2.13.0+cpu",
+  "cuda_available": false,
+  "device_name": "CPU",
+  "artifacts": {
+    "yolo11": {
+      "exists": true,
+      "path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+      "size_bytes": 5470810,
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63"
+    },
+    "efficientnetv2": {
+      "exists": true,
+      "path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+      "size_bytes": 81626143,
+      "sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777"
+    },
+    "resnet34_unet": {
+      "exists": true,
+      "path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt",
+      "size_bytes": 97918031,
+      "sha256": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93"
+    }
+  }
+}

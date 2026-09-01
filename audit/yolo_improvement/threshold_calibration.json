@@ -1,0 +1,88 @@
+{
+  "audit_timestamp": "2026-08-27T12:52:42.387474+00:00",
+  "calibrations": [
+    {
+      "conf": 0.05,
+      "tp": 28,
+      "fp": 4,
+      "fn": 2,
+      "precision": 0.875,
+      "recall": 0.933,
+      "f1": 0.903
+    },
+    {
+      "conf": 0.1,
+      "tp": 27,
+      "fp": 2,
+      "fn": 3,
+      "precision": 0.931,
+      "recall": 0.9,
+      "f1": 0.915,
+      "recommended": true
+    },
+    {
+      "conf": 0.15,
+      "tp": 26,
+      "fp": 1,
+      "fn": 4,
+      "precision": 0.963,
+      "recall": 0.867,
+      "f1": 0.912
+    },
+    {
+      "conf": 0.2,
+      "tp": 25,
+      "fp": 1,
+      "fn": 5,
+      "precision": 0.962,
+      "recall": 0.833,
+      "f1": 0.893
+    },
+    {
+      "conf": 0.25,
+      "tp": 24,
+      "fp": 0,
+      "fn": 6,
+      "precision": 1.0,
+      "recall": 0.8,
+      "f1": 0.889
+    },
+    {
+      "conf": 0.3,
+      "tp": 23,
+      "fp": 0,
+      "fn": 7,
+      "precision": 1.0,
+      "recall": 0.767,
+      "f1": 0.868
+    },
+    {
+      "conf": 0.35,
+      "tp": 21,
+      "fp": 0,
+      "fn": 9,
+      "precision": 1.0,
+      "recall": 0.7,
+      "f1": 0.824
+    },
+    {
+      "conf": 0.4,
+      "tp": 19,
+      "fp": 0,
+      "fn": 11,
+      "precision": 1.0,
+      "recall": 0.633,
+      "f1": 0.776
+    },
+    {
+      "conf": 0.5,
+      "tp": 16,
+      "fp": 0,
+      "fn": 14,
+      "precision": 1.0,
+      "recall": 0.533,
+      "f1": 0.696
+    }
+  ],
+  "selected_threshold": 0.1
+}

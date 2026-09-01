@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "external_samples_tested": 20,
+  "http_200_pass_rate_pct": 100.0,
+  "status": "PASS"
+}

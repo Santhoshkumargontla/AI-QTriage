@@ -1,0 +1,582 @@
+{
+  "case_id": "3e0dbd17-7475-487d-9f10-e7f9d6800238",
+  "image": {
+    "path": "data\\uploads\\3e0dbd17-7475-487d-9f10-e7f9d6800238.jpg",
+    "exists": true,
+    "size_bytes": 12041,
+    "sha256": "473899eabf7df5db0618d8ba99d7b7188a53f88f397004f64b274ed4ae41dfab",
+    "mime_type": "image/jpeg",
+    "width": 300,
+    "height": 167,
+    "mode": "RGB",
+    "format": "JPEG",
+    "is_corrupted": false
+  },
+  "model": {
+    "wrapper_info": {
+      "active_model": "real_data_yolo11",
+      "model_version": "real_data_experimental",
+      "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+      "training_data": "real_public_dataset",
+      "supported_classes": [
+        "abrasion",
+        "bruise",
+        "cut",
+        "laceration",
+        "wound"
+      ],
+      "status": "TRAINED / LOADED",
+      "is_trained": true,
+      "clinically_validated": false
+    },
+    "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+    "model_file": {
+      "path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+      "exists": true,
+      "size_bytes": 5470810,
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "mime_type": null
+    },
+    "task": "detect",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "num_classes": 3,
+    "stride": [
+      8.0,
+      16.0,
+      32.0
+    ],
+    "ultralytics_version": "8.4.118",
+    "torch_version": "2.13.0+cpu",
+    "cuda_available": false,
+    "runtime_device": "cpu",
+    "architecture": "yolo11n.yaml",
+    "yaml_nc": 3
+  },
+  "threshold_sweep": [
+    {
+      "confidence_threshold": 0.01,
+      "iou_threshold": null,
+      "raw_detection_count": "NOT_EXPOSED_BY_ULTRALYTICS_RESULTS_API",
+      "boxes_after_nms": 25,
+      "max_confidence": 0.040858130902051926,
+      "class_ids": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "class_names": [
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound",
+        "wound"
+      ],
+      "detections": [
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.040858130902051926,
+          "x1": 80.25868225097656,
+          "y1": 25.13020896911621,
+          "x2": 126.4643325805664,
+          "y2": 70.703857421875,
+          "width": 46.205650329589844,
+          "height": 45.57364845275879
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.029539842158555984,
+          "x1": 134.83802795410156,
+          "y1": 56.99763107299805,
+          "x2": 193.8414764404297,
+          "y2": 94.46883392333984,
+          "width": 59.003448486328125,
+          "height": 37.4712028503418
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.028134023770689964,
+          "x1": 79.4838638305664,
+          "y1": 0.6129454970359802,
+          "x2": 126.69534301757812,
+          "y2": 71.38656616210938,
+          "width": 47.21147918701172,
+          "height": 70.7736206650734
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.027145328000187874,
+          "x1": 137.28334045410156,
+          "y1": 57.621986389160156,
+          "x2": 233.01271057128906,
+          "y2": 97.52281188964844,
+          "width": 95.7293701171875,
+          "height": 39.90082550048828
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.025475289672613144,
+          "x1": 0.8444094061851501,
+          "y1": 77.92198944091797,
+          "x2": 102.32891082763672,
+          "y2": 157.83567810058594,
+          "width": 101.48450142145157,
+          "height": 79.91368865966797
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.024252064526081085,
+          "x1": 0.47839877009391785,
+          "y1": 87.60581970214844,
+          "x2": 50.7678108215332,
+          "y2": 156.79879760742188,
+          "width": 50.289412051439285,
+          "height": 69.19297790527344
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.017430180683732033,
+          "x1": 0.6583284735679626,
+          "y1": 76.7846450805664,
+          "x2": 66.8122329711914,
+          "y2": 151.54031372070312,
+          "width": 66.15390449762344,
+          "height": 74.75566864013672
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.016840673983097076,
+          "x1": 45.787322998046875,
+          "y1": 128.04562377929688,
+          "x2": 169.18148803710938,
+          "y2": 167.0,
+          "width": 123.3941650390625,
+          "height": 38.954376220703125
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.01559356227517128,
+          "x1": 207.13685607910156,
+          "y1": 3.263075113296509,
+          "x2": 298.0914611816406,
+          "y2": 107.53357696533203,
+          "width": 90.95460510253906,
+          "height": 104.27050185203552
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.014883512631058693,
+          "x1": 0.8542870879173279,
+          "y1": 20.101303100585938,
+          "x2": 48.89862823486328,
+          "y2": 64.33421325683594,
+          "width": 48.04434114694595,
+          "height": 44.23291015625
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.014157405123114586,
+          "x1": 22.834280014038086,
+          "y1": 0.0,
+          "x2": 126.73262786865234,
+          "y2": 72.7001953125,
+          "width": 103.89834785461426,
+          "height": 72.7001953125
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.01399793941527605,
+          "x1": 110.26399230957031,
+          "y1": 132.012939453125,
+          "x2": 196.43167114257812,
+          "y2": 167.0,
+          "width": 86.16767883300781,
+          "height": 34.987060546875
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.01261265017092228,
+          "x1": 79.50430297851562,
+          "y1": 0.0,
+          "x2": 122.99150848388672,
+          "y2": 50.6983642578125,
+          "width": 43.487205505371094,
+          "height": 50.6983642578125
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.012515891343355179,
+          "x1": 1.5442227125167847,
+          "y1": 0.0,
+          "x2": 95.25397491455078,
+          "y2": 73.09230041503906,
+          "width": 93.709752202034,
+          "height": 73.09230041503906
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.012383014895021915,
+          "x1": 72.7483139038086,
+          "y1": 130.1803741455078,
+          "x2": 196.2664794921875,
+          "y2": 167.0,
+          "width": 123.5181655883789,
+          "height": 36.81962585449219
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.012373926118016243,
+          "x1": 1.5385721921920776,
+          "y1": 11.050759315490723,
+          "x2": 153.3444061279297,
+          "y2": 62.72275924682617,
+          "width": 151.8058339357376,
+          "height": 51.67199993133545
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.012071588076651096,
+          "x1": 0.28475046157836914,
+          "y1": 115.04570007324219,
+          "x2": 67.56572723388672,
+          "y2": 167.0,
+          "width": 67.28097677230835,
+          "height": 51.95429992675781
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.011813643388450146,
+          "x1": 4.775862216949463,
+          "y1": 77.3101806640625,
+          "x2": 119.42111206054688,
+          "y2": 167.0,
+          "width": 114.64524984359741,
+          "height": 89.6898193359375
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.011274240911006927,
+          "x1": 138.6788787841797,
+          "y1": 72.9742202758789,
+          "x2": 232.09645080566406,
+          "y2": 106.38095092773438,
+          "width": 93.41757202148438,
+          "height": 33.40673065185547
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.011103803291916847,
+          "x1": 206.6890106201172,
+          "y1": 113.16297149658203,
+          "x2": 293.59039306640625,
+          "y2": 167.0,
+          "width": 86.90138244628906,
+          "height": 53.83702850341797
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.010668669827282429,
+          "x1": 164.43112182617188,
+          "y1": 134.4088897705078,
+          "x2": 195.73745727539062,
+          "y2": 167.0,
+          "width": 31.30633544921875,
+          "height": 32.59111022949219
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.010428204201161861,
+          "x1": 74.73470306396484,
+          "y1": 0.0,
+          "x2": 183.22708129882812,
+          "y2": 81.87228393554688,
+          "width": 108.49237823486328,
+          "height": 81.87228393554688
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.01010992843657732,
+          "x1": 4.922403812408447,
+          "y1": 0.3503894507884979,
+          "x2": 115.86054992675781,
+          "y2": 121.31243133544922,
+          "width": 110.93814611434937,
+          "height": 120.96204188466072
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.010092449374496937,
+          "x1": 150.98086547851562,
+          "y1": 12.535428047180176,
+          "x2": 229.527099609375,
+          "y2": 100.61221313476562,
+          "width": 78.54623413085938,
+          "height": 88.07678508758545
+        },
+        {
+          "class_id": 2,
+          "class_name": "wound",
+          "confidence": 0.01002779882401228,
+          "x1": 79.37535095214844,
+          "y1": 43.99553680419922,
+          "x2": 119.1810302734375,
+          "y2": 70.97997283935547,
+          "width": 39.80567932128906,
+          "height": 26.98443603515625
+        }
+      ],
+      "annotated_output": "data\\debug\\yolo\\yolo_conf_010.jpg"
+    },
+    {
+      "confidence_threshold": 0.05,
+      "iou_threshold": null,
+      "raw_detection_count": "NOT_EXPOSED_BY_ULTRALYTICS_RESULTS_API",
+      "boxes_after_nms": 0,
+      "max_confidence": null,
+      "class_ids": [],
+      "class_names": [],
+      "detections": [],
+      "annotated_output": "data\\debug\\yolo\\yolo_conf_050.jpg"
+    },
+    {
+      "confidence_threshold": 0.1,
+      "iou_threshold": null,
+      "raw_detection_count": "NOT_EXPOSED_BY_ULTRALYTICS_RESULTS_API",
+      "boxes_after_nms": 0,
+      "max_confidence": null,
+      "class_ids": [],
+      "class_names": [],
+      "detections": [],
+      "annotated_output": "data\\debug\\yolo\\yolo_conf_100.jpg"
+    },
+    {
+      "confidence_threshold": 0.2,
+      "iou_threshold": null,
+      "raw_detection_count": "NOT_EXPOSED_BY_ULTRALYTICS_RESULTS_API",
+      "boxes_after_nms": 0,
+      "max_confidence": null,
+      "class_ids": [],
+      "class_names": [],
+      "detections": [],
+      "annotated_output": "data\\debug\\yolo\\yolo_conf_200.jpg"
+    },
+    {
+      "confidence_threshold": 0.25,
+      "iou_threshold": null,
+      "raw_detection_count": "NOT_EXPOSED_BY_ULTRALYTICS_RESULTS_API",
+      "boxes_after_nms": 0,
+      "max_confidence": null,
+      "class_ids": [],
+      "class_names": [],
+      "detections": [],
+      "annotated_output": "data\\debug\\yolo\\yolo_conf_250.jpg"
+    },
+    {
+      "confidence_threshold": 0.3,
+      "iou_threshold": null,
+      "raw_detection_count": "NOT_EXPOSED_BY_ULTRALYTICS_RESULTS_API",
+      "boxes_after_nms": 0,
+      "max_confidence": null,
+      "class_ids": [],
+      "class_names": [],
+      "detections": [],
+      "annotated_output": "data\\debug\\yolo\\yolo_conf_300.jpg"
+    },
+    {
+      "confidence_threshold": 0.5,
+      "iou_threshold": null,
+      "raw_detection_count": "NOT_EXPOSED_BY_ULTRALYTICS_RESULTS_API",
+      "boxes_after_nms": 0,
+      "max_confidence": null,
+      "class_ids": [],
+      "class_names": [],
+      "detections": [],
+      "annotated_output": "data\\debug\\yolo\\yolo_conf_500.jpg"
+    },
+    {
+      "confidence_threshold": 0.75,
+      "iou_threshold": null,
+      "raw_detection_count": "NOT_EXPOSED_BY_ULTRALYTICS_RESULTS_API",
+      "boxes_after_nms": 0,
+      "max_confidence": null,
+      "class_ids": [],
+      "class_names": [],
+      "detections": [],
+      "annotated_output": "data\\debug\\yolo\\yolo_conf_750.jpg"
+    }
+  ],
+  "wrapper_stage": {
+    "wrapper_conf_threshold_field": 0.4,
+    "wrapper_raw_call_conf": 0.1,
+    "detections_after_supported_class_filter": 0,
+    "detections": []
+  },
+  "dataset_audit": {
+    "yaml_path": "data\\datasets\\yolo_real_wound\\yolo_real.yaml",
+    "root": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "splits": {
+      "train": {
+        "image_count": 24,
+        "label_file_count": 24,
+        "missing_label_files": 0,
+        "empty_label_files": 0,
+        "invalid_label_rows": 0,
+        "corrupt_images": 0,
+        "class_distribution": {
+          "wound": 256
+        }
+      },
+      "val": {
+        "image_count": 5,
+        "label_file_count": 5,
+        "missing_label_files": 0,
+        "empty_label_files": 0,
+        "invalid_label_rows": 0,
+        "corrupt_images": 0,
+        "class_distribution": {
+          "wound": 61
+        }
+      },
+      "test": {
+        "image_count": 9,
+        "label_file_count": 9,
+        "missing_label_files": 0,
+        "empty_label_files": 0,
+        "invalid_label_rows": 0,
+        "corrupt_images": 0,
+        "class_distribution": {
+          "cut": 1,
+          "bruise": 1,
+          "wound": 58
+        }
+      }
+    },
+    "errors": [],
+    "summary": {
+      "total_images": 38,
+      "total_label_files": 38,
+      "empty_label_files": 0,
+      "invalid_label_rows": 0,
+      "corrupt_images": 0,
+      "class_distribution": {
+        "wound": 375,
+        "cut": 1,
+        "bruise": 1
+      },
+      "duplicate_image_hashes": 0,
+      "duplicate_images": {}
+    }
+  },
+  "training_results": {
+    "exists": true,
+    "rows": 25,
+    "columns": [
+      "epoch",
+      "time",
+      "train/box_loss",
+      "train/cls_loss",
+      "train/dfl_loss",
+      "metrics/precision(B)",
+      "metrics/recall(B)",
+      "metrics/mAP50(B)",
+      "metrics/mAP50-95(B)",
+      "val/box_loss",
+      "val/cls_loss",
+      "val/dfl_loss",
+      "lr/pg0",
+      "lr/pg1",
+      "lr/pg2"
+    ],
+    "last_epoch": {
+      "epoch": "25",
+      "time": "301.032",
+      "train/box_loss": "0.53308",
+      "train/cls_loss": "0.79119",
+      "train/dfl_loss": "0.80252",
+      "metrics/precision(B)": "0.09677",
+      "metrics/recall(B)": "0.93443",
+      "metrics/mAP50(B)": "0.81232",
+      "metrics/mAP50-95(B)": "0.72729",
+      "val/box_loss": "0.46815",
+      "val/cls_loss": "2.87595",
+      "val/dfl_loss": "0.79153",
+      "lr/pg0": "7.08784e-05",
+      "lr/pg1": "7.08784e-05",
+      "lr/pg2": "7.08784e-05"
+    }
+  }
+}

@@ -1,0 +1,639 @@
+{
+  "summary": {
+    "created_utc": "2026-08-29T03:14:41.555000+00:00",
+    "root": "data/datasets/unet_processed",
+    "manifest": "data/datasets/unet_processed/manifest.csv",
+    "did_not_fabricate_negatives": true,
+    "did_not_generate_fake_medical_masks": true,
+    "n": 41,
+    "positives": 41,
+    "negatives": 0,
+    "empty_masks_trained": 0,
+    "split_sizes": {
+      "train": 29,
+      "val": 6,
+      "test": 6
+    },
+    "class_counts": {
+      "swelling": 37,
+      "cut": 2,
+      "bruise": 2
+    },
+    "kind_counts": {
+      "positive": 41
+    },
+    "mask_area_positives": {
+      "min": 0.025191,
+      "max": 0.268435,
+      "mean": 0.05165614634146341
+    },
+    "existing_negative_files_eval_only": [
+      {
+        "sample_id": "blank_skin",
+        "path": "data/datasets/yolo_injury/blank_skin.jpg",
+        "source_dataset": "yolo_injury",
+        "provenance": "EXISTING_FILE_NOT_A_TRAINING_CLASS",
+        "pixel_sha256": "631931cb967c6717bfc2c6298d7a8407f25a1517c3ce940edc9e10c892eb96ea",
+        "empty_mask": true,
+        "used_as_training_label": false,
+        "note": "Too few existing no-injury files to train an empty-mask class. Eval-only. Empty mask is all-zero, not a fabricated wound shape.",
+        "image_hw": [
+          640,
+          640
+        ],
+        "empty_mask_sum": 0
+      },
+      {
+        "sample_id": "dummy_test",
+        "path": "data/datasets/yolo_injury/dummy_test.jpg",
+        "source_dataset": "yolo_injury",
+        "provenance": "EXISTING_FILE_NOT_A_TRAINING_CLASS",
+        "pixel_sha256": "0e5852861e08da9afb471da75f6f42f55d42d5e413aef1271428dd132b145886",
+        "empty_mask": true,
+        "used_as_training_label": false,
+        "note": "Too few existing no-injury files to train an empty-mask class. Eval-only. Empty mask is all-zero, not a fabricated wound shape.",
+        "image_hw": [
+          64,
+          64
+        ],
+        "empty_mask_sum": 0
+      }
+    ],
+    "hash_overlap": {
+      "train_val": [],
+      "train_test": [],
+      "val_test": []
+    },
+    "leakage_free": true,
+    "exclusions_n": 189,
+    "provenance": "SYNTHETIC",
+    "known_limitations": [
+      "Positive pairs are unique synthetic drawings, not clinical photography.",
+      "No legitimate labeled no-injury dataset was available. blank_skin.jpg and dummy_test.jpg are eval-only (n=2).",
+      "An empty-mask class was not trained because negatives were not fabricated.",
+      "Closed-set U-Net can still paint foreground on OOD fills. Overlay gates remain required."
+    ]
+  },
+  "exclusions_sample": [
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0007.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0008.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0009.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0011.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0012.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0013.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0014.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0015.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0017.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0018.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0019.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0020.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0021.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0023.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0024.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0025.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0026.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0027.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0029.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0030.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0031.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0032.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0033.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0035.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0036.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0037.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0038.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0039.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0041.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0042.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0043.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0044.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0045.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0047.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0048.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0049.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0050.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0051.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0053.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0054.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0055.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0056.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0057.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0059.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0060.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0061.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0062.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0063.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0065.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0066.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0067.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0068.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0069.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0071.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0072.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0073.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0074.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0075.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0077.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0078.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0079.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0080.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0081.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0083.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0084.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0085.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0086.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0087.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0089.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0090.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0091.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0092.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0093.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0095.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0096.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "cut",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0097.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "bruise",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0098.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0099.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0101.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg"
+    },
+    {
+      "reason": "exact_pixel_duplicate",
+      "kind": "positive",
+      "class": "swelling",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0102.jpg",
+      "kept": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg"
+    }
+  ]
+}

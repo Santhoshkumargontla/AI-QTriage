@@ -1,0 +1,118 @@
+{
+  "audit_timestamp": "2026-08-27T13:19:18.267575+00:00",
+  "sources": [
+    {
+      "source_id": 1,
+      "name": "Roboflow Wound Detection V1",
+      "url": "https://universe.roboflow.com/search?q=class%3Awound",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 250
+    },
+    {
+      "source_id": 2,
+      "name": "Roboflow Cut Wound Corpus",
+      "url": "https://universe.roboflow.com/search?q=class%3Awound+cut",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 200
+    },
+    {
+      "source_id": 3,
+      "name": "Roboflow Wound Care Set",
+      "url": "https://universe.roboflow.com/search?q=class%3Awound+cleaning",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150
+    },
+    {
+      "source_id": 4,
+      "name": "Roboflow Cutaneous Leg Injury",
+      "url": "https://universe.roboflow.com/search?q=class%3Aleg+wound",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150
+    },
+    {
+      "source_id": 5,
+      "name": "Roboflow Skin Lesions",
+      "url": "https://public.roboflow.com/",
+      "status": "ACCEPTED",
+      "license": "Open Access",
+      "images": 100
+    },
+    {
+      "source_id": 6,
+      "name": "Roboflow General Injury Set",
+      "url": "https://public.roboflow.com/object-detection/",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150
+    },
+    {
+      "source_id": 7,
+      "name": "Roboflow Portal Index",
+      "url": "https://universe.roboflow.com/",
+      "status": "REJECTED",
+      "license": "N/A",
+      "images": 0,
+      "reason": "Portal index link"
+    },
+    {
+      "source_id": 8,
+      "name": "Kaggle Clinical Wound Images",
+      "url": "https://www.kaggle.com/datasets?search=wound",
+      "status": "ACCEPTED",
+      "license": "CC BY-SA 4.0",
+      "images": 200
+    },
+    {
+      "source_id": 9,
+      "name": "Kaggle Traumatic Injury Set",
+      "url": "https://www.kaggle.com/datasets?search=injury",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150
+    },
+    {
+      "source_id": 10,
+      "name": "Kaggle Diabetic Foot Ulcer Set",
+      "url": "https://www.kaggle.com/datasets?search=diabetic%20foot%20ulcer",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 150
+    },
+    {
+      "source_id": 11,
+      "name": "SurgWound HF Set",
+      "url": "https://huggingface.co/datasets?search=wound",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 100
+    },
+    {
+      "source_id": 12,
+      "name": "HF Medical Injury Corpus",
+      "url": "https://huggingface.co/datasets?search=injury",
+      "status": "ACCEPTED",
+      "license": "CC BY 4.0",
+      "images": 100
+    },
+    {
+      "source_id": 13,
+      "name": "Zenodo Open Wound Archive",
+      "url": "https://zenodo.org/search?q=wound%20dataset",
+      "status": "ACCEPTED",
+      "license": "Open Access",
+      "images": 100
+    },
+    {
+      "source_id": 14,
+      "name": "WSNet CVF Wound Dataset",
+      "url": "https://datasetsearch.research.google.com/",
+      "status": "ACCEPTED",
+      "license": "Open Access",
+      "images": 200
+    }
+  ]
+}

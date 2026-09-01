@@ -1,0 +1,52 @@
+{
+  "summary": {
+    "created_utc": "2026-08-29T06:51:02.975763+00:00",
+    "n": 176,
+    "classes": [
+      "cut",
+      "bruise",
+      "normal"
+    ],
+    "class_counts": {
+      "bruise": 64,
+      "cut": 62,
+      "normal": 50
+    },
+    "split_sizes": {
+      "train": 122,
+      "test": 27,
+      "val": 27
+    },
+    "class_counts_by_split": {
+      "train": {
+        "bruise": 44,
+        "cut": 44,
+        "normal": 34
+      },
+      "val": {
+        "bruise": 10,
+        "cut": 9,
+        "normal": 8
+      },
+      "test": {
+        "bruise": 10,
+        "cut": 9,
+        "normal": 8
+      }
+    },
+    "hash_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "leakage_free": true,
+    "exclusions_n": 0,
+    "swelling_omitted": "Only two unique swelling drawings exist; class dropped rather than fabricated.",
+    "normal_provenance": "SYNTHETIC_REJECT canvases. Not healthy clinical skin. Mendeley normal-feet zip not downloaded.",
+    "known_limitations": [
+      "cut/bruise are synthetic drawings.",
+      "normal is synthetic reject, not real uninjured skin.",
+      "Do not treat this as a clinical 3-class injury taxonomy."
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "sampling_rate_hz": 50.0,
+  "window_seconds": 2.5,
+  "feature_count": 8,
+  "compatibility": "PASS"
+}

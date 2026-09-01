@@ -1,0 +1,39 @@
+{
+  "model_name": "Experimental 4-Qubit VQC",
+  "version": "v1.3.0",
+  "status": "EXPERIMENTAL",
+  "disclaimer": "PennyLane default.qubit is a classical CPU simulator. No quantum advantage. Excluded from SOS.",
+  "metrics": {
+    "train_samples": 24,
+    "test_samples": 30,
+    "epochs": 1,
+    "circuit": "AngleEmbedding + StronglyEntanglingLayers (matches VQCClassifier)",
+    "backend": "PennyLane default.qubit (classical simulator)",
+    "correct_predictions": "11 / 30",
+    "accuracy": 0.366667,
+    "macro_f1": 0.25704,
+    "mcc": 0.0,
+    "brier_score": 0.668338,
+    "ece": 0.016794,
+    "confusion_matrix": [
+      [
+        2,
+        4,
+        0
+      ],
+      [
+        7,
+        9,
+        0
+      ],
+      [
+        6,
+        2,
+        0
+      ]
+    ],
+    "inference_latency_ms_per_sample": 3.8,
+    "metrics_source": "held_out_test_via_VQCClassifier.predict",
+    "trained_at": "2026-08-28T13:42:19.528150+00:00"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "created_utc": "2026-08-30T06:44:29.962171+00:00",
+  "downloads": {
+    "uci_har": {
+      "status": "ALREADY_PRESENT",
+      "path": "data\\raw\\uci\\har_smartphones.zip",
+      "bytes": 61005872
+    },
+    "roboflow": {
+      "injury_detection_v2": {
+        "status": "DOWNLOADED",
+        "workspace": "bryans-workspace-rrftd",
+        "project": "injury-detection-4vjih",
+        "version": "2",
+        "path": "data\\raw\\roboflow\\injury_detection_v2"
+      },
+      "wound2": {
+        "status": "DOWNLOADED",
+        "workspace": "dongdong-d6lo7",
+        "project": "wound2",
+        "version": "1",
+        "path": "data\\raw\\roboflow\\wound2"
+      },
+      "wound_detection_segmentation": {
+        "status": "FAILED",
+        "reason": "no versions"
+      },
+      "aid": {
+        "status": "DOWNLOADED",
+        "workspace": "tingting-rph02",
+        "project": "aid-lvngz",
+        "version": "2",
+        "path": "data\\raw\\roboflow\\aid"
+      }
+    },
+    "kaggle": {
+      "yasinpratomo_wound_dataset": {
+        "status": "ALREADY_PRESENT",
+        "path": "data/raw/kaggle/yasinpratomo_wound_dataset"
+      },
+      "leoscode_wound_segmentation_2760": {
+        "status": "BLOCKED_NO_CREDENTIALS",
+        "slug": "leoscode/wound-segmentation-images",
+        "note": "kaggle.json missing"
+      },
+      "uci_har_smartphones": {
+        "status": "BLOCKED_NO_CREDENTIALS",
+        "slug": "uciml/human-activity-recognition-with-smartphones",
+        "note": "kaggle.json missing"
+      }
+    }
+  }
+}

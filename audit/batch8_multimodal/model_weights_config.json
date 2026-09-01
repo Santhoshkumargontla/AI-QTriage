@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T13:40:30.546976+00:00",
+  "weights": {
+    "YOLO11": 0.3,
+    "EfficientNetV2": 0.25,
+    "Classical_ML": 0.25,
+    "Sensor_Model": 0.1,
+    "VQC_Experimental": 0.1,
+    "SOS_Weight": 0.0
+  },
+  "sos_weight_enforcement": "VERIFIED (0.0 weight - VQC cannot trigger/abort SOS)",
+  "status": "PASS"
+}

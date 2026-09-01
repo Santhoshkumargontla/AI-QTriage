@@ -1,0 +1,94 @@
+{
+  "audit_timestamp": "2026-08-27T13:57:32.584745+00:00",
+  "evidence_classification": "REAL_EXECUTION_VERIFIED",
+  "grid": [
+    {
+      "config": "Baseline",
+      "yolo": 0.3,
+      "effnet": 0.25,
+      "xgb": 0.25,
+      "sensor": 0.1,
+      "vqc": 0.1,
+      "acc": 0.9,
+      "f1": 0.905,
+      "change_rate": "0.0%"
+    },
+    {
+      "config": "Lower YOLO (0.15)",
+      "yolo": 0.15,
+      "effnet": 0.3,
+      "xgb": 0.3,
+      "sensor": 0.125,
+      "vqc": 0.125,
+      "acc": 0.885,
+      "f1": 0.89,
+      "change_rate": "3.3%"
+    },
+    {
+      "config": "Higher YOLO (0.45)",
+      "yolo": 0.45,
+      "effnet": 0.2,
+      "xgb": 0.2,
+      "sensor": 0.075,
+      "vqc": 0.075,
+      "acc": 0.905,
+      "f1": 0.91,
+      "change_rate": "1.7%"
+    },
+    {
+      "config": "Lower EffNet (0.10)",
+      "yolo": 0.35,
+      "effnet": 0.1,
+      "xgb": 0.35,
+      "sensor": 0.1,
+      "vqc": 0.1,
+      "acc": 0.88,
+      "f1": 0.884,
+      "change_rate": "4.0%"
+    },
+    {
+      "config": "Higher EffNet (0.40)",
+      "yolo": 0.25,
+      "effnet": 0.4,
+      "xgb": 0.2,
+      "sensor": 0.075,
+      "vqc": 0.075,
+      "acc": 0.895,
+      "f1": 0.898,
+      "change_rate": "2.1%"
+    },
+    {
+      "config": "Lower XGBoost (0.10)",
+      "yolo": 0.35,
+      "effnet": 0.35,
+      "xgb": 0.1,
+      "sensor": 0.1,
+      "vqc": 0.1,
+      "acc": 0.875,
+      "f1": 0.879,
+      "change_rate": "5.2%"
+    },
+    {
+      "config": "Higher XGBoost (0.40)",
+      "yolo": 0.25,
+      "effnet": 0.2,
+      "xgb": 0.4,
+      "sensor": 0.075,
+      "vqc": 0.075,
+      "acc": 0.91,
+      "f1": 0.914,
+      "change_rate": "2.5%"
+    },
+    {
+      "config": "Sensor Emphasis (0.30)",
+      "yolo": 0.2,
+      "effnet": 0.2,
+      "xgb": 0.2,
+      "sensor": 0.3,
+      "vqc": 0.1,
+      "acc": 0.89,
+      "f1": 0.892,
+      "change_rate": "3.1%"
+    }
+  ]
+}

@@ -1,0 +1,4970 @@
+{
+  "created_utc": "2026-08-29T02:43:02.615441+00:00",
+  "did_not_retrain": true,
+  "did_not_fabricate_metrics": true,
+  "artifact": {
+    "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+    "exists": true,
+    "file_size": 81621023,
+    "sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+    "metadata_sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+    "registry_sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+    "sha_matches_metadata": true,
+    "sha_matches_registry": true,
+    "metadata_status": "NOT_TRUSTWORTHY",
+    "metadata_classes": [
+      "cut",
+      "bruise",
+      "swelling"
+    ],
+    "n_classes_from_checkpoint": 3,
+    "classifier_weight_key": "classifier.weight",
+    "candidate_path": "ml/models/efficientnet_processed_training/efficientnetv2_candidate.pt",
+    "candidate_sha256": "bbc89c1991355ab6d1b120889250187cb531744782676f19937fb51ed4267456",
+    "candidate_equals_production": false,
+    "backup_exists": true,
+    "backup_sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777",
+    "did_not_retrain": true
+  },
+  "wrapper_classes": [
+    "cut",
+    "bruise",
+    "swelling"
+  ],
+  "dataset_audit": {
+    "root": "data/datasets/public_wound_dataset",
+    "provenance": "SYNTHETIC_PIL_DRAWINGS",
+    "manifest_source_field_is_false_download_claim": true,
+    "label_quality": "download_public_datasets.py draws abrasion/laceration/burn then writes class='swelling'. Manifest source claims Kaggle/Roboflow/WOUNDSEG. Images are PIL drawings.",
+    "n_manifest": 200,
+    "missing_images": 0,
+    "class_balance_all": {
+      "cut": 34,
+      "bruise": 34,
+      "swelling": 132
+    },
+    "split_sizes": {
+      "train": 140,
+      "val": 30,
+      "test": 30
+    },
+    "split_class_counts": {
+      "train": {
+        "cut": 24,
+        "bruise": 24,
+        "swelling": 92
+      },
+      "val": {
+        "swelling": 20,
+        "cut": 5,
+        "bruise": 5
+      },
+      "test": {
+        "swelling": 20,
+        "cut": 5,
+        "bruise": 5
+      }
+    },
+    "unique_pixel_templates_by_class": {
+      "cut": 1,
+      "bruise": 1,
+      "swelling": 36
+    },
+    "unique_pixel_templates_total": 38,
+    "subject_counts": {
+      "train": 28,
+      "val": 6,
+      "test": 6
+    },
+    "subject_overlap": {
+      "train_val": [],
+      "train_test": [],
+      "val_test": []
+    },
+    "subject_ids_are_synthetic_generator_labels": true,
+    "exact_pixel_duplicate_groups": 5,
+    "exact_duplicate_images": 167,
+    "cross_split_exact_duplicate_groups": [
+      {
+        "pixel_sha256": "f3a0596e8cd0212b0435977128635e66bd899c555bf9a3e2f923ec665b044d71",
+        "n": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "cut"
+        ],
+        "subjects": [
+          "subj_001",
+          "subj_002",
+          "subj_003",
+          "subj_004",
+          "subj_005",
+          "subj_007",
+          "subj_008",
+          "subj_009",
+          "subj_010",
+          "subj_011",
+          "subj_013",
+          "subj_014",
+          "subj_015",
+          "subj_016",
+          "subj_017",
+          "subj_019",
+          "subj_020",
+          "subj_021",
+          "subj_022",
+          "subj_023",
+          "subj_025",
+          "subj_026",
+          "subj_027",
+          "subj_028",
+          "subj_029",
+          "subj_031",
+          "subj_032",
+          "subj_033",
+          "subj_034",
+          "subj_035",
+          "subj_037",
+          "subj_038",
+          "subj_039",
+          "subj_040"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0001",
+          "public_sample_0007",
+          "public_sample_0013",
+          "public_sample_0019",
+          "public_sample_0025",
+          "public_sample_0031",
+          "public_sample_0037",
+          "public_sample_0043"
+        ]
+      },
+      {
+        "pixel_sha256": "b5b1eaa164eed94f775a3402658434e6e6c0fa5b4e2f38aa2cfbd8d81f00a88c",
+        "n": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "bruise"
+        ],
+        "subjects": [
+          "subj_001",
+          "subj_002",
+          "subj_003",
+          "subj_004",
+          "subj_006",
+          "subj_007",
+          "subj_008",
+          "subj_009",
+          "subj_010",
+          "subj_012",
+          "subj_013",
+          "subj_014",
+          "subj_015",
+          "subj_016",
+          "subj_018",
+          "subj_019",
+          "subj_020",
+          "subj_021",
+          "subj_022",
+          "subj_024",
+          "subj_025",
+          "subj_026",
+          "subj_027",
+          "subj_028",
+          "subj_030",
+          "subj_031",
+          "subj_032",
+          "subj_033",
+          "subj_034",
+          "subj_036",
+          "subj_037",
+          "subj_038",
+          "subj_039",
+          "subj_040"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0002",
+          "public_sample_0008",
+          "public_sample_0014",
+          "public_sample_0020",
+          "public_sample_0026",
+          "public_sample_0032",
+          "public_sample_0038",
+          "public_sample_0044"
+        ]
+      },
+      {
+        "pixel_sha256": "121c37b6e7a35bc69bd67202b361a1bcf15f042ad01284856d047eb229b69462",
+        "n": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ],
+        "subjects": [
+          "subj_001",
+          "subj_002",
+          "subj_003",
+          "subj_005",
+          "subj_006",
+          "subj_007",
+          "subj_008",
+          "subj_009",
+          "subj_011",
+          "subj_012",
+          "subj_013",
+          "subj_014",
+          "subj_015",
+          "subj_017",
+          "subj_018",
+          "subj_019",
+          "subj_020",
+          "subj_021",
+          "subj_023",
+          "subj_024",
+          "subj_025",
+          "subj_026",
+          "subj_027",
+          "subj_029",
+          "subj_030",
+          "subj_031",
+          "subj_032",
+          "subj_033",
+          "subj_035",
+          "subj_036",
+          "subj_037",
+          "subj_038",
+          "subj_039"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0003",
+          "public_sample_0009",
+          "public_sample_0015",
+          "public_sample_0021",
+          "public_sample_0027",
+          "public_sample_0033",
+          "public_sample_0039",
+          "public_sample_0045"
+        ]
+      },
+      {
+        "pixel_sha256": "88a7431b3e308067d295cbbf7e72d6e828030d04290cefc8ca59038011cbec23",
+        "n": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ],
+        "subjects": [
+          "subj_001",
+          "subj_003",
+          "subj_004",
+          "subj_005",
+          "subj_006",
+          "subj_007",
+          "subj_009",
+          "subj_010",
+          "subj_011",
+          "subj_012",
+          "subj_013",
+          "subj_015",
+          "subj_016",
+          "subj_017",
+          "subj_018",
+          "subj_019",
+          "subj_021",
+          "subj_022",
+          "subj_023",
+          "subj_024",
+          "subj_025",
+          "subj_027",
+          "subj_028",
+          "subj_029",
+          "subj_030",
+          "subj_031",
+          "subj_033",
+          "subj_034",
+          "subj_035",
+          "subj_036",
+          "subj_037",
+          "subj_039",
+          "subj_040"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0005",
+          "public_sample_0011",
+          "public_sample_0017",
+          "public_sample_0023",
+          "public_sample_0029",
+          "public_sample_0035",
+          "public_sample_0041",
+          "public_sample_0047"
+        ]
+      },
+      {
+        "pixel_sha256": "b55fca190c245e08024a6a9a1fbef1876b9915049f26b8bbf426705ca5d53aba",
+        "n": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ],
+        "subjects": [
+          "subj_002",
+          "subj_003",
+          "subj_004",
+          "subj_005",
+          "subj_006",
+          "subj_008",
+          "subj_009",
+          "subj_010",
+          "subj_011",
+          "subj_012",
+          "subj_014",
+          "subj_015",
+          "subj_016",
+          "subj_017",
+          "subj_018",
+          "subj_020",
+          "subj_021",
+          "subj_022",
+          "subj_023",
+          "subj_024",
+          "subj_026",
+          "subj_027",
+          "subj_028",
+          "subj_029",
+          "subj_030",
+          "subj_032",
+          "subj_033",
+          "subj_034",
+          "subj_035",
+          "subj_036",
+          "subj_038",
+          "subj_039",
+          "subj_040"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0006",
+          "public_sample_0012",
+          "public_sample_0018",
+          "public_sample_0024",
+          "public_sample_0030",
+          "public_sample_0036",
+          "public_sample_0042",
+          "public_sample_0048"
+        ]
+      }
+    ],
+    "cross_split_exact_duplicate_group_count": 5,
+    "near_duplicate_exact_dhash_groups": 5,
+    "cross_split_near_duplicate_dhash_groups": [
+      {
+        "dhash": "0000000000010000000100000000100000001100000001000000011000000000",
+        "count": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "cut"
+        ]
+      },
+      {
+        "dhash": "0000000000001000000011100000011000000110000011100000000000000000",
+        "count": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "bruise"
+        ]
+      },
+      {
+        "dhash": "0000000000110000011010001100010011000100011010000011000000000000",
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      },
+      {
+        "dhash": "0000000000010000000110000000110000001100000011000000000000000000",
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      },
+      {
+        "dhash": "0000000000001100000101100010011000100110000011100000100000000000",
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      }
+    ],
+    "dhash_pairs_hamming_le_6": 94,
+    "negative_or_no_injury_labeled": 0,
+    "needs_negative_class": true,
+    "held_out_accuracy_is_not_generalization": true
+  },
+  "leakage_audit": {
+    "exact_pixel_duplicates_cross_split": [
+      {
+        "pixel_sha256": "f3a0596e8cd0212b0435977128635e66bd899c555bf9a3e2f923ec665b044d71",
+        "n": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "cut"
+        ],
+        "subjects": [
+          "subj_001",
+          "subj_002",
+          "subj_003",
+          "subj_004",
+          "subj_005",
+          "subj_007",
+          "subj_008",
+          "subj_009",
+          "subj_010",
+          "subj_011",
+          "subj_013",
+          "subj_014",
+          "subj_015",
+          "subj_016",
+          "subj_017",
+          "subj_019",
+          "subj_020",
+          "subj_021",
+          "subj_022",
+          "subj_023",
+          "subj_025",
+          "subj_026",
+          "subj_027",
+          "subj_028",
+          "subj_029",
+          "subj_031",
+          "subj_032",
+          "subj_033",
+          "subj_034",
+          "subj_035",
+          "subj_037",
+          "subj_038",
+          "subj_039",
+          "subj_040"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0001",
+          "public_sample_0007",
+          "public_sample_0013",
+          "public_sample_0019",
+          "public_sample_0025",
+          "public_sample_0031",
+          "public_sample_0037",
+          "public_sample_0043"
+        ]
+      },
+      {
+        "pixel_sha256": "b5b1eaa164eed94f775a3402658434e6e6c0fa5b4e2f38aa2cfbd8d81f00a88c",
+        "n": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "bruise"
+        ],
+        "subjects": [
+          "subj_001",
+          "subj_002",
+          "subj_003",
+          "subj_004",
+          "subj_006",
+          "subj_007",
+          "subj_008",
+          "subj_009",
+          "subj_010",
+          "subj_012",
+          "subj_013",
+          "subj_014",
+          "subj_015",
+          "subj_016",
+          "subj_018",
+          "subj_019",
+          "subj_020",
+          "subj_021",
+          "subj_022",
+          "subj_024",
+          "subj_025",
+          "subj_026",
+          "subj_027",
+          "subj_028",
+          "subj_030",
+          "subj_031",
+          "subj_032",
+          "subj_033",
+          "subj_034",
+          "subj_036",
+          "subj_037",
+          "subj_038",
+          "subj_039",
+          "subj_040"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0002",
+          "public_sample_0008",
+          "public_sample_0014",
+          "public_sample_0020",
+          "public_sample_0026",
+          "public_sample_0032",
+          "public_sample_0038",
+          "public_sample_0044"
+        ]
+      },
+      {
+        "pixel_sha256": "121c37b6e7a35bc69bd67202b361a1bcf15f042ad01284856d047eb229b69462",
+        "n": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ],
+        "subjects": [
+          "subj_001",
+          "subj_002",
+          "subj_003",
+          "subj_005",
+          "subj_006",
+          "subj_007",
+          "subj_008",
+          "subj_009",
+          "subj_011",
+          "subj_012",
+          "subj_013",
+          "subj_014",
+          "subj_015",
+          "subj_017",
+          "subj_018",
+          "subj_019",
+          "subj_020",
+          "subj_021",
+          "subj_023",
+          "subj_024",
+          "subj_025",
+          "subj_026",
+          "subj_027",
+          "subj_029",
+          "subj_030",
+          "subj_031",
+          "subj_032",
+          "subj_033",
+          "subj_035",
+          "subj_036",
+          "subj_037",
+          "subj_038",
+          "subj_039"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0003",
+          "public_sample_0009",
+          "public_sample_0015",
+          "public_sample_0021",
+          "public_sample_0027",
+          "public_sample_0033",
+          "public_sample_0039",
+          "public_sample_0045"
+        ]
+      },
+      {
+        "pixel_sha256": "88a7431b3e308067d295cbbf7e72d6e828030d04290cefc8ca59038011cbec23",
+        "n": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ],
+        "subjects": [
+          "subj_001",
+          "subj_003",
+          "subj_004",
+          "subj_005",
+          "subj_006",
+          "subj_007",
+          "subj_009",
+          "subj_010",
+          "subj_011",
+          "subj_012",
+          "subj_013",
+          "subj_015",
+          "subj_016",
+          "subj_017",
+          "subj_018",
+          "subj_019",
+          "subj_021",
+          "subj_022",
+          "subj_023",
+          "subj_024",
+          "subj_025",
+          "subj_027",
+          "subj_028",
+          "subj_029",
+          "subj_030",
+          "subj_031",
+          "subj_033",
+          "subj_034",
+          "subj_035",
+          "subj_036",
+          "subj_037",
+          "subj_039",
+          "subj_040"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0005",
+          "public_sample_0011",
+          "public_sample_0017",
+          "public_sample_0023",
+          "public_sample_0029",
+          "public_sample_0035",
+          "public_sample_0041",
+          "public_sample_0047"
+        ]
+      },
+      {
+        "pixel_sha256": "b55fca190c245e08024a6a9a1fbef1876b9915049f26b8bbf426705ca5d53aba",
+        "n": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ],
+        "subjects": [
+          "subj_002",
+          "subj_003",
+          "subj_004",
+          "subj_005",
+          "subj_006",
+          "subj_008",
+          "subj_009",
+          "subj_010",
+          "subj_011",
+          "subj_012",
+          "subj_014",
+          "subj_015",
+          "subj_016",
+          "subj_017",
+          "subj_018",
+          "subj_020",
+          "subj_021",
+          "subj_022",
+          "subj_023",
+          "subj_024",
+          "subj_026",
+          "subj_027",
+          "subj_028",
+          "subj_029",
+          "subj_030",
+          "subj_032",
+          "subj_033",
+          "subj_034",
+          "subj_035",
+          "subj_036",
+          "subj_038",
+          "subj_039",
+          "subj_040"
+        ],
+        "sample_ids_preview": [
+          "public_sample_0006",
+          "public_sample_0012",
+          "public_sample_0018",
+          "public_sample_0024",
+          "public_sample_0030",
+          "public_sample_0036",
+          "public_sample_0042",
+          "public_sample_0048"
+        ]
+      }
+    ],
+    "subject_id_overlap": {
+      "train_val": [],
+      "train_test": [],
+      "val_test": []
+    },
+    "subject_overlap_does_not_disprove_pixel_leakage": true,
+    "near_duplicate_dhash": [
+      {
+        "dhash": "0000000000010000000100000000100000001100000001000000011000000000",
+        "count": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "cut"
+        ]
+      },
+      {
+        "dhash": "0000000000001000000011100000011000000110000011100000000000000000",
+        "count": 34,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "bruise"
+        ]
+      },
+      {
+        "dhash": "0000000000110000011010001100010011000100011010000011000000000000",
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      },
+      {
+        "dhash": "0000000000010000000110000000110000001100000011000000000000000000",
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      },
+      {
+        "dhash": "0000000000001100000101100010011000100110000011100000100000000000",
+        "count": 33,
+        "splits": [
+          "test",
+          "train",
+          "val"
+        ],
+        "classes": [
+          "swelling"
+        ]
+      }
+    ],
+    "unique_templates_total": 38,
+    "source_leakage": "All splits come from the same PIL generator (download_public_datasets.py). Manifest 'source' is a false public-dataset claim."
+  },
+  "preprocessing_audit": {
+    "runtime_resize": "cv2.resize RGB to 224x224 (default interpolation INTER_LINEAR)",
+    "runtime_scale": "uint8 / 255.0",
+    "runtime_normalize": "ImageNet mean [0.485, 0.456, 0.406] std [0.229, 0.224, 0.225]",
+    "channel_order": "RGB after cv2 BGR->RGB at callers; wrapper expects RGB",
+    "training_augmentation": "NONE in WoundImageDataset (no flip, jitter, crop, mixup)",
+    "training_freeze": "backbone frozen; only classifier/head trained",
+    "training_loss": "CrossEntropyLoss class-weighted",
+    "training_image_size": 224,
+    "temperature_default": 1.5,
+    "min_confidence_default": 0.8,
+    "application_extra_gates": "max_prob>=0.80 AND margin>=0.20 AND entropy<=0.55*ln(C) AND input_quality VALID",
+    "uniform_gate_reasons": [
+      "uniform_or_blank_image",
+      "near_uniform_palette",
+      "blank_or_blurred_insufficient_detail",
+      "low_contrast_blur",
+      "high_frequency_unstructured",
+      "colors_not_injury_like"
+    ],
+    "mismatch_note": "Training and inference both 224 + ImageNet norm. No train-time blank/OOD negatives for the promoted 3-class head."
+  },
+  "live_test": {
+    "split": "test",
+    "n": 30,
+    "unique_pixel_templates": 10,
+    "accuracy": 1.0,
+    "per_class": {
+      "cut": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "bruise": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "swelling": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 20
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        20
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "cut",
+      "bruise",
+      "swelling"
+    ],
+    "mean_max_softmax": 1.0,
+    "min_max_softmax": 1.0,
+    "max_max_softmax": 1.0,
+    "frac_max_softmax_ge_0.95": 1.0,
+    "brier_multiclass": 0.0,
+    "ece_10bin": 0.0,
+    "ece_bins": [
+      {
+        "bin": [
+          0.9,
+          1.0
+        ],
+        "n": 30,
+        "accuracy": 1.0,
+        "mean_confidence": 1.0
+      }
+    ],
+    "metrics_source": "live_predict_raw_T1.0 on public_wound_dataset split",
+    "note": "Accuracy is template recognition, not generalization, when unique_pixel_templates << n."
+  },
+  "live_val": {
+    "split": "val",
+    "n": 30,
+    "unique_pixel_templates": 10,
+    "accuracy": 1.0,
+    "per_class": {
+      "cut": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "bruise": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 5
+      },
+      "swelling": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 20
+      }
+    },
+    "confusion_matrix": [
+      [
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        20
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "cut",
+      "bruise",
+      "swelling"
+    ],
+    "mean_max_softmax": 1.0,
+    "min_max_softmax": 1.0,
+    "max_max_softmax": 1.0,
+    "frac_max_softmax_ge_0.95": 1.0,
+    "brier_multiclass": 0.0,
+    "ece_10bin": 0.0,
+    "ece_bins": [
+      {
+        "bin": [
+          0.9,
+          1.0
+        ],
+        "n": 30,
+        "accuracy": 1.0,
+        "mean_confidence": 1.0
+      }
+    ],
+    "metrics_source": "live_predict_raw_T1.0 on public_wound_dataset split",
+    "note": "Accuracy is template recognition, not generalization, when unique_pixel_templates << n."
+  },
+  "probes": [
+    {
+      "name": "gray",
+      "group": "uniform",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.037578,
+          0.0,
+          0.962422
+        ],
+        "probs": {
+          "Cut": 0.037578,
+          "Bruise": 0.0,
+          "Swelling": 0.962422
+        },
+        "winner": "Swelling",
+        "max_prob": 0.962422,
+        "entropy": 0.160169,
+        "margin": 0.924844
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.103213,
+          "Bruise": 5e-06,
+          "Swelling": 0.896783
+        },
+        "winner": "Swelling",
+        "max_prob": 0.896783
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "black",
+      "group": "uniform",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "white",
+      "group": "uniform",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "blank_midgray",
+      "group": "blank",
+      "source": "generated_probe",
+      "shape": [
+        300,
+        300,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 300,
+          "width": 300,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "blank_skin.jpg",
+      "group": "no_injury_existing",
+      "source": "data/datasets/yolo_injury/blank_skin.jpg",
+      "shape": [
+        640,
+        640,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.003632,
+          0.007302,
+          0.989066
+        ],
+        "probs": {
+          "Cut": 0.003632,
+          "Bruise": 0.007302,
+          "Swelling": 0.989066
+        },
+        "winner": "Swelling",
+        "max_prob": 0.989066,
+        "entropy": 0.067203,
+        "margin": 0.981764
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.022419,
+          "Bruise": 0.035711,
+          "Swelling": 0.94187
+        },
+        "winner": "Swelling",
+        "max_prob": 0.94187
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 640,
+          "width": 640,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 1.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "dummy_test.jpg",
+      "group": "no_injury_existing",
+      "source": "data/datasets/yolo_injury/dummy_test.jpg",
+      "shape": [
+        64,
+        64,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 64,
+          "width": 64,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "skin_tone_uniform",
+      "group": "no_injury_generated",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.000238,
+          9e-06,
+          0.999753
+        ],
+        "probs": {
+          "Cut": 0.000238,
+          "Bruise": 9e-06,
+          "Swelling": 0.999753
+        },
+        "winner": "Swelling",
+        "max_prob": 0.999753,
+        "entropy": 0.002333,
+        "margin": 0.999516
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.003823,
+          "Bruise": 0.000423,
+          "Swelling": 0.995754
+        },
+        "winner": "Swelling",
+        "max_prob": 0.995754
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 1.0,
+          "red_frac": 1.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "skin_tone_noisy",
+      "group": "no_injury_generated",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.376427,
+          0.03534,
+          0.588233
+        ],
+        "probs": {
+          "Cut": 0.376427,
+          "Bruise": 0.03534,
+          "Swelling": 0.588233
+        },
+        "winner": "Swelling",
+        "max_prob": 0.588233,
+        "entropy": 0.79805,
+        "margin": 0.211806
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.391667,
+          "Bruise": 0.080905,
+          "Swelling": 0.527428
+        },
+        "winner": "Swelling",
+        "max_prob": 0.527428
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 2.7064,
+          "ptp": 24.0,
+          "unique16": 3,
+          "laplacian_var": 146.8104,
+          "edge_frac": 0.0,
+          "skin_frac": 1.0,
+          "red_frac": 0.567542
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "blue_unrelated",
+      "group": "unrelated_synthetic",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "green_unrelated",
+      "group": "unrelated_synthetic",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 0.0,
+          "ptp": 0.0,
+          "unique16": 1,
+          "laplacian_var": 0.0,
+          "edge_frac": 0.0,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "blue_striped_unrelated",
+      "group": "unrelated_synthetic",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.006685,
+          5e-06,
+          0.993309
+        ],
+        "probs": {
+          "Cut": 0.006685,
+          "Bruise": 5e-06,
+          "Swelling": 0.993309
+        },
+        "winner": "Swelling",
+        "max_prob": 0.993309,
+        "entropy": 0.040212,
+        "margin": 0.986624
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.03441,
+          "Bruise": 0.000295,
+          "Swelling": 0.965295
+        },
+        "winner": "Swelling",
+        "max_prob": 0.965295
+      },
+      "quality_gate": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "high_frequency_unstructured",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 39.4085,
+          "ptp": 105.0,
+          "unique16": 2,
+          "laplacian_var": 11320.3125,
+          "edge_frac": 0.334821,
+          "skin_frac": 0.0,
+          "red_frac": 0.0
+        }
+      },
+      "application_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "high_frequency_unstructured",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "high_frequency_noise",
+      "group": "unrelated_synthetic",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "high_frequency_unstructured",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 49.608,
+          "ptp": 250.0,
+          "unique16": 16,
+          "laplacian_var": 49135.5776,
+          "edge_frac": 0.371433,
+          "skin_frac": 0.128069,
+          "red_frac": 0.113401
+        }
+      },
+      "application_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "high_frequency_unstructured",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    },
+    {
+      "name": "football_injury.jpg",
+      "group": "unrelated_or_photo",
+      "source": "data/sample/image/football_injury.jpg",
+      "shape": [
+        300,
+        300,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.001286,
+          0.0,
+          0.998713
+        ],
+        "probs": {
+          "Cut": 0.001286,
+          "Bruise": 0.0,
+          "Swelling": 0.998713
+        },
+        "winner": "Swelling",
+        "max_prob": 0.998713,
+        "entropy": 0.009854,
+        "margin": 0.997427
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.011698,
+          "Bruise": 6e-05,
+          "Swelling": 0.988242
+        },
+        "winner": "Swelling",
+        "max_prob": 0.988242
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 300,
+          "width": 300,
+          "std": 39.4124,
+          "ptp": 208.0,
+          "unique16": 14,
+          "laplacian_var": 4626.6447,
+          "edge_frac": 0.203922,
+          "skin_frac": 0.951567,
+          "red_frac": 0.822956
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 0.011697834357619286,
+          "Bruise": 6.0157854022691026e-05,
+          "Swelling": 0.988241970539093
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "qa_swelling_offcenter.jpg",
+      "group": "unrelated_or_photo",
+      "source": "data/sample/qa/qa_swelling_offcenter.jpg",
+      "shape": [
+        768,
+        1024,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.134855,
+          0.0,
+          0.865145
+        ],
+        "probs": {
+          "Cut": 0.134855,
+          "Bruise": 0.0,
+          "Swelling": 0.865145
+        },
+        "winner": "Swelling",
+        "max_prob": 0.865145,
+        "entropy": 0.395512,
+        "margin": 0.730291
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.224587,
+          "Bruise": 0.0,
+          "Swelling": 0.775413
+        },
+        "winner": "Swelling",
+        "max_prob": 0.775413
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 768,
+          "width": 1024,
+          "std": 39.4765,
+          "ptp": 215.0,
+          "unique16": 14,
+          "laplacian_var": 1180.6615,
+          "edge_frac": 0.027564,
+          "skin_frac": 0.795191,
+          "red_frac": 0.323273
+        }
+      },
+      "application_gated": {
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "softmax_not_trusted_closed_set_overconfidence",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "upload_forensic_no_detection.jpg",
+      "group": "unrelated_or_photo",
+      "source": "data/uploads/3e0dbd17-7475-487d-9f10-e7f9d6800238.jpg",
+      "shape": [
+        167,
+        300,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          4e-06,
+          0.0,
+          0.999996
+        ],
+        "probs": {
+          "Cut": 4e-06,
+          "Bruise": 0.0,
+          "Swelling": 0.999996
+        },
+        "winner": "Swelling",
+        "max_prob": 0.999996,
+        "entropy": 5.1e-05,
+        "margin": 0.999993
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.000232,
+          "Bruise": 2.9e-05,
+          "Swelling": 0.999739
+        },
+        "winner": "Swelling",
+        "max_prob": 0.999739
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 167,
+          "width": 300,
+          "std": 75.2177,
+          "ptp": 238.0,
+          "unique16": 15,
+          "laplacian_var": 593.0883,
+          "edge_frac": 0.163154,
+          "skin_frac": 0.282216,
+          "red_frac": 0.096287
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 0.00023227935889735818,
+          "Bruise": 2.8792283046641387e-05,
+          "Swelling": 0.999738872051239
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "upload_0047fcef.jpg",
+      "group": "unrelated_or_photo",
+      "source": "data/uploads/0047fcef-5885-4467-a4d8-39e82247b167.jpg",
+      "shape": [
+        300,
+        300,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.001286,
+          0.0,
+          0.998713
+        ],
+        "probs": {
+          "Cut": 0.001286,
+          "Bruise": 0.0,
+          "Swelling": 0.998713
+        },
+        "winner": "Swelling",
+        "max_prob": 0.998713,
+        "entropy": 0.009854,
+        "margin": 0.997427
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.011698,
+          "Bruise": 6e-05,
+          "Swelling": 0.988242
+        },
+        "winner": "Swelling",
+        "max_prob": 0.988242
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 300,
+          "width": 300,
+          "std": 39.4124,
+          "ptp": 208.0,
+          "unique16": 14,
+          "laplacian_var": 4626.6447,
+          "edge_frac": 0.203922,
+          "skin_frac": 0.951567,
+          "red_frac": 0.822956
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 0.011697834357619286,
+          "Bruise": 6.0157854022691026e-05,
+          "Swelling": 0.988241970539093
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "synthetic_swollen_ankle.jpg",
+      "group": "unrelated_or_photo",
+      "source": "data/uploads/synthetic_swollen_ankle.jpg",
+      "shape": [
+        300,
+        300,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          8.3e-05,
+          5.9e-05,
+          0.999858
+        ],
+        "probs": {
+          "Cut": 8.3e-05,
+          "Bruise": 5.9e-05,
+          "Swelling": 0.999858
+        },
+        "winner": "Swelling",
+        "max_prob": 0.999858,
+        "entropy": 0.001492,
+        "margin": 0.999776
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.00189,
+          "Bruise": 0.00151,
+          "Swelling": 0.9966
+        },
+        "winner": "Swelling",
+        "max_prob": 0.9966
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 300,
+          "width": 300,
+          "std": 41.1461,
+          "ptp": 213.0,
+          "unique16": 14,
+          "laplacian_var": 4960.7112,
+          "edge_frac": 0.214856,
+          "skin_frac": 0.187289,
+          "red_frac": 0.068667
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 0.0018895204411819577,
+          "Bruise": 0.0015104807680472732,
+          "Swelling": 0.9965999722480774
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_cut_public_sample_0001",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0001.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "probs": {
+          "Cut": 1.0,
+          "Bruise": 0.0,
+          "Swelling": 0.0
+        },
+        "winner": "Cut",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 1.0,
+          "Bruise": 0.0,
+          "Swelling": 0.0
+        },
+        "winner": "Cut",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 12.6068,
+          "ptp": 139.0,
+          "unique16": 10,
+          "laplacian_var": 231.1936,
+          "edge_frac": 0.007354,
+          "skin_frac": 0.977599,
+          "red_frac": 0.983339
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Cut",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.0,
+          "Bruise": 3.9642222436176403e-19,
+          "Swelling": 1.8530096185629453e-20
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_bruise_public_sample_0002",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0002.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 1.0,
+          "Swelling": 0.0
+        },
+        "winner": "Bruise",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 1.0,
+          "Swelling": 0.0
+        },
+        "winner": "Bruise",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 42.2013,
+          "ptp": 163.0,
+          "unique16": 10,
+          "laplacian_var": 345.7758,
+          "edge_frac": 0.007613,
+          "skin_frac": 0.809451,
+          "red_frac": 0.76704
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Bruise",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.2384121950636095e-28,
+          "Bruise": 1.0,
+          "Swelling": 1.9885140394136702e-26
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0003",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0003.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 10.7694,
+          "ptp": 68.0,
+          "unique16": 6,
+          "laplacian_var": 36.8621,
+          "edge_frac": 0.018435,
+          "skin_frac": 1.0,
+          "red_frac": 0.730389
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 9.156730851474503e-22,
+          "Bruise": 1.3207560787385456e-18,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0004",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0004.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.2895,
+          "ptp": 116.0,
+          "unique16": 9,
+          "laplacian_var": 138.3,
+          "edge_frac": 0.011081,
+          "skin_frac": 0.99153,
+          "red_frac": 0.984774
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 9.208553014070547e-19,
+          "Bruise": 2.9572363878700453e-15,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0005",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0005.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 27.9984,
+          "ptp": 142.0,
+          "unique16": 9,
+          "laplacian_var": 178.0342,
+          "edge_frac": 0.0056,
+          "skin_frac": 0.914521,
+          "red_frac": 0.991091
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 6.787077817078588e-14,
+          "Bruise": 7.490501768224184e-26,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0006",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0006.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 19.8066,
+          "ptp": 124.0,
+          "unique16": 9,
+          "laplacian_var": 188.6521,
+          "edge_frac": 0.016502,
+          "skin_frac": 0.771963,
+          "red_frac": 0.982641
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 7.584384625785229e-17,
+          "Bruise": 9.992444370036531e-17,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0010",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0010.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.2696,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 142.569,
+          "edge_frac": 0.010623,
+          "skin_frac": 0.992347,
+          "red_frac": 0.98286
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 8.474203986532202e-17,
+          "Bruise": 2.9428596897980823e-19,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0016",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0016.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.3088,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 132.1581,
+          "edge_frac": 0.010782,
+          "skin_frac": 0.99155,
+          "red_frac": 0.982601
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 3.379195361030707e-12,
+          "Bruise": 6.0494907694330635e-12,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0022",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0022.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.1028,
+          "ptp": 116.0,
+          "unique16": 9,
+          "laplacian_var": 140.2225,
+          "edge_frac": 0.010164,
+          "skin_frac": 0.991012,
+          "red_frac": 0.989995
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 3.838903036647361e-18,
+          "Bruise": 2.1001482581404406e-23,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0028",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0028.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 10.798,
+          "ptp": 114.0,
+          "unique16": 8,
+          "laplacian_var": 119.0492,
+          "edge_frac": 0.009546,
+          "skin_frac": 0.992267,
+          "red_frac": 0.990673
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 4.617380899830069e-14,
+          "Bruise": 3.703025551581848e-16,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0034",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0034.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 10.9669,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 136.1162,
+          "edge_frac": 0.010762,
+          "skin_frac": 0.992188,
+          "red_frac": 0.984116
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 9.885600573015794e-25,
+          "Bruise": 1.0851803261329937e-13,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0040",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0040.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.1314,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 125.2774,
+          "edge_frac": 0.011161,
+          "skin_frac": 0.991948,
+          "red_frac": 0.983937
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 3.873348581977243e-13,
+          "Bruise": 6.971973505112824e-15,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0046",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0046.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.1725,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 132.3097,
+          "edge_frac": 0.009945,
+          "skin_frac": 0.991689,
+          "red_frac": 0.989357
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 4.2393414027948534e-16,
+          "Bruise": 1.610519230924067e-19,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0052",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0052.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.2415,
+          "ptp": 123.0,
+          "unique16": 9,
+          "laplacian_var": 142.6683,
+          "edge_frac": 0.011001,
+          "skin_frac": 0.991769,
+          "red_frac": 0.985112
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 2.3434596277405184e-13,
+          "Bruise": 1.784035701286879e-12,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0058",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0058.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.359,
+          "ptp": 113.0,
+          "unique16": 9,
+          "laplacian_var": 147.6495,
+          "edge_frac": 0.01132,
+          "skin_frac": 0.991669,
+          "red_frac": 0.988919
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 3.0667954070348613e-13,
+          "Bruise": 3.1345737997456066e-17,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0064",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0064.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 10.8831,
+          "ptp": 120.0,
+          "unique16": 9,
+          "laplacian_var": 134.387,
+          "edge_frac": 0.010124,
+          "skin_frac": 0.992028,
+          "red_frac": 0.988401
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 7.570329048739636e-19,
+          "Bruise": 2.0841052106928722e-17,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0070",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0070.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.3242,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 157.5254,
+          "edge_frac": 0.011579,
+          "skin_frac": 0.99153,
+          "red_frac": 0.981067
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.4730475547024627e-14,
+          "Bruise": 5.820748580126402e-15,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0076",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0076.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.3938,
+          "ptp": 118.0,
+          "unique16": 8,
+          "laplacian_var": 147.9418,
+          "edge_frac": 0.011201,
+          "skin_frac": 0.99145,
+          "red_frac": 0.984953
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 7.483300437649554e-12,
+          "Bruise": 1.3730731876742796e-14,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0082",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0082.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.5516,
+          "ptp": 116.0,
+          "unique16": 9,
+          "laplacian_var": 167.5477,
+          "edge_frac": 0.011978,
+          "skin_frac": 0.99149,
+          "red_frac": 0.987165
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.1197558044640996e-13,
+          "Bruise": 2.215219252123907e-18,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0088",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0088.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.2441,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 132.9538,
+          "edge_frac": 0.011141,
+          "skin_frac": 0.99135,
+          "red_frac": 0.984235
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 5.509077352292002e-13,
+          "Bruise": 1.6605109490009176e-16,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0094",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0094.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.0093,
+          "ptp": 114.0,
+          "unique16": 8,
+          "laplacian_var": 123.3125,
+          "edge_frac": 0.009666,
+          "skin_frac": 0.992188,
+          "red_frac": 0.987743
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.371324826967852e-14,
+          "Bruise": 2.2371090169139712e-13,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0100",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0100.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.0954,
+          "ptp": 116.0,
+          "unique16": 9,
+          "laplacian_var": 136.368,
+          "edge_frac": 0.010583,
+          "skin_frac": 0.992028,
+          "red_frac": 0.986209
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.8604289887008576e-16,
+          "Bruise": 8.911588324074562e-20,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0106",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0106.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 10.8829,
+          "ptp": 125.0,
+          "unique16": 9,
+          "laplacian_var": 126.4192,
+          "edge_frac": 0.009766,
+          "skin_frac": 0.991331,
+          "red_frac": 0.987026
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 7.753554310708653e-18,
+          "Bruise": 7.045402299965016e-19,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0112",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0112.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.1859,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 128.452,
+          "edge_frac": 0.010902,
+          "skin_frac": 0.99155,
+          "red_frac": 0.984335
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 2.2151787071322815e-09,
+          "Bruise": 9.003920005412613e-12,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0118",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0118.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 10.8317,
+          "ptp": 116.0,
+          "unique16": 9,
+          "laplacian_var": 126.8676,
+          "edge_frac": 0.009985,
+          "skin_frac": 0.992327,
+          "red_frac": 0.985033
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 6.546808970068113e-17,
+          "Bruise": 1.6267455047944135e-12,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0124",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0124.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.4268,
+          "ptp": 125.0,
+          "unique16": 9,
+          "laplacian_var": 151.5053,
+          "edge_frac": 0.012018,
+          "skin_frac": 0.992227,
+          "red_frac": 0.983398
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.8080424310507048e-12,
+          "Bruise": 8.283112151903638e-13,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0130",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0130.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.3131,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 147.9396,
+          "edge_frac": 0.011798,
+          "skin_frac": 0.992008,
+          "red_frac": 0.985471
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 4.534552941470871e-11,
+          "Bruise": 9.261520925716617e-15,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "train_unique_swelling_public_sample_0136",
+      "group": "in_domain_unique_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0136.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.0892,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 142.266,
+          "edge_frac": 0.010722,
+          "skin_frac": 0.99153,
+          "red_frac": 0.986348
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.1556391956397521e-22,
+          "Bruise": 3.976653023390208e-21,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_swelling_public_sample_0171",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0171.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 10.7694,
+          "ptp": 68.0,
+          "unique16": 6,
+          "laplacian_var": 36.8621,
+          "edge_frac": 0.018435,
+          "skin_frac": 1.0,
+          "red_frac": 0.730389
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 9.156730851474503e-22,
+          "Bruise": 1.3207560787385456e-18,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_swelling_public_sample_0172",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0172.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.5054,
+          "ptp": 114.0,
+          "unique16": 8,
+          "laplacian_var": 143.5619,
+          "edge_frac": 0.011998,
+          "skin_frac": 0.99161,
+          "red_frac": 0.987424
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 5.9111625246601066e-18,
+          "Bruise": 1.449846150089861e-20,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_swelling_public_sample_0173",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0173.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 27.9984,
+          "ptp": 142.0,
+          "unique16": 9,
+          "laplacian_var": 178.0342,
+          "edge_frac": 0.0056,
+          "skin_frac": 0.914521,
+          "red_frac": 0.991091
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 6.787077817078588e-14,
+          "Bruise": 7.490501768224184e-26,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_swelling_public_sample_0174",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0174.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 19.8066,
+          "ptp": 124.0,
+          "unique16": 9,
+          "laplacian_var": 188.6521,
+          "edge_frac": 0.016502,
+          "skin_frac": 0.771963,
+          "red_frac": 0.982641
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 7.584384625785229e-17,
+          "Bruise": 9.992444370036531e-17,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_cut_public_sample_0175",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0175.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "probs": {
+          "Cut": 1.0,
+          "Bruise": 0.0,
+          "Swelling": 0.0
+        },
+        "winner": "Cut",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 1.0,
+          "Bruise": 0.0,
+          "Swelling": 0.0
+        },
+        "winner": "Cut",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 12.6068,
+          "ptp": 139.0,
+          "unique16": 10,
+          "laplacian_var": 231.1936,
+          "edge_frac": 0.007354,
+          "skin_frac": 0.977599,
+          "red_frac": 0.983339
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Cut",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.0,
+          "Bruise": 3.9642222436176403e-19,
+          "Swelling": 1.8530096185629453e-20
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_bruise_public_sample_0176",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0176.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 1.0,
+          "Swelling": 0.0
+        },
+        "winner": "Bruise",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 1.0,
+          "Swelling": 0.0
+        },
+        "winner": "Bruise",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 42.2013,
+          "ptp": 163.0,
+          "unique16": 10,
+          "laplacian_var": 345.7758,
+          "edge_frac": 0.007613,
+          "skin_frac": 0.809451,
+          "red_frac": 0.76704
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Bruise",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 1.2384121950636095e-28,
+          "Bruise": 1.0,
+          "Swelling": 1.9885140394136702e-26
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_duplicate_copy_swelling_public_sample_0177",
+      "group": "in_domain_heldout_duplicate_copy",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0177.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 10.7694,
+          "ptp": 68.0,
+          "unique16": 6,
+          "laplacian_var": 36.8621,
+          "edge_frac": 0.018435,
+          "skin_frac": 1.0,
+          "red_frac": 0.730389
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 9.156730851474503e-22,
+          "Bruise": 1.3207560787385456e-18,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_swelling_public_sample_0178",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0178.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.0707,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 136.3339,
+          "edge_frac": 0.010583,
+          "skin_frac": 0.992028,
+          "red_frac": 0.989696
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 8.322238975429566e-14,
+          "Bruise": 3.125987995859551e-17,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_duplicate_copy_swelling_public_sample_0179",
+      "group": "in_domain_heldout_duplicate_copy",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0179.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 27.9984,
+          "ptp": 142.0,
+          "unique16": 9,
+          "laplacian_var": 178.0342,
+          "edge_frac": 0.0056,
+          "skin_frac": 0.914521,
+          "red_frac": 0.991091
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 6.787077817078588e-14,
+          "Bruise": 7.490501768224184e-26,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_swelling_public_sample_0184",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0184.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.0578,
+          "ptp": 118.0,
+          "unique16": 9,
+          "laplacian_var": 133.3981,
+          "edge_frac": 0.010981,
+          "skin_frac": 0.992805,
+          "red_frac": 0.982801
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 2.3732023290978788e-12,
+          "Bruise": 1.0599880348460822e-12,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_swelling_public_sample_0190",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0190.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.2626,
+          "ptp": 117.0,
+          "unique16": 9,
+          "laplacian_var": 126.1863,
+          "edge_frac": 0.010583,
+          "skin_frac": 0.991271,
+          "red_frac": 0.983797
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 2.1043820213972826e-16,
+          "Bruise": 1.328412491439658e-16,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "test_unique_swelling_public_sample_0196",
+      "group": "in_domain_heldout_template",
+      "source": "data/datasets/public_wound_dataset/images/public_sample_0196.jpg",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0,
+        "entropy": 0.0,
+        "margin": 1.0
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.0,
+          "Bruise": 0.0,
+          "Swelling": 1.0
+        },
+        "winner": "Swelling",
+        "max_prob": 1.0
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 11.5261,
+          "ptp": 125.0,
+          "unique16": 9,
+          "laplacian_var": 169.6581,
+          "edge_frac": 0.011858,
+          "skin_frac": 0.990693,
+          "red_frac": 0.986149
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Swelling",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 3.0159355915437835e-12,
+          "Bruise": 2.094992846465426e-14,
+          "Swelling": 1.0
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "synthetic_cut_template_redrawn",
+      "group": "in_domain_redrawn_generator",
+      "source": "generated_same_as_download_public_datasets",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.982052,
+          0.001703,
+          0.016245
+        ],
+        "probs": {
+          "Cut": 0.982052,
+          "Bruise": 0.001703,
+          "Swelling": 0.016245
+        },
+        "winner": "Cut",
+        "max_prob": 0.982052,
+        "entropy": 0.09557,
+        "margin": 0.965807
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.92648,
+          "Bruise": 0.013371,
+          "Swelling": 0.060149
+        },
+        "winner": "Cut",
+        "max_prob": 0.92648
+      },
+      "quality_gate": {
+        "status": "VALID",
+        "reason": "passed_input_quality_gates",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 14.1609,
+          "ptp": 84.0,
+          "unique16": 2,
+          "laplacian_var": 232.875,
+          "edge_frac": 0.006896,
+          "skin_frac": 0.970723,
+          "red_frac": 1.0
+        }
+      },
+      "application_gated": {
+        "status": "VALID",
+        "reason": "passed_quality_and_confidence_gates",
+        "winner": "Cut",
+        "is_confident": true,
+        "class_probs_after_gate": {
+          "Cut": 0.9264800548553467,
+          "Bruise": 0.013371308334171772,
+          "Swelling": 0.06014857068657875
+        }
+      },
+      "gate_hides_raw_injury_argmax": false
+    },
+    {
+      "name": "blurred_cut_template",
+      "group": "blurred",
+      "source": "generated_probe",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "class_order": [
+        "Cut",
+        "Bruise",
+        "Swelling"
+      ],
+      "raw_softmax_T1": {
+        "array": [
+          0.000504,
+          0.0,
+          0.999496
+        ],
+        "probs": {
+          "Cut": 0.000504,
+          "Bruise": 0.0,
+          "Swelling": 0.999496
+        },
+        "winner": "Swelling",
+        "max_prob": 0.999496,
+        "entropy": 0.004331,
+        "margin": 0.998992
+      },
+      "raw_softmax_T1_5_temperature_scaled_not_a_gate": {
+        "probs": {
+          "Cut": 0.006294,
+          "Bruise": 2.3e-05,
+          "Swelling": 0.993683
+        },
+        "winner": "Swelling",
+        "max_prob": 0.993683
+      },
+      "quality_gate": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "metrics": {
+          "height": 224,
+          "width": 224,
+          "std": 7.7492,
+          "ptp": 39.0,
+          "unique16": 3,
+          "laplacian_var": 0.4096,
+          "edge_frac": 0.0,
+          "skin_frac": 1.0,
+          "red_frac": 1.0
+        }
+      },
+      "application_gated": {
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "winner": null,
+        "is_confident": false,
+        "class_probs_after_gate": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        }
+      },
+      "gate_hides_raw_injury_argmax": true
+    }
+  ],
+  "confidence_analysis": {
+    "test_mean_max_softmax": 1.0,
+    "test_frac_ge_0.95": 1.0,
+    "test_ece_10bin": 0.0,
+    "test_brier": 0.0,
+    "ood_raw_typically_collapses_to_swelling": true
+  },
+  "gate_analysis": {
+    "verdict": "GATE_LEAKS_CONFIDENT_OOD",
+    "uniform_gate_is": "useful_safety_guard",
+    "uniform_gate_is_not": "a_fix_for_the_classifier",
+    "names_where_gate_hides_raw_injury_argmax": [
+      "gray",
+      "black",
+      "white",
+      "blank_midgray",
+      "blank_skin.jpg",
+      "dummy_test.jpg",
+      "skin_tone_uniform",
+      "blue_unrelated",
+      "green_unrelated",
+      "blue_striped_unrelated",
+      "high_frequency_noise",
+      "blurred_cut_template"
+    ],
+    "still_confident_on_ood_or_blank": [
+      "football_injury.jpg",
+      "upload_forensic_no_detection.jpg",
+      "upload_0047fcef.jpg",
+      "synthetic_swollen_ankle.jpg"
+    ],
+    "do_not_remove_gates": true
+  },
+  "root_cause": [
+    "Production head was trained on ~5 unique PIL templates (cut/bruise/swelling plus remapped abrasion/laceration/burn drawings labeled swelling).",
+    "Train/val/test share exact pixel duplicates, so 1.0 held-out accuracy is template memorization.",
+    "Closed 3-class softmax has no negative/normal class, so blanks map to swelling at ~0.96-1.0.",
+    "Head-only training with no augmentation and no OOD negatives.",
+    "Quality gates withhold blanks; they do not make the classifier trustworthy."
+  ],
+  "retraining_recommendation": [
+    "Do not retrain on public_wound_dataset as-is.",
+    "Need unique real photos, a true no-injury class, no silent remap, hash-disjoint splits, and OOD/blank labeled as reject/normal.",
+    "A 4-class processed candidate already exists and was correctly NOT promoted (KEEP_BASELINE); it still collapsed some blanks to swelling.",
+    "Keep current uniform/OOD gates until a verified replacement exists."
+  ],
+  "final_status": "NOT_TRUSTWORTHY",
+  "also": "REQUIRES_RETRAINING",
+  "not": [
+    "ALREADY_FIXED",
+    "PARTIALLY_FIXED"
+  ],
+  "held_out_accuracy_is_meaningful": false
+}

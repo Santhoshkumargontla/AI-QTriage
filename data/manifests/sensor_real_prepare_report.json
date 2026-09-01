@@ -1,0 +1,30 @@
+{
+  "created_utc": "2026-08-30T08:35:17.299896+00:00",
+  "status": "OK",
+  "manifest": "data/datasets/manifests/sensor_real_manifest.csv",
+  "rows": 6505,
+  "by_source": {
+    "SisFall": 4505,
+    "UCI_HAR": 2000
+  },
+  "by_label": {
+    "normal_activity": 4467,
+    "fall": 1798,
+    "impact": 240
+  },
+  "by_split": {
+    "train": 4247,
+    "test": 1228,
+    "val": 1030
+  },
+  "subjects": 68,
+  "subject_leakage_train_test": 0,
+  "label_mapping": {
+    "SisFall_F_star": "fall",
+    "SisFall_D18_D19": "impact",
+    "SisFall_other_D": "normal_activity",
+    "UCI_HAR_all": "normal_activity"
+  },
+  "uci_max_subsample": 2000,
+  "data_provenance_class": "REAL"
+}

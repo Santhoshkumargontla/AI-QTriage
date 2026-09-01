@@ -1,0 +1,14 @@
+{
+  "audit_timestamp": "2026-08-27T14:09:30.836045+00:00",
+  "model_path": "ml/models/vision/yolo11_injury_best.pt",
+  "file_exists": true,
+  "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+  "load_status": "LIVE_EXECUTION_VERIFIED",
+  "inference_device": "CPU (PyTorch / Ultralytics)",
+  "inference_time_ms": 3837.62,
+  "detections_count": 0,
+  "detections": [],
+  "yolo_detected_anything": false,
+  "frontend_no_detection_disclaimer": "YOLO Detection: No objects detected | Attention Visualization: Classification attention only \u2014 not object detection",
+  "evidence_type": "REAL_EXECUTION_VERIFIED"
+}

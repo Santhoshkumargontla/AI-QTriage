@@ -1,0 +1,107 @@
+{
+  "created_utc": "2026-08-30T09:03:06.132151+00:00",
+  "output": "data/datasets/yolo_expanded_v1",
+  "names": [
+    "cut",
+    "bruise",
+    "abrasion",
+    "burn",
+    "wound",
+    "laceration"
+  ],
+  "image_counts": {
+    "train": 1935,
+    "val": 442,
+    "test": 436
+  },
+  "box_counts": {
+    "abrasion": 616,
+    "burn": 2186,
+    "cut": 129,
+    "laceration": 21,
+    "bruise": 646,
+    "wound": 298
+  },
+  "negative_counts": {
+    "train": 129,
+    "val": 34,
+    "test": 22
+  },
+  "source_counts": {
+    "roboflow_aid": 257,
+    "roboflow_injury_detection_v2": 703,
+    "roboflow_wound2": 285,
+    "shubhambaid_skin_burn": 1090,
+    "hf_wseg": 293,
+    "ibrahimfateen_normal": 180,
+    "ood_hard_negative": 5
+  },
+  "skipped_class_boxes": {
+    "scarring": 13
+  },
+  "wseg_added": 293,
+  "normal_added": 180,
+  "ood_added": 5,
+  "unique_images": 2813,
+  "forensic_excluded": true,
+  "leakage_exact_hash": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "leakage_free": true,
+  "class_support_honest": {
+    "cut": {
+      "status": "SUPPORTED",
+      "train_boxes": 81,
+      "val_boxes": 24,
+      "test_boxes": 24,
+      "total_boxes": 129
+    },
+    "bruise": {
+      "status": "SUPPORTED",
+      "train_boxes": 458,
+      "val_boxes": 87,
+      "test_boxes": 101,
+      "total_boxes": 646
+    },
+    "abrasion": {
+      "status": "SUPPORTED",
+      "train_boxes": 425,
+      "val_boxes": 97,
+      "test_boxes": 94,
+      "total_boxes": 616
+    },
+    "burn": {
+      "status": "SUPPORTED",
+      "train_boxes": 1503,
+      "val_boxes": 340,
+      "test_boxes": 343,
+      "total_boxes": 2186
+    },
+    "wound": {
+      "status": "SUPPORTED",
+      "train_boxes": 194,
+      "val_boxes": 51,
+      "test_boxes": 53,
+      "total_boxes": 298
+    },
+    "laceration": {
+      "status": "SUPPORTED",
+      "train_boxes": 14,
+      "val_boxes": 3,
+      "test_boxes": 4,
+      "total_boxes": 21
+    }
+  },
+  "not_box_classes": {
+    "Normal": "empty-label negatives from ibrahimfateen Normal",
+    "OOD_Reject": "empty-label hard negatives; inference rejects when no box",
+    "Fracture": "excluded \u2014 X-ray modality; see yolo_fracture_xray_v1"
+  },
+  "known_limitations": [
+    "Laceration mostly from Stab remaps + any Roboflow laceration if present; Yasin folder labels not used as invented boxes.",
+    "Wound boxes include WSEG mask-derived bboxes (approximate).",
+    "Fracture not in this head."
+  ]
+}

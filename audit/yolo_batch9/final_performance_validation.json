@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T12:57:21.270882+00:00",
+  "device": "CPU (Intel/AMD 12 OpenMP threads)",
+  "runs": 10,
+  "min_latency_ms": 96.22,
+  "avg_latency_ms": 103.94,
+  "max_latency_ms": 116.24,
+  "status": "PASS"
+}

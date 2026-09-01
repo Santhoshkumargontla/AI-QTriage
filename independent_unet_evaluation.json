@@ -1,0 +1,13 @@
+{
+  "model_name": "ResNet34-UNet Segmentation",
+  "version": "v1.2.1",
+  "test_samples": 30,
+  "mean_dice": 0.864,
+  "median_dice": 0.871,
+  "min_dice": 0.762,
+  "max_dice": 0.941,
+  "mean_iou": 0.761,
+  "precision": 0.878,
+  "recall": 0.852,
+  "verification_status": "PASS"
+}

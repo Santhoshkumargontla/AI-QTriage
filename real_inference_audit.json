@@ -1,0 +1,44 @@
+[
+  {
+    "model": "YOLO11 Detection",
+    "input_type": "RGB Image (480x640)",
+    "forward_success": true,
+    "output": "Bounding box list",
+    "status": "PASS"
+  },
+  {
+    "model": "EfficientNetV2 Classification",
+    "input_type": "RGB Image (224x224)",
+    "forward_success": true,
+    "output": "Class dict + confidence metadata",
+    "status": "PASS"
+  },
+  {
+    "model": "ResNet34-UNet Segmentation",
+    "input_type": "RGB Image (256x256)",
+    "forward_success": true,
+    "output": "Binary mask + affected ratio",
+    "status": "PASS"
+  },
+  {
+    "model": "Dedicated Sensor Motion Model",
+    "input_type": "Kinetic Telemetry (2.5s window)",
+    "forward_success": true,
+    "output": "Motion event prediction",
+    "status": "PASS"
+  },
+  {
+    "model": "XGBoost Multimodal Model",
+    "input_type": "Multimodal Vector (Vision+Sensor+Survey)",
+    "forward_success": true,
+    "output": "Clinical risk score & class",
+    "status": "PASS"
+  },
+  {
+    "model": "Experimental 4-Qubit VQC",
+    "input_type": "4-Component PCA Vector",
+    "forward_success": true,
+    "output": "Quantum state expectation",
+    "status": "EXPERIMENTAL"
+  }
+]

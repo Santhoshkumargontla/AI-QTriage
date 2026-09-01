@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "external_dataset_a": "Roboflow MedWound External Split (50 images)",
+  "external_dataset_b": "WACV WSNet Cutaneous Lesion Set (40 images)",
+  "status": "PASS"
+}

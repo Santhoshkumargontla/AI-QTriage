@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T13:57:32.584745+00:00",
+  "real_clinical_samples": 0,
+  "synthetic_samples": 0,
+  "hybrid_simulation_samples": 200,
+  "train_split": 140,
+  "val_split": 30,
+  "test_split": 30,
+  "provenance": "WSNet, Roboflow Universe, SurgWound archives combined into hybrid multimodal simulation corpus",
+  "evidence_classification": "REAL_EXECUTION_VERIFIED"
+}

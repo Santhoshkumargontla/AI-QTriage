@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T12:53:18.757895+00:00",
+  "active_checkpoint_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_best.pt",
+  "active_sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+  "runtime_verified": true,
+  "status": "PASS"
+}

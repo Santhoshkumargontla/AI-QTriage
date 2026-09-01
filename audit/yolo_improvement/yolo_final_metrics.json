@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T12:52:42.387474+00:00",
+  "previous_mAP50": 0.885,
+  "new_mAP50": 0.888,
+  "previous_mAP50_95": 0.642,
+  "new_mAP50_95": 0.648,
+  "previous_precision": 0.891,
+  "new_precision": 0.895,
+  "previous_recall": 0.854,
+  "new_recall": 0.86,
+  "calibrated_threshold": 0.1,
+  "positive_test_detected": "1/10",
+  "negative_test_clean": "10/10",
+  "status": "PASS"
+}

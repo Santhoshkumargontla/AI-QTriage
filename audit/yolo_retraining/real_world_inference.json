@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T13:17:24.939494+00:00",
+  "tested_images_count": 30,
+  "all_passed": true,
+  "sample_image": "football_injury.jpg",
+  "yolo_finding": "Wound",
+  "yolo_confidence": 0.1153,
+  "status": "PASS"
+}

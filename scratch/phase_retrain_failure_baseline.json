@@ -1,0 +1,662 @@
+{
+  "created_utc": "2026-08-29T11:56:29.219418+00:00",
+  "artifact_sha": {
+    "yolo": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "effnet": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+    "unet": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1"
+  },
+  "probes": {
+    "black": {
+      "path": "C:\\Users\\santh\\Capstone Project Code\\scratch\\ood_probes\\black.png",
+      "pixel_mean": 0.0,
+      "pixel_std": 0.0,
+      "effnet_raw": {
+        "winner": null,
+        "max": null,
+        "probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        },
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_confident": false
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      },
+      "yolo_dets": []
+    },
+    "white": {
+      "path": "C:\\Users\\santh\\Capstone Project Code\\scratch\\ood_probes\\white.png",
+      "pixel_mean": 255.0,
+      "pixel_std": 0.0,
+      "effnet_raw": {
+        "winner": null,
+        "max": null,
+        "probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        },
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_confident": false
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      },
+      "yolo_dets": []
+    },
+    "gray": {
+      "path": "C:\\Users\\santh\\Capstone Project Code\\scratch\\ood_probes\\gray.png",
+      "pixel_mean": 128.0,
+      "pixel_std": 0.0,
+      "effnet_raw": {
+        "winner": null,
+        "max": null,
+        "probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        },
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image",
+        "is_confident": false
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "uniform_or_blank_image"
+      },
+      "yolo_dets": []
+    },
+    "noise": {
+      "path": "C:\\Users\\santh\\Capstone Project Code\\scratch\\ood_probes\\noise.png",
+      "pixel_mean": 126.6292012532552,
+      "pixel_std": 73.66036461030544,
+      "effnet_raw": {
+        "winner": null,
+        "max": null,
+        "probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        },
+        "status": "OUT_OF_DISTRIBUTION",
+        "reason": "high_frequency_unstructured",
+        "is_confident": false
+      },
+      "unet": {
+        "raw_pos_ratio": 6.1e-05,
+        "pos_px": 0,
+        "reliable": false,
+        "withheld": true,
+        "status": "UNTRUSTWORTHY_OUTPUT",
+        "reason": "ood_high_frequency_unstructured"
+      },
+      "yolo_dets": []
+    },
+    "unrelated_green": {
+      "path": "C:\\Users\\santh\\Capstone Project Code\\scratch\\ood_probes\\unrelated_green.png",
+      "pixel_mean": 73.56901041666667,
+      "pixel_std": 46.203528771033554,
+      "effnet_raw": {
+        "winner": null,
+        "max": null,
+        "probs": {
+          "Cut": null,
+          "Bruise": null,
+          "Swelling": null
+        },
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "blank_or_blurred_insufficient_detail",
+        "is_confident": false
+      },
+      "unet": {
+        "raw_pos_ratio": 0.0,
+        "pos_px": 0,
+        "reliable": false,
+        "withheld": true,
+        "status": "LOW_QUALITY_INPUT",
+        "reason": "blank_or_blurred_insufficient_detail"
+      },
+      "yolo_dets": []
+    }
+  },
+  "demo_image": {
+    "path": "C:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+    "sha256": "98fde1b24ca1a077a7c47d0cdaaf7b2c906f213152b9e714a874a50392eef48e",
+    "shape": [
+      300,
+      300,
+      3
+    ],
+    "yolo": [],
+    "effnet": {
+      "winner": "Swelling",
+      "max": 0.9882420897483826,
+      "status": "VALID",
+      "model_status_note": "see metadata NOT_TRUSTWORTHY"
+    },
+    "unet": {
+      "raw_pos": 0.012543,
+      "reliable": true,
+      "withheld": false
+    }
+  },
+  "forensic_hand": {
+    "path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\ac69884f-7a50-48e5-b7cc-a9bea9b20313.jpeg",
+    "sha256": "87a76147983d0cdb3a63c9f3d3988b0e16ba8157085513f63463de26a559b446",
+    "yolo_top": {
+      "finding": "bruise",
+      "confidence": 0.7574,
+      "bounding_box": [
+        1.41,
+        0.0,
+        405.61,
+        320.86
+      ],
+      "low_confidence": false,
+      "keep_threshold": 0.25,
+      "class_support_status": "bruise",
+      "image_width": 1283,
+      "image_height": 700,
+      "model_version": "v1.4.0",
+      "model_status": "INFERENCE_EXECUTES",
+      "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+      "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879"
+    },
+    "yolo_n": 2,
+    "effnet": {
+      "winner": "Swelling",
+      "max": 1.0,
+      "status": "VALID"
+    },
+    "unet_roi": {
+      "raw_pos": 0.0,
+      "reliable": false,
+      "withheld": true
+    }
+  },
+  "xgb_vqc_sensor": {
+    "xgboost": {
+      "model_name": "XGBoost Multimodal",
+      "version": "v1.2.0",
+      "status": "TRAINED",
+      "data_provenance": "synthetic_multimodal_fusion",
+      "data_provenance_class": "SYNTHETIC",
+      "runtime_canonical_path": "ml/models/xgboost_best.json",
+      "booster_fit_was_real": true,
+      "training_was_real_clinical": false,
+      "evaluation_scope": "synthetic_held_out",
+      "research_limitation": "The multimodal records represent 200 synthetic engineering fusion samples and 0 genuinely paired patient records. DATA_PROVENANCE=SYNTHETIC.",
+      "canonical_path": "ml/models/xgboost_best.json",
+      "dataset_provenance": "200 synthetic 23-feature fusion samples. 0 genuinely paired clinical records.",
+      "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "classes": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "training_status": "TRAINED",
+      "known_limitations": "Labels are rule-derived research categories, not clinical severity. 0 genuinely paired patient records. HIGH class support on test is 3. Not clinical.",
+      "pca_components": 4,
+      "pca_variance_ratio": [
+        0.2343,
+        0.1248,
+        0.11,
+        0.1002
+      ],
+      "metrics": {
+        "genuinely_paired_clinical_samples": 0,
+        "synthetic_multimodal_fusion_samples": 200,
+        "train_samples": 140,
+        "val_samples": 30,
+        "test_samples": 30,
+        "correct_predictions": "25 / 30",
+        "overall_accuracy": 0.833333,
+        "macro_precision": 0.822222,
+        "macro_recall": 0.769281,
+        "macro_f1": 0.78502,
+        "mcc": 0.702692,
+        "high_class_precision": 0.666667,
+        "high_class_recall": 0.666667,
+        "high_class_f1": 0.666667,
+        "high_class_support": 3,
+        "brier_score": 0.304532,
+        "ece": 0.118284,
+        "confusion_matrix": [
+          [
+            7,
+            3,
+            0
+          ],
+          [
+            0,
+            16,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "feature_importance": [
+          0.0,
+          0.0674,
+          0.0492,
+          0.0298,
+          0.0268,
+          0.039,
+          0.1004,
+          0.2317,
+          0.0515,
+          0.0
+        ]
+      }
+    },
+    "vqc": {
+      "model_name": "Experimental 4-Qubit VQC",
+      "version": "v1.4.0",
+      "status": "EXPERIMENTAL_ONLY",
+      "data_provenance_class": "SYNTHETIC",
+      "used_in_main_decision": false,
+      "recommendation": "DISABLE_FROM_MAIN_DECISION",
+      "disclaimer": "PennyLane default.qubit is a classical CPU simulator. No quantum advantage. EXPERIMENTAL_ONLY. Excluded from SOS, first-aid, and main case decisions.",
+      "canonical_path": "ml/models/vqc/vqc_weights.npz",
+      "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "classes": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "dataset_provenance": "Same 200 synthetic fusion samples as XGBoost. 0 clinical pairs.",
+      "training_status": "EXPERIMENTAL_ONLY",
+      "known_limitations": "Classical simulator only. Held-out 16/30 vs XGBoost 25/30. Isolated from SOS, first-aid, and main decisions. Quantum advantage not claimed.",
+      "metrics": {
+        "train_samples": 140,
+        "val_samples": 30,
+        "test_samples": 30,
+        "epochs": 15,
+        "lr": 0.1,
+        "optimizer": "PennyLane AdamOptimizer",
+        "loss_start": 1.1119120284481623,
+        "loss_end": 0.8746161075293077,
+        "loss_decreased": true,
+        "loss_history": [
+          1.111912,
+          1.054581,
+          1.013338,
+          0.98525,
+          0.965653,
+          0.951015,
+          0.939036,
+          0.928689,
+          0.919162,
+          0.909691,
+          0.900643,
+          0.892832,
+          0.886206,
+          0.880387,
+          0.874616
+        ],
+        "train_seconds": 48.1,
+        "circuit": {
+          "embedding": "AngleEmbedding",
+          "rotation": "X",
+          "ansatz": "StronglyEntanglingLayers",
+          "num_qubits": 4,
+          "num_layers": 2,
+          "measurement": "PauliZ_expval_per_qubit",
+          "postprocess": "linear_4_to_3_softmax",
+          "device": "default.qubit",
+          "qnode": "VQCClassifier._vqc_circuit",
+          "train_forward": "VQCClassifier._forward",
+          "predict_forward": "VQCClassifier._forward",
+          "circuits_match": true
+        },
+        "backend": "PennyLane default.qubit (classical simulator)",
+        "metrics_source": "held_out_test_via_VQCClassifier.predict",
+        "data_provenance_class": "SYNTHETIC",
+        "genuinely_paired_clinical_samples": 0,
+        "trained_at": "2026-08-28T17:38:37.547751+00:00",
+        "vqc_correct_predictions": "16 / 30",
+        "vqc_accuracy": 0.533333,
+        "vqc_macro_f1": 0.423016,
+        "vqc_mcc": 0.095978,
+        "vqc_macro_precision": 0.466184,
+        "vqc_macro_recall": 0.43268,
+        "vqc_per_class_support": [
+          10,
+          17,
+          3
+        ],
+        "vqc_brier_score": 0.512306,
+        "vqc_ece": 0.136455,
+        "vqc_confusion_matrix": [
+          [
+            2,
+            8,
+            0
+          ],
+          [
+            2,
+            13,
+            2
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "vqc_inference_latency_ms_per_sample": 3.51,
+        "xgb_comparison": {
+          "model": "XGBoost",
+          "correct_predictions": "25 / 30",
+          "accuracy": 0.833333,
+          "macro_f1": 0.78502,
+          "mcc": 0.702692,
+          "macro_precision": 0.822222,
+          "macro_recall": 0.769281,
+          "per_class_support": [
+            10,
+            17,
+            3
+          ],
+          "brier_score": 0.304532,
+          "ece": 0.118284,
+          "confusion_matrix": [
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              0,
+              16,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        "vqc_outperforms_xgboost": false,
+        "recommendation": "DISABLE_FROM_MAIN_DECISION",
+        "isolation": "EXPERIMENTAL_ONLY",
+        "used_in_main_decision": false
+      }
+    },
+    "sensor": {
+      "model_name": "Sensor Motion Event Classifier",
+      "version": "v1.2.0",
+      "status": "TRAINED",
+      "domain": "Motion / Fall / Impact Event Detection",
+      "classes": [
+        "normal_activity",
+        "fall",
+        "impact"
+      ],
+      "metrics": {
+        "dataset_name": "synthetic_50hz_motion_windows",
+        "sampling_rate_hz": 50.0,
+        "window_seconds": 2.5,
+        "train_samples": 138,
+        "val_samples": 26,
+        "test_samples": 36,
+        "correct_predictions": "28 / 36",
+        "accuracy": 0.777778,
+        "macro_f1": 0.733016,
+        "mcc": 0.658506,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.125,
+        "confusion_matrix": [
+          [
+            12,
+            0,
+            0
+          ],
+          [
+            3,
+            13,
+            0
+          ],
+          [
+            0,
+            5,
+            3
+          ]
+        ]
+      },
+      "weights_path": "ml/models/sensor_motion_best.json",
+      "canonical_path": "ml/models/sensor_motion_best.json",
+      "artifact_sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "scaler_path": "ml/models/sensor_scaler.pkl",
+      "scaler_sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959",
+      "data_provenance_class": "SYNTHETIC",
+      "dataset_provenance": "Generated by prepare_sensor_dataset() with np.random over 38 synthetic subject IDs. Schema is SisFall/UCI-HAR-like (50 Hz windows). Not downloaded SisFall or UCI HAR recordings.",
+      "training_status": "TRAINED",
+      "known_limitations": "Simulated football_fall can classify as normal_activity at high confidence. Missing gyro/lux features are FEATURE_MISSING, never invented. Not a fall-detection medical device."
+    }
+  },
+  "held_out_artifact": {
+    "evaluation": {
+      "status": "evaluated",
+      "timestamp": "2026-08-29T05:40:25.822563+00:00",
+      "test_sample_count": 30,
+      "disclaimer": "SYNTHETIC held-out split. VQC is EXPERIMENTAL_ONLY.",
+      "quantum_simulator_notice": "PennyLane default.qubit is a classical simulator. No quantum advantage claimed.",
+      "metrics_comparison": {
+        "xgb_correct": "25 / 30",
+        "vqc_correct": "16 / 30",
+        "test_sample_count": 30,
+        "xgb_accuracy": 0.833333,
+        "vqc_accuracy": 0.533333,
+        "xgb_precision": 0.822222,
+        "vqc_precision": 0.466184,
+        "xgb_recall": 0.769281,
+        "vqc_recall": 0.43268,
+        "xgb_macro_f1": 0.78502,
+        "vqc_macro_f1": 0.423016,
+        "xgb_mcc": 0.702692,
+        "vqc_mcc": 0.095978,
+        "xgb_brier": 0.304532,
+        "vqc_brier": 0.512306,
+        "xgb_ece": 0.118284,
+        "vqc_ece": 0.136455,
+        "xgb_confusion_matrix": [
+          [
+            7,
+            3,
+            0
+          ],
+          [
+            0,
+            16,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ],
+        "vqc_confusion_matrix": [
+          [
+            2,
+            8,
+            0
+          ],
+          [
+            2,
+            13,
+            2
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ]
+      },
+      "recommendation": "DISABLE_FROM_MAIN_DECISION",
+      "used_in_main_decision": false,
+      "vqc_outperforms_xgboost": false,
+      "ablation_study": [],
+      "metrics_source": "live_held_out_predictions",
+      "class_order": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "class_indices": [
+        0,
+        1,
+        2
+      ],
+      "leakage_audit": {
+        "train_samples": 140,
+        "val_samples": 30,
+        "test_samples": 30,
+        "val_excluded_from_test": true,
+        "same_rows_for_xgb_and_vqc": true,
+        "vqc_scaler_pca_fit_on": "train[:140] only (saved in vqc/scaler.pkl, vqc/pca.pkl)",
+        "xgboost_inference_uses_unscaled_23d": true,
+        "xgboost_train_script_scaler_pca": "fitted on train only; not used by XGBoostClassifier.predict",
+        "subjects": "synthetic vectors have no subject_id; SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "exact_row_hash_overlap": {
+          "train_val": 1,
+          "train_test": 1,
+          "val_test": 0
+        }
+      },
+      "artifacts": {
+        "xgboost_path": "ml/models/xgboost_best.json",
+        "xgboost_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+        "vqc_path": "ml/models/vqc/vqc_weights.npz",
+        "vqc_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e"
+      }
+    },
+    "comparison": {
+      "held_out_test_samples": 30,
+      "split": "generate_multimodal_dataset(200, seed=42) train[:140] val[140:170] test[170:]",
+      "class_order": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "class_indices": [
+        0,
+        1,
+        2
+      ],
+      "data_provenance_class": "SYNTHETIC",
+      "leakage_audit": {
+        "train_samples": 140,
+        "val_samples": 30,
+        "test_samples": 30,
+        "val_excluded_from_test": true,
+        "same_rows_for_xgb_and_vqc": true,
+        "vqc_scaler_pca_fit_on": "train[:140] only (saved in vqc/scaler.pkl, vqc/pca.pkl)",
+        "xgboost_inference_uses_unscaled_23d": true,
+        "xgboost_train_script_scaler_pca": "fitted on train only; not used by XGBoostClassifier.predict",
+        "subjects": "synthetic vectors have no subject_id; SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+        "exact_row_hash_overlap": {
+          "train_val": 1,
+          "train_test": 1,
+          "val_test": 0
+        }
+      },
+      "vqc": {
+        "model": "VQC",
+        "correct_predictions": "16 / 30",
+        "correct_count": 16,
+        "test_sample_count": 30,
+        "accuracy": 0.533333,
+        "macro_precision": 0.466184,
+        "macro_recall": 0.43268,
+        "macro_f1": 0.423016,
+        "mcc": 0.095978,
+        "brier_score": 0.512306,
+        "ece": 0.136455,
+        "confusion_matrix": [
+          [
+            2,
+            8,
+            0
+          ],
+          [
+            2,
+            13,
+            2
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ],
+        "status": "EXPERIMENTAL_ONLY"
+      },
+      "xgboost": {
+        "model": "XGBoost",
+        "correct_predictions": "25 / 30",
+        "correct_count": 25,
+        "test_sample_count": 30,
+        "accuracy": 0.833333,
+        "macro_precision": 0.822222,
+        "macro_recall": 0.769281,
+        "macro_f1": 0.78502,
+        "mcc": 0.702692,
+        "brier_score": 0.304532,
+        "ece": 0.118284,
+        "confusion_matrix": [
+          [
+            7,
+            3,
+            0
+          ],
+          [
+            0,
+            16,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      },
+      "vqc_outperforms_xgboost": false,
+      "recommendation": "DISABLE_FROM_MAIN_DECISION",
+      "used_in_main_decision": false,
+      "compared_at": "2026-08-29T05:40:25.822563+00:00",
+      "metrics_source": "live_held_out_predictions",
+      "artifacts": {
+        "xgboost_path": "ml/models/xgboost_best.json",
+        "xgboost_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+        "vqc_path": "ml/models/vqc/vqc_weights.npz",
+        "vqc_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e"
+      }
+    }
+  }
+}

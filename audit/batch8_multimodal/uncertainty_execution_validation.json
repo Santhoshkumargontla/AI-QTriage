@@ -1,0 +1,10 @@
+{
+  "audit_timestamp": "2026-08-27T13:43:10.965138+00:00",
+  "levels": [
+    "LOW UNCERTAINTY",
+    "MODERATE UNCERTAINTY",
+    "HIGH UNCERTAINTY"
+  ],
+  "formula": "HIGH if model_disagree or reasons>=2; MODERATE if reasons==1; LOW otherwise",
+  "status": "PASS"
+}

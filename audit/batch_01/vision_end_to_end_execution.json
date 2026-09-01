@@ -1,0 +1,34 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:57.642054+00:00",
+  "sample_image": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "stage_results": {
+    "yolo_detection": {
+      "finding": "wound",
+      "confidence": 0.1153,
+      "bounding_box": [
+        103.07,
+        106.88,
+        198.29,
+        190.57
+      ],
+      "low_confidence": true,
+      "image_width": 300,
+      "image_height": 300,
+      "model_version": "real_data_experimental",
+      "model_status": "TRAINED / LOADED",
+      "model_path": "ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt"
+    },
+    "efficientnet_classification": {
+      "Cut": 0.0,
+      "Bruise": 1.0,
+      "Swelling": 0.0,
+      "Other": 0.0
+    },
+    "unet_segmentation": {
+      "affected_area_percentage": "55.58%",
+      "positive_pixels": 2486
+    },
+    "gradcam_overlay": "300x300"
+  },
+  "verification_status": "PASS"
+}

@@ -1,0 +1,13 @@
+{
+  "audit_timestamp": "2026-08-27T09:12:59.667938+00:00",
+  "artifact": {
+    "exists": true,
+    "path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+    "size_bytes": 81626143,
+    "sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777"
+  },
+  "architecture": "EfficientNetV2-S (timm / torchvision backbone)",
+  "num_classes": 4,
+  "device_used": "CPU",
+  "verification_status": "PASS"
+}

@@ -1,0 +1,870 @@
+{
+  "effnet": [
+    {
+      "name": "black",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 0.0,
+      "std": 0.0,
+      "raw_winner": "Swelling",
+      "raw_max": 1.0,
+      "raw_probs": {
+        "Cut": 0.0,
+        "Bruise": 0.0,
+        "Swelling": 1.0
+      },
+      "raw_margin": 1.0,
+      "raw_entropy": 0.0,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "white",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 255.0,
+      "std": 0.0,
+      "raw_winner": "Swelling",
+      "raw_max": 1.0,
+      "raw_probs": {
+        "Cut": 0.0,
+        "Bruise": 0.0,
+        "Swelling": 1.0
+      },
+      "raw_margin": 1.0,
+      "raw_entropy": 0.0,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "gray_128",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 128.0,
+      "std": 0.0,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9633,
+      "raw_probs": {
+        "Cut": 0.0367,
+        "Bruise": 0.0,
+        "Swelling": 0.9633
+      },
+      "raw_margin": 0.9266,
+      "raw_entropy": 0.1574,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "gray_180",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 180.0,
+      "std": 0.0,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9624,
+      "raw_probs": {
+        "Cut": 0.0376,
+        "Bruise": 0.0,
+        "Swelling": 0.9624
+      },
+      "raw_margin": 0.9248,
+      "raw_entropy": 0.1602,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "uniform_skin",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 151.67,
+      "std": 24.94,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9998,
+      "raw_probs": {
+        "Cut": 0.0002,
+        "Bruise": 0.0,
+        "Swelling": 0.9998
+      },
+      "raw_margin": 0.9995,
+      "raw_entropy": 0.0023,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "noise",
+      "prov": "synthetic_ood",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 127.54,
+      "std": 73.99,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9937,
+      "raw_probs": {
+        "Cut": 0.0063,
+        "Bruise": 0.0,
+        "Swelling": 0.9937
+      },
+      "raw_margin": 0.9874,
+      "raw_entropy": 0.0382,
+      "gate_status": "OUT_OF_DISTRIBUTION",
+      "gate_reason": "high_frequency_unstructured",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "blur_lowtex",
+      "prov": "low_texture",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 127.48,
+      "std": 4.3,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9949,
+      "raw_probs": {
+        "Cut": 0.0051,
+        "Bruise": 0.0,
+        "Swelling": 0.9949
+      },
+      "raw_margin": 0.9898,
+      "raw_entropy": 0.032,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "dummy",
+      "prov": "synthetic_tiny",
+      "shape": [
+        64,
+        64,
+        3
+      ],
+      "mean": 0.0,
+      "std": 0.0,
+      "raw_winner": "Swelling",
+      "raw_max": 1.0,
+      "raw_probs": {
+        "Cut": 0.0,
+        "Bruise": 0.0,
+        "Swelling": 1.0
+      },
+      "raw_margin": 1.0,
+      "raw_entropy": 0.0,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "blank_skin",
+      "prov": "synthetic_blank_skin",
+      "shape": [
+        640,
+        640,
+        3
+      ],
+      "mean": 187.0,
+      "std": 25.94,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9891,
+      "raw_probs": {
+        "Cut": 0.0036,
+        "Bruise": 0.0073,
+        "Swelling": 0.9891
+      },
+      "raw_margin": 0.9818,
+      "raw_entropy": 0.0672,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "football",
+      "prov": "demo_unlabeled",
+      "shape": [
+        300,
+        300,
+        3
+      ],
+      "mean": 161.17,
+      "std": 50.63,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9987,
+      "raw_probs": {
+        "Cut": 0.0013,
+        "Bruise": 0.0,
+        "Swelling": 0.9987
+      },
+      "raw_margin": 0.9974,
+      "raw_entropy": 0.0099,
+      "gate_status": "VALID",
+      "gate_reason": "passed_quality_and_confidence_gates",
+      "api_winner": "Swelling",
+      "api_conf": 0.988241970539093,
+      "api_confident": true
+    },
+    {
+      "name": "forensic_ood",
+      "prov": "unlabeled_ood",
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 180.0,
+      "std": 0.0,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9624,
+      "raw_probs": {
+        "Cut": 0.0376,
+        "Bruise": 0.0,
+        "Swelling": 0.9624
+      },
+      "raw_margin": 0.9248,
+      "raw_entropy": 0.1602,
+      "gate_status": "LOW_QUALITY_INPUT",
+      "gate_reason": "uniform_or_blank_image",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    },
+    {
+      "name": "eff_bruise",
+      "prov": "dataset_test",
+      "shape": [
+        640,
+        640,
+        3
+      ],
+      "mean": 189.48,
+      "std": 41.35,
+      "raw_winner": "Swelling",
+      "raw_max": 0.9863,
+      "raw_probs": {
+        "Cut": 0.0137,
+        "Bruise": 0.0,
+        "Swelling": 0.9863
+      },
+      "raw_margin": 0.9726,
+      "raw_entropy": 0.0724,
+      "gate_status": "VALID",
+      "gate_reason": "passed_quality_and_confidence_gates",
+      "api_winner": "Swelling",
+      "api_conf": 0.9453380107879639,
+      "api_confident": true
+    },
+    {
+      "name": "unetpub_wound_unspecified",
+      "prov": "dataset_test",
+      "shape": [
+        331,
+        331,
+        3
+      ],
+      "mean": 141.2,
+      "std": 57.49,
+      "raw_winner": "Swelling",
+      "raw_max": 1.0,
+      "raw_probs": {
+        "Cut": 0.0,
+        "Bruise": 0.0,
+        "Swelling": 1.0
+      },
+      "raw_margin": 1.0,
+      "raw_entropy": 0.0002,
+      "gate_status": "VALID",
+      "gate_reason": "passed_quality_and_confidence_gates",
+      "api_winner": "Swelling",
+      "api_conf": 0.999272882938385,
+      "api_confident": true
+    },
+    {
+      "name": "unetd_wound_unspecified",
+      "prov": "dataset_test",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "mean": 5.35,
+      "std": 29.57,
+      "raw_winner": "Cut",
+      "raw_max": 1.0,
+      "raw_probs": {
+        "Cut": 1.0,
+        "Bruise": 0.0,
+        "Swelling": 0.0
+      },
+      "raw_margin": 1.0,
+      "raw_entropy": 0.0,
+      "gate_status": "OUT_OF_DISTRIBUTION",
+      "gate_reason": "colors_not_injury_like",
+      "api_winner": null,
+      "api_conf": null,
+      "api_confident": false
+    }
+  ],
+  "unet": [
+    {
+      "name": "black",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 0.0,
+      "std": 0.0,
+      "raw_min": 0.0001,
+      "raw_max": 0.0783,
+      "raw_mean": 0.0019,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "white",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 255.0,
+      "std": 0.0,
+      "raw_min": 0.0004,
+      "raw_max": 0.0668,
+      "raw_mean": 0.0039,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "gray_128",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 128.0,
+      "std": 0.0,
+      "raw_min": 0.0002,
+      "raw_max": 0.0751,
+      "raw_mean": 0.002,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "gray_180",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 180.0,
+      "std": 0.0,
+      "raw_min": 0.0002,
+      "raw_max": 0.0713,
+      "raw_mean": 0.0023,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "uniform_skin",
+      "prov": "blank_control",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 151.67,
+      "std": 24.94,
+      "raw_min": 0.0003,
+      "raw_max": 0.0467,
+      "raw_mean": 0.0023,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "noise",
+      "prov": "synthetic_ood",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 127.54,
+      "std": 73.99,
+      "raw_min": 0.0004,
+      "raw_max": 0.3514,
+      "raw_mean": 0.0074,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "UNTRUSTWORTHY_OUTPUT",
+      "reason": "ood_high_frequency_unstructured",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "blur_lowtex",
+      "prov": "low_texture",
+      "shape": [
+        256,
+        256,
+        3
+      ],
+      "mean": 127.48,
+      "std": 4.3,
+      "raw_min": 0.0002,
+      "raw_max": 0.0639,
+      "raw_mean": 0.0028,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "dummy",
+      "prov": "synthetic_tiny",
+      "shape": [
+        64,
+        64,
+        3
+      ],
+      "mean": 0.0,
+      "std": 0.0,
+      "raw_min": 0.0001,
+      "raw_max": 0.0783,
+      "raw_mean": 0.0019,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "blank_skin",
+      "prov": "synthetic_blank_skin",
+      "shape": [
+        640,
+        640,
+        3
+      ],
+      "mean": 187.0,
+      "std": 25.94,
+      "raw_min": 0.0003,
+      "raw_max": 0.0455,
+      "raw_mean": 0.0025,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "football",
+      "prov": "demo_unlabeled",
+      "shape": [
+        300,
+        300,
+        3
+      ],
+      "mean": 161.17,
+      "std": 50.63,
+      "raw_min": 0.0006,
+      "raw_max": 0.8772,
+      "raw_mean": 0.0189,
+      "raw_pos_ratio": 0.012543,
+      "disp_pos_px": 1120,
+      "disp_pos_ratio": 0.012444,
+      "cc": 1,
+      "status": "VALID",
+      "reason": "passed_quality_and_mask_sanity",
+      "withheld": false,
+      "reliable": true,
+      "info_raw_pos_ratio": 0.012543,
+      "interp_reliable": true,
+      "interp_withheld": false,
+      "interp_px": 1120
+    },
+    {
+      "name": "forensic_ood",
+      "prov": "unlabeled_ood",
+      "shape": [
+        480,
+        640,
+        3
+      ],
+      "mean": 180.0,
+      "std": 0.0,
+      "raw_min": 0.0002,
+      "raw_max": 0.0713,
+      "raw_mean": 0.0023,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "LOW_QUALITY_INPUT",
+      "reason": "uniform_or_blank_image",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "eff_bruise",
+      "prov": "dataset_test",
+      "shape": [
+        640,
+        640,
+        3
+      ],
+      "mean": 189.48,
+      "std": 41.35,
+      "raw_min": 0.0004,
+      "raw_max": 0.4895,
+      "raw_mean": 0.0066,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "VALID",
+      "reason": "empty_mask_no_positive_region",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    },
+    {
+      "name": "unetpub_wound_unspecified",
+      "prov": "dataset_test",
+      "shape": [
+        331,
+        331,
+        3
+      ],
+      "mean": 141.2,
+      "std": 57.49,
+      "raw_min": 0.0003,
+      "raw_max": 0.9999,
+      "raw_mean": 0.0441,
+      "raw_pos_ratio": 0.040619,
+      "disp_pos_px": 4442,
+      "disp_pos_ratio": 0.040544,
+      "cc": 1,
+      "status": "VALID",
+      "reason": "passed_quality_and_mask_sanity",
+      "withheld": false,
+      "reliable": true,
+      "info_raw_pos_ratio": 0.040619,
+      "interp_reliable": true,
+      "interp_withheld": false,
+      "interp_px": 4442
+    },
+    {
+      "name": "unetd_wound_unspecified",
+      "prov": "dataset_test",
+      "shape": [
+        224,
+        224,
+        3
+      ],
+      "mean": 5.35,
+      "std": 29.57,
+      "raw_min": 0.0001,
+      "raw_max": 0.0806,
+      "raw_mean": 0.0019,
+      "raw_pos_ratio": 0.0,
+      "disp_pos_px": 0,
+      "disp_pos_ratio": 0.0,
+      "cc": 0,
+      "status": "UNTRUSTWORTHY_OUTPUT",
+      "reason": "ood_colors_not_injury_like",
+      "withheld": true,
+      "reliable": false,
+      "info_raw_pos_ratio": 0.0,
+      "interp_reliable": false,
+      "interp_withheld": true,
+      "interp_px": 0
+    }
+  ],
+  "geometry": [
+    {
+      "name": "square",
+      "orig": [
+        320,
+        320
+      ],
+      "bbox": [
+        80,
+        80,
+        240,
+        240
+      ],
+      "roi_mask_shape": [
+        160,
+        160
+      ],
+      "full_mask_shape": [
+        320,
+        320
+      ],
+      "pos_inside_roi": 544,
+      "pos_outside_roi": 0,
+      "status": "VALID",
+      "withheld": false,
+      "raw_pos_ratio": 0.021271,
+      "reliable": true,
+      "display_px": 544
+    },
+    {
+      "name": "portrait",
+      "orig": [
+        480,
+        320
+      ],
+      "bbox": [
+        80,
+        120,
+        240,
+        360
+      ],
+      "roi_mask_shape": [
+        240,
+        160
+      ],
+      "full_mask_shape": [
+        480,
+        320
+      ],
+      "pos_inside_roi": 459,
+      "pos_outside_roi": 0,
+      "status": "VALID",
+      "withheld": false,
+      "raw_pos_ratio": 0.012482,
+      "reliable": true,
+      "display_px": 459
+    },
+    {
+      "name": "landscape",
+      "orig": [
+        320,
+        480
+      ],
+      "bbox": [
+        120,
+        80,
+        360,
+        240
+      ],
+      "roi_mask_shape": [
+        160,
+        240
+      ],
+      "full_mask_shape": [
+        320,
+        480
+      ],
+      "pos_inside_roi": 595,
+      "pos_outside_roi": 0,
+      "status": "VALID",
+      "withheld": false,
+      "raw_pos_ratio": 0.015488,
+      "reliable": true,
+      "display_px": 595
+    },
+    {
+      "name": "public_test_full",
+      "orig": [
+        331,
+        331
+      ],
+      "bbox": null,
+      "roi_mask_shape": [
+        331,
+        331
+      ],
+      "full_mask_shape": [
+        331,
+        331
+      ],
+      "pos_inside_roi": 4442,
+      "pos_outside_roi": 0,
+      "status": "VALID",
+      "withheld": false,
+      "raw_pos_ratio": 0.040619,
+      "reliable": true,
+      "display_px": 4442
+    },
+    {
+      "name": "public_test_roi",
+      "orig": [
+        331,
+        331
+      ],
+      "bbox": [
+        66,
+        66,
+        264,
+        264
+      ],
+      "roi_mask_shape": [
+        198,
+        198
+      ],
+      "full_mask_shape": [
+        331,
+        331
+      ],
+      "pos_inside_roi": 2179,
+      "pos_outside_roi": 0,
+      "status": "VALID",
+      "withheld": false,
+      "raw_pos_ratio": 0.055603,
+      "reliable": true,
+      "display_px": 2179
+    }
+  ],
+  "gradcam_football": {
+    "source_model": "EfficientNetV2",
+    "predicted_class": null,
+    "confidence": null,
+    "model_status": "NOT_TRUSTWORTHY",
+    "explanation_status": "WITHHELD",
+    "gradcam_label": "MODEL VISUALIZATION",
+    "gradcam_explanation": "NOT CLINICAL EXPLANATION",
+    "gradcam_reliability": "NOT_CLINICAL_EXPLANATION",
+    "overlay_generated": false,
+    "withheld_reason": "classifier_model_not_trustworthy"
+  },
+  "gradcam_overlay": false
+}

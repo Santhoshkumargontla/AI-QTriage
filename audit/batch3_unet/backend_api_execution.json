@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "endpoint": "POST /api/cases/{id}/image",
+  "http_status": 200,
+  "positive_pixels": 2486,
+  "total_pixels": 4473,
+  "affected_area_ratio": 0.5558,
+  "status": "PASS"
+}

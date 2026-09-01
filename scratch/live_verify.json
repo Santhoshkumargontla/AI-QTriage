@@ -1,0 +1,316 @@
+{
+  "verified_at": "2026-08-30T05:13:31.957325+00:00",
+  "api": "http://127.0.0.1:8000",
+  "health": {
+    "status": 200,
+    "body": {
+      "status": "healthy",
+      "database": "connected",
+      "timestamp": "2026-08-30T05:13:31.975790"
+    }
+  },
+  "models_status": 200,
+  "models": [
+    {
+      "model_name": "YOLO11",
+      "model_version": "v1.4.0",
+      "version": "v1.4.0",
+      "status": "INFERENCE_EXECUTES",
+      "weights_loaded": true,
+      "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+      "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+      "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+      "artifact_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+      "task": "detect",
+      "classes": [
+        "cut",
+        "bruise",
+        "wound"
+      ],
+      "supported_classes": [
+        "cut",
+        "bruise",
+        "wound"
+      ],
+      "yolo_supported_classes": [
+        "cut",
+        "bruise",
+        "wound"
+      ],
+      "yolo11_supported_classes": [
+        "cut",
+        "bruise",
+        "wound"
+      ],
+      "validated_classes": [
+        "cut",
+        "bruise"
+      ],
+      "unsupported_classes": [
+        "wound"
+      ],
+      "class_support": {
+        "cut": {
+          "status": "RESEARCH_DEMO_LIMITED",
+          "train_boxes": 47,
+          "val_boxes": 6,
+          "test_boxes": 8,
+          "note": "Present in train/val/test; synthetic provenance; not clinically validated.",
+          "in_model_names": true
+        },
+        "bruise": {
+          "status": "RESEARCH_DEMO_LIMITED",
+          "train_boxes": 40,
+          "val_boxes": 13,
+          "test_boxes": 10,
+          "note": "Present in train/val/test; synthetic provenance; not clinically validated.",
+          "in_model_names": true
+        },
+        "wound": {
+          "status": "UNSUPPORTED",
+          "train_boxes": 0,
+          "val_boxes": 0,
+          "test_boxes": 0,
+          "note": "Head index exists in model.names (nc=3) but production training set has zero honest wound boxes. Do not report wound accuracy or treat wound detections as validated.",
+          "in_model_names": true
+        }
+      },
+      "promotion_status": "PROMOTION_VALIDATED_WITH_LIMITATIONS",
+      "dataset_provenance": "SYNTHETIC drawings/graphics (126/126 in retrain_v2 manifest); not real clinical photos",
+      "untrained_classes": {
+        "wound": "UNSUPPORTED",
+        "abrasion": "UNTRAINED_CLASS",
+        "laceration": "UNTRAINED_CLASS",
+        "swelling": "UNTRAINED_CLASS"
+      },
+      "untrained_class_status": "UNTRAINED_CLASS",
+      "swelling_yolo_coverage": "UNTRAINED_CLASS",
+      "swelling_note": "Swelling is UNTRAINED_CLASS for YOLO11 (not in model.names). The active EfficientNet reject-v2 head also does not include swelling (no labeled swelling training data). Classes come from model.names.",
+      "wound_note": "Wound appears in model.names but has zero honest training boxes in the production retrain_v2 dataset. Status=UNSUPPORTED \u2014 do not claim wound accuracy.",
+      "training_dataset": "canonical_yolo11_checkpoint",
+      "clinically_validated": false,
+      "runtime_status": "INFERENCE_EXECUTES"
+    },
+    {
+      "model_name": "EfficientNetV2",
+      "model_version": "kaggle-v1",
+      "version": "kaggle-v1",
+      "status": "READY_FOR_RESEARCH_DEMO",
+      "training_status": "READY_FOR_RESEARCH_DEMO",
+      "weights_loaded": true,
+      "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "model_path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+      "artifact_sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "classes": [
+        "abrasion",
+        "bruise",
+        "burn",
+        "cut",
+        "laceration",
+        "wound",
+        "normal",
+        "ood_reject"
+      ],
+      "classifier_categories": [
+        "abrasion",
+        "bruise",
+        "burn",
+        "cut",
+        "laceration",
+        "wound",
+        "normal",
+        "ood_reject"
+      ],
+      "category_type": "research_classifier",
+      "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present.",
+      "note": "EfficientNetV2 reject-v2 classes are cut/bruise/normal/ood_reject. normal and ood_reject are abstention classes, not diagnoses. swelling is not in the active classifier head (no labeled swelling data). These categories are NOT equivalent to YOLO11 detections. cut/bruise training images remain largely SYNTHETIC drawings \u2014 research demo only."
+    },
+    {
+      "model_name": "U-Net",
+      "model_version": "deduped-subject-v1",
+      "version": "deduped-subject-v1",
+      "status": "READY_FOR_RESEARCH_DEMO",
+      "training_status": "READY_FOR_RESEARCH_DEMO",
+      "weights_loaded": true,
+      "canonical_path": "ml/models/vision/unet_injury_best.pt",
+      "artifact_path": "ml/models/vision/unet_injury_best.pt",
+      "model_path": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt",
+      "artifact_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "status_note": "File existence is not TRAINED_AND_EVALUATED. Status comes from training metadata when present. Overlay gates withhold blank/OOD masks; they do not certify photographs."
+    },
+    {
+      "model_name": "XGBoost",
+      "model_version": "v1.2.0",
+      "status": "TRAINED",
+      "weights_loaded": true,
+      "schema_features": 23,
+      "canonical_path": "ml/models/xgboost_best.json",
+      "artifact_path": "ml/models/xgboost_best.json",
+      "artifact_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "data_provenance": "SYNTHETIC",
+      "data_provenance_detail": "synthetic_multimodal_fusion",
+      "training_dataset": "synthetic_multimodal_fusion",
+      "status_note": "Missing canonical artifact is MODEL_ARTIFACT_MISSING. File existence is not TRAINED_AND_EVALUATED. Status comes from xgboost_metadata.json."
+    },
+    {
+      "model_name": "VQC",
+      "model_version": "v1.4.0",
+      "status": "EXPERIMENTAL_ONLY",
+      "weights_loaded": true,
+      "canonical_path": "ml/models/vqc/vqc_weights.npz",
+      "artifact_path": "ml/models/vqc/vqc_weights.npz",
+      "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "data_provenance": "SYNTHETIC",
+      "used_in_main_decision": false,
+      "experimental_only": true,
+      "recommendation": "DISABLE_FROM_MAIN_DECISION",
+      "status_note": "EXPERIMENTAL_ONLY. Isolated from SOS, first-aid, and main case decisions. Missing artifact is MODEL_UNAVAILABLE, not a fabricated class."
+    }
+  ],
+  "sos": {
+    "enabled": false,
+    "configured": false,
+    "status_message": "Twilio integration disabled (TWILIO_ENABLED=false).",
+    "canonical_env": [
+      "TWILIO_ENABLED",
+      "TWILIO_ACCOUNT_SID",
+      "TWILIO_AUTH_TOKEN",
+      "TWILIO_FROM_NUMBER",
+      "TWILIO_TO_NUMBER"
+    ],
+    "legacy_aliases": {
+      "TWILIO_PHONE_NUMBER": "TWILIO_FROM_NUMBER",
+      "EMERGENCY_CONTACT_PHONE": "TWILIO_TO_NUMBER",
+      "EMERGENCY_PHONE_NUMBER": "TWILIO_TO_NUMBER"
+    },
+    "missing_fields": [
+      "TWILIO_ENABLED"
+    ],
+    "delivery_outcomes": [
+      "LOCAL_SIMULATION",
+      "TWILIO_NOT_CONFIGURED",
+      "TWILIO_REQUEST_QUEUED",
+      "TWILIO_FAILED"
+    ],
+    "account_sid_suffix": null,
+    "from_number_set": false,
+    "to_number_set": false,
+    "real_sms_tested": false,
+    "disclaimer": "RESEARCH PROTOTYPE ONLY: No real emergency services (911/112) are contacted. TWILIO_REQUEST_QUEUED means the API returned a SID, not that a handset received SMS."
+  },
+  "yolo_canonical": "ml\\models\\vision\\yolo11_injury_best.pt",
+  "yolo_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+  "yolo_direct_top": [],
+  "case_id": "b1f23b8b-a51f-4d23-bdae-0981417efaf9",
+  "image_status": 200,
+  "sensor_status": 200,
+  "sensor_motion": "normal_activity",
+  "analyze_status": 200,
+  "analyze": {
+    "message": "Multimodal analysis completed successfully",
+    "xgboost": {
+      "class": "MODERATE",
+      "probability": 0.5386238694190979,
+      "model_version": "v1.2.0",
+      "model_id": "xgb_full_v1",
+      "n_features": 23,
+      "data_provenance": "SYNTHETIC",
+      "data_provenance_detail": "synthetic_multimodal_fusion",
+      "status": "TRAINED",
+      "artifact_path": "ml/models/xgboost_best.json",
+      "label_source": "SYNTHETIC_RULE_LABELS",
+      "paired_clinical_samples": 0,
+      "clinical_claim_blocked": true,
+      "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+    },
+    "quantum": {
+      "class": "MODERATE",
+      "score": [
+        0.14851578013658948,
+        0.7192947072623359,
+        0.13218951260107456
+      ],
+      "model_version": "v1.4.0",
+      "model_id": "vqc_sim_v1",
+      "status": "EXPERIMENTAL_ONLY",
+      "experimental": true,
+      "experimental_only": true,
+      "used_in_main_decision": false,
+      "data_provenance": "SYNTHETIC",
+      "error": null,
+      "pca_features": [
+        3.0,
+        2.3887124890892872,
+        3.0,
+        -3.0
+      ],
+      "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+    },
+    "consistency": {
+      "score": 90.0,
+      "status": "Highly Consistent",
+      "conflicts": [
+        "Data Notice: Assessment uses synthetic or demonstration data."
+      ],
+      "agreements": [],
+      "explanation": "Evidence consistency scoring measures alignment between independent data channels and model predictions. It does not validate clinical diagnostic accuracy."
+    },
+    "modalities_used": [
+      "image",
+      "questionnaire",
+      "sensor"
+    ],
+    "model_configuration_used": "xgb_full_v1",
+    "clinical_claim_blocked": true,
+    "fusion_label_source": "SYNTHETIC_RULE_LABELS",
+    "paired_clinical_samples": 0,
+    "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+  },
+  "stored_yolo": {
+    "finding": null,
+    "confidence": null,
+    "bbox": null,
+    "detected": false
+  },
+  "xgb": {
+    "class": "MODERATE",
+    "probability": 0.5386238694190979,
+    "model_version": "v1.2.0",
+    "model_id": "xgb_full_v1",
+    "n_features": 23,
+    "data_provenance": "SYNTHETIC",
+    "data_provenance_detail": "synthetic_multimodal_fusion",
+    "status": "TRAINED",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "label_source": "SYNTHETIC_RULE_LABELS",
+    "paired_clinical_samples": 0,
+    "clinical_claim_blocked": true,
+    "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+  },
+  "vqc": {
+    "class": "MODERATE",
+    "score": [
+      0.14851578013658948,
+      0.7192947072623359,
+      0.13218951260107456
+    ],
+    "model_version": "v1.4.0",
+    "model_id": "vqc_sim_v1",
+    "status": "EXPERIMENTAL_ONLY",
+    "experimental": true,
+    "experimental_only": true,
+    "used_in_main_decision": false,
+    "data_provenance": "SYNTHETIC",
+    "error": null,
+    "pca_features": [
+      3.0,
+      2.3887124890892872,
+      3.0,
+      -3.0
+    ],
+    "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+  },
+  "frontend_3000": "HTTPConnectionPool(host='127.0.0.1', port=3000): Read timed out. (read timeout=5)",
+  "frontend_3001": "HTTPConnectionPool(host='127.0.0.1', port=3001): Max retries exceeded with url: / (Caused by NewConnectionError(\"HTTPConnection(host='127.0.0.1', port=3001): Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it\"))"
+}

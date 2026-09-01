@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "device": "CPU (Intel/AMD 12 IntraOp threads)",
+  "runs": 5,
+  "min_latency_ms": 113.74,
+  "avg_latency_ms": 120.73,
+  "max_latency_ms": 124.27,
+  "status": "PASS"
+}

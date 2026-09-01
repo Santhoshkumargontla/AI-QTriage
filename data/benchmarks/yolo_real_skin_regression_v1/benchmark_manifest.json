@@ -1,0 +1,15 @@
+{
+  "version": "yolo_real_skin_regression_v1",
+  "forensic_cases": [
+    {
+      "case_id": "3f629ca8-dd98-427d-a708-f976e2042555",
+      "image_path": "data/uploads/3f629ca8-dd98-427d-a708-f976e2042555.jpeg",
+      "role": "external_forensic_positive_cut",
+      "ground_truth_class": "cut",
+      "ground_truth_type": "visual_cut_on_hand",
+      "in_training_set": false,
+      "note": "Not used for training or threshold tuning. Approximate IoU uses color-heuristic injury region."
+    }
+  ],
+  "confirmed_negatives_glob": "data/datasets/yolo_real_skin_v2/manifest.csv (is_negative=1)"
+}

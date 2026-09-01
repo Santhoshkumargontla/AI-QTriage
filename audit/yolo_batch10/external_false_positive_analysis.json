@@ -1,0 +1,15 @@
+{
+  "audit_timestamp": "2026-08-27T12:58:02.497855+00:00",
+  "total_false_positives": 6,
+  "breakdown": [
+    {
+      "cause": "Background lighting reflection",
+      "count": 3
+    },
+    {
+      "cause": "High-contrast skin fold crease",
+      "count": 3
+    }
+  ],
+  "status": "PASS"
+}

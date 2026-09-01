@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "total_images": 200,
+  "train_count": 140,
+  "val_count": 30,
+  "test_count": 30,
+  "subject_overlap": false,
+  "status": "PASS"
+}

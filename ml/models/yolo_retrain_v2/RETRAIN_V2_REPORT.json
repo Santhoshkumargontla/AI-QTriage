@@ -1,0 +1,2420 @@
+{
+  "created_utc": "2026-08-29T02:25:04.606599+00:00",
+  "did_not_fabricate_metrics": true,
+  "did_not_copy_production_as_candidate": true,
+  "backup_path": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt.pre_retrain_v2_backup",
+  "production_sha_before": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+  "candidate_path": "C:/Users/santh/Capstone Project Code/ml/models/yolo_retrain_v2/run_v2/weights/best.pt",
+  "candidate_sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+  "promoted": true,
+  "production_sha_after": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+  "dataset": {
+    "created_utc": "2026-08-29T02:14:16.298360+00:00",
+    "did_not_fabricate_images": true,
+    "did_not_remap_dropped_classes": true,
+    "silent_remap": false,
+    "source": "yolo_processed + existing negative files",
+    "negatives_added": [
+      {
+        "sample_id": "negative__blank_skin",
+        "split": "val",
+        "dest_image": "data/datasets/yolo_retrain_v2/images/val/negative__blank_skin.jpg",
+        "dest_label": "data/datasets/yolo_retrain_v2/labels/val/negative__blank_skin.txt",
+        "source_dataset": "yolo_injury_negative",
+        "source_path": "data/datasets/yolo_injury/blank_skin.jpg",
+        "kept_classes": "",
+        "boxes_out": "0",
+        "retrain_v2": "existing_negative_empty_label",
+        "provenance": "SYNTHETIC"
+      },
+      {
+        "sample_id": "negative__dummy_test",
+        "split": "test",
+        "dest_image": "data/datasets/yolo_retrain_v2/images/test/negative__dummy_test.jpg",
+        "dest_label": "data/datasets/yolo_retrain_v2/labels/test/negative__dummy_test.txt",
+        "source_dataset": "yolo_injury_negative",
+        "source_path": "data/datasets/yolo_injury/dummy_test.jpg",
+        "kept_classes": "",
+        "boxes_out": "0",
+        "retrain_v2": "existing_negative_empty_label",
+        "provenance": "SYNTHETIC"
+      }
+    ],
+    "empty_label_images_by_split": {
+      "val": 1,
+      "test": 1
+    },
+    "boxes_per_class_by_split": {
+      "train": {
+        "bruise": 40,
+        "cut": 47
+      },
+      "val": {
+        "bruise": 13,
+        "cut": 6
+      },
+      "test": {
+        "bruise": 10,
+        "cut": 8
+      }
+    },
+    "images_per_class_by_split": {
+      "train": {
+        "bruise": 40,
+        "cut": 47
+      },
+      "val": {
+        "bruise": 13,
+        "cut": 6
+      },
+      "test": {
+        "bruise": 10,
+        "cut": 8
+      }
+    },
+    "image_counts": {
+      "train": 87,
+      "val": 20,
+      "test": 19
+    },
+    "known_limitation": "No legitimate original wound boxes exist in-repo after dropping swelling/abrasion/laceration remaps. cut/bruise remain SYNTHETIC drawings plus two public samples.",
+    "yaml": "data/datasets/yolo_retrain_v2/data.yaml",
+    "leakage": {
+      "exact_file_hash_across_splits": {},
+      "stem_across_splits": {},
+      "note": "Subject IDs are NOT_AVAILABLE on synthetic filenames. Split membership copied from yolo_processed."
+    }
+  },
+  "training": {
+    "init_weights": "C:/Users/santh/Capstone Project Code/ml/models/yolo11n_pretrained.pt",
+    "init_sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+    "epochs": 20,
+    "imgsz": 640,
+    "batch": 4,
+    "device": "cpu",
+    "mosaic": 0.1,
+    "mixup": 0.0,
+    "copy_paste": 0.0,
+    "save_dir": "C:/Users/santh/Capstone Project Code/ml/models/yolo_retrain_v2/run_v2",
+    "train_log": {
+      "epochs_logged": 20,
+      "first_epoch_box_loss": 1.65199,
+      "last_epoch_box_loss": 0.6173,
+      "last_epoch_val_mAP50": 0.88905,
+      "last_epoch_val_mAP50-95": 0.72412,
+      "note": "results.csv epoch rows are training-run logs. They are not used as the promotion metric."
+    }
+  },
+  "baseline_val": {
+    "precision": 0.9965423613330465,
+    "recall": 0.5,
+    "mAP50": 0.7026190476190475,
+    "mAP50-95": 0.5197370077838828,
+    "per_class": {
+      "cut": {
+        "precision": 1.0,
+        "recall": 0.0,
+        "mAP50": 0.41023809523809507,
+        "mAP50-95": 0.1916800595238095
+      },
+      "bruise": {
+        "precision": 0.993084722666093,
+        "recall": 1.0,
+        "mAP50": 0.995,
+        "mAP50-95": 0.847793956043956
+      },
+      "wound": {
+        "precision": null,
+        "recall": null,
+        "mAP50": null,
+        "mAP50-95": 0.5197370077838828,
+        "note": "NO_GROUND_TRUTH_OR_UNDEFINED"
+      }
+    },
+    "confusion_matrix": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        13.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        6.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "cut",
+      "bruise",
+      "wound",
+      "background"
+    ],
+    "model_names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "metrics_source": "ultralytics.val",
+    "not_clinical_accuracy": true,
+    "split": "val",
+    "weights": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt",
+    "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+    "actual_sample_support": {
+      "images": 20,
+      "empty_label_images": 1,
+      "boxes": {
+        "bruise": 13,
+        "cut": 6
+      },
+      "images_with_class": {
+        "bruise": 13,
+        "cut": 6
+      }
+    }
+  },
+  "baseline_test": {
+    "precision": 1.0,
+    "recall": 0.4938481489948705,
+    "mAP50": 0.6641387559808613,
+    "mAP50-95": 0.48039970224624245,
+    "per_class": {
+      "cut": {
+        "precision": 1.0,
+        "recall": 0.0,
+        "mAP50": 0.33327751196172245,
+        "mAP50-95": 0.11139940449248524
+      },
+      "bruise": {
+        "precision": 1.0,
+        "recall": 0.987696297989741,
+        "mAP50": 0.995,
+        "mAP50-95": 0.8493999999999999
+      },
+      "wound": {
+        "precision": null,
+        "recall": null,
+        "mAP50": null,
+        "mAP50-95": 0.48039970224624245,
+        "note": "NO_GROUND_TRUTH_OR_UNDEFINED"
+      }
+    },
+    "confusion_matrix": [
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        9.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        7.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "cut",
+      "bruise",
+      "wound",
+      "background"
+    ],
+    "model_names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "metrics_source": "ultralytics.val",
+    "not_clinical_accuracy": true,
+    "split": "test",
+    "weights": "C:/Users/santh/Capstone Project Code/ml/models/vision/yolo11_injury_best.pt",
+    "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+    "actual_sample_support": {
+      "images": 19,
+      "empty_label_images": 1,
+      "boxes": {
+        "bruise": 10,
+        "cut": 8
+      },
+      "images_with_class": {
+        "bruise": 10,
+        "cut": 8
+      }
+    }
+  },
+  "candidate_val": {
+    "precision": 0.8339706664309054,
+    "recall": 0.9327146130892696,
+    "mAP50": 0.9191666666666668,
+    "mAP50-95": 0.741915114379085,
+    "per_class": {
+      "cut": {
+        "precision": 0.7211634056096871,
+        "recall": 0.8654292261785393,
+        "mAP50": 0.8433333333333336,
+        "mAP50-95": 0.49583022875816996
+      },
+      "bruise": {
+        "precision": 0.9467779272521238,
+        "recall": 1.0,
+        "mAP50": 0.995,
+        "mAP50-95": 0.9880000000000001
+      },
+      "wound": {
+        "precision": null,
+        "recall": null,
+        "mAP50": null,
+        "mAP50-95": 0.741915114379085,
+        "note": "NO_GROUND_TRUTH_OR_UNDEFINED"
+      }
+    },
+    "confusion_matrix": [
+      [
+        6.0,
+        0.0,
+        0.0,
+        5.0
+      ],
+      [
+        0.0,
+        13.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "cut",
+      "bruise",
+      "wound",
+      "background"
+    ],
+    "model_names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "metrics_source": "ultralytics.val",
+    "not_clinical_accuracy": true,
+    "split": "val",
+    "weights": "C:/Users/santh/Capstone Project Code/ml/models/yolo_retrain_v2/run_v2/weights/best.pt",
+    "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "actual_sample_support": {
+      "images": 20,
+      "empty_label_images": 1,
+      "boxes": {
+        "bruise": 13,
+        "cut": 6
+      },
+      "images_with_class": {
+        "bruise": 13,
+        "cut": 6
+      }
+    }
+  },
+  "candidate_test": {
+    "precision": 0.7548419469199217,
+    "recall": 0.9375,
+    "mAP50": 0.8358333333333334,
+    "mAP50-95": 0.7080000305250305,
+    "per_class": {
+      "cut": {
+        "precision": 0.551907217648874,
+        "recall": 0.875,
+        "mAP50": 0.6766666666666667,
+        "mAP50-95": 0.4725873626373627
+      },
+      "bruise": {
+        "precision": 0.9577766761909694,
+        "recall": 1.0,
+        "mAP50": 0.995,
+        "mAP50-95": 0.9434126984126984
+      },
+      "wound": {
+        "precision": null,
+        "recall": null,
+        "mAP50": null,
+        "mAP50-95": 0.7080000305250305,
+        "note": "NO_GROUND_TRUTH_OR_UNDEFINED"
+      }
+    },
+    "confusion_matrix": [
+      [
+        7.0,
+        0.0,
+        0.0,
+        6.0
+      ],
+      [
+        0.0,
+        10.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "cut",
+      "bruise",
+      "wound",
+      "background"
+    ],
+    "model_names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "metrics_source": "ultralytics.val",
+    "not_clinical_accuracy": true,
+    "split": "test",
+    "weights": "C:/Users/santh/Capstone Project Code/ml/models/yolo_retrain_v2/run_v2/weights/best.pt",
+    "sha256": "4d6e72f5f671fd60065ffc13cbb14efaac1da04ad062e116c118f2a688202879",
+    "actual_sample_support": {
+      "images": 19,
+      "empty_label_images": 1,
+      "boxes": {
+        "bruise": 10,
+        "cut": 8
+      },
+      "images_with_class": {
+        "bruise": 10,
+        "cut": 8
+      }
+    }
+  },
+  "decision": {
+    "recommendation": "PROMOTE",
+    "reasons": [
+      "cut_recall_improved_and_bruise_did_not_collapse"
+    ],
+    "promote": true,
+    "note": "Wound has 0 honest labels. Overall mAP is not used as the promotion gate. Cut/bruise test support is still small; promotion is not a reliability claim."
+  },
+  "threshold_sweeps": {
+    "baseline_demo_negatives": [
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.01,
+        "n_detections": 86,
+        "n_corner": 32,
+        "detections": [
+          {
+            "class": "wound",
+            "confidence": 0.2982,
+            "xyxy": [
+              0.0,
+              260.14,
+              81.84,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2918,
+            "xyxy": [
+              2.22,
+              0.0,
+              98.48,
+              50.21
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2628,
+            "xyxy": [
+              72.38,
+              0.0,
+              206.93,
+              49.93
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2466,
+            "xyxy": [
+              0.07,
+              233.77,
+              87.34,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2156,
+            "xyxy": [
+              7.45,
+              0.0,
+              124.88,
+              46.19
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2087,
+            "xyxy": [
+              7.63,
+              0.0,
+              181.21,
+              48.32
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2021,
+            "xyxy": [
+              55.1,
+              0.0,
+              188.67,
+              78.9
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1768,
+            "xyxy": [
+              79.31,
+              0.0,
+              209.84,
+              75.88
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1699,
+            "xyxy": [
+              165.79,
+              174.8,
+              293.53,
+              299.58
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1613,
+            "xyxy": [
+              101.43,
+              0.0,
+              227.85,
+              48.17
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1563,
+            "xyxy": [
+              48.82,
+              0.0,
+              192.27,
+              44.33
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1337,
+            "xyxy": [
+              10.42,
+              0.0,
+              179.56,
+              80.65
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1109,
+            "xyxy": [
+              6.26,
+              0.0,
+              151.1,
+              68.76
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0946,
+            "xyxy": [
+              149.07,
+              0.32,
+              257.28,
+              63.11
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0924,
+            "xyxy": [
+              127.25,
+              0.0,
+              250.37,
+              47.35
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0898,
+            "xyxy": [
+              0.27,
+              0.0,
+              86.8,
+              79.42
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0714,
+            "xyxy": [
+              122.05,
+              0.0,
+              239.23,
+              69.57
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0653,
+            "xyxy": [
+              0.0,
+              258.87,
+              128.75,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0551,
+            "xyxy": [
+              176.97,
+              0.0,
+              299.92,
+              100.67
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0489,
+            "xyxy": [
+              57.64,
+              0.0,
+              171.47,
+              90.22
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0457,
+            "xyxy": [
+              85.63,
+              0.0,
+              201.75,
+              88.05
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0455,
+            "xyxy": [
+              0.02,
+              198.11,
+              113.22,
+              297.27
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0428,
+            "xyxy": [
+              132.6,
+              189.58,
+              293.74,
+              295.52
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0379,
+            "xyxy": [
+              194.8,
+              190.09,
+              296.45,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0375,
+            "xyxy": [
+              172.03,
+              135.57,
+              297.32,
+              292.14
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0352,
+            "xyxy": [
+              0.0,
+              0.0,
+              110.04,
+              138.14
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0345,
+            "xyxy": [
+              0.58,
+              0.0,
+              65.51,
+              121.96
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0341,
+            "xyxy": [
+              147.67,
+              0.54,
+              296.27,
+              46.03
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0295,
+            "xyxy": [
+              62.77,
+              0.0,
+              185.26,
+              111.3
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0292,
+            "xyxy": [
+              0.63,
+              261.42,
+              170.11,
+              299.97
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0287,
+            "xyxy": [
+              179.37,
+              0.0,
+              299.44,
+              140.92
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0284,
+            "xyxy": [
+              0.46,
+              152.99,
+              103.56,
+              295.13
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0282,
+            "xyxy": [
+              40.89,
+              0.0,
+              143.86,
+              91.33
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0278,
+            "xyxy": [
+              191.43,
+              205.12,
+              298.18,
+              295.09
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0273,
+            "xyxy": [
+              1.9,
+              0.0,
+              122.42,
+              109.54
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.027,
+            "xyxy": [
+              33.81,
+              0.0,
+              174.68,
+              114.4
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0251,
+            "xyxy": [
+              0.23,
+              17.75,
+              100.61,
+              127.19
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0236,
+            "xyxy": [
+              30.02,
+              0.0,
+              126.4,
+              31.59
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0234,
+            "xyxy": [
+              173.52,
+              0.0,
+              297.84,
+              194.52
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0229,
+            "xyxy": [
+              0.0,
+              228.54,
+              155.58,
+              297.8
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0228,
+            "xyxy": [
+              11.55,
+              0.0,
+              130.54,
+              85.33
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0227,
+            "xyxy": [
+              227.28,
+              0.0,
+              292.93,
+              19.88
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0224,
+            "xyxy": [
+              0.37,
+              4.19,
+              70.12,
+              143.36
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0218,
+            "xyxy": [
+              30.73,
+              2.23,
+              185.98,
+              164.77
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0211,
+            "xyxy": [
+              113.32,
+              0.0,
+              217.21,
+              92.7
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0209,
+            "xyxy": [
+              0.18,
+              123.1,
+              93.79,
+              250.7
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0208,
+            "xyxy": [
+              121.22,
+              207.29,
+              259.66,
+              293.59
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0206,
+            "xyxy": [
+              0.0,
+              132.07,
+              132.31,
+              295.02
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0203,
+            "xyxy": [
+              81.48,
+              0.0,
+              207.68,
+              116.5
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0203,
+            "xyxy": [
+              88.01,
+              0.0,
+              225.78,
+              143.55
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0199,
+            "xyxy": [
+              41.57,
+              0.0,
+              173.41,
+              23.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0198,
+            "xyxy": [
+              20.61,
+              0.0,
+              150.5,
+              25.98
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0194,
+            "xyxy": [
+              69.16,
+              0.77,
+              205.84,
+              190.77
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0185,
+            "xyxy": [
+              141.31,
+              0.0,
+              294.68,
+              168.83
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0179,
+            "xyxy": [
+              138.0,
+              0.0,
+              250.15,
+              97.89
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0173,
+            "xyxy": [
+              11.81,
+              0.0,
+              112.58,
+              28.75
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0167,
+            "xyxy": [
+              0.0,
+              38.05,
+              106.62,
+              227.24
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0159,
+            "xyxy": [
+              169.56,
+              73.95,
+              296.65,
+              291.83
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0159,
+            "xyxy": [
+              149.26,
+              0.0,
+              262.99,
+              151.02
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0157,
+            "xyxy": [
+              254.03,
+              0.0,
+              291.59,
+              47.66
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0156,
+            "xyxy": [
+              11.61,
+              0.0,
+              100.07,
+              16.87
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0155,
+            "xyxy": [
+              89.13,
+              0.0,
+              259.8,
+              180.73
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0152,
+            "xyxy": [
+              65.4,
+              0.0,
+              203.1,
+              15.03
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0152,
+            "xyxy": [
+              0.14,
+              53.3,
+              103.12,
+              138.03
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0151,
+            "xyxy": [
+              51.93,
+              0.0,
+              163.1,
+              23.26
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.015,
+            "xyxy": [
+              15.43,
+              259.19,
+              156.5,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.015,
+            "xyxy": [
+              75.54,
+              0.0,
+              211.83,
+              15.33
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0148,
+            "xyxy": [
+              6.78,
+              234.14,
+              193.01,
+              296.05
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0146,
+            "xyxy": [
+              146.46,
+              22.73,
+              294.23,
+              266.9
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0142,
+            "xyxy": [
+              197.41,
+              0.0,
+              283.32,
+              25.02
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0134,
+            "xyxy": [
+              0.0,
+              95.42,
+              106.84,
+              291.67
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0128,
+            "xyxy": [
+              0.33,
+              83.46,
+              97.6,
+              243.62
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0124,
+            "xyxy": [
+              127.02,
+              130.61,
+              293.51,
+              290.28
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0121,
+            "xyxy": [
+              0.0,
+              205.85,
+              201.21,
+              293.92
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0116,
+            "xyxy": [
+              111.15,
+              0.0,
+              282.61,
+              192.71
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0112,
+            "xyxy": [
+              22.45,
+              12.26,
+              204.04,
+              217.76
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.011,
+            "xyxy": [
+              185.58,
+              0.0,
+              268.35,
+              24.01
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0108,
+            "xyxy": [
+              123.03,
+              232.79,
+              294.27,
+              292.42
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0107,
+            "xyxy": [
+              0.32,
+              36.16,
+              95.72,
+              179.92
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0107,
+            "xyxy": [
+              105.22,
+              22.36,
+              233.94,
+              220.8
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0104,
+            "xyxy": [
+              114.7,
+              33.09,
+              294.03,
+              267.48
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0104,
+            "xyxy": [
+              57.73,
+              212.37,
+              220.86,
+              293.88
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0103,
+            "xyxy": [
+              14.73,
+              217.42,
+              169.61,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0102,
+            "xyxy": [
+              40.88,
+              157.38,
+              300.0,
+              298.41
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0101,
+            "xyxy": [
+              10.07,
+              122.88,
+              282.37,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0101,
+            "xyxy": [
+              5.04,
+              175.49,
+              258.31,
+              290.96
+            ],
+            "corner_like": false
+          }
+        ]
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.01,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.01,
+        "n_detections": 1,
+        "n_corner": 1,
+        "detections": [
+          {
+            "class": "bruise",
+            "confidence": 0.0117,
+            "xyxy": [
+              0.0,
+              54.25,
+              19.74,
+              64.0
+            ],
+            "corner_like": true
+          }
+        ]
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.05,
+        "n_detections": 19,
+        "n_corner": 10,
+        "detections": [
+          {
+            "class": "wound",
+            "confidence": 0.2982,
+            "xyxy": [
+              0.0,
+              260.14,
+              81.84,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2918,
+            "xyxy": [
+              2.22,
+              0.0,
+              98.48,
+              50.21
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2628,
+            "xyxy": [
+              72.38,
+              0.0,
+              206.93,
+              49.93
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2466,
+            "xyxy": [
+              0.07,
+              233.77,
+              87.34,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2156,
+            "xyxy": [
+              7.45,
+              0.0,
+              124.88,
+              46.19
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2087,
+            "xyxy": [
+              7.63,
+              0.0,
+              181.21,
+              48.32
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2021,
+            "xyxy": [
+              55.1,
+              0.0,
+              188.67,
+              78.9
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1768,
+            "xyxy": [
+              79.31,
+              0.0,
+              209.84,
+              75.88
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1699,
+            "xyxy": [
+              165.79,
+              174.8,
+              293.53,
+              299.58
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1613,
+            "xyxy": [
+              101.43,
+              0.0,
+              227.85,
+              48.17
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1563,
+            "xyxy": [
+              48.82,
+              0.0,
+              192.27,
+              44.33
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1337,
+            "xyxy": [
+              10.42,
+              0.0,
+              179.56,
+              80.65
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1109,
+            "xyxy": [
+              6.26,
+              0.0,
+              151.1,
+              68.76
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0946,
+            "xyxy": [
+              149.07,
+              0.32,
+              257.28,
+              63.11
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0924,
+            "xyxy": [
+              127.25,
+              0.0,
+              250.37,
+              47.35
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0898,
+            "xyxy": [
+              0.27,
+              0.0,
+              86.8,
+              79.42
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0714,
+            "xyxy": [
+              122.05,
+              0.0,
+              239.23,
+              69.57
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0653,
+            "xyxy": [
+              0.0,
+              258.87,
+              128.75,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.0551,
+            "xyxy": [
+              176.97,
+              0.0,
+              299.92,
+              100.67
+            ],
+            "corner_like": true
+          }
+        ]
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.05,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.05,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.1,
+        "n_detections": 13,
+        "n_corner": 7,
+        "detections": [
+          {
+            "class": "wound",
+            "confidence": 0.2982,
+            "xyxy": [
+              0.0,
+              260.14,
+              81.84,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2918,
+            "xyxy": [
+              2.22,
+              0.0,
+              98.48,
+              50.21
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2628,
+            "xyxy": [
+              72.38,
+              0.0,
+              206.93,
+              49.93
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2466,
+            "xyxy": [
+              0.07,
+              233.77,
+              87.34,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2156,
+            "xyxy": [
+              7.45,
+              0.0,
+              124.88,
+              46.19
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2087,
+            "xyxy": [
+              7.63,
+              0.0,
+              181.21,
+              48.32
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2021,
+            "xyxy": [
+              55.1,
+              0.0,
+              188.67,
+              78.9
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1768,
+            "xyxy": [
+              79.31,
+              0.0,
+              209.84,
+              75.88
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1699,
+            "xyxy": [
+              165.79,
+              174.8,
+              293.53,
+              299.58
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1613,
+            "xyxy": [
+              101.43,
+              0.0,
+              227.85,
+              48.17
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1563,
+            "xyxy": [
+              48.82,
+              0.0,
+              192.27,
+              44.33
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1337,
+            "xyxy": [
+              10.42,
+              0.0,
+              179.56,
+              80.65
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "wound",
+            "confidence": 0.1109,
+            "xyxy": [
+              6.26,
+              0.0,
+              151.1,
+              68.76
+            ],
+            "corner_like": true
+          }
+        ]
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.1,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.1,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.25,
+        "n_detections": 3,
+        "n_corner": 2,
+        "detections": [
+          {
+            "class": "wound",
+            "confidence": 0.2982,
+            "xyxy": [
+              0.0,
+              260.14,
+              81.84,
+              300.0
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2918,
+            "xyxy": [
+              2.22,
+              0.0,
+              98.48,
+              50.21
+            ],
+            "corner_like": true
+          },
+          {
+            "class": "wound",
+            "confidence": 0.2628,
+            "xyxy": [
+              72.38,
+              0.0,
+              206.93,
+              49.93
+            ],
+            "corner_like": false
+          }
+        ]
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.25,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.25,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.4,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.4,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.4,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.5,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.5,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.5,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      }
+    ],
+    "candidate_demo_negatives": [
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.01,
+        "n_detections": 23,
+        "n_corner": 0,
+        "detections": [
+          {
+            "class": "cut",
+            "confidence": 0.0772,
+            "xyxy": [
+              10.12,
+              233.59,
+              128.07,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0535,
+            "xyxy": [
+              155.51,
+              231.95,
+              290.21,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0435,
+            "xyxy": [
+              10.35,
+              0.0,
+              137.43,
+              64.57
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0362,
+            "xyxy": [
+              235.22,
+              273.26,
+              291.15,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0271,
+            "xyxy": [
+              10.26,
+              252.03,
+              123.61,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0259,
+            "xyxy": [
+              107.39,
+              235.13,
+              266.59,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0251,
+            "xyxy": [
+              40.6,
+              234.99,
+              191.54,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0245,
+            "xyxy": [
+              76.44,
+              235.32,
+              224.65,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0239,
+            "xyxy": [
+              202.09,
+              1.95,
+              290.48,
+              88.11
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0212,
+            "xyxy": [
+              155.03,
+              0.0,
+              289.59,
+              88.47
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0198,
+            "xyxy": [
+              194.83,
+              0.0,
+              290.71,
+              70.67
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0193,
+            "xyxy": [
+              10.53,
+              11.64,
+              72.16,
+              43.06
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0192,
+            "xyxy": [
+              10.69,
+              0.0,
+              134.99,
+              52.94
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0188,
+            "xyxy": [
+              10.66,
+              257.48,
+              84.51,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0188,
+            "xyxy": [
+              223.29,
+              7.01,
+              289.45,
+              97.12
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0173,
+            "xyxy": [
+              184.69,
+              0.0,
+              290.51,
+              44.66
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0152,
+            "xyxy": [
+              10.55,
+              0.0,
+              67.22,
+              44.99
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.015,
+            "xyxy": [
+              11.11,
+              0.0,
+              154.97,
+              74.14
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0132,
+            "xyxy": [
+              191.65,
+              201.65,
+              289.26,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0128,
+            "xyxy": [
+              180.47,
+              214.17,
+              289.98,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "bruise",
+            "confidence": 0.0121,
+            "xyxy": [
+              191.85,
+              236.02,
+              289.67,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.012,
+            "xyxy": [
+              10.46,
+              275.7,
+              84.41,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0102,
+            "xyxy": [
+              198.09,
+              251.99,
+              290.35,
+              300.0
+            ],
+            "corner_like": false
+          }
+        ]
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.01,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.01,
+        "n_detections": 1,
+        "n_corner": 1,
+        "detections": [
+          {
+            "class": "cut",
+            "confidence": 0.0106,
+            "xyxy": [
+              0.0,
+              0.86,
+              28.7,
+              30.26
+            ],
+            "corner_like": true
+          }
+        ]
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.05,
+        "n_detections": 2,
+        "n_corner": 0,
+        "detections": [
+          {
+            "class": "cut",
+            "confidence": 0.0772,
+            "xyxy": [
+              10.12,
+              233.59,
+              128.07,
+              300.0
+            ],
+            "corner_like": false
+          },
+          {
+            "class": "cut",
+            "confidence": 0.0535,
+            "xyxy": [
+              155.51,
+              231.95,
+              290.21,
+              300.0
+            ],
+            "corner_like": false
+          }
+        ]
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.05,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.05,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.1,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.1,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.1,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.25,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.25,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.25,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.4,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.4,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.4,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/sample/image/football_injury.jpg",
+        "width": 300,
+        "height": 300,
+        "threshold": 0.5,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/blank_skin.jpg",
+        "width": 640,
+        "height": 640,
+        "threshold": 0.5,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      },
+      {
+        "image": "data/datasets/yolo_injury/dummy_test.jpg",
+        "width": 64,
+        "height": 64,
+        "threshold": 0.5,
+        "n_detections": 0,
+        "n_corner": 0,
+        "detections": []
+      }
+    ]
+  },
+  "support": {
+    "train": {
+      "bruise": 40,
+      "cut": 47
+    },
+    "val": {
+      "bruise": 13,
+      "cut": 6
+    },
+    "test": {
+      "bruise": 10,
+      "cut": 8
+    }
+  }
+}

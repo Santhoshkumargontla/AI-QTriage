@@ -1,0 +1,7 @@
+{
+  "audit_timestamp": "2026-08-27T13:19:18.267575+00:00",
+  "component": "frontend/app/cases/[id]/page.tsx",
+  "canvas_rendering": "PASS",
+  "bounding_box_scaling": "display_x = orig_x * display_w / orig_w",
+  "status": "PASS"
+}

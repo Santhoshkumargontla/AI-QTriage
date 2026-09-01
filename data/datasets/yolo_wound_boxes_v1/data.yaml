@@ -1,0 +1,9 @@
+path: C:/Users/santh/Capstone Project Code/data/datasets/yolo_wound_boxes_v1
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: cut
+  1: bruise
+  2: wound
+nc: 3

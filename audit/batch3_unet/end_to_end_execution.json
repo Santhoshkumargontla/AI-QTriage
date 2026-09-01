@@ -1,0 +1,33 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "input_image": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "image_shape": [
+    300,
+    300,
+    3
+  ],
+  "positive_pixels": 51309,
+  "affected_ratio": 0.5701,
+  "debug_info": {
+    "checkpoint_status": "loaded",
+    "original_image_shape": "300x300",
+    "preprocessed_roi_shape": "300x300",
+    "model_input_shape": [
+      1,
+      3,
+      256,
+      256
+    ],
+    "raw_output_min": 0.0,
+    "raw_output_max": 1.0,
+    "raw_output_mean": 0.5563,
+    "threshold_used": 0.5,
+    "positive_pixels": 51309,
+    "total_pixels": 90000,
+    "affected_area_percentage": 57.01,
+    "confidence_status": "confident",
+    "display_message": "\u2713 Segmentation mask identified.",
+    "denominator_type": "full_image"
+  },
+  "status": "PASS"
+}

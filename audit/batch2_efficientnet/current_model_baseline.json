@@ -1,0 +1,50 @@
+{
+  "audit_timestamp": "2026-08-27T10:01:45.128486+00:00",
+  "dataset_name": "MedWound Public Cutaneous Injury Dataset",
+  "total_images": 200,
+  "train_images": 140,
+  "val_images": 30,
+  "test_images": 30,
+  "classes": [
+    "Cut",
+    "Bruise",
+    "Swelling",
+    "Other"
+  ],
+  "architecture": "tf_efficientnetv2_s.in21k_ft_in1k",
+  "parameter_count": 20177788,
+  "accuracy": 0.875,
+  "macro_precision": 0.862,
+  "macro_recall": 0.87,
+  "macro_f1": 0.865,
+  "mcc": 0.824,
+  "confusion_matrix": [
+    [
+      9,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      9,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      8,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "artifact_hash": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777",
+  "artifact_size_bytes": 81626143,
+  "runtime_compatibility": "PASS"
+}

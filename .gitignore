@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+backend/venv/
+
+# Environments
+.env
+backend/.env
+frontend/.env
+frontend/.env.local
+.huggingface/
+.kaggle/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.pkl
+*.npz
+
+# Build outputs
+.next/
+out/
+build/
+dist/
+
+# Logs
+*.log
+
+# Backup and candidate model checkpoints
+*.backup
+*.pre_*_backup
+ml/models/_archive/
+ml/models/*_training/
+ml/models/*_candidate*/
+ml/models/*_eval/
+ml/models/*_v1/
+
+# Large raw datasets and zip archives
+*.zip
+data/raw/
+data/datasets/external/
+data/datasets/download_cache/
+
+# Disposable pytest scratch
+.tmp_pytest/

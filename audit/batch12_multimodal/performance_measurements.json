@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T13:00:48.351359+00:00",
+  "device": "CPU (Python 3.14)",
+  "iterations": 20,
+  "min_latency_ms": 2.15,
+  "avg_latency_ms": 2.85,
+  "max_latency_ms": 3.9,
+  "status": "PASS"
+}

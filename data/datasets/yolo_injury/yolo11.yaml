@@ -1,0 +1,9 @@
+names:
+  0: cut
+  1: bruise
+  2: abrasion
+  3: laceration
+path: C:\Users\santh\Capstone Project Code\data\datasets\yolo_injury
+test: images\test
+train: images\train
+val: images\val

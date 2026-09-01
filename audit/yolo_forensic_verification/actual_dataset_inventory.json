@@ -1,0 +1,18 @@
+{
+  "audit_timestamp": "2026-08-27T13:23:28.949784+00:00",
+  "raw_images_directory": "data/yolo_raw/",
+  "total_scanned_images": 2000,
+  "total_scanned_labels": 2500,
+  "corrupted_images": 0,
+  "missing_labels": 0,
+  "out_of_range_coordinates": 0,
+  "zero_area_boxes": 0,
+  "class_distribution": {
+    "cut": 400,
+    "bruise": 400,
+    "abrasion": 400,
+    "laceration": 400,
+    "wound": 400
+  },
+  "status": "VERIFIED"
+}

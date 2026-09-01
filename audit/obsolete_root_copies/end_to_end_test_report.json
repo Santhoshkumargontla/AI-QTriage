@@ -1,0 +1,96 @@
+{
+  "timestamp": "2026-08-27T07:16:50.158948+00:00",
+  "workflow_steps": [
+    {
+      "step": 1,
+      "name": "Create Case",
+      "status": "SUCCESS",
+      "version": "v1.2.0"
+    },
+    {
+      "step": 2,
+      "name": "Image Upload",
+      "status": "SUCCESS",
+      "version": "v1.2.0"
+    },
+    {
+      "step": 3,
+      "name": "YOLO11 Detection",
+      "status": "SUCCESS",
+      "version": "v1.2.0",
+      "artifact": "yolo11_injury_best.pt"
+    },
+    {
+      "step": 4,
+      "name": "EfficientNetV2 Classification",
+      "status": "SUCCESS",
+      "version": "v1.2.0",
+      "artifact": "efficientnetv2_injury_best.pt"
+    },
+    {
+      "step": 5,
+      "name": "ResNet34-UNet Segmentation",
+      "status": "SUCCESS",
+      "version": "v1.2.0",
+      "artifact": "unet_injury_best.pt"
+    },
+    {
+      "step": 6,
+      "name": "Grad-CAM Heatmap Generation",
+      "status": "SUCCESS",
+      "version": "v1.2.0"
+    },
+    {
+      "step": 7,
+      "name": "Questionnaire Processing",
+      "status": "SUCCESS",
+      "version": "v1.2.0"
+    },
+    {
+      "step": 8,
+      "name": "Real-Time Sensor Telemetry Capture",
+      "status": "SUCCESS",
+      "version": "v1.2.0"
+    },
+    {
+      "step": 9,
+      "name": "Dedicated Sensor Motion Model Inference",
+      "status": "SUCCESS",
+      "version": "v1.2.0",
+      "artifact": "sensor_motion_best.json"
+    },
+    {
+      "step": 10,
+      "name": "XGBoost Multimodal Risk Fusion",
+      "status": "SUCCESS",
+      "version": "v1.2.0",
+      "artifact": "xgboost_multimodal_best.json"
+    },
+    {
+      "step": 11,
+      "name": "Experimental 4-Qubit VQC",
+      "status": "SUCCESS",
+      "version": "v1.2.0",
+      "artifact": "vqc_weights.npz",
+      "sos_influence": 0.0
+    },
+    {
+      "step": 12,
+      "name": "SOS Emergency Decision Threshold Check",
+      "status": "SUCCESS",
+      "sos_weight_vqc": 0.0,
+      "cancellation_countdown": "10s"
+    },
+    {
+      "step": 13,
+      "name": "MongoDB Event Persistence",
+      "status": "SUCCESS"
+    },
+    {
+      "step": 14,
+      "name": "JSON / PDF Report Export",
+      "status": "SUCCESS"
+    }
+  ],
+  "overall_status": "SUCCESS"
+}

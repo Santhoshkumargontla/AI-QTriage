@@ -1,0 +1,25 @@
+{
+  "audit_timestamp": "2026-08-27T09:06:55.062776+00:00",
+  "model_path": "c:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+  "sample_image": "c:\\Users\\santh\\Capstone Project Code\\data\\sample\\image\\football_injury.jpg",
+  "predicted_class": "Bruise",
+  "probabilities": {
+    "Cut": 0.0,
+    "Bruise": 1.0,
+    "Swelling": 0.0,
+    "Other": 0.0
+  },
+  "performance_ms": {
+    "runs": [
+      114.24409999744967,
+      100.49850004725158,
+      83.02940003341064,
+      96.07840003445745,
+      109.19849999481812
+    ],
+    "min": 83.02940003341064,
+    "avg": 100.60978002147749,
+    "max": 114.24409999744967
+  },
+  "verification_status": "PASS"
+}

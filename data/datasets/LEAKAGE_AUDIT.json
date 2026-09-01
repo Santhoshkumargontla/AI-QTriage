@@ -1,0 +1,49 @@
+{
+  "audit_timestamp": "2026-08-27T07:16:50.157690+00:00",
+  "subject_level_split_datasets": [
+    {
+      "dataset": "MedWound Public Wound Classification",
+      "total_subjects": 40,
+      "train_subjects": 28,
+      "val_subjects": 6,
+      "test_subjects": 6,
+      "train_val_intersection": 0,
+      "train_test_intersection": 0,
+      "val_test_intersection": 0,
+      "leakage_status": "ZERO_SUBJECT_LEAKAGE"
+    },
+    {
+      "dataset": "Kaggle Wound Boundary Mask Segmentation",
+      "total_subjects": 40,
+      "train_subjects": 28,
+      "val_subjects": 6,
+      "test_subjects": 6,
+      "train_val_intersection": 0,
+      "train_test_intersection": 0,
+      "val_test_intersection": 0,
+      "leakage_status": "ZERO_SUBJECT_LEAKAGE"
+    },
+    {
+      "dataset": "SisFall & UCI HAR Motion Telemetry",
+      "total_subjects": 38,
+      "train_subjects": 26,
+      "val_subjects": 6,
+      "test_subjects": 6,
+      "train_val_intersection": 0,
+      "train_test_intersection": 0,
+      "val_test_intersection": 0,
+      "leakage_status": "ZERO_SUBJECT_LEAKAGE"
+    }
+  ],
+  "image_duplicate_audit": {
+    "exact_sha256_duplicates_across_splits": 0,
+    "near_duplicate_phash_copies_across_splits": 0,
+    "status": "PASS"
+  },
+  "sensor_window_audit": {
+    "window_size_seconds": 2.5,
+    "sampling_rate_hz": 50.0,
+    "cross_split_overlapping_windows": 0,
+    "status": "PASS"
+  }
+}

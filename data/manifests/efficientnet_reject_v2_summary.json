@@ -1,0 +1,47 @@
+{
+  "created_utc": "2026-08-29T12:10:43.488673+00:00",
+  "root": "data\\datasets\\efficientnet_reject_v2",
+  "classes": [
+    "cut",
+    "bruise",
+    "normal",
+    "ood_reject"
+  ],
+  "n": 189,
+  "split_sizes": {
+    "train": 125,
+    "test": 28,
+    "val": 36
+  },
+  "class_counts": {
+    "bruise": 64,
+    "cut": 62,
+    "normal": 18,
+    "ood_reject": 45
+  },
+  "provenance_counts": {
+    "SYNTHETIC": 126,
+    "PUBLIC_REAL_PHOTOS": 18,
+    "SYNTHETIC_OOD_REJECT": 45
+  },
+  "subject_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "hash_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "exclusions_n": 42,
+  "near_dup_n": 728,
+  "leakage_free": true,
+  "known_limitations": [
+    "cut/bruise remain SYNTHETIC drawings \u2014 Roboflow/Kaggle credentials absent.",
+    "swelling has ZERO labeled samples \u2014 not included in this classifier.",
+    "normal is peri-wound / empty ulcer-patch skin, not healthy sports-injury skin.",
+    "ood_reject is synthetic canvases \u2014 validated as abstention, not clinical OOD.",
+    "Mendeley healthy-feet download blocked (403/404)."
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "started": "2026-08-28T17:51:15.728868+00:00",
+  "supported_scenarios": [
+    "football_fall",
+    "sudden_fall",
+    "sudden_impact",
+    "normal_movement"
+  ],
+  "aliases": {},
+  "scenarios": {
+    "football_fall": {
+      "simulate_http": 200,
+      "case_id": "6b42d29e-1770-4316-b976-96a4cee14981",
+      "sos_triggered": false,
+      "peak_g_force": 4.62,
+      "peak_acceleration": 45.28,
+      "peak_jerk_gs": 181.4195,
+      "gyro_variance": 0.0799,
+      "post_impact_stabilization_seconds": 0.02,
+      "optical_lux_drop": null,
+      "lux_feature_available": false,
+      "predicted_motion_class": "normal_activity",
+      "motion_confidence": 0.9862003326416016,
+      "motion_probabilities": {
+        "normal_activity": 0.9862003326416016,
+        "fall": 0.009388928301632404,
+        "impact": 0.0044108047150075436
+      },
+      "classifier_status": "classified",
+      "source_type": "simulated",
+      "scenario": "football_fall",
+      "sample_count": 150,
+      "events": [
+        "Sensor Log Started",
+        "Peak Impact Acceleration",
+        "Physical Stabilization"
+      ],
+      "mongo_matches_simulate": true,
+      "get_matches_mongo": true,
+      "analyze_http": 200,
+      "classifier_survives_analyze": true,
+      "xgboost_class": "MODERATE",
+      "frontend_motion_display": "normal_activity"
+    },
+    "sudden_fall": {
+      "simulate_http": 200,
+      "case_id": "57c80903-18a6-47b1-9a8b-1032e6929082",
+      "sos_triggered": false,
+      "peak_g_force": 4.04,
+      "peak_acceleration": 39.65,
+      "peak_jerk_gs": 201.9696,
+      "gyro_variance": 0.1153,
+      "post_impact_stabilization_seconds": 0.02,
+      "optical_lux_drop": null,
+      "lux_feature_available": false,
+      "predicted_motion_class": "normal_activity",
+      "motion_confidence": 0.9860044121742249,
+      "motion_probabilities": {
+        "normal_activity": 0.9860044121742249,
+        "fall": 0.008594212122261524,
+        "impact": 0.005401402711868286
+      },
+      "classifier_status": "classified",
+      "source_type": "simulated",
+      "scenario": "sudden_fall",
+      "sample_count": 150,
+      "events": [
+        "Sensor Log Started",
+        "Peak Impact Acceleration",
+        "Physical Stabilization"
+      ],
+      "mongo_matches_simulate": true,
+      "get_matches_mongo": true,
+      "analyze_http": 200,
+      "classifier_survives_analyze": true,
+      "xgboost_class": "MODERATE",
+      "frontend_motion_display": "normal_activity"
+    },
+    "sudden_impact": {
+      "simulate_http": 200,
+      "case_id": "70e55348-75f9-4cb6-a270-7258850275a8",
+      "sos_triggered": false,
+      "peak_g_force": 5.61,
+      "peak_acceleration": 55.01,
+      "peak_jerk_gs": 231.0257,
+      "gyro_variance": 0.0509,
+      "post_impact_stabilization_seconds": 0.02,
+      "optical_lux_drop": null,
+      "lux_feature_available": false,
+      "predicted_motion_class": "fall",
+      "motion_confidence": 0.9845049381256104,
+      "motion_probabilities": {
+        "normal_activity": 0.009256526827812195,
+        "fall": 0.9845049381256104,
+        "impact": 0.00623860489577055
+      },
+      "classifier_status": "classified",
+      "source_type": "simulated",
+      "scenario": "sudden_impact",
+      "sample_count": 150,
+      "events": [
+        "Sensor Log Started",
+        "Peak Impact Acceleration",
+        "Physical Stabilization"
+      ],
+      "mongo_matches_simulate": true,
+      "get_matches_mongo": true,
+      "analyze_http": 200,
+      "classifier_survives_analyze": true,
+      "xgboost_class": "MODERATE",
+      "frontend_motion_display": "fall"
+    },
+    "normal_movement": {
+      "simulate_http": 200,
+      "case_id": "a4beb622-9489-4e69-9b20-80911e817d1e",
+      "sos_triggered": false,
+      "peak_g_force": 1.04,
+      "peak_acceleration": 10.2,
+      "peak_jerk_gs": 2.1256,
+      "gyro_variance": 0.0002,
+      "post_impact_stabilization_seconds": 0.0,
+      "optical_lux_drop": null,
+      "lux_feature_available": false,
+      "predicted_motion_class": "normal_activity",
+      "motion_confidence": 0.9868375658988953,
+      "motion_probabilities": {
+        "normal_activity": 0.9868375658988953,
+        "fall": 0.008748742751777172,
+        "impact": 0.004413654562085867
+      },
+      "classifier_status": "classified",
+      "source_type": "simulated",
+      "scenario": "normal_movement",
+      "sample_count": 150,
+      "events": [
+        "Sensor Log Started",
+        "Peak Impact Acceleration",
+        "Physical Stabilization"
+      ],
+      "mongo_matches_simulate": true,
+      "get_matches_mongo": true,
+      "analyze_http": 200,
+      "classifier_survives_analyze": true,
+      "xgboost_class": "MODERATE",
+      "frontend_motion_display": "normal_activity"
+    }
+  },
+  "invalid_scenario": {
+    "http": 400,
+    "detail": "Invalid scenario type. Use: football_fall, sudden_fall, sudden_impact, normal_movement"
+  },
+  "feature_missing_direct": {
+    "status": "FEATURE_MISSING",
+    "predicted_motion_class": null,
+    "missing_features": [
+      "peak_acceleration",
+      "peak_jerk_gs",
+      "accel_variance",
+      "gyro_variance",
+      "sma",
+      "post_impact_stabilization_seconds"
+    ]
+  },
+  "model_unavailable_direct": {
+    "status": "MODEL_UNAVAILABLE",
+    "predicted_motion_class": null
+  }
+}

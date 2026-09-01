@@ -1,0 +1,8 @@
+{
+  "audit_timestamp": "2026-08-27T12:51:10.438019+00:00",
+  "python_version": "3.14.5",
+  "pytorch_version": "2.13.0+cpu",
+  "cuda_available": false,
+  "device": "cpu (Intel/AMD 12 threads)",
+  "status": "PASS"
+}

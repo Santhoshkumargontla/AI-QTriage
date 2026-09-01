@@ -1,0 +1,26 @@
+{
+  "audit_timestamp": "2026-08-27T13:23:28.949784+00:00",
+  "provenance": [
+    {
+      "dataset_name": "WSNet Cutaneous Wound Set",
+      "source_url": "https://github.com/subbareddy248/WSNET",
+      "license": "Open Access",
+      "image_count": 500,
+      "status": "VERIFIED"
+    },
+    {
+      "dataset_name": "Roboflow Universe Cutaneous Injury",
+      "source_url": "https://universe.roboflow.com/skin-injury",
+      "license": "CC BY 4.0",
+      "image_count": 1350,
+      "status": "VERIFIED"
+    },
+    {
+      "dataset_name": "SurgWound HuggingFace",
+      "source_url": "https://huggingface.co/datasets/taruntr/SurgWound",
+      "license": "CC BY-SA 4.0",
+      "image_count": 150,
+      "status": "VERIFIED"
+    }
+  ]
+}

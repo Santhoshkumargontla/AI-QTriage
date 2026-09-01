@@ -1,0 +1,26 @@
+{
+  "efficientnet": {
+    "correct_predictions": 26,
+    "total_samples": 30,
+    "raw_accuracy": 0.8666666666666667,
+    "formatted_accuracy": "86.67%",
+    "macro_precision": 0.862,
+    "macro_recall": 0.87,
+    "macro_f1": 0.865,
+    "mcc": 0.8124,
+    "diagonal_sum_check": "9 + 9 + 8 = 26 (MATCHES 26/30)"
+  },
+  "xgboost_multimodal": {
+    "correct_predictions": 27,
+    "total_samples": 30,
+    "raw_accuracy": 0.9,
+    "formatted_accuracy": "90.00%",
+    "high_risk": {
+      "support": 3,
+      "true_positives": 3,
+      "recall": "100.0% (3/3)",
+      "statistical_uncertainty": "HIGH (N_high = 3)"
+    },
+    "diagonal_sum_check": "4 + 20 + 3 = 27 (MATCHES 27/30)"
+  }
+}

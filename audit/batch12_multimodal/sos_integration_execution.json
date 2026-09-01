@@ -1,0 +1,6 @@
+{
+  "audit_timestamp": "2026-08-27T13:00:48.351359+00:00",
+  "sos_weight": 0.0,
+  "isolation_status": "PASS (VQC has 0% direct influence on emergency SOS triggers)",
+  "status": "PASS"
+}

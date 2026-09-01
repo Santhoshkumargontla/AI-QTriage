@@ -1,0 +1,719 @@
+{
+  "ROOT": "C:\\Users\\santh\\Capstone Project Code",
+  "CANON_ROOT": "C:\\Users\\santh\\Capstone Project Code",
+  "roots_match": true,
+  "canonical": {
+    "YOLO": {
+      "declared": "ml/models/vision/yolo11_injury_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_best.pt",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vision/yolo11_injury_best.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f"
+    },
+    "EfficientNet": {
+      "declared": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83"
+    },
+    "U-Net": {
+      "declared": "ml/models/vision/unet_injury_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vision/unet_injury_best.pt",
+      "sha256": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2"
+    },
+    "XGBoost": {
+      "declared": "ml/models/xgboost_best.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\xgboost_best.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/xgboost_best.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643"
+    },
+    "VQC_dir": {
+      "declared": "ml/models/vqc",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vqc",
+      "sha256": null
+    },
+    "VQC_weights": {
+      "declared": "ml/models/vqc/vqc_weights.npz",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc\\vqc_weights.npz",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vqc/vqc_weights.npz",
+      "sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e"
+    },
+    "VQC_pca": {
+      "declared": "ml/models/vqc/pca.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc\\pca.pkl",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vqc/pca.pkl",
+      "sha256": "16caccddd838bc045e9180cf0de116a0d904541fb516a4bc618ab8011ac12a50"
+    },
+    "VQC_scaler": {
+      "declared": "ml/models/vqc/scaler.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc\\scaler.pkl",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vqc/scaler.pkl",
+      "sha256": "506c818dee106b512fd861642def1d388801f1efc9fe14312cfdd67634d6e2d9"
+    },
+    "Sensor": {
+      "declared": "ml/models/sensor_motion_best.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\sensor_motion_best.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/sensor_motion_best.json",
+      "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb"
+    },
+    "Sensor_scaler": {
+      "declared": "ml/models/sensor_scaler.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\sensor_scaler.pkl",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/sensor_scaler.pkl",
+      "sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959"
+    },
+    "Registry": {
+      "declared": "ml/models/model_registry.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\model_registry.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/model_registry.json",
+      "sha256": "a9d91db6a6080fdc2b58395c37bb98b0e780d476acd09a5cb07973e98ecce282"
+    },
+    "XGB_metadata": {
+      "declared": "ml/models/xgboost_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\xgboost_metadata.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/xgboost_metadata.json",
+      "sha256": "c37499693d1786f283bab566650f084e7fe2e8af0eeecffa84a936d859390c57"
+    },
+    "YOLO_metadata": {
+      "declared": "ml/models/vision/yolo11_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_metadata.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vision/yolo11_metadata.json",
+      "sha256": "e5685998d20fee79ecfbdcb4bfb3e694d118ddf83cf56359a54af12676ba93a9"
+    },
+    "EffNet_metadata": {
+      "declared": "ml/models/vision/efficientnetv2_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_metadata.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vision/efficientnetv2_metadata.json",
+      "sha256": "acc5174b62732a21dfc6b23e70825c585b34f16259d3182cbcb8fc70a05ea18f"
+    },
+    "UNet_metadata": {
+      "declared": "ml/models/vision/unet_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_metadata.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vision/unet_metadata.json",
+      "sha256": "43a4b92f472eeee0dcaabcbb7b7b3361821fcfb7a8d68edae4216858371dbb74"
+    },
+    "VQC_metadata": {
+      "declared": "ml/models/vqc/vqc_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc\\vqc_metadata.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/vqc/vqc_metadata.json",
+      "sha256": "8d44507680cb5ac0fc3385213cea7993c3261ae506863f00352ca9f57e9183bd"
+    },
+    "Sensor_metadata": {
+      "declared": "ml/models/sensor_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\sensor_metadata.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "ml/models/sensor_metadata.json",
+      "sha256": "4429ed55f5979aa63f7218901c25fdaefa613552883aac309f21ec8341e95643"
+    },
+    "eval_results": {
+      "declared": "data/results/evaluation_results.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\data\\results\\evaluation_results.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "data/results/evaluation_results.json",
+      "sha256": "6b36dc8c3864a13d0af6397a85e6762b68cf08b381089f7b5fa05526ea2b880b"
+    },
+    "eval_compare": {
+      "declared": "data/results/vqc_xgb_comparison.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\data\\results\\vqc_xgb_comparison.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "data/results/vqc_xgb_comparison.json",
+      "sha256": "a4c6effd7bdecac177140980c59c8f40c0646cdfa0e94e6fbe5537bb29cd8ea2"
+    },
+    "eval_canonical": {
+      "declared": "data/results/canonical_held_out_evaluation.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\data\\results\\canonical_held_out_evaluation.json",
+      "cwd_exists_from_root": true,
+      "root_exists": true,
+      "resolve_existing": "data/results/canonical_held_out_evaluation.json",
+      "sha256": "e0b89b117fd2471b59ea0f7189ce7065d46ca76872325713fd0e02d411573e4a"
+    }
+  },
+  "registry_vs_disk": [
+    {
+      "model_name": "XGBoost Multimodal",
+      "canonical_path": "ml/models/xgboost_best.json",
+      "artifact_path": "ml/models/xgboost_best.json",
+      "registry_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "disk_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "sha_match": true,
+      "status": "TRAINED",
+      "training_status": "TRAINED",
+      "classes": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "version": "v1.2.0"
+    },
+    {
+      "model_name": "Experimental 4-Qubit VQC",
+      "canonical_path": "ml/models/vqc/vqc_weights.npz",
+      "artifact_path": "ml/models/vqc/vqc_weights.npz",
+      "registry_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "disk_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "sha_match": true,
+      "status": "EXPERIMENTAL_ONLY",
+      "training_status": "EXPERIMENTAL_ONLY",
+      "classes": [
+        "LOW",
+        "MODERATE",
+        "HIGH"
+      ],
+      "version": "v1.4.0"
+    },
+    {
+      "model_name": "EfficientNetV2 Classification",
+      "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "artifact_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "registry_sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+      "disk_sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+      "sha_match": true,
+      "status": "NOT_TRUSTWORTHY",
+      "training_status": "NOT_TRUSTWORTHY",
+      "classes": [
+        "cut",
+        "bruise",
+        "swelling"
+      ],
+      "version": "v1.3.0"
+    },
+    {
+      "model_name": "ResNet34-UNet Segmentation",
+      "canonical_path": "ml/models/vision/unet_injury_best.pt",
+      "artifact_path": "ml/models/vision/unet_injury_best.pt",
+      "registry_sha256": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+      "disk_sha256": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+      "sha_match": true,
+      "status": "MODEL_OUTPUT_NOT_TRUSTWORTHY",
+      "training_status": "MODEL_OUTPUT_NOT_TRUSTWORTHY",
+      "classes": [
+        "wound_mask"
+      ],
+      "version": "v1.3.0"
+    },
+    {
+      "model_name": "YOLO11 Detection",
+      "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+      "artifact_path": "ml/models/vision/yolo11_injury_best.pt",
+      "registry_sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "disk_sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "sha_match": true,
+      "status": "INFERENCE_EXECUTES",
+      "training_status": "TRAINED_AND_EVALUATED",
+      "classes": [
+        "cut",
+        "bruise",
+        "wound"
+      ],
+      "version": "v1.3.0"
+    },
+    {
+      "model_name": "Sensor Motion Event Classifier",
+      "canonical_path": "ml/models/sensor_motion_best.json",
+      "artifact_path": "ml/models/sensor_motion_best.json",
+      "registry_sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "disk_sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "sha_match": true,
+      "status": "TRAINED",
+      "training_status": "TRAINED",
+      "classes": [
+        "normal_activity",
+        "fall",
+        "impact"
+      ],
+      "version": "v1.2.0"
+    }
+  ],
+  "yolo_backup_paths": [
+    {
+      "declared": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_backup",
+      "exists_cwd": true,
+      "exists_root": true
+    },
+    {
+      "declared": "ml/models/yolo_real_training/run_real_wound/weights/best.pt",
+      "exists_cwd": true,
+      "exists_root": true
+    },
+    {
+      "declared": "ml/models/yolo11n_best.pt",
+      "exists_cwd": true,
+      "exists_root": true
+    },
+    {
+      "declared": "ml/models/yolo11n_pretrained.pt",
+      "exists_cwd": true,
+      "exists_root": true
+    },
+    {
+      "declared": "ml/models/vision/yolo11_injury_real_retrained.pt",
+      "exists_cwd": true,
+      "exists_root": true
+    },
+    {
+      "declared": "ml/models/yolo_processed_training/run_processed/weights/best.pt",
+      "exists_cwd": true,
+      "exists_root": true
+    }
+  ],
+  "file_count": 56,
+  "files": [
+    {
+      "rel": "ml/models/_archive/artifact_integrity_report.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\artifact_integrity_report.json",
+      "sha256": "54a4c8f4cb89f60cc6d7a25e6e4daad1d149fbf00b06d88d20a87f7c7a25b216",
+      "size": 3895,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/classical/pca.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\classical\\pca.pkl",
+      "sha256": "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b",
+      "size": 1431,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/classical/scaler.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\classical\\scaler.pkl",
+      "sha256": "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7",
+      "size": 1119,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/classical/xgboost_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\classical\\xgboost_metadata.json",
+      "sha256": "41f6edf27a0bb8b413422ff1b55a70003df9a83d13782345dd2e795117cc1ed6",
+      "size": 402,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/classical/xgboost_multimodal.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\classical\\xgboost_multimodal.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "size": 199969,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/efficientnet_v2_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\efficientnet_v2_best.pt",
+      "sha256": "f85ed8b798f6ab02f7a8edc9c9a9d589160668320b1e680e4d3ac6f88e5d7dae",
+      "size": 81621351,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/effnet_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\effnet_best.pt",
+      "sha256": "9822f25aad9540a032a990b3021130feda407cb469f5587aa9fe6e048a377895",
+      "size": 81614259,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/pca.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\pca.pkl",
+      "sha256": "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b",
+      "size": 1431,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/scaler.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\scaler.pkl",
+      "sha256": "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7",
+      "size": 1119,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/unet_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\unet_best.pt",
+      "sha256": "92557ce44ce49b25f482b89711257174aea90504b32a36b9fbdc4289e7d5576e",
+      "size": 97916043,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/unet_resnet34_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\unet_resnet34_best.pt",
+      "sha256": "4379fca78fdf899b0fe81f76b02c92fb052e39bf6ca78ec9e6074d47eda205d8",
+      "size": 97918663,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/vision/yolo11_merged_candidate.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\vision\\yolo11_merged_candidate.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size": 5468506,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/xgboost_multimodal_best.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\xgboost_multimodal_best.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "size": 199969,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/yolo11_real_wound_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\yolo11_real_wound_best.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size": 5468506,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/yolo11n.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\yolo11n.pt",
+      "sha256": "760da77988a8addbd8586d942713e94ba49d4473ebe43605fa806f885df72c8a",
+      "size": 1325,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/yolo_candidate_training/run_merged/weights/best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\yolo_candidate_training\\run_merged\\weights\\best.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size": 5468506,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/_archive/yolo_training/training_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\_archive\\yolo_training\\training_metadata.json",
+      "sha256": "61271e22e6b605ae25d7a4e4f853cdd99f2660fd191cb60572ccb3f32747bc06",
+      "size": 494,
+      "in_archive": true
+    },
+    {
+      "rel": "ml/models/efficientnet_processed_training/PROMOTION.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\efficientnet_processed_training\\PROMOTION.json",
+      "sha256": "a78dc629558eac1affff35097ff305d555c3c30bb9b893ea1b7d304b10344442",
+      "size": 273,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/efficientnet_processed_training/TRAINING_EVAL_REPORT.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\efficientnet_processed_training\\TRAINING_EVAL_REPORT.json",
+      "sha256": "b8216adaac1bb9b791d2b736dc4c462944ffeeb3d82d5ab95725ae0826b9ebd1",
+      "size": 7665,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/efficientnet_processed_training/efficientnet_classes.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\efficientnet_processed_training\\efficientnet_classes.json",
+      "sha256": "c2ff86448a39abd7e06464e18ef0e0ae115f5cdf4c84c39d815637971d6e9ee0",
+      "size": 54,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/efficientnet_processed_training/efficientnetv2_candidate.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\efficientnet_processed_training\\efficientnetv2_candidate.pt",
+      "sha256": "bbc89c1991355ab6d1b120889250187cb531744782676f19937fb51ed4267456",
+      "size": 81624567,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/efficientnet_reliability/EFFICIENTNET_RELIABILITY_REPORT.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\efficientnet_reliability\\EFFICIENTNET_RELIABILITY_REPORT.json",
+      "sha256": "34deaa5fbaafe979c97573b287bf7d32e70d8acb2aa24639e353f13944b93e3b",
+      "size": 26678,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/model_registry.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\model_registry.json",
+      "sha256": "a9d91db6a6080fdc2b58395c37bb98b0e780d476acd09a5cb07973e98ecce282",
+      "size": 19109,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/sensor_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\sensor_metadata.json",
+      "sha256": "4429ed55f5979aa63f7218901c25fdaefa613552883aac309f21ec8341e95643",
+      "size": 1647,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/sensor_motion_best.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\sensor_motion_best.json",
+      "sha256": "707ee9c25392d5e8e1ca9e023feb77937b6ad5a159cb0b53d3b6a09f047e1cbb",
+      "size": 135603,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/sensor_scaler.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\sensor_scaler.pkl",
+      "sha256": "04291f244c187b14d42947328235cd7f23fd9818aebe237aa6131b4e9ad9d959",
+      "size": 775,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/unet_processed_training/PROMOTION.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\unet_processed_training\\PROMOTION.json",
+      "sha256": "c0051b93451f93788f18827ec76a5a3a3850c43cb23aa447f04ad96d66f2d45f",
+      "size": 247,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/unet_processed_training/TRAINING_EVAL_REPORT.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\unet_processed_training\\TRAINING_EVAL_REPORT.json",
+      "sha256": "022fa28ece4cc1af8c3985c93b452c273b7cf3ae7af37bec7f013c03ed1cc013",
+      "size": 8867,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/unet_processed_training/unet_candidate.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\unet_processed_training\\unet_candidate.pt",
+      "sha256": "3fcd3d8a81c7622c07af574a5093c6da4ae81e2e16d626f5466e28c182b63114",
+      "size": 97917463,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/unet_reliability/UNET_RELIABILITY_REPORT.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\unet_reliability\\UNET_RELIABILITY_REPORT.json",
+      "sha256": "cca6b3b24e8834973956895e5be478589b82c87e28829caa546c7a09e730d8b1",
+      "size": 24406,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt",
+      "sha256": "6944605ae71685d909d505d12ce32d5bd9e953c10bbebb72a02635a729897e83",
+      "size": 81621023,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/efficientnetv2_injury_best.pt.pre_retrain_backup",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_injury_best.pt.pre_retrain_backup",
+      "sha256": "2ed342fc869fef5b436aa39d9894695f21b5dc8cabd906eee93835f22c936777",
+      "size": 81626143,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/efficientnetv2_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\efficientnetv2_metadata.json",
+      "sha256": "acc5174b62732a21dfc6b23e70825c585b34f16259d3182cbcb8fc70a05ea18f",
+      "size": 3251,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/unet_injury_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt",
+      "sha256": "2b4967aa04f6af309d3aa14fef2e098350bdd02fd0e4575e11baa033eb0424a2",
+      "size": 97918031,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/unet_injury_best.pt.pre_retrain_backup",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_injury_best.pt.pre_retrain_backup",
+      "sha256": "17e561725a8062648371d4d3bfd77064276b1d4539fbc7a1176886c7db9f9a93",
+      "size": 97918031,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/unet_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\unet_metadata.json",
+      "sha256": "43a4b92f472eeee0dcaabcbb7b7b3361821fcfb7a8d68edae4216858371dbb74",
+      "size": 2580,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/yolo11_injury_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_best.pt",
+      "sha256": "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f",
+      "size": 5468506,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/yolo11_injury_best.pt.pre_retrain_backup",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_best.pt.pre_retrain_backup",
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "size": 5470810,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/yolo11_injury_real_retrained.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_injury_real_retrained.pt",
+      "sha256": "080817b4531bbc0d57af7ff2c08d48f353aa42ace53c710662eaa28dce0fd837",
+      "size": 5470840,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/yolo11_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo11_metadata.json",
+      "sha256": "e5685998d20fee79ecfbdcb4bfb3e694d118ddf83cf56359a54af12676ba93a9",
+      "size": 2099,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vision/yolo_baseline_vs_candidate.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vision\\yolo_baseline_vs_candidate.json",
+      "sha256": "61999ec8692c3cca7a99bc065377875ab369970d903da65a96d6df5c09309cc3",
+      "size": 1804,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vqc/pca.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc\\pca.pkl",
+      "sha256": "16caccddd838bc045e9180cf0de116a0d904541fb516a4bc618ab8011ac12a50",
+      "size": 1198,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vqc/scaler.pkl",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc\\scaler.pkl",
+      "sha256": "506c818dee106b512fd861642def1d388801f1efc9fe14312cfdd67634d6e2d9",
+      "size": 960,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vqc/vqc_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc\\vqc_metadata.json",
+      "sha256": "8d44507680cb5ac0fc3385213cea7993c3261ae506863f00352ca9f57e9183bd",
+      "size": 3616,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/vqc/vqc_weights.npz",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\vqc\\vqc_weights.npz",
+      "sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "size": 1086,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/xgboost_best.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\xgboost_best.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "size": 199969,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/xgboost_metadata.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\xgboost_metadata.json",
+      "sha256": "c37499693d1786f283bab566650f084e7fe2e8af0eeecffa84a936d859390c57",
+      "size": 2083,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo11n_best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo11n_best.pt",
+      "sha256": "b2780ea3df84011b38a5dff27c2712ee210da3b46ecebf8c455ccb3e53e1fe44",
+      "size": 5469722,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo11n_pretrained.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo11n_pretrained.pt",
+      "sha256": "0ebbc80d4a7680d14987a577cd21342b65ecfd94632bd9a8da63ae6417644ee1",
+      "size": 5613764,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_processed_training\\TRAINING_EVAL_REPORT.json",
+      "sha256": "34d75feb99f7bc6adba13f9a635da80fbe53e386ef8732daa677666d6f73a916",
+      "size": 17191,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_processed_training\\run_processed\\TRAINING_EVAL_REPORT.json",
+      "sha256": "34d75feb99f7bc6adba13f9a635da80fbe53e386ef8732daa677666d6f73a916",
+      "size": 17191,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo_processed_training/run_processed/weights/best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_processed_training\\run_processed\\weights\\best.pt",
+      "sha256": "5afe49cbbf2dd03abadfd1e089d321b95000b47b270f6ad7482b94fc79a78a48",
+      "size": 5470810,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo_processed_training/run_processed/weights/last.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_processed_training\\run_processed\\weights\\last.pt",
+      "sha256": "6274b4525be623b49960a8f692bd860362969c549159ed35c45f5a3321e72bf2",
+      "size": 5470810,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo_real_training/run_real_wound/weights/best.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_real_training\\run_real_wound\\weights\\best.pt",
+      "sha256": "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63",
+      "size": 5470810,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo_real_training/run_real_wound/weights/last.pt",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_real_training\\run_real_wound\\weights\\last.pt",
+      "sha256": "140037ee21294847af40fa6050da0f20c13b424c6d586b6a6c9ead6adfc759db",
+      "size": 5470810,
+      "in_archive": false
+    },
+    {
+      "rel": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+      "abs": "C:\\Users\\santh\\Capstone Project Code\\ml\\models\\yolo_threshold_eval\\THRESHOLD_SWEEP_REPORT.json",
+      "sha256": "1bf93a1069c8a1f7186f1b057180d6a1c1984335084d7aaac36a3e7cab76a1fc",
+      "size": 69600,
+      "in_archive": false
+    }
+  ],
+  "duplicate_sha_groups": {
+    "a8e3e6a097d5b91984f43c805a94acc4abb612ff036f5486c041cea235911b8b": [
+      "ml/models/_archive/classical/pca.pkl",
+      "ml/models/_archive/pca.pkl"
+    ],
+    "cc8b11e19d7a8765c53957de5a98380644c1030d339ebccd8f833e4601119ce7": [
+      "ml/models/_archive/classical/scaler.pkl",
+      "ml/models/_archive/scaler.pkl"
+    ],
+    "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643": [
+      "ml/models/_archive/classical/xgboost_multimodal.json",
+      "ml/models/_archive/xgboost_multimodal_best.json",
+      "ml/models/xgboost_best.json"
+    ],
+    "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f": [
+      "ml/models/_archive/vision/yolo11_merged_candidate.pt",
+      "ml/models/_archive/yolo11_real_wound_best.pt",
+      "ml/models/_archive/yolo_candidate_training/run_merged/weights/best.pt",
+      "ml/models/vision/yolo11_injury_best.pt"
+    ],
+    "f4382450494c2e9009409a751a9535cf0cb1c5381b6c3866b4dacc070f06dd63": [
+      "ml/models/vision/yolo11_injury_best.pt.pre_retrain_backup",
+      "ml/models/yolo_real_training/run_real_wound/weights/best.pt"
+    ],
+    "34d75feb99f7bc6adba13f9a635da80fbe53e386ef8732daa677666d6f73a916": [
+      "ml/models/yolo_processed_training/TRAINING_EVAL_REPORT.json",
+      "ml/models/yolo_processed_training/run_processed/TRAINING_EVAL_REPORT.json"
+    ]
+  }
+}

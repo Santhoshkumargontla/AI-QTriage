@@ -1,0 +1,12 @@
+path: data/datasets/yolo_expanded_v1
+train: images/train
+val: images/val
+test: images/test
+names:
+  0: cut
+  1: bruise
+  2: abrasion
+  3: burn
+  4: wound
+  5: laceration
+nc: 6

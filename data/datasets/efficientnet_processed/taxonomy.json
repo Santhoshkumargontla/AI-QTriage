@@ -1,0 +1,20 @@
+{
+  "trained_classes": [
+    "cut",
+    "bruise"
+  ],
+  "dropped_insufficient_unique": {
+    "swelling": 2
+  },
+  "not_remapped": [
+    "abrasion",
+    "laceration",
+    "burn"
+  ],
+  "reject_or_normal_class": null,
+  "existing_negatives_eval_only": [
+    "data/datasets/yolo_injury/blank_skin.jpg",
+    "data/datasets/yolo_injury/dummy_test.jpg"
+  ],
+  "reason_no_reject_class": "Only two existing no-injury files were found (blank_skin.jpg, dummy_test.jpg). They are eval-only. Negatives were not fabricated. Closed-set softmax plus input-quality/confidence gates is the rejection mechanism."
+}

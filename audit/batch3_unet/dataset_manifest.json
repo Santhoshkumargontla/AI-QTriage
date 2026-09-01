@@ -1,0 +1,9 @@
+{
+  "audit_timestamp": "2026-08-27T10:03:07.442655+00:00",
+  "storage_location": "ml/data/injury_segmentation/",
+  "total_pairs": 200,
+  "train_pairs": 140,
+  "val_pairs": 30,
+  "test_pairs": 30,
+  "status": "PASS"
+}

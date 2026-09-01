@@ -1,0 +1,152 @@
+{
+  "yolo_real_wound": {
+    "base": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_real_wound",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "wound"
+    },
+    "splits": {
+      "train": {
+        "image_files": 48,
+        "unique_stems": 24,
+        "duplicate_stems": 24,
+        "label_files": 24,
+        "missing_label_for_image": 0,
+        "empty_label_files_for_images": 0,
+        "invalid_coord_lines": 0,
+        "unmatched_label_files": 0,
+        "total_boxes": 256,
+        "class_box_counts": {
+          "cut": 0,
+          "bruise": 0,
+          "wound": 256
+        },
+        "images_with_boxes": 24
+      },
+      "val": {
+        "image_files": 10,
+        "unique_stems": 5,
+        "duplicate_stems": 5,
+        "label_files": 5,
+        "missing_label_for_image": 0,
+        "empty_label_files_for_images": 0,
+        "invalid_coord_lines": 0,
+        "unmatched_label_files": 0,
+        "total_boxes": 61,
+        "class_box_counts": {
+          "cut": 0,
+          "bruise": 0,
+          "wound": 61
+        },
+        "images_with_boxes": 5
+      },
+      "test": {
+        "image_files": 18,
+        "unique_stems": 9,
+        "duplicate_stems": 9,
+        "label_files": 9,
+        "missing_label_for_image": 0,
+        "empty_label_files_for_images": 0,
+        "invalid_coord_lines": 0,
+        "unmatched_label_files": 0,
+        "total_boxes": 60,
+        "class_box_counts": {
+          "cut": 1,
+          "bruise": 1,
+          "wound": 58
+        },
+        "images_with_boxes": 9
+      }
+    }
+  },
+  "yolo_injury": {
+    "base": "C:\\Users\\santh\\Capstone Project Code\\data\\datasets\\yolo_injury",
+    "names": {
+      "0": "cut",
+      "1": "bruise",
+      "2": "abrasion",
+      "3": "laceration"
+    },
+    "splits": {
+      "train": {
+        "image_files": 118,
+        "unique_stems": 59,
+        "duplicate_stems": 59,
+        "label_files": 59,
+        "missing_label_for_image": 0,
+        "empty_label_files_for_images": 0,
+        "invalid_coord_lines": 0,
+        "unmatched_label_files": 0,
+        "total_boxes": 59,
+        "class_box_counts": {
+          "cut": 15,
+          "bruise": 12,
+          "abrasion": 18,
+          "laceration": 14
+        },
+        "images_with_boxes": 59
+      },
+      "val": {
+        "image_files": 24,
+        "unique_stems": 12,
+        "duplicate_stems": 12,
+        "label_files": 12,
+        "missing_label_for_image": 0,
+        "empty_label_files_for_images": 0,
+        "invalid_coord_lines": 0,
+        "unmatched_label_files": 0,
+        "total_boxes": 12,
+        "class_box_counts": {
+          "cut": 2,
+          "bruise": 1,
+          "abrasion": 3,
+          "laceration": 6
+        },
+        "images_with_boxes": 12
+      },
+      "test": {
+        "image_files": 28,
+        "unique_stems": 14,
+        "duplicate_stems": 14,
+        "label_files": 14,
+        "missing_label_for_image": 0,
+        "empty_label_files_for_images": 0,
+        "invalid_coord_lines": 0,
+        "unmatched_label_files": 0,
+        "total_boxes": 14,
+        "class_box_counts": {
+          "cut": 4,
+          "bruise": 3,
+          "abrasion": 4,
+          "laceration": 3
+        },
+        "images_with_boxes": 14
+      }
+    }
+  },
+  "public_wound_dataset_files": {
+    "files": 401,
+    "exts": {
+      ".csv": 1,
+      ".jpg": 200,
+      ".png": 200
+    }
+  },
+  "injury_dataset_files": {
+    "files": 61,
+    "exts": {
+      ".csv": 1,
+      ".jpg": 30,
+      ".png": 30
+    }
+  },
+  "raw_files": {
+    "files": 445,
+    "exts": {
+      ".yaml": 1,
+      ".jpg": 222,
+      ".txt": 222
+    }
+  }
+}

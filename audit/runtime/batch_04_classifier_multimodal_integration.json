@@ -1,0 +1,11 @@
+{
+  "audit_timestamp": "2026-08-27T09:13:02.307349+00:00",
+  "feature_vector_mapping": {
+    "prob_cut": 0.0,
+    "prob_bruise": 0.0,
+    "prob_swelling": 1.0,
+    "prob_other": 0.0
+  },
+  "fused_vector_indices": "indices 1, 2, 3, 4 of 23-dimensional feature array",
+  "verification_status": "PASS"
+}
