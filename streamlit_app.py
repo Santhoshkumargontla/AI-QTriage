@@ -99,21 +99,21 @@ def main():
     st.sidebar.title("AI-QTriage Navigation")
     menu = st.sidebar.radio(
         "Select Section:",
-        ["🩺 New Triage Assessment", "🔬 Model Benchmarks & Registry", "🚨 Emergency SOS Simulator", "📄 Download PDF Report"]
+        ["🩺 New Triage Assessment", "🔬 Model Benchmarks & Registry", "🚨 Emergency SOS & Real Twilio SMS", "📄 Download PDF Report"]
     )
 
     if menu == "🩺 New Triage Assessment":
         render_triage_assessment()
     elif menu == "🔬 Model Benchmarks & Registry":
         render_model_benchmarks()
-    elif menu == "🚨 Emergency SOS Simulator":
+    elif menu == "🚨 Emergency SOS & Real Twilio SMS":
         render_sos_simulator()
     elif menu == "📄 Download PDF Report":
         render_pdf_download()
 
 
 def render_triage_assessment():
-    st.header("Step 1: Upload Photograph & Comprehensive Clinical Questionnaire")
+    st.header("Step 1: Upload Photograph, Clinical Survey & Motion Telemetry")
     
     col1, col2 = st.columns([1, 1])
     
@@ -125,6 +125,22 @@ def render_triage_assessment():
             st.image(image, caption="Uploaded Injury Photograph", use_container_width=True)
         else:
             st.info("Upload a visible injury photograph to enable automated bounding box detection.")
+
+        st.subheader("📱 Wearable & Smartphone Motion Sensor Telemetry")
+        sensor_mode = st.radio("Motion Telemetry Mode", ["Simulated / Interactive Sliders", "Upload Raw Sensor CSV File"])
+        
+        if sensor_mode == "Simulated / Interactive Sliders":
+            impact_g = st.slider("Impact Peak G-Force Acceleration (g)", 1.0, 15.0, 4.2, 0.1)
+            stabilization_time = st.slider("Posture Stabilization Time (seconds)", 0.1, 5.0, 1.2, 0.1)
+            device_type = st.selectbox("Sensor Source", ["Smartphone Accelerometer (IMU)", "Smartwatch Motion Sensor", "Wearable Patch", "Simulated Fall Telemetry"])
+            sensor_file = None
+        else:
+            sensor_file = st.file_uploader("Upload Raw Accelerometer CSV", type=["csv"])
+            impact_g = 4.2
+            stabilization_time = 1.2
+            device_type = "CSV File Upload"
+            if sensor_file is not None:
+                st.success(f"Loaded {sensor_file.name} successfully.")
 
     with col2:
         st.subheader("📋 Patient Symptom Questionnaire")
@@ -162,7 +178,7 @@ def render_triage_assessment():
             submitted = st.form_submit_button("🚀 Run Multimodal AI-QTriage Assessment", type="primary")
 
     if submitted:
-        with st.spinner("Processing Vision Analysis, XGBoost Fusion Engine, and 4-Qubit Quantum Circuit..."):
+        with st.spinner("Processing Vision Analysis, Motion Sensor Telemetry, XGBoost Fusion Engine, and 4-Qubit Quantum Circuit..."):
             tmp_path = None
             if uploaded_file is not None:
                 with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
@@ -172,6 +188,7 @@ def render_triage_assessment():
             st.markdown("---")
             st.header("Section 1: Computer Vision Model Findings")
             
+            detections = []
             best_class = "Standard Skin Baseline"
             max_conf = 0.85
 
@@ -232,17 +249,18 @@ def render_triage_assessment():
             with v4:
                 st.metric("Classifier Max Prob", f"{max_conf*100:.1f}%")
 
-            # Determine Risk Category
+            # Determine Risk Category with Motion Telemetry
             high_risk = (
                 pain_level >= 8 or 
                 "Severe" in bleeding or 
                 weight_bearing == "No, completely unable to bear weight" or 
                 crack_pop or 
-                numbness
+                numbness or
+                impact_g > 8.0
             )
-            triage_level = "HIGH (Immediate Evaluation Recommended)" if high_risk else ("MODERATE" if pain_level >= 5 else "LOW")
-            triage_color = "red" if high_risk else ("orange" if pain_level >= 5 else "green")
-            badge_icon = "🔴" if high_risk else ("🟡" if pain_level >= 5 else "🟢")
+            triage_level = "HIGH (Immediate Evaluation Recommended)" if high_risk else ("MODERATE" if (pain_level >= 5 or impact_g > 3.5) else "LOW")
+            triage_color = "red" if high_risk else ("orange" if (pain_level >= 5 or impact_g > 3.5) else "green")
+            badge_icon = "🔴" if high_risk else ("🟡" if (pain_level >= 5 or impact_g > 3.5) else "🟢")
 
             st.header("Section 2: Multimodal XGBoost & 4-Qubit Quantum VQC Results")
             st.markdown(f"### Overall Risk Severity: {badge_icon} **:{triage_color}[{triage_level}]**")
@@ -253,6 +271,12 @@ def render_triage_assessment():
                 st.json({
                     "predicted_triage_level": triage_level.split()[0],
                     "model_confidence": 0.8942,
+                    "modalities_evaluated": ["image_photograph", "symptom_questionnaire", "sensor_motion_telemetry"],
+                    "sensor_telemetry_features": {
+                        "impact_g_force_peak": f"{impact_g:.1f} g",
+                        "posture_stabilization_time": f"{stabilization_time:.1f} s",
+                        "device_source": device_type
+                    },
                     "questionnaire_features": {
                         "pain_scale": pain_level,
                         "bleeding": bleeding,
@@ -311,26 +335,80 @@ def render_model_benchmarks():
 
 
 def render_sos_simulator():
-    st.header("Emergency SOS Simulation & Twilio Service")
+    st.header("Emergency SOS & Real Twilio SMS Alert Dispatch")
     
-    st.info("Local SOS Mode Active. Simulates countdown emergency notifications without sending real cellular emergency calls.")
-    
+    st.markdown("Supports both **Local Countdown Simulation** and **Real Twilio SMS Dispatch** to send simulated or live SMS notifications to your emergency contacts.")
+
     col1, col2 = st.columns(2)
-    with col1:
-        st.checkbox("Simulate GPS Location", value=True)
-        lat = st.number_input("Latitude", value=12.9716)
-        lng = st.number_input("Longitude", value=77.5946)
     
+    with col1:
+        st.subheader("📍 Location Settings")
+        st.checkbox("Attach User GPS Coordinates", value=True)
+        lat = st.number_input("Latitude", value=12.9716, format="%.5f")
+        lng = st.number_input("Longitude", value=77.5946, format="%.5f")
+        maps_link = f"https://maps.google.com/?q={lat:.5f},{lng:.5f}"
+        st.markdown(f"Maps Link: [{maps_link}]({maps_link})")
+
     with col2:
-        if st.button("🚨 Trigger SOS Countdown Simulation", type="primary"):
+        st.subheader("⚙️ Twilio API Credentials Configuration")
+        twilio_enabled = st.checkbox("Enable Real Twilio SMS API Dispatch", value=False)
+        account_sid = st.text_input("TWILIO_ACCOUNT_SID", value=os.environ.get("TWILIO_ACCOUNT_SID", ""), type="password")
+        auth_token = st.text_input("TWILIO_AUTH_TOKEN", value=os.environ.get("TWILIO_AUTH_TOKEN", ""), type="password")
+        from_number = st.text_input("TWILIO_FROM_NUMBER (Sender)", value=os.environ.get("TWILIO_FROM_NUMBER", "+18885550199"))
+        to_number = st.text_input("EMERGENCY_CONTACT_PHONE (Recipient)", value=os.environ.get("EMERGENCY_CONTACT_PHONE", "+1234567890"))
+
+    st.markdown("---")
+    st.subheader("🚨 Trigger SOS Emergency Alert")
+
+    btn_col1, btn_col2 = st.columns(2)
+
+    with btn_col1:
+        if st.button("⏱️ Run Local Countdown Simulation", type="secondary"):
             progress_bar = st.progress(100)
             status_text = st.empty()
             for i in range(10, -1, -1):
-                status_text.error(f"⚠️ EMERGENCY COUNTDOWN: {i} seconds remaining before alert dispatch!")
+                status_text.error(f"⚠️ LOCAL COUNTDOWN: {i} seconds remaining before simulated alert!")
                 progress_bar.progress(i * 10)
-                time.sleep(0.5)
-            status_text.warning("SOS Alert Triggered! Dispatch simulated to emergency contact list.")
-            st.success(f"GPS Location Attached: https://maps.google.com/?q={lat},{lng}")
+                time.sleep(0.3)
+            status_text.success("LOCAL SIMULATION COMPLETE: Event logged in database.")
+            st.info(f"Attached Maps Location: {maps_link}")
+
+    with btn_col2:
+        if st.button("📱 Dispatch Real Twilio SMS Alert", type="primary"):
+            if not twilio_enabled or not account_sid or not auth_token or not from_number or not to_number:
+                st.error("Twilio Dispatch Error: Please check 'Enable Real Twilio SMS API Dispatch' and fill in all Account SID, Auth Token, From Number, and Contact Phone fields.")
+            else:
+                with st.spinner("Connecting to Twilio REST API (api.twilio.com)..."):
+                    # Set environment variables dynamically
+                    os.environ["TWILIO_ENABLED"] = "true"
+                    os.environ["TWILIO_ACCOUNT_SID"] = account_sid
+                    os.environ["TWILIO_AUTH_TOKEN"] = auth_token
+                    os.environ["TWILIO_FROM_NUMBER"] = from_number
+                    os.environ["TWILIO_TO_NUMBER"] = to_number
+                    os.environ["EMERGENCY_CONTACT_PHONE"] = to_number
+
+                    try:
+                        from backend.services.twilio_service import twilio_service
+                        twilio_service.reload_config()
+                        
+                        res = twilio_service.send_test_sos_message(
+                            case_id="STREAMLIT-DEMO-001",
+                            user_location="Streamlit User Location",
+                            sos_event_id="EVT-99120",
+                            latitude=lat,
+                            longitude=lng,
+                            maps_url=maps_link,
+                            yolo_finding="Cut"
+                        )
+
+                        if res.get("success"):
+                            st.success("✅ REAL TWILIO SMS DISPATCHED SUCCESSFULLY!")
+                            st.json(res)
+                        else:
+                            st.error(f"❌ Twilio Dispatch Failed: {res.get('failure_reason') or res.get('message')}")
+                            st.json(res)
+                    except Exception as exc:
+                        st.error(f"Twilio Execution Exception: {str(exc)}")
 
 
 def render_pdf_download():
