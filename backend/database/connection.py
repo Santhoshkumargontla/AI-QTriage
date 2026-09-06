@@ -1,3 +1,4 @@
+import os
 import sys
 import pymongo
 from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError, PyMongoError
