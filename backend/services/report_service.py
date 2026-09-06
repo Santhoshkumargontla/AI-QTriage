@@ -661,9 +661,13 @@ class ResearchReportGenerator:
             return b"\n".join(pdf)
 
 
+# Class alias for backward compatibility
+ReportService = ResearchReportGenerator
+
+
 def generate_pdf_report(case_data_or_id) -> bytes:
     """Top-level convenience function to generate PDF bytes from a case ID or case dictionary."""
-    service = ReportService()
+    service = ResearchReportGenerator()
     if isinstance(case_data_or_id, str):
         return service.generate_pdf_bytes(case_data_or_id)
     elif isinstance(case_data_or_id, dict):
