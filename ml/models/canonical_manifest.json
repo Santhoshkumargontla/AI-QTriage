@@ -1,12 +1,12 @@
 {
   "source": "ml.models.canonical_paths.RUNTIME_MODELS + live SHA-256",
-  "generated_at": "2026-08-30T10:54:47.012914+00:00",
+  "generated_at": "2026-09-06T16:27:23.500845+00:00",
   "models": [
     {
       "model_name": "YOLO11 Detection",
       "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
-      "sha256": "4610d5f05c6d368bbbdd166b7800e2d1bd99dc61993f54191ab5d031f5a0003a",
-      "version": "roboflow-v1",
+      "sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+      "version": "expanded-skin-v1",
       "classes": [
         "cut",
         "bruise",
@@ -24,7 +24,7 @@
     {
       "model_name": "EfficientNetV2 Classification",
       "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
-      "sha256": "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f",
+      "sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
       "version": "kaggle-v1",
       "classes": [
         "abrasion",

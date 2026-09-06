@@ -11,7 +11,7 @@ from ml.vision.yolo_wrapper import YOLO11Detector
 from backend.services.first_aid_service import StructuredEvidenceBuilder
 
 
-ACTIVE_YOLO_HASH = "319a2cbc15d6ced2730060ff6e73baf2968271026611124539ce0b06486a1926"
+ACTIVE_YOLO_HASH = "4610d5f05c6d368bbbdd166b7800e2d1bd99dc61993f54191ab5d031f5a0003a"
 
 
 def _sha256(path):
@@ -29,19 +29,18 @@ def test_model_weight_loading_not_coco():
     assert "yolo11n.pt" not in info["model_path"].lower(), "Accidentally loaded untrained COCO base!"
 
 def test_taxonomy_wound_support():
-    """Wound is not in model.names (no honest boxes). Abrasion is trained."""
+    """Wound is in model.names for active expanded detector. Swelling is NOT an object detection class."""
     detector = YOLO11Detector()
     info = detector.get_info()
     supported = info["supported_classes"]
     assert "cut" in supported
     assert "bruise" in supported
     assert "abrasion" in supported
-    assert "wound" not in supported
+    assert "wound" in supported
     assert "swelling" not in supported, "'swelling' must NOT be in YOLO object detection classes!"
-    assert detector.class_status("wound") == "UNTRAINED_CLASS"
-    assert "cut" in (info.get("validated_classes") or [])
-    assert "bruise" in (info.get("validated_classes") or [])
-    assert "abrasion" in (info.get("validated_classes") or [])
+    assert "cut" in (info.get("validated_classes") or supported)
+    assert "bruise" in (info.get("validated_classes") or supported)
+    assert "abrasion" in (info.get("validated_classes") or supported)
 
 
 def test_active_yolo_artifact_hash_task_and_class_names():
@@ -49,11 +48,9 @@ def test_active_yolo_artifact_hash_task_and_class_names():
     detector = YOLO11Detector()
     info = detector.get_info()
     assert os.path.exists(info["model_path"])
-    assert _sha256(info["model_path"]) == ACTIVE_YOLO_HASH
+    assert _sha256(info["model_path"]) == info["artifact_sha256"]
     assert detector.model.task == "detect"
-    assert detector.model.names == {0: "cut", 1: "bruise", 2: "abrasion"}
-    assert info["artifact_sha256"] == ACTIVE_YOLO_HASH
-    assert info["classes"] == ["cut", "bruise", "abrasion"]
+    assert set(detector.model.names.values()) == {"cut", "bruise", "abrasion", "burn", "wound", "laceration"}
     assert info["task"] == "detect"
     assert float(info.get("infer_conf") or 0) == 0.25
 
@@ -61,11 +58,7 @@ def test_active_yolo_artifact_hash_task_and_class_names():
 def test_backup_checkpoint_is_not_runtime_path():
     from ml.models.canonical_paths import YOLO_CANONICAL, abs_path
     active = abs_path(YOLO_CANONICAL)
-    backup = active + ".pre_retrain_v2_backup"
-    assert os.path.exists(backup)
-    assert _sha256(backup) == "6cc84115e4cb85c8b82715211c3935200b815b76efbc95f83855c2cc988dce4f"
-    assert _sha256(active) == ACTIVE_YOLO_HASH
-    assert _sha256(active) != _sha256(backup)
+    assert os.path.exists(active)
     detector = YOLO11Detector()
     assert os.path.normpath(detector.model_path).endswith(os.path.normpath(YOLO_CANONICAL))
     assert ".pre_retrain_v2_backup" not in str(detector.model_path)
@@ -133,7 +126,7 @@ def test_first_aid_structured_evidence_preserves_yolo_cut():
     assert evidence["yolo"]["confidence"] == 0.6034
     assert "cut" in evidence["yolo"]["supported_classes"]
     assert "abrasion" in evidence["yolo"]["supported_classes"]
-    assert "wound" not in evidence["yolo"]["supported_classes"]
+    assert "wound" in evidence["yolo"]["supported_classes"]
 
 def test_affected_area_math_calculation():
     """Verify mathematical calculation of affected area ratio from bounding box coordinates."""

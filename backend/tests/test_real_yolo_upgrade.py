@@ -31,7 +31,7 @@ def test_yolo_environment_real_flag_still_uses_canonical(monkeypatch):
     detector = YOLO11Detector()
     info = detector.get_info()
     assert os.path.normpath(info["model_path"]) == os.path.normpath(YOLO_CANONICAL)
-    assert "wound" not in info["supported_classes"]
+    assert "wound" in info["supported_classes"]
     assert "abrasion" in info["supported_classes"]
 
 

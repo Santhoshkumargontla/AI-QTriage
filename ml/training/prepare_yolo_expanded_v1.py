@@ -197,7 +197,7 @@ def _add_image(
 
 def main() -> None:
     if OUT.exists():
-        shutil.rmtree(OUT)
+        shutil.rmtree(OUT, ignore_errors=True)
     for split in ("train", "val", "test"):
         (OUT / "images" / split).mkdir(parents=True, exist_ok=True)
         (OUT / "labels" / split).mkdir(parents=True, exist_ok=True)
@@ -399,7 +399,11 @@ def main() -> None:
     split_boxes = {n: Counter() for n in ("train", "val", "test")}
     for split in ("train", "val", "test"):
         for lab in (OUT / "labels" / split).glob("*.txt"):
-            for ln in lab.read_text(encoding="utf-8").splitlines():
+            try:
+                text = lab.read_text(encoding="utf-8")
+            except FileNotFoundError:
+                continue
+            for ln in text.splitlines():
                 parts = ln.split()
                 if parts:
                     split_boxes[split][NAMES[int(parts[0])]] += 1

@@ -1,7 +1,7 @@
 {
   "evaluation": {
     "status": "evaluated",
-    "timestamp": "2026-08-29T05:40:25.822563+00:00",
+    "timestamp": "2026-09-06T16:23:25.625028+00:00",
     "test_sample_count": 30,
     "disclaimer": "SYNTHETIC held-out split. VQC is EXPERIMENTAL_ONLY.",
     "quantum_simulator_notice": "PennyLane default.qubit is a classical simulator. No quantum advantage claimed.",
@@ -190,7 +190,7 @@
     "vqc_outperforms_xgboost": false,
     "recommendation": "DISABLE_FROM_MAIN_DECISION",
     "used_in_main_decision": false,
-    "compared_at": "2026-08-29T05:40:25.822563+00:00",
+    "compared_at": "2026-09-06T16:23:25.625028+00:00",
     "metrics_source": "live_held_out_predictions",
     "artifacts": {
       "xgboost_path": "ml/models/xgboost_best.json",

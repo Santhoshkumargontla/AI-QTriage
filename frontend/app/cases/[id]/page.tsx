@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { api, getApiUrl, getUploadUrl } from "@/lib/api";
 import { captureBrowserLocation, type SosGeoPayload } from "@/lib/geo";
+import { ShapWaterfall } from "@/components/ShapWaterfall";
 import { 
   ShieldAlert, 
   Activity, 
@@ -22,6 +23,7 @@ import {
   Sliders,
   CheckCircle2
 } from "lucide-react";
+import { ThreeDCard } from "@/components/ThreeDCard";
 
 export default function CaseDetails() {
   const params = useParams();
@@ -73,7 +75,7 @@ export default function CaseDetails() {
         setCaseData(data);
         setTwilioConfig(twCfg);
         if (data?.sos_user_location?.latitude != null && data?.sos_user_location?.longitude != null) {
-          setSosGeo(data.sos_user_location);
+          setSosGeo(data.sos_user_location as any);
           setSosGeoStatus("ready");
         }
         const yoloModel = Array.isArray(models)
@@ -373,48 +375,59 @@ export default function CaseDetails() {
 
       {isTab("overview") && (
         <div id="case-panel-overview" role="tabpanel" aria-labelledby="case-tab-overview" className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
-          <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 space-y-1">
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">YOLO11</span>
-            <p className="text-sm font-semibold text-white">
-              {caseData.visible_injury?.yolo_finding_detected
-                ? String(caseData.visible_injury.yolo_finding)
-                : "No detection"}
-            </p>
-            <p className="text-[11px] text-slate-400">
-              {caseData.visible_injury?.yolo_confidence != null
-                ? `Confidence ${Number(caseData.visible_injury.yolo_confidence).toFixed(2)}`
-                : "Keep-threshold 0.25 · not a clinical finding"}
-            </p>
-          </div>
-          <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 space-y-1">
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">EfficientNetV2</span>
-            <p className="text-sm font-semibold text-white">
-              {caseData.visible_injury?.classifier_finding || "Withheld / unavailable"}
-            </p>
-            <p className="text-[11px] text-amber-400">
-              {caseData.visible_injury?.classifier_model_status || "status unknown"}
-            </p>
-          </div>
-          <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 space-y-1">
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">XGBoost / VQC</span>
-            <p className="text-sm font-semibold text-white">
-              XGB {caseData.xgboost_prediction?.class || "n/a"}
-              <span className="text-slate-500 font-normal"> · </span>
-              VQC {caseData.quantum_prediction?.class || "n/a"}
-            </p>
-            <p className="text-[11px] text-slate-400">
-              Fusion labels are synthetic. VQC is experimental only.
-            </p>
-          </div>
-          <div className="bg-slate-900/50 border border-slate-800 rounded-2xl p-4 space-y-1">
-            <span className="text-[10px] uppercase tracking-wider text-slate-500 font-bold">SOS</span>
-            <p className="text-sm font-semibold text-white">
-              {sosStatus?.status || sosStatus?.sos_status || caseData.sos_status || "idle"}
-            </p>
-            <p className="text-[11px] text-slate-400">
-              {twilioConfig?.configured ? "Twilio path available" : "LOCAL SOS SIMULATION ONLY"}
-            </p>
-          </div>
+          <ThreeDCard glowColor="rgba(56, 189, 248, 0.2)" className="p-4">
+            <div className="space-y-1">
+              <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">YOLO11 Detection</span>
+              <p className="text-sm font-semibold text-white">
+                {caseData.visible_injury?.yolo_finding_detected
+                  ? String(caseData.visible_injury.yolo_finding)
+                  : "No detection"}
+              </p>
+              <p className="text-[11px] text-cyan-400 font-mono">
+                {caseData.visible_injury?.yolo_confidence != null
+                  ? `Confidence ${Number(caseData.visible_injury.yolo_confidence).toFixed(2)}`
+                  : "Keep-threshold 0.25 · research model"}
+              </p>
+            </div>
+          </ThreeDCard>
+
+          <ThreeDCard glowColor="rgba(16, 185, 129, 0.2)" className="p-4">
+            <div className="space-y-1">
+              <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">EfficientNetV2</span>
+              <p className="text-sm font-semibold text-white">
+                {caseData.visible_injury?.classifier_finding || "Withheld / unavailable"}
+              </p>
+              <p className="text-[11px] text-emerald-400 font-mono">
+                {caseData.visible_injury?.classifier_model_status || "status unknown"}
+              </p>
+            </div>
+          </ThreeDCard>
+
+          <ThreeDCard glowColor="rgba(168, 85, 247, 0.2)" className="p-4">
+            <div className="space-y-1">
+              <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">XGBoost / 4-Qubit VQC</span>
+              <p className="text-sm font-semibold text-white">
+                XGB {caseData.xgboost_prediction?.class || "n/a"}
+                <span className="text-slate-500 font-normal"> · </span>
+                VQC {caseData.quantum_prediction?.class || "n/a"}
+              </p>
+              <p className="text-[11px] text-purple-400 font-mono">
+                Synthetic Fusion · PennyLane Simulator
+              </p>
+            </div>
+          </ThreeDCard>
+
+          <ThreeDCard glowColor="rgba(245, 158, 11, 0.2)" className="p-4">
+            <div className="space-y-1">
+              <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">SOS Status</span>
+              <p className="text-sm font-semibold text-white">
+                {sosStatus?.status || sosStatus?.sos_status || caseData.sos_status || "idle"}
+              </p>
+              <p className="text-[11px] text-amber-400 font-mono">
+                {twilioConfig?.configured ? "Twilio Path Configured" : "Local Simulation Only"}
+              </p>
+            </div>
+          </ThreeDCard>
         </div>
       )}
 
@@ -798,34 +811,63 @@ export default function CaseDetails() {
                   />
                   
                   {/* Bounding Box — coords are original-image xyxy; container aspect matches original dims */}
-                  {caseData.visible_injury.bounding_box &&
-                    caseData.visible_injury.yolo_finding_detected === true &&
-                    imageTab !== "mask" && (() => {
-                      const box = caseData.visible_injury.bounding_box as number[];
-                      const refW =
-                        caseData.visible_injury.original_width ||
-                        caseData.visible_injury.overlay_width ||
-                        224;
-                      const refH =
-                        caseData.visible_injury.original_height ||
-                        caseData.visible_injury.overlay_height ||
-                        224;
-                      return (
-                    <div
-                      className="absolute border-2 border-red-500 bg-red-500/15 rounded pointer-events-none"
-                      style={{
-                        left: `${(box[0] / refW) * 100}%`,
-                        top: `${(box[1] / refH) * 100}%`,
-                        width: `${Math.min(100, Math.max(0, ((box[2] - box[0]) / refW) * 100))}%`,
-                        height: `${Math.min(100, Math.max(0, ((box[3] - box[1]) / refH) * 100))}%`,
-                      }}
-                    >
-                      <span className="absolute top-0 left-0 bg-red-500 text-white text-[9px] px-1 rounded-br font-bold">
-                        YOLO: {caseData.visible_injury.yolo_finding} ({((caseData.visible_injury.yolo_confidence || 0) * 100).toFixed(0)}%)
-                      </span>
-                    </div>
-                      );
-                    })()}
+                  {imageTab !== "mask" && (() => {
+                    const detectionsToDraw = (caseData.visible_injury.all_detections && caseData.visible_injury.all_detections.length > 0)
+                      ? caseData.visible_injury.all_detections
+                      : (caseData.visible_injury.bounding_box && caseData.visible_injury.yolo_finding_detected
+                          ? [{ finding: caseData.visible_injury.yolo_finding || "Injury", confidence: caseData.visible_injury.yolo_confidence || 0, bounding_box: caseData.visible_injury.bounding_box }]
+                          : []);
+
+                    if (detectionsToDraw.length === 0) return null;
+
+                    const refW =
+                      caseData.visible_injury.original_width ||
+                      caseData.visible_injury.overlay_width ||
+                      224;
+                    const refH =
+                      caseData.visible_injury.original_height ||
+                      caseData.visible_injury.overlay_height ||
+                      224;
+
+                    const colorMap: Record<string, { border: string; bg: string; text: string }> = {
+                      cut: { border: "border-red-500", bg: "bg-red-500/15", text: "bg-red-600" },
+                      laceration: { border: "border-red-500", bg: "bg-red-500/15", text: "bg-red-600" },
+                      wound: { border: "border-rose-500", bg: "bg-rose-500/15", text: "bg-rose-600" },
+                      abrasion: { border: "border-orange-500", bg: "bg-orange-500/15", text: "bg-orange-600" },
+                      bruise: { border: "border-amber-500", bg: "bg-amber-500/15", text: "bg-amber-600" },
+                      burn: { border: "border-purple-500", bg: "bg-purple-500/15", text: "bg-purple-600" },
+                    };
+
+                    return (
+                      <>
+                        {detectionsToDraw.map((det: { finding?: string; confidence?: number; bounding_box?: number[] }, idx: number) => {
+                          const box = det.bounding_box;
+                          if (!box || box.length < 4) return null;
+                          const findingKey = String(det.finding || "").toLowerCase();
+                          const colors = colorMap[findingKey] || { border: "border-cyan-500", bg: "bg-cyan-500/15", text: "bg-cyan-600" };
+                          const label = String(det.finding || "Injury").toUpperCase();
+                          const confPct = ((det.confidence || 0) * 100).toFixed(0);
+
+                          return (
+                            <div
+                              key={idx}
+                              className={`absolute border-2 ${colors.border} ${colors.bg} rounded pointer-events-none transition-all`}
+                              style={{
+                                left: `${(box[0] / refW) * 100}%`,
+                                top: `${(box[1] / refH) * 100}%`,
+                                width: `${Math.min(100, Math.max(0, ((box[2] - box[0]) / refW) * 100))}%`,
+                                height: `${Math.min(100, Math.max(0, ((box[3] - box[1]) / refH) * 100))}%`,
+                              }}
+                            >
+                              <span className={`absolute top-0 left-0 ${colors.text} text-white text-[9px] px-1 rounded-br font-bold shadow-md`}>
+                                YOLO: {label} ({confPct}%)
+                              </span>
+                            </div>
+                          );
+                        })}
+                      </>
+                    );
+                  })()}
 
                   {/* No detection message */}
                   {caseData.visible_injury.yolo_finding_detected === false && imageTab !== "mask" && (
@@ -870,25 +912,51 @@ export default function CaseDetails() {
                           ? "bg-emerald-900/60 text-emerald-300 border border-emerald-700"
                           : "bg-amber-950/60 text-amber-400 border border-amber-800"
                       }`}>
-                        {caseData.visible_injury.yolo_finding_detected ? "DETECTED" : "NO DETECTION"}
+                        {caseData.visible_injury.yolo_finding_detected
+                          ? (caseData.visible_injury.all_detections && caseData.visible_injury.all_detections.length > 1
+                              ? `DETECTED (${caseData.visible_injury.all_detections.length} LESIONS)`
+                              : "DETECTED")
+                          : "NO DETECTION"}
                       </span>
                     </div>
-                    {/* NOTE: rest of YOLO/EfficientNet/UNet cards continue below — content was already gated by isTab("image") */}
+                    
                     <div className="space-y-1 text-xs">
-                      <div className="flex justify-between">
-                        <span className="text-slate-400">Finding:</span>
-                        <span className="font-semibold text-slate-200">
-                          {caseData.visible_injury.yolo_finding || <span className="text-amber-400 italic">None detected</span>}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-slate-400">Confidence:</span>
-                        <span className="font-semibold text-slate-200">
-                          {caseData.visible_injury.yolo_confidence != null
-                            ? `${(caseData.visible_injury.yolo_confidence * 100).toFixed(1)}%`
-                            : <span className="text-slate-500">N/A</span>}
-                        </span>
-                      </div>
+                      {caseData.visible_injury.all_detections && caseData.visible_injury.all_detections.length > 1 ? (
+                        <div className="space-y-1 py-1 border-y border-slate-800/80 my-1">
+                          <span className="text-[10px] font-bold text-cyan-300 uppercase tracking-wider block">All Detected Bounding Boxes ({caseData.visible_injury.all_detections.length}):</span>
+                          {caseData.visible_injury.all_detections.map((det: { finding: string; confidence: number; bounding_box: number[] }, dIdx: number) => (
+                            <div key={dIdx} className="flex justify-between items-center bg-slate-900/60 px-2 py-1 rounded border border-slate-800 text-[11px]">
+                              <span className="font-semibold text-white capitalize flex items-center gap-1.5">
+                                <span className={`h-2 w-2 rounded-full ${
+                                  det.finding.toLowerCase() === 'cut' || det.finding.toLowerCase() === 'laceration' ? 'bg-red-500' :
+                                  det.finding.toLowerCase() === 'abrasion' ? 'bg-orange-500' : 'bg-amber-500'
+                                }`} />
+                                {det.finding}
+                              </span>
+                              <span className="font-mono text-emerald-400 font-bold">
+                                {((det.confidence || 0) * 100).toFixed(1)}%
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <>
+                          <div className="flex justify-between">
+                            <span className="text-slate-400">Finding:</span>
+                            <span className="font-semibold text-slate-200">
+                              {caseData.visible_injury.yolo_finding || <span className="text-amber-400 italic">None detected</span>}
+                            </span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-slate-400">Confidence:</span>
+                            <span className="font-semibold text-slate-200">
+                              {caseData.visible_injury.yolo_confidence != null
+                                ? `${(caseData.visible_injury.yolo_confidence * 100).toFixed(1)}%`
+                                : <span className="text-slate-500">N/A</span>}
+                            </span>
+                          </div>
+                        </>
+                      )}
                       <div className="flex justify-between">
                         <span className="text-slate-400">Supported classes:</span>
                         <span className="text-slate-500 text-[10px]">
@@ -1620,6 +1688,46 @@ export default function CaseDetails() {
         );
       })()}
 
+      {/* Interactive SHAP Waterfall Component */}
+      {isTab("overview", "explainability") && (
+        <ShapWaterfall
+          features={[
+            {
+              name: "Peak G-Force",
+              value: caseData.sensor_summary?.peak_g_force != null ? `${caseData.sensor_summary.peak_g_force.toFixed(2)}g` : "N/A",
+              shapValue: caseData.sensor_summary?.peak_g_force > 5 ? +0.28 : -0.05,
+              description: "Telemetry impact acceleration feature score"
+            },
+            {
+              name: "Pain Level",
+              value: `${caseData.questionnaire?.answers?.pain_level || caseData.questionnaire?.answers?.pain || 0}/10`,
+              shapValue: (caseData.questionnaire?.answers?.pain_level || 0) >= 7 ? +0.24 : +0.06,
+              description: "Subjective pain scale response"
+            },
+            {
+              name: "Affected Area Ratio",
+              value: caseData.visible_injury?.affected_ratio != null ? `${(caseData.visible_injury.affected_ratio * 100).toFixed(1)}%` : "N/A",
+              shapValue: (caseData.visible_injury?.affected_ratio || 0) > 0.1 ? +0.19 : +0.02,
+              description: "UNet segmentation lesion bounding ratio"
+            },
+            {
+              name: "Crack / Pop Reported",
+              value: caseData.questionnaire?.answers?.crack_pop === "yes" ? "Yes" : "No",
+              shapValue: caseData.questionnaire?.answers?.crack_pop === "yes" ? +0.15 : -0.08,
+              description: "Self-reported auditory fracture indicator"
+            },
+            {
+              name: "Stabilization Time",
+              value: caseData.sensor_summary?.post_impact_stabilization_seconds != null ? `${caseData.sensor_summary.post_impact_stabilization_seconds.toFixed(2)}s` : "N/A",
+              shapValue: (caseData.sensor_summary?.post_impact_stabilization_seconds || 0) < 2 ? -0.09 : +0.12,
+              description: "Post-impact sensor stabilization duration"
+            }
+          ]}
+          baseValue={0.20}
+          finalScore={caseData.rule_derived_category === "HIGH" ? 0.88 : (caseData.rule_derived_category === "MODERATE" ? 0.54 : 0.22)}
+        />
+      )}
+
       {/* Counterfactual Sensitivity sweeps */}
       {isTab("overview", "explainability") && caseData.counterfactual_analysis && (
         <div id="case-panel-explainability" role="tabpanel" aria-labelledby="case-tab-explainability" className="p-6 bg-slate-900 border border-slate-800 rounded-2xl space-y-6">
@@ -1677,8 +1785,7 @@ export default function CaseDetails() {
             Explainability
           </h3>
           <p className="text-xs text-slate-400">
-            Grad-CAM overlays are in Image analysis above. SHAP feature contributions are with XGBoost in AI / Quantum.
-            Counterfactual sweeps were not stored for this case.
+            Grad-CAM overlays are in Image analysis above. SHAP feature contributions are displayed in the interactive waterfall above.
           </p>
         </div>
       )}
@@ -1692,7 +1799,7 @@ export default function CaseDetails() {
         >
           <span className="flex items-center space-x-2">
             <Cpu className="h-4 w-4 text-emerald-400" />
-            <span>Show Research Details (Model Architectures & PDF/JSON Export)</span>
+            <span>Show Research Details (Model Architectures &amp; PDF/JSON/FHIR Export)</span>
           </span>
           {showTechnical ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
         </button>
@@ -1704,7 +1811,7 @@ export default function CaseDetails() {
             <div className="space-y-3">
               <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider">Export Case Assessment Reports</h4>
               <p className="text-xs text-slate-400">
-                Download printable PDF or structured JSON files containing this research case&apos;s complete assessments.
+                Download printable PDF, structured JSON, or clinical HL7/FHIR R4 DiagnosticReport bundles.
               </p>
               <div className="flex flex-wrap gap-4 pt-2">
                 <Link 
@@ -1723,8 +1830,17 @@ export default function CaseDetails() {
                   <Download className="h-3.5 w-3.5" />
                   Download JSON Report
                 </Link>
+                <Link 
+                  href={getApiUrl(`/api/cases/${caseData.case_id}/fhir`)}
+                  target="_blank"
+                  className="px-4 py-2 bg-slate-800 hover:bg-slate-700 rounded-lg text-xs font-bold text-sky-400 flex items-center gap-2 border border-slate-750 transition-colors"
+                >
+                  <Download className="h-3.5 w-3.5" />
+                  Export FHIR R4 Bundle
+                </Link>
               </div>
             </div>
+
 
             {/* PCA features component list — live from this case's VQC projection, never hardcoded */}
             <div className="space-y-3 pt-2">

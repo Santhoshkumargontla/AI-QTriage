@@ -367,3 +367,94 @@ class YOLO11Detector:
                 "artifact_sha256": self.artifact_sha256,
             })
         return findings
+
+    def detect_sahi(self, image_path: str, conf: float = None, tile_size: int = 640, overlap: float = 0.2) -> list:
+        """Slicing Aided Hyper Inference (SAHI) for detecting small/distance lesions in high-res images."""
+        import cv2
+        import numpy as np
+        import tempfile
+        import shutil
+
+        if self.model is None:
+            raise RuntimeError(f"MODEL_ARTIFACT_MISSING: {self.model_path or YOLO_CANONICAL}")
+
+        img = cv2.imread(image_path)
+        if img is None:
+            return self.detect(image_path, conf=conf)
+
+        orig_h, orig_w = img.shape[:2]
+
+        # If image is smaller or comparable to tile_size, fall back to standard detect
+        if orig_h <= tile_size and orig_w <= tile_size:
+            return self.detect(image_path, conf=conf)
+
+        stride = int(tile_size * (1.0 - overlap))
+        if stride < 1:
+            stride = tile_size
+
+        all_findings = []
+        # Run global image inference to catch full-scale features
+        global_findings = self.detect(image_path, conf=conf)
+        all_findings.extend(global_findings)
+
+        temp_dir = tempfile.mkdtemp(prefix="sahi_tiles_")
+        try:
+            tile_index = 0
+            for y1_t in range(0, max(1, orig_h - tile_size + stride), stride):
+                y2_t = min(y1_t + tile_size, orig_h)
+                if y2_t - y1_t < 100:
+                    continue
+                for x1_t in range(0, max(1, orig_w - tile_size + stride), stride):
+                    x2_t = min(x1_t + tile_size, orig_w)
+                    if x2_t - x1_t < 100:
+                        continue
+
+                    tile_crop = img[y1_t:y2_t, x1_t:x2_t]
+                    tile_file = os.path.join(temp_dir, f"tile_{tile_index}.jpg")
+                    cv2.imwrite(tile_file, tile_crop)
+                    tile_index += 1
+
+                    tile_results = self.detect(tile_file, conf=conf)
+                    for item in tile_results:
+                        box = item["bounding_box"]
+                        fx1 = round(float(x1_t + box[0]), 2)
+                        fy1 = round(float(y1_t + box[1]), 2)
+                        fx2 = round(float(x1_t + box[2]), 2)
+                        fy2 = round(float(y1_t + box[3]), 2)
+
+                        item_copy = dict(item)
+                        item_copy["bounding_box"] = [fx1, fy1, fx2, fy2]
+                        item_copy["image_width"] = orig_w
+                        item_copy["image_height"] = orig_h
+                        item_copy["inference_mode"] = "SAHI_multi_tile"
+                        all_findings.append(item_copy)
+        finally:
+            shutil.rmtree(temp_dir, ignore_errors=True)
+
+        if not all_findings:
+            return []
+
+        def box_iou(b1, b2):
+            x1 = max(b1[0], b2[0])
+            y1 = max(b1[1], b2[1])
+            x2 = min(b1[2], b2[2])
+            y2 = min(b1[3], b2[3])
+            inter_area = max(0.0, x2 - x1) * max(0.0, y2 - y1)
+            area1 = (b1[2] - b1[0]) * (b1[3] - b1[1])
+            area2 = (b2[2] - b2[0]) * (b2[3] - b2[1])
+            union = area1 + area2 - inter_area
+            return inter_area / union if union > 0 else 0.0
+
+        all_findings.sort(key=lambda x: x["confidence"], reverse=True)
+        keep = []
+        for f in all_findings:
+            overwrite = False
+            for k in keep:
+                if f["finding"] == k["finding"] and box_iou(f["bounding_box"], k["bounding_box"]) > 0.45:
+                    overwrite = True
+                    break
+            if not overwrite:
+                keep.append(f)
+
+        return keep
+

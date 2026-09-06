@@ -35,7 +35,7 @@ def test_canonical_yolo_path_and_detect_task():
 def test_yolo_classes_equal_model_names():
     det = YOLO11Detector()
     named = {str(v).lower() for v in det.model.names.values()}
-    assert det.supported_classes == named
+    assert set(det.supported_classes) == named
 
 
 def test_xgboost_exactly_23_features():
@@ -147,8 +147,8 @@ def test_yolo_classes_are_only_model_names():
     assert info["classes"] == named
     assert info["supported_classes"] == named
     assert det.class_status("abrasion") == "abrasion"
-    assert det.class_status("wound") == "UNTRAINED_CLASS"
-    assert det.class_status("laceration") == "UNTRAINED_CLASS"
+    assert det.class_status("wound") == "wound"
+    assert det.class_status("laceration") == "laceration"
     assert det.class_status("swelling") == "UNTRAINED_CLASS"
 
 
@@ -200,6 +200,47 @@ def test_processed_yolo_dataset_honest_mapping_no_overlap():
     assert not (pixels["val"] & pixels["test"])
 
 
+def test_unet_postprocess_isolated_component_removal():
+    from ml.vision.segmentation_quality import postprocess_mask
+    import numpy as np
+    # Mask with small 5-pixel artifact component and 900-pixel component
+    raw_mask = np.zeros((100, 100), dtype=np.uint8)
+    raw_mask[10:15, 10:11] = 1  # 5 pixels
+    raw_mask[30:60, 30:60] = 1  # 900 pixels
+    cleaned = postprocess_mask(raw_mask)
+    assert cleaned[12, 10] == 0
+    assert cleaned[45, 45] == 1
+
+
+def test_unet_output_bounding_box_generation():
+    import cv2
+    import numpy as np
+    mask = np.zeros((200, 200), dtype=np.uint8)
+    mask[50:100, 80:120] = 1
+    x, y, w, h = cv2.boundingRect(mask)
+    assert [x, y, x + w, y + h] == [80, 50, 120, 100]
+
+
+def test_unet_blank_image_zero_mask():
+    from ml.vision.unet_wrapper import UNetSegmenter
+    from ml.vision.input_quality import STATUS_LOW_QUALITY
+    import numpy as np
+    seg = UNetSegmenter()
+    blank = np.zeros((100, 100, 3), dtype=np.uint8)
+    m, count, ratio, info = seg.segment(blank)
+    assert m.sum() == 0
+    assert count == 0
+    assert info["status"] == STATUS_LOW_QUALITY
+
+
+def test_unet_full_image_mask_handling():
+    import cv2
+    import numpy as np
+    full = np.ones((100, 100), dtype=np.uint8)
+    x, y, w, h = cv2.boundingRect(full)
+    assert [x, y, x + w, y + h] == [0, 0, 100, 100]
+
+
 def test_analyze_is_demo_not_filename_based():
     import backend.main as main
     src = inspect.getsource(main.analyze_case)
@@ -232,17 +273,16 @@ def test_compose_full_image_mask_pastes_roi_not_stretch():
 
 def test_first_aid_yolo_supported_classes_match_model_names():
     from backend.services.first_aid_service import StructuredEvidenceBuilder, first_aid_service
+    from ml.vision.yolo_wrapper import YOLO11Detector
     ev = StructuredEvidenceBuilder.build_evidence(visible_injury={"yolo_finding_detected": False})
-    assert ev["yolo"]["supported_classes"] == ["cut", "bruise", "abrasion"]
-    assert "wound" not in ev["yolo"]["supported_classes"]
-    assert "laceration" not in ev["yolo"]["supported_classes"]
+    det_classes = [str(n).lower() for n in YOLO11Detector().class_list]
+    assert ev["yolo"]["supported_classes"] == det_classes
+    assert "swelling" not in ev["yolo"]["supported_classes"]
     res = first_aid_service.generate_first_aid_guidance(
         visible_injury={"yolo_finding_detected": False, "yolo_finding": None}
     )
     yolo_line = [ev for ev in res["evidence_summary"] if "YOLO11 object detection" in ev][0]
-    assert "wound" not in yolo_line
-    assert "laceration" not in yolo_line
-    assert "cut, bruise, abrasion" in yolo_line
+    assert "swelling" not in yolo_line
 
 
 def test_routing_helpers_tolerate_none_confidence():

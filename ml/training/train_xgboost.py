@@ -141,20 +141,25 @@ def compute_brier_and_ece(probs: np.ndarray, y_true: np.ndarray, num_classes: in
             
     return round(brier, 6), round(float(ece), 6)
 
-def train_xgboost():
+def train_xgboost(num_samples: int = 200):
     """
     Trains XGBoost on synthetic multimodal feature matrix under scikit-learn 1.9.0 with balanced class weighting.
     Fits StandardScaler and PCA ONLY on the training split to prevent data leakage.
     Evaluates on untouched held-out test split and records per-class HIGH risk recall.
     """
     os.makedirs(MODEL_DIR, exist_ok=True)
+    from ml.models.canonical_paths import sha256_file
 
-    X, y = generate_multimodal_dataset(num_samples=200, seed=42)
+    # Generate multimodal synthetic fusion samples
+    X, y = generate_multimodal_dataset(num_samples=num_samples, seed=42)
 
-    # Strict split: 70% Train (140), 15% Val (30), 15% Test (30 untouched)
-    X_train, y_train = X[:140], y[:140]
-    X_val, y_val = X[140:170], y[140:170]
-    X_test, y_test = X[170:], y[170:]  # Untouched final test split
+    # 70% Train, 15% Val, 15% Test
+    n_train = int(num_samples * 0.70)
+    n_val = int(num_samples * 0.15)
+    
+    X_train, y_train = X[:n_train], y[:n_train]
+    X_val, y_val = X[n_train:n_train + n_val], y[n_train:n_train + n_val]
+    X_test, y_test = X[n_train + n_val:], y[n_train + n_val:]  # Untouched final test split
 
     # 1. Fit StandardScaler ONLY on X_train under scikit-learn 1.9.0
     scaler = StandardScaler()
@@ -168,6 +173,11 @@ def train_xgboost():
     xgb = XGBClassifier(n_estimators=60, max_depth=3, learning_rate=0.08, random_state=42)
     xgb.fit(X_train, y_train, sample_weight=sample_weights)
     xgb.save_model(XGB_CANONICAL)
+
+    # Save fitted scaler and PCA for runtime VQC/fusion feature alignment
+    import joblib
+    joblib.dump(scaler, os.path.join(MODEL_DIR, "vqc_scaler.pkl"))
+    joblib.dump(pca, os.path.join(MODEL_DIR, "vqc_pca.pkl"))
 
     # 4. Evaluate ONLY on untouched test set
     y_test_preds = xgb.predict(X_test)
@@ -193,7 +203,7 @@ def train_xgboost():
 
     metrics = {
         "genuinely_paired_clinical_samples": 0,
-        "synthetic_multimodal_fusion_samples": 200,
+        "synthetic_multimodal_fusion_samples": num_samples,
         "train_samples": len(X_train),
         "val_samples": len(X_val),
         "test_samples": total_test,
@@ -220,11 +230,13 @@ def train_xgboost():
         "data_provenance": "synthetic_multimodal_fusion",
         "data_provenance_class": "SYNTHETIC",
         "runtime_canonical_path": XGB_CANONICAL.replace("\\", "/"),
-        "research_limitation": "The multimodal records represent 200 synthetic engineering fusion samples and 0 genuinely paired patient records.",
+        "artifact_sha256": sha256_file(XGB_CANONICAL),
+        "research_limitation": f"The multimodal records represent {num_samples} synthetic engineering fusion samples and 0 genuinely paired patient records.",
         "pca_components": 4,
         "pca_variance_ratio": [round(float(v), 4) for v in pca.explained_variance_ratio_],
         "metrics": metrics
     }
+
 
     with open(METADATA_SAVE_PATH, "w", encoding="utf-8") as f:
         json.dump(metadata, f, indent=2)
@@ -232,19 +244,20 @@ def train_xgboost():
     # Register in Model Registry
     register_model_artifact(
         model_name="XGBoost Multimodal",
-        version="v1.2.0",
+        version="v1.3.0",
         artifact_path=XGB_CANONICAL,
         training_dataset="synthetic_multimodal_fusion",
-        sample_count=200,
+        sample_count=num_samples,
         classes=["LOW", "MODERATE", "HIGH"],
         metrics=metrics,
         training_command="backend\\venv\\Scripts\\python.exe ml\\training\\train_xgboost.py",
         random_seed=42,
-        notes="DATA_PROVENANCE=SYNTHETIC. Re-fitted StandardScaler, PCA, and XGBoost under scikit-learn 1.9.0. Tested on untouched held-out split (0 genuinely paired clinical patient samples)."
+        notes=f"DATA_PROVENANCE=SYNTHETIC. Retrained XGBoost on expanded dataset ({num_samples} samples: {n_train} train / {n_val} val / {total_test} test). Fitted StandardScaler and PCA under scikit-learn."
     )
 
-    print(f"[OK] Retrained XGBoost & re-fitted Scaler/PCA under scikit-learn 1.9.0. Test Accuracy: {correct_count}/{total_test} ({acc*100:.2f}%)")
+    print(f"[OK] Retrained XGBoost on {num_samples} synthetic multimodal samples. Test Accuracy: {correct_count}/{total_test} ({acc*100:.2f}%)")
     return metadata
+
 
 if __name__ == "__main__":
     train_xgboost()

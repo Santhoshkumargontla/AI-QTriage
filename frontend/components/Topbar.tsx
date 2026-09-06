@@ -44,51 +44,56 @@ export default function Topbar({ title }: TopbarProps) {
   };
 
   return (
-    <header className="h-16 bg-[var(--bg-topbar)] border-b border-[var(--border-card)] px-6 flex items-center justify-between sticky top-0 z-30 transition-colors">
-      <div>
-        <h2 className="text-xl font-bold text-[var(--text-main)] tracking-tight">
+    <header className="h-16 bg-[var(--bg-topbar)]/80 backdrop-blur-xl border-b border-[var(--border-card)] px-6 flex items-center justify-between sticky top-0 z-30 transition-colors shadow-sm">
+      <div className="flex items-center gap-3">
+        <h2 className="text-xl font-extrabold text-[var(--text-main)] tracking-tight">
           {resolvedTitle}
         </h2>
+        <span className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950/80 text-emerald-400 border border-emerald-800/50 shadow-sm">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-ping" />
+          SYSTEM OPERATIONAL
+        </span>
       </div>
 
-      <div className="flex items-center space-x-4">
-        <div className="flex items-center bg-[var(--bg-card-sub)] p-1 rounded-xl border border-[var(--border-card)] text-sm font-semibold">
+      <div className="flex items-center space-x-3.5">
+        <div className="flex items-center bg-[var(--bg-card-sub)] p-1 rounded-2xl border border-[var(--border-card)] text-xs font-semibold shadow-inner">
           <button
             type="button"
             onClick={() => changeTheme("light")}
-            className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-colors ${
+            className={`flex items-center space-x-1.5 px-3 py-1 rounded-xl transition-all ${
               theme === "light"
-                ? "bg-blue-600 text-white font-bold"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-md shadow-blue-600/30"
                 : "text-[var(--text-muted)] hover:text-[var(--text-main)]"
             }`}
           >
-            <Sun className="h-4 w-4" />
+            <Sun className="h-3.5 w-3.5" />
             <span>Light</span>
           </button>
           <button
             type="button"
             onClick={() => changeTheme("dark")}
-            className={`flex items-center space-x-1 px-2.5 py-1 rounded-lg transition-colors ${
+            className={`flex items-center space-x-1.5 px-3 py-1 rounded-xl transition-all ${
               theme === "dark"
-                ? "bg-blue-600 text-white font-bold"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold shadow-md shadow-blue-600/30"
                 : "text-[var(--text-muted)] hover:text-[var(--text-main)]"
             }`}
           >
-            <Moon className="h-4 w-4" />
+            <Moon className="h-3.5 w-3.5" />
             <span>Dark</span>
           </button>
         </div>
 
-        <div className="flex items-center space-x-2.5 bg-[var(--bg-card-sub)] pl-2 pr-3 py-1 rounded-xl border border-[var(--border-card)]">
-          <div className="h-7 w-7 rounded-lg bg-blue-600/15 border border-blue-500/30 flex items-center justify-center text-blue-600 font-bold text-xs">
-            <User className="h-4 w-4" />
+        <div className="flex items-center space-x-2.5 bg-[var(--bg-card-sub)] pl-2 pr-3.5 py-1 rounded-2xl border border-[var(--border-card)] shadow-inner">
+          <div className="h-7 w-7 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-white font-bold text-xs shadow-md shadow-blue-500/20">
+            <User className="h-3.5 w-3.5" />
           </div>
-          <div className="text-left text-sm">
-            <span className="font-bold text-[var(--text-main)] block leading-tight">Researcher</span>
-            <span className="text-xs text-[var(--text-muted)] font-mono">AIQT-2024</span>
+          <div className="text-left text-xs">
+            <span className="font-extrabold text-[var(--text-main)] block leading-tight">Clinical Researcher</span>
+            <span className="text-[10px] text-[var(--text-muted)] font-mono">DEMO-SESSION</span>
           </div>
         </div>
       </div>
     </header>
   );
 }
+

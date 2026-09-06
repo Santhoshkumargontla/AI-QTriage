@@ -126,6 +126,7 @@ def train_vqc(epochs: int = 15, lr: float = 0.1):
         "version": "v1.4.0",
         "status": EXPERIMENTAL_ONLY,
         "data_provenance_class": "SYNTHETIC",
+        "artifact_sha256": sha256_file(os.path.join(VQC_DIR, "vqc_weights.npz")),
         "used_in_main_decision": False,
         "recommendation": recommendation,
         "disclaimer": (
@@ -134,6 +135,7 @@ def train_vqc(epochs: int = 15, lr: float = 0.1):
         ),
         "metrics": metrics,
     }
+
     with open(METADATA_SAVE_PATH, "w", encoding="utf-8") as handle:
         json.dump(metadata, handle, indent=2)
 

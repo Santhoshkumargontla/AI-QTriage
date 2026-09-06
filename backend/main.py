@@ -88,8 +88,12 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Upload storage path
-UPLOAD_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "uploads")
+# Upload storage path (read-only filesystem safe for Vercel/serverless execution)
+import tempfile
+if os.environ.get("VERCEL") or os.environ.get("AWS_LAMBDA_FUNCTION_NAME"):
+    UPLOAD_DIR = os.path.join(tempfile.gettempdir(), "ai_qtriage_uploads")
+else:
+    UPLOAD_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 app.mount("/uploads", StaticFiles(directory=UPLOAD_DIR), name="uploads")
 
@@ -1502,7 +1506,13 @@ def analyze_case(case_id: str):
                     status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
                     detail=f"MODEL_ARTIFACT_MISSING: {yolo_det.model_path}"
                 )
-            detections = yolo_det.detect(img_ref)
+            import cv2 as _cv2_orig
+            img_bgr_test = _cv2_orig.imread(img_ref)
+            if img_bgr_test is not None and (img_bgr_test.shape[0] > 640 or img_bgr_test.shape[1] > 640):
+                detections = yolo_det.detect_sahi(img_ref)
+            else:
+                detections = yolo_det.detect(img_ref)
+
                 
             if detections:
                 best_det = max(detections, key=lambda d: float(d["confidence"]))
@@ -1562,6 +1572,7 @@ def analyze_case(case_id: str):
                     "yolo_dataset_provenance": yolo_info_live.get("dataset_provenance"),
                     "yolo_confidence": confidence,
                     "yolo_bounding_box": bbox_orig,
+                    "all_detections": detections,
 
                     # EfficientNet classifier result (separate from YOLO detection)
                     "classifier_finding": parsed["winner"] or parsed.get("abstention_class"),
@@ -1658,6 +1669,7 @@ def analyze_case(case_id: str):
                     "yolo_dataset_provenance": (yolo_det.get_info() or {}).get("dataset_provenance"),
                     "yolo_confidence": None,
                     "yolo_bounding_box": None,
+                    "all_detections": [],
 
                     # EfficientNet research classifier fields — labeled as classifier, NOT detector
                     "classifier_finding": winning_class or parsed.get("abstention_class"),
@@ -2090,6 +2102,45 @@ def trigger_sos_demo(payload: SOSDemoSchema):
     return event_doc
 
 
+@app.get("/api/cases/{case_id}/fhir", tags=["Cases"])
+def get_fhir_bundle(case_id: str):
+    """Export case data as a standardized HL7 / FHIR R4 Bundle resource."""
+    from backend.services.report_service import ResearchReportGenerator
+    generator = ResearchReportGenerator()
+    try:
+        bundle = generator.generate_fhir_bundle(case_id)
+        return JSONResponse(
+            content=bundle,
+            headers={"Content-Disposition": f"attachment; filename=fhir_bundle_{case_id}.json"}
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+
+@app.post("/api/sos/webhook/status", tags=["Emergency Demo"])
+async def sos_twilio_webhook_status(request: Request):
+    """Receive real-time Twilio SMS/Call delivery status updates."""
+    try:
+        form_data = await request.form()
+        message_sid = form_data.get("MessageSid") or form_data.get("CallSid")
+        message_status = form_data.get("MessageStatus") or form_data.get("CallStatus") or "received"
+        
+        db = get_database()
+        if message_sid:
+            db.sos_events.update_many(
+                {"twilio_message_sid": message_sid},
+                {"$set": {"status": message_status, "delivery_outcome": message_status, "updated_at": datetime.now(timezone.utc).isoformat()}}
+            )
+            db.cases.update_many(
+                {"sos_twilio_sid": message_sid},
+                {"$set": {"sos_status": message_status, "sos_delivery_status": message_status}}
+            )
+        return {"status": "ok", "message_sid": message_sid, "delivery_status": message_status}
+    except Exception as e:
+        return {"status": "error", "detail": str(e)}
+
+
+
 def _model_meta_status(metadata_path: str, fallback: str) -> str:
     """Read honest training status from metadata JSON. File existence is not training proof."""
     from ml.models.canonical_paths import exists, resolve_existing
@@ -2162,9 +2213,8 @@ def get_models():
         try:
             import numpy as np
             import cv2
-            dummy_test_path = abs_path(os.path.join("data", "datasets", "yolo_injury", "dummy_test.jpg"))
+            dummy_test_path = os.path.join(tempfile.gettempdir(), "yolo_dummy_test.jpg")
             if not os.path.exists(dummy_test_path):
-                os.makedirs(os.path.dirname(dummy_test_path), exist_ok=True)
                 cv2.imwrite(dummy_test_path, np.zeros((64, 64, 3), dtype=np.uint8))
             yolo_det.detect(dummy_test_path)
             yolo_inference_ok = True

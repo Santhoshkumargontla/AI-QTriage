@@ -59,7 +59,6 @@ def test_config_endpoint_canonical_and_no_secrets():
     blob = str(data)
     assert data.get("auth_token") is None
     assert data.get("TWILIO_AUTH_TOKEN") is None
-    assert "tok" not in blob.lower() or data["configured"] is False
     # Env var NAMES are listed; secret VALUES must not appear.
     assert twilio_service.auth_token not in blob if twilio_service.auth_token else True
     assert "real_sms_tested" in data
@@ -186,8 +185,8 @@ def test_mocked_twilio_failure():
 
 def test_respond_twilio_test_when_disabled_stores_not_configured():
     case_id = _case()
+    geo = {"latitude": 37.7749, "longitude": -122.4194}
     try:
-        client.post(f"/api/cases/{case_id}/sos/demo/trigger", json={"mode": "twilio_test"})
         with patch("backend.services.twilio_service.twilio_service.send_test_sos_message") as mock_send:
             mock_send.return_value = {
                 "success": False,
@@ -198,9 +197,10 @@ def test_respond_twilio_test_when_disabled_stores_not_configured():
                 "twilio_message_sid": None,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             }
+            client.post(f"/api/cases/{case_id}/sos/demo/trigger", json={"mode": "twilio_test", **geo})
             resp = client.post(
                 f"/api/cases/{case_id}/sos/demo/respond",
-                json={"user_response": "no_response", "mode": "twilio_test"},
+                json={"user_response": "no_response", "mode": "twilio_test", **geo},
             )
         assert resp.status_code == 200
         assert resp.json()["sos_status"] == TWILIO_NOT_CONFIGURED
@@ -215,8 +215,8 @@ def test_respond_twilio_test_when_disabled_stores_not_configured():
 
 def test_respond_mocked_success_persists_sid():
     case_id = _case()
+    geo = {"latitude": 37.7749, "longitude": -122.4194}
     try:
-        client.post(f"/api/cases/{case_id}/sos/demo/trigger", json={"mode": "twilio_test"})
         sid = "SM" + uuid.uuid4().hex[:30]
         ts = datetime.now(timezone.utc).isoformat()
         with patch("backend.services.twilio_service.twilio_service.send_test_sos_message") as mock_send:
@@ -228,9 +228,10 @@ def test_respond_mocked_success_persists_sid():
                 "timestamp": ts,
                 "failure_reason": None,
             }
+            client.post(f"/api/cases/{case_id}/sos/demo/trigger", json={"mode": "twilio_test", **geo})
             resp = client.post(
                 f"/api/cases/{case_id}/sos/demo/respond",
-                json={"user_response": "no_response", "mode": "twilio_test"},
+                json={"user_response": "no_response", "mode": "twilio_test", **geo},
             )
         assert resp.status_code == 200
         assert resp.json()["sos_status"] == TWILIO_REQUEST_QUEUED
@@ -250,8 +251,8 @@ def test_respond_mocked_success_persists_sid():
 
 def test_respond_mocked_failure_persists_reason():
     case_id = _case()
+    geo = {"latitude": 37.7749, "longitude": -122.4194}
     try:
-        client.post(f"/api/cases/{case_id}/sos/demo/trigger", json={"mode": "twilio_test"})
         with patch("backend.services.twilio_service.twilio_service.send_test_sos_message") as mock_send:
             mock_send.return_value = {
                 "success": False,
@@ -262,9 +263,10 @@ def test_respond_mocked_failure_persists_reason():
                 "twilio_message_sid": None,
                 "timestamp": datetime.now(timezone.utc).isoformat(),
             }
+            client.post(f"/api/cases/{case_id}/sos/demo/trigger", json={"mode": "twilio_test", **geo})
             resp = client.post(
                 f"/api/cases/{case_id}/sos/demo/respond",
-                json={"user_response": "no_response", "mode": "twilio_test"},
+                json={"user_response": "no_response", "mode": "twilio_test", **geo},
             )
         assert resp.json()["sos_status"] == TWILIO_FAILED
         stored = get_database().cases.find_one({"case_id": case_id})

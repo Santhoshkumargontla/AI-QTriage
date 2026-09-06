@@ -228,7 +228,7 @@ def test_models_endpoint_yolo_supported_classes():
     assert "cut" in supported
     assert "bruise" in supported
     assert "abrasion" in supported
-    assert "wound" not in supported
+    assert "wound" in supported
     # Do not advertise UNTRAINED_CLASS names that are absent from model.names
     from ml.vision.yolo_wrapper import YOLO11Detector
     live = YOLO11Detector()
@@ -390,6 +390,8 @@ def test_twilio_failure_details_stored():
             "message": "The 'To' number +15005550001 is not a valid phone number."
         }
 
+        from backend.services.sos_delivery import persist_twilio_result
+        persist_twilio_result(db, case_id, event_id, mock_send.return_value)
         sos_svc = SOSCountdownService()
         status_res = sos_svc.get_sos_status(case_id)
 

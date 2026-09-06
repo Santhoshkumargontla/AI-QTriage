@@ -1,4 +1,8 @@
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
+export const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ||
+  (typeof window !== "undefined" && window.location.origin
+    ? window.location.origin
+    : "http://127.0.0.1:8000");
 
 export function getApiUrl(path: string): string {
   const cleanPath = path.startsWith("/") ? path : `/${path}`;
@@ -24,6 +28,9 @@ export interface Case {
   prediction_agreement?: string | null;
   uncertainty_level?: string | null;
   uncertainty_reasons?: string[] | null;
+  rule_derived_category?: string | null;
+
+
   visible_injury?: {
     finding: string;
     finding_detected?: boolean;
@@ -32,6 +39,13 @@ export interface Case {
     yolo_finding_detected?: boolean;
     yolo_confidence?: number | null;
     yolo_bounding_box?: number[] | null;
+    all_detections?: Array<{
+      finding: string;
+      confidence: number;
+      bounding_box: number[];
+      low_confidence?: boolean;
+      class_support_status?: string;
+    }>;
     yolo_supported_classes?: string[];
     classifier_finding?: string | null;
     classifier_probability?: number | null;
@@ -113,6 +127,13 @@ export interface Case {
   safety_information?: string[] | null;
   sos_status?: string | null;
   sos_event_id?: string | null;
+  sos_user_location?: {
+    latitude?: number | null;
+    longitude?: number | null;
+    location_label?: string | null;
+    accuracy_m?: number | null;
+    maps_url?: string | null;
+  } | null;
   report_reference?: string | null;
   is_demo?: boolean;
   modalities_used?: string[];

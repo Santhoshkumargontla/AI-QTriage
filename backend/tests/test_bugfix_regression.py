@@ -198,6 +198,7 @@ def test_sos_fresh_event_uniqueness_and_atomic_claim():
 
     now_iso = datetime.now(timezone.utc).isoformat()
 
+    geo = {"latitude": 37.7749, "longitude": -122.4194, "location_label": "San Francisco, CA", "accuracy_m": 15.0}
     db.cases.insert_one({
         "case_id": case_id,
         "created_at": datetime.now(timezone.utc),
@@ -206,6 +207,7 @@ def test_sos_fresh_event_uniqueness_and_atomic_claim():
         "sos_trigger_time": now_iso,
         "sos_countdown_seconds": 1,
         "sos_delivery_mode": "twilio_test",
+        "sos_user_location": geo,
         "visible_injury": {"finding": "Cut (Test)"},
         "questionnaire": {"answers": {"location": "Wrist", "pain_level": "7"}}
     })
@@ -216,6 +218,7 @@ def test_sos_fresh_event_uniqueness_and_atomic_claim():
         "case_id": case_id,
         "sos_status": "countdown",
         "delivery_mode": "twilio_test",
+        "user_location": geo,
         "created_at": now_iso
     })
 

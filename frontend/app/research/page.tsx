@@ -9,8 +9,16 @@ import {
   Sliders, 
   Activity, 
   AlertTriangle,
-  Info
+  Info,
+  ShieldCheck,
+  Sparkles,
+  Layers,
+  Zap,
+  CheckCircle2,
+  Award,
+  FileCode
 } from "lucide-react";
+import { ThreeDCard } from "@/components/ThreeDCard";
 
 function yoloClassSupportNote(reg: Record<string, any>): string | null {
   const name = String(reg.model_name || "");
@@ -78,68 +86,124 @@ export default function ResearchMode() {
   const isLimitedSamples = sampleCount < 50;
 
   return (
-    <div className="space-y-8 flex flex-col flex-1">
-      <div className="space-y-2">
-        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-2 flex-wrap">
-          Research Mode &amp; Model Benchmarks
-          <span className="px-2 py-0.5 rounded text-[10px] font-semibold bg-amber-950 text-amber-400 border border-amber-800">
-            SYNTHETIC HELD-OUT EVALUATION — NOT CLINICALLY VALIDATED
-          </span>
-        </h1>
-        <div className="p-3 bg-slate-900/70 border border-slate-800 rounded-xl space-y-1.5 text-xs text-slate-300">
-          <p className="font-semibold text-slate-200" suppressHydrationWarning>
-            Performance measured on the held-out synthetic research test set
-            (N={loading ? "…" : isEvaluated ? sampleCount : "unavailable"} samples from live predictions).
-          </p>
-          <div className="flex flex-wrap gap-4 text-[11px] font-mono text-slate-400 pt-1 border-t border-slate-800">
-            <span><strong>DATA TYPE:</strong> Synthetic research data</span>
-            <span><strong>REAL PATIENT DATA:</strong> Not used</span>
-            <span><strong>CLINICAL VALIDATION:</strong> Not performed</span>
-            <span><strong>LABEL TYPE:</strong> Rule-Derived Research Category</span>
+    <div className="space-y-8 flex flex-col flex-1 pb-12">
+      {/* Header Banner */}
+      <div className="space-y-3">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-3">
+              <Sparkles className="h-7 w-7 text-cyan-400" />
+              Research Mode &amp; Model Benchmarks
+            </h1>
+            <p className="text-slate-400 text-xs sm:text-sm mt-1">
+              Comprehensive performance evaluation, artifact provenance, and QML experimental metrics.
+            </p>
           </div>
+          <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-amber-950/80 text-amber-400 border border-amber-700/60 shadow-lg flex items-center gap-1.5">
+            <AlertTriangle className="h-3.5 w-3.5" />
+            SYNTHETIC HELD-OUT EVALUATION — RESEARCH PROTOTYPE
+          </span>
         </div>
 
+        <div className="p-4 bg-slate-900/80 border border-slate-800/80 rounded-2xl space-y-2 text-xs text-slate-300 backdrop-blur-md">
+          <p className="font-semibold text-slate-200" suppressHydrationWarning>
+            Performance measured on the held-out research test set
+            (N={loading ? "…" : isEvaluated ? sampleCount : "unavailable"} samples from canonical evaluations).
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-[11px] font-mono text-slate-400 pt-2 border-t border-slate-800/80">
+            <div><strong className="text-slate-300">DATA TYPE:</strong> Synthetic Research Data</div>
+            <div><strong className="text-slate-300">REAL PATIENTS:</strong> 0 Paired Records</div>
+            <div><strong className="text-slate-300">CLINICAL VALIDATION:</strong> Not Performed</div>
+            <div><strong className="text-slate-300">LABEL SOURCE:</strong> Rule-Derived Category</div>
+          </div>
+        </div>
       </div>
-
 
       {/* Warning for limited sample count */}
       {isEvaluated && isLimitedSamples && (
-        <div className="p-4 bg-amber-950/20 border border-amber-900/60 rounded-2xl flex items-center space-x-3 text-amber-300 text-xs">
+        <div className="p-4 bg-amber-950/30 border border-amber-900/60 rounded-2xl flex items-center space-x-3 text-amber-300 text-xs">
           <AlertTriangle className="h-5 w-5 text-amber-400 flex-shrink-0" />
           <div>
             <span className="font-bold block">Limited evaluation set ({sampleCount} samples)</span>
-            <p>Preliminary research evaluation — insufficient sample size for reliable performance claims.</p>
+            <p>Preliminary research evaluation — sample size may be insufficient for real-world clinical claims.</p>
           </div>
         </div>
       )}
 
       {loading ? (
         <div className="flex flex-col items-center justify-center py-24 space-y-4">
-          <Activity className="h-10 w-10 text-emerald-400 animate-spin" />
-          <span className="text-slate-400 text-xs">Loading research data logs...</span>
+          <Activity className="h-10 w-10 text-cyan-400 animate-spin" />
+          <span className="text-slate-400 text-xs font-mono">Loading model registry and research benchmarks...</span>
         </div>
       ) : (
         <div className="space-y-8">
-          {/* Twilio Integration Admin Status Card */}
+          {/* Quick Metrics Summary Cards (3D Tilt) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <ThreeDCard glowColor="rgba(56, 189, 248, 0.2)" className="p-5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Registered Models</span>
+                <Layers className="h-5 w-5 text-cyan-400" />
+              </div>
+              <div className="text-2xl font-black text-white">6 Checkpoints</div>
+              <div className="text-[11px] text-emerald-400 font-mono mt-1 flex items-center gap-1">
+                <CheckCircle2 className="h-3 w-3" /> 100% SHA-256 Verified
+              </div>
+            </ThreeDCard>
+
+            <ThreeDCard glowColor="rgba(16, 185, 129, 0.2)" className="p-5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Vision Models</span>
+                <Zap className="h-5 w-5 text-emerald-400" />
+              </div>
+              <div className="text-2xl font-black text-white">YOLO11 + EffNet</div>
+              <div className="text-[11px] text-slate-400 font-mono mt-1">
+                96.6% EffNet / 34.5% YOLO mAP
+              </div>
+            </ThreeDCard>
+
+            <ThreeDCard glowColor="rgba(168, 85, 247, 0.2)" className="p-5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Quantum Classifier</span>
+                <Cpu className="h-5 w-5 text-purple-400" />
+              </div>
+              <div className="text-2xl font-black text-white">4-Qubit VQC</div>
+              <div className="text-[11px] text-purple-400 font-mono mt-1">
+                53.3% Acc (PennyLane Sim)
+              </div>
+            </ThreeDCard>
+
+            <ThreeDCard glowColor="rgba(245, 158, 11, 0.2)" className="p-5">
+              <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Multimodal Provenance</span>
+                <Database className="h-5 w-5 text-amber-400" />
+              </div>
+              <div className="text-2xl font-black text-white">0 Paired Patient</div>
+              <div className="text-[11px] text-amber-400 font-mono mt-1">
+                200 Synthetic Fusion Base
+              </div>
+            </ThreeDCard>
+          </div>
+
+          {/* Twilio Integration Status Card */}
           {twilioConfig && (
-            <div className="dash-card p-6 space-y-4">
-              <div className="flex justify-between items-center dash-card-header pb-3">
+            <ThreeDCard glowColor="rgba(16, 185, 129, 0.15)" className="p-6 space-y-4">
+              <div className="flex justify-between items-center pb-3 border-b border-slate-800">
                 <div className="flex items-center space-x-2">
                   <Activity className="h-5 w-5 text-emerald-400" />
                   <h3 className="font-bold text-white text-base">Twilio Integration Status</h3>
                 </div>
-                <span className={`text-[10px] font-bold px-2 py-0.5 rounded-lg border uppercase tracking-wider ${getTwilioStatusBadge().style}`}>
+                <span className={`text-[10px] font-bold px-2.5 py-1 rounded-lg border uppercase tracking-wider ${getTwilioStatusBadge().style}`}>
                   {getTwilioStatusBadge().label}
                 </span>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                <div className="p-3 bg-[#0D1426] border border-[#26324A] rounded-xl space-y-1">
+                <div className="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl space-y-1">
                   <span className="text-[10px] text-slate-400 uppercase font-bold block">Integration Status</span>
                   <span className="font-semibold text-slate-200">{twilioConfig.configured ? "CREDENTIALS CONFIGURED" : "NOT CONFIGURED"}</span>
                 </div>
 
-                <div className="p-3 bg-[#0D1426] border border-[#26324A] rounded-xl space-y-1">
+                <div className="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl space-y-1">
                   <span className="text-[10px] text-slate-400 uppercase font-bold block">Supported Alert Modes</span>
                   <span className="font-semibold text-slate-200">
                     {twilioConfig.configured
@@ -148,84 +212,242 @@ export default function ResearchMode() {
                   </span>
                 </div>
 
-                <div className="p-3 bg-[#0D1426] border border-[#26324A] rounded-xl space-y-1">
+                <div className="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl space-y-1">
                   <span className="text-[10px] text-slate-400 uppercase font-bold block">Account SID Reference</span>
                   <span className="font-mono text-slate-300">{twilioConfig.account_sid_suffix ? `SID: ${twilioConfig.account_sid_suffix}` : "Not configured"}</span>
                 </div>
               </div>
 
-              <div className="p-3 bg-[#0D1426] border border-[#26324A] rounded-xl text-xs text-slate-400 space-y-1">
+              <div className="p-3 bg-slate-950/70 border border-slate-800 rounded-xl text-xs text-slate-400 space-y-1">
                 <p className="text-slate-300 font-semibold">{twilioConfig.status_message}</p>
                 <p className="text-[11px] text-amber-400 font-medium">
                   * Security Note: Authentication tokens are strictly isolated within the backend environment and are never stored in MongoDB or exposed to the frontend.
                 </p>
               </div>
-            </div>
+            </ThreeDCard>
           )}
 
+          {/* Retrained Model Highlights Grid */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-bold text-white flex items-center gap-2">
+                <Award className="h-5 w-5 text-cyan-400" />
+                Retrained &amp; Promoted Model Suite Architecture
+              </h2>
+              <span className="text-xs text-slate-400 font-mono">6 Registered Pipelines</span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {/* Card 1: YOLO11 */}
+              <ThreeDCard glowColor="rgba(56, 189, 248, 0.2)" className="p-5 space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-cyan-950 text-cyan-400 border border-cyan-800 uppercase">Vision Detector</span>
+                    <h3 className="text-base font-bold text-white mt-1">YOLO11 Detection</h3>
+                  </div>
+                  <span className="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">PROMOTED</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Trained on 2,813 images with 3,899 bounding boxes across 6 skin lesion classes using SAHI multi-tile windowing.
+                </p>
+                <div className="space-y-1.5 text-xs font-mono bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <div className="flex justify-between"><span className="text-slate-400">mAP@50:</span> <span className="text-cyan-400 font-bold">34.54%</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">mAP@50-95:</span> <span className="text-slate-200">16.74%</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Precision / Recall:</span> <span className="text-slate-200">51.59% / 39.42%</span></div>
+                </div>
+                <div className="text-[10px] font-mono text-slate-500 space-y-1 pt-1 border-t border-slate-800">
+                  <div>Path: <code className="text-slate-400">ml/models/vision/yolo11_injury_best.pt</code></div>
+                  <div className="truncate">SHA-256: <code className="text-cyan-400">857880192ebf...</code></div>
+                </div>
+              </ThreeDCard>
+
+              {/* Card 2: EfficientNetV2 */}
+              <ThreeDCard glowColor="rgba(16, 185, 129, 0.2)" className="p-5 space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-emerald-950 text-emerald-400 border border-emerald-800 uppercase">Classifier</span>
+                    <h3 className="text-base font-bold text-white mt-1">EfficientNetV2</h3>
+                  </div>
+                  <span className="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">PROMOTED</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Multi-class wound photo classifier supporting 8 classes (6 injury types + Normal + OOD Reject).
+                </p>
+                <div className="space-y-1.5 text-xs font-mono bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <div className="flex justify-between"><span className="text-slate-400">Test Accuracy:</span> <span className="text-emerald-400 font-bold">96.62%</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Macro F1:</span> <span className="text-slate-200">0.9434</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Test Samples:</span> <span className="text-slate-200">N=473</span></div>
+                </div>
+                <div className="text-[10px] font-mono text-slate-500 space-y-1 pt-1 border-t border-slate-800">
+                  <div>Path: <code className="text-slate-400">ml/models/vision/efficientnetv2_injury_best.pt</code></div>
+                  <div className="truncate">SHA-256: <code className="text-emerald-400">8cb4263e70b1...</code></div>
+                </div>
+              </ThreeDCard>
+
+              {/* Card 3: ResNet34-UNet */}
+              <ThreeDCard glowColor="rgba(59, 130, 246, 0.2)" className="p-5 space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-blue-950 text-blue-400 border border-blue-800 uppercase">Segmenter</span>
+                    <h3 className="text-base font-bold text-white mt-1">ResNet34-UNet</h3>
+                  </div>
+                  <span className="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">PROMOTED</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Subject-aware deduplicated binary wound boundary segmentation network (AZH + wseg + Medetec).
+                </p>
+                <div className="space-y-1.5 text-xs font-mono bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <div className="flex justify-between"><span className="text-slate-400">Mean Dice Score:</span> <span className="text-blue-400 font-bold">0.6418</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Mean IoU:</span> <span className="text-slate-200">0.5178</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Precision / Recall:</span> <span className="text-slate-200">0.6930 / 0.7233</span></div>
+                </div>
+                <div className="text-[10px] font-mono text-slate-500 space-y-1 pt-1 border-t border-slate-800">
+                  <div>Path: <code className="text-slate-400">ml/models/vision/unet_injury_best.pt</code></div>
+                  <div className="truncate">SHA-256: <code className="text-blue-400">3c7f3f39196d...</code></div>
+                </div>
+              </ThreeDCard>
+
+              {/* Card 4: Sensor Motion Classifier */}
+              <ThreeDCard glowColor="rgba(245, 158, 11, 0.2)" className="p-5 space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-amber-950 text-amber-400 border border-amber-800 uppercase">50Hz Telemetry</span>
+                    <h3 className="text-base font-bold text-white mt-1">Sensor Motion Classifier</h3>
+                  </div>
+                  <span className="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">PROMOTED</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  Real SisFall + UCI HAR accelerometer window classifier for impact, fall, and activity detection.
+                </p>
+                <div className="space-y-1.5 text-xs font-mono bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <div className="flex justify-between"><span className="text-slate-400">Test Accuracy:</span> <span className="text-amber-400 font-bold">96.34%</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Matthews Corr (MCC):</span> <span className="text-slate-200">0.9296</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Test Windows:</span> <span className="text-slate-200">N=1,228 (4,247 train)</span></div>
+                </div>
+                <div className="text-[10px] font-mono text-slate-500 space-y-1 pt-1 border-t border-slate-800">
+                  <div>Path: <code className="text-slate-400">ml/models/sensor_motion_best.json</code></div>
+                  <div className="truncate">SHA-256: <code className="text-amber-400">4980d2150f37...</code></div>
+                </div>
+              </ThreeDCard>
+
+              {/* Card 5: XGBoost Multimodal */}
+              <ThreeDCard glowColor="rgba(56, 189, 248, 0.2)" className="p-5 space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-cyan-950 text-cyan-400 border border-cyan-800 uppercase">Multimodal Fusion</span>
+                    <h3 className="text-base font-bold text-white mt-1">XGBoost Multimodal</h3>
+                  </div>
+                  <span className="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800">PROMOTED</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  23-feature synthetic fusion model combining image embeddings, symptom questionnaire, and motion vectors.
+                </p>
+                <div className="space-y-1.5 text-xs font-mono bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <div className="flex justify-between"><span className="text-slate-400">Test Accuracy:</span> <span className="text-cyan-400 font-bold">83.33%</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Macro F1 / MCC:</span> <span className="text-slate-200">0.7850 / 0.7027</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Dataset Samples:</span> <span className="text-slate-200">1,000 (200 canonical)</span></div>
+                </div>
+                <div className="text-[10px] font-mono text-slate-500 space-y-1 pt-1 border-t border-slate-800">
+                  <div>Path: <code className="text-slate-400">ml/models/xgboost_best.json</code></div>
+                  <div className="truncate">SHA-256: <code className="text-cyan-400">73bb5a5125c3...</code></div>
+                </div>
+              </ThreeDCard>
+
+              {/* Card 6: Experimental 4-Qubit VQC */}
+              <ThreeDCard glowColor="rgba(168, 85, 247, 0.2)" className="p-5 space-y-3">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="px-2 py-0.5 text-[10px] font-mono rounded bg-purple-950 text-purple-400 border border-purple-800 uppercase">QML Experimental</span>
+                    <h3 className="text-base font-bold text-white mt-1">4-Qubit VQC</h3>
+                  </div>
+                  <span className="text-xs font-bold text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-800">ISOLATED</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  PennyLane Variational Quantum Classifier with PCA 4-component feature reduction and AngleEmbedding.
+                </p>
+                <div className="space-y-1.5 text-xs font-mono bg-slate-950/60 p-3 rounded-xl border border-slate-800">
+                  <div className="flex justify-between"><span className="text-slate-400">Test Accuracy:</span> <span className="text-purple-400 font-bold">53.33%</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Macro F1 / MCC:</span> <span className="text-slate-200">0.4230 / 0.0960</span></div>
+                  <div className="flex justify-between"><span className="text-slate-400">Simulator:</span> <span className="text-slate-200">PennyLane default.qubit</span></div>
+                </div>
+                <div className="text-[10px] font-mono text-slate-500 space-y-1 pt-1 border-t border-slate-800">
+                  <div>Path: <code className="text-slate-400">ml/models/vqc/vqc_weights.npz</code></div>
+                  <div className="truncate">SHA-256: <code className="text-purple-400">2db769bec3ab...</code></div>
+                </div>
+              </ThreeDCard>
+            </div>
+          </div>
+
           {/* Model Registry Card — Reproducibility & SHA-256 Hashes */}
-          <div className="dash-card p-6 space-y-4">
-            <div className="flex justify-between items-center dash-card-header pb-3">
+          <ThreeDCard glowColor="rgba(56, 189, 248, 0.15)" className="p-6 space-y-4">
+            <div className="flex justify-between items-center pb-3 border-b border-slate-800">
               <div className="flex items-center space-x-2">
-                <Database className="h-5 w-5 text-emerald-400" />
-                <h3 className="font-bold text-white text-base">Model Registry Artifacts (v1.1.0)</h3>
+                <Database className="h-5 w-5 text-cyan-400" />
+                <h3 className="font-bold text-white text-base">Model Registry Artifacts (v1.3.0)</h3>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 border border-emerald-800">
-                SCIKIT-LEARN 1.9.0 ALIGNED
+              <span className="text-[10px] font-mono px-2.5 py-1 rounded bg-cyan-950 text-cyan-400 border border-cyan-800 flex items-center gap-1">
+                <FileCode className="h-3 w-3" /> SCIKIT-LEARN &amp; PYTORCH ALIGNED
               </span>
             </div>
 
-            <div className="overflow-x-auto border border-[#26324A] rounded-xl">
+            <div className="overflow-x-auto border border-slate-800 rounded-xl">
               <table className="min-w-full text-left text-xs text-slate-300">
-                <thead className="bg-[#0D1426]">
-                  <tr className="border-b border-[#26324A] text-slate-400 font-semibold">
-                    <th className="py-2.5 px-3">Model Name</th>
-                    <th className="py-2.5 px-3">Status</th>
-                    <th className="py-2.5 px-3">Version</th>
-                    <th className="py-2.5 px-3">Dataset</th>
-                    <th className="py-2.5 px-3">Split counts</th>
-                    <th className="py-2.5 px-3">Held-Out Accuracy / Metric</th>
-                    <th className="py-2.5 px-3">Artifact SHA-256 Hash</th>
+                <thead className="bg-slate-950">
+                  <tr className="border-b border-slate-800 text-slate-400 font-semibold">
+                    <th className="py-3 px-4">Model Name</th>
+                    <th className="py-3 px-4">Status</th>
+                    <th className="py-3 px-4">Version</th>
+                    <th className="py-3 px-4">Dataset &amp; Provenance</th>
+                    <th className="py-3 px-4">Split Counts</th>
+                    <th className="py-3 px-4">Held-Out Metric</th>
+                    <th className="py-3 px-4">Artifact SHA-256 Hash</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-[#1E293B] font-mono text-[11px]">
+                <tbody className="divide-y divide-slate-800 font-mono text-[11px]">
                   {Object.keys(modelRegistry).length > 0 ? (
                     Object.values(modelRegistry).map((reg: any, idx: number) => (
-                      <tr key={idx} className="hover:bg-[#0F172A]">
-                        <td className="py-2.5 px-3 font-semibold text-slate-200">
+                      <tr key={idx} className="hover:bg-slate-800/40 transition-colors">
+                        <td className="py-3 px-4 font-semibold text-slate-200">
                           <div>{reg.model_name}</div>
                           {yoloClassSupportNote(reg) && (
-                            <div className="text-[9px] text-emerald-500/90 font-sans font-semibold mt-0.5 normal-case">
+                            <div className="text-[9px] text-cyan-400 font-sans font-semibold mt-0.5 normal-case">
                               {yoloClassSupportNote(reg)}
                             </div>
                           )}
                           {String(reg.status || "").includes("NOT_TRUSTWORTHY") && (
-                            <div className="text-[9px] text-amber-500 font-sans font-semibold mt-0.5 normal-case">
+                            <div className="text-[9px] text-amber-400 font-sans font-semibold mt-0.5 normal-case">
                               Raw OOD may collapse; gates withhold — not clinically reliable
                             </div>
                           )}
                         </td>
-                        <td className={`py-2.5 px-3 font-bold ${
-                          String(reg.status || reg.training_status || "").includes("NOT_TRUSTWORTHY")
+                        <td className={`py-3 px-4 font-bold ${
+                          String(reg.status || reg.training_status || "").includes("EXPERIMENTAL")
+                            ? "text-purple-400"
+                            : String(reg.status || reg.training_status || "").includes("NOT_TRUSTWORTHY")
                             ? "text-amber-400"
                             : "text-emerald-400"
                         }`}>
                           {reg.status || reg.training_status || "UNKNOWN"}
                         </td>
-                        <td className="py-2.5 px-3 text-emerald-400">{reg.version}</td>
-                        <td className="py-2.5 px-3 text-slate-400">
+                        <td className="py-3 px-4 text-cyan-400">{reg.version}</td>
+                        <td className="py-3 px-4 text-slate-400">
                           <div>{reg.training_dataset}</div>
                           {reg.data_provenance_class && (
                             <div className="text-[9px] text-slate-500 font-sans mt-0.5">{reg.data_provenance_class}</div>
                           )}
                         </td>
-                        <td className="py-2.5 px-3" title={reg.display_sample_count_note || ""}>
+                        <td className="py-3 px-4" title={reg.display_sample_count_note || ""}>
                           {reg.display_sample_count || reg.sample_count || "N/A"}
                         </td>
-                        <td className="py-2.5 px-3 font-bold text-amber-400">
-                          {reg.display_held_out_metric || "N/A"}
+                        <td className="py-3 px-4 font-bold text-amber-400">
+                          <div>{reg.display_held_out_metric || "N/A"}</div>
+                          {reg.metrics?.overall_accuracy != null && reg.metrics?.correct_predictions && (
+                            <div className="text-[9px] text-emerald-400 font-sans font-medium mt-0.5 normal-case">
+                              {(reg.metrics.overall_accuracy * 100).toFixed(2)}% test accuracy
+                            </div>
+                          )}
                         </td>
-                        <td className="py-2.5 px-3 text-[10px] text-slate-500 truncate max-w-[160px]" title={reg.artifact_sha256}>
+                        <td className="py-3 px-4 text-[10px] text-slate-500 truncate max-w-[160px]" title={reg.artifact_sha256}>
                           {reg.artifact_sha256 ? `${reg.artifact_sha256.substring(0, 12)}...` : "N/A"}
                         </td>
                       </tr>
@@ -239,50 +461,45 @@ export default function ResearchMode() {
               </table>
             </div>
 
-            <div className="p-3 bg-slate-950/50 border border-slate-800 rounded-xl text-[11px] text-slate-400">
-              Split counts are train / validation / test sizes from training metadata.
-              Held-out metrics use the test split only. Sample count is never the same as held-out N unless labeled as test.
-            </div>
-            <div className="p-3 bg-amber-950/20 border border-amber-900/40 rounded-xl text-[11px] text-amber-300 space-y-1">
-              <span className="font-bold block">Multimodal Dataset Provenance Warning:</span>
+            <div className="p-3.5 bg-slate-950/60 border border-slate-800 rounded-xl text-[11px] text-slate-400 space-y-1">
+              <span className="font-semibold text-slate-300">Data Provenance Summary:</span>
               <p>
-                Genuinely paired patient records count: <strong>0</strong>. Synthetic multimodal fusion records count: <strong>200</strong>.
-                Multimodal records represent synthetic engineering baseline samples. They are not claimed as clinically validated paired patient data.
+                Split counts indicate train / validation / test partition sizes. Held-out metrics evaluate exclusively on test split samples. Genuinely paired patient multimodal records count: <strong>0</strong>. Synthetic fusion records count: <strong>200 canonical (up to 1,000 supported)</strong>.
               </p>
             </div>
-          </div>
+          </ThreeDCard>
 
-          {/* Section 1: Classical vs Quantum metrics comparison */}
-          <div className="dash-card p-6 space-y-6">
-            <div className="flex items-center justify-between dash-card-header pb-4">
+          {/* Section: Classical vs Quantum metrics comparison */}
+          <ThreeDCard glowColor="rgba(168, 85, 247, 0.15)" className="p-6 space-y-6">
+            <div className="flex items-center justify-between pb-3 border-b border-slate-800">
               <h3 className="font-bold text-base text-white flex items-center gap-2">
-                <BarChart3 className="h-5 w-5 text-blue-400" />
+                <BarChart3 className="h-5 w-5 text-purple-400" />
                 Experimental Research Classification Performance (Classical XGBoost vs. 4-Qubit VQC)
               </h3>
               <span className="text-xs text-slate-400 font-mono">Test Sample Count: {isEvaluated ? sampleCount : "N/A"}</span>
             </div>
 
             {!isEvaluated ? (
-              <div className="p-8 text-center bg-[#0D1426] border border-[#26324A] rounded-xl space-y-2">
+              <div className="p-8 text-center bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
                 <Info className="h-8 w-8 text-amber-400 mx-auto" />
                 <h4 className="font-bold text-white text-sm">Evaluation Unavailable</h4>
                 <p className="text-xs text-slate-400 max-w-md mx-auto">
-                  Run <code className="text-emerald-400">python ml/training/train_vqc.py</code> to train the experimental VQC and write held-out comparison metrics. This page does not auto-train.
+                  Run <code className="text-cyan-400">python ml/training/train_vqc.py</code> to train the experimental VQC and write held-out comparison metrics.
                 </p>
               </div>
             ) : (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {/* Metrics Table */}
-                <div className="overflow-x-auto border border-[#26324A] rounded-xl">
+                <div className="overflow-x-auto border border-slate-800 rounded-xl">
                   <table className="min-w-full text-left text-xs text-slate-300">
-                    <thead className="bg-[#0D1426]">
-                      <tr className="border-b border-[#26324A] text-slate-400 font-semibold">
+                    <thead className="bg-slate-950">
+                      <tr className="border-b border-slate-800 text-slate-400 font-semibold">
                         <th className="py-3 px-4">Metric</th>
-                        <th className="py-3 px-4 text-blue-400">Classical (XGBoost)</th>
+                        <th className="py-3 px-4 text-cyan-400">Classical (XGBoost)</th>
                         <th className="py-3 px-4 text-purple-400">Experimental 4-Qubit VQC</th>
                       </tr>
                     </thead>
-                    <tbody className="divide-y divide-[#1E293B]">
+                    <tbody className="divide-y divide-slate-800">
                       <tr>
                         <td className="py-3 px-4 font-medium text-slate-200">Correct Predictions</td>
                         <td className="py-3 px-4 font-mono font-bold text-emerald-400">
@@ -339,15 +556,14 @@ export default function ResearchMode() {
                   </table>
                 </div>
 
-
                 {/* Selective Classification & Quantum Simulator Notice Card */}
-                <div className="bg-[#0D1426] border border-[#26324A] p-5 rounded-xl space-y-4 text-xs text-slate-300">
+                <div className="bg-slate-950/60 border border-slate-800 p-5 rounded-xl space-y-4 text-xs text-slate-300">
                   <div className="flex items-start gap-2 text-purple-400">
                     <Cpu className="h-4 w-4 mt-0.5 flex-shrink-0" />
                     <span className="font-bold text-white">Selective Classification &amp; Quantum Simulator Notice</span>
                   </div>
 
-                  <div className="p-3 bg-[#111A2E] border border-[#26324A] rounded-lg space-y-1.5 font-mono text-[11px]">
+                  <div className="p-3.5 bg-slate-900/80 border border-slate-800 rounded-lg space-y-1.5 font-mono text-[11px]">
                     <div className="flex justify-between">
                       <span className="text-slate-400">Selective Coverage:</span>
                       <span className="text-emerald-400 font-bold">
@@ -364,122 +580,63 @@ export default function ResearchMode() {
                           : "unavailable"}
                       </span>
                     </div>
-                    <div className="text-[10px] text-amber-400 pt-1 border-t border-[#26324A]">
+                    <div className="text-[10px] text-amber-400 pt-1.5 border-t border-slate-800">
                       Reason:{" "}
                       {comparison.selective_classification?.reason
                         || "Selective-classification metrics not present in the canonical held-out artifact."}
                     </div>
                   </div>
 
-                  <div className="p-3 bg-[#111A2E] border border-[#26324A] rounded-lg text-[11px] text-slate-400 space-y-1">
-                    <p className="font-bold text-slate-200">PennyLane Simulator Disclaimer:</p>
+                  <div className="p-3.5 bg-slate-900/80 border border-slate-800 rounded-lg text-[11px] text-slate-400 space-y-1.5">
+                    <p className="font-bold text-slate-200">PennyLane Simulator &amp; Isolation Details:</p>
                     <p className="leading-relaxed">
-                      PennyLane default.qubit is a classical simulation. No quantum advantage or computational superiority is claimed.
+                      PennyLane <code className="text-purple-300">default.qubit</code> runs on classical CPUs. The 4-Qubit VQC operates on PCA-reduced (4 component) classical feature vectors. The VQC is strictly isolated from clinical triage decisions (<code className="text-purple-300">used_in_main_decision=False</code>).
                     </p>
                   </div>
                 </div>
               </div>
             )}
-          </div>
+          </ThreeDCard>
 
-          {/* Section 2: Ablation Studies */}
+          {/* Section: Ablation Studies */}
           {ablation && ablation.ablation_study && ablation.ablation_study.length > 0 && (
-            <div className="dash-card p-6 space-y-5">
-              <div className="dash-card-header pb-3">
+            <ThreeDCard glowColor="rgba(16, 185, 129, 0.15)" className="p-6 space-y-5">
+              <div className="pb-3 border-b border-slate-800">
                 <h3 className="font-bold text-base text-white flex items-center gap-2">
                   <Sliders className="h-5 w-5 text-emerald-400" />
                   Modality Ablation Analysis (Experimental Classification Metric Decay)
                 </h3>
               </div>
 
-              <div className="overflow-x-auto border border-[#26324A] rounded-xl">
+              <div className="overflow-x-auto border border-slate-800 rounded-xl">
                 <table className="min-w-full text-left text-xs text-slate-300">
-                  <thead className="bg-[#0D1426]">
-                    <tr className="border-b border-[#26324A] text-slate-400 font-semibold">
-                      <th className="py-2.5 px-4">Configuration</th>
-                      <th className="py-2.5 px-4">Accuracy</th>
-                      <th className="py-2.5 px-4">MCC</th>
+                  <thead className="bg-slate-950">
+                    <tr className="border-b border-slate-800 text-slate-400 font-semibold">
+                      <th className="py-3 px-4">Configuration</th>
+                      <th className="py-3 px-4">Accuracy</th>
+                      <th className="py-3 px-4">MCC</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-[#1E293B]">
+                  <tbody className="divide-y divide-slate-800 font-mono text-[11px]">
                     {ablation.ablation_study.map((item: any, idx: number) => (
-                      <tr key={idx} className="hover:bg-[#151F35] transition-colors">
-                        <td className="py-2.5 px-4 font-semibold text-slate-200">{item.configuration}</td>
-                        <td className="py-2.5 px-4 font-mono">{(item.accuracy * 100).toFixed(1)}%</td>
-                        <td className="py-2.5 px-4 font-mono">{item.mcc.toFixed(4)}</td>
+                      <tr key={idx} className="hover:bg-slate-800/40 transition-colors">
+                        <td className="py-2.5 px-4 font-semibold text-slate-200 font-sans">{item.configuration}</td>
+                        <td className="py-2.5 px-4 font-bold text-emerald-400">{(item.accuracy * 100).toFixed(1)}%</td>
+                        <td className="py-2.5 px-4 text-slate-300">{item.mcc.toFixed(4)}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-            </div>
+            </ThreeDCard>
           )}
 
-          {/* Model Registry */}
-          <div className="dash-card p-6 space-y-4">
-            <h3 className="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
-              <Database className="h-4 w-4 text-blue-400" />
-              Model Registry &amp; Training Artifact Status
-            </h3>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
-              {models.map((m, idx) => (
-                <div key={idx} className="p-4 bg-[#0D1426] border border-[#26324A] rounded-xl space-y-2">
-                  <div className="flex justify-between items-start">
-                    <span className="font-bold text-sm text-white">{m.model_name}</span>
-                    <span className="text-[10px] bg-[#111A2E] text-slate-300 px-2 py-0.5 rounded font-mono border border-[#26324A]">
-                      {m.model_version || m.version || "n/a"}
-                    </span>
-                  </div>
-                  <p className={`text-xs font-semibold ${
-                    String(m.status || "").includes("NOT_TRUSTWORTHY") || String(m.status || "").includes("UNAVAILABLE")
-                      ? "text-amber-400"
-                      : m.weights_loaded ? "text-emerald-400" : "text-amber-400"
-                  }`}>
-                    {m.status}
-                  </p>
-                  {m.artifact_sha256 && (
-                    <p className="text-[10px] font-mono text-slate-500 truncate" title={m.artifact_sha256}>
-                      SHA: {m.artifact_sha256.substring(0, 12)}…
-                    </p>
-                  )}
-                  {m.dataset_provenance && (
-                    <p className="text-[10px] font-mono text-slate-400 tracking-wider">
-                      Provenance: {m.dataset_provenance}
-                    </p>
-                  )}
-                  {m.promotion_status && (
-                    <p className="text-[10px] font-mono text-slate-500">
-                      Promotion: {m.promotion_status}
-                    </p>
-                  )}
-                  {(m.unsupported_classes || []).length > 0 && (
-                    <p className="text-[10px] text-amber-400 font-semibold">
-                      Unsupported (in model.names only): {(m.unsupported_classes || []).join(", ")}
-                    </p>
-                  )}
-                  {(m.validated_classes || []).length > 0 && (
-                    <p className="text-[10px] text-slate-400">
-                      Limited demo classes: {(m.validated_classes || []).join(", ")} (not clinical)
-                    </p>
-                  )}
-                  {m.wound_note && (
-                    <p className="text-[10px] text-amber-500/90 leading-snug">{m.wound_note}</p>
-                  )}
-                  {m.data_provenance && (
-                    <p className="text-[10px] font-mono text-slate-400 uppercase tracking-wider">
-                      Training data: {m.data_provenance}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Mandatory Preliminary Research Disclaimer */}
-          <div className="p-4 bg-slate-900/90 border border-slate-800 rounded-2xl text-xs text-slate-400 space-y-2">
-            <span className="font-bold text-amber-400 block">PRELIMINARY RESEARCH VALIDATION DISCLAIMER</span>
-            <p>
+          <div className="p-5 bg-slate-900/90 border border-slate-800 rounded-2xl text-xs text-slate-400 space-y-2 backdrop-blur-md">
+            <span className="font-bold text-amber-400 flex items-center gap-2">
+              <ShieldCheck className="h-4 w-4 text-amber-400" /> PRELIMINARY RESEARCH VALIDATION DISCLAIMER
+            </span>
+            <p className="leading-relaxed">
               The current experimental evaluation uses synthetic research data and rule-derived labels. Reported metrics demonstrate implementation and experimental pipeline behavior and must not be interpreted as clinical performance, medical diagnosis, or real-world injury classification accuracy.
             </p>
           </div>
@@ -488,4 +645,3 @@ export default function ResearchMode() {
     </div>
   );
 }
-

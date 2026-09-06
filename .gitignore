@@ -35,11 +35,12 @@ ml/models/*_candidate*/
 ml/models/*_eval/
 ml/models/*_v1/
 
-# Large raw datasets and zip archives
-*.zip
+# Data uploads and temporary scratch datasets
+data/uploads/
 data/raw/
 data/datasets/external/
 data/datasets/download_cache/
+*.zip
 
 # Disposable pytest scratch
 .tmp_pytest/

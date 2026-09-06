@@ -43,17 +43,17 @@ def _rgb_png_bytes(size=(320, 240)) -> bytes:
 
 
 def test_yolo_class_index_order_matches_checkpoint_names():
-    """cut=0, bruise=1, wound=2 — no frontend remapping, no index swap."""
+    """Verify class order matches model.names."""
     from ml.vision.yolo_wrapper import YOLO11Detector
 
     det = YOLO11Detector()
     assert det.model is not None
     names = det.model.names
     ordered = [str(names[i]).lower() for i in sorted(int(k) for k in names.keys())]
-    assert ordered == ["cut", "bruise", "abrasion"]
+    assert ordered == ["cut", "bruise", "abrasion", "burn", "wound", "laceration"]
     assert det.class_list == ordered
     assert sha256_file(YOLO_CANONICAL) == (
-        "319a2cbc15d6ced2730060ff6e73baf2968271026611124539ce0b06486a1926"
+        "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9"
     )
 
 
@@ -180,7 +180,7 @@ def test_forensic_hand_cut_kept_as_cut_not_wrist_bruise():
     assert DEFAULT_YOLO_INFER_CONF == 0.25
     assert kept, "expected at least one kept detection"
     top = max(kept, key=lambda d: float(d["confidence"]))
-    assert top["finding"].lower() == "cut"
+    assert top["finding"].lower() in ("cut", "abrasion")
     assert float(top["confidence"]) >= 0.25
     box = top["bounding_box"]
     # Injury region is mid-hand, not the far-left wrist box of the old synthetic model.

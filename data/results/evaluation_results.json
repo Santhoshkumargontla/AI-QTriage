@@ -1,6 +1,6 @@
 {
   "status": "evaluated",
-  "timestamp": "2026-08-29T05:40:25.822563+00:00",
+  "timestamp": "2026-09-06T16:23:25.625028+00:00",
   "test_sample_count": 30,
   "disclaimer": "SYNTHETIC held-out split. VQC is EXPERIMENTAL_ONLY.",
   "quantum_simulator_notice": "PennyLane default.qubit is a classical simulator. No quantum advantage claimed.",

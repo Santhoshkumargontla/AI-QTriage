@@ -58,9 +58,9 @@
   "training_status": "TRAINED",
   "training_was_real": true,
   "archived_synthetic_artifacts": [
-    "ml/models/_archive/synthetic_sensor_v1.2.0_20260830T083517Z_sensor_motion_best.json",
-    "ml/models/_archive/synthetic_sensor_v1.2.0_20260830T083517Z_sensor_scaler.pkl",
-    "ml/models/_archive/synthetic_sensor_v1.2.0_20260830T083517Z_sensor_metadata.json"
+    "ml/models/_archive/synthetic_sensor_v1.2.0_20260905T171257Z_sensor_motion_best.json",
+    "ml/models/_archive/synthetic_sensor_v1.2.0_20260905T171257Z_sensor_scaler.pkl",
+    "ml/models/_archive/synthetic_sensor_v1.2.0_20260905T171257Z_sensor_metadata.json"
   ],
   "known_limitations": "Wearable IMU placement differs from phone-in-pocket uploads. impact class uses SisFall stumble/jump ADLs (minority). Demo football_fall.csv remains simulated. Not a medical fall-detection device."
 }

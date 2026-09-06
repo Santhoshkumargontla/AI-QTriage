@@ -28,7 +28,7 @@ from ml.vision.input_quality import (
     STATUS_VALID,
 )
 
-ACTIVE_EFFNET_HASH = "95cf385d85419a63eeef8e46de9c9ef7e7487ef0f326fb60ca376b8bae0eec9f"
+ACTIVE_EFFNET_HASH = "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a"
 ACTIVE_CLASSES = [
     "abrasion",
     "bruise",

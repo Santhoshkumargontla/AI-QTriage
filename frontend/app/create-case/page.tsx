@@ -17,6 +17,7 @@ import {
   Smartphone
 } from "lucide-react";
 import { RealTimeSensorCapture } from "@/components/RealTimeSensorCapture";
+import { ThreeDCard } from "@/components/ThreeDCard";
 
 export default function CreateCase() {
   const router = useRouter();
@@ -470,8 +471,8 @@ export default function CreateCase() {
 
       {/* STEP 1: INITIALIZE */}
       {step === 1 && (
-        <div className="dash-card p-5 sm:p-8 text-center space-y-6 max-w-xl mx-auto my-4 sm:my-8 border border-[#26324A] bg-[#0B1224] rounded-2xl shadow-xl">
-          <div className="h-16 w-16 bg-blue-600/20 border border-blue-500/40 text-blue-400 rounded-2xl flex items-center justify-center mx-auto glow-blue">
+        <ThreeDCard glowColor="rgba(56, 189, 248, 0.25)" className="p-6 sm:p-8 text-center space-y-6 max-w-xl mx-auto my-4 sm:my-8">
+          <div className="h-16 w-16 bg-blue-600/20 border border-blue-500/40 text-cyan-400 rounded-2xl flex items-center justify-center mx-auto glow-blue">
             <Activity className="h-8 w-8 animate-pulse" />
           </div>
           <div className="space-y-2">
@@ -483,18 +484,18 @@ export default function CreateCase() {
           <button
             onClick={startCase}
             disabled={loading}
-            className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl flex items-center space-x-2 mx-auto disabled:opacity-50 transition-all glow-blue"
+            className="px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs rounded-xl flex items-center space-x-2 mx-auto disabled:opacity-50 transition-all shadow-lg shadow-blue-500/25 active:scale-95"
           >
             {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
             <span>Initialize Research Session</span>
             <ArrowRight className="h-4 w-4" />
           </button>
-        </div>
+        </ThreeDCard>
       )}
 
       {/* STEP 2: IMAGE UPLOAD */}
       {step === 2 && (
-        <div className="dash-card p-6 space-y-6 max-w-2xl mx-auto border border-[#26324A] bg-[#0B1224] rounded-2xl shadow-xl">
+        <ThreeDCard glowColor="rgba(56, 189, 248, 0.2)" className="p-6 space-y-6 max-w-2xl mx-auto">
           <div className="space-y-1 text-center">
             <h3 className="text-lg font-bold text-white">Upload Injury Photograph</h3>
             <p className="text-xs text-slate-400">
@@ -503,11 +504,11 @@ export default function CreateCase() {
             {caseId && <p className="text-[11px] font-mono text-emerald-400">Active Case ID: {caseId}</p>}
           </div>
 
-          <div className="border-2 border-dashed border-[#26324A] hover:border-blue-500/50 rounded-2xl p-8 text-center bg-[#080D1C]/50 transition-all">
+          <div className="border-2 border-dashed border-slate-800 hover:border-cyan-500/50 rounded-2xl p-8 text-center bg-slate-950/60 transition-all">
             {imagePreview ? (
               <div className="space-y-4">
-                <img src={imagePreview} alt="Injury Preview" className="max-h-64 mx-auto rounded-xl object-contain border border-[#26324A]" />
-                <button onClick={() => { setImageFile(null); setImagePreview(null); }} className="text-xs text-red-400 hover:underline">
+                <img src={imagePreview} alt="Injury Preview" className="max-h-64 mx-auto rounded-xl object-contain border border-slate-800" />
+                <button onClick={() => { setImageFile(null); setImagePreview(null); }} className="text-xs text-rose-400 hover:underline">
                   Remove Photo
                 </button>
               </div>
@@ -528,20 +529,20 @@ export default function CreateCase() {
             <button
               onClick={handleImageUpload}
               disabled={!imageFile || loading}
-              className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl flex items-center space-x-2 disabled:opacity-50 transition-all"
+              className="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold text-xs rounded-xl flex items-center space-x-2 disabled:opacity-50 transition-all shadow-lg shadow-blue-500/25 active:scale-95"
             >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
               <span>Validate &amp; Analyze Image</span>
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
-        </div>
+        </ThreeDCard>
       )}
 
       {/* STEP 3: QUESTIONNAIRE */}
       {step === 3 && (
-        <div className="dash-card p-6 space-y-6 max-w-2xl mx-auto border border-[#26324A] bg-[#0B1224] rounded-2xl shadow-xl">
-          <div className="flex justify-between items-center border-b border-[#26324A] pb-3">
+        <ThreeDCard glowColor="rgba(16, 185, 129, 0.2)" className="p-6 space-y-6 max-w-2xl mx-auto">
+          <div className="flex justify-between items-center border-b border-slate-800 pb-3">
             <div>
               <h3 className="text-base font-bold text-white">Injury-Specific Questionnaire</h3>
               <p className="text-xs text-slate-400">
@@ -549,7 +550,7 @@ export default function CreateCase() {
                 {templateData?.routed ? " (from vision analysis)" : " (generic until a class-specific template is available)"}
               </p>
               <p className="text-[11px] text-slate-500 mt-1">
-                Form fields are the canonical 23-feature fusion schema. Per-class template JSON files use incompatible IDs (e.g. pain vs pain_level) and are routing metadata only.
+                Form fields are the canonical 23-feature fusion schema.
               </p>
             </div>
           </div>
@@ -563,26 +564,26 @@ export default function CreateCase() {
             ))}
           </div>
 
-          <div className="flex justify-between items-center pt-4 border-t border-[#26324A]">
+          <div className="flex justify-between items-center pt-4 border-t border-slate-800">
             <button onClick={() => setStep(2)} className="text-xs text-slate-400 hover:text-slate-200 flex items-center space-x-1">
               <ArrowLeft className="h-3 w-3" /><span>Back</span>
             </button>
             <button
               onClick={handleQuestionnaireSubmit}
               disabled={loading}
-              className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs rounded-xl flex items-center space-x-2 disabled:opacity-50 transition-all"
+              className="px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs rounded-xl flex items-center space-x-2 disabled:opacity-50 transition-all shadow-lg shadow-emerald-500/25 active:scale-95"
             >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
               <span>Save &amp; Continue to Sensor Step</span>
               <ArrowRight className="h-4 w-4" />
             </button>
           </div>
-        </div>
+        </ThreeDCard>
       )}
 
       {/* STEP 4: SENSOR DATA OPTIONS */}
       {step === 4 && (
-        <div className="dash-card p-6 space-y-6 max-w-3xl mx-auto border border-[#26324A] bg-[#0B1224] rounded-2xl shadow-xl">
+        <ThreeDCard glowColor="rgba(245, 158, 11, 0.2)" className="p-6 space-y-6 max-w-3xl mx-auto">
           <div className="space-y-1 text-center">
             <h3 className="text-lg font-bold text-white">Smartphone Sensor Data (Optional)</h3>
             <p className="text-xs text-slate-400">
@@ -601,26 +602,26 @@ export default function CreateCase() {
               onCancel={() => setShowLiveSensorModal(false)}
             />
           ) : showSimulateModal ? (
-            <div className="p-6 bg-[#0D1426] border border-[#26324A] rounded-2xl space-y-4 max-w-lg mx-auto text-xs">
+            <div className="p-6 bg-slate-950/80 border border-slate-800 rounded-2xl space-y-4 max-w-lg mx-auto text-xs">
               <div className="flex justify-between items-center border-b border-slate-800 pb-2">
                 <span className="font-bold text-white text-sm">Select Simulation Scenario</span>
                 <button onClick={() => setShowSimulateModal(false)} className="text-slate-400 hover:text-white">✕</button>
               </div>
               <p className="text-slate-400">Choose a physical kinematic scenario to simulate sensor signals:</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <button onClick={() => handleSimulateSensor("football_fall")} className="p-3 bg-slate-900 border border-slate-800 hover:border-blue-500 rounded-xl text-left space-y-1">
-                  <strong className="block text-blue-400">Football Fall</strong>
+                <button onClick={() => handleSimulateSensor("football_fall")} className="p-3 bg-slate-900 border border-slate-800 hover:border-cyan-500 rounded-xl text-left space-y-1">
+                  <strong className="block text-cyan-400">Football Fall</strong>
                   <span className="text-[10px] text-slate-400">High peak G-force with rotation</span>
                 </button>
-                <button onClick={() => handleSimulateSensor("sudden_fall")} className="p-3 bg-slate-900 border border-slate-800 hover:border-blue-500 rounded-xl text-left space-y-1">
+                <button onClick={() => handleSimulateSensor("sudden_fall")} className="p-3 bg-slate-900 border border-slate-800 hover:border-purple-500 rounded-xl text-left space-y-1">
                   <strong className="block text-purple-400">Sudden Fall</strong>
                   <span className="text-[10px] text-slate-400">Freefall phase followed by impact</span>
                 </button>
-                <button onClick={() => handleSimulateSensor("sudden_impact")} className="p-3 bg-slate-900 border border-slate-800 hover:border-blue-500 rounded-xl text-left space-y-1">
-                  <strong className="block text-red-400">Sudden Impact</strong>
+                <button onClick={() => handleSimulateSensor("sudden_impact")} className="p-3 bg-slate-900 border border-slate-800 hover:border-rose-500 rounded-xl text-left space-y-1">
+                  <strong className="block text-rose-400">Sudden Impact</strong>
                   <span className="text-[10px] text-slate-400">Severe linear kinetic deceleration</span>
                 </button>
-                <button onClick={() => handleSimulateSensor("normal_movement")} className="p-3 bg-slate-900 border border-slate-800 hover:border-blue-500 rounded-xl text-left space-y-1">
+                <button onClick={() => handleSimulateSensor("normal_movement")} className="p-3 bg-slate-900 border border-slate-800 hover:border-emerald-500 rounded-xl text-left space-y-1">
                   <strong className="block text-emerald-400">Normal Movement</strong>
                   <span className="text-[10px] text-slate-400">Baseline walking telemetry</span>
                 </button>
@@ -645,7 +646,7 @@ export default function CreateCase() {
               </button>
 
               {/* 2. Upload CSV/JSON */}
-              <label className="p-4 rounded-xl border border-[#26324A] bg-[#0D1426] hover:border-blue-500 cursor-pointer text-left space-y-2 transition-all block">
+              <label className="p-4 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-cyan-500 cursor-pointer text-left space-y-2 transition-all block">
                 <Upload className="h-6 w-6 text-purple-400" />
                 <div>
                   <span className="font-bold block text-xs text-slate-200">📁 Upload Sensor Log</span>
@@ -658,9 +659,9 @@ export default function CreateCase() {
               <button
                 type="button"
                 onClick={handleUseDemo}
-                className="p-4 rounded-xl border border-[#26324A] bg-[#0D1426] hover:border-blue-500 text-left space-y-2 transition-all"
+                className="p-4 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-cyan-500 text-left space-y-2 transition-all"
               >
-                <Zap className="h-6 w-6 text-blue-400" />
+                <Zap className="h-6 w-6 text-cyan-400" />
                 <div>
                   <span className="font-bold block text-xs text-slate-200">🧪 Use Demo Log</span>
                   <p className="text-[10px] text-slate-400 mt-1">Load sample football fall dataset</p>
@@ -671,7 +672,7 @@ export default function CreateCase() {
               <button
                 type="button"
                 onClick={() => setShowSimulateModal(true)}
-                className="p-4 rounded-xl border border-[#26324A] bg-[#0D1426] hover:border-blue-500 text-left space-y-2 transition-all"
+                className="p-4 rounded-xl border border-slate-800 bg-slate-950/60 hover:border-cyan-500 text-left space-y-2 transition-all"
               >
                 <Sliders className="h-6 w-6 text-indigo-400" />
                 <div>
@@ -696,22 +697,22 @@ export default function CreateCase() {
           )}
 
           {sensorStatusMessage && !showLiveSensorModal && !showSimulateModal && (
-            <div className="p-3.5 bg-[#0D1426] border border-[#26324A] rounded-xl text-xs text-emerald-400 font-semibold text-center">
+            <div className="p-3.5 bg-slate-950/80 border border-slate-800 rounded-xl text-xs text-emerald-400 font-semibold text-center font-mono">
               {sensorStatusMessage}
             </div>
           )}
 
-          <div className="flex justify-between items-center pt-2 border-t border-[#26324A]">
+          <div className="flex justify-between items-center pt-2 border-t border-slate-800">
             <button onClick={() => setStep(3)} className="text-xs text-slate-400 hover:text-slate-200 flex items-center space-x-1">
               <ArrowLeft className="h-3 w-3" /><span>Back to Questionnaire</span>
             </button>
           </div>
-        </div>
+        </ThreeDCard>
       )}
 
       {/* STEP 5: RUN MULTIMODAL MODEL ANALYSIS */}
       {step === 5 && (
-        <div className="dash-card p-8 text-center space-y-6 max-w-xl mx-auto border border-[#26324A] bg-[#0B1224] rounded-2xl shadow-xl my-8">
+        <ThreeDCard glowColor="rgba(168, 85, 247, 0.3)" className="p-8 text-center space-y-6 max-w-xl mx-auto my-8">
           <div className="h-16 w-16 bg-purple-600/20 border border-purple-500/40 text-purple-400 rounded-2xl flex items-center justify-center mx-auto glow-purple">
             <Zap className="h-8 w-8 animate-pulse" />
           </div>
@@ -721,7 +722,7 @@ export default function CreateCase() {
               Executes YOLO11, EfficientNetV2, U-Net, Grad-CAM, XGBoost + SHAP, PCA, VQC quantum classifier, rules engine, and report generation.
             </p>
             {sensorStatusMessage && (
-              <p className="text-xs text-emerald-400 font-semibold pt-1">{sensorStatusMessage}</p>
+              <p className="text-xs text-emerald-400 font-semibold pt-1 font-mono">{sensorStatusMessage}</p>
             )}
           </div>
 
@@ -729,13 +730,13 @@ export default function CreateCase() {
             type="button"
             onClick={runAnalysis}
             disabled={loading}
-            className="px-8 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-xs rounded-xl flex items-center space-x-2 mx-auto disabled:opacity-50 transition-all shadow-xl shadow-purple-600/30"
+            className="px-8 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-xs rounded-xl flex items-center space-x-2 mx-auto disabled:opacity-50 transition-all shadow-xl shadow-purple-600/30 active:scale-95"
           >
             {loading ? <Loader2 className="h-5 w-5 animate-spin" /> : <Zap className="h-5 w-5" />}
             <span>Run Full Multimodal Analysis</span>
             <ArrowRight className="h-5 w-5" />
           </button>
-        </div>
+        </ThreeDCard>
       )}
     </div>
   );

@@ -27,6 +27,69 @@ def clean_mongodb_uri(uri: str) -> str:
     except (ValueError, IndexError, AttributeError):
         return uri
 
+class MockCollection:
+    def __init__(self, name):
+        self.name = name
+        self._store = {}
+
+    def create_index(self, *args, **kwargs):
+        pass
+
+    def find_one(self, query=None, projection=None):
+        if not query:
+            return next(iter(self._store.values()), None)
+        case_id = query.get("case_id")
+        if case_id and case_id in self._store:
+            return dict(self._store[case_id])
+        for doc in self._store.values():
+            if all(doc.get(k) == v for k, v in query.items()):
+                return dict(doc)
+        return None
+
+    def insert_one(self, doc):
+        case_id = doc.get("case_id") or str(len(self._store) + 1)
+        self._store[case_id] = dict(doc)
+        class MockResult:
+            inserted_id = case_id
+        return MockResult()
+
+    def update_one(self, filter_query, update_doc, upsert=False):
+        doc = self.find_one(filter_query)
+        if doc:
+            cid = doc.get("case_id")
+            if "$set" in update_doc and cid in self._store:
+                self._store[cid].update(update_doc["$set"])
+        elif upsert:
+            new_doc = dict(filter_query)
+            if "$set" in update_doc:
+                new_doc.update(update_doc["$set"])
+            self.insert_one(new_doc)
+
+    def find(self, query=None, projection=None):
+        docs = [dict(d) for d in self._store.values()]
+        class MockCursor(list):
+            def sort(self, *args, **kwargs):
+                return self
+            def limit(self, n):
+                return MockCursor(self[:n])
+        return MockCursor(docs)
+
+    def count_documents(self, query=None):
+        return len(self._store)
+
+class MockMongoDatabase:
+    def __init__(self):
+        self._collections = {}
+
+    def __getitem__(self, name):
+        if name not in self._collections:
+            self._collections[name] = MockCollection(name)
+        return self._collections[name]
+
+    def __getattr__(self, name):
+        return self[name]
+
+
 def get_database():
     global _db, _client
     if _db is not None:
@@ -34,13 +97,17 @@ def get_database():
     
     try:
         cleaned_uri = clean_mongodb_uri(settings.mongodb_uri)
-        # Initialize client with 10000ms timeout to avoid spurious connection failures during cold starts
-        _client = pymongo.MongoClient(cleaned_uri, serverSelectionTimeoutMS=10000)
+        # Initialize client with 5000ms timeout to avoid spurious connection failures during cold starts
+        _client = pymongo.MongoClient(cleaned_uri, serverSelectionTimeoutMS=5000)
         # Force a connection check by pinging the admin database
         _client.admin.command('ping')
         _db = _client[settings.mongodb_database]
         return _db
-    except (ConnectionFailure, ServerSelectionTimeoutError) as e:
+    except (ConnectionFailure, ServerSelectionTimeoutError, PyMongoError) as e:
+        if os.environ.get("VERCEL") or os.environ.get("SERVERLESS") or os.environ.get("ALLOW_MOCK_DB"):
+            print("WARNING: MongoDB connection unavailable on Vercel environment. Operating with in-memory database fallback.", file=sys.stderr)
+            _db = MockMongoDatabase()
+            return _db
         print("\n" + "="*80, file=sys.stderr)
         print("ERROR: MongoDB is unavailable. Please verify the configured MongoDB connection.", file=sys.stderr)
         print("\nSetup Instructions:", file=sys.stderr)
