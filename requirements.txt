@@ -21,3 +21,4 @@ shap>=0.45.0
 reportlab>=4.1.0
 pytest>=8.0.0
 python-dotenv>=1.0.1
+streamlit>=1.31.0
