@@ -232,7 +232,63 @@ def render_shap_explainability_page():
     
     st.markdown(f"### Predicted Severity: **:{colors[pred_idx]}[{classes[pred_idx]}]**")
 
-    render_shap_display(shap_list)
+
+def parse_uploaded_sensor_csv(uploaded_file):
+    """
+    Parses smartphone/wearable accelerometer CSV logs (Sensor Logger, Physics Toolbox, etc.).
+    Calculates time series, peak impact G-force acceleration, posture stabilization time,
+    and returns (chart_df, peak_g, stabilization_time, sample_count).
+    """
+    try:
+        uploaded_file.seek(0)
+        df = pd.read_csv(uploaded_file)
+        cols_lower = {str(c).strip().lower(): c for c in df.columns}
+
+        ax_col = next((cols_lower[c] for c in cols_lower if ('acc' in c and 'x' in c) or c in ('ax', 'x')), None)
+        ay_col = next((cols_lower[c] for c in cols_lower if ('acc' in c and 'y' in c) or c in ('ay', 'y')), None)
+        az_col = next((cols_lower[c] for c in cols_lower if ('acc' in c and 'z' in c) or c in ('az', 'z')), None)
+        time_col = next((cols_lower[c] for c in cols_lower if 'time' in c or 'ts' in c or 'sec' in c), None)
+
+        if ax_col and ay_col and az_col:
+            ax = pd.to_numeric(df[ax_col], errors='coerce').fillna(0.0).values
+            ay = pd.to_numeric(df[ay_col], errors='coerce').fillna(0.0).values
+            az = pd.to_numeric(df[az_col], errors='coerce').fillna(0.0).values
+
+            mag_raw = np.sqrt(ax**2 + ay**2 + az**2)
+            if np.max(mag_raw) > 30.0:
+                mag_g = mag_raw / 9.80665
+            else:
+                mag_g = mag_raw
+
+            peak_g = float(np.max(mag_g))
+            peak_idx = int(np.argmax(mag_g))
+
+            if time_col:
+                t = pd.to_numeric(df[time_col], errors='coerce').fillna(0.0).values
+                t_rel = t - t[0]
+                if t_rel[-1] > 1000.0:
+                    t_rel = t_rel / 1000.0
+            else:
+                t_rel = np.linspace(0, len(mag_g) / 50.0, len(mag_g))
+
+            post_peak_g = mag_g[peak_idx:]
+            post_peak_t = t_rel[peak_idx:] - t_rel[peak_idx] if len(t_rel) > peak_idx else np.array([0.0])
+
+            stable_indices = np.where(np.abs(post_peak_g - 1.0) < 0.3)[0]
+            if len(stable_indices) > 0:
+                stab_time = float(post_peak_t[stable_indices[0]])
+            else:
+                stab_time = float(post_peak_t[-1]) if len(post_peak_t) > 0 else 1.2
+
+            stab_time = max(0.2, min(5.0, round(stab_time, 2)))
+            peak_g = max(1.0, min(25.0, round(peak_g, 2)))
+
+            chart_df = pd.DataFrame({"Time (s)": t_rel, "G-Force (g)": mag_g}).set_index("Time (s)")
+            return chart_df, peak_g, stab_time, len(df)
+    except Exception:
+        pass
+
+    return None, 4.2, 1.2, 0
 
 
 def render_triage_assessment():
@@ -258,12 +314,27 @@ def render_triage_assessment():
             device_type = st.selectbox("Sensor Source", ["Smartphone Accelerometer (IMU)", "Smartwatch Motion Sensor", "Wearable Patch", "Simulated Fall Telemetry"])
             sensor_file = None
         else:
-            sensor_file = st.file_uploader("Upload Raw Accelerometer CSV", type=["csv"])
+            sensor_file = st.file_uploader("Upload Raw Accelerometer CSV (Sensor Logger / Physics Toolbox / IMU)", type=["csv"])
             impact_g = 4.2
             stabilization_time = 1.2
             device_type = "CSV File Upload"
             if sensor_file is not None:
-                st.success(f"Loaded {sensor_file.name} successfully.")
+                chart_df, peak_g_val, stab_time_val, sample_cnt = parse_uploaded_sensor_csv(sensor_file)
+                if chart_df is not None:
+                    impact_g = peak_g_val
+                    stabilization_time = stab_time_val
+                    st.success(f"✅ Successfully processed {sensor_file.name} ({sample_cnt} motion samples).")
+                    m1, m2, m3 = st.columns(3)
+                    with m1:
+                        st.metric("Extracted Impact Peak", f"{impact_g:.2f} g")
+                    with m2:
+                        st.metric("Stabilization Time", f"{stabilization_time:.2f} s")
+                    with m3:
+                        st.metric("Log Sample Count", f"{sample_cnt} pts")
+                    st.markdown("**Real-Time Motion G-Force Waveform**")
+                    st.line_chart(chart_df, height=180)
+                else:
+                    st.warning("Could not automatically parse accelerometer columns (expected timestamp, acc_x, acc_y, acc_z). Using default baseline.")
 
     with col2:
         st.subheader("📋 Patient Symptom Questionnaire")
