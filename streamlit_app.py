@@ -172,8 +172,8 @@ def render_triage_assessment():
             st.markdown("---")
             st.header("Section 1: Computer Vision Model Findings")
             
-            detections = []
-            probs = {}
+            best_class = "Standard Skin Baseline"
+            max_conf = 0.85
 
             if tmp_path:
                 yolo = load_yolo()
@@ -187,9 +187,15 @@ def render_triage_assessment():
 
                 if effnet is not None:
                     try:
+                        from ml.vision.efficientnet_wrapper import interpret_prediction
                         img_bgr = cv2.imread(tmp_path)
                         img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-                        probs = effnet.predict(img_rgb)
+                        raw_probs = effnet.predict(img_rgb)
+                        parsed = interpret_prediction(raw_probs)
+                        best_class = parsed.get("winner") or parsed.get("abstention_class") or raw_probs.get("__raw_winner") or "Baseline Skin"
+                        raw_max = parsed.get("max_prob") if parsed.get("max_prob") is not None else raw_probs.get("__raw_max_prob")
+                        if isinstance(raw_max, (int, float)):
+                            max_conf = float(raw_max)
                     except Exception as exc:
                         st.warning(f"EfficientNet inference: {exc}")
 
@@ -222,10 +228,8 @@ def render_triage_assessment():
             with v2:
                 st.metric("YOLO Confidence", f"{detections[0]['confidence']*100:.1f}%" if detections else "N/A")
             with v3:
-                best_class = max(probs, key=probs.get) if probs else "Standard Skin Baseline"
-                st.metric("EfficientNet Category", best_class.capitalize())
+                st.metric("EfficientNet Category", str(best_class).capitalize())
             with v4:
-                max_conf = max(probs.values()) if probs else 0.85
                 st.metric("Classifier Max Prob", f"{max_conf*100:.1f}%")
 
             # Determine Risk Category
