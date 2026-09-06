@@ -659,3 +659,20 @@ class ResearchReportGenerator:
             pdf.append(f"4 0 obj\n<< /Length {len(content_bytes)} >>\nstream\n".encode("utf-8") + content_bytes + b"\nendstream\nendobj")
             pdf.append(b"xref\n0 6\n0000000000 65535 f \ntrailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n0\n%%EOF")
             return b"\n".join(pdf)
+
+
+def generate_pdf_report(case_data_or_id) -> bytes:
+    """Top-level convenience function to generate PDF bytes from a case ID or case dictionary."""
+    service = ReportService()
+    if isinstance(case_data_or_id, str):
+        return service.generate_pdf_bytes(case_data_or_id)
+    elif isinstance(case_data_or_id, dict):
+        case_id = case_data_or_id.get("case_id") or "demo_case"
+        try:
+            from backend.database.connection import get_database
+            db = get_database()
+            db.cases.update_one({"case_id": case_id}, {"$set": case_data_or_id}, upsert=True)
+        except Exception:
+            pass
+        return service.generate_pdf_bytes(case_id)
+    return service.generate_pdf_bytes("demo_case")
