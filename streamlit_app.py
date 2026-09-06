@@ -241,10 +241,11 @@ def render_triage_assessment():
                 numbness
             )
             triage_level = "HIGH (Immediate Evaluation Recommended)" if high_risk else ("MODERATE" if pain_level >= 5 else "LOW")
-            triage_color = "red" if high_risk else ("amber" if pain_level >= 5 else "green")
+            triage_color = "red" if high_risk else ("orange" if pain_level >= 5 else "green")
+            badge_icon = "🔴" if high_risk else ("🟡" if pain_level >= 5 else "🟢")
 
             st.header("Section 2: Multimodal XGBoost & 4-Qubit Quantum VQC Results")
-            st.markdown(f"### Overall Risk Category: **:{triage_color}[{triage_level}]**")
+            st.markdown(f"### Overall Risk Severity: {badge_icon} **:{triage_color}[{triage_level}]**")
 
             q1, q2 = st.columns(2)
             with q1:
