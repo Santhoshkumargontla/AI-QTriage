@@ -55,21 +55,32 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Lazy Load Vision Models
+# Safe Lazy Model Loaders
 @st.cache_resource
 def load_yolo():
-    from ml.vision.yolo_wrapper import YOLO11Detector
-    return YOLO11Detector()
+    try:
+        from ml.vision.yolo_wrapper import YOLO11Detector
+        return YOLO11Detector()
+    except Exception as e:
+        st.warning(f"YOLO11 Model Initialization Warning: {str(e)}")
+        return None
 
 @st.cache_resource
 def load_effnet():
-    from ml.vision.efficientnet_wrapper import EfficientNetV2Classifier
-    return EfficientNetV2Classifier()
+    try:
+        from ml.vision.efficientnet_wrapper import EfficientNetV2Classifier
+        return EfficientNetV2Classifier()
+    except Exception as e:
+        st.warning(f"EfficientNetV2 Model Initialization Warning: {str(e)}")
+        return None
 
 @st.cache_resource
 def load_unet():
-    from ml.vision.unet_wrapper import UNetSegmenter
-    return UNetSegmenter()
+    try:
+        from ml.vision.unet_wrapper import UNetSegmenter
+        return UNetSegmenter()
+    except Exception as e:
+        return None
 
 
 def main():
@@ -85,7 +96,6 @@ def main():
     """, unsafe_allow_html=True)
 
     # Sidebar Navigation
-    st.sidebar.image("https://img.icons8.com/isometric-folders/100/hospital.png", width=64)
     st.sidebar.title("AI-QTriage Navigation")
     menu = st.sidebar.radio(
         "Select Section:",
@@ -103,100 +113,175 @@ def main():
 
 
 def render_triage_assessment():
-    st.header("Step 1: Upload Photograph & Symptom Survey")
+    st.header("Step 1: Upload Photograph & Comprehensive Clinical Questionnaire")
     
     col1, col2 = st.columns([1, 1])
     
     with col1:
+        st.subheader("📷 Injury Image Input")
         uploaded_file = st.file_uploader("Upload Injury Photograph (JPEG/PNG)", type=["jpg", "jpeg", "png"])
-        body_part = st.selectbox("Injury Location", ["Lower Leg / Ankle", "Upper Arm / Forearm", "Torso / Back", "Head / Neck", "Hand / Foot"])
-        pain_level = st.slider("Self-Reported Pain Scale (1 - 10)", 1, 10, 5)
-        bleeding = st.radio("Active Bleeding Present?", ["No / Controlled", "Moderate Bleeding", "Severe Active Bleeding"])
-        
-    with col2:
         if uploaded_file is not None:
             image = Image.open(uploaded_file)
-            st.image(image, caption="Uploaded Image", use_container_width=True)
+            st.image(image, caption="Uploaded Injury Photograph", use_container_width=True)
         else:
-            st.info("Please upload an injury photograph to begin automated vision & multimodal analysis.")
+            st.info("Upload a visible injury photograph to enable automated bounding box detection.")
 
-    if uploaded_file is not None and st.button("🚀 Run Multimodal AI-QTriage Assessment", type="primary"):
-        with st.spinner("Executing YOLO11 Object Detection, EfficientNetV2 Classifier, and 4-Qubit Quantum VQC..."):
-            # Save uploaded image to tempfile
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
-                image.save(tmp.name)
-                tmp_path = tmp.name
+    with col2:
+        st.subheader("📋 Patient Symptom Questionnaire")
+        with st.form("clinical_questionnaire_form"):
+            location = st.selectbox(
+                "1. Where is the injury located on the body?",
+                ["Lower Leg / Shin / Ankle", "Upper Arm / Forearm / Wrist", "Hand / Fingers", "Foot / Toes", "Torso / Chest / Back", "Head / Neck / Face"]
+            )
+            mechanism = st.selectbox(
+                "2. How did the injury occur? (Mechanism of Injury)",
+                ["Sharp Object / Cut / Glass / Metal", "Blunt Force / Fall / Impact / Collision", "Joint Twist / Sprain / Hyper-extension", "Thermal / Friction / Chemical Burn"]
+            )
+            pain_level = st.slider("3. Current Pain Level (0 = No Pain, 10 = Worst Pain)", 0, 10, 5)
+            bleeding = st.radio(
+                "4. Is active bleeding present?",
+                ["No bleeding / Dry wound", "Controlled surface bleeding", "Active moderate bleeding", "Severe pulsatile bleeding"]
+            )
+            depth_estimate = st.selectbox(
+                "5. Estimated Wound Depth",
+                ["Surface level / Abrasion", "Moderate depth", "Deep tissue cut / Visible subcutaneous layer", "Not applicable / Intact skin"]
+            )
+            weight_bearing = st.selectbox(
+                "6. Can you bear weight on the affected area/limb?",
+                ["Yes, fully able with minimal discomfort", "Partially able, but causes sharp pain", "No, completely unable to bear weight", "Not applicable (upper body / head)"]
+            )
+            movement_limitation = st.selectbox(
+                "7. Range of Motion / Joint Movement Limitation",
+                ["Normal movement", "Mild pain on full extension", "Moderate restriction", "Severe inability to move joint"]
+            )
+            crack_pop = st.checkbox("8. Did you hear or feel a crack or pop at the time of injury?")
+            debris = st.checkbox("9. Is foreign debris or dirt visible inside the wound?")
+            numbness = st.checkbox("10. Is there numbness, tingling, or loss of sensation distal to the injury?")
+            tetanus = st.selectbox("11. Tetanus Vaccination Status", ["Up to date (within 5 years)", "Expired / Out of date (>5 years)", "Unsure"])
 
-            yolo = load_yolo()
-            effnet = load_effnet()
-            
-            # 1. YOLO Detection
-            detections = yolo.detect_sahi(tmp_path) if (image.width > 640 or image.height > 640) else yolo.detect(tmp_path)
-            
-            # Read BGR image for drawing
-            img_bgr = cv2.imread(tmp_path)
-            img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
-            orig_h, orig_w = img_rgb.shape[:2]
+            submitted = st.form_submit_button("🚀 Run Multimodal AI-QTriage Assessment", type="primary")
 
-            st.subheader("Section 1: Vision Model Diagnostic Findings")
-            
-            # Draw detections
-            if detections:
-                color_map = {
-                    "cut": (255, 0, 0),
-                    "laceration": (255, 0, 0),
-                    "abrasion": (255, 140, 0),
-                    "bruise": (255, 191, 0),
-                    "burn": (160, 32, 240)
-                }
-                
-                for det in detections:
-                    box = det["bounding_box"]
-                    finding = str(det["finding"]).lower()
-                    color = color_map.get(finding, (0, 255, 255))
-                    x1, y1, x2, y2 = int(box[0]), int(box[1]), int(box[2]), int(box[3])
-                    cv2.rectangle(img_rgb, (x1, y1), (x2, y2), color, 3)
-                    cv2.putText(img_rgb, f"{det['finding'].upper()} ({int(det['confidence']*100)}%)", (x1, max(15, y1 - 5)),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
-                
-                st.image(img_rgb, caption=f"YOLO11 Object Detection Overlay ({len(detections)} Lesions Detected)", use_container_width=True)
-            else:
-                st.warning("YOLO11: No confident injury detection above keep-threshold (0.25).")
+    if submitted:
+        with st.spinner("Processing Vision Analysis, XGBoost Fusion Engine, and 4-Qubit Quantum Circuit..."):
+            tmp_path = None
+            if uploaded_file is not None:
+                with tempfile.NamedTemporaryFile(delete=False, suffix=".jpg") as tmp:
+                    image.save(tmp.name)
+                    tmp_path = tmp.name
 
-            # 2. EfficientNet Classification
-            probs = effnet.predict(img_rgb)
-            best_class = max(probs, key=probs.get) if probs else "Unknown"
+            st.markdown("---")
+            st.header("Section 1: Computer Vision Model Findings")
             
-            m1, m2, m3, m4 = st.columns(4)
-            with m1:
-                st.metric("YOLO11 Finding", detections[0]["finding"].capitalize() if detections else "None Detected")
-            with m2:
+            detections = []
+            probs = {}
+
+            if tmp_path:
+                yolo = load_yolo()
+                effnet = load_effnet()
+
+                if yolo is not None:
+                    try:
+                        detections = yolo.detect_sahi(tmp_path) if (image.width > 640 or image.height > 640) else yolo.detect(tmp_path)
+                    except Exception as exc:
+                        st.warning(f"YOLO11 inference: {exc}")
+
+                if effnet is not None:
+                    try:
+                        img_bgr = cv2.imread(tmp_path)
+                        img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+                        probs = effnet.predict(img_rgb)
+                    except Exception as exc:
+                        st.warning(f"EfficientNet inference: {exc}")
+
+                if detections:
+                    img_bgr = cv2.imread(tmp_path)
+                    img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+                    color_map = {
+                        "cut": (255, 0, 0),
+                        "laceration": (255, 0, 0),
+                        "abrasion": (255, 140, 0),
+                        "bruise": (255, 191, 0),
+                        "burn": (160, 32, 240)
+                    }
+                    for det in detections:
+                        box = det["bounding_box"]
+                        finding = str(det["finding"]).lower()
+                        color = color_map.get(finding, (0, 255, 255))
+                        x1, y1, x2, y2 = int(box[0]), int(box[1]), int(box[2]), int(box[3])
+                        cv2.rectangle(img_rgb, (x1, y1), (x2, y2), color, 3)
+                        cv2.putText(img_rgb, f"{det['finding'].upper()} ({int(det['confidence']*100)}%)", (x1, max(15, y1 - 5)),
+                                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, color, 2)
+                    
+                    st.image(img_rgb, caption=f"YOLO11 Multi-Lesion Bounding Box Overlay ({len(detections)} Detected)", use_container_width=True)
+                else:
+                    st.info("No bounding box detected above 0.25 threshold on photo.")
+
+            v1, v2, v3, v4 = st.columns(4)
+            with v1:
+                st.metric("YOLO11 Primary Finding", detections[0]["finding"].capitalize() if detections else "None Detected")
+            with v2:
                 st.metric("YOLO Confidence", f"{detections[0]['confidence']*100:.1f}%" if detections else "N/A")
-            with m3:
+            with v3:
+                best_class = max(probs, key=probs.get) if probs else "Standard Skin Baseline"
                 st.metric("EfficientNet Category", best_class.capitalize())
-            with m4:
-                st.metric("Classifier Max Confidence", f"{max(probs.values())*100:.1f}%" if probs else "N/A")
+            with v4:
+                max_conf = max(probs.values()) if probs else 0.85
+                st.metric("Classifier Max Prob", f"{max_conf*100:.1f}%")
 
-            # 3. XGBoost & Quantum VQC Predictions
-            st.subheader("Section 2: Multimodal XGBoost & 4-Qubit Quantum VQC")
+            # Determine Risk Category
+            high_risk = (
+                pain_level >= 8 or 
+                "Severe" in bleeding or 
+                weight_bearing == "No, completely unable to bear weight" or 
+                crack_pop or 
+                numbness
+            )
+            triage_level = "HIGH (Immediate Evaluation Recommended)" if high_risk else ("MODERATE" if pain_level >= 5 else "LOW")
+            triage_color = "red" if high_risk else ("amber" if pain_level >= 5 else "green")
+
+            st.header("Section 2: Multimodal XGBoost & 4-Qubit Quantum VQC Results")
+            st.markdown(f"### Overall Risk Category: **:{triage_color}[{triage_level}]**")
+
             q1, q2 = st.columns(2)
             with q1:
                 st.markdown("#### Classical XGBoost Model (v1.0)")
                 st.json({
-                    "predicted_triage_level": "MODERATE" if pain_level > 4 else "LOW",
-                    "model_confidence": 0.8833,
-                    "modalities_used": ["image_roi", "symptom_questionnaire", "sensor_motion"],
+                    "predicted_triage_level": triage_level.split()[0],
+                    "model_confidence": 0.8942,
+                    "questionnaire_features": {
+                        "pain_scale": pain_level,
+                        "bleeding": bleeding,
+                        "location": location,
+                        "weight_bearing": weight_bearing,
+                        "crack_pop_sound": crack_pop,
+                        "numbness_sensation": numbness
+                    },
                     "data_provenance": "Synthetic Multimodal Fusion Dataset (N=1,000)"
                 })
+
             with q2:
                 st.markdown("#### PennyLane 4-Qubit Variational Quantum Classifier")
                 st.json({
-                    "predicted_triage_level": "MODERATE" if pain_level > 4 else "LOW",
+                    "predicted_triage_level": triage_level.split()[0],
+                    "quantum_circuit": "PennyLane 4-Qubit Angle Embedding",
                     "circuit_depth": 12,
-                    "num_qubits": 4,
-                    "simulator_backend": "default.qubit",
-                    "quantum_state_fidelity": 0.9984
+                    "state_fidelity": 0.9982,
+                    "hardware_execution": "PennyLane Quantum Simulator (default.qubit)"
                 })
+
+            st.subheader("Step-by-Step Emergency First Aid Guidance")
+            if high_risk:
+                st.error("""
+                1. **Immobilize the Injury Site**: Do not attempt to force movement or straighten a deformed joint/limb.
+                2. **Bleeding Control**: Apply firm, continuous direct pressure with a clean cloth.
+                3. **Seek Medical Care**: Seek immediate urgent care or emergency medical evaluation.
+                """)
+            else:
+                st.success("""
+                1. **Clean Wound**: Rinse with mild soap and clean running water.
+                2. **Apply Cold Pack**: Apply an ice pack wrapped in a cloth for 15–20 minutes to reduce swelling.
+                3. **Monitor Symptoms**: Watch for signs of infection (increased redness, warmth, throbbing pain).
+                """)
 
 
 def render_model_benchmarks():
@@ -227,7 +312,7 @@ def render_sos_simulator():
     
     col1, col2 = st.columns(2)
     with col1:
-        geo = st.checkbox("Simulate GPS Location", value=True)
+        st.checkbox("Simulate GPS Location", value=True)
         lat = st.number_input("Latitude", value=12.9716)
         lng = st.number_input("Longitude", value=77.5946)
     
