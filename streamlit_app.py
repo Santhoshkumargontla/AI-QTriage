@@ -336,6 +336,15 @@ def render_triage_assessment():
                 else:
                     st.warning("Could not automatically parse accelerometer columns (expected timestamp, acc_x, acc_y, acc_z). Using default baseline.")
 
+        st.session_state['sensor_g'] = impact_g
+        st.session_state['sensor_stab'] = stabilization_time
+        st.session_state['latest_sensor_data'] = {
+            "source_type": device_type.lower().replace(" ", "_"),
+            "impact_g_force": impact_g,
+            "post_impact_stabilization_seconds": stabilization_time,
+            "sensor_source_type": device_type
+        }
+
     with col2:
         st.subheader("📋 Patient Symptom Questionnaire")
         with st.form("clinical_questionnaire_form"):
@@ -614,10 +623,23 @@ def render_sos_simulator():
 def render_pdf_download():
     st.header("📄 Download Diagnostic Report (PDF)")
     
-    st.markdown("Generates a comprehensive, multi-page ReportLab flowable PDF report containing vision findings, symptom responses, quantum model registry metrics, and step-by-step first aid guidance.")
+    st.markdown("Generates a comprehensive, multi-page ReportLab flowable PDF report containing vision findings, symptom responses, motion sensor telemetry logs, quantum model registry metrics, and step-by-step first aid guidance.")
 
-    patient_name = st.text_input("Patient Identifier / Case Name", value="Case #88219")
-    
+    col1, col2 = st.columns(2)
+    with col1:
+        patient_name = st.text_input("Patient Identifier / Case Name", value="Case #88219")
+        sensor_g = st.number_input("Sensor Peak G-Force Acceleration (g)", value=float(st.session_state.get('sensor_g', 4.2)), step=0.1)
+    with col2:
+        sensor_stab = st.number_input("Posture Stabilization Duration (s)", value=float(st.session_state.get('sensor_stab', 1.2)), step=0.1)
+        sensor_source = st.selectbox("Sensor Modality Source", ["Smartphone Accelerometer (IMU)", "Smartwatch Sensor", "Wearable Patch", "Uploaded Sensor CSV Log"])
+
+    latest_sensor = st.session_state.get('latest_sensor_data') or {
+        "source_type": sensor_source.lower().replace(" ", "_"),
+        "impact_g_force": sensor_g,
+        "post_impact_stabilization_seconds": sensor_stab,
+        "sensor_source_type": sensor_source
+    }
+
     sample_case = {
         "case_id": f"{patient_name.replace(' ', '_')}-DEMO",
         "created_at": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -642,16 +664,14 @@ def render_pdf_download():
                 "location": "Lower Leg"
             }
         },
-        "sensor_summary": {
-            "source_type": "simulated",
-            "impact_g_force": 4.2
-        },
+        "sensor_summary": latest_sensor,
+        "sensor_source_type": sensor_source,
         "xgboost_prediction": {
-            "class": "MODERATE",
+            "class": "HIGH" if (sensor_g > 8.0 or sensor_stab > 3.0) else "MODERATE",
             "confidence": 0.8833
         },
         "quantum_prediction": {
-            "class": "MODERATE",
+            "class": "HIGH" if (sensor_g > 8.0 or sensor_stab > 3.0) else "MODERATE",
             "confidence": 0.8000
         }
     }
@@ -660,7 +680,7 @@ def render_pdf_download():
         from backend.services.report_service import generate_pdf_report
         pdf_bytes = generate_pdf_report(sample_case)
         
-        st.success("✅ Diagnostic PDF Report ready for download!")
+        st.success(f"✅ Diagnostic PDF Report ready for download (Attached Sensor Peak: {sensor_g:.1f} g)!")
         st.download_button(
             label="📄 Click Here to Download PDF Report",
             data=pdf_bytes,
