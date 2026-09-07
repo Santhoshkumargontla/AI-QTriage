@@ -468,6 +468,8 @@ export default function ResearchMode() {
                 Split counts indicate train / validation / test partition sizes. Held-out metrics evaluate exclusively on test split samples. Genuinely paired patient multimodal records count: <strong>0</strong>. Synthetic fusion records count: <strong>200 canonical (up to 1,000 supported)</strong>.
               </p>
             </div>
+          </ThreeDCard>
+
           {/* Section: Confusion Matrices, XGBoost Graphs, and VQC Quantum Circuit Graphs */}
           <ModelGraphsAndMatrix />
 
