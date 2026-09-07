@@ -6,6 +6,7 @@ import Link from "next/link";
 import { api, getApiUrl, getUploadUrl } from "@/lib/api";
 import { captureBrowserLocation, type SosGeoPayload } from "@/lib/geo";
 import { ShapWaterfall } from "@/components/ShapWaterfall";
+import { ModelGraphsAndMatrix } from "@/components/ModelGraphsAndMatrix";
 import { 
   ShieldAlert, 
   Activity, 
@@ -1788,6 +1789,11 @@ export default function CaseDetails() {
             Grad-CAM overlays are in Image analysis above. SHAP feature contributions are displayed in the interactive waterfall above.
           </p>
         </div>
+      )}
+
+      {/* Model Performance Graphs & Confusion Matrix Dashboard */}
+      {isTab("overview", "explainability") && (
+        <ModelGraphsAndMatrix />
       )}
 
       {/* Accordion: Technical Details for Judges/Faculty */}

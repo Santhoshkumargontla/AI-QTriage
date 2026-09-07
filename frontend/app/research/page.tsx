@@ -19,6 +19,7 @@ import {
   FileCode
 } from "lucide-react";
 import { ThreeDCard } from "@/components/ThreeDCard";
+import { ModelGraphsAndMatrix } from "@/components/ModelGraphsAndMatrix";
 
 function yoloClassSupportNote(reg: Record<string, any>): string | null {
   const name = String(reg.model_name || "");
@@ -467,7 +468,8 @@ export default function ResearchMode() {
                 Split counts indicate train / validation / test partition sizes. Held-out metrics evaluate exclusively on test split samples. Genuinely paired patient multimodal records count: <strong>0</strong>. Synthetic fusion records count: <strong>200 canonical (up to 1,000 supported)</strong>.
               </p>
             </div>
-          </ThreeDCard>
+          {/* Section: Confusion Matrices, XGBoost Graphs, and VQC Quantum Circuit Graphs */}
+          <ModelGraphsAndMatrix />
 
           {/* Section: Classical vs Quantum metrics comparison */}
           <ThreeDCard glowColor="rgba(168, 85, 247, 0.15)" className="p-6 space-y-6">
