@@ -542,14 +542,14 @@ def render_model_benchmarks():
         | **YOLO11 Detection** | Multi-class Bounding Box | **91.4% mAP50** | 0.905 | 0.042 | `857880192ebfbc4b...` |
         | **EfficientNetV2-S** | 8-Class Skin Injury Head | **89.2% Accuracy** | 0.884 | 0.051 | `c432fa998a12e10c...` |
         | **XGBoost Multimodal** | 3-Class Trauma Severity | **83.33% Accuracy** | **0.8350** | **0.038** | `d4e5f6789a01234b...` |
-        | **4-Qubit PennyLane VQC** | Quantum Injury Classifier | **80.00% Accuracy** | **0.8020** | **0.062** | `e5f6a7890b12345c...` |
+        | **4-Qubit PennyLane VQC** | Quantum Injury Classifier | **53.33% Accuracy** | **0.4230** | **0.1365** | `2db769bec3abd3c2...` |
         """)
 
         st.subheader("Classical vs. Quantum Classifier Metric Comparison")
         chart_data = {
-            "Metric": ["Accuracy", "Precision", "Recall", "F1-Score", "AUC-ROC"],
-            "XGBoost (Classical)": [0.8333, 0.8400, 0.8333, 0.8350, 0.9320],
-            "4-Qubit VQC (Quantum)": [0.8000, 0.8100, 0.8000, 0.8020, 0.8940]
+            "Metric": ["Accuracy", "Precision", "Recall", "F1-Score", "Brier Score"],
+            "XGBoost (Classical)": [0.8333, 0.8400, 0.8333, 0.8350, 0.3045],
+            "4-Qubit VQC (Quantum)": [0.5333, 0.4662, 0.4327, 0.4230, 0.5123]
         }
         st.bar_chart(chart_data, x="Metric")
 
@@ -565,7 +565,7 @@ def render_model_benchmarks():
         )
 
         cm_vqc_df = pd.DataFrame(
-            [[9, 1, 0], [2, 7, 1], [0, 2, 8]],
+            [[2, 8, 0], [2, 13, 2], [0, 2, 1]],
             index=["True LOW", "True MODERATE", "True HIGH"],
             columns=["Pred LOW", "Pred MODERATE", "Pred HIGH"]
         )
@@ -578,15 +578,15 @@ def render_model_benchmarks():
         with c2:
             st.markdown("#### ⚛️ 4-Qubit PennyLane VQC Confusion Matrix")
             st.dataframe(cm_vqc_df.style.background_gradient(cmap="Blues"), use_container_width=True)
-            st.caption("Overall Accuracy: 24 / 30 (80.0%) | Macro F1: 0.802")
+            st.caption("Overall Accuracy: 16 / 30 (53.33%) | Macro F1: 0.4230")
 
         st.markdown("#### Class-wise Performance Breakdown")
         breakdown_df = pd.DataFrame({
             "Risk Tier": ["LOW Risk", "MODERATE Risk", "HIGH Risk"],
             "XGBoost Sensitivity": ["100.0%", "80.0%", "80.0%"],
             "XGBoost Specificity": ["95.0%", "90.0%", "95.0%"],
-            "VQC Sensitivity": ["90.0%", "70.0%", "80.0%"],
-            "VQC Specificity": ["90.0%", "85.0%", "95.0%"]
+            "VQC Sensitivity": ["20.0%", "76.5%", "33.3%"],
+            "VQC Specificity": ["90.0%", "38.5%", "92.6%"]
         }).set_index("Risk Tier")
         st.table(breakdown_df)
 

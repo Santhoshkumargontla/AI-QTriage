@@ -72,7 +72,7 @@ export function ModelGraphsAndMatrix() {
               </p>
             </div>
             <span className="px-3 py-1 text-[11px] font-mono font-bold rounded-lg bg-emerald-950/80 text-emerald-400 border border-emerald-800">
-              XGBoost: 83.33% | VQC: 80.0%
+              XGBoost: 83.33% | VQC: 53.33%
             </span>
           </div>
 
@@ -136,7 +136,7 @@ export function ModelGraphsAndMatrix() {
                   <Cpu className="h-4 w-4" /> 4-Qubit PennyLane VQC
                 </span>
                 <span className="text-[11px] font-mono text-purple-400 font-bold bg-purple-950/80 px-2 py-0.5 rounded border border-purple-800">
-                  Accuracy: 24 / 30 (80.0%)
+                  Accuracy: 16 / 30 (53.33%)
                 </span>
               </div>
 
@@ -149,34 +149,34 @@ export function ModelGraphsAndMatrix() {
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded">HIGH</div>
 
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded flex items-center justify-center">LOW</div>
-                  <div className="p-3 bg-purple-600/40 text-purple-300 font-black text-sm rounded border border-purple-500/40">9</div>
-                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">1</div>
+                  <div className="p-3 bg-purple-600/40 text-purple-300 font-black text-sm rounded border border-purple-500/40">2</div>
+                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">8</div>
                   <div className="p-3 bg-slate-900/60 text-slate-500 rounded">0</div>
 
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded flex items-center justify-center">MOD</div>
                   <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">2</div>
-                  <div className="p-3 bg-purple-600/40 text-purple-300 font-black text-sm rounded border border-purple-500/40">7</div>
-                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">1</div>
+                  <div className="p-3 bg-purple-600/40 text-purple-300 font-black text-sm rounded border border-purple-500/40">13</div>
+                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">2</div>
 
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded flex items-center justify-center">HIGH</div>
                   <div className="p-3 bg-slate-900/60 text-slate-500 rounded">0</div>
                   <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">2</div>
-                  <div className="p-3 bg-purple-600/40 text-purple-300 font-black text-sm rounded border border-purple-500/40">8</div>
+                  <div className="p-3 bg-purple-600/40 text-purple-300 font-black text-sm rounded border border-purple-500/40">1</div>
                 </div>
               </div>
 
               <div className="grid grid-cols-3 gap-2 text-[11px] font-mono pt-2 border-t border-slate-800/80 text-center">
                 <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
                   <span className="text-slate-400 block text-[9px]">Macro Precision</span>
-                  <span className="text-purple-400 font-bold">0.8100</span>
+                  <span className="text-purple-400 font-bold">0.4662</span>
                 </div>
                 <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
                   <span className="text-slate-400 block text-[9px]">Macro Recall</span>
-                  <span className="text-purple-400 font-bold">0.8000</span>
+                  <span className="text-purple-400 font-bold">0.4327</span>
                 </div>
                 <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
                   <span className="text-slate-400 block text-[9px]">Macro F1 Score</span>
-                  <span className="text-purple-400 font-bold">0.8020</span>
+                  <span className="text-purple-400 font-bold">0.4230</span>
                 </div>
               </div>
             </div>
