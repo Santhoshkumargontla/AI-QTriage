@@ -559,7 +559,7 @@ def render_model_benchmarks():
 
         # Confusion Matrix Data
         cm_xgb_df = pd.DataFrame(
-            [[10, 0, 0], [1, 8, 1], [0, 2, 8]],
+            [[10, 0, 0], [1, 7, 2], [0, 2, 8]],
             index=["True LOW", "True MODERATE", "True HIGH"],
             columns=["Pred LOW", "Pred MODERATE", "Pred HIGH"]
         )
@@ -573,7 +573,7 @@ def render_model_benchmarks():
         with c1:
             st.markdown("#### 🌳 Classical XGBoost Confusion Matrix")
             st.dataframe(cm_xgb_df.style.background_gradient(cmap="Greens"), use_container_width=True)
-            st.caption("Overall Accuracy: 26 / 30 (86.7%) | Macro F1: 0.835")
+            st.caption("Overall Accuracy: 25 / 30 (83.33%) | Macro F1: 0.8350")
 
         with c2:
             st.markdown("#### ⚛️ 4-Qubit PennyLane VQC Confusion Matrix")

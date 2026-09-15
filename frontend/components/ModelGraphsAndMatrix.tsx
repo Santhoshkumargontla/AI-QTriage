@@ -72,7 +72,7 @@ export function ModelGraphsAndMatrix() {
               </p>
             </div>
             <span className="px-3 py-1 text-[11px] font-mono font-bold rounded-lg bg-emerald-950/80 text-emerald-400 border border-emerald-800">
-              XGBoost: 86.7% | VQC: 80.0%
+              XGBoost: 83.33% | VQC: 80.0%
             </span>
           </div>
 
@@ -84,7 +84,7 @@ export function ModelGraphsAndMatrix() {
                   <Zap className="h-4 w-4" /> Classical XGBoost (v1.0)
                 </span>
                 <span className="text-[11px] font-mono text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
-                  Accuracy: 26 / 30 (86.7%)
+                  Accuracy: 25 / 30 (83.33%)
                 </span>
               </div>
 
@@ -103,8 +103,8 @@ export function ModelGraphsAndMatrix() {
 
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded flex items-center justify-center">MOD</div>
                   <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">1</div>
-                  <div className="p-3 bg-emerald-600/40 text-emerald-300 font-black text-sm rounded border border-emerald-500/40">8</div>
-                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">1</div>
+                  <div className="p-3 bg-emerald-600/40 text-emerald-300 font-black text-sm rounded border border-emerald-500/40">7</div>
+                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">2</div>
 
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded flex items-center justify-center">HIGH</div>
                   <div className="p-3 bg-slate-900/60 text-slate-500 rounded">0</div>
