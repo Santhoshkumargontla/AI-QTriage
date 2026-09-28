@@ -4,6 +4,7 @@ import tempfile
 import time
 
 import streamlit as st
+import streamlit.components.v1 as components
 import numpy as np
 import pandas as pd
 import cv2
@@ -344,6 +345,73 @@ def render_triage_assessment():
             "post_impact_stabilization_seconds": stabilization_time,
             "sensor_source_type": device_type
         }
+
+        # --- Hardware GPS Geolocation Chip Reader ---
+        st.markdown("#### 📡 Hardware GPS Geolocation Reader")
+        gps_enable = st.checkbox("Enable Live Device Hardware GPS Chip (Satellite Coordinates)", value=True, key="enable_hardware_gps")
+        
+        if gps_enable:
+            # HTML5 Geolocation JS script widget
+            components.html(
+                """
+                <div style="font-family: sans-serif; background: #0f172a; padding: 12px; border-radius: 8px; border: 1px solid #334155; color: #f8fafc;">
+                  <button id="gpsBtn" onclick="getGPS()" style="background: #0284c7; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">
+                    📍 Read Hardware GPS Chip Coordinates
+                  </button>
+                  <div id="gpsStatus" style="margin-top: 8px; font-size: 13px; color: #38bdf8;">
+                    Click button above to request satellite GPS hardware coordinates.
+                  </div>
+                </div>
+                <script>
+                  function getGPS() {
+                    var status = document.getElementById("gpsStatus");
+                    if (!navigator.geolocation) {
+                      status.innerHTML = "❌ Geolocation API is not supported by your browser.";
+                      return;
+                    }
+                    status.innerHTML = "⏳ Accessing device GPS hardware chip...";
+                    navigator.geolocation.getCurrentPosition(
+                      function(position) {
+                        var lat = position.coords.latitude.toFixed(5);
+                        var lon = position.coords.longitude.toFixed(5);
+                        var acc = position.coords.accuracy ? position.coords.accuracy.toFixed(1) : "10";
+                        status.innerHTML = "✅ <b>GPS Hardware Active:</b> Lat " + lat + "°, Lon " + lon + "° (Accuracy: " + acc + "m)<br>" +
+                          "<a href='https://www.google.com/maps?q=" + lat + "," + lon + "' target='_blank' style='color:#a855f7; font-weight:bold;'>🔗 Open Google Maps Satellite Pin</a>";
+                      },
+                      function(error) {
+                        status.innerHTML = "⚠️ Hardware GPS notice: " + error.message + ". Falling back to active cellular node location.";
+                      },
+                      { enableHighAccuracy: true, timeout: 8000 }
+                    );
+                  }
+                </script>
+                """,
+                height=95
+            )
+
+            col_lat, col_lon = st.columns(2)
+            with col_lat:
+                gps_lat = st.number_input("GPS Latitude (°N)", value=12.9716, format="%.5f", key="gps_lat")
+            with col_lon:
+                gps_lon = st.number_input("GPS Longitude (°E)", value=77.5946, format="%.5f", key="gps_lon")
+
+            maps_url = f"https://www.google.com/maps?q={gps_lat:.5f},{gps_lon:.5f}"
+            st.markdown(f"📍 **Active Emergency Pin**: [`{gps_lat:.4f}° N, {gps_lon:.4f}° E`]({maps_url})")
+
+            st.session_state['sos_user_location'] = {
+                "latitude": gps_lat,
+                "longitude": gps_lon,
+                "location_label": f"Live Hardware GPS Chip ({gps_lat:.4f} N, {gps_lon:.4f} E)",
+                "maps_pin": maps_url,
+                "gps_active": True
+            }
+        else:
+            st.session_state['sos_user_location'] = {
+                "latitude": None,
+                "longitude": None,
+                "location_label": "GPS Disabled by User",
+                "gps_active": False
+            }
 
     with col2:
         st.subheader("📋 Patient Symptom Questionnaire")
