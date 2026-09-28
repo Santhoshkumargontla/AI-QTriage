@@ -621,8 +621,8 @@ def render_triage_assessment():
                 st.header("🚨 Section 4: Emergency SOS Safety Countdown & Alert Dispatch")
                 st.error(f"""
                 ### 🚨 SEVERE KINETIC ACCIDENT PATTERN DETECTED!
-                - **Extracted Peak Impact G-Force**: **{impact_g:.2f} g** (Threshold $\ge 4.0\text{ g}$)
-                - **Posture Stabilization Time**: **{stabilization_time:.2f} s** (Threshold $\ge 1.5\text{ s}$)
+                - **Extracted Peak Impact G-Force**: **{impact_g:.2f} g** (Threshold >= 4.0 g)
+                - **Posture Stabilization Time**: **{stabilization_time:.2f} s** (Threshold >= 1.5 s)
                 - **Status**: Emergency Alert Countdown Initiated
                 """)
 
