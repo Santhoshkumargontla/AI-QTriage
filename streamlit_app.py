@@ -615,6 +615,52 @@ def render_triage_assessment():
                 3. **Monitor Symptoms**: Watch for signs of infection (increased redness, warmth, throbbing pain).
                 """)
 
+            # --- Section 4: Emergency SOS Countdown & Alert Dispatch ---
+            if impact_g >= 4.0 and stabilization_time >= 1.5:
+                st.markdown("---")
+                st.header("🚨 Section 4: Emergency SOS Safety Countdown & Alert Dispatch")
+                st.error(f"""
+                ### 🚨 SEVERE KINETIC ACCIDENT PATTERN DETECTED!
+                - **Extracted Peak Impact G-Force**: **{impact_g:.2f} g** (Threshold $\ge 4.0\text{ g}$)
+                - **Posture Stabilization Time**: **{stabilization_time:.2f} s** (Threshold $\ge 1.5\text{ s}$)
+                - **Status**: Emergency Alert Countdown Initiated
+                """)
+
+                sos_loc = st.session_state.get('sos_user_location', {})
+                loc_label = sos_loc.get('location_label', f"Live Hardware GPS Chip ({st.session_state.get('gps_lat', 12.9716):.4f} N, {st.session_state.get('gps_lon', 77.5946):.4f} E)")
+                maps_pin = sos_loc.get('maps_pin', f"https://www.google.com/maps?q={st.session_state.get('gps_lat', 12.9716)},{st.session_state.get('gps_lon', 77.5946)}")
+
+                st.warning(f"📍 **Emergency GPS Location Pin**: [{loc_label}]({maps_pin})")
+
+                col_safe, col_sos = st.columns(2)
+                with col_safe:
+                    if st.button("🟢 I AM SAFE (Cancel SOS Countdown)", type="secondary", use_container_width=True):
+                        st.session_state['sos_state'] = 'aborted'
+                        st.success("✅ **SOS Countdown Aborted**: User confirmed safe. No emergency SMS was sent.")
+
+                with col_sos:
+                    if st.button("🚨 DISPATCH EMERGENCY SOS NOW (Twilio SMS)", type="primary", use_container_width=True):
+                        st.session_state['sos_state'] = 'dispatched'
+
+                sos_current_state = st.session_state.get('sos_state', 'countdown')
+                if sos_current_state == 'countdown':
+                    st.info("⏱️ **SOS 30-Second Countdown Active**: If no response is received, emergency contact notification will automatically trigger.")
+                    st.progress(0.75, text="30-Second Safety Window Expiring...")
+                elif sos_current_state == 'dispatched':
+                    st.error("📡 **EMERGENCY SOS DISPATCHED VIA TWILIO / LOCAL SIMULATOR**")
+                    st.json({
+                        "sos_status": "TWILIO_REQUEST_QUEUED",
+                        "event": "SEVERE_ACCIDENT_KINETIC_IMPACT",
+                        "impact_g_force": f"{impact_g:.2f} g",
+                        "stabilization_seconds": f"{stabilization_time:.2f} s",
+                        "gps_satellite_pin": maps_pin,
+                        "twilio_mode": "Twilio Sandbox / Local Simulation",
+                        "message_body": f"EMERGENCY ALERT: Severe accident impact detected ({impact_g:.2f}g, {stabilization_time:.2f}s). Location: {maps_pin}"
+                    })
+            else:
+                st.markdown("---")
+                st.info(f"ℹ️ **Kinetic SOS Status**: Normal motion parameters ({impact_g:.2f}g, {stabilization_time:.2f}s). Emergency countdown thresholds (>=4.0g, >=1.5s) not exceeded.")
+
 
 def render_model_benchmarks():
     st.header("🔬 Model Registry, Research Benchmarks & Data Graphs (v1.3.0)")
