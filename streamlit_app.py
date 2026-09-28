@@ -236,7 +236,8 @@ def render_shap_explainability_page():
 
 def parse_uploaded_sensor_csv(uploaded_file):
     """
-    Parses smartphone/wearable accelerometer CSV logs (Sensor Logger, Physics Toolbox, etc.).
+    Parses smartphone/wearable accelerometer CSV logs (Sensor Logger, Physics Toolbox, etc.)
+    OR pre-computed kinetic summary CSV files (peak_g_force, stabilization_time_seconds).
     Calculates time series, peak impact G-force acceleration, posture stabilization time,
     and returns (chart_df, peak_g, stabilization_time, sample_count).
     """
@@ -245,6 +246,30 @@ def parse_uploaded_sensor_csv(uploaded_file):
         df = pd.read_csv(uploaded_file)
         cols_lower = {str(c).strip().lower(): c for c in df.columns}
 
+        # --- 1. Check for Pre-computed Summary CSV Columns (peak_g_force, stabilization_time_seconds, etc.) ---
+        g_summary_col = next((cols_lower[c] for c in cols_lower if 'peak_g' in c or 'g_force' in c or c == 'g'), None)
+        stab_summary_col = next((cols_lower[c] for c in cols_lower if 'stabilization' in c or 'stab' in c), None)
+
+        if g_summary_col and stab_summary_col:
+            # Extract first/peak row values
+            peak_g_val = pd.to_numeric(df[g_summary_col], errors='coerce').dropna()
+            stab_val = pd.to_numeric(df[stab_summary_col], errors='coerce').dropna()
+
+            if not peak_g_val.empty and not stab_val.empty:
+                peak_g = float(peak_g_val.iloc[0])
+                stab_time = float(stab_val.iloc[0])
+                
+                # Synthesize visual G-force impact waveform curve for chart rendering
+                t_rel = np.linspace(0, max(3.0, stab_time + 1.5), 100)
+                # Gaussian impact peak at t=1.0s + stabilization decay
+                g_curve = 1.0 + (peak_g - 1.0) * np.exp(-((t_rel - 1.0) ** 2) / 0.08)
+                chart_df = pd.DataFrame({"Time (s)": t_rel, "G-Force (g)": g_curve}).set_index("Time (s)")
+
+                peak_g = max(1.0, min(25.0, round(peak_g, 2)))
+                stab_time = max(0.1, min(5.0, round(stab_time, 2)))
+                return chart_df, peak_g, stab_time, len(df)
+
+        # --- 2. Check for Raw 3-Axis IMU Accelerometer CSV Columns (acc_x, acc_y, acc_z, time) ---
         ax_col = next((cols_lower[c] for c in cols_lower if ('acc' in c and 'x' in c) or c in ('ax', 'x')), None)
         ay_col = next((cols_lower[c] for c in cols_lower if ('acc' in c and 'y' in c) or c in ('ay', 'y')), None)
         az_col = next((cols_lower[c] for c in cols_lower if ('acc' in c and 'z' in c) or c in ('az', 'z')), None)
