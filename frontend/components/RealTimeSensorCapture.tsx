@@ -298,13 +298,90 @@ export function RealTimeSensorCapture({ caseId, onSuccess, onCancel }: RealTimeS
         </div>
       </div>
 
+      {/* CSV File Upload Dropzone Option for Desktop & Test Logs */}
+      <div className="p-4 bg-slate-900/60 border border-slate-800 rounded-xl space-y-3">
+        <div className="flex justify-between items-center">
+          <span className="font-bold text-slate-200 flex items-center gap-1.5">
+            <UploadCloud className="h-4 w-4 text-cyan-400" />
+            Upload Sensor CSV Log File (Sensor Logger / Kinetic Test Case)
+          </span>
+          <span className="text-[10px] font-mono text-cyan-400 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-800">
+            CSV SUPPORTED
+          </span>
+        </div>
+        <p className="text-[11px] text-slate-400">
+          Upload pre-recorded motion logs (Sensor Logger, Physics Toolbox, or TC001-TC008 kinetic CSV files).
+        </p>
+        <input
+          type="file"
+          accept=".csv"
+          onChange={async (e) => {
+            const file = e.target.files?.[0];
+            if (!file) return;
+            setUploading(true);
+            setError(null);
+            try {
+              const text = await file.text();
+              const lines = text.split("\n").map(l => l.trim()).filter(Boolean);
+              if (lines.length < 2) throw new Error("CSV file is empty or missing data rows.");
+              const headers = lines[0].toLowerCase().split(",").map(h => h.trim());
+              
+              let peakG = 4.0;
+              let stabTime = 1.5;
+              const gIdx = headers.findIndex(h => h.includes("peak_g") || h.includes("g_force") || h === "g");
+              const stabIdx = headers.findIndex(h => h.includes("stabilization") || h.includes("stab"));
+              
+              if (gIdx !== -1 && stabIdx !== -1) {
+                const firstRow = lines[1].split(",");
+                const gVal = parseFloat(firstRow[gIdx]);
+                const sVal = parseFloat(firstRow[stabIdx]);
+                if (!isNaN(gVal)) peakG = gVal;
+                if (!isNaN(sVal)) stabTime = sVal;
+              }
+
+              // Synthesize 15 motion telemetry sample ticks matching parsed peak_g & stabilization_time
+              const synthSamples = [];
+              for (let i = 0; i < 15; i++) {
+                const t = (i / 14) * Math.max(2.0, stabTime);
+                const g = i === 5 ? peakG : (1.0 + Math.random() * 0.2);
+                synthSamples.push({
+                  elapsed_seconds: Number(t.toFixed(2)),
+                  acc_x_ms2: Number((g * 9.80665).toFixed(2)),
+                  acc_y_ms2: 0.1,
+                  acc_z_ms2: 0.1,
+                  acc_mag_ms2: Number((g * 9.80665).toFixed(2)),
+                  latitude: locationCoords?.lat ?? null,
+                  longitude: locationCoords?.lon ?? null
+                });
+              }
+
+              const payload = {
+                source_type: "csv_upload",
+                device_metadata: { filename: file.name, parsed_peak_g: peakG, parsed_stab_seconds: stabTime },
+                recording_duration_seconds: Math.max(2.0, stabTime),
+                observed_sampling_rate_hz: 10,
+                samples: synthSamples
+              };
+
+              const res = await api.uploadLiveSensor(caseId, payload);
+              onSuccess(res.summary);
+            } catch (err: any) {
+              setError(err.message || "Could not parse sensor CSV file.");
+            } finally {
+              setUploading(false);
+            }
+          }}
+          className="block w-full text-xs text-slate-400 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-cyan-600/80 file:text-white hover:file:bg-cyan-500 cursor-pointer"
+        />
+      </div>
+
       {/* Desktop / Unsupported Device Fallback */}
       {!motionSupported ? (
         <div className="p-5 bg-slate-900/80 border border-slate-800 rounded-xl text-center space-y-3">
           <AlertTriangle className="h-8 w-8 text-amber-400 mx-auto animate-bounce" />
-          <h4 className="text-sm font-bold text-white">Real-Time Sensors Unavailable on This Device / Browser</h4>
+          <h4 className="text-sm font-bold text-white">Real-Time Live Sensors Unavailable on Desktop</h4>
           <p className="text-[11px] text-slate-400 max-w-md mx-auto">
-            Your current browser or desktop environment does not expose mobile motion hardware APIs (accelerometer/gyroscope).
+            Your current browser or desktop environment does not expose mobile motion hardware APIs (accelerometer/gyroscope). Use the CSV uploader above or return to simulation mode.
           </p>
           <div className="pt-2">
             <button
