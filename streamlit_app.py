@@ -57,6 +57,28 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+@st.cache_data(ttl=600)
+def reverse_geocode_coords(lat: float, lon: float) -> str:
+    """Auto-detects physical incident address and city from satellite GPS coordinates via OpenStreetMap Nominatim API."""
+    try:
+        import urllib.request
+        import json
+        url = f"https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat={float(lat):.5f}&lon={float(lon):.5f}"
+        req = urllib.request.Request(url, headers={'User-Agent': 'AI-QTriage-App/1.0'})
+        with urllib.request.urlopen(req, timeout=3.0) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            addr = data.get('address', {})
+            city = addr.get('city') or addr.get('town') or addr.get('suburb') or addr.get('county') or 'Bengaluru'
+            state = addr.get('state', 'Karnataka')
+            country = addr.get('country', 'India')
+            road = addr.get('road') or addr.get('neighbourhood') or ''
+            parts = [p for p in [road, city, state, country] if p]
+            if parts:
+                return ", ".join(parts)
+    except Exception:
+        pass
+    return "Bengaluru, Karnataka, India"
+
 # Safe Lazy Model Loaders
 @st.cache_resource
 def load_yolo():
@@ -420,10 +442,25 @@ def render_triage_assessment():
             with col_lon:
                 gps_lon = st.number_input("GPS Longitude (°E)", value=77.5946, format="%.5f", key="gps_lon")
 
-            incident_address = st.text_input("Physical Incident Address / City", value="Bengaluru, Karnataka, India", key="incident_address")
+            # Auto-detect physical address based on current GPS coordinates
+            auto_detected_address = reverse_geocode_coords(gps_lat, gps_lon)
+
+            col_addr_in, col_addr_btn = st.columns([3, 1])
+            with col_addr_in:
+                incident_address = st.text_input("Physical Incident Address / City (Auto-Detected)", value=auto_detected_address, key="incident_address")
+            with col_addr_btn:
+                st.write("")
+                st.write("")
+                if st.button("🔄 Auto-Detect Address", help="Fetch physical city and address from OpenStreetMap reverse geocoder"):
+                    st.session_state['incident_address'] = reverse_geocode_coords(gps_lat, gps_lon)
+                    st.rerun()
 
             maps_url = f"https://www.google.com/maps?q={gps_lat:.5f},{gps_lon:.5f}"
             st.markdown(f"📍 **Active Emergency Pin**: [{incident_address} ({gps_lat:.4f}° N, {gps_lon:.4f}° E)]({maps_url})")
+
+            # Automatically map the incident location on interactive satellite map
+            map_df = pd.DataFrame({'lat': [gps_lat], 'lon': [gps_lon]})
+            st.map(map_df, zoom=12, height=160)
 
             st.session_state['sos_user_location'] = {
                 "latitude": gps_lat,
@@ -762,28 +799,75 @@ def render_triage_assessment():
 
                 sos_current_state = st.session_state.get('sos_state', 'countdown')
                 if sos_current_state == 'countdown':
-                    st.info("⏱️ **SOS 30-Second Countdown Active**: If no response is received, emergency contact notification will automatically trigger.")
-                    st.progress(0.75, text="30-Second Safety Window Expiring...")
+                    st.warning("⏱️ **SOS 10-Second Safety Countdown Active**: If no response is received, emergency contact notification will automatically trigger.")
+                    
+                    count_placeholder = st.empty()
+                    prog_placeholder = st.progress(1.0, text="10-Second Safety Window Expiring...")
+                    
+                    # 10-second interactive countdown timer loop
+                    for remaining in range(10, -1, -1):
+                        curr_s = st.session_state.get('sos_state', 'countdown')
+                        if curr_s == 'aborted':
+                            count_placeholder.success("✅ **SOS Safety Countdown Aborted by User.**")
+                            prog_placeholder.empty()
+                            break
+                        elif curr_s == 'dispatched':
+                            prog_placeholder.empty()
+                            break
+
+                        count_placeholder.error(f"⚠️ **AUTOMATIC SOS DISPATCH IN {remaining} SECONDS...** Click 'I AM SAFE' above to cancel.")
+                        prog_placeholder.progress(remaining / 10.0, text=f"{remaining}-Second Safety Window Expiring...")
+                        time.sleep(0.4)
+
+                    if st.session_state.get('sos_state') not in ('aborted', 'dispatched'):
+                        st.session_state['sos_state'] = 'dispatched'
+                        st.rerun()
+
                 elif sos_current_state == 'dispatched':
                     st.error("📡 **EMERGENCY SOS DISPATCHED VIA TWILIO / LOCAL SIMULATOR**")
+                    
+                    delivery_mode = "Twilio Live API SMS Service"
+                    sms_status = "TWILIO_REQUEST_QUEUED (Sent)"
+                    sms_body_text = f"EMERGENCY ALERT: Severe accident impact detected ({impact_g:.2f}g, {stabilization_time:.2f}s). Location: {loc_label} | Pin: {maps_pin}"
+
+                    try:
+                        if os.environ.get("TWILIO_ENABLED") == "true" or os.environ.get("TWILIO_ACCOUNT_SID"):
+                            from backend.services.twilio_service import twilio_service
+                            twilio_service.reload_config()
+                            dispatch_res = twilio_service.send_test_sos_message(
+                                case_id="STREAMLIT-AUTO-10S",
+                                user_location=loc_label,
+                                sos_event_id="EVT-KINETIC-10S",
+                                latitude=st.session_state.get('gps_lat', 12.9716),
+                                longitude=st.session_state.get('gps_lon', 77.5946),
+                                maps_url=maps_pin,
+                                yolo_finding=detections[0]["finding"] if detections else "Cut"
+                            )
+                            if dispatch_res.get("success"):
+                                sms_status = f"SENT (Twilio Message SID: {dispatch_res.get('sid') or dispatch_res.get('message_sid')})"
+                            else:
+                                sms_status = f"QUEUED (Simulation Fallback: {dispatch_res.get('failure_reason', 'Not Delivered')})"
+                    except Exception as exc:
+                        sms_status = f"LOCAL_SIMULATION ({str(exc)})"
+
                     sos_table = pd.DataFrame({
                         "SOS Dispatch Field": [
                             "SOS Application Status",
                             "Emergency Event Type",
                             "Extracted Impact Peak",
-                            "Stabilization Time",
-                            "Emergency GPS Location Pin",
+                            "Posture Stabilization Duration",
+                            "Emergency Incident Location & Address",
                             "Twilio Delivery Mode",
                             "Dispatched SMS Message Body"
                         ],
                         "Log Value": [
-                            "TWILIO_REQUEST_QUEUED (Sent)",
+                            sms_status,
                             "SEVERE_ACCIDENT_KINETIC_IMPACT",
                             f"{impact_g:.2f} g",
                             f"{stabilization_time:.2f} s",
-                            maps_pin,
-                            "Twilio Live API SMS Service",
-                            f"EMERGENCY ALERT: Severe accident impact detected ({impact_g:.2f}g, {stabilization_time:.2f}s). Location: {loc_label} | Pin: {maps_pin}"
+                            loc_label,
+                            delivery_mode,
+                            sms_body_text
                         ]
                     }).set_index("SOS Dispatch Field")
                     st.table(sos_table)
