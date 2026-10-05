@@ -1049,9 +1049,22 @@ export default function CaseDetails() {
                         <p className="text-[10px] text-amber-400/80 font-semibold">
                           ⚠ Low classifier confidence — result may be unreliable for this image.
                         </p>
-                      )}
                     </div>
                   </div>
+
+                  {/* ── Vision Model Dual-Model Reconciliation Banner ─────────────────────── */}
+                  {caseData.visible_injury?.yolo_finding_detected &&
+                   caseData.visible_injury?.classifier_finding &&
+                   String(caseData.visible_injury.yolo_finding).toLowerCase() !== String(caseData.visible_injury.classifier_finding).toLowerCase() && (
+                    <div className="p-3 bg-sky-950/40 border border-sky-800/60 rounded-xl space-y-1.5 text-xs text-sky-200">
+                      <div className="flex items-center gap-2 font-bold text-sky-300">
+                        <span>⚖️ Vision Model Dual-Model Reconciliation & Consensus</span>
+                      </div>
+                      <p className="text-[11px] text-sky-200/90 leading-relaxed">
+                        YOLO11 detected a localized <strong className="text-white">{caseData.visible_injury.yolo_finding}</strong> bounding box ({(Number(caseData.visible_injury.yolo_confidence || 0) * 100).toFixed(1)}%), while EfficientNetV2 classified global skin tissue as <strong className="text-white">{caseData.visible_injury.classifier_finding}</strong> ({(Number(caseData.visible_injury.classifier_probability || 0) * 100).toFixed(1)}%). Primary tissue classification favors the higher-confidence global classifier, with the localized bounding box preserved. Both evidence findings are evaluated in Gemini First-Aid guidance.
+                      </p>
+                    </div>
+                  )}
 
                   {/* ── Segmentation + Grad-CAM metadata ─────────────────────── */}
                   <div className="p-3 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2 text-xs text-slate-400">

@@ -549,6 +549,18 @@ def render_triage_assessment():
             with v4:
                 st.metric("Classifier Max Prob", f"{max_conf*100:.1f}%")
 
+            yolo_find_str = detections[0]["finding"].capitalize() if detections else "None"
+            yolo_conf_val = detections[0]["confidence"] if detections else 0.0
+            effnet_find_str = str(best_class).capitalize()
+
+            if detections and yolo_find_str.lower() != effnet_find_str.lower():
+                st.info(f"""
+                ⚖️ **Vision Model Reconciliation & Dual-Model Consensus**:
+                - **YOLO11 Object Detector Finding**: `{yolo_find_str}` (Target Bounding Box, Confidence: {yolo_conf_val*100:.1f}%)
+                - **EfficientNetV2 Classifier Category**: `{effnet_find_str}` (Global Skin Tissue Classification, Confidence: {max_conf*100:.1f}%)
+                - **Reconciled Consensus Finding**: The higher-confidence global skin classifier (`{effnet_find_str}` at {max_conf*100:.1f}%) characterizes the overall skin tissue, while YOLO11 (`{yolo_find_str}` at {yolo_conf_val*100:.1f}%) detects a localized lesion region. Both findings are preserved and passed to Gemini First-Aid guidance for evidence-grounded pre-treatment recommendation.
+                """)
+
             # Determine Risk Category with Motion Telemetry
             high_risk = (
                 pain_level >= 8 or 
@@ -632,19 +644,94 @@ def render_triage_assessment():
             render_shap_display(shap_list)
 
             st.markdown("---")
-            st.subheader("Step-by-Step Emergency First Aid Guidance")
-            if high_risk:
-                st.error("""
-                1. **Immobilize the Injury Site**: Do not attempt to force movement or straighten a deformed joint/limb.
-                2. **Bleeding Control**: Apply firm, continuous direct pressure with a clean cloth.
-                3. **Seek Medical Care**: Seek immediate urgent care or emergency medical evaluation.
-                """)
+            st.subheader("🤖 Google Gemini API Emergency Pre-Treatment Guidance")
+            
+            with st.spinner("Connecting to Google Gemini API (google-genai)..."):
+                try:
+                    from backend.services.first_aid_service import FirstAidGuidanceService
+                    fa_service = FirstAidGuidanceService()
+                    fa_res = fa_service.generate_first_aid_guidance(
+                        questionnaire_answers={
+                            "pain_level": pain_level,
+                            "location": location,
+                            "bleeding": bleeding,
+                            "weight_bearing": weight_bearing,
+                            "crack_pop": "yes" if crack_pop else "no",
+                            "numbness_tingling": "yes" if numbness else "no"
+                        },
+                        sensor_summary={
+                            "impact_g_force": impact_g,
+                            "post_impact_stabilization_seconds": stabilization_time,
+                            "source_type": device_type
+                        },
+                        visible_injury={
+                            "yolo_finding_detected": bool(detections),
+                            "yolo_finding": detections[0]["finding"] if detections else None,
+                            "yolo_confidence": detections[0]["confidence"] if detections else None,
+                            "classifier_finding": best_class,
+                            "classifier_probability": max_conf
+                        },
+                        rule_derived_category=triage_level.split()[0]
+                    )
+                except Exception as fa_err:
+                    fa_res = {
+                        "provider": "rule_based_fallback",
+                        "fallback_reason": str(fa_err),
+                        "guidance": {
+                            "immediate_first_aid_steps": [
+                                "Immobilize the affected limb/area and avoid bearing weight.",
+                                "Apply continuous gentle pressure if active bleeding is present.",
+                                "Keep patient comfortable and monitor vital signs."
+                            ],
+                            "actions_to_avoid": [
+                                "Do not force movement of restricted or painful joints.",
+                                "Do not apply direct ice or heat to open wounds."
+                            ],
+                            "symptoms_to_monitor": [
+                                "Monitor for increasing pain severity or distal numbness.",
+                                "Observe for signs of active swelling or skin color changes."
+                            ],
+                            "urgent_evaluation_warning": [
+                                "Seek professional medical evaluation for severe pain, deformity, or bleeding."
+                            ]
+                        }
+                    }
+
+            provider = fa_res.get("provider", "rule_based_fallback")
+            model_used = fa_res.get("model", "gemini-2.5-flash")
+            guidance_data = fa_res.get("guidance", {})
+
+            if provider == "gemini":
+                st.success(f"✨ **Live Google Gemini API First-Aid Active** (Model: `{model_used}` | Evidence Hash: `{fa_res.get('evidence_hash', '')}`)")
             else:
-                st.success("""
-                1. **Clean Wound**: Rinse with mild soap and clean running water.
-                2. **Apply Cold Pack**: Apply an ice pack wrapped in a cloth for 15–20 minutes to reduce swelling.
-                3. **Monitor Symptoms**: Watch for signs of infection (increased redness, warmth, throbbing pain).
-                """)
+                st.info(f"ℹ️ **Rule-Based First-Aid Guidance Active** ({fa_res.get('fallback_reason', 'Offline Mode')})")
+
+            g_col1, g_col2 = st.columns(2)
+            with g_col1:
+                st.markdown("#### ⚡ Immediate Emergency Pre-Treatment Steps")
+                steps = guidance_data.get("immediate_first_aid_steps", []) or fa_res.get("immediate_steps", [])
+                if steps:
+                    for idx, step in enumerate(steps, 1):
+                        st.markdown(f"{idx}. **{step}**")
+                else:
+                    st.markdown("1. **Rest & Immobilize**: Keep affected area still.")
+
+                st.markdown("#### 🛑 Actions to Avoid")
+                avoid_list = guidance_data.get("actions_to_avoid", []) or fa_res.get("avoid", [])
+                for act in avoid_list:
+                    st.markdown(f"- ❌ {act}")
+
+            with g_col2:
+                st.markdown("#### 🔍 Symptoms to Monitor")
+                monitor_list = guidance_data.get("symptoms_to_monitor", []) or fa_res.get("monitor", [])
+                for mon in monitor_list:
+                    st.markdown(f"- 👁️ {mon}")
+
+                urgent_warnings = guidance_data.get("urgent_evaluation_warning", []) or fa_res.get("urgent_warning_signs", [])
+                if urgent_warnings:
+                    st.markdown("#### 🚨 Urgent Warnings & Recommendations")
+                    for warn in urgent_warnings:
+                        st.error(f"⚠️ {warn}")
 
             # --- Section 4: Emergency SOS Countdown & Alert Dispatch ---
             if impact_g >= 4.0 and stabilization_time >= 1.5:
