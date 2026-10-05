@@ -419,6 +419,19 @@ def render_triage_assessment():
         gps_enable = st.checkbox("Enable Live Device Hardware GPS Chip (Satellite Coordinates)", value=True, key="enable_hardware_gps")
         
         if gps_enable:
+            # Check URL search params for live hardware GPS coordinates from browser JS
+            qp = st.query_params
+            if "gps_lat" in qp and "gps_lon" in qp:
+                try:
+                    q_lat = float(qp["gps_lat"])
+                    q_lon = float(qp["gps_lon"])
+                    if st.session_state.get('gps_lat') != q_lat or st.session_state.get('gps_lon') != q_lon:
+                        st.session_state['gps_lat'] = q_lat
+                        st.session_state['gps_lon'] = q_lon
+                        st.session_state['incident_address'] = reverse_geocode_coords(q_lat, q_lon)
+                except (ValueError, TypeError):
+                    pass
+
             # HTML5 Geolocation JS script widget
             components.html(
                 """
@@ -444,7 +457,19 @@ def render_triage_assessment():
                         var lon = position.coords.longitude.toFixed(5);
                         var acc = position.coords.accuracy ? position.coords.accuracy.toFixed(1) : "10";
                         status.innerHTML = "✅ <b>GPS Hardware Active:</b> Lat " + lat + "°, Lon " + lon + "° (Accuracy: " + acc + "m)<br>" +
-                          "<a href='https://www.google.com/maps?q=" + lat + "," + lon + "' target='_blank' style='color:#a855f7; font-weight:bold;'>🔗 Open Google Maps Satellite Pin</a>";
+                          "<a href='https://www.google.com/maps?q=" + lat + "," + lon + "' target='_blank' style='color:#a855f7; font-weight:bold;'>🔗 Open Google Maps Satellite Pin</a><br>" +
+                          "<span style='color:#34d399; font-weight:bold;'>Syncing exact coordinates & address with Streamlit inputs...</span>";
+                        
+                        try {
+                          var pUrl = new URL(window.parent.location.href);
+                          if (pUrl.searchParams.get('gps_lat') !== lat || pUrl.searchParams.get('gps_lon') !== lon) {
+                            pUrl.searchParams.set('gps_lat', lat);
+                            pUrl.searchParams.set('gps_lon', lon);
+                            window.parent.location.href = pUrl.toString();
+                          }
+                        } catch(e) {
+                          console.log("Parent URL update fallback:", e);
+                        }
                       },
                       function(error) {
                         status.innerHTML = "⚠️ Hardware GPS notice: " + error.message + ". Falling back to active cellular node location.";
@@ -454,7 +479,7 @@ def render_triage_assessment():
                   }
                 </script>
                 """,
-                height=95
+                height=110
             )
 
             # Auto-detect real user live location on first load
@@ -477,9 +502,9 @@ def render_triage_assessment():
 
             col_lat, col_lon = st.columns(2)
             with col_lat:
-                gps_lat = st.number_input("GPS Latitude (°N)", format="%.5f", key="gps_lat")
+                gps_lat = st.number_input("GPS Latitude (°N)", format="%.5f", key="gps_lat", on_change=_update_address_callback)
             with col_lon:
-                gps_lon = st.number_input("GPS Longitude (°E)", format="%.5f", key="gps_lon")
+                gps_lon = st.number_input("GPS Longitude (°E)", format="%.5f", key="gps_lon", on_change=_update_address_callback)
 
             col_addr_in, col_addr_btn = st.columns([3, 1])
             with col_addr_in:
