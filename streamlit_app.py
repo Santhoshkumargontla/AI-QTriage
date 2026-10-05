@@ -472,11 +472,14 @@ def render_triage_assessment():
                         }
                       },
                       function(error) {
-                        status.innerHTML = "⚠️ Hardware GPS notice: " + error.message + ". Falling back to active cellular node location.";
+                        status.innerHTML = "⚠️ Hardware GPS notice: " + error.message + ". Auto-detecting live network location.";
                       },
                       { enableHighAccuracy: true, timeout: 8000 }
                     );
                   }
+
+                  // Auto-trigger satellite hardware GPS request immediately when component loads
+                  setTimeout(getGPS, 200);
                 </script>
                 """,
                 height=110
