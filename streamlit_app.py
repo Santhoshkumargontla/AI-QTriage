@@ -2,6 +2,9 @@ import os
 import sys
 import tempfile
 import time
+import random
+import uuid
+from datetime import datetime, timezone
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -843,32 +846,44 @@ def render_triage_assessment():
                 elif sos_current_state == 'dispatched':
                     st.error("📡 **EMERGENCY SOS DISPATCHED VIA TWILIO / LOCAL SIMULATOR**")
                     
+                    dyn_case_id = f"CASE-{datetime.now().strftime('%Y%m%d')}-{random.randint(1000, 9999)}"
+                    dyn_event_id = f"EVT-{datetime.now().strftime('%H%M%S')}-{uuid.uuid4().hex[:4].upper()}"
+                    now_iso = datetime.now(timezone.utc).isoformat()
+                    cur_lat = float(st.session_state.get('gps_lat', 12.9716))
+                    cur_lon = float(st.session_state.get('gps_lon', 77.5946))
+                    phys_addr = st.session_state.get('incident_address', 'Live Hardware Location')
+
                     delivery_mode = "Twilio Live API SMS Service"
                     sms_status = "TWILIO_REQUEST_QUEUED (Sent)"
-                    sms_body_text = f"EMERGENCY ALERT: Severe accident impact detected ({impact_g:.2f}g, {stabilization_time:.2f}s). Location: {loc_label} | Pin: {maps_pin}"
 
                     try:
-                        if os.environ.get("TWILIO_ENABLED") == "true" or os.environ.get("TWILIO_ACCOUNT_SID"):
-                            from backend.services.twilio_service import twilio_service
-                            twilio_service.reload_config()
-                            dispatch_res = twilio_service.send_test_sos_message(
-                                case_id="STREAMLIT-AUTO-10S",
-                                user_location=loc_label,
-                                sos_event_id="EVT-KINETIC-10S",
-                                latitude=st.session_state.get('gps_lat', 12.9716),
-                                longitude=st.session_state.get('gps_lon', 77.5946),
-                                maps_url=maps_pin,
-                                yolo_finding=detections[0]["finding"] if detections else "Cut"
-                            )
-                            if dispatch_res.get("success"):
-                                sms_status = f"SENT (Twilio Message SID: {dispatch_res.get('sid') or dispatch_res.get('message_sid')})"
-                            else:
-                                sms_status = f"QUEUED (Simulation Fallback: {dispatch_res.get('failure_reason', 'Not Delivered')})"
+                        from backend.services.twilio_service import twilio_service
+                        twilio_service.reload_config()
+                        dispatch_res = twilio_service.send_test_sos_message(
+                            case_id=dyn_case_id,
+                            user_location=phys_addr,
+                            sos_event_id=dyn_event_id,
+                            trigger_time=now_iso,
+                            latitude=cur_lat,
+                            longitude=cur_lon,
+                            maps_url=maps_pin,
+                            yolo_finding=detections[0]["finding"] if detections else "Cut"
+                        )
+                        if dispatch_res.get("success"):
+                            sid_val = dispatch_res.get('twilio_message_sid') or dispatch_res.get('sid') or dispatch_res.get('message_sid')
+                            sms_status = f"SENT (Twilio Message SID: {sid_val})"
+                        else:
+                            sms_status = f"LOCAL SIMULATION / QUEUED ({dispatch_res.get('failure_reason', 'Not Delivered')})"
                     except Exception as exc:
                         sms_status = f"LOCAL_SIMULATION ({str(exc)})"
 
+                    sms_body_text = f"AI-QTriage SOS | Case: {dyn_case_id[-8:]} | Event: {dyn_event_id[-8:]} | Time: {datetime.now().strftime('%d %b %Y %H:%M:%S')} IST | Finding: {detections[0]['finding'] if detections else 'Cut'} | Loc: {phys_addr} (GPS {cur_lat:.5f},{cur_lon:.5f}) | {maps_pin}"
+
                     sos_table = pd.DataFrame({
                         "SOS Dispatch Field": [
+                            "Dynamic Case ID",
+                            "Emergency Event ID",
+                            "Dispatch Timestamp (Live)",
                             "SOS Application Status",
                             "Emergency Event Type",
                             "Extracted Impact Peak",
@@ -878,11 +893,14 @@ def render_triage_assessment():
                             "Dispatched SMS Message Body"
                         ],
                         "Log Value": [
+                            dyn_case_id,
+                            dyn_event_id,
+                            datetime.now().strftime("%d %b %Y %H:%M:%S IST"),
                             sms_status,
                             "SEVERE_ACCIDENT_KINETIC_IMPACT",
                             f"{impact_g:.2f} g",
                             f"{stabilization_time:.2f} s",
-                            loc_label,
+                            f"{phys_addr} ({cur_lat:.4f}° N, {cur_lon:.4f}° E)",
                             delivery_mode,
                             sms_body_text
                         ]
@@ -1048,10 +1066,15 @@ def render_sos_simulator():
     with col1:
         st.subheader("📍 Location Settings")
         st.checkbox("Attach User GPS Coordinates", value=True)
-        lat = st.number_input("Latitude", value=12.9716, format="%.5f")
-        lng = st.number_input("Longitude", value=77.5946, format="%.5f")
-        maps_link = f"https://maps.google.com/?q={lat:.5f},{lng:.5f}"
-        st.markdown(f"Maps Link: [{maps_link}]({maps_link})")
+        default_lat = float(st.session_state.get('gps_lat', 12.9716))
+        default_lng = float(st.session_state.get('gps_lon', 77.5946))
+        default_addr = str(st.session_state.get('incident_address', 'Bengaluru, Karnataka, India'))
+
+        lat = st.number_input("GPS Latitude (°N)", value=default_lat, format="%.5f", key="sos_sim_lat")
+        lng = st.number_input("GPS Longitude (°E)", value=default_lng, format="%.5f", key="sos_sim_lng")
+        incident_addr = st.text_input("Physical Incident Address / City (Auto-Detected)", value=default_addr, key="sos_sim_addr")
+        maps_link = f"https://www.google.com/maps?q={lat:.5f},{lng:.5f}"
+        st.markdown(f"📍 **Active Emergency Pin**: [{incident_addr} ({lat:.4f}° N, {lng:.4f}° E)]({maps_link})")
 
     with col2:
         st.subheader("⚙️ Twilio API Credentials Configuration")
@@ -1068,14 +1091,16 @@ def render_sos_simulator():
 
     with btn_col1:
         if st.button("⏱️ Run Local Countdown Simulation", type="secondary"):
+            dyn_case_id = f"CASE-{datetime.now().strftime('%Y%m%d')}-{random.randint(1000, 9999)}"
+            dyn_event_id = f"EVT-{datetime.now().strftime('%H%M%S')}-{uuid.uuid4().hex[:4].upper()}"
             progress_bar = st.progress(100)
             status_text = st.empty()
             for i in range(10, -1, -1):
-                status_text.error(f"⚠️ LOCAL COUNTDOWN: {i} seconds remaining before simulated alert!")
+                status_text.error(f"⚠️ LOCAL COUNTDOWN: {i} seconds remaining before simulated alert! Case: {dyn_case_id} | Event: {dyn_event_id}")
                 progress_bar.progress(i * 10)
-                time.sleep(0.3)
-            status_text.success("LOCAL SIMULATION COMPLETE: Event logged in database.")
-            st.info(f"Attached Maps Location: {maps_link}")
+                time.sleep(0.2)
+            status_text.success(f"LOCAL SIMULATION COMPLETE: Event logged for {dyn_case_id} ({dyn_event_id}).")
+            st.info(f"📍 Attached Location: {incident_addr} ({lat:.4f}° N, {lng:.4f}° E)\n🔗 Maps Pin: {maps_link}")
 
     with btn_col2:
         if st.button("📱 Dispatch Real Twilio SMS Alert", type="primary"):
@@ -1093,11 +1118,16 @@ def render_sos_simulator():
                     try:
                         from backend.services.twilio_service import twilio_service
                         twilio_service.reload_config()
+
+                        dyn_case_id = f"CASE-{datetime.now().strftime('%Y%m%d')}-{random.randint(1000, 9999)}"
+                        dyn_event_id = f"EVT-{datetime.now().strftime('%H%M%S')}-{uuid.uuid4().hex[:4].upper()}"
+                        now_iso = datetime.now(timezone.utc).isoformat()
                         
                         res = twilio_service.send_test_sos_message(
-                            case_id="STREAMLIT-DEMO-001",
-                            user_location="Streamlit User Location",
-                            sos_event_id="EVT-99120",
+                            case_id=dyn_case_id,
+                            user_location=incident_addr,
+                            sos_event_id=dyn_event_id,
+                            trigger_time=now_iso,
                             latitude=lat,
                             longitude=lng,
                             maps_url=maps_link,
@@ -1105,7 +1135,7 @@ def render_sos_simulator():
                         )
 
                         if res.get("success"):
-                            st.success("✅ REAL TWILIO SMS DISPATCHED SUCCESSFULLY!")
+                            st.success(f"✅ REAL TWILIO SMS DISPATCHED SUCCESSFULLY! Case: {dyn_case_id} | Event: {dyn_event_id}")
                             st.json(res)
                         else:
                             st.error(f"❌ Twilio Dispatch Failed: {res.get('failure_reason') or res.get('message')}")

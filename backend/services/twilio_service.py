@@ -58,7 +58,15 @@ def format_gps_location_line(
     maps_url: str | None = None,
     fallback: str | None = None,
 ) -> str:
-    """Prefer GPS coordinates (+ short maps URL) over injury body-part text."""
+    """Combines physical address / city name, GPS coordinates, and maps pin URL into a compact line."""
+    loc_parts = []
+    fb = str(fallback or "").strip()
+    fb = "".join(c for c in fb if ord(c) < 128)
+    if fb and fb.lower() not in ("unspecified", "not_provided", "unknown", "unknown location", "streamlit user location"):
+        if len(fb) > 35:
+            fb = fb[:32] + "..."
+        loc_parts.append(fb)
+
     try:
         if latitude is not None and longitude is not None:
             lat = float(latitude)
@@ -67,17 +75,15 @@ def format_gps_location_line(
                 coord = f"{lat:.5f},{lng:.5f}"
                 url = (maps_url or f"https://maps.google.com/?q={coord}").strip()
                 url = "".join(c for c in url if ord(c) < 128)
-                # Keep maps URL short enough for trial SMS limits.
                 if len(url) > 48:
                     url = f"https://maps.google.com/?q={coord}"
-                return f"GPS {coord} {url}"
+                loc_parts.append(f"GPS {coord} {url}")
     except (TypeError, ValueError):
         pass
-    fb = str(fallback or "").strip() or "GPS unavailable"
-    fb = "".join(c for c in fb if ord(c) < 128)
-    if fb.lower() in ("unspecified", "not_provided", "unknown", "unknown location"):
-        return "GPS unavailable"
-    return f"Site:{fb}"
+
+    if loc_parts:
+        return " | ".join(loc_parts)
+    return "GPS unavailable"
 
 
 def build_compact_sos_message(
