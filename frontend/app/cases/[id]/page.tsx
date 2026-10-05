@@ -904,7 +904,7 @@ export default function CaseDetails() {
 
                 <div className="space-y-4 flex flex-col justify-between">
 
-                  {/* ── YOLO11 Object Detection ─────────────────────────────── */}
+                  {/* -- YOLO11 Object Detection --------------------------------- */}
                   <div className="p-3 bg-slate-950/70 border border-slate-700 rounded-xl space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">YOLO11 Object Detection</span>
@@ -985,7 +985,7 @@ export default function CaseDetails() {
                     </div>
                   </div>
 
-                  {/* ── EfficientNet Research Classifier ─────────────────────── */}
+                  {/* -- EfficientNet Research Classifier ----------------------- */}
                   <div className="p-3 bg-slate-950/40 border border-slate-800 rounded-xl space-y-2">
                     <div className="flex items-center justify-between">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-sky-400">Research Image Classifier</span>
@@ -1049,10 +1049,11 @@ export default function CaseDetails() {
                         <p className="text-[10px] text-amber-400/80 font-semibold">
                           ⚠ Low classifier confidence — result may be unreliable for this image.
                         </p>
+                      )}
                     </div>
                   </div>
 
-                  {/* ── Vision Model Dual-Model Reconciliation Banner ─────────────────────── */}
+                  {/* -- Vision Model Dual-Model Reconciliation Banner ----------------------- */}
                   {caseData.visible_injury?.yolo_finding_detected &&
                    caseData.visible_injury?.classifier_finding &&
                    String(caseData.visible_injury.yolo_finding).toLowerCase() !== String(caseData.visible_injury.classifier_finding).toLowerCase() && (
@@ -1066,7 +1067,7 @@ export default function CaseDetails() {
                     </div>
                   )}
 
-                  {/* ── Segmentation + Grad-CAM metadata ─────────────────────── */}
+                  {/* -- Segmentation + Grad-CAM metadata ----------------------- */}
                   <div className="p-3 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2 text-xs text-slate-400">
                     <div className="flex items-center justify-between gap-2">
                       <span className="text-[10px] font-bold uppercase tracking-wider text-sky-400">Research Segmentation</span>
