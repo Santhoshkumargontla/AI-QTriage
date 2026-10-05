@@ -15,6 +15,9 @@ ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
+GPS_COMPONENT_DIR = os.path.join(ROOT_DIR, "streamlit_gps_component")
+hardware_gps_bridge = components.declare_component("hardware_gps_bridge", path=GPS_COMPONENT_DIR)
+
 st.set_page_config(
     page_title="AI-QTriage | Multimodal Emergency Injury Triage",
     page_icon="🩺",
@@ -419,73 +422,21 @@ def render_triage_assessment():
         gps_enable = st.checkbox("Enable Live Device Hardware GPS Chip (Satellite Coordinates)", value=True, key="enable_hardware_gps")
         
         if gps_enable:
-            # Check URL search params for live hardware GPS coordinates from browser JS
-            qp = st.query_params
-            if "gps_lat" in qp and "gps_lon" in qp:
-                try:
-                    q_lat = float(qp["gps_lat"])
-                    q_lon = float(qp["gps_lon"])
-                    if st.session_state.get('gps_lat') != q_lat or st.session_state.get('gps_lon') != q_lon:
-                        st.session_state['gps_lat'] = q_lat
-                        st.session_state['gps_lon'] = q_lon
-                        st.session_state['incident_address'] = reverse_geocode_coords(q_lat, q_lon)
-                except (ValueError, TypeError):
-                    pass
+            # Render bi-directional HTML5 hardware GPS custom component
+            gps_val = hardware_gps_bridge(key="hw_gps_chip_reader")
+            if gps_val and isinstance(gps_val, dict):
+                h_lat = gps_val.get("lat")
+                h_lon = gps_val.get("lon")
+                h_ts = gps_val.get("timestamp")
+                if h_lat is not None and h_lon is not None and h_ts is not None:
+                    if h_ts != st.session_state.get('last_hw_gps_ts') or 'gps_lat' not in st.session_state:
+                        st.session_state['last_hw_gps_ts'] = h_ts
+                        st.session_state['gps_lat'] = h_lat
+                        st.session_state['gps_lon'] = h_lon
+                        st.session_state['incident_address'] = reverse_geocode_coords(h_lat, h_lon)
+                        st.rerun()
 
-            # HTML5 Geolocation JS script widget
-            components.html(
-                """
-                <div style="font-family: sans-serif; background: #0f172a; padding: 12px; border-radius: 8px; border: 1px solid #334155; color: #f8fafc;">
-                  <button id="gpsBtn" onclick="getGPS()" style="background: #0284c7; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-weight: bold; cursor: pointer;">
-                    📍 Read Hardware GPS Chip Coordinates
-                  </button>
-                  <div id="gpsStatus" style="margin-top: 8px; font-size: 13px; color: #38bdf8;">
-                    Click button above to request satellite GPS hardware coordinates.
-                  </div>
-                </div>
-                <script>
-                  function getGPS() {
-                    var status = document.getElementById("gpsStatus");
-                    if (!navigator.geolocation) {
-                      status.innerHTML = "❌ Geolocation API is not supported by your browser.";
-                      return;
-                    }
-                    status.innerHTML = "⏳ Accessing device GPS hardware chip...";
-                    navigator.geolocation.getCurrentPosition(
-                      function(position) {
-                        var lat = position.coords.latitude.toFixed(5);
-                        var lon = position.coords.longitude.toFixed(5);
-                        var acc = position.coords.accuracy ? position.coords.accuracy.toFixed(1) : "10";
-                        status.innerHTML = "✅ <b>GPS Hardware Active:</b> Lat " + lat + "°, Lon " + lon + "° (Accuracy: " + acc + "m)<br>" +
-                          "<a href='https://www.google.com/maps?q=" + lat + "," + lon + "' target='_blank' style='color:#a855f7; font-weight:bold;'>🔗 Open Google Maps Satellite Pin</a><br>" +
-                          "<span style='color:#34d399; font-weight:bold;'>Syncing exact coordinates & address with Streamlit inputs...</span>";
-                        
-                        try {
-                          var pUrl = new URL(window.parent.location.href);
-                          if (pUrl.searchParams.get('gps_lat') !== lat || pUrl.searchParams.get('gps_lon') !== lon) {
-                            pUrl.searchParams.set('gps_lat', lat);
-                            pUrl.searchParams.set('gps_lon', lon);
-                            window.parent.location.href = pUrl.toString();
-                          }
-                        } catch(e) {
-                          console.log("Parent URL update fallback:", e);
-                        }
-                      },
-                      function(error) {
-                        status.innerHTML = "⚠️ Hardware GPS notice: " + error.message + ". Auto-detecting live network location.";
-                      },
-                      { enableHighAccuracy: true, timeout: 8000 }
-                    );
-                  }
-
-                  // Auto-trigger satellite hardware GPS request immediately when component loads
-                  setTimeout(getGPS, 200);
-                </script>
-                """,
-                height=110
-            )
-
-            # Auto-detect real user live location on first load
+            # Auto-detect real user live network location on initial fallback load
             if 'gps_lat' not in st.session_state or 'gps_lon' not in st.session_state:
                 live_lat, live_lon, _ = fetch_live_network_location()
                 st.session_state['gps_lat'] = live_lat

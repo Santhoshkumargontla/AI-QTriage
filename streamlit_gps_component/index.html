@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #f8fafc;
+    }
+    .gps-container {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .gps-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .gps-btn {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    .gps-btn:hover {
+      background: linear-gradient(135deg, #0369a1, #075985);
+      transform: translateY(-1px);
+    }
+    .gps-btn:active {
+      transform: translateY(0);
+    }
+    .gps-badge {
+      font-size: 11px;
+      background: #1e293b;
+      color: #38bdf8;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #334155;
+      font-weight: 600;
+    }
+    .gps-status {
+      font-size: 12.5px;
+      color: #38bdf8;
+      line-height: 1.4;
+    }
+  </style>
+  <script>
+    function setStreamlitValue(val) {
+      window.parent.postMessage({
+        isStreamlitMessage: true,
+        type: "streamlit:setComponentValue",
+        value: val
+      }, "*");
+    }
+
+    function setFrameHeight(height) {
+      window.parent.postMessage({
+        isStreamlitMessage: true,
+        type: "streamlit:setFrameHeight",
+        height: height
+      }, "*");
+    }
+
+    function requestHardwareGPS() {
+      var statusEl = document.getElementById("gpsStatus");
+      if (!navigator.geolocation) {
+        statusEl.innerHTML = "❌ Geolocation API is not supported by your browser.";
+        return;
+      }
+      statusEl.innerHTML = "⏳ Accessing device hardware satellite GPS chip...";
+      navigator.geolocation.getCurrentPosition(
+        function(pos) {
+          var lat = parseFloat(pos.coords.latitude.toFixed(5));
+          var lon = parseFloat(pos.coords.longitude.toFixed(5));
+          var acc = pos.coords.accuracy ? pos.coords.accuracy.toFixed(1) : "10";
+          
+          statusEl.innerHTML = "✅ <b>Hardware Satellite GPS Active:</b> Lat " + lat + "°, Lon " + lon + "° (Accuracy: " + acc + "m)<br>" +
+            "<span style='color:#34d399; font-weight:bold;'>Synced live hardware coordinates with Streamlit inputs & map!</span>";
+
+          setStreamlitValue({
+            lat: lat,
+            lon: lon,
+            accuracy: acc,
+            timestamp: Date.now()
+          });
+        },
+        function(err) {
+          statusEl.innerHTML = "⚠️ Hardware GPS notice: " + err.message + ". Fallback to live network location.";
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0
+        }
+      );
+    }
+
+    window.addEventListener("DOMContentLoaded", function() {
+      setFrameHeight(90);
+      // Auto-request hardware GPS coordinates immediately on component initialization
+      setTimeout(requestHardwareGPS, 250);
+    });
+  </script>
+</head>
+<body>
+  <div class="gps-container">
+    <div class="gps-header">
+      <button class="gps-btn" onclick="requestHardwareGPS()">
+        📍 Read Hardware GPS Chip Coordinates
+      </button>
+      <span class="gps-badge">HTML5 Hardware Geolocation</span>
+    </div>
+    <div id="gpsStatus" class="gps-status">
+      Requesting hardware satellite coordinates...
+    </div>
+  </div>
+</body>
+</html>
