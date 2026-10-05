@@ -442,18 +442,25 @@ def render_triage_assessment():
             with col_lon:
                 gps_lon = st.number_input("GPS Longitude (°E)", value=77.5946, format="%.5f", key="gps_lon")
 
-            # Auto-detect physical address based on current GPS coordinates
-            auto_detected_address = reverse_geocode_coords(gps_lat, gps_lon)
+            def _update_address_callback():
+                lat_v = st.session_state.get('gps_lat', 12.9716)
+                lon_v = st.session_state.get('gps_lon', 77.5946)
+                st.session_state['incident_address'] = reverse_geocode_coords(lat_v, lon_v)
+
+            if 'incident_address' not in st.session_state:
+                st.session_state['incident_address'] = reverse_geocode_coords(gps_lat, gps_lon)
 
             col_addr_in, col_addr_btn = st.columns([3, 1])
             with col_addr_in:
-                incident_address = st.text_input("Physical Incident Address / City (Auto-Detected)", value=auto_detected_address, key="incident_address")
+                incident_address = st.text_input("Physical Incident Address / City (Auto-Detected)", key="incident_address")
             with col_addr_btn:
                 st.write("")
                 st.write("")
-                if st.button("🔄 Auto-Detect Address", help="Fetch physical city and address from OpenStreetMap reverse geocoder"):
-                    st.session_state['incident_address'] = reverse_geocode_coords(gps_lat, gps_lon)
-                    st.rerun()
+                st.button(
+                    "🔄 Auto-Detect Address",
+                    on_click=_update_address_callback,
+                    help="Fetch physical city and address from OpenStreetMap reverse geocoder"
+                )
 
             maps_url = f"https://www.google.com/maps?q={gps_lat:.5f},{gps_lon:.5f}"
             st.markdown(f"📍 **Active Emergency Pin**: [{incident_address} ({gps_lat:.4f}° N, {gps_lon:.4f}° E)]({maps_url})")
