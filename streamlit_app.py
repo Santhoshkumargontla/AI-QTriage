@@ -79,6 +79,27 @@ def reverse_geocode_coords(lat: float, lon: float) -> str:
         pass
     return "Bengaluru, Karnataka, India"
 
+@st.cache_data(ttl=300)
+def fetch_live_network_location():
+    """Queries live network IP geolocation to get real latitude, longitude, and city/region/country."""
+    try:
+        import urllib.request
+        import json
+        req = urllib.request.Request('http://ip-api.com/json/', headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=3.0) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            if data.get('status') == 'success':
+                lat = float(data['lat'])
+                lon = float(data['lon'])
+                city = data.get('city', '')
+                region = data.get('regionName', '')
+                country = data.get('country', '')
+                addr_str = f"{city}, {region}, {country}".strip(", ")
+                return lat, lon, addr_str
+    except Exception:
+        pass
+    return 12.9716, 77.5946, "Bengaluru, Karnataka, India"
+
 # Safe Lazy Model Loaders
 @st.cache_resource
 def load_yolo():
@@ -436,19 +457,29 @@ def render_triage_assessment():
                 height=95
             )
 
-            col_lat, col_lon = st.columns(2)
-            with col_lat:
-                gps_lat = st.number_input("GPS Latitude (°N)", value=12.9716, format="%.5f", key="gps_lat")
-            with col_lon:
-                gps_lon = st.number_input("GPS Longitude (°E)", value=77.5946, format="%.5f", key="gps_lon")
+            # Auto-detect real user live location on first load
+            if 'gps_lat' not in st.session_state or 'gps_lon' not in st.session_state:
+                live_lat, live_lon, _ = fetch_live_network_location()
+                st.session_state['gps_lat'] = live_lat
+                st.session_state['gps_lon'] = live_lon
+                st.session_state['incident_address'] = reverse_geocode_coords(live_lat, live_lon)
+
+            def _fetch_live_location_callback():
+                live_lat, live_lon, _ = fetch_live_network_location()
+                st.session_state['gps_lat'] = live_lat
+                st.session_state['gps_lon'] = live_lon
+                st.session_state['incident_address'] = reverse_geocode_coords(live_lat, live_lon)
 
             def _update_address_callback():
                 lat_v = st.session_state.get('gps_lat', 12.9716)
                 lon_v = st.session_state.get('gps_lon', 77.5946)
                 st.session_state['incident_address'] = reverse_geocode_coords(lat_v, lon_v)
 
-            if 'incident_address' not in st.session_state:
-                st.session_state['incident_address'] = reverse_geocode_coords(gps_lat, gps_lon)
+            col_lat, col_lon = st.columns(2)
+            with col_lat:
+                gps_lat = st.number_input("GPS Latitude (°N)", format="%.5f", key="gps_lat")
+            with col_lon:
+                gps_lon = st.number_input("GPS Longitude (°E)", format="%.5f", key="gps_lon")
 
             col_addr_in, col_addr_btn = st.columns([3, 1])
             with col_addr_in:
@@ -457,9 +488,9 @@ def render_triage_assessment():
                 st.write("")
                 st.write("")
                 st.button(
-                    "🔄 Auto-Detect Address",
-                    on_click=_update_address_callback,
-                    help="Fetch physical city and address from OpenStreetMap reverse geocoder"
+                    "📡 Detect My Live Location",
+                    on_click=_fetch_live_location_callback,
+                    help="Fetch exact live physical city, state, and GPS coordinates from your active device/network connection"
                 )
 
             maps_url = f"https://www.google.com/maps?q={gps_lat:.5f},{gps_lon:.5f}"
