@@ -423,7 +423,7 @@ def render_triage_assessment():
         
         if gps_enable:
             # Render bi-directional HTML5 hardware GPS custom component
-            gps_val = hardware_gps_bridge(key="hw_gps_chip_reader")
+            gps_val = hardware_gps_bridge(key="hw_gps_chip_reader", default=None)
             if gps_val and isinstance(gps_val, dict):
                 h_lat = gps_val.get("lat")
                 h_lon = gps_val.get("lon")

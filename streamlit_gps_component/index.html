@@ -62,11 +62,11 @@
     }
   </style>
   <script>
-    function setStreamlitValue(val) {
+    function sendComponentReady() {
       window.parent.postMessage({
         isStreamlitMessage: true,
-        type: "streamlit:setComponentValue",
-        value: val
+        type: "streamlit:componentReady",
+        apiVersion: 1
       }, "*");
     }
 
@@ -75,6 +75,14 @@
         isStreamlitMessage: true,
         type: "streamlit:setFrameHeight",
         height: height
+      }, "*");
+    }
+
+    function setStreamlitValue(val) {
+      window.parent.postMessage({
+        isStreamlitMessage: true,
+        type: "streamlit:setComponentValue",
+        value: val
       }, "*");
     }
 
@@ -112,10 +120,17 @@
       );
     }
 
+    // Listen for render messages from Streamlit parent
+    window.addEventListener("message", function(event) {
+      if (event.data && event.data.type === "streamlit:render") {
+        setFrameHeight(90);
+      }
+    });
+
     window.addEventListener("DOMContentLoaded", function() {
+      sendComponentReady();
       setFrameHeight(90);
-      // Auto-request hardware GPS coordinates immediately on component initialization
-      setTimeout(requestHardwareGPS, 250);
+      setTimeout(requestHardwareGPS, 200);
     });
   </script>
 </head>
