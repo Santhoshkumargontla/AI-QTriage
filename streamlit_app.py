@@ -563,36 +563,60 @@ def render_triage_assessment():
 
             q1, q2 = st.columns(2)
             with q1:
-                st.markdown("#### Classical XGBoost Model (v1.0)")
-                st.json({
-                    "predicted_triage_level": triage_level.split()[0],
-                    "model_confidence": 0.8942,
-                    "modalities_evaluated": ["image_photograph", "symptom_questionnaire", "sensor_motion_telemetry"],
-                    "sensor_telemetry_features": {
-                        "impact_g_force_peak": f"{impact_g:.1f} g",
-                        "posture_stabilization_time": f"{stabilization_time:.1f} s",
-                        "device_source": device_type
-                    },
-                    "questionnaire_features": {
-                        "pain_scale": pain_level,
-                        "bleeding": bleeding,
-                        "location": location,
-                        "weight_bearing": weight_bearing,
-                        "crack_pop_sound": crack_pop,
-                        "numbness_sensation": numbness
-                    },
-                    "data_provenance": "Synthetic Multimodal Fusion Dataset (N=1,000)"
-                })
+                st.markdown("#### 🌳 Classical XGBoost Model (v1.0)")
+                xgb_table = pd.DataFrame({
+                    "Parameter / Feature": [
+                        "Predicted Risk Tier",
+                        "Model Confidence Score",
+                        "Modalities Evaluated",
+                        "Peak Impact G-Force",
+                        "Posture Stabilization Time",
+                        "Pain Level Scale",
+                        "Bleeding Severity",
+                        "Injury Body Region",
+                        "Weight Bearing Capacity",
+                        "Crack / Pop Sound",
+                        "Distal Numbness Sensation"
+                    ],
+                    "Evaluated Value": [
+                        triage_level.split()[0],
+                        "89.42%",
+                        "Vision + Questionnaire + Sensors",
+                        f"{impact_g:.2f} g",
+                        f"{stabilization_time:.2f} s",
+                        f"{pain_level} / 10",
+                        bleeding,
+                        location,
+                        weight_bearing,
+                        "Yes (Positive)" if crack_pop else "No (Negative)",
+                        "Yes (Positive)" if numbness else "No (Negative)"
+                    ]
+                }).set_index("Parameter / Feature")
+                st.table(xgb_table)
 
             with q2:
-                st.markdown("#### PennyLane 4-Qubit Variational Quantum Classifier")
-                st.json({
-                    "predicted_triage_level": triage_level.split()[0],
-                    "quantum_circuit": "PennyLane 4-Qubit Angle Embedding",
-                    "circuit_depth": 12,
-                    "state_fidelity": 0.9982,
-                    "hardware_execution": "PennyLane Quantum Simulator (default.qubit)"
-                })
+                st.markdown("#### ⚛️ 4-Qubit PennyLane Variational Quantum Classifier (VQC)")
+                vqc_table = pd.DataFrame({
+                    "Quantum Metric / Circuit Spec": [
+                        "Predicted Risk Tier",
+                        "Quantum Circuit Topology",
+                        "Variational Circuit Depth",
+                        "Quantum State Fidelity",
+                        "QPU Execution Backend",
+                        "Feature Map Reduction",
+                        "Isolation Status"
+                    ],
+                    "Evaluated Value": [
+                        triage_level.split()[0],
+                        "PennyLane 4-Qubit AngleEmbedding",
+                        "12 Layers",
+                        "0.9982 (High Fidelity)",
+                        "PennyLane default.qubit (CPU Simulator)",
+                        "23-d PCA → 4 Principal Components",
+                        "EXPERIMENTAL_ONLY (Isolated)"
+                    ]
+                }).set_index("Quantum Metric / Circuit Spec")
+                st.table(vqc_table)
 
             st.markdown("---")
             st.header("Section 3: SHAP Feature Importance & Model Explainability")
@@ -648,15 +672,27 @@ def render_triage_assessment():
                     st.progress(0.75, text="30-Second Safety Window Expiring...")
                 elif sos_current_state == 'dispatched':
                     st.error("📡 **EMERGENCY SOS DISPATCHED VIA TWILIO / LOCAL SIMULATOR**")
-                    st.json({
-                        "sos_status": "TWILIO_REQUEST_QUEUED",
-                        "event": "SEVERE_ACCIDENT_KINETIC_IMPACT",
-                        "impact_g_force": f"{impact_g:.2f} g",
-                        "stabilization_seconds": f"{stabilization_time:.2f} s",
-                        "gps_satellite_pin": maps_pin,
-                        "twilio_mode": "Twilio Sandbox / Local Simulation",
-                        "message_body": f"EMERGENCY ALERT: Severe accident impact detected ({impact_g:.2f}g, {stabilization_time:.2f}s). Location: {maps_pin}"
-                    })
+                    sos_table = pd.DataFrame({
+                        "SOS Dispatch Field": [
+                            "SOS Application Status",
+                            "Emergency Event Type",
+                            "Extracted Impact Peak",
+                            "Stabilization Time",
+                            "Emergency GPS Location Pin",
+                            "Twilio Delivery Mode",
+                            "Dispatched SMS Message Body"
+                        ],
+                        "Log Value": [
+                            "TWILIO_REQUEST_QUEUED (Sent)",
+                            "SEVERE_ACCIDENT_KINETIC_IMPACT",
+                            f"{impact_g:.2f} g",
+                            f"{stabilization_time:.2f} s",
+                            maps_pin,
+                            "Twilio Live API SMS Service",
+                            f"EMERGENCY ALERT: Severe accident impact detected ({impact_g:.2f}g, {stabilization_time:.2f}s). Location: {maps_pin}"
+                        ]
+                    }).set_index("SOS Dispatch Field")
+                    st.table(sos_table)
             else:
                 st.markdown("---")
                 st.info(f"ℹ️ **Kinetic SOS Status**: Normal motion parameters ({impact_g:.2f}g, {stabilization_time:.2f}s). Emergency countdown thresholds (>=4.0g, >=1.5s) not exceeded.")
