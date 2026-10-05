@@ -420,13 +420,16 @@ def render_triage_assessment():
             with col_lon:
                 gps_lon = st.number_input("GPS Longitude (°E)", value=77.5946, format="%.5f", key="gps_lon")
 
+            incident_address = st.text_input("Physical Incident Address / City", value="Bengaluru, Karnataka, India", key="incident_address")
+
             maps_url = f"https://www.google.com/maps?q={gps_lat:.5f},{gps_lon:.5f}"
-            st.markdown(f"📍 **Active Emergency Pin**: [`{gps_lat:.4f}° N, {gps_lon:.4f}° E`]({maps_url})")
+            st.markdown(f"📍 **Active Emergency Pin**: [{incident_address} ({gps_lat:.4f}° N, {gps_lon:.4f}° E)]({maps_url})")
 
             st.session_state['sos_user_location'] = {
                 "latitude": gps_lat,
                 "longitude": gps_lon,
-                "location_label": f"Live Hardware GPS Chip ({gps_lat:.4f} N, {gps_lon:.4f} E)",
+                "address": incident_address,
+                "location_label": f"{incident_address} ({gps_lat:.4f}° N, {gps_lon:.4f}° E)",
                 "maps_pin": maps_url,
                 "gps_active": True
             }
@@ -434,6 +437,7 @@ def render_triage_assessment():
             st.session_state['sos_user_location'] = {
                 "latitude": None,
                 "longitude": None,
+                "address": "GPS Disabled",
                 "location_label": "GPS Disabled by User",
                 "gps_active": False
             }
@@ -442,7 +446,7 @@ def render_triage_assessment():
         st.subheader("📋 Patient Symptom Questionnaire")
         with st.form("clinical_questionnaire_form"):
             location = st.selectbox(
-                "1. Where is the injury located on the body?",
+                "1. Body Injury Site (Anatomical Location)",
                 ["Lower Leg / Shin / Ankle", "Upper Arm / Forearm / Wrist", "Hand / Fingers", "Foot / Toes", "Torso / Chest / Back", "Head / Neck / Face"]
             )
             mechanism = st.selectbox(
@@ -564,6 +568,7 @@ def render_triage_assessment():
             q1, q2 = st.columns(2)
             with q1:
                 st.markdown("#### 🌳 Classical XGBoost Model (v1.0)")
+                geo_loc_label = st.session_state.get('sos_user_location', {}).get('location_label', f"Bengaluru, Karnataka, India ({st.session_state.get('gps_lat', 12.9716):.4f}° N, {st.session_state.get('gps_lon', 77.5946):.4f}° E)")
                 xgb_table = pd.DataFrame({
                     "Parameter / Feature": [
                         "Predicted Risk Tier",
@@ -573,7 +578,8 @@ def render_triage_assessment():
                         "Posture Stabilization Time",
                         "Pain Level Scale",
                         "Bleeding Severity",
-                        "Injury Body Region",
+                        "Body Injury Site (Anatomical)",
+                        "Geographic Incident Location (GPS)",
                         "Weight Bearing Capacity",
                         "Crack / Pop Sound",
                         "Distal Numbness Sensation"
@@ -587,6 +593,7 @@ def render_triage_assessment():
                         f"{pain_level} / 10",
                         bleeding,
                         location,
+                        geo_loc_label,
                         weight_bearing,
                         "Yes (Positive)" if crack_pop else "No (Negative)",
                         "Yes (Positive)" if numbness else "No (Negative)"
@@ -689,7 +696,7 @@ def render_triage_assessment():
                             f"{stabilization_time:.2f} s",
                             maps_pin,
                             "Twilio Live API SMS Service",
-                            f"EMERGENCY ALERT: Severe accident impact detected ({impact_g:.2f}g, {stabilization_time:.2f}s). Location: {maps_pin}"
+                            f"EMERGENCY ALERT: Severe accident impact detected ({impact_g:.2f}g, {stabilization_time:.2f}s). Location: {loc_label} | Pin: {maps_pin}"
                         ]
                     }).set_index("SOS Dispatch Field")
                     st.table(sos_table)
