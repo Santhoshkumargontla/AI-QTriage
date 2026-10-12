@@ -1,0 +1,277 @@
+{
+  "generated_at": "2026-10-12T17:54:18.752113+00:00",
+  "git_head": "e8ecd2d59a6a1876fc5f1f241495034b1a29ba38",
+  "active_models": {
+    "YOLO11 Detection": {
+      "name": "YOLO11 Detection",
+      "canonical_path": "ml/models/vision/yolo11_injury_best.pt",
+      "wrapper": "ml.vision.yolo_wrapper.YOLO11Detector",
+      "training_script": "ml/training/train_yolo_retrain_v2.py",
+      "evaluation_artifact": "ml/models/yolo_threshold_eval/THRESHOLD_SWEEP_REPORT.json",
+      "metadata_path": "ml/models/vision/yolo11_metadata.json",
+      "task": "Bounding Box Object Detection (6 injury classes: abrasion, bruise, burn, cut, laceration, wound)",
+      "status": "READY_FOR_RESEARCH_DEMO",
+      "file_info": {
+        "exists": true,
+        "path": "ml/models/vision/yolo11_injury_best.pt",
+        "size_bytes": 5433882,
+        "sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+        "modified_iso": "2026-09-06T17:15:19.079494+00:00"
+      }
+    },
+    "EfficientNetV2 Classification": {
+      "name": "EfficientNetV2 Classification",
+      "canonical_path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "wrapper": "ml.vision.efficientnet_wrapper.EfficientNetV2Classifier",
+      "training_script": "ml/training/train_efficientnet_kaggle_v1.py",
+      "evaluation_artifact": "ml/models/vision/efficientnetv2_metadata.json",
+      "metadata_path": "ml/models/vision/efficientnetv2_metadata.json",
+      "task": "Multi-class Image Classification (8 classes: abrasion, bruise, burn, cut, laceration, wound, normal, ood_reject)",
+      "status": "READY_FOR_RESEARCH_DEMO",
+      "file_info": {
+        "exists": true,
+        "path": "ml/models/vision/efficientnetv2_injury_best.pt",
+        "size_bytes": 81650563,
+        "sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
+        "modified_iso": "2026-09-06T17:15:19.019723+00:00"
+      }
+    },
+    "ResNet34-UNet Segmentation": {
+      "name": "ResNet34-UNet Segmentation",
+      "canonical_path": "ml/models/vision/unet_injury_best.pt",
+      "wrapper": "ml.vision.unet_wrapper.UNetSegmenter",
+      "training_script": "ml/training/train_unet.py",
+      "evaluation_artifact": "ml/models/vision/unet_metadata.json",
+      "metadata_path": "ml/models/vision/unet_metadata.json",
+      "task": "Binary Wound Pixel Segmentation (wound mask vs background)",
+      "status": "READY_FOR_RESEARCH_DEMO",
+      "file_info": {
+        "exists": true,
+        "path": "ml/models/vision/unet_injury_best.pt",
+        "size_bytes": 97917463,
+        "sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+        "modified_iso": "2026-08-29T08:24:20.947750+00:00"
+      }
+    },
+    "Sensor Motion Event Classifier": {
+      "name": "Sensor Motion Event Classifier",
+      "canonical_path": "ml/models/sensor_motion_best.json",
+      "wrapper": "ml.classifiers.sensor_classifier.SensorClassifier",
+      "training_script": "ml/training/train_sensor_model.py",
+      "evaluation_artifact": "ml/models/sensor_metadata.json",
+      "metadata_path": "ml/models/sensor_metadata.json",
+      "task": "Kinematic Motion Event Classification (normal_activity, fall, impact)",
+      "sidecar_artifacts": [
+        "ml/models/sensor_scaler.pkl"
+      ],
+      "status": "TRAINED",
+      "file_info": {
+        "exists": true,
+        "path": "ml/models/sensor_motion_best.json",
+        "size_bytes": 582892,
+        "sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d",
+        "modified_iso": "2026-09-05T17:12:59.976602+00:00"
+      },
+      "sidecar_info": [
+        {
+          "exists": true,
+          "path": "ml/models/sensor_scaler.pkl",
+          "size_bytes": 775,
+          "sha256": "43ab14c958dd887cc1a23be87cb056e82b646ee42c7363bb438add5891c09aef",
+          "modified_iso": "2026-09-05T17:12:57.813462+00:00"
+        }
+      ]
+    },
+    "XGBoost Multimodal Classifier": {
+      "name": "XGBoost Multimodal Classifier",
+      "canonical_path": "ml/models/xgboost_best.json",
+      "wrapper": "ml.classifiers.xgboost_classifier.XGBoostClassifier",
+      "training_script": "ml/training/train_xgboost.py",
+      "evaluation_artifact": "data/results/canonical_held_out_evaluation_corrected.json",
+      "metadata_path": "ml/models/xgboost_metadata.json",
+      "task": "Multimodal Severity Triage (LOW, MODERATE, HIGH) across 23 features",
+      "status": "TRAINED",
+      "file_info": {
+        "exists": true,
+        "path": "ml/models/xgboost_best.json",
+        "size_bytes": 199210,
+        "sha256": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25",
+        "modified_iso": "2026-10-12T15:38:20.205478+00:00"
+      }
+    },
+    "Experimental 4-Qubit VQC": {
+      "name": "Experimental 4-Qubit VQC",
+      "canonical_path": "ml/models/vqc/vqc_weights.npz",
+      "wrapper": "ml.classifiers.vqc_classifier.VQCClassifier",
+      "training_script": "ml/training/train_vqc.py",
+      "evaluation_artifact": "data/results/canonical_held_out_evaluation_corrected.json",
+      "metadata_path": "ml/models/vqc/vqc_metadata.json",
+      "task": "QML Variational Quantum Classifier (AngleEmbedding + StronglyEntanglingLayers) on classical simulator",
+      "sidecar_artifacts": [
+        "ml/models/vqc/scaler.pkl",
+        "ml/models/vqc/pca.pkl"
+      ],
+      "status": "EXPERIMENTAL_ONLY",
+      "file_info": {
+        "exists": true,
+        "path": "ml/models/vqc/vqc_weights.npz",
+        "size_bytes": 1086,
+        "sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412",
+        "modified_iso": "2026-10-12T15:42:39.444702+00:00"
+      },
+      "sidecar_info": [
+        {
+          "exists": true,
+          "path": "ml/models/vqc/scaler.pkl",
+          "size_bytes": 960,
+          "sha256": "1c4f2821fb166e9d0ba00446d1dac78eaf41deccdf3963dd6d5e014298089c33",
+          "modified_iso": "2026-10-12T15:42:39.442696+00:00"
+        },
+        {
+          "exists": true,
+          "path": "ml/models/vqc/pca.pkl",
+          "size_bytes": 1198,
+          "sha256": "64107285a3378fe3e14ae53e14d403ccb912e5999cf891dced6048b068b8d2b6",
+          "modified_iso": "2026-10-12T15:42:39.443731+00:00"
+        }
+      ]
+    }
+  },
+  "datasets": [
+    {
+      "name": "yolo_expanded_v1",
+      "path": "data/datasets/yolo_expanded_v1",
+      "manifest": "data/datasets/yolo_expanded_v1/PREPARE_REPORT.json",
+      "yaml": "data/datasets/yolo_expanded_v1/data.yaml",
+      "task": "YOLO11 Detection",
+      "manifest_info": {
+        "exists": true,
+        "path": "data/datasets/yolo_expanded_v1/PREPARE_REPORT.json",
+        "size_bytes": 2550,
+        "sha256": "01e09a0b99cb1d5efeeea9e2d36b6605a5c0684f46171b80f78474e1a4a2d0b6",
+        "modified_iso": "2026-09-06T17:15:18.122259+00:00"
+      }
+    },
+    {
+      "name": "efficientnet_kaggle_v1",
+      "path": "data/datasets/efficientnet_kaggle_v1",
+      "manifest": "data/datasets/efficientnet_kaggle_v1/manifest.csv",
+      "task": "EfficientNetV2 Classification",
+      "manifest_info": {
+        "exists": true,
+        "path": "data/datasets/efficientnet_kaggle_v1/manifest.csv",
+        "size_bytes": 921676,
+        "sha256": "07b80db5bd50fe2e653c4a3f4ae1c8d2eda5fd26fa40cda45c45ca7826134ef3",
+        "modified_iso": "2026-08-30T06:10:37.605205+00:00"
+      }
+    },
+    {
+      "name": "unet_deduped_subject",
+      "path": "data/datasets/unet_deduped_subject",
+      "manifest": "data/datasets/unet_deduped_subject/manifest.csv",
+      "task": "ResNet34-UNet Segmentation",
+      "manifest_info": {
+        "exists": true,
+        "path": "data/datasets/unet_deduped_subject/manifest.csv",
+        "size_bytes": 234870,
+        "sha256": "168f423358bc98e13820c3b50d3494781d46ae1abae8e7f441d30495842e15f7",
+        "modified_iso": "2026-08-30T06:11:40.014603+00:00"
+      }
+    },
+    {
+      "name": "sisfall_uci_har_real",
+      "path": "data/datasets/manifests/sensor_real_manifest.csv",
+      "manifest": "data/datasets/manifests/sensor_real_manifest.csv",
+      "task": "Sensor Motion Event Classifier",
+      "manifest_info": {
+        "exists": true,
+        "path": "data/datasets/manifests/sensor_real_manifest.csv",
+        "size_bytes": 1019995,
+        "sha256": "39c755c7726d8af95453d9e7c94490f348a902a1e9883750c6d267a6da27acff",
+        "modified_iso": "2026-09-05T17:12:57.040247+00:00"
+      }
+    },
+    {
+      "name": "synthetic_multimodal_fusion",
+      "path": "data/datasets/multimodal_synthetic_manifest.csv",
+      "manifest": "data/datasets/multimodal_synthetic_manifest.csv",
+      "task": "XGBoost & VQC Multimodal Classification",
+      "manifest_info": {
+        "exists": false,
+        "path": "data/datasets/multimodal_synthetic_manifest.csv"
+      }
+    }
+  ],
+  "evaluation_artifacts": {
+    "data/results/canonical_held_out_evaluation_corrected.json": {
+      "exists": true,
+      "path": "data/results/canonical_held_out_evaluation_corrected.json",
+      "size_bytes": 7279,
+      "sha256": "fe4987f775a4ce4e91486d7070f3d7077caed230b4b391430c8695f3b98dac15",
+      "modified_iso": "2026-10-12T15:44:23.885396+00:00"
+    },
+    "data/results/independent_ablation_results.json": {
+      "exists": true,
+      "path": "data/results/independent_ablation_results.json",
+      "size_bytes": 14462,
+      "sha256": "ebc3ee171dd9e165048dc817797a35b28f3bdd977a39f16653248ada9f081fbb",
+      "modified_iso": "2026-10-12T15:43:15.263878+00:00"
+    },
+    "data/results/phase1_duplicate_split_audit.json": {
+      "exists": true,
+      "path": "data/results/phase1_duplicate_split_audit.json",
+      "size_bytes": 1632,
+      "sha256": "12a7f44d678a58073dbf64e50f8b871e810bce16f80dd8d4cba89f3ae7ff8f9b",
+      "modified_iso": "2026-10-12T15:44:23.886394+00:00"
+    },
+    "data/results/phase1_git_artifact_inventory.json": {
+      "exists": true,
+      "path": "data/results/phase1_git_artifact_inventory.json",
+      "size_bytes": 3070,
+      "sha256": "c0496fd378cdfcd86bd6b1f3dfc8077124ae7a638f3cc2085ed9ebd37e301cd7",
+      "modified_iso": "2026-10-12T17:31:38.767731+00:00"
+    },
+    "data/results/phase1_software_verification.json": {
+      "exists": true,
+      "path": "data/results/phase1_software_verification.json",
+      "size_bytes": 2356,
+      "sha256": "6c6bd26b2633b5270e716b5882d282a5f9c6ac0003dbe24298ea63823e3a6e76",
+      "modified_iso": "2026-10-12T17:31:50.293993+00:00"
+    },
+    "data/results/canonical_held_out_evaluation.json": {
+      "exists": true,
+      "path": "data/results/canonical_held_out_evaluation.json",
+      "size_bytes": 5426,
+      "sha256": "153cc720057973d8e05952497a2bace98b148fa7f505c71f1fbf99e3e136aaba",
+      "modified_iso": "2026-09-06T17:15:18.124258+00:00"
+    },
+    "data/results/evaluation_results.json": {
+      "exists": true,
+      "path": "data/results/evaluation_results.json",
+      "size_bytes": 2464,
+      "sha256": "e37dacc2e9db1e02fac01d7f1196325e79a58aedcc088be1a31376bb8e5370c8",
+      "modified_iso": "2026-09-06T17:15:18.124258+00:00"
+    },
+    "scratch/audit_evidence/vision_full_reproduced_eval.json": {
+      "exists": true,
+      "path": "scratch/audit_evidence/vision_full_reproduced_eval.json",
+      "size_bytes": 2818,
+      "sha256": "f9b05686c67d3c04f0a01caeea3ba5807b9dd0e2eecaf1aa23799b2399745413",
+      "modified_iso": "2026-10-12T17:00:05.247853+00:00"
+    },
+    "scratch/audit_evidence/reproduced_metrics.json": {
+      "exists": true,
+      "path": "scratch/audit_evidence/reproduced_metrics.json",
+      "size_bytes": 2720,
+      "sha256": "fc4533b5d48d0f6faad7d2fc038b1ec583e24a1d4d0640332d4fed5dcc83bd09",
+      "modified_iso": "2026-10-12T16:48:44.788458+00:00"
+    },
+    "scratch/audit_evidence/yolo_reproduced_metrics.json": {
+      "exists": true,
+      "path": "scratch/audit_evidence/yolo_reproduced_metrics.json",
+      "size_bytes": 130,
+      "sha256": "78ea2aa2417ec077f887e3a01681e97582b537ca8ea17bf67d74b2326a157848",
+      "modified_iso": "2026-10-12T16:50:02.582662+00:00"
+    }
+  }
+}

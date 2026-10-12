@@ -1,0 +1,118 @@
+{
+  "audit_timestamp": "2026-10-12T17:59:12.327831+00:00",
+  "datasets": {
+    "yolo_expanded_v1": {
+      "total_images_verified": 2813,
+      "splits": {
+        "train": 1935,
+        "val": 442,
+        "test": 436
+      },
+      "corrupted_files": {
+        "train": 0,
+        "val": 0,
+        "test": 0
+      },
+      "hash_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "leakage_detected": false,
+      "subject_id_available": false,
+      "subject_leakage_note": "Public photo merger from Roboflow + HF + burns; patient subject IDs are unavailable across sources."
+    },
+    "efficientnet_kaggle_v1": {
+      "total_images_verified": 3039,
+      "splits": {
+        "train": 2104,
+        "test": 473,
+        "val": 462
+      },
+      "classes": {
+        "wound": 1999,
+        "bruise": 243,
+        "normal": 218,
+        "abrasion": 167,
+        "burn": 145,
+        "laceration": 122,
+        "cut": 100,
+        "ood_reject": 45
+      },
+      "corrupted_files": 0,
+      "hash_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "leakage_detected": false,
+      "subject_id_available": false,
+      "subject_leakage_note": "Kaggle wound photo collection; image filenames deduplicated by content hash; patient IDs unavailable."
+    },
+    "unet_deduped_subject": {
+      "total_pairs_verified": 464,
+      "unique_subjects": 463,
+      "splits": {
+        "train": 326,
+        "test": 69,
+        "val": 69
+      },
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "image_hash_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "missing_or_corrupted": 0,
+      "leakage_detected": false
+    },
+    "sisfall_uci_har_real": {
+      "total_windows_verified": 6505,
+      "unique_subjects": 68,
+      "splits": {
+        "train": 4247,
+        "test": 1228,
+        "val": 1030
+      },
+      "classes": {
+        "normal_activity": 4467,
+        "fall": 1798,
+        "impact": 240
+      },
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "leakage_detected": false,
+      "notes": "Grouped strictly by Subject ID. Train=4247, Val=1030, Test=1228."
+    },
+    "synthetic_multimodal_fusion": {
+      "total_samples": 200,
+      "splits": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "index_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "duplicate_feature_vectors_in_train": [
+        8,
+        143,
+        54,
+        191
+      ],
+      "duplicate_feature_vectors_in_test": [],
+      "leakage_detected": false,
+      "provenance_class": "SYNTHETIC",
+      "genuinely_paired_clinical_samples": 0
+    }
+  }
+}

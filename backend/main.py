@@ -1289,9 +1289,10 @@ def _comparison_api_payload(cmp: dict) -> dict:
     """Build the Research Results comparison payload from a live evaluation artifact."""
     if "xgboost" not in cmp and isinstance(cmp.get("comparison"), dict):
         cmp = cmp["comparison"]
-    vqc = cmp.get("vqc") or {}
-    xgb = cmp.get("xgboost") or {}
-    sample_count = cmp.get("held_out_test_samples") or xgb.get("test_sample_count") or vqc.get("test_sample_count")
+    vqc = cmp.get("vqc") or cmp.get("vqc_evaluation") or {}
+    xgb = cmp.get("xgboost") or cmp.get("xgboost_evaluation") or {}
+    splits = cmp.get("splits") or {}
+    sample_count = cmp.get("held_out_test_samples") or splits.get("test") or xgb.get("test_sample_count") or vqc.get("test_sample_count") or (len(xgb.get("test_predictions", [])) if "test_predictions" in xgb else None)
     return {
         "status": "evaluated",
         "sample_count": sample_count,
@@ -2596,7 +2597,21 @@ def get_model_comparisons():
 @app.get("/api/evaluation/ablation", tags=["Evaluation"])
 def get_ablation_benchmarks():
     """Retrieve ablation studies and perturbations from evaluation artifacts."""
-    from ml.models.canonical_paths import EVAL_RESULTS, exists, resolve_existing
+    from ml.models.canonical_paths import EVAL_RESULTS, EVAL_INDEPENDENT_ABLATION, exists, resolve_existing
+    indep_path = resolve_existing(EVAL_INDEPENDENT_ABLATION)
+    if exists(indep_path):
+        try:
+            with open(indep_path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                studies = data if isinstance(data, list) else data.get("ablation_study", [])
+                return {
+                    "status": "evaluated",
+                    "sample_count": 30,
+                    "ablation_study": studies
+                }
+        except (json.JSONDecodeError, OSError) as e:
+            print(f"Failed to read independent ablation JSON: {e}")
+
     eval_json_path = resolve_existing(EVAL_RESULTS)
     if exists(eval_json_path):
         try:
