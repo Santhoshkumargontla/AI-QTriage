@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-12T16:05:30Z",
+  "timestamp": "2026-10-12T16:30:00Z",
   "environment": {
     "os": "Windows 11",
     "python": "3.14.5",
@@ -7,7 +7,10 @@
     "npm": "11.11.1",
     "nextjs": "16.3.0",
     "pytest": "8.4.1",
-    "git_head": "30c40c5d172eb73aa33d8fb52625ef91ecf13fcd"
+    "code_revision_tested": "273dc2789dc5734b1226c60905242815ae8c9b32",
+    "base_documentation_commit": "9e460bfb12f08add3d6a071cb82e94dc764c11aa",
+    "git_branch": "main",
+    "remote_origin": "https://github.com/Santhoshkumargontla/AI-QTriage.git"
   },
   "backend_pytest": {
     "command": "backend\\venv\\Scripts\\pytest.exe backend/tests/ -q",
@@ -17,7 +20,18 @@
     "failed": 0,
     "warnings": 3,
     "duration_seconds": 168.28,
+    "code_revision_tested": "273dc2789dc5734b1226c60905242815ae8c9b32",
     "details": "All 244 tests passed across backend/tests/ including core pipeline, calibration, OOD/blank image reliability, test_phase1_split_integrity, and test_model_checkpoint_integrity."
+  },
+  "integrity_regression_suite": {
+    "command": "backend\\venv\\Scripts\\pytest.exe backend/tests/test_phase1_split_integrity.py backend/tests/test_model_checkpoint_integrity.py backend/tests/test_research_registry_consistency.py -q",
+    "exit_code": 0,
+    "status": "PASS",
+    "passed": 14,
+    "failed": 0,
+    "warnings": 3,
+    "duration_seconds": 21.85,
+    "details": "14 targeted Phase 1 regression tests passed covering duplicate isolation, 0 cross-split leakage, canonical checkpoint existence and exact SHA-256 byte-matching."
   },
   "frontend_typescript": {
     "command": "npx tsc --noEmit",

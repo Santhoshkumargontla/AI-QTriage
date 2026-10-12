@@ -1,12 +1,18 @@
 {
+  "audit_version": "2.0.0-final-reconciled",
+  "timestamp": "2026-10-12T16:30:00Z",
   "git_state": {
     "branch": "main",
-    "head_sha": "30c40c5d172eb73aa33d8fb52625ef91ecf13fcd",
-    "head_commit": "30c40c5d docs: update Phase 1 verification report with latest commit SHA",
+    "code_revision_tested": "273dc2789dc5734b1226c60905242815ae8c9b32",
+    "code_revision_tested_message": "fix(phase1): resolve 6 audit issues, eliminate data leakage, retrain models, add integrity test suite",
+    "base_documentation_commit": "9e460bfb12f08add3d6a071cb82e94dc764c11aa",
+    "base_documentation_commit_message": "docs: sync Phase 1 verification reports with committed HEAD SHA",
     "remote_origin_url": "https://github.com/Santhoshkumargontla/AI-QTriage.git",
-    "remote_head_sha": "30c40c5d172eb73aa33d8fb52625ef91ecf13fcd",
+    "remote_head_sha": "9e460bfb12f08add3d6a071cb82e94dc764c11aa",
     "is_in_sync_with_remote": true,
-    "verification_note": "Branch main is up to date with origin/main at commit 30c40c5d172eb73aa33d8fb52625ef91ecf13fcd."
+    "working_tree_tracked_files_status": "clean",
+    "untracked_scratch_scripts_count": 27,
+    "untracked_scratch_note": "Local exploratory inspection scripts in scratch/ remain untracked and outside version control."
   },
   "checkpoint_hash_verification": {
     "yolo11": {

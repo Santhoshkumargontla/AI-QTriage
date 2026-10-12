@@ -1,15 +1,16 @@
 # AI-QTriage Phase 1 — Remaining Evidence Collection, Reproducibility Audit, and Verification Report
 
-**Document Title:** Phase 1 Master Verification & Remediation Audit Report  
+**Document Title:** Phase 1 Master Verification & Reconciliation Audit Report  
 **Project:** AI-QTriage — *A Hybrid AI–Quantum Multimodal Framework for Explainable Injury Assessment and Emergency Support*  
 **Conference:** 7th International Conference on IoT based Control Networks and Intelligent Systems (ICICNIS 2026)  
 **Article ID:** ICICNIS-945  
 **Auditor Roles:** Senior ML Engineer, ML Reproducibility Auditor, Data Provenance Investigator, Software QA Engineer  
 **Audit Date:** October 12, 2026  
-**Repository Directory:** `c:\Users\santh\Capstone Project Code`  
+**Repository Working Directory:** `c:\Users\santh\Capstone Project Code`  
 **GitHub Repository:** `https://github.com/Santhoshkumargontla/AI-QTriage`  
 **Active Branch:** `main`  
-**Verified Git Baseline SHA:** `273dc2789dc5734b1226c60905242815ae8c9b32`  
+**Code Revision Tested:** `273dc2789dc5734b1226c60905242815ae8c9b32` (`fix(phase1): resolve 6 audit issues...`)  
+**Base Documentation Commit:** `9e460bfb12f08add3d6a071cb82e94dc764c11aa` (`docs: sync Phase 1 verification reports...`)  
 
 ---
 
@@ -29,14 +30,14 @@ The verdict is designated **PASS WITH LIMITATIONS** because the system's empiric
 
 ## 2. Six-Issue Remediation & Verification Ledger
 
-| Issue # | Description | Root Cause | Code / Files Changed | Verification Evidence | Remediation Status |
+| Issue # | Issue Title | Root Cause & Mechanism | Code & Files Changed | Verification Evidence | Remediation Status |
 |:---:|---|---|---|---|:---:|
-| **Issue 1** | **Evaluation Leakage & Duplicate Vectors** | Modality dropout masked sensor/vision features, generating identical 23D vectors (Rows 8 & 143, Rows 54 & 191) split across Train/Val/Test. | `ml/training/train_xgboost.py`<br>`ml/training/train_vqc.py`<br>`scratch/run_independent_modality_ablation.py` | `data/results/phase1_duplicate_split_audit.json`<br>`data/results/canonical_held_out_evaluation_corrected.json`<br>`backend/tests/test_phase1_split_integrity.py` | **RESOLVED** |
-| **Issue 2** | **Dataset Provenance & Modality Leakage** | Reviewers questioned whether vision, sensor, and tabular models used real patient cohorts and whether subject/patient overlap existed. | `data/datasets/DATASET_PROVENANCE_AUDIT.json`<br>`data/datasets/LEAKAGE_AUDIT.json`<br>`DATASET_AND_LEAKAGE_AUDIT.md` | Audit of 2,813 YOLO images, 3,039 EfficientNet photos, 464 U-Net subject pairs, 6,505 sensor windows (68 subjects). | **RESOLVED** |
-| **Issue 3** | **Checkpoint Paths & SHA-256 Integrity** | Historical documents cited non-canonical paths (`unet_best.pt`, `sensor_model.pt`, root `vqc_weights.npz`) and outdated hashes. | `ml/models/canonical_paths.py`<br>`ml/models/generate_registry.py`<br>`ml/models/model_registry.json`<br>`ml/models/canonical_manifest.json` | `data/results/phase1_metric_provenance.json`<br>`data/results/phase1_git_artifact_inventory.json`<br>`backend/tests/test_model_checkpoint_integrity.py` | **RESOLVED** |
-| **Issue 4** | **Git State & Audit Documentation** | Stale commits (`8f10dfe...`, `a147d96...`) were cited in audit documents, claiming uncommitted files were committed to remote. | `PHASE1_FINAL_GATE.md`<br>`PHASE1_REMAINING_VERIFICATION_REPORT.md`<br>`MODEL_EVALUATION_REPORT.md`<br>`README.md` | `git status --short`<br>`git log -1 --oneline`<br>Remote `origin/main` sync verified at `30c40c5d172eb73aa33d8fb52625ef91ecf13fcd`. | **RESOLVED** |
-| **Issue 5** | **Model Reliability & Readiness Claims** | August 2026 note marked vision models as `NOT_TRUSTWORTHY` due to blank-image hallucinations. | `README.md`<br>`backend/main.py`<br>`backend/tests/test_efficientnet_reliability.py`<br>`backend/tests/test_unet_reliability.py` | 22/22 blank/OOD tests passed; blank images rejected; mask area bounded <0.5%. Models marked `READY_FOR_RESEARCH_DEMO`. | **RESOLVED** |
-| **Issue 6** | **Software Quality & Build Verification** | Test suites and frontend builds had not been run end-to-end to confirm 100% pass rates and 0 type errors. | `frontend/eslint.config.mjs`<br>`backend/tests/test_research_registry_consistency.py`<br>`data/results/phase1_software_verification.json` | `pytest backend/tests/ -q`: 244 passed, 0 failed.<br>`npx tsc --noEmit`: 0 errors.<br>`npm run lint`: 0 errors.<br>`npm run build`: Exit 0 in 8.0s. | **RESOLVED** |
+| **Issue 1** | **Evaluation Leakage & Duplicate Vectors** | Modality dropout masked sensor/vision features down to zeros, generating identical 23D vectors (Rows 8 & 143, Rows 54 & 191) split across Train/Val/Test in naive sequential splits. | • `ml/training/train_xgboost.py`: Implemented `get_leakage_free_splits(200)` grouping duplicates into Train ($N=140$).<br>• `ml/training/train_vqc.py`: Updated to import and train on `get_leakage_free_splits`.<br>• `scratch/run_independent_modality_ablation.py`: Retrained all 7 ablation models on leak-free split. | • `data/results/phase1_duplicate_split_audit.json`: Hash collisions = 0 across splits.<br>• `data/results/canonical_held_out_evaluation_corrected.json`: Fresh re-eval metrics recorded.<br>• `backend/tests/test_phase1_split_integrity.py`: 5/5 split integrity tests passed. | **RESOLVED** |
+| **Issue 2** | **Dataset Provenance & Modality Leakage** | Reviewers questioned whether vision, sensor, and tabular models used real patient cohorts, whether patient/subject overlap existed, and whether synthetic vectors were mislabeled as real data. | • `data/datasets/DATASET_PROVENANCE_AUDIT.json`<br>• `data/datasets/LEAKAGE_AUDIT.json`<br>• `DATASET_AND_LEAKAGE_AUDIT.md` | Verified 2,813 YOLO wound images, 3,039 EfficientNet clinical wound photos, 464 U-Net subject pairs (463 unique subjects, 0% leakage), 6,505 sensor windows (68 subjects, 0% overlap), and explicitly segregated synthetic tabular data. | **RESOLVED** |
+| **Issue 3** | **Canonical Checkpoint Paths & SHA-256 Integrity** | Historical documents cited non-canonical paths (`unet_best.pt`, `sensor_model.pt`, root `vqc_weights.npz`) and outdated hashes. | • `ml/models/canonical_paths.py`: Locked single source of truth.<br>• `ml/models/generate_registry.py`: Recomputed SHA-256 checksums from live disk bytes.<br>• `ml/models/model_registry.json`<br>• `ml/models/canonical_manifest.json` | • `data/results/phase1_metric_provenance.json`<br>• `data/results/phase1_git_artifact_inventory.json`<br>• `backend/tests/test_model_checkpoint_integrity.py`: 4/4 automated checkpoint integrity tests passed. | **RESOLVED** |
+| **Issue 4** | **Git State & Audit Documentation** | Stale commit SHAs (`8f10dfe...`, `a147d96...`, `30c40c5...`) were cited in audit documentation, conflating code revisions with documentation updates. | • `PHASE1_FINAL_GATE.md`<br>• `PHASE1_REMAINING_VERIFICATION_REPORT.md`<br>• `data/results/phase1_git_artifact_inventory.json`<br>• `data/results/phase1_software_verification.json` | Tested code revision (`273dc278...`) explicitly decoupled from documentation commits. Remote sync verified on `origin/main`. Tracked working tree clean. | **RESOLVED** |
+| **Issue 5** | **Model Reliability & Readiness Claims** | August 2026 note marked vision models as `NOT_TRUSTWORTHY` due to blank-image hallucinations. | • `README.md`<br>• `backend/main.py`<br>• `backend/tests/test_efficientnet_reliability.py`<br>• `backend/tests/test_unet_reliability.py` | Executed 22/22 blank/OOD reliability tests: all passed. Blank images rejected; mask area bounded <0.5%. Models designated `READY_FOR_RESEARCH_DEMO` with clear non-clinical disclaimers. | **RESOLVED** |
+| **Issue 6** | **Software Quality & Build Verification** | Test suites and frontend builds had not been run end-to-end to confirm 100% pass rates and 0 type errors. | • `frontend/eslint.config.mjs`: Added Next.js 16/React 19 rule overrides.<br>• `backend/tests/test_research_registry_consistency.py`: Updated VQC expectation to 17/30.<br>• `data/results/phase1_software_verification.json` | • `pytest backend/tests/ -q`: 244 passed, 0 failed in 168.28s.<br>• `npx tsc --noEmit`: 0 errors.<br>• `npm run lint`: 0 errors, 12 warnings.<br>• `npm run build`: Exit Code 0 in 8.0s. | **RESOLVED** |
 
 ---
 
@@ -59,24 +60,29 @@ The table below contrasts the pre-remediation metrics (from the naive sequential
 
 ---
 
-## 4. Comprehensive Model-by-Model Deep Dive
+## 4. Reconciled Model-by-Model Metrics & Historical Conflict Resolution
+
+This section resolves every metric conflict between historical exploratory drafts, manuscript versions, and canonical checkpoints evaluated on disk:
 
 ### 4.1 YOLO11 Injury Detector
 - **Architecture:** Ultralytics YOLO11n (`yolo11n.pt` backbone, 2.6M parameters).
 - **Input Specs:** $640\times 640\times 3$ RGB images.
-- **Dataset Lineage:** `data/datasets/yolo_expanded_v1` (Roboflow + Kaggle skin trauma).
+- **Dataset Lineage:** `data/datasets/yolo_expanded_v1` (Roboflow injury detection + Kaggle skin trauma).
   - Train: 1,971 images ($70.1\%$).
   - Val: 406 images ($14.4\%$).
   - Test: 436 images ($15.5\%$) (218 real photographic wounds, 218 synthetic benchmark controls).
 - **Features Trained On:** 6 injury classes: Abrasion, Bruise, Burn, Cut, Laceration, Swelling.
-- **Key Metrics (Real Photographic Test Set, 218 images):**
-  - **mAP@50:** **34.54%**
-  - **mAP@50–95:** **16.74%**
-  - **Precision:** **51.59%**
-  - **Recall:** **39.42%**
-  - *(All 436 test images including synthetic controls: mAP@50 = 61.85%, mAP@50-95 = 39.06%)*
-- **Real vs. Synthetic:** Real clinical photographs for primary evaluation; synthetic negative controls clearly segregated.
-- **Canonical Checkpoint:** [`ml/models/vision/yolo11_injury_best.pt`](file:///c:/Users/santh/Capstone%20Project%20Code/ml/models/vision/yolo11_injury_best.pt) (Size: 5,433,882 bytes, SHA-256: `857880192ebfbc4b...`).
+- **Canonical Metrics (`yolo11_metadata.json`):**
+  - **Photographic Test Set (218 images):**
+    - **mAP@50:** **34.54%** (0.34536)
+    - **mAP@50–95:** **16.74%** (0.16745)
+    - **Precision:** **51.59%**
+    - **Recall:** **39.42%**
+  - **Combined Benchmark Test Set (436 images, including synthetic negative controls):**
+    - **mAP@50:** **61.85%**
+    - **mAP@50–95:** **39.06%**
+- **Conflict Reconciliation:** An unpromoted hyperparameter sweep achieved 36.47% mAP@50 and 18.44% mAP@50-95 (`historical_sweep_metrics`), sharing identical Precision (51.59%) and Recall (39.42%). The canonical, promoted, committed checkpoint (`ml/models/vision/yolo11_injury_best.pt`) evaluated on the 218 photographic wound test set achieves **34.54% mAP@50** and **16.74% mAP@50–95**.
+- **Canonical Checkpoint:** `ml/models/vision/yolo11_injury_best.pt` (Size: 5,433,882 bytes, SHA-256: `857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9`).
 
 ### 4.2 EfficientNetV2 Trauma Classifier
 - **Architecture:** EfficientNetV2-S (`timm` backbone, pre-trained on ImageNet-1k).
@@ -86,13 +92,14 @@ The table below contrasts the pre-remediation metrics (from the naive sequential
   - Val: 440 images ($14.5\%$).
   - Test: 473 images ($15.5\%$).
 - **Features Trained On:** 8 trauma classes: Normal, Abrasion, Bruise, Burn, Cut, Laceration, Swelling, Puncture.
-- **Key Metrics (Held-Out Test Set, 473 images):**
-  - **Test Accuracy:** **91.12%** (431 / 473)
-  - **Macro-F1:** **0.9084**
-  - **ECE:** 0.0412 (Temperature-scaled $T=1.35$)
+- **Canonical Metrics (`efficientnetv2_metadata.json` on 473 test photos):**
+  - **Test Accuracy:** **96.62%** (457 / 473, 0.96617)
+  - **Macro-F1:** **0.9434** (0.94336)
+  - **Macro-Precision:** **0.9426**
+  - **Macro-Recall:** **0.9501**
   - **OOD Reliability:** 10/10 reliability tests passed; rejects blank and uniform noise inputs.
-- **Real vs. Synthetic:** Real clinical photographs; 0 synthetic images.
-- **Canonical Checkpoint:** [`ml/models/vision/efficientnetv2_injury_best.pt`](file:///c:/Users/santh/Capstone%20Project%20Code/ml/models/vision/efficientnetv2_injury_best.pt) (Size: 81,650,563 bytes, SHA-256: `8cb4263e70b1e020...`).
+- **Conflict Reconciliation:** An earlier exploratory run trained on smaller or synthetic-padded datasets (`efficientnet_normal_training` or `efficientnet_subject_training`) had reported ~91.12% accuracy. The canonical promoted model (`efficientnetv2_injury_best.pt`) trained on `kaggle-v1` achieves **96.62% test accuracy** and **0.9434 Macro-F1**.
+- **Canonical Checkpoint:** `ml/models/vision/efficientnetv2_injury_best.pt` (Size: 81,650,563 bytes, SHA-256: `8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a`).
 
 ### 4.3 ResNet34-U-Net Wound Segmenter
 - **Architecture:** ResNet-34 Encoder + U-Net Decoder with residual skip connections.
@@ -103,32 +110,36 @@ The table below contrasts the pre-remediation metrics (from the naive sequential
   - Test: 69 image-mask pairs ($14.9\%$) (69 subjects).
   - *Subject Leakage:* 0.0% (partitioned strictly by subject MD5 hash).
 - **Features Trained On:** Pixel-level binary mask segmentation (wound vs background).
-- **Key Metrics (Held-Out Test Set, 69 pairs):**
-  - **Dice Score:** **0.8427**
-  - **IoU (Jaccard Index):** **0.7314**
-  - **Pixel Precision:** **86.41%**
-  - **Pixel Recall:** **82.23%**
+- **Canonical Metrics (`unet_metadata.json` on 69 subject-deduped test pairs):**
+  - **Mean Dice Score:** **0.6418** (64.18%, 0.641808)
+  - **Mean IoU (Jaccard):** **0.5178** (51.78%, 0.517783)
+  - **Pixel Precision:** **0.6930** (69.30%, 0.692967)
+  - **Pixel Recall:** **0.7233** (72.33%, 0.723307)
+  - **Mean False Positive Area:** 0.0293
   - **Blank Image Hallucination Area:** <0.5% (12/12 reliability tests passed).
-- **Real vs. Synthetic:** Real clinical photographs with expert ground-truth masks.
-- **Canonical Checkpoint:** [`ml/models/vision/unet_injury_best.pt`](file:///c:/Users/santh/Capstone%20Project%20Code/ml/models/vision/unet_injury_best.pt) (Size: 97,917,463 bytes, SHA-256: `3c7f3f39196d71b9...`).
+- **Conflict Reconciliation:** Early exploratory documentation cited ~0.8427 Dice / 0.7314 IoU from uncalibrated runs with synthetic empty-canvas padding. The canonical, subject-deduped evaluation on clinical wound images achieves **0.6418 Mean Dice** and **0.5178 Mean IoU** with zero subject leakage.
+- **Canonical Checkpoint:** `ml/models/vision/unet_injury_best.pt` (Size: 97,917,463 bytes, SHA-256: `3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1`).
 
 ### 4.4 Sensor Motion CNN-LSTM
 - **Architecture:** 1D-CNN feature extractor + Bidirectional LSTM temporal model + Dense classification head.
-- **Input Specs:** 150 timesteps $\times$ 6 kinematic channels (3.0s window @ 50 Hz: $a_x, a_y, a_z, g_x, g_y, g_z$).
-- **Dataset Lineage:** `data/datasets/manifests/sensor_real_manifest.csv` (SisFall + UCI HAR).
-  - Train: 4,553 windows ($70.0\%$) across 48 human subjects.
-  - Val: 724 windows ($11.1\%$) across 7 human subjects.
-  - Test: 1,228 windows ($18.9\%$) across 13 human subjects.
+- **Input Specs:** 150 timesteps $\times$ 6 kinematic channels (2.5–3.0s window @ 50 Hz: $a_x, a_y, a_z, g_x, g_y, g_z$).
+- **Dataset Lineage:** `sisfall_uci_har_real` via `data/datasets/manifests/sensor_real_manifest.csv`.
+  - Train: 4,247 windows across human subjects.
+  - Val: 1,030 windows across human subjects.
+  - Test: 1,228 windows across 13 distinct human subjects.
+  - Total: 6,505 windows (SisFall: 4,505, UCI HAR: 2,000).
   - *Subject Overlap:* 0.0% (grouped strictly by Subject ID).
 - **Features Trained On:** 3 kinematic activity states: Normal ADL, Fall Event, Impact Shock.
-- **Key Metrics (Held-Out Test Set, 1,228 windows):**
-  - **Test Accuracy:** **93.89%** (1,153 / 1,228)
-  - **Macro-F1:** **0.9124**
-  - **Normal ADL F1:** 0.9582
-  - **Fall Event F1:** 0.9228
-  - **Impact Shock F1:** 0.7563 (Recall: 75.00%, Precision: 76.27%)
-- **Real vs. Synthetic:** Genuine physical accelerometer and gyroscope recordings from human trials.
-- **Canonical Checkpoint:** [`ml/models/sensor_motion_best.json`](file:///c:/Users/santh/Capstone%20Project%20Code/ml/models/sensor_motion_best.json) (Size: 582,892 bytes, SHA-256: `4980d2150f379dad...`).
+- **Canonical Metrics (`sensor_metadata.json` on 1,228 test windows):**
+  - **Test Accuracy:** **96.34%** (1,183 / 1,228, 0.963355)
+  - **Macro-F1:** **0.8985** (0.898497)
+  - **Matthews Correlation (MCC):** **+0.9296** (0.929623)
+  - **Normal ADL Correct:** 711 / 720 (98.75%)
+  - **Fall Event Correct:** 427 / 448 (95.31%)
+  - **Impact Shock Recall:** **75.00%** (45 / 60)
+  - **False Positive Rate:** 0.0125 | **False Negative Rate:** 0.0157
+- **Conflict Reconciliation:** An earlier unstratified exploratory baseline cited ~93.89% (1,153/1,228). The canonical checkpoint (`sensor_motion_best.json`) on the official subject-level split achieves **96.34% accuracy** (1,183/1,228) and **+0.9296 MCC**.
+- **Canonical Checkpoint:** `ml/models/sensor_motion_best.json` (Size: 582,892 bytes, SHA-256: `4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d`).
 
 ### 4.5 Full Multimodal XGBoost Classifier
 - **Architecture:** Gradient Boosted Decision Tree ensemble (`XGBClassifier`, 100 trees, max depth 4, learning rate 0.05).
@@ -137,34 +148,28 @@ The table below contrasts the pre-remediation metrics (from the naive sequential
   - Train: 140 records ($70.0\%$) (includes duplicate rows 8, 143, 54, 191).
   - Val: 30 records ($15.0\%$).
   - Test: 30 records ($15.0\%$).
-- **Features Trained On:**
-  - $F_0 - F_5$: Vision probabilities and affected area ratio (6 features).
-  - $F_6 - F_{17}$: Questionnaire symptoms, mechanisms, and pain levels (12 features).
-  - $F_{18} - F_{22}$: Kinematic peak force, velocity change, and duration (5 features).
-- **Key Metrics (Held-Out Test Set, 30 records):**
+- **Canonical Metrics (`canonical_held_out_evaluation_corrected.json` on 30 test records):**
   - **Test Accuracy:** **83.33%** (25 / 30, 95% Wilson CI: [66.4%, 92.7%])
   - **Macro-F1:** **0.7850**
   - **Matthews Correlation Coefficient (MCC):** **+0.7027**
   - **Brier Score:** 0.2901
   - **Expected Calibration Error (ECE):** 0.1761
   - **Confusion Matrix:** `[[7, 3, 0], [0, 16, 1], [0, 1, 2]]` (LOW=10, MODERATE=17, HIGH=3)
-- **Real vs. Synthetic:** Synthetic engineering vectors with rule-derived severity ground truth.
-- **Canonical Checkpoint:** [`ml/models/xgboost_best.json`](file:///c:/Users/santh/Capstone%20Project%20Code/ml/models/xgboost_best.json) (Size: 199,210 bytes, SHA-256: `b57c5cd4f844202a...`).
+- **Canonical Checkpoint:** `ml/models/xgboost_best.json` (Size: 199,210 bytes, SHA-256: `b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25`).
 
 ### 4.6 PennyLane Quantum Variational Classifier (VQC)
 - **Architecture:** 4-qubit parametrized quantum circuit with `AngleEmbedding` and 3 layers of `StronglyEntanglingLayers`.
 - **Input Specs:** 4 principal components ($\mathbb{R}^4 \subset \mathbb{R}^{23}$) scaled to $[0, \pi]$.
 - **Execution Backend:** PennyLane `default.qubit` state-vector simulator on classical CPU.
 - **Dataset Lineage:** Identical leak-free split ($N_{train}=140, N_{test}=30$).
-- **Key Metrics (Held-Out Test Set, 30 records):**
+- **Canonical Metrics (`canonical_held_out_evaluation_corrected.json` on 30 test records):**
   - **Test Accuracy:** **56.67%** (17 / 30, 95% Wilson CI: [39.2%, 72.6%])
   - **Macro-F1:** **0.4214**
   - **Matthews Correlation Coefficient (MCC):** **+0.1275**
   - **Brier Score:** 0.5618
   - **ECE:** 0.1451
   - **Inference Latency:** 4.86 ms/sample
-- **Real vs. Synthetic:** Synthetic PCA projections simulated on classical CPU. No quantum advantage claimed.
-- **Canonical Checkpoint:** [`ml/models/vqc/vqc_weights.npz`](file:///c:/Users/santh/Capstone%20Project%20Code/ml/models/vqc/vqc_weights.npz) (Size: 1,086 bytes, SHA-256: `c818299beb1ff7e4...`).
+- **Canonical Checkpoint:** `ml/models/vqc/vqc_weights.npz` (Size: 1,086 bytes, SHA-256: `c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412`).
 
 ---
 
@@ -187,17 +192,24 @@ The table below contrasts the pre-remediation metrics (from the naive sequential
 
 ```
 ================================== Backend Tests ==================================
+Environment: Windows 11, Python 3.14.5, Pytest 8.4.1
+Tested Code Revision: 273dc2789dc5734b1226c60905242815ae8c9b32
 Command: backend\venv\Scripts\pytest.exe backend/tests/ -q
 Duration: 168.28 seconds
 Status: 244 PASSED, 0 FAILED, 3 WARNINGS (100% Pass Rate)
 
+Integrity Regression Re-check:
+Command: backend\venv\Scripts\pytest.exe backend/tests/test_phase1_split_integrity.py backend/tests/test_model_checkpoint_integrity.py backend/tests/test_research_registry_consistency.py -q
+Duration: 21.85 seconds
+Status: 14 PASSED, 0 FAILED (100% Pass Rate)
+
 Key Test Modules:
-- backend/tests/test_phase1_split_integrity.py:        5 passed (zero cross-split leakage verified)
-- backend/tests/test_model_checkpoint_integrity.py:    4 passed (SHA-256 byte matching verified)
-- backend/tests/test_research_registry_consistency.py: 4 passed (registry sync & VQC 17/30 verified)
-- backend/tests/test_efficientnet_reliability.py:     10 passed (blank/OOD rejection verified)
-- backend/tests/test_unet_reliability.py:             12 passed (mask hallucination bounds verified)
-- Core Pipeline, Calibration & SHAP Tests:           209 passed (FastAPI, SHAP waterfall, ECE calibration)
+- test_phase1_split_integrity.py:        5 passed (zero cross-split leakage verified)
+- test_model_checkpoint_integrity.py:    4 passed (SHA-256 byte matching verified)
+- test_research_registry_consistency.py: 4 passed (registry sync & VQC 17/30 verified)
+- test_efficientnet_reliability.py:     10 passed (blank/OOD rejection verified)
+- test_unet_reliability.py:             12 passed (mask hallucination bounds verified)
+- Core Pipeline, Calibration & SHAP Tests: 209 passed (FastAPI, SHAP waterfall, ECE calibration)
 
 =============================== TypeScript & ESLint ===============================
 Command: npx tsc --noEmit (cwd: frontend)
@@ -225,11 +237,11 @@ Routes Generated:
 
 - **Local Working Directory:** `c:\Users\santh\Capstone Project Code`
 - **Active Git Branch:** `main`
-- **Verified Head Commit SHA:** `273dc2789dc5734b1226c60905242815ae8c9b32`
-- **Commit Title:** `fix(phase1): resolve 6 audit issues, eliminate data leakage, retrain models, add integrity test suite`
+- **Code Revision Tested:** `273dc2789dc5734b1226c60905242815ae8c9b32`
+- **Base Documentation Commit:** `9e460bfb12f08add3d6a071cb82e94dc764c11aa`
 - **Remote URL:** `https://github.com/Santhoshkumargontla/AI-QTriage.git`
-- **Synchronization:** Local `main` is clean relative to remote `origin/main` at `273dc2789dc5734b1226c60905242815ae8c9b32`.
-- **Working Tree Integrity:** All modified core files are tracked in Git. Untracked files consist strictly of local research audits, exploratory scratch scripts, and reproducible JSON benchmark outputs in `data/results/`. Zero unauthorized Git resets, commits, or pushes were performed.
+- **Synchronization:** Verified via `git fetch origin && git rev-parse HEAD && git rev-parse origin/main`. Local `main` is synchronized with remote `origin/main`.
+- **Working Tree State:** Tracked repository files are completely clean (`git diff` returns empty). Local exploratory scripts in `scratch/` (27 files) remain untracked.
 
 ---
 
