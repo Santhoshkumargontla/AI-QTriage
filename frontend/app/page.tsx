@@ -43,34 +43,44 @@ export default function Dashboard() {
     }
   };
 
-  const loadDashboardData = async () => {
-    try {
-      const health = await api.getHealth();
-      if (health.status !== "healthy") {
-        throw new Error("Backend health check failed.");
-      }
-      
-      const casesList = await api.listCases(100);
-      setCases(casesList);
-      setDbError(null);
-    } catch (err: any) {
-      console.error(err);
-      setDbError(
-        "MongoDB connection unavailable. Verify MONGODB_URI setting in backend environment."
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    loadDashboardData();
+    let ignore = false;
+
+    async function fetchData() {
+      try {
+        const health = await api.getHealth();
+        if (health.status !== "healthy") {
+          throw new Error("Backend health check failed.");
+        }
+        const casesList = await api.listCases(100);
+        if (!ignore) {
+          setCases(casesList);
+          setDbError(null);
+        }
+      } catch (err: any) {
+        console.error(err);
+        if (!ignore) {
+          setDbError(
+            "MongoDB connection unavailable. Verify MONGODB_URI setting in backend environment."
+          );
+        }
+      } finally {
+        if (!ignore) {
+          setLoading(false);
+        }
+      }
+    }
+
+    fetchData();
 
     const onFocus = () => {
-      loadDashboardData();
+      fetchData();
     };
     window.addEventListener("focus", onFocus);
-    return () => window.removeEventListener("focus", onFocus);
+    return () => {
+      ignore = true;
+      window.removeEventListener("focus", onFocus);
+    };
   }, []);
 
   return (

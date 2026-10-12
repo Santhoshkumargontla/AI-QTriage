@@ -45,7 +45,7 @@ function yoloClassSupportNote(reg: Record<string, any>): string | null {
 }
 
 export default function ResearchMode() {
-  const [models, setModels] = useState<any[]>([]);
+  const [, setModels] = useState<any[]>([]);
   const [modelRegistry, setModelRegistry] = useState<Record<string, any>>({});
   const [comparison, setComparison] = useState<any>(null);
   const [ablation, setAblation] = useState<any>(null);

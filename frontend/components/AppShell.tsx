@@ -104,21 +104,19 @@ function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("aiqt-theme");
+      if (stored === "light" || stored === "dark") return stored;
+    }
+    return "dark";
+  });
   const [mobileOpen, setMobileOpen] = useState(false);
   const resolvedTitle = titleForPath(pathname);
 
   useEffect(() => {
-    const stored = localStorage.getItem("aiqt-theme");
-    if (stored === "light" || stored === "dark") {
-      setTheme(stored);
-      applyTheme(stored);
-    }
-  }, []);
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
+    applyTheme(theme);
+  }, [theme]);
 
   useEffect(() => {
     if (!mobileOpen) return;

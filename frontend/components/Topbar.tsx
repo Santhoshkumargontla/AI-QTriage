@@ -27,16 +27,18 @@ function applyTheme(newTheme: "dark" | "light") {
 
 export default function Topbar({ title }: TopbarProps) {
   const pathname = usePathname();
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    if (typeof window !== "undefined") {
+      const stored = localStorage.getItem("aiqt-theme");
+      if (stored === "light" || stored === "dark") return stored;
+    }
+    return "dark";
+  });
   const resolvedTitle = title ?? titleForPath(pathname);
 
   useEffect(() => {
-    const stored = localStorage.getItem("aiqt-theme");
-    if (stored === "light" || stored === "dark") {
-      setTheme(stored);
-      applyTheme(stored);
-    }
-  }, []);
+    applyTheme(theme);
+  }, [theme]);
 
   const changeTheme = (newTheme: "dark" | "light") => {
     setTheme(newTheme);

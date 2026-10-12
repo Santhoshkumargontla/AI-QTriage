@@ -5,12 +5,7 @@ import {
   BarChart3, 
   Cpu, 
   TrendingUp, 
-  Activity, 
-  Zap, 
-  Layers, 
-  CheckCircle2,
-  PieChart,
-  GitBranch
+  Zap 
 } from "lucide-react";
 import { ThreeDCard } from "@/components/ThreeDCard";
 

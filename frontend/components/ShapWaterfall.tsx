@@ -34,7 +34,21 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
   // Find max absolute value for scaling bars
   const maxAbs = Math.max(...features.map((f) => Math.abs(f.shapValue)), 0.35);
 
-  let runningSum = baseValue;
+  // Precompute waterfall cumulative steps functionally
+  const featuresWithSteps = features.reduce<{
+    items: Array<(typeof features)[0] & { startVal: number; endVal: number }>;
+    acc: number;
+  }>(
+    (res, feat) => {
+      const startVal = res.acc;
+      const endVal = startVal + feat.shapValue;
+      return {
+        items: [...res.items, { ...feat, startVal, endVal }],
+        acc: endVal,
+      };
+    },
+    { items: [], acc: baseValue }
+  ).items;
 
   return (
     <div className="rounded-2xl border border-slate-700/60 bg-slate-900/90 p-6 shadow-2xl backdrop-blur-xl">
@@ -68,12 +82,10 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
 
       {/* Waterfall Bars */}
       <div className="space-y-3">
-        {features.map((feat, idx) => {
+        {featuresWithSteps.map((feat, idx) => {
           const isPositive = feat.shapValue >= 0;
           const absVal = Math.abs(feat.shapValue);
           const barWidthPercent = Math.min(100, (absVal / maxAbs) * 100);
-          const startVal = runningSum;
-          runningSum += feat.shapValue;
 
           return (
             <div
@@ -119,7 +131,7 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
                 <div className="mt-2 rounded-lg bg-slate-950 p-2.5 text-xs text-slate-300 border border-cyan-500/30 animate-in fade-in slide-in-from-top-1">
                   <p className="text-cyan-300 font-medium">{feat.description}</p>
                   <p className="mt-0.5 text-[11px] text-slate-400 font-mono">
-                    Shift: {(startVal * 100).toFixed(1)}% &rarr; {(runningSum * 100).toFixed(1)}%
+                    Shift: {(feat.startVal * 100).toFixed(1)}% &rarr; {(feat.endVal * 100).toFixed(1)}%
                   </p>
                 </div>
               )}

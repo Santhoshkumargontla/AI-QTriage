@@ -13,7 +13,6 @@ import {
   Activity,
   Zap,
   ShieldAlert,
-  Clock,
   Sparkles
 } from "lucide-react";
 
