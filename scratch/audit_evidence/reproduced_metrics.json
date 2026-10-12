@@ -1,0 +1,124 @@
+{
+  "timestamp": "2026-10-12T16:48:43.606241+00:00",
+  "audit_status": "EXECUTED",
+  "reproduced_metrics": {
+    "sensor_motion": {
+      "dataset": "sisfall_uci_har_real",
+      "n_test": 1228,
+      "correct": 1183,
+      "accuracy": 0.9633550488599348,
+      "macro_f1": 0.8984969962082162,
+      "mcc": 0.9296233618114585,
+      "confusion_matrix": [
+        [
+          711,
+          8,
+          1
+        ],
+        [
+          8,
+          427,
+          13
+        ],
+        [
+          0,
+          15,
+          45
+        ]
+      ],
+      "impact_recall": 0.75
+    },
+    "xgboost_multimodal": {
+      "n_test": 30,
+      "correct": 25,
+      "accuracy": 0.8333333333333334,
+      "macro_f1": 0.7850203144320792,
+      "mcc": 0.7026919859463792,
+      "confusion_matrix": [
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ]
+    },
+    "vqc_quantum": {
+      "n_test": 30,
+      "correct": 17,
+      "accuracy": 0.5666666666666667,
+      "macro_f1": 0.42144702842377263,
+      "mcc": 0.12754709048882562,
+      "confusion_matrix": [
+        [
+          1,
+          9,
+          0
+        ],
+        [
+          1,
+          15,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ]
+    },
+    "ablations": {
+      "Vision Only": {
+        "correct": 12,
+        "accuracy": 0.4,
+        "macro_f1": 0.2886002886002886,
+        "mcc": -0.06102787889877386
+      },
+      "Questionnaire Only": {
+        "correct": 17,
+        "accuracy": 0.5666666666666667,
+        "macro_f1": 0.5036075036075036,
+        "mcc": 0.23426830932109965
+      },
+      "Sensor Only": {
+        "correct": 17,
+        "accuracy": 0.5666666666666667,
+        "macro_f1": 0.5009628053106314,
+        "mcc": 0.37427892319119255
+      },
+      "Vision + Questionnaire": {
+        "correct": 16,
+        "accuracy": 0.5333333333333333,
+        "macro_f1": 0.47321428571428575,
+        "mcc": 0.19819570017476693
+      },
+      "Vision + Sensor": {
+        "correct": 19,
+        "accuracy": 0.6333333333333333,
+        "macro_f1": 0.532057267351385,
+        "mcc": 0.3382539795814798
+      },
+      "Questionnaire + Sensor": {
+        "correct": 27,
+        "accuracy": 0.9,
+        "macro_f1": 0.8692692692692692,
+        "mcc": 0.8245889152481171
+      },
+      "Full Multimodal": {
+        "correct": 25,
+        "accuracy": 0.8333333333333334,
+        "macro_f1": 0.7850203144320792,
+        "mcc": 0.7026919859463792
+      }
+    }
+  }
+}

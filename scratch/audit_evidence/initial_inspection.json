@@ -1,0 +1,38 @@
+{
+  "yolo11_checkpoint": {
+    "path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "exists": true,
+    "size": 5433882,
+    "sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9"
+  },
+  "efficientnetv2_checkpoint": {
+    "path": "ml\\models\\vision\\efficientnetv2_injury_best.pt",
+    "exists": true,
+    "size": 81650563,
+    "sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a"
+  },
+  "unet_checkpoint": {
+    "path": "ml\\models\\vision\\unet_injury_best.pt",
+    "exists": true,
+    "size": 97917463,
+    "sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1"
+  },
+  "sensor_checkpoint": {
+    "path": "ml\\models\\sensor_motion_best.json",
+    "exists": true,
+    "size": 582892,
+    "sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d"
+  },
+  "xgboost_checkpoint": {
+    "path": "ml\\models\\xgboost_best.json",
+    "exists": true,
+    "size": 199210,
+    "sha256": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25"
+  },
+  "vqc_checkpoint": {
+    "path": "ml\\models\\vqc\\vqc_weights.npz",
+    "exists": true,
+    "size": 1086,
+    "sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412"
+  }
+}
