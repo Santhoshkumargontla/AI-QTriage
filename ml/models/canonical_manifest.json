@@ -1,6 +1,6 @@
 {
   "source": "ml.models.canonical_paths.RUNTIME_MODELS + live SHA-256",
-  "generated_at": "2026-09-06T16:27:23.500845+00:00",
+  "generated_at": "2026-10-12T15:49:42.955447+00:00",
   "models": [
     {
       "model_name": "YOLO11 Detection",
@@ -59,7 +59,7 @@
     {
       "model_name": "XGBoost Multimodal",
       "canonical_path": "ml/models/xgboost_best.json",
-      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "sha256": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25",
       "version": "v1.2.0",
       "classes": [
         "LOW",
@@ -75,7 +75,7 @@
     {
       "model_name": "Experimental 4-Qubit VQC",
       "canonical_path": "ml/models/vqc/vqc_weights.npz",
-      "sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412",
       "version": "v1.4.0",
       "classes": [
         "LOW",
@@ -90,11 +90,11 @@
       "sidecars": [
         {
           "path": "ml/models/vqc/scaler.pkl",
-          "sha256": "506c818dee106b512fd861642def1d388801f1efc9fe14312cfdd67634d6e2d9"
+          "sha256": "1c4f2821fb166e9d0ba00446d1dac78eaf41deccdf3963dd6d5e014298089c33"
         },
         {
           "path": "ml/models/vqc/pca.pkl",
-          "sha256": "16caccddd838bc045e9180cf0de116a0d904541fb516a4bc618ab8011ac12a50"
+          "sha256": "64107285a3378fe3e14ae53e14d403ccb912e5999cf891dced6048b068b8d2b6"
         }
       ]
     },

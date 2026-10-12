@@ -1,127 +1,172 @@
 {
   "audit_metadata": {
     "auditor": "Senior ML Engineer & Reproducibility Auditor",
-    "timestamp": "2026-10-12T20:21:00Z",
+    "timestamp": "2026-10-12T15:49:02.578642+00:00",
     "status": "VERIFIED"
   },
   "models": {
     "yolo11_detection": {
       "model_name": "YOLO11 Detection (Injury Bounding Box)",
-      "canonical_checkpoint": "ml/models/vision/yolo11_injury_best.pt",
-      "checkpoint_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
-      "metadata_path": "ml/models/vision/yolo11_metadata.json",
-      "metadata_sha256": "e1576e973310a8a20b8c9bca3b44af2e82309567c6b283c873164ef7ca0632e4",
-      "dataset_name": "yolo_expanded_v1",
-      "dataset_provenance": "Roboflow injury_detection_v2+wound2+aid; shubhambaid burns; HF WSEG wound boxes",
-      "splits": {
-        "train": 1935,
-        "val": 442,
-        "test": 436,
-        "test_evaluated": 218
-      },
+      "canonical_checkpoint": "ml\\models\\vision\\yolo11_injury_best.pt",
+      "file_exists": true,
+      "computed_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+      "expected_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+      "sha256_match": true,
+      "model_version": "expanded-skin-v1",
+      "metadata_path": "ml\\models\\vision\\yolo11_metadata.json",
+      "dataset_provenance": "Roboflow injury_detection_v2+wound2+aid; shubhambaid burns; HF WSEG wound boxes; Stab\u2192laceration; Normal/OOD empty labels",
+      "evaluation_artifact": "ml/models/vision/yolo11_metadata.json",
       "canonical_metrics": {
-        "mAP50": 0.345365,
-        "mAP50_95": 0.167447,
-        "precision": 0.515909,
-        "recall": 0.394215
+        "mAP50": 0.34536470218868737,
+        "mAP50-95": 0.16744706100578627,
+        "precision": 0.5159085487797263,
+        "recall": 0.3942147039764434,
+        "per_class_ap50": {
+          "cut": 0.506691573828961,
+          "bruise": 0.6008484418191221,
+          "abrasion": 0.610336307169706,
+          "burn": 0.16067584537398116,
+          "wound": 0.1936360449403541,
+          "laceration": 0.0
+        }
       },
-      "sweep_metrics": {
+      "historical_sweep_metrics": {
         "mAP50": 0.3647,
         "mAP50_95": 0.1844,
-        "note": "Alternative hyperparameter sweep on yolo_expanded_v1; not canonical checkpoint weights"
+        "prec": 0.5159,
+        "rec": 0.3942
       },
-      "docs_reconciliation": "docs/datasets.md notes 23 test images / 74 boxes for earlier yolo_processed drop-remap prototype; superseded by expanded_v1",
       "verification_status": "PASS"
     },
     "efficientnetv2_classification": {
       "model_name": "EfficientNetV2-S Classification (8-Class Skin Injury)",
-      "canonical_checkpoint": "ml/models/vision/efficientnetv2_injury_best.pt",
-      "checkpoint_sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
-      "metadata_path": "ml/models/vision/efficientnetv2_metadata.json",
-      "metadata_sha256": "7529927cac801a261b6b401d4fa4b78ad08191c31b986bb2c6387208d4ea0f96",
-      "dataset_name": "kaggle_skin_trauma_v1_expanded",
-      "dataset_provenance": "Kaggle skin trauma + normal skin + OOD reject photos",
-      "test_samples": 473,
+      "canonical_checkpoint": "ml\\models\\vision\\efficientnetv2_injury_best.pt",
+      "file_exists": true,
+      "computed_sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
+      "expected_sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
+      "sha256_match": true,
+      "model_version": "kaggle-v1",
+      "metadata_path": "ml\\models\\vision\\efficientnetv2_metadata.json",
+      "dataset_provenance": "Kaggle wound classification photos + normal/ood; licenses often unknown on card",
+      "evaluation_artifact": "ml/models/vision/efficientnetv2_metadata.json",
       "canonical_metrics": {
-        "accuracy": 0.966173,
-        "macro_f1": 0.943364,
-        "macro_precision": 0.942608,
-        "macro_recall": 0.950124
+        "n": 473,
+        "accuracy": 0.9661733615221987,
+        "macro_f1": 0.9433636431544169,
+        "macro_precision": 0.9426076073062455,
+        "macro_recall": 0.9501243641269217
       },
-      "quality_gates": {
-        "blank_image_collapse": "PASSED",
-        "ood_rejection_f1": 1.0
-      },
-      "docs_reconciliation": "docs/datasets.md noted older 140/30/30 split had 1.0 accuracy and blank collapse; superseded by kaggle-v1 with 473 test samples",
       "verification_status": "PASS"
     },
     "resnet34_unet_segmentation": {
       "model_name": "ResNet34-U-Net Segmentation (Wound Mask)",
-      "canonical_checkpoint": "ml/models/vision/unet_best.pt",
-      "checkpoint_sha256": "MISSING",
-      "metadata_path": "ml/models/vision/unet_metadata.json",
-      "metadata_sha256": "0b724187e3aef5f9de27e7d2d2d7f3becdc12208cc0c74b5f37273c2271bba9f",
-      "dataset_name": "AZH+wseg+Medetec subject-aware deduped",
-      "dataset_provenance": "Subject-stratified photographic wound segmentation with empty background canvases",
-      "test_samples": 69,
+      "canonical_checkpoint": "ml\\models\\vision\\unet_injury_best.pt",
+      "obsolete_legacy_path_resolved": "ml/models/vision/unet_best.pt does not exist; resolved to canonical unet_injury_best.pt",
+      "file_exists": true,
+      "computed_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "expected_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "sha256_match": true,
+      "model_version": "deduped-subject-v1",
+      "metadata_path": "ml\\models\\vision\\unet_metadata.json",
+      "dataset_provenance": "AZH+wseg+Medetec subject-aware, exact+near dedupe, synthetic empty canvases",
+      "evaluation_artifact": "ml/models/vision/unet_metadata.json",
       "canonical_metrics": {
+        "n": 69,
         "mean_dice": 0.641808,
         "mean_iou": 0.517783,
         "precision": 0.692967,
         "recall": 0.723307,
+        "mean_false_positive_area": 0.029302,
+        "mean_positive_ratio": 0.103852,
+        "loss": 0.661316,
         "threshold": 0.5
       },
-      "quality_gates": {
-        "blank_image_collapse": "PASSED",
-        "ood_collapse": 0
-      },
-      "docs_reconciliation": "docs/datasets.md noted older 140/30/30 split had Dice ~0.98 due to blank collapse; superseded by deduped-subject-v1",
       "verification_status": "PASS"
     },
     "sensor_motion_classifier": {
       "model_name": "Sensor Motion Event Classifier (3-Class Fall/Impact)",
-      "canonical_checkpoint": "ml/models/sensor_model.pt",
-      "checkpoint_sha256": "MISSING",
-      "metadata_path": "ml/models/sensor_metadata.json",
-      "metadata_sha256": "88a130aed593dd958ceedb96e23e964d98b3a29f07879938b6266ecb6637bf5e",
-      "dataset_name": "sisfall_uci_har_real",
-      "dataset_provenance": "SisFall (4,505 trials) + UCI HAR (2,000 windows) = 6,505 windows",
-      "splits": {
-        "train": 4247,
-        "val": 1030,
-        "test": 1228
-      },
+      "canonical_checkpoint": "ml\\models\\sensor_motion_best.json",
+      "obsolete_legacy_path_resolved": "ml/models/sensor_model.pt does not exist; resolved to canonical sensor_motion_best.json",
+      "file_exists": true,
+      "computed_sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d",
+      "expected_sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d",
+      "sha256_match": true,
+      "model_version": "v2.0.0-real",
+      "metadata_path": "ml\\models\\sensor_metadata.json",
+      "dataset_provenance": "SisFall (HF mirror Algo-rythmic/Sisfall_Dataset) + UCI HAR smartphones. F*\u2192fall, D18/D19\u2192impact, other D* + UCI\u2192normal_activity. Subject-level split. Not synthetic np.random.",
+      "evaluation_artifact": "ml/models/sensor_metadata.json",
       "canonical_metrics": {
+        "dataset_name": "sisfall_uci_har_real",
+        "sampling_rate_hz": 50.0,
+        "window_seconds": 2.5,
+        "train_samples": 4247,
+        "val_samples": 1030,
+        "test_samples": 1228,
         "correct_predictions": "1183 / 1228",
         "accuracy": 0.963355,
-        "macro_f1": 0.8985,
-        "mcc": 0.9296,
-        "fall_recall": 0.982
+        "macro_f1": 0.898497,
+        "mcc": 0.929623,
+        "false_positive_rate": 0.0125,
+        "false_negative_rate": 0.015748,
+        "confusion_matrix": [
+          [
+            711,
+            8,
+            1
+          ],
+          [
+            8,
+            427,
+            13
+          ],
+          [
+            0,
+            15,
+            45
+          ]
+        ],
+        "label_counts_train": {
+          "normal_activity": 3057,
+          "fall": 1050,
+          "impact": 140
+        },
+        "sources": {
+          "SisFall": 4505,
+          "UCI_HAR": 2000
+        }
       },
       "verification_status": "PASS"
     },
     "xgboost_multimodal_severity": {
       "model_name": "XGBoost Multimodal Severity Classifier (3-Class)",
-      "canonical_checkpoint": "ml/models/xgboost_best.json",
-      "checkpoint_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
-      "metadata_path": "ml/models/xgboost_metadata.json",
-      "metadata_sha256": "f40d86de08e66589a9164f25f06a52e89b5e3686ea853d18aedef00ffa5988fd",
-      "dataset_name": "generate_multimodal_dataset(200, seed=42)",
-      "dataset_provenance": "SYNTHETIC rule-derived multimodal fusion vectors (0 genuinely paired clinical records)",
-      "splits": {
-        "train": 140,
-        "val": 30,
-        "test": 30
-      },
+      "canonical_checkpoint": "ml\\models\\xgboost_best.json",
+      "file_exists": true,
+      "computed_sha256": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25",
+      "expected_sha256": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25",
+      "sha256_match": true,
+      "model_version": "v1.2.0",
+      "metadata_path": "ml\\models\\xgboost_metadata.json",
+      "dataset_provenance": "SYNTHETIC parametric multimodal fusion vectors (200 samples, seed 42)",
+      "split_policy": "Leak-free grouped split: duplicate groups {8, 143} and {54, 191} grouped strictly into Train",
+      "evaluation_artifact": "data/results/canonical_held_out_evaluation_corrected.json",
       "canonical_metrics": {
+        "genuinely_paired_clinical_samples": 0,
+        "synthetic_multimodal_fusion_samples": 200,
+        "train_samples": 140,
+        "val_samples": 30,
+        "test_samples": 30,
         "correct_predictions": "25 / 30",
-        "accuracy": 0.833333,
-        "macro_f1": 0.78502,
+        "overall_accuracy": 0.833333,
         "macro_precision": 0.822222,
         "macro_recall": 0.769281,
+        "macro_f1": 0.78502,
         "mcc": 0.702692,
-        "brier_score": 0.304532,
-        "ece": 0.118284,
+        "high_class_precision": 0.666667,
+        "high_class_recall": 0.666667,
+        "high_class_f1": 0.666667,
+        "high_class_support": 3,
+        "brier_score": 0.290138,
+        "ece": 0.176072,
         "confusion_matrix": [
           [
             7,
@@ -138,49 +183,149 @@
             1,
             2
           ]
+        ],
+        "feature_importance": [
+          0.0,
+          0.0658,
+          0.0564,
+          0.0337,
+          0.0276,
+          0.0488,
+          0.1027,
+          0.2573,
+          0.0526,
+          0.0
         ]
       },
       "verification_status": "PASS"
     },
-    "vqc_quantum_classifier": {
-      "model_name": "4-Qubit Variational Quantum Classifier (PennyLane default.qubit CPU sim)",
-      "canonical_checkpoint": "ml/models/vqc/vqc_weights.npz",
-      "checkpoint_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
-      "metadata_path": "ml/models/vqc/vqc_metadata.json",
-      "metadata_sha256": "acf7235c30b98e0aeac42044578e63d81face68958f54ca891ee8a7ce962032b",
-      "dataset_name": "generate_multimodal_dataset(200, seed=42) via PCA-4D",
-      "dataset_provenance": "SYNTHETIC vectors; classical simulation only, no quantum advantage",
-      "splits": {
-        "train": 140,
-        "val": 30,
-        "test": 30
-      },
+    "experimental_4qubit_vqc": {
+      "model_name": "Experimental 4-Qubit Variational Quantum Classifier (VQC)",
+      "canonical_checkpoint": "ml\\models\\vqc\\vqc_weights.npz",
+      "obsolete_legacy_path_resolved": "ml/models/vqc_weights.npz does not exist; resolved to canonical ml/models/vqc/vqc_weights.npz",
+      "file_exists": true,
+      "computed_sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412",
+      "expected_sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412",
+      "sha256_match": true,
+      "model_version": "v1.4.0",
+      "metadata_path": "ml\\models\\vqc\\vqc_metadata.json",
+      "dataset_provenance": "SYNTHETIC parametric multimodal fusion vectors (same leak-free split as XGBoost)",
+      "evaluation_artifact": "data/results/canonical_held_out_evaluation_corrected.json",
       "canonical_metrics": {
-        "correct_predictions": "16 / 30",
-        "accuracy": 0.533333,
-        "macro_f1": 0.423016,
-        "macro_precision": 0.466184,
-        "macro_recall": 0.43268,
-        "mcc": 0.095978,
-        "brier_score": 0.512306,
-        "ece": 0.136455,
-        "confusion_matrix": [
+        "train_samples": 140,
+        "val_samples": 30,
+        "test_samples": 30,
+        "epochs": 15,
+        "lr": 0.1,
+        "optimizer": "PennyLane AdamOptimizer",
+        "loss_start": 1.114690867087254,
+        "loss_end": 0.8860047465210349,
+        "loss_decreased": true,
+        "loss_history": [
+          1.114691,
+          1.052309,
+          1.010269,
+          0.983877,
+          0.967839,
+          0.958077,
+          0.95155,
+          0.946348,
+          0.940713,
+          0.933708,
+          0.925182,
+          0.914786,
+          0.903548,
+          0.894014,
+          0.886005
+        ],
+        "train_seconds": 48.45,
+        "circuit": {
+          "embedding": "AngleEmbedding",
+          "rotation": "X",
+          "ansatz": "StronglyEntanglingLayers",
+          "num_qubits": 4,
+          "num_layers": 2,
+          "measurement": "PauliZ_expval_per_qubit",
+          "postprocess": "linear_4_to_3_softmax",
+          "device": "default.qubit",
+          "qnode": "VQCClassifier._vqc_circuit",
+          "train_forward": "VQCClassifier._forward",
+          "predict_forward": "VQCClassifier._forward",
+          "circuits_match": true
+        },
+        "backend": "PennyLane default.qubit (classical simulator)",
+        "metrics_source": "held_out_test_via_VQCClassifier.predict",
+        "data_provenance_class": "SYNTHETIC",
+        "genuinely_paired_clinical_samples": 0,
+        "trained_at": "2026-10-12T15:42:39.712455+00:00",
+        "vqc_correct_predictions": "17 / 30",
+        "vqc_accuracy": 0.566667,
+        "vqc_macro_f1": 0.421447,
+        "vqc_mcc": 0.127547,
+        "vqc_macro_precision": 0.525641,
+        "vqc_macro_recall": 0.438562,
+        "vqc_per_class_support": [
+          10,
+          17,
+          3
+        ],
+        "vqc_brier_score": 0.561805,
+        "vqc_ece": 0.145105,
+        "vqc_confusion_matrix": [
           [
-            2,
-            8,
+            1,
+            9,
             0
           ],
           [
-            2,
-            13,
-            2
+            1,
+            15,
+            1
           ],
           [
             0,
             2,
             1
           ]
-        ]
+        ],
+        "vqc_inference_latency_ms_per_sample": 4.86,
+        "xgb_comparison": {
+          "model": "XGBoost",
+          "correct_predictions": "25 / 30",
+          "accuracy": 0.833333,
+          "macro_f1": 0.78502,
+          "mcc": 0.702692,
+          "macro_precision": 0.822222,
+          "macro_recall": 0.769281,
+          "per_class_support": [
+            10,
+            17,
+            3
+          ],
+          "brier_score": 0.290138,
+          "ece": 0.176072,
+          "confusion_matrix": [
+            [
+              7,
+              3,
+              0
+            ],
+            [
+              0,
+              16,
+              1
+            ],
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        },
+        "vqc_outperforms_xgboost": false,
+        "recommendation": "DISABLE_FROM_MAIN_DECISION",
+        "isolation": "EXPERIMENTAL_ONLY",
+        "used_in_main_decision": false
       },
       "verification_status": "PASS"
     }

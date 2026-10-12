@@ -3,9 +3,8 @@
   "version": "v1.4.0",
   "status": "EXPERIMENTAL_ONLY",
   "data_provenance_class": "SYNTHETIC",
-  "artifact_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+  "artifact_sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412",
   "used_in_main_decision": false,
-
   "recommendation": "DISABLE_FROM_MAIN_DECISION",
   "disclaimer": "PennyLane default.qubit is a classical CPU simulator. No quantum advantage. EXPERIMENTAL_ONLY. Excluded from SOS, first-aid, and main case decisions.",
   "metrics": {
@@ -15,27 +14,27 @@
     "epochs": 15,
     "lr": 0.1,
     "optimizer": "PennyLane AdamOptimizer",
-    "loss_start": 1.1119120284481623,
-    "loss_end": 0.8746161075293077,
+    "loss_start": 1.114690867087254,
+    "loss_end": 0.8860047465210349,
     "loss_decreased": true,
     "loss_history": [
-      1.111912,
-      1.054581,
-      1.013338,
-      0.98525,
-      0.965653,
-      0.951015,
-      0.939036,
-      0.928689,
-      0.919162,
-      0.909691,
-      0.900643,
-      0.892832,
-      0.886206,
-      0.880387,
-      0.874616
+      1.114691,
+      1.052309,
+      1.010269,
+      0.983877,
+      0.967839,
+      0.958077,
+      0.95155,
+      0.946348,
+      0.940713,
+      0.933708,
+      0.925182,
+      0.914786,
+      0.903548,
+      0.894014,
+      0.886005
     ],
-    "train_seconds": 72.39,
+    "train_seconds": 48.45,
     "circuit": {
       "embedding": "AngleEmbedding",
       "rotation": "X",
@@ -54,30 +53,30 @@
     "metrics_source": "held_out_test_via_VQCClassifier.predict",
     "data_provenance_class": "SYNTHETIC",
     "genuinely_paired_clinical_samples": 0,
-    "trained_at": "2026-09-06T16:20:39.813893+00:00",
-    "vqc_correct_predictions": "16 / 30",
-    "vqc_accuracy": 0.533333,
-    "vqc_macro_f1": 0.423016,
-    "vqc_mcc": 0.095978,
-    "vqc_macro_precision": 0.466184,
-    "vqc_macro_recall": 0.43268,
+    "trained_at": "2026-10-12T15:42:39.712455+00:00",
+    "vqc_correct_predictions": "17 / 30",
+    "vqc_accuracy": 0.566667,
+    "vqc_macro_f1": 0.421447,
+    "vqc_mcc": 0.127547,
+    "vqc_macro_precision": 0.525641,
+    "vqc_macro_recall": 0.438562,
     "vqc_per_class_support": [
       10,
       17,
       3
     ],
-    "vqc_brier_score": 0.512306,
-    "vqc_ece": 0.136455,
+    "vqc_brier_score": 0.561805,
+    "vqc_ece": 0.145105,
     "vqc_confusion_matrix": [
       [
-        2,
-        8,
+        1,
+        9,
         0
       ],
       [
-        2,
-        13,
-        2
+        1,
+        15,
+        1
       ],
       [
         0,
@@ -85,31 +84,31 @@
         1
       ]
     ],
-    "vqc_inference_latency_ms_per_sample": 6.17,
+    "vqc_inference_latency_ms_per_sample": 4.86,
     "xgb_comparison": {
       "model": "XGBoost",
-      "correct_predictions": "26 / 30",
-      "accuracy": 0.866667,
-      "macro_f1": 0.816919,
-      "mcc": 0.773585,
-      "macro_precision": 0.811111,
-      "macro_recall": 0.830065,
+      "correct_predictions": "25 / 30",
+      "accuracy": 0.833333,
+      "macro_f1": 0.78502,
+      "mcc": 0.702692,
+      "macro_precision": 0.822222,
+      "macro_recall": 0.769281,
       "per_class_support": [
         10,
         17,
         3
       ],
-      "brier_score": 0.130883,
-      "ece": 0.14372,
+      "brier_score": 0.290138,
+      "ece": 0.176072,
       "confusion_matrix": [
         [
-          10,
-          0,
+          7,
+          3,
           0
         ],
         [
-          2,
-          14,
+          0,
+          16,
           1
         ],
         [

@@ -15,14 +15,13 @@ from ml.training.train_xgboost import generate_multimodal_dataset
 # 1. Dataset Generation with deterministic seed 42
 X, y = generate_multimodal_dataset(200, seed=42)
 
-# Strict splits: 70% Train, 15% Val, 15% Test
-n_train = 140
-n_val = 30
-n_test = 30
+# Strict leak-free grouped split: 70% Train (140), 15% Val (30), 15% Test (30)
+from ml.training.train_xgboost import get_leakage_free_splits
+train_indices, val_indices, test_indices = get_leakage_free_splits(200)
 
-X_train, y_train = X[:n_train], y[:n_train]
-X_val, y_val = X[n_train:n_train + n_val], y[n_train:n_train + n_val]
-X_test, y_test = X[n_train + n_val:], y[n_train + n_val:]
+X_train, y_train = X[train_indices], y[train_indices]
+X_val, y_val = X[val_indices], y[val_indices]
+X_test, y_test = X[test_indices], y[test_indices]
 
 # Feature index definitions (total 23 features):
 # Vision:        F0-F5   (indices 0..5, 6 features)
@@ -121,12 +120,17 @@ for name, mods in configs:
     model_save_path = os.path.join(models_dir, f"xgb_{safe_name}.json")
     clf.save_model(model_save_path)
     
+    import hashlib
+    with open(model_save_path, "rb") as mf:
+        model_sha256 = hashlib.sha256(mf.read()).hexdigest()
+    
     entry = {
         "configuration": name,
         "modalities": mods,
         "active_feature_count": len(cols),
         "feature_indices": cols,
-        "model_path": model_save_path,
+        "model_path": model_save_path.replace("\\", "/"),
+        "model_sha256": model_sha256,
         "correct": f"{correct} / {len(y_test)}",
         "accuracy": round(acc, 4),
         "wilson_95_ci": [round(ci_low, 4), round(ci_high, 4)],
@@ -136,7 +140,9 @@ for name, mods in configs:
         "macro_f1": round(float(f1), 4),
         "mcc": round(mcc, 4),
         "confusion_matrix": cm,
-        "per_class": per_class
+        "per_class": per_class,
+        "test_predictions": test_preds.tolist(),
+        "test_indices": test_indices,
     }
     results.append(entry)
     

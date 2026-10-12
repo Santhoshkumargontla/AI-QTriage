@@ -52,10 +52,12 @@ def train_vqc(epochs: int = 15, lr: float = 0.1):
     os.makedirs(VQC_DIR, exist_ok=True)
     os.makedirs(os.path.dirname(COMPARE_SAVE_PATH), exist_ok=True)
 
-    # Same generator and split as XGBoost: 200 samples, 140/30/30, seed 42.
+    # Same generator and leak-free split as XGBoost: 200 samples, 140/30/30, seed 42.
+    from ml.training.train_xgboost import get_leakage_free_splits
     X, y = generate_multimodal_dataset(num_samples=200, seed=42)
-    X_train, y_train = X[:140], y[:140]
-    X_test, y_test = X[170:], y[170:]
+    train_indices, val_indices, test_indices = get_leakage_free_splits(num_samples=200)
+    X_train, y_train = X[train_indices], y[train_indices]
+    X_test, y_test = X[test_indices], y[test_indices]
 
     vqc = VQCClassifier()
     t_train = time.time()
@@ -141,7 +143,7 @@ def train_vqc(epochs: int = 15, lr: float = 0.1):
 
     comparison = {
         "held_out_test_samples": len(y_test),
-        "split": "generate_multimodal_dataset(200, seed=42) train[:140] test[170:]",
+        "split": "generate_multimodal_dataset(200, seed=42) leak-free group split train (140) test (30)",
         "data_provenance_class": "SYNTHETIC",
         "vqc": vqc_metrics,
         "xgboost": xgb_metrics,

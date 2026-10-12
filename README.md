@@ -8,16 +8,16 @@ Current honest status after the 2026-08-29 cleanup: **PARTIALLY_WORKING research
 
 ## Runtime models (canonical only)
 
-| Model | Canonical path | Status |
-| --- | --- | --- |
-| YOLO11 detect | `ml/models/vision/yolo11_injury_best.pt` | PARTIALLY_WORKING (small val set; demo boxes can miss the injury graphic) |
-| EfficientNetV2 | `ml/models/vision/efficientnetv2_injury_best.pt` | NOT_TRUSTWORTHY (blank-image collapse; gates withhold) |
-| ResNet34-UNet | `ml/models/vision/unet_injury_best.pt` | NOT_TRUSTWORTHY (blank masks fire; overlay withheld) |
-| XGBoost | `ml/models/xgboost_best.json` | PARTIALLY_WORKING (synthetic 23-d fusion, rule-derived labels) |
-| VQC | `ml/models/vqc/vqc_weights.npz` | EXPERIMENTAL_ONLY (PennyLane `default.qubit` simulator; isolated from decisions) |
-| Sensor motion | `ml/models/sensor_motion_best.json` + `sensor_scaler.pkl` | PARTIALLY_WORKING (simulated `football_fall` can score as `normal_activity`) |
+| Model | Canonical path | Current Verified Status | Notes / Limitations |
+| --- | --- | --- | --- |
+| YOLO11 detect | `ml/models/vision/yolo11_injury_best.pt` | INFERENCE_EXECUTES (Research Baseline) | Real photographic wounds (`yolo_expanded_v1`, 2,813 images); 34.54% mAP@50, 16.74% mAP@50–95. |
+| EfficientNetV2 | `ml/models/vision/efficientnetv2_injury_best.pt` | READY_FOR_RESEARCH_DEMO | Retrained on Kaggle multi-class photos (`kaggle-v1`, 473 test); 96.62% acc, 94.34% F1. Blank/OOD collapse gates pass. |
+| ResNet34-UNet | `ml/models/vision/unet_injury_best.pt` | READY_FOR_RESEARCH_DEMO | Retrained on AZH+WSEG+Medetec (`deduped-subject-v1`, 69 test); 64.18% Dice, 51.78% IoU at $\tau=0.50$. Blank gates pass. |
+| XGBoost | `ml/models/xgboost_best.json` | TRAINED (Research Feasibility) | Retrained on leak-free grouped split (200 vectors, seed 42); 83.33% acc (25/30), 78.50% macro-F1, MCC 0.7027. |
+| VQC | `ml/models/vqc/vqc_weights.npz` | EXPERIMENTAL_ONLY | Retrained on same leak-free split; PennyLane `default.qubit` CPU simulation; 56.67% acc (17/30). No quantum advantage. |
+| Sensor motion | `ml/models/sensor_motion_best.json` | TRAINED (Real Benchmark) | SisFall + UCI HAR (6,505 windows, 68 subjects); 96.34% acc (1,183/1,228), 89.85% macro-F1, MCC 0.9296. |
 
-Wrappers load these paths only. Duplicate checkpoints live in `ml/models/_archive/` and are **not** loaded. Historical `.pre_retrain_backup` files stay beside the live weights.
+*Historical Note:* Earlier August 2026 evaluations marked EfficientNet/U-Net as `NOT_TRUSTWORTHY` due to blank-image collapse on naive drawing datasets. Subsequent retraining on photographic datasets with negative controls and OOD rejection resolved the collapse mode while preserving runtime confidence gates. All models remain academic research prototypes and are not clinically validated.
 
 ## Synthetic data, simulation, experimental pieces
 

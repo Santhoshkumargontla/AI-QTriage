@@ -1,8 +1,8 @@
 {
-  "evaluation_version": "corrected_group_split_v1",
+  "evaluation_version": "corrected_group_split_v2_retrained",
   "status": "evaluated",
-  "timestamp": "2026-10-12T20:20:00Z",
-  "description": "Leakage-safe group split: identical feature vectors strictly grouped into Train split.",
+  "timestamp": "2026-10-12T15:44:23.884440+00:00",
+  "description": "Leakage-safe group split: identical feature vectors strictly grouped into Train split. Models independently retrained strictly on train indices.",
   "splits": {
     "train_count": 140,
     "val_count": 30,
@@ -217,11 +217,47 @@
       "train_val": 0,
       "train_test": 0,
       "val_test": 0
-    }
+    },
+    "duplicate_groups": [
+      {
+        "group_id": "Group_A",
+        "feature_hash": "627b5ed14111103a9eeb857388fe3fa8c8756cd04f6d5005a3fc901b9cf05d70",
+        "row_indices": [
+          8,
+          143
+        ],
+        "assigned_split": "train",
+        "labels": [
+          0,
+          1
+        ],
+        "etiology": "Questionnaire-only dropout (F6=1, F7=0.3, F11=1). Latent severity differed (0.263 vs 0.327)."
+      },
+      {
+        "group_id": "Group_B",
+        "feature_hash": "0140eb82c3ae7be4ae1cbad7c3a596a52dc1a726c057a70f2791114299234005",
+        "row_indices": [
+          54,
+          191
+        ],
+        "assigned_split": "train",
+        "labels": [
+          1,
+          0
+        ],
+        "etiology": "Questionnaire-only dropout (F6=1, F7=0.1, F8=1). Latent severity differed (0.356 vs 0.234)."
+      }
+    ]
   },
   "xgboost_evaluation": {
+    "model_canonical_path": "ml\\models\\xgboost_best.json",
+    "model_sha256": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25",
     "correct_predictions": "25 / 30",
     "accuracy": 0.833333,
+    "accuracy_wilson_95_ci": [
+      0.6644,
+      0.9266
+    ],
     "macro_precision": 0.822222,
     "macro_recall": 0.769281,
     "macro_f1": 0.78502,
@@ -244,33 +280,207 @@
         1,
         2
       ]
+    ],
+    "per_class": {
+      "LOW": {
+        "precision": 1.0,
+        "recall": 0.7,
+        "f1": 0.8235,
+        "support": 10
+      },
+      "MODERATE": {
+        "precision": 0.8,
+        "recall": 0.9412,
+        "f1": 0.8649,
+        "support": 17
+      },
+      "HIGH": {
+        "precision": 0.6667,
+        "recall": 0.6667,
+        "f1": 0.6667,
+        "support": 3
+      }
+    },
+    "test_predictions": [
+      0,
+      0,
+      1,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1
+    ],
+    "test_ground_truth": [
+      0,
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      2,
+      2,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
     ]
   },
   "vqc_evaluation": {
+    "model_canonical_path": "ml\\models\\vqc\\vqc_weights.npz",
+    "model_sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412",
     "correct_predictions": "17 / 30",
     "accuracy": 0.566667,
-    "macro_precision": 0.508081,
-    "macro_recall": 0.466013,
-    "macro_f1": 0.466667,
-    "mcc": 0.175836,
-    "brier_score": 0.489704,
-    "ece": 0.141996,
+    "accuracy_wilson_95_ci": [
+      0.392,
+      0.7262
+    ],
+    "macro_precision": 0.525641,
+    "macro_recall": 0.438562,
+    "macro_f1": 0.421447,
+    "mcc": 0.127547,
+    "brier_score": 0.561805,
+    "ece": 0.145105,
     "confusion_matrix": [
       [
-        3,
-        7,
+        1,
+        9,
         0
       ],
       [
-        2,
-        13,
-        2
+        1,
+        15,
+        1
       ],
       [
         0,
         2,
         1
       ]
+    ],
+    "per_class": {
+      "LOW": {
+        "precision": 0.5,
+        "recall": 0.1,
+        "f1": 0.1667,
+        "support": 10
+      },
+      "MODERATE": {
+        "precision": 0.5769,
+        "recall": 0.8824,
+        "f1": 0.6977,
+        "support": 17
+      },
+      "HIGH": {
+        "precision": 0.5,
+        "recall": 0.3333,
+        "f1": 0.4,
+        "support": 3
+      }
+    },
+    "test_predictions": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      1,
+      1,
+      1
+    ],
+    "test_ground_truth": [
+      0,
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      2,
+      2,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
     ]
   }
 }

@@ -20,25 +20,25 @@ All 8 mandatory verification checks for Phase 1 have been audited. No model retr
 | **Check 3** | **Preprocessing & Leakage Isolation** | **PASS** | `ml/models/ablation_independent/` | Sample weights and scalers fitted on train only. Raw unscaled subsets fed to trees. Zero test leakage. |
 | **Check 4** | **Metric Recalculation Concordance** | **PASS** | Checkpoint re-eval vs `independent_ablation_results.json` | 100% exact numerical agreement across accuracy, macro-precision, macro-recall, macro-F1, MCC, and CM. |
 | **Check 5** | **Synthetic Label Dependencies** | **PASS WITH LIMITATION** | `ABLATION_METHOD_REVIEW.md` Sec 2.4 | Ground truth is rule-derived: $0.4\times\text{pain} + 0.3\times\text{peak\_g} + 0.3\times\text{area}$. Synthetic benchmark only. |
-| **Check 6** | **Backend Test Suite Integrity** | **PASS** | `pytest backend/tests/ -q` | 235 passed out of 235 tests in 124.15s (100% pass rate). |
-| **Check 7** | **Git Working Tree Safety** | **PASS** | `git diff` & `git status` | Only 3 approved files modified (`backend/main.py`, `streamlit_app.py`, `frontend/.../ModelGraphsAndMatrix.tsx`). Zero git commits or pushes. |
+| **Check 6** | **Backend Test Suite Integrity** | **PASS** | `pytest backend/tests/ -q` | 244 passed out of 244 tests in 168.28s (100% pass rate). |
+| **Check 7** | **Git Working Tree Safety** | **PASS** | `git diff` & `git status` | Clean verified baseline at commit `30c40c5d172eb73aa33d8fb52625ef91ecf13fcd`. Zero unapproved modifications, zero git commits or pushes. |
 | **Check 8** | **Multimodal Synergy Claim Bounds** | **PASS** | `ABLATION_RESULTS.md` Sec 3 | Multimodal synergy verified (+30.00% to +53.34% over unimodal). Full model framed on spatial clinical utility, not accuracy dominance. |
 
 ---
 
 ## 2. Checkpoint Re-Evaluation & Recalculation Matrix
 
-Metrics independently recomputed by loading saved checkpoints directly from `ml/models/ablation_independent/`:
+Metrics independently recomputed by loading saved checkpoints directly from ml/models/ablation_independent/ on the leak-free split (=30$):
 
-| Modality Configuration | Input Dims ($D$) | Recomputed Accuracy | Saved Accuracy | Recomputed Macro-F1 | Saved Macro-F1 | Recomputed MCC | Saved MCC | Confusion Matrix `[LOW, MOD, HIGH]` | Verification Status |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Vision Only** | 6 | **33.33%** (10/30) | 0.3333 | **0.2414** | 0.2414 | **-0.1632** | -0.1632 | `[[3, 7, 0], [6, 7, 4], [1, 2, 0]]` | **PASS** |
-| **Questionnaire Only** | 12 | **56.67%** (17/30) | 0.5667 | **0.5036** | 0.5036 | **+0.2343** | 0.2343 | `[[6, 4, 0], [5, 10, 2], [0, 2, 1]]` | **PASS** |
-| **Sensor Only** | 5 | **56.67%** (17/30) | 0.5667 | **0.5010** | 0.5010 | **+0.3743** | 0.3743 | `[[9, 1, 0], [3, 7, 7], [1, 1, 1]]` | **PASS** |
-| **Vision + Questionnaire** | 18 | **43.33%** (13/30) | 0.4333 | **0.3588** | 0.3588 | **-0.0464** | -0.0464 | `[[2, 8, 0], [4, 10, 3], [0, 2, 1]]` | **PASS** |
-| **Vision + Sensor** | 11 | **60.00%** (18/30) | 0.6000 | **0.5080** | 0.5080 | **+0.2968** | 0.2968 | `[[5, 5, 0], [1, 12, 4], [1, 1, 1]]` | **PASS** |
-| **Questionnaire + Sensor** | 17 | **86.67%** (26/30) | 0.8667 | **0.8148** | 0.8148 | **+0.7609** | 0.7609 | `[[8, 2, 0], [0, 16, 1], [0, 1, 2]]` | **PASS** |
-| **Full Multimodal** | 23 | **83.33%** (25/30) | 0.8333 | **0.7850** | 0.7850 | **+0.7027** | 0.7027 | `[[7, 3, 0], [0, 16, 1], [0, 1, 2]]` | **PASS** |
+| Modality Configuration | Input Dims ($) | Recomputed Accuracy | Saved Accuracy | Recomputed Macro-F1 | Saved Macro-F1 | Recomputed MCC | Saved MCC | Confusion Matrix [LOW, MOD, HIGH] | Verification Status |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Vision Only** | 6 | **40.00%** (12/30) | 0.4000 | **0.2886** | 0.2886 | **-0.0610** | -0.0610 | [[4, 6, 0], [6, 8, 3], [1, 2, 0]] | **PASS** |
+| **Questionnaire Only** | 12 | **56.67%** (17/30) | 0.5667 | **0.5036** | 0.5036 | **+0.2343** | +0.2343 | [[6, 4, 0], [5, 10, 2], [0, 2, 1]] | **PASS** |
+| **Sensor Only** | 5 | **56.67%** (17/30) | 0.5667 | **0.5010** | 0.5010 | **+0.3743** | +0.3743 | [[9, 1, 0], [3, 7, 7], [1, 1, 1]] | **PASS** |
+| **Vision + Questionnaire** | 18 | **53.33%** (16/30) | 0.5333 | **0.4732** | 0.4732 | **+0.1982** | +0.1982 | [[5, 5, 0], [4, 10, 3], [0, 2, 1]] | **PASS** |
+| **Vision + Sensor** | 11 | **63.33%** (19/30) | 0.6333 | **0.5321** | 0.5321 | **+0.3383** | +0.3383 | [[6, 4, 0], [1, 12, 4], [1, 1, 1]] | **PASS** |
+| **Questionnaire + Sensor** | 17 | **90.00%** (27/30) | 0.9000 | **0.8693** | 0.8693 | **+0.8246** | +0.8246 | [[8, 2, 0], [0, 17, 0], [0, 1, 2]] | **PASS** |
+| **Full Multimodal** | 23 | **83.33%** (25/30) | 0.8333 | **0.7850** | 0.7850 | **+0.7027** | +0.7027 | [[7, 3, 0], [0, 16, 1], [0, 1, 2]] | **PASS** |
 
 ---
 

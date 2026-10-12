@@ -28,17 +28,17 @@ Both evaluations confirm that **multimodal fusion provides a substantial perform
 
 ## 2. Primary Benchmark: Independent Modality Models Table
 
-Evaluated on the untouched held-out test split ($N = 30$, class distribution: 10 LOW, 17 MODERATE, 3 HIGH):
+Evaluated on the leak-free held-out test split ( = 30$, class distribution: 10 LOW, 17 MODERATE, 3 HIGH, duplicate groups {8, 143} and {54, 191} grouped exclusively into Train):
 
-| Modality Configuration | Input Features ($D$) | Correct / Total | Test Accuracy | 95% Wilson Score CI | Macro Precision | Macro Recall | Macro-F1 | Matthews Corr. (MCC) | Confusion Matrix `[LOW, MOD, HIGH]` |
+| Modality Configuration | Input Features ($) | Correct / Total | Test Accuracy | 95% Wilson Score CI | Macro Precision | Macro Recall | Macro-F1 | Matthews Corr. (MCC) | Confusion Matrix [LOW, MOD, HIGH] |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Vision Only** | $F_0\text{--}F_5$ ($D=6$) | $10 / 30$ | **33.33%** | $[19.2\%, 51.2\%]$ | 0.2458 | 0.2373 | **0.2414** | -0.1632 | `[[3, 7, 0], [6, 7, 4], [1, 2, 0]]` |
-| **Questionnaire Only** | $F_6\text{--}F_{17}$ ($D=12$) | $17 / 30$ | **56.67%** | $[39.2\%, 72.6\%]$ | 0.5013 | 0.5072 | **0.5036** | 0.2343 | `[[6, 4, 0], [5, 10, 2], [0, 2, 1]]` |
-| **Sensor Only** | $F_{18}\text{--}F_{22}$ ($D=5$) | $17 / 30$ | **56.67%** | $[39.2\%, 72.6\%]$ | 0.5317 | 0.5484 | **0.5010** | 0.3743 | `[[9, 1, 0], [3, 7, 7], [1, 1, 1]]` |
-| **Vision + Questionnaire** | $F_0\text{--}F_{17}$ ($D=18$) | $13 / 30$ | **43.33%** | $[27.4\%, 60.8\%]$ | 0.3611 | 0.3739 | **0.3588** | -0.0464 | `[[2, 8, 0], [4, 10, 3], [0, 2, 1]]` |
-| **Vision + Sensor** | $F_0\text{--}F_5, F_{18}\text{--}F_{22}$ ($D=11$) | $18 / 30$ | **60.00%** | $[42.3\%, 75.4\%]$ | 0.5270 | 0.5131 | **0.5080** | 0.2968 | `[[5, 5, 0], [1, 12, 4], [1, 1, 1]]` |
-| **Questionnaire + Sensor** | $F_6\text{--}F_{22}$ ($D=17$) | $26 / 30$ | **86.67%** | $[70.3\%, 94.7\%]$ | 0.8363 | 0.8026 | **0.8148** | **0.7609** | `[[8, 2, 0], [0, 16, 1], [0, 1, 2]]` |
-| **Full Multimodal Fusion** | $F_0\text{--}F_{22}$ ($D=23$) | $25 / 30$ | **83.33%** | $[66.4\%, 92.7\%]$ | 0.8222 | 0.7693 | **0.7850** | **0.7027** | `[[7, 3, 0], [0, 16, 1], [0, 1, 2]]` |
+| **Vision Only** | \text{--}F_5$ (=6$) |  / 30$ | **40.00%** | $[24.6\%, 57.7\%]$ | 0.2889 | 0.2882 | **0.2886** | -0.0610 | [[4, 6, 0], [6, 8, 3], [1, 2, 0]] |
+| **Questionnaire Only** | \text{--}F_{17}$ (=12$) |  / 30$ | **56.67%** | $[39.2\%, 72.6\%]$ | 0.5013 | 0.5072 | **0.5036** | +0.2343 | [[6, 4, 0], [5, 10, 2], [0, 2, 1]] |
+| **Sensor Only** | {18}\text{--}F_{22}$ (=5$) |  / 30$ | **56.67%** | $[39.2\%, 72.6\%]$ | 0.5317 | 0.5484 | **0.5010** | +0.3743 | [[9, 1, 0], [3, 7, 7], [1, 1, 1]] |
+| **Vision + Questionnaire** | \text{--}F_{17}$ (=18$) |  / 30$ | **53.33%** | $[36.1\%, 69.8\%]$ | 0.4688 | 0.4784 | **0.4732** | +0.1982 | [[5, 5, 0], [4, 10, 3], [0, 2, 1]] |
+| **Vision + Sensor** | \text{--}F_5, F_{18}\text{--}F_{22}$ (=11$) |  / 30$ | **63.33%** | $[45.5\%, 78.1\%]$ | 0.5556 | 0.5373 | **0.5321** | +0.3383 | [[6, 4, 0], [1, 12, 4], [1, 1, 1]] |
+| **Questionnaire + Sensor** | \text{--}F_{22}$ (=17$) |  / 30$ | **90.00%** | $[74.4\%, 96.5\%]$ | 0.8889 | 0.8529 | **0.8693** | **+0.8246** | [[8, 2, 0], [0, 17, 0], [0, 1, 2]] |
+| **Full Multimodal Fusion** | \text{--}F_{22}$ (=23$) |  / 30$ | **83.33%** | $[66.4\%, 92.7\%]$ | 0.8222 | 0.7693 | **0.7850** | **+0.7027** | [[7, 3, 0], [0, 16, 1], [0, 1, 2]] |
 
 ---
 

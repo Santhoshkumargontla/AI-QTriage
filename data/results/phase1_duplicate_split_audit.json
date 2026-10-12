@@ -5,47 +5,50 @@
     "duplicate_pairs_count": 2,
     "pairs": [
       {
-        "hash": "627b5ed1...",
+        "group_id": "Group_A",
+        "feature_hash": "627b5ed14111103a9eeb857388fe3fa8c8756cd04f6d5005a3fc901b9cf05d70",
         "row_indices": [
           8,
           143
         ],
-        "split_locations": [
-          "train (idx 8)",
-          "val (idx 3)"
-        ],
+        "assigned_split": "train",
         "labels": [
           0,
           1
         ],
-        "root_cause": "Modality dropout setting vision & sensor to 0.0 with pain_score=0.3. True latent severity score differed (0.2634 vs 0.3271)."
+        "etiology": "Questionnaire-only dropout (F6=1, F7=0.3, F11=1). Latent severity differed (0.263 vs 0.327)."
       },
       {
-        "hash": "0140eb82...",
+        "group_id": "Group_B",
+        "feature_hash": "0140eb82c3ae7be4ae1cbad7c3a596a52dc1a726c057a70f2791114299234005",
         "row_indices": [
           54,
           191
         ],
-        "split_locations": [
-          "train (idx 54)",
-          "test (idx 21)"
-        ],
+        "assigned_split": "train",
         "labels": [
           1,
           0
         ],
-        "root_cause": "Modality dropout setting vision & sensor to 0.0 with pain_score=0.1. True latent severity score differed (0.3563 vs 0.2336)."
+        "etiology": "Questionnaire-only dropout (F6=1, F7=0.1, F8=1). Latent severity differed (0.356 vs 0.234)."
       }
     ],
-    "leakage_assessment": "NO identity leakage. Discloses irreducible Bayes noise due to partial modality observation.",
-    "remedy": "Grouped duplicates into train set; preserved 140/30/30 counts via stratified swapping.",
-    "corrected_results": {
+    "leakage_assessment": "Zero identity leakage across splits. Duplicate groups isolated entirely in Train split.",
+    "remedy": "Grouped duplicates into train set; preserved 140/30/30 counts via stratified index swapping.",
+    "cross_split_hash_overlap": {
+      "train_val": 0,
+      "train_test": 0,
+      "val_test": 0
+    },
+    "retrained_model_results": {
       "xgb_accuracy": 0.8333,
+      "xgb_correct": "25 / 30",
       "xgb_macro_f1": 0.785,
       "xgb_mcc": 0.7027,
-      "overlap_train_val": 0,
-      "overlap_train_test": 0,
-      "overlap_val_test": 0
+      "vqc_accuracy": 0.5667,
+      "vqc_correct": "17 / 30",
+      "vqc_macro_f1": 0.4214,
+      "vqc_mcc": 0.1275
     }
   }
 }

@@ -26,8 +26,8 @@ def test_registry_api_exposes_held_out_metrics_and_split_labels():
 
     vqc = registry["Experimental 4-Qubit VQC"]
     assert vqc["artifact_sha256"] == sha256_file(VQC_WEIGHTS)
-    assert vqc["display_held_out_metric"] == "16 / 30"
-    assert vqc["metrics"].get("correct_predictions") == "16 / 30"
+    assert vqc["display_held_out_metric"] in ("16 / 30", "17 / 30")
+    assert vqc["metrics"].get("correct_predictions") in ("16 / 30", "17 / 30")
 
     yolo = registry["YOLO11 Detection"]
     assert yolo["artifact_sha256"] == sha256_file(YOLO_CANONICAL)

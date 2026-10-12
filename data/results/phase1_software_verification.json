@@ -1,40 +1,47 @@
 {
-  "audit_metadata": {
-    "auditor": "Senior ML Engineer & Software Quality Auditor",
-    "date": "2026-10-12",
-    "execution_pass": "FINAL_CLOSURE_RERUN",
-    "status": "VERIFIED_PASS"
+  "timestamp": "2026-10-12T16:05:30Z",
+  "environment": {
+    "os": "Windows 11",
+    "python": "3.14.5",
+    "node": "v24.16.0",
+    "npm": "11.11.1",
+    "nextjs": "16.3.0",
+    "pytest": "8.4.1",
+    "git_head": "30c40c5d172eb73aa33d8fb52625ef91ecf13fcd"
   },
-  "backend_tests": {
-    "command": "pytest backend/tests/ -q",
-    "working_directory": "c:\\Users\\santh\\Capstone Project Code",
-    "python_version": "3.14.5",
+  "backend_pytest": {
+    "command": "backend\\venv\\Scripts\\pytest.exe backend/tests/ -q",
     "exit_code": 0,
-    "duration_seconds": 85.13,
-    "passed": 235,
-    "failed": 0,
-    "skipped": 0,
-    "errors": 0,
-    "pass_rate": "100%",
-    "log_path": "C:\\Users\\santh\\.gemini\\antigravity\\brain\\1869e667-746c-4ef1-8933-dc346fe33226\\.system_generated\\tasks\\task-4673.log"
-  },
-  "frontend_typecheck": {
-    "command": "npx tsc --noEmit",
-    "working_directory": "c:\\Users\\santh\\Capstone Project Code\\frontend",
-    "node_version": "v24.16.0",
-    "npm_version": "11.11.1",
-    "exit_code": 0,
-    "errors_count": 0,
     "status": "PASS",
-    "log_path": "C:\\Users\\santh\\.gemini\\antigravity\\brain\\1869e667-746c-4ef1-8933-dc346fe33226\\.system_generated\\tasks\\task-4688.log"
+    "passed": 244,
+    "failed": 0,
+    "warnings": 3,
+    "duration_seconds": 168.28,
+    "details": "All 244 tests passed across backend/tests/ including core pipeline, calibration, OOD/blank image reliability, test_phase1_split_integrity, and test_model_checkpoint_integrity."
   },
-  "runtime_modality_registry": {
-    "status": "VERIFIED",
-    "deployed_entrypoint": "backend/main.py:1849",
-    "loaded_artifact": "ml/models/xgboost_best.json",
-    "loaded_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
-    "input_dimension": 23,
-    "handling_of_missing_modalities": "MultimodalFeatureFusion sets modality present flag to 0.0 and zero-fills omitted feature slices. Modality dropout during training ensures robust prediction.",
-    "offline_ablation_distinction": "The 7 independent modality models in ml/models/ablation_independent/ are offline scientific ablation artifacts and are NOT dynamically loaded by backend/main.py."
-  }
+  "frontend_typescript": {
+    "command": "npx tsc --noEmit",
+    "cwd": "frontend",
+    "exit_code": 0,
+    "status": "PASS",
+    "errors": 0,
+    "details": "TypeScript compiler finished with zero type errors."
+  },
+  "frontend_lint": {
+    "command": "npm run lint",
+    "cwd": "frontend",
+    "exit_code": 0,
+    "status": "PASS",
+    "errors": 0,
+    "warnings": 12,
+    "details": "ESLint passed with 0 errors and 12 unused variable / effect dependency warnings."
+  },
+  "frontend_build": {
+    "command": "npm run build",
+    "cwd": "frontend",
+    "exit_code": 0,
+    "status": "PASS",
+    "details": "Turbopack Next.js 16.3.0 production build completed successfully in 8.0s. All 7 static and dynamic app routes generated without error."
+  },
+  "overall_status": "PASS"
 }

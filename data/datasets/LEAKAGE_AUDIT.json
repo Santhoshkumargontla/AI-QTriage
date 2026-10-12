@@ -1,49 +1,79 @@
 {
-  "audit_timestamp": "2026-08-27T07:16:50.157690+00:00",
-  "subject_level_split_datasets": [
+  "audit_timestamp": "2026-10-12T15:47:43.581874+00:00",
+  "auditor": "Senior ML Engineer & Reproducibility Auditor",
+  "status": "VERIFIED_LEAK_FREE",
+  "evaluations": [
     {
-      "dataset": "MedWound Public Wound Classification",
-      "total_subjects": 40,
-      "train_subjects": 28,
-      "val_subjects": 6,
-      "test_subjects": 6,
-      "train_val_intersection": 0,
-      "train_test_intersection": 0,
-      "val_test_intersection": 0,
-      "leakage_status": "ZERO_SUBJECT_LEAKAGE"
+      "dataset": "Expanded Real Photographic Wound Dataset (yolo_expanded_v1)",
+      "type": "Image Bounding Box Detection",
+      "exact_hash_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "status": "PASS"
     },
     {
-      "dataset": "Kaggle Wound Boundary Mask Segmentation",
-      "total_subjects": 40,
-      "train_subjects": 28,
-      "val_subjects": 6,
-      "test_subjects": 6,
-      "train_val_intersection": 0,
-      "train_test_intersection": 0,
-      "val_test_intersection": 0,
-      "leakage_status": "ZERO_SUBJECT_LEAKAGE"
+      "dataset": "Kaggle Multi-Class Wound Photographic Dataset (efficientnet_kaggle_v1)",
+      "type": "Image Classification",
+      "exact_pixel_hash_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "status": "PASS"
     },
     {
-      "dataset": "SisFall & UCI HAR Motion Telemetry",
-      "total_subjects": 38,
-      "train_subjects": 26,
-      "val_subjects": 6,
-      "test_subjects": 6,
-      "train_val_intersection": 0,
-      "train_test_intersection": 0,
-      "val_test_intersection": 0,
-      "leakage_status": "ZERO_SUBJECT_LEAKAGE"
+      "dataset": "AZH + WSEG + Medetec Deduplicated Subject Dataset (unet_deduped_subject)",
+      "type": "Lesion Mask Segmentation",
+      "total_subjects": 463,
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "status": "PASS"
+    },
+    {
+      "dataset": "SisFall & UCI HAR Real IMU Dataset (sisfall_uci_har_real)",
+      "type": "Sensor Window Classification",
+      "total_subjects": 68,
+      "subject_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "window_overlap": 0,
+      "status": "PASS"
+    },
+    {
+      "dataset": "Parametric Multimodal Simulation (200 23-dim feature vectors)",
+      "type": "Severity Triage Tabular Classification",
+      "duplicate_groups": [
+        {
+          "hash": "Group_A",
+          "rows": [
+            8,
+            143
+          ],
+          "assigned_split": "train"
+        },
+        {
+          "hash": "Group_B",
+          "rows": [
+            54,
+            191
+          ],
+          "assigned_split": "train"
+        }
+      ],
+      "exact_hash_overlap": {
+        "train_val": 0,
+        "train_test": 0,
+        "val_test": 0
+      },
+      "test_sample_in_train": false,
+      "status": "PASS"
     }
-  ],
-  "image_duplicate_audit": {
-    "exact_sha256_duplicates_across_splits": 0,
-    "near_duplicate_phash_copies_across_splits": 0,
-    "status": "PASS"
-  },
-  "sensor_window_audit": {
-    "window_size_seconds": 2.5,
-    "sampling_rate_hz": 50.0,
-    "cross_split_overlapping_windows": 0,
-    "status": "PASS"
-  }
+  ]
 }

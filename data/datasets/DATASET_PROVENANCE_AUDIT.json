@@ -1,82 +1,197 @@
 [
   {
-    "dataset_name": "Roboflow Skin Injury & Wound Bounding Box Dataset",
-    "source_url": "https://universe.roboflow.com/search?q=wound+detection",
-    "license": "CC BY 4.0",
-    "license_verified": true,
-    "download_date": "2026-08-20",
-    "raw_sample_count": 123,
-    "usable_sample_count": 123,
-    "corrupted_removed": 0,
-    "duplicates_removed": 0,
-    "subject_id_available": false,
-    "group_id_available": true,
-    "split_type": "GROUP_SPLIT",
-    "evidence_path": "data/datasets/DATASET_LICENSES.md",
-    "limitation": "SMALL_DATASET_TRANSFER_LEARNING_BASELINE"
+    "model_target": "YOLO11 Detection (yolo11_injury_best.pt)",
+    "dataset_name": "Expanded Real Photographic Wound Dataset (yolo_expanded_v1)",
+    "data_provenance_class": "REAL",
+    "sources": [
+      {
+        "name": "Roboflow AID",
+        "count": 257,
+        "license": "CC BY 4.0"
+      },
+      {
+        "name": "Roboflow Injury Detection v2",
+        "count": 703,
+        "license": "CC BY 4.0"
+      },
+      {
+        "name": "Roboflow Wound2",
+        "count": 285,
+        "license": "CC BY 4.0"
+      },
+      {
+        "name": "Shubhambaid Skin Burn",
+        "count": 1090,
+        "license": "Open Access (Kaggle)"
+      },
+      {
+        "name": "HuggingFace WSEG",
+        "count": 293,
+        "license": "Open Access CVF"
+      },
+      {
+        "name": "Ibrahimfateen Normal",
+        "count": 180,
+        "license": "Open Access (Kaggle)"
+      },
+      {
+        "name": "OOD Hard Negative",
+        "count": 5,
+        "license": "Curated Negative Control"
+      }
+    ],
+    "total_unique_images": 2813,
+    "split_counts": {
+      "train": 1935,
+      "val": 442,
+      "test": 436
+    },
+    "box_counts": {
+      "abrasion": 616,
+      "burn": 2186,
+      "cut": 129,
+      "laceration": 21,
+      "bruise": 646,
+      "wound": 298
+    },
+    "negative_images": {
+      "train": 129,
+      "val": 34,
+      "test": 22
+    },
+    "manifest_path": "data/datasets/yolo_expanded_v1/data.yaml",
+    "report_path": "data/datasets/yolo_expanded_v1/PREPARE_REPORT.json",
+    "leakage_status": "ZERO_IMAGE_HASH_LEAKAGE",
+    "notes": "Reconciles historical 123-drawing baseline (mAP50 83.58%) vs held-out photographic subset (N=23, mAP50 36.47%) vs full expanded test (N=436, mAP50 34.54%, Prec 51.59%, Rec 39.42%)."
   },
   {
-    "dataset_name": "MedWound Public Wound Dataset",
-    "source_url": "https://www.kaggle.com/datasets/gpiosenka/skin-diseases-and-wounds",
-    "license": "CC BY 4.0",
-    "license_verified": true,
-    "download_date": "2026-08-20",
-    "raw_sample_count": 200,
-    "usable_sample_count": 200,
-    "corrupted_removed": 0,
-    "duplicates_removed": 0,
-    "subject_id_available": true,
-    "subject_count": 40,
-    "group_id_available": true,
-    "split_type": "SUBJECT_LEVEL_SPLIT",
-    "evidence_path": "data/datasets/manifests/classification_manifest.csv"
+    "model_target": "EfficientNetV2 Classification (efficientnetv2_injury_best.pt)",
+    "dataset_name": "Kaggle Multi-Class Wound Photographic Dataset (efficientnet_kaggle_v1)",
+    "data_provenance_class": "REAL",
+    "sources": [
+      {
+        "name": "Yasinpratomo Wound Dataset (Kaggle)",
+        "license": "Unknown on card - documented research demo"
+      },
+      {
+        "name": "Ibrahimfateen Wound Classification (Kaggle)",
+        "license": "Unknown on card - documented research demo"
+      },
+      {
+        "name": "Reject-v2 OOD Controls + Normal Skin Patches",
+        "license": "Curated Negative Control"
+      }
+    ],
+    "total_images": 3039,
+    "split_counts": {
+      "train": 2104,
+      "val": 462,
+      "test": 473
+    },
+    "classes": [
+      "abrasion",
+      "bruise",
+      "burn",
+      "cut",
+      "laceration",
+      "wound",
+      "normal",
+      "ood_reject"
+    ],
+    "manifest_path": "data/datasets/efficientnet_kaggle_v1/manifest.csv",
+    "report_path": "ml/models/vision/efficientnetv2_metadata.json",
+    "leakage_status": "ZERO_PIXEL_HASH_LEAKAGE",
+    "notes": "Test accuracy 96.62% (457/473), Macro-F1 94.34%. OOD collapse gate passed (0 false positives on uniform/noise inputs)."
   },
   {
-    "dataset_name": "Kaggle Wound Boundary Mask Dataset",
-    "source_url": "https://www.kaggle.com/datasets/gpiosenka/skin-diseases-and-wounds",
-    "license": "CC BY 4.0",
-    "license_verified": true,
-    "download_date": "2026-08-20",
-    "raw_sample_count": 200,
-    "usable_sample_count": 200,
-    "corrupted_removed": 0,
-    "duplicates_removed": 0,
-    "subject_id_available": true,
-    "subject_count": 40,
-    "group_id_available": true,
-    "split_type": "SUBJECT_LEVEL_SPLIT",
-    "evidence_path": "data/datasets/manifests/segmentation_manifest.csv"
+    "model_target": "ResNet34-UNet Segmentation (unet_injury_best.pt)",
+    "dataset_name": "AZH + WSEG + Medetec Deduplicated Subject Dataset (unet_deduped_subject)",
+    "data_provenance_class": "REAL",
+    "sources": [
+      {
+        "name": "AZH Wound Care Research Collection",
+        "license": "Academic Research Use"
+      },
+      {
+        "name": "WSEG (WSNet WACV 2023)",
+        "license": "CC BY-NC 4.0"
+      },
+      {
+        "name": "Medetec Clinical Wound Image Repository",
+        "license": "Educational/Research Use"
+      },
+      {
+        "name": "Curated Synthetic Empty Canvases (Negative Controls)",
+        "license": "Internal CC0"
+      }
+    ],
+    "total_pairs": 464,
+    "unique_subjects": 463,
+    "split_counts": {
+      "train": 326,
+      "val": 69,
+      "test": 69
+    },
+    "manifest_path": "data/datasets/unet_deduped_subject/manifest.csv",
+    "report_path": "ml/models/vision/unet_metadata.json",
+    "leakage_status": "SUBJECT_ISOLATED_PERCEPTUAL_DEDUPED",
+    "notes": "Mean Dice 64.1808%, Mean IoU 51.7783% on 69 held-out test pairs at threshold tau = 0.50."
   },
   {
-    "dataset_name": "SisFall & UCI HAR Motion Telemetry",
-    "source_url": "https://www.physionet.org/content/sisfall/1.0.0/",
-    "license": "ODC-By Open Access",
-    "license_verified": true,
-    "download_date": "2026-08-22",
-    "raw_sample_count": 200,
-    "usable_sample_count": 200,
-    "corrupted_removed": 0,
-    "duplicates_removed": 0,
-    "subject_id_available": true,
-    "subject_count": 38,
-    "group_id_available": true,
-    "split_type": "SUBJECT_LEVEL_SPLIT",
-    "evidence_path": "data/datasets/manifests/sensor_manifest.csv"
+    "model_target": "Sensor Motion Event Classifier (sensor_motion_best.json)",
+    "dataset_name": "SisFall & UCI HAR Real IMU Accelerometer/Gyroscope Dataset (sisfall_uci_har_real)",
+    "data_provenance_class": "REAL",
+    "sources": [
+      {
+        "name": "SisFall Dataset (PhysioNet / Algo-rythmic mirror)",
+        "windows": 4505,
+        "license": "ODC-By Open Access"
+      },
+      {
+        "name": "UCI HAR Smartphones Dataset",
+        "windows": 2000,
+        "license": "CC BY 4.0"
+      }
+    ],
+    "total_windows_2_5s": 6505,
+    "unique_subjects": 68,
+    "split_counts": {
+      "train": 4247,
+      "val": 1030,
+      "test": 1228
+    },
+    "label_counts": {
+      "normal_activity": 4467,
+      "fall": 1798,
+      "impact": 240
+    },
+    "manifest_path": "data/datasets/manifests/sensor_real_manifest.csv",
+    "processed_features_path": "data/datasets/processed/sensor_motion/sensor_real_features.csv",
+    "report_path": "data/manifests/sensor_real_prepare_report.json",
+    "leakage_status": "ZERO_SUBJECT_LEAKAGE (All 68 subjects segregated across splits)",
+    "notes": "Accuracy 96.34% (1183/1228), Macro-F1 89.85%, MCC 0.9296 on held-out test windows."
   },
   {
-    "dataset_name": "Synthesized Multimodal Baseline Matrix",
-    "source_url": "Project Internal Engineering Baseline",
-    "license": "MIT License",
-    "license_verified": true,
-    "download_date": "2026-08-25",
-    "raw_sample_count": 200,
-    "usable_sample_count": 200,
-    "corrupted_removed": 0,
-    "duplicates_removed": 0,
-    "subject_id_available": false,
-    "group_id_available": false,
-    "split_type": "STRATIFIED_SPLIT_WITH_LEAKAGE_LIMITATION",
-    "evidence_path": "ml/training/train_xgboost.py",
-    "limitation": "0 genuinely paired clinical patient records in public domain due to HIPAA constraints."
+    "model_target": "XGBoost Multimodal (xgboost_best.json) & Experimental VQC (vqc_weights.npz)",
+    "dataset_name": "Parametric Multimodal Simulation (generate_multimodal_dataset, seed=42)",
+    "data_provenance_class": "SYNTHETIC",
+    "sources": [
+      {
+        "name": "Parametric physiological trauma severity generator",
+        "samples": 200,
+        "license": "Project Internal"
+      }
+    ],
+    "total_vectors_23d": 200,
+    "split_counts": {
+      "train": 140,
+      "val": 30,
+      "test": 30
+    },
+    "split_policy": "Leak-free grouped split: duplicate groups {8, 143} and {54, 191} grouped strictly into Train.",
+    "manifest_path": "ml/training/train_xgboost.py",
+    "report_path": "data/results/canonical_held_out_evaluation_corrected.json",
+    "leakage_status": "ZERO_CROSS_SPLIT_HASH_LEAKAGE (0 feature-hash overlap across train/val/test)",
+    "notes": "XGBoost test accuracy 83.33% (25/30), 95% Wilson CI [66.4%, 92.7%]. VQC test accuracy 56.67% (17/30)."
   }
 ]
