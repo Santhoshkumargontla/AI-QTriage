@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-12T16:30:00Z",
+  "timestamp": "2026-10-12T17:05:00Z",
   "environment": {
     "os": "Windows 11",
     "python": "3.14.5",
@@ -9,6 +9,7 @@
     "pytest": "8.4.1",
     "code_revision_tested": "273dc2789dc5734b1226c60905242815ae8c9b32",
     "base_documentation_commit": "9e460bfb12f08add3d6a071cb82e94dc764c11aa",
+    "current_synchronized_head_sha": "142f8e37177ea1f3bbc5243270399e35c204128b",
     "git_branch": "main",
     "remote_origin": "https://github.com/Santhoshkumargontla/AI-QTriage.git"
   },
@@ -19,7 +20,7 @@
     "passed": 244,
     "failed": 0,
     "warnings": 3,
-    "duration_seconds": 168.28,
+    "duration_seconds": 196.69,
     "code_revision_tested": "273dc2789dc5734b1226c60905242815ae8c9b32",
     "details": "All 244 tests passed across backend/tests/ including core pipeline, calibration, OOD/blank image reliability, test_phase1_split_integrity, and test_model_checkpoint_integrity."
   },
