@@ -23,8 +23,8 @@ The verdict is designated **PASS WITH LIMITATIONS** because the project's scient
 ## 2. Repository Branch and Commit SHA
 
 - **Current Git Branch:** `main`
-- **Current HEAD Commit SHA:** `8f10dfe71c4ea286512cee565328be09a564c90c`
-- **Latest Commit Message:** `Restore canonical format_gps_location_line contract for 100% pytest compliance`
+- **Current HEAD Commit SHA:** `5c481cd8a031ba9c8dfb1307d6153540fc14aa64`
+- **Latest Commit Message:** `Phase 1: Complete verified modality ablation, leak-free evaluation, and reproducibility audit`
 - **Upstream Remote:** `origin/main` (`https://github.com/Santhoshkumargontla/AI-QTriage.git`)
 - **Working Tree State:** Clean separation between committed core files, locally modified runtime wrappers (`backend/main.py`, `frontend/components/ModelGraphsAndMatrix.tsx`, `streamlit_app.py`), and newly generated audit artifacts. No commit, reset, or push was performed.
 
