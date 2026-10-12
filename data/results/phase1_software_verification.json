@@ -9,7 +9,7 @@
     "pytest": "8.4.1",
     "code_revision_tested": "273dc2789dc5734b1226c60905242815ae8c9b32",
     "base_documentation_commit": "9e460bfb12f08add3d6a071cb82e94dc764c11aa",
-    "current_synchronized_head_sha": "c9323a41826ba76acbaf81f5047d45e0a7a478d0",
+    "current_synchronized_head_sha": "bb513dd6bbe0cb1e4003528fad56caddcdd2782f",
     "git_branch": "main",
     "remote_origin": "https://github.com/Santhoshkumargontla/AI-QTriage.git"
   },

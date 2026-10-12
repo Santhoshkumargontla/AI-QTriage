@@ -11,8 +11,8 @@
 **Active Branch:** `main`  
 **Code Revision Tested:** `273dc2789dc5734b1226c60905242815ae8c9b32` (`fix(phase1): resolve 6 audit issues...`)  
 **Base Documentation Commit:** `9e460bfb12f08add3d6a071cb82e94dc764c11aa` (`docs: sync Phase 1 verification reports...`)  
-**Current Synchronized HEAD Commit:** `c9323a41826ba76acbaf81f5047d45e0a7a478d0`  
-**Git Audit Lineage:** `273dc278` (code tested) $\to$ `9e460bfb` $\to$ `d61e2311` $\to$ `1ee76574` $\to$ `6c7d7315` $\to$ `142f8e37` $\to$ `c9323a41` (HEAD `origin/main`)  
+**Current Synchronized HEAD Commit:** `bb513dd6bbe0cb1e4003528fad56caddcdd2782f`  
+**Git Audit Lineage:** `273dc278` (code tested) $\to$ `9e460bfb` $\to$ `d61e2311` $\to$ `1ee76574` $\to$ `6c7d7315` $\to$ `142f8e37` $\to$ `c9323a41` $\to$ `bb513dd6` (HEAD `origin/main`)  
 
 ---
 
@@ -258,10 +258,10 @@ Routes Generated:
 - **Active Git Branch:** `main`
 - **Code Revision Tested:** `273dc2789dc5734b1226c60905242815ae8c9b32`
 - **Base Documentation Commit:** `9e460bfb12f08add3d6a071cb82e94dc764c11aa`
-- **Current Synchronized HEAD SHA:** `c9323a41826ba76acbaf81f5047d45e0a7a478d0`
-- **Audit Lineage:** `273dc278` (code tested) $\to$ `9e460bfb` $\to$ `d61e2311` $\to$ `1ee76574` $\to$ `6c7d7315` $\to$ `142f8e37` $\to$ `c9323a41` (HEAD synchronized)
+- **Current Synchronized HEAD SHA:** `bb513dd6bbe0cb1e4003528fad56caddcdd2782f`
+- **Audit Lineage:** `273dc278` (code tested) $\to$ `9e460bfb` $\to$ `d61e2311` $\to$ `1ee76574` $\to$ `6c7d7315` $\to$ `142f8e37` $\to$ `c9323a41` $\to$ `bb513dd6` (HEAD synchronized)
 - **Remote URL:** `https://github.com/Santhoshkumargontla/AI-QTriage.git`
-- **Synchronization:** Verified via `git fetch origin && git rev-parse HEAD && git rev-parse origin/main`. Both match `c9323a41826ba76acbaf81f5047d45e0a7a478d0` exactly.
+- **Synchronization:** Verified via `git fetch origin && git rev-parse HEAD && git rev-parse origin/main`. Both match `bb513dd6bbe0cb1e4003528fad56caddcdd2782f` exactly.
 - **Working Tree State:** Tracked repository files are completely clean (`git status --short` confirms 0 uncommitted modifications). Audit scripts and fresh re-evaluation artifacts are fully committed under `scratch/audit_evidence/`.
 
 ---
@@ -279,7 +279,7 @@ Routes Generated:
 | **Full Software Test Suite** | Backend Unit & Integration Tests across all triage modules, endpoints, and ML inference wrappers | **244 tests** across all test files in `backend/tests/` | Tested in isolated virtual environment (`backend/venv`) | N/A (Software Test Suite) | `backend\venv\Scripts\pytest.exe backend/tests/ -q` | **244 passed, 0 failed** in 196.69s (3 deprecation warnings in external shap library) | `backend/tests/` | **PASS** | Complete backend test suite passes with zero errors and zero failures. |
 | **Phase 1 Integrity Gate** | Targeted integrity tests verifying canonical path immutability, registry schema, and OOD reject | **14 tests** in `backend/tests/test_phase1_integrity.py` | Tested in isolated virtual environment | N/A (Integrity Gate Suite) | `backend\venv\Scripts\pytest.exe backend/tests/test_phase1_integrity.py -q` | **14 passed, 0 failed** in 2.91s | [`test_phase1_integrity.py`](file:///C:/Users/santh/Capstone%20Project%20Code/backend/tests/test_phase1_integrity.py) | **PASS** | Verifies model registry integrity, canonical path mappings, and OOD rejection without errors. |
 | **Next.js Web Frontend** | React / Next.js production web UI and dashboard interface | **43 modules** in `frontend/src/` | Type-checked and compiled with strict ESLint & Tailwind CSS | N/A (Frontend Web Application) | `npm run build` *(in `frontend/`)* | **Exit Code 0**; Compiled successfully; zero errors, zero warnings | `frontend/.next/`, `frontend/package.json` | **PASS** | Frontend builds cleanly for production. |
-| **Git Synchronization & Provenance Gate** | Full repository tracking, remote parity, and artifact integrity | All tracked Git trees and manifests | Working tree clean of tracked modifications; `HEAD == origin/main` | `c9323a41826ba76acbaf81f5047d45e0a7a478d0` | `git rev-parse HEAD; git rev-parse origin/main; git status --short` | `HEAD`: `c9323a4182...`<br>`origin/main`: `c9323a4182...`<br>Tracked diff: **clean** | Git repository root | **PASS** | Local and remote repositories are in exact parity. All newly generated evidence is cleanly isolated and committed. |
+| **Git Synchronization & Provenance Gate** | Full repository tracking, remote parity, and artifact integrity | All tracked Git trees and manifests | Working tree clean of tracked modifications; `HEAD == origin/main` | `bb513dd6bbe0cb1e4003528fad56caddcdd2782f` | `git rev-parse HEAD; git rev-parse origin/main; git status --short` | `HEAD`: `bb513dd6...`<br>`origin/main`: `bb513dd6...`<br>Tracked diff: **clean** | Git repository root | **PASS** | Local and remote repositories are in exact parity. All newly generated evidence is cleanly isolated and committed. |
 
 ---
 

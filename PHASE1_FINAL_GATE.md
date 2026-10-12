@@ -21,7 +21,7 @@ All 8 mandatory verification checks for Phase 1 have been audited. No model retr
 | **Check 4** | **Metric Recalculation Concordance** | **PASS** | Checkpoint re-eval vs `independent_ablation_results.json` | 100% exact numerical agreement across accuracy, macro-precision, macro-recall, macro-F1, MCC, and CM. |
 | **Check 5** | **Synthetic Label Dependencies** | **PASS WITH LIMITATION** | `ABLATION_METHOD_REVIEW.md` Sec 2.4 | Ground truth is rule-derived: $0.4\times\text{pain} + 0.3\times\text{peak\_g} + 0.3\times\text{area}$. Synthetic benchmark only. |
 | **Check 6** | **Backend Test Suite Integrity** | **PASS** | `pytest backend/tests/ -q` | 244 passed out of 244 tests in 196.69s (100% pass rate; 0 failures). |
-| **Check 7** | **Git Working Tree Safety & Parity** | **PASS** | `git rev-parse HEAD; git status` | Code revision tested is `273dc2789dc5734b1226c60905242815ae8c9b32`. Current synchronized HEAD is `c9323a41826ba76acbaf81f5047d45e0a7a478d0` (`origin/main`). Tracked working tree clean; zero uncommitted modifications. |
+| **Check 7** | **Git Working Tree Safety & Parity** | **PASS** | `git rev-parse HEAD; git status` | Code revision tested is `273dc2789dc5734b1226c60905242815ae8c9b32`. Current synchronized HEAD is `bb513dd6bbe0cb1e4003528fad56caddcdd2782f` (`origin/main`). Tracked working tree clean; zero uncommitted modifications. |
 | **Check 8** | **Multimodal Synergy Claim Bounds** | **PASS** | `ABLATION_RESULTS.md` Sec 3 | Multimodal synergy verified (+30.00% to +53.34% over unimodal). Full model framed on spatial clinical utility, not accuracy dominance. |
 
 ---
