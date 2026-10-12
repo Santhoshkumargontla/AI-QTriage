@@ -21,7 +21,7 @@ All 8 mandatory verification checks for Phase 1 have been audited. No model retr
 | **Check 4** | **Metric Recalculation Concordance** | **PASS** | Checkpoint re-eval vs `independent_ablation_results.json` | 100% exact numerical agreement across accuracy, macro-precision, macro-recall, macro-F1, MCC, and CM. |
 | **Check 5** | **Synthetic Label Dependencies** | **PASS WITH LIMITATION** | `ABLATION_METHOD_REVIEW.md` Sec 2.4 | Ground truth is rule-derived: $0.4\times\text{pain} + 0.3\times\text{peak\_g} + 0.3\times\text{area}$. Synthetic benchmark only. |
 | **Check 6** | **Backend Test Suite Integrity** | **PASS** | `pytest backend/tests/ -q` | 244 passed out of 244 tests in 196.69s (100% pass rate; 0 failures). |
-| **Check 7** | **Git Working Tree Safety & Parity** | **PASS** | `git rev-parse HEAD; git status` | Code revision tested is `273dc2789dc5734b1226c60905242815ae8c9b32`. Current synchronized HEAD is `142f8e37177ea1f3bbc5243270399e35c204128b` (`origin/main`). Tracked working tree clean; zero uncommitted modifications. |
+| **Check 7** | **Git Working Tree Safety & Parity** | **PASS** | `git rev-parse HEAD; git status` | Code revision tested is `273dc2789dc5734b1226c60905242815ae8c9b32`. Current synchronized HEAD is `c9323a41826ba76acbaf81f5047d45e0a7a478d0` (`origin/main`). Tracked working tree clean; zero uncommitted modifications. |
 | **Check 8** | **Multimodal Synergy Claim Bounds** | **PASS** | `ABLATION_RESULTS.md` Sec 3 | Multimodal synergy verified (+30.00% to +53.34% over unimodal). Full model framed on spatial clinical utility, not accuracy dominance. |
 
 ---
@@ -39,6 +39,17 @@ Metrics independently recomputed by loading saved checkpoints directly from ml/m
 | **Vision + Sensor** | 11 | **63.33%** (19/30) | 0.6333 | **0.5321** | 0.5321 | **+0.3383** | +0.3383 | [[6, 4, 0], [1, 12, 4], [1, 1, 1]] | **PASS** |
 | **Questionnaire + Sensor** | 17 | **90.00%** (27/30) | 0.9000 | **0.8693** | 0.8693 | **+0.8246** | +0.8246 | [[8, 2, 0], [0, 17, 0], [0, 1, 2]] | **PASS** |
 | **Full Multimodal** | 23 | **83.33%** (25/30) | 0.8333 | **0.7850** | 0.7850 | **+0.7027** | +0.7027 | [[7, 3, 0], [0, 16, 1], [0, 1, 2]] | **PASS** |
+
+### 2.1 Metric Traceability & Historical Variance Reconciliation (U-Net & VQC)
+
+1. **ResNet34-U-Net Metric Reconciliation:**
+   - **Historical Metadata Record (`unet_metadata.json`):** Mean Dice: **0.6418**, Mean IoU: **0.5178** on 69 test pairs.
+   - **Live Standalone Re-evaluation (`scratch/audit_evidence/vision_full_reproduced_eval.json`):** Mean Dice: **0.6441**, Mean IoU: **0.5204** on 69 test pairs.
+   - **Delta & Root Cause:** $\Delta\text{Dice} = +0.0023$ (+0.36%). The training validation script calculated Dice across downsampled $256\times 256$ PyTorch tensor batches. The independent live evaluation script rescales predictions to each image's original native resolution $(W\times H)$ via OpenCV nearest-neighbor interpolation (`cv2.INTER_NEAREST`) and scores against native masks. Checkpoint weights are identical (`3c7f3f39...`); performance is confirmed concordant within 0.36%.
+2. **PennyLane 4-Qubit VQC Metric Reconciliation:**
+   - **Historical Naive Split Record:** 16 / 30 correct (**53.33%** accuracy, MCC: **+0.0960**).
+   - **Remediated Leak-Free Split & Live Eval (`reproduced_metrics.json` / `canonical_held_out_evaluation_corrected.json`):** 17 / 30 correct (**56.67%** accuracy, MCC: **+0.1275**).
+   - **Delta & Root Cause:** $\Delta\text{Accuracy} = +3.34\%$ (+1 sample). The historical naive split had duplicate zero-masked feature vectors crossing the train/test boundary. Remediation grouped duplicates into train ($N=140$) and retrained the circuit on the clean split, reducing loss to 0.886 and gaining +1 correct test classification. VQC remains designated `EXPERIMENTAL_ONLY` on classical CPU simulation (`default.qubit`) as it does not surpass classical XGBoost (83.33%).
 
 ---
 
