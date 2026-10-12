@@ -9,7 +9,7 @@
 **Repository Directory:** `c:\Users\santh\Capstone Project Code`  
 **GitHub Repository:** `https://github.com/Santhoshkumargontla/AI-QTriage`  
 **Active Branch:** `main`  
-**Verified Git Baseline SHA:** `30c40c5d172eb73aa33d8fb52625ef91ecf13fcd`  
+**Verified Git Baseline SHA:** `273dc2789dc5734b1226c60905242815ae8c9b32`  
 
 ---
 
@@ -225,10 +225,10 @@ Routes Generated:
 
 - **Local Working Directory:** `c:\Users\santh\Capstone Project Code`
 - **Active Git Branch:** `main`
-- **Verified Head Commit SHA:** `30c40c5d172eb73aa33d8fb52625ef91ecf13fcd`
-- **Commit Title:** `docs: update Phase 1 verification report with latest commit SHA`
+- **Verified Head Commit SHA:** `273dc2789dc5734b1226c60905242815ae8c9b32`
+- **Commit Title:** `fix(phase1): resolve 6 audit issues, eliminate data leakage, retrain models, add integrity test suite`
 - **Remote URL:** `https://github.com/Santhoshkumargontla/AI-QTriage.git`
-- **Synchronization:** Local `main` is clean relative to remote `origin/main` at `30c40c5d172eb73aa33d8fb52625ef91ecf13fcd`.
+- **Synchronization:** Local `main` is clean relative to remote `origin/main` at `273dc2789dc5734b1226c60905242815ae8c9b32`.
 - **Working Tree Integrity:** All modified core files are tracked in Git. Untracked files consist strictly of local research audits, exploratory scratch scripts, and reproducible JSON benchmark outputs in `data/results/`. Zero unauthorized Git resets, commits, or pushes were performed.
 
 ---
