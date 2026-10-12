@@ -97,34 +97,38 @@ export function ModelGraphsAndMatrix() {
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded">HIGH</div>
 
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded flex items-center justify-center">LOW</div>
-                  <div className="p-3 bg-emerald-600/40 text-emerald-300 font-black text-sm rounded border border-emerald-500/40">10</div>
-                  <div className="p-3 bg-slate-900/60 text-slate-500 rounded">0</div>
+                  <div className="p-3 bg-emerald-600/40 text-emerald-300 font-black text-sm rounded border border-emerald-500/40">7</div>
+                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">3</div>
                   <div className="p-3 bg-slate-900/60 text-slate-500 rounded">0</div>
 
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded flex items-center justify-center">MOD</div>
+                  <div className="p-3 bg-slate-900/60 text-slate-500 rounded">0</div>
+                  <div className="p-3 bg-emerald-600/40 text-emerald-300 font-black text-sm rounded border border-emerald-500/40">16</div>
                   <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">1</div>
-                  <div className="p-3 bg-emerald-600/40 text-emerald-300 font-black text-sm rounded border border-emerald-500/40">7</div>
-                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">2</div>
 
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded flex items-center justify-center">HIGH</div>
                   <div className="p-3 bg-slate-900/60 text-slate-500 rounded">0</div>
-                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">2</div>
-                  <div className="p-3 bg-emerald-600/40 text-emerald-300 font-black text-sm rounded border border-emerald-500/40">8</div>
+                  <div className="p-3 bg-amber-900/30 text-amber-400 rounded border border-amber-800/40">1</div>
+                  <div className="p-3 bg-emerald-600/40 text-emerald-300 font-black text-sm rounded border border-emerald-500/40">2</div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-2 text-[11px] font-mono pt-2 border-t border-slate-800/80 text-center">
+              <div className="grid grid-cols-4 gap-2 text-[11px] font-mono pt-2 border-t border-slate-800/80 text-center">
                 <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
                   <span className="text-slate-400 block text-[9px]">Macro Precision</span>
-                  <span className="text-emerald-400 font-bold">0.8400</span>
+                  <span className="text-emerald-400 font-bold">0.8222</span>
                 </div>
                 <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
                   <span className="text-slate-400 block text-[9px]">Macro Recall</span>
-                  <span className="text-emerald-400 font-bold">0.8333</span>
+                  <span className="text-emerald-400 font-bold">0.7693</span>
                 </div>
                 <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
                   <span className="text-slate-400 block text-[9px]">Macro F1 Score</span>
-                  <span className="text-emerald-400 font-bold">0.8350</span>
+                  <span className="text-emerald-400 font-bold">0.7850</span>
+                </div>
+                <div className="p-2 bg-slate-900/80 rounded border border-slate-800">
+                  <span className="text-slate-400 block text-[9px]">Matthews MCC</span>
+                  <span className="text-emerald-400 font-bold">0.7027</span>
                 </div>
               </div>
             </div>

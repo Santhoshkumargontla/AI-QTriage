@@ -1,0 +1,210 @@
+[
+  {
+    "configuration": "Vision Only (F0\u2013F5)",
+    "modalities": [
+      "vision"
+    ],
+    "correct": "14 / 30",
+    "accuracy": 0.4667,
+    "macro_precision": 0.2692,
+    "macro_recall": 0.302,
+    "macro_f1": 0.2784,
+    "mcc": -0.102,
+    "confusion_matrix": [
+      [
+        2,
+        8,
+        0
+      ],
+      [
+        5,
+        12,
+        0
+      ],
+      [
+        0,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "configuration": "Questionnaire Only (F6\u2013F17)",
+    "modalities": [
+      "quest"
+    ],
+    "correct": "17 / 30",
+    "accuracy": 0.5667,
+    "macro_precision": 0.3855,
+    "macro_recall": 0.4157,
+    "macro_f1": 0.4,
+    "mcc": 0.1906,
+    "confusion_matrix": [
+      [
+        6,
+        4,
+        0
+      ],
+      [
+        5,
+        11,
+        1
+      ],
+      [
+        0,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "configuration": "Sensor Only (F18\u2013F22)",
+    "modalities": [
+      "sensor"
+    ],
+    "correct": "14 / 30",
+    "accuracy": 0.4667,
+    "macro_precision": 0.24,
+    "macro_recall": 0.366,
+    "macro_f1": 0.2897,
+    "mcc": -0.0565,
+    "confusion_matrix": [
+      [
+        0,
+        10,
+        0
+      ],
+      [
+        0,
+        13,
+        4
+      ],
+      [
+        0,
+        2,
+        1
+      ]
+    ]
+  },
+  {
+    "configuration": "Vision + Questionnaire",
+    "modalities": [
+      "vision",
+      "quest"
+    ],
+    "correct": "16 / 30",
+    "accuracy": 0.5333,
+    "macro_precision": 0.3627,
+    "macro_recall": 0.3961,
+    "macro_f1": 0.3779,
+    "mcc": 0.1406,
+    "confusion_matrix": [
+      [
+        6,
+        4,
+        0
+      ],
+      [
+        6,
+        10,
+        1
+      ],
+      [
+        0,
+        3,
+        0
+      ]
+    ]
+  },
+  {
+    "configuration": "Vision + Sensor",
+    "modalities": [
+      "vision",
+      "sensor"
+    ],
+    "correct": "11 / 30",
+    "accuracy": 0.3667,
+    "macro_precision": 0.4551,
+    "macro_recall": 0.4399,
+    "macro_f1": 0.3595,
+    "mcc": 0.0573,
+    "confusion_matrix": [
+      [
+        3,
+        6,
+        1
+      ],
+      [
+        1,
+        6,
+        10
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "configuration": "Questionnaire + Sensor",
+    "modalities": [
+      "quest",
+      "sensor"
+    ],
+    "correct": "25 / 30",
+    "accuracy": 0.8333,
+    "macro_precision": 0.9242,
+    "macro_recall": 0.7556,
+    "macro_f1": 0.8073,
+    "mcc": 0.7135,
+    "confusion_matrix": [
+      [
+        6,
+        4,
+        0
+      ],
+      [
+        0,
+        17,
+        0
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ]
+  },
+  {
+    "configuration": "Full Multimodal (F0\u2013F22)",
+    "modalities": [
+      "vision",
+      "quest",
+      "sensor"
+    ],
+    "correct": "25 / 30",
+    "accuracy": 0.8333,
+    "macro_precision": 0.8222,
+    "macro_recall": 0.7693,
+    "macro_f1": 0.785,
+    "mcc": 0.7027,
+    "confusion_matrix": [
+      [
+        7,
+        3,
+        0
+      ],
+      [
+        0,
+        16,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ]
+  }
+]

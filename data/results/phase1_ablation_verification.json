@@ -1,0 +1,2023 @@
+{
+  "audit_metadata": {
+    "auditor": "Senior ML Engineer & Reproducibility Auditor",
+    "date": "2026-10-12",
+    "dataset": "generate_multimodal_dataset(200, seed=42)",
+    "splits": {
+      "train": 140,
+      "val": 30,
+      "test": 30
+    },
+    "test_class_distribution": {
+      "LOW (0)": 10,
+      "MODERATE (1)": 17,
+      "HIGH (2)": 3
+    },
+    "test_row_indices": [
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199
+    ],
+    "ground_truth_test_labels": [
+      0,
+      0,
+      1,
+      2,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      2,
+      2,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "test_isolation": "Strict: No test records were used during training, scaling, or hyperparameter selection.",
+    "status": "VERIFIED"
+  },
+  "feature_mapping": {
+    "vision": {
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "count": 6,
+      "range": "F0-F5"
+    },
+    "questionnaire": {
+      "indices": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "count": 12,
+      "range": "F6-F17"
+    },
+    "sensor": {
+      "indices": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "count": 5,
+      "range": "F18-F22"
+    }
+  },
+  "runtime_distinction": {
+    "deployed_backend_model": "ml/models/xgboost_best.json (SHA-256: 73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643)",
+    "runtime_mechanism": "Unified 23-feature model trained with modality dropout; unobserved modalities zero-filled via MultimodalFeatureFusion",
+    "offline_ablation_models": "ml/models/ablation_independent/ (7 independently trained model checkpoints)",
+    "agreement_status": "PASS (Ablation is strictly an offline research experiment verifying incremental modality contributions; runtime uses single robust 23D model)"
+  },
+  "models": [
+    {
+      "configuration_name": "Vision Only (F0-F5)",
+      "modalities": [
+        "vision"
+      ],
+      "active_features_count": 6,
+      "feature_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "model_file": "xgb_vision_only.json",
+      "model_path": "ml\\models\\ablation_independent\\xgb_vision_only.json",
+      "sha256": "1a6623f4fa6a1b0aa001142d48f6095c344d77062b378dd17acf43a98a553b98",
+      "test_samples": 30,
+      "correct_predictions": "10 / 30",
+      "recomputed_accuracy": 0.3333,
+      "wilson_95_ci": [
+        0.1923,
+        0.5122
+      ],
+      "macro_precision": 0.2458,
+      "macro_recall": 0.2373,
+      "macro_f1": 0.2414,
+      "mcc": -0.1632,
+      "confusion_matrix": [
+        [
+          3,
+          7,
+          0
+        ],
+        [
+          6,
+          7,
+          4
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "predicted_labels": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        2,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0
+      ],
+      "test_predictions_summary": [
+        {
+          "idx": 0,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 1,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 2,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 3,
+          "true": 2,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 4,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 5,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 6,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 7,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 8,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 9,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 10,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 11,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 12,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 13,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 14,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 15,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 16,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 17,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 18,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 19,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 20,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 21,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 22,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 23,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 24,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 25,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 26,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 27,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 28,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 29,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        }
+      ],
+      "reproducibility_status": "REPRODUCED_FROM_SAVED_CHECKPOINT",
+      "limitations": "Evaluated on 30 synthetic held-out vectors (no paired clinical data)."
+    },
+    {
+      "configuration_name": "Questionnaire Only (F6-F17)",
+      "modalities": [
+        "quest"
+      ],
+      "active_features_count": 12,
+      "feature_indices": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "model_file": "xgb_questionnaire_only.json",
+      "model_path": "ml\\models\\ablation_independent\\xgb_questionnaire_only.json",
+      "sha256": "5e2de4aa463028ae86e51e5cdee993affbaee44c80a3d9f456285417c0c6de09",
+      "test_samples": 30,
+      "correct_predictions": "17 / 30",
+      "recomputed_accuracy": 0.5667,
+      "wilson_95_ci": [
+        0.392,
+        0.7262
+      ],
+      "macro_precision": 0.5013,
+      "macro_recall": 0.5072,
+      "macro_f1": 0.5036,
+      "mcc": 0.2343,
+      "confusion_matrix": [
+        [
+          6,
+          4,
+          0
+        ],
+        [
+          5,
+          10,
+          2
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "predicted_labels": [
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        2,
+        0,
+        1,
+        0
+      ],
+      "test_predictions_summary": [
+        {
+          "idx": 0,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 1,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 2,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 3,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 4,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 5,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 6,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 7,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 8,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 9,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 10,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 11,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 12,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 13,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 14,
+          "true": 2,
+          "pred": 2,
+          "correct": true
+        },
+        {
+          "idx": 15,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 16,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 17,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 18,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 19,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 20,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 21,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 22,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 23,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 24,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 25,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 26,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 27,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 28,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 29,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        }
+      ],
+      "reproducibility_status": "REPRODUCED_FROM_SAVED_CHECKPOINT",
+      "limitations": "Evaluated on 30 synthetic held-out vectors (no paired clinical data)."
+    },
+    {
+      "configuration_name": "Sensor Only (F18-F22)",
+      "modalities": [
+        "sensor"
+      ],
+      "active_features_count": 5,
+      "feature_indices": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "model_file": "xgb_sensor_only.json",
+      "model_path": "ml\\models\\ablation_independent\\xgb_sensor_only.json",
+      "sha256": "92091f8e8bc064e376434b2e4925ad0d63e1a5834d16a766a4dffb3f7fdf8c28",
+      "test_samples": 30,
+      "correct_predictions": "17 / 30",
+      "recomputed_accuracy": 0.5667,
+      "wilson_95_ci": [
+        0.392,
+        0.7262
+      ],
+      "macro_precision": 0.5317,
+      "macro_recall": 0.5484,
+      "macro_f1": 0.501,
+      "mcc": 0.3743,
+      "confusion_matrix": [
+        [
+          9,
+          1,
+          0
+        ],
+        [
+          3,
+          7,
+          7
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "predicted_labels": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        1,
+        0,
+        2,
+        2,
+        1,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        2
+      ],
+      "test_predictions_summary": [
+        {
+          "idx": 0,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 1,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 2,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 3,
+          "true": 2,
+          "pred": 2,
+          "correct": true
+        },
+        {
+          "idx": 4,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 5,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 6,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 7,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 8,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 9,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 10,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 11,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 12,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 13,
+          "true": 2,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 14,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 15,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 16,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 17,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 18,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 19,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 20,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 21,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 22,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 23,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 24,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 25,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 26,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 27,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 28,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 29,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        }
+      ],
+      "reproducibility_status": "REPRODUCED_FROM_SAVED_CHECKPOINT",
+      "limitations": "Evaluated on 30 synthetic held-out vectors (no paired clinical data)."
+    },
+    {
+      "configuration_name": "Vision + Questionnaire",
+      "modalities": [
+        "vision",
+        "quest"
+      ],
+      "active_features_count": 18,
+      "feature_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "model_file": "xgb_vision_plus_questionnaire.json",
+      "model_path": "ml\\models\\ablation_independent\\xgb_vision_plus_questionnaire.json",
+      "sha256": "9c9771924de230c3c813510d251e0ce8d767564384d31237250cedc3f6e00a2b",
+      "test_samples": 30,
+      "correct_predictions": "13 / 30",
+      "recomputed_accuracy": 0.4333,
+      "wilson_95_ci": [
+        0.2738,
+        0.608
+      ],
+      "macro_precision": 0.3611,
+      "macro_recall": 0.3739,
+      "macro_f1": 0.3588,
+      "mcc": -0.0464,
+      "confusion_matrix": [
+        [
+          2,
+          8,
+          0
+        ],
+        [
+          4,
+          10,
+          3
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "predicted_labels": [
+        1,
+        1,
+        2,
+        1,
+        0,
+        2,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        1
+      ],
+      "test_predictions_summary": [
+        {
+          "idx": 0,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 1,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 2,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 3,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 4,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 5,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 6,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 7,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 8,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 9,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 10,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 11,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 12,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 13,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 14,
+          "true": 2,
+          "pred": 2,
+          "correct": true
+        },
+        {
+          "idx": 15,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 16,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 17,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 18,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 19,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 20,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 21,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 22,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 23,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 24,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 25,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 26,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 27,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 28,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 29,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        }
+      ],
+      "reproducibility_status": "REPRODUCED_FROM_SAVED_CHECKPOINT",
+      "limitations": "Evaluated on 30 synthetic held-out vectors (no paired clinical data)."
+    },
+    {
+      "configuration_name": "Vision + Sensor",
+      "modalities": [
+        "vision",
+        "sensor"
+      ],
+      "active_features_count": 11,
+      "feature_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "model_file": "xgb_vision_plus_sensor.json",
+      "model_path": "ml\\models\\ablation_independent\\xgb_vision_plus_sensor.json",
+      "sha256": "7c8f7c5ea3863cb3508632ecfffe44d9dc3a261ba4aedcee01e5a30a9926459e",
+      "test_samples": 30,
+      "correct_predictions": "18 / 30",
+      "recomputed_accuracy": 0.6,
+      "wilson_95_ci": [
+        0.4232,
+        0.7541
+      ],
+      "macro_precision": 0.527,
+      "macro_recall": 0.5131,
+      "macro_f1": 0.508,
+      "mcc": 0.2968,
+      "confusion_matrix": [
+        [
+          5,
+          5,
+          0
+        ],
+        [
+          1,
+          12,
+          4
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "predicted_labels": [
+        0,
+        1,
+        0,
+        2,
+        1,
+        1,
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1
+      ],
+      "test_predictions_summary": [
+        {
+          "idx": 0,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 1,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 2,
+          "true": 1,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 3,
+          "true": 2,
+          "pred": 2,
+          "correct": true
+        },
+        {
+          "idx": 4,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 5,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 6,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 7,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 8,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 9,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 10,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 11,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 12,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 13,
+          "true": 2,
+          "pred": 0,
+          "correct": false
+        },
+        {
+          "idx": 14,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 15,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 16,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 17,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 18,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 19,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 20,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 21,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 22,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 23,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 24,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 25,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 26,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 27,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 28,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 29,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        }
+      ],
+      "reproducibility_status": "REPRODUCED_FROM_SAVED_CHECKPOINT",
+      "limitations": "Evaluated on 30 synthetic held-out vectors (no paired clinical data)."
+    },
+    {
+      "configuration_name": "Questionnaire + Sensor",
+      "modalities": [
+        "quest",
+        "sensor"
+      ],
+      "active_features_count": 17,
+      "feature_indices": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "model_file": "xgb_questionnaire_plus_sensor.json",
+      "model_path": "ml\\models\\ablation_independent\\xgb_questionnaire_plus_sensor.json",
+      "sha256": "aa52d5949e21013c32c2c048f08352436e10959f6761829669c84a49c5517dd5",
+      "test_samples": 30,
+      "correct_predictions": "26 / 30",
+      "recomputed_accuracy": 0.8667,
+      "wilson_95_ci": [
+        0.7032,
+        0.9469
+      ],
+      "macro_precision": 0.8363,
+      "macro_recall": 0.8026,
+      "macro_f1": 0.8148,
+      "mcc": 0.7609,
+      "confusion_matrix": [
+        [
+          8,
+          2,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "predicted_labels": [
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1
+      ],
+      "test_predictions_summary": [
+        {
+          "idx": 0,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 1,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 2,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 3,
+          "true": 2,
+          "pred": 2,
+          "correct": true
+        },
+        {
+          "idx": 4,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 5,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 6,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 7,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 8,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 9,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 10,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 11,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 12,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 13,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 14,
+          "true": 2,
+          "pred": 2,
+          "correct": true
+        },
+        {
+          "idx": 15,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 16,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 17,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 18,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 19,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 20,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 21,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 22,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 23,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 24,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 25,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 26,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 27,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 28,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 29,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        }
+      ],
+      "reproducibility_status": "REPRODUCED_FROM_SAVED_CHECKPOINT",
+      "limitations": "Evaluated on 30 synthetic held-out vectors (no paired clinical data)."
+    },
+    {
+      "configuration_name": "Full Multimodal (F0-F22)",
+      "modalities": [
+        "vision",
+        "quest",
+        "sensor"
+      ],
+      "active_features_count": 23,
+      "feature_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "model_file": "xgb_full_multimodal.json",
+      "model_path": "ml\\models\\ablation_independent\\xgb_full_multimodal.json",
+      "sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "test_samples": 30,
+      "correct_predictions": "25 / 30",
+      "recomputed_accuracy": 0.8333,
+      "wilson_95_ci": [
+        0.6644,
+        0.9266
+      ],
+      "macro_precision": 0.8222,
+      "macro_recall": 0.7693,
+      "macro_f1": 0.785,
+      "mcc": 0.7027,
+      "confusion_matrix": [
+        [
+          7,
+          3,
+          0
+        ],
+        [
+          0,
+          16,
+          1
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "predicted_labels": [
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        2,
+        1,
+        1,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1
+      ],
+      "test_predictions_summary": [
+        {
+          "idx": 0,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 1,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 2,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 3,
+          "true": 2,
+          "pred": 2,
+          "correct": true
+        },
+        {
+          "idx": 4,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 5,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 6,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 7,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 8,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 9,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 10,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 11,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 12,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 13,
+          "true": 2,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 14,
+          "true": 2,
+          "pred": 2,
+          "correct": true
+        },
+        {
+          "idx": 15,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 16,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 17,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 18,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 19,
+          "true": 1,
+          "pred": 2,
+          "correct": false
+        },
+        {
+          "idx": 20,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 21,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 22,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 23,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 24,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 25,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 26,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        },
+        {
+          "idx": 27,
+          "true": 0,
+          "pred": 0,
+          "correct": true
+        },
+        {
+          "idx": 28,
+          "true": 0,
+          "pred": 1,
+          "correct": false
+        },
+        {
+          "idx": 29,
+          "true": 1,
+          "pred": 1,
+          "correct": true
+        }
+      ],
+      "reproducibility_status": "REPRODUCED_FROM_SAVED_CHECKPOINT",
+      "limitations": "Evaluated on 30 synthetic held-out vectors (no paired clinical data)."
+    }
+  ]
+}

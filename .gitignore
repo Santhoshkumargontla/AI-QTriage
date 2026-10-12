@@ -16,6 +16,7 @@ __pycache__/
 .pytest_cache/
 *.pkl
 *.npz
+!ml/models/vqc/vqc_weights.npz
 
 # Build outputs
 .next/

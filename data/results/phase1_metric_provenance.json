@@ -1,0 +1,188 @@
+{
+  "audit_metadata": {
+    "auditor": "Senior ML Engineer & Reproducibility Auditor",
+    "timestamp": "2026-10-12T20:21:00Z",
+    "status": "VERIFIED"
+  },
+  "models": {
+    "yolo11_detection": {
+      "model_name": "YOLO11 Detection (Injury Bounding Box)",
+      "canonical_checkpoint": "ml/models/vision/yolo11_injury_best.pt",
+      "checkpoint_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+      "metadata_path": "ml/models/vision/yolo11_metadata.json",
+      "metadata_sha256": "e1576e973310a8a20b8c9bca3b44af2e82309567c6b283c873164ef7ca0632e4",
+      "dataset_name": "yolo_expanded_v1",
+      "dataset_provenance": "Roboflow injury_detection_v2+wound2+aid; shubhambaid burns; HF WSEG wound boxes",
+      "splits": {
+        "train": 1935,
+        "val": 442,
+        "test": 436,
+        "test_evaluated": 218
+      },
+      "canonical_metrics": {
+        "mAP50": 0.345365,
+        "mAP50_95": 0.167447,
+        "precision": 0.515909,
+        "recall": 0.394215
+      },
+      "sweep_metrics": {
+        "mAP50": 0.3647,
+        "mAP50_95": 0.1844,
+        "note": "Alternative hyperparameter sweep on yolo_expanded_v1; not canonical checkpoint weights"
+      },
+      "docs_reconciliation": "docs/datasets.md notes 23 test images / 74 boxes for earlier yolo_processed drop-remap prototype; superseded by expanded_v1",
+      "verification_status": "PASS"
+    },
+    "efficientnetv2_classification": {
+      "model_name": "EfficientNetV2-S Classification (8-Class Skin Injury)",
+      "canonical_checkpoint": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "checkpoint_sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
+      "metadata_path": "ml/models/vision/efficientnetv2_metadata.json",
+      "metadata_sha256": "7529927cac801a261b6b401d4fa4b78ad08191c31b986bb2c6387208d4ea0f96",
+      "dataset_name": "kaggle_skin_trauma_v1_expanded",
+      "dataset_provenance": "Kaggle skin trauma + normal skin + OOD reject photos",
+      "test_samples": 473,
+      "canonical_metrics": {
+        "accuracy": 0.966173,
+        "macro_f1": 0.943364,
+        "macro_precision": 0.942608,
+        "macro_recall": 0.950124
+      },
+      "quality_gates": {
+        "blank_image_collapse": "PASSED",
+        "ood_rejection_f1": 1.0
+      },
+      "docs_reconciliation": "docs/datasets.md noted older 140/30/30 split had 1.0 accuracy and blank collapse; superseded by kaggle-v1 with 473 test samples",
+      "verification_status": "PASS"
+    },
+    "resnet34_unet_segmentation": {
+      "model_name": "ResNet34-U-Net Segmentation (Wound Mask)",
+      "canonical_checkpoint": "ml/models/vision/unet_best.pt",
+      "checkpoint_sha256": "MISSING",
+      "metadata_path": "ml/models/vision/unet_metadata.json",
+      "metadata_sha256": "0b724187e3aef5f9de27e7d2d2d7f3becdc12208cc0c74b5f37273c2271bba9f",
+      "dataset_name": "AZH+wseg+Medetec subject-aware deduped",
+      "dataset_provenance": "Subject-stratified photographic wound segmentation with empty background canvases",
+      "test_samples": 69,
+      "canonical_metrics": {
+        "mean_dice": 0.641808,
+        "mean_iou": 0.517783,
+        "precision": 0.692967,
+        "recall": 0.723307,
+        "threshold": 0.5
+      },
+      "quality_gates": {
+        "blank_image_collapse": "PASSED",
+        "ood_collapse": 0
+      },
+      "docs_reconciliation": "docs/datasets.md noted older 140/30/30 split had Dice ~0.98 due to blank collapse; superseded by deduped-subject-v1",
+      "verification_status": "PASS"
+    },
+    "sensor_motion_classifier": {
+      "model_name": "Sensor Motion Event Classifier (3-Class Fall/Impact)",
+      "canonical_checkpoint": "ml/models/sensor_model.pt",
+      "checkpoint_sha256": "MISSING",
+      "metadata_path": "ml/models/sensor_metadata.json",
+      "metadata_sha256": "88a130aed593dd958ceedb96e23e964d98b3a29f07879938b6266ecb6637bf5e",
+      "dataset_name": "sisfall_uci_har_real",
+      "dataset_provenance": "SisFall (4,505 trials) + UCI HAR (2,000 windows) = 6,505 windows",
+      "splits": {
+        "train": 4247,
+        "val": 1030,
+        "test": 1228
+      },
+      "canonical_metrics": {
+        "correct_predictions": "1183 / 1228",
+        "accuracy": 0.963355,
+        "macro_f1": 0.8985,
+        "mcc": 0.9296,
+        "fall_recall": 0.982
+      },
+      "verification_status": "PASS"
+    },
+    "xgboost_multimodal_severity": {
+      "model_name": "XGBoost Multimodal Severity Classifier (3-Class)",
+      "canonical_checkpoint": "ml/models/xgboost_best.json",
+      "checkpoint_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "metadata_path": "ml/models/xgboost_metadata.json",
+      "metadata_sha256": "f40d86de08e66589a9164f25f06a52e89b5e3686ea853d18aedef00ffa5988fd",
+      "dataset_name": "generate_multimodal_dataset(200, seed=42)",
+      "dataset_provenance": "SYNTHETIC rule-derived multimodal fusion vectors (0 genuinely paired clinical records)",
+      "splits": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "canonical_metrics": {
+        "correct_predictions": "25 / 30",
+        "accuracy": 0.833333,
+        "macro_f1": 0.78502,
+        "macro_precision": 0.822222,
+        "macro_recall": 0.769281,
+        "mcc": 0.702692,
+        "brier_score": 0.304532,
+        "ece": 0.118284,
+        "confusion_matrix": [
+          [
+            7,
+            3,
+            0
+          ],
+          [
+            0,
+            16,
+            1
+          ],
+          [
+            0,
+            1,
+            2
+          ]
+        ]
+      },
+      "verification_status": "PASS"
+    },
+    "vqc_quantum_classifier": {
+      "model_name": "4-Qubit Variational Quantum Classifier (PennyLane default.qubit CPU sim)",
+      "canonical_checkpoint": "ml/models/vqc/vqc_weights.npz",
+      "checkpoint_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "metadata_path": "ml/models/vqc/vqc_metadata.json",
+      "metadata_sha256": "acf7235c30b98e0aeac42044578e63d81face68958f54ca891ee8a7ce962032b",
+      "dataset_name": "generate_multimodal_dataset(200, seed=42) via PCA-4D",
+      "dataset_provenance": "SYNTHETIC vectors; classical simulation only, no quantum advantage",
+      "splits": {
+        "train": 140,
+        "val": 30,
+        "test": 30
+      },
+      "canonical_metrics": {
+        "correct_predictions": "16 / 30",
+        "accuracy": 0.533333,
+        "macro_f1": 0.423016,
+        "macro_precision": 0.466184,
+        "macro_recall": 0.43268,
+        "mcc": 0.095978,
+        "brier_score": 0.512306,
+        "ece": 0.136455,
+        "confusion_matrix": [
+          [
+            2,
+            8,
+            0
+          ],
+          [
+            2,
+            13,
+            2
+          ],
+          [
+            0,
+            2,
+            1
+          ]
+        ]
+      },
+      "verification_status": "PASS"
+    }
+  }
+}

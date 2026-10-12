@@ -1,0 +1,97 @@
+{
+  "git_state": {
+    "branch": "main",
+    "head_sha": "8f10dfe71c4ea286512cee565328be09a564c90c",
+    "head_commit": "8f10dfe7 Restore canonical format_gps_location_line contract for 100% pytest compliance",
+    "upstream": "origin/main",
+    "modified_tracked_files": [
+      "frontend/components/ModelGraphsAndMatrix.tsx",
+      "streamlit_app.py"
+    ],
+    "untracked_files_count": 56,
+    "untracked_files_sample": [
+      "ABLATION_METHOD_REVIEW.md",
+      "ABLATION_RESULTS.md",
+      "ABLATION_VALIDITY_AUDIT.md",
+      "AI-QTriage_REVISED_CAMERA_READY_ICICNIS.docx",
+      "CHANGELOG_PHASE1.md",
+      "DATASET_AND_LEAKAGE_AUDIT.md",
+      "DATASET_AND_SPLIT_REPORT.md",
+      "FINAL_ACTION_PLAN.md",
+      "FINAL_SUBMISSION_AUDIT.md",
+      "FINAL_VALIDATION.md",
+      "METRIC_CONSISTENCY_MATRIX.md",
+      "MODEL_EVALUATION_REPORT.md",
+      "PHASE1_AUDIT.md",
+      "PHASE1_FINAL_GATE.md",
+      "PHASE1_REVIEWER_AUDIT.md",
+      "REMAINING_LIMITATIONS.md",
+      "REVIEWER_RESPONSE.md",
+      "data/results/canonical_ablation_results.json",
+      "data/results/canonical_held_out_evaluation_corrected.json",
+      "data/results/independent_ablation_results.json"
+    ]
+  },
+  "checkpoint_hash_verification": {
+    "yolo11": {
+      "path": "ml/models/vision/yolo11_injury_best.pt",
+      "actual_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+      "metadata_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+      "match": true
+    },
+    "efficientnetv2": {
+      "path": "ml/models/vision/efficientnetv2_injury_best.pt",
+      "actual_sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
+      "metadata_sha256": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
+      "match": true
+    },
+    "unet": {
+      "path": "ml/models/vision/unet_injury_best.pt",
+      "actual_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "metadata_sha256": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1",
+      "match": true
+    },
+    "sensor": {
+      "path": "ml/models/sensor_motion_best.json",
+      "actual_sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d",
+      "metadata_sha256": "4980d2150f379dadf1fef4d8ed61eaf298e67cff8ec495f053d80e9b13e6569d",
+      "match": true
+    },
+    "xgboost": {
+      "path": "ml/models/xgboost_best.json",
+      "actual_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "metadata_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "match": true
+    },
+    "vqc": {
+      "path": "ml/models/vqc/vqc_weights.npz",
+      "actual_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "metadata_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e",
+      "match": true
+    }
+  },
+  "stale_documentation_identified": [
+    {
+      "path": "docs/datasets.md",
+      "reason": "Describes early prototype splits (140/30/30 with blank collapse, 23 YOLO test images). Superseded by canonical *_metadata.json files."
+    }
+  ],
+  "proposed_version_control_plan": {
+    "recommend_commit_to_repo": [
+      "data/results/canonical_ablation_results.json",
+      "data/results/independent_ablation_results.json",
+      "data/results/phase1_ablation_verification.json",
+      "data/results/phase1_duplicate_split_audit.json",
+      "data/results/canonical_held_out_evaluation_corrected.json",
+      "data/results/phase1_metric_provenance.json",
+      "data/results/phase1_software_verification.json",
+      "data/results/phase1_git_artifact_inventory.json",
+      "ml/models/ablation_independent/ (7 model json files)"
+    ],
+    "recommend_exclude_or_keep_local": [
+      "scratch/ (one-off debug and exploration scripts)",
+      ".tmp_pytest/ (ephemeral test scratch directories)",
+      "AI-QTriage_REVISED_CAMERA_READY_ICICNIS.docx (generated camera ready)"
+    ]
+  }
+}

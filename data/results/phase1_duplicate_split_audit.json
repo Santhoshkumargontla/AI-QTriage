@@ -1,0 +1,51 @@
+{
+  "duplicate_investigation": {
+    "total_dataset_size": 200,
+    "unique_feature_vectors": 198,
+    "duplicate_pairs_count": 2,
+    "pairs": [
+      {
+        "hash": "627b5ed1...",
+        "row_indices": [
+          8,
+          143
+        ],
+        "split_locations": [
+          "train (idx 8)",
+          "val (idx 3)"
+        ],
+        "labels": [
+          0,
+          1
+        ],
+        "root_cause": "Modality dropout setting vision & sensor to 0.0 with pain_score=0.3. True latent severity score differed (0.2634 vs 0.3271)."
+      },
+      {
+        "hash": "0140eb82...",
+        "row_indices": [
+          54,
+          191
+        ],
+        "split_locations": [
+          "train (idx 54)",
+          "test (idx 21)"
+        ],
+        "labels": [
+          1,
+          0
+        ],
+        "root_cause": "Modality dropout setting vision & sensor to 0.0 with pain_score=0.1. True latent severity score differed (0.3563 vs 0.2336)."
+      }
+    ],
+    "leakage_assessment": "NO identity leakage. Discloses irreducible Bayes noise due to partial modality observation.",
+    "remedy": "Grouped duplicates into train set; preserved 140/30/30 counts via stratified swapping.",
+    "corrected_results": {
+      "xgb_accuracy": 0.8333,
+      "xgb_macro_f1": 0.785,
+      "xgb_mcc": 0.7027,
+      "overlap_train_val": 0,
+      "overlap_train_test": 0,
+      "overlap_val_test": 0
+    }
+  }
+}

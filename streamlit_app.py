@@ -925,19 +925,21 @@ def render_model_benchmarks():
     with tab1:
         st.subheader("Model Registry Performance Overview")
         st.markdown("""
-        | Model Architecture | Task | Test Accuracy | Macro F1-Score | Expected Calibration Error (ECE) | SHA-256 Checkpoint Hash |
+        | Model Architecture | Task | Test Accuracy / Primary | Macro F1-Score | Expected Calibration Error (ECE) | Tested Dataset & Split |
         | :--- | :--- | :--- | :--- | :--- | :--- |
-        | **YOLO11 Detection** | Multi-class Bounding Box | **91.4% mAP50** | 0.905 | 0.042 | `857880192ebfbc4b...` |
-        | **EfficientNetV2-S** | 8-Class Skin Injury Head | **89.2% Accuracy** | 0.884 | 0.051 | `c432fa998a12e10c...` |
-        | **XGBoost Multimodal** | 3-Class Trauma Severity | **83.33% Accuracy** | **0.8350** | **0.038** | `d4e5f6789a01234b...` |
-        | **4-Qubit PennyLane VQC** | Quantum Injury Classifier | **53.33% Accuracy** | **0.4230** | **0.1365** | `2db769bec3abd3c2...` |
+        | **YOLO11 Detection** | Multi-class Bounding Box | **36.47% mAP50** (18.44% mAP50-95) | 0.3540 | 0.042 | 23 Real Photographic Trauma Photos |
+        | **EfficientNetV2-S** | 8-Class Skin Injury Head | **96.62% Accuracy** | **0.9434** | 0.031 | 473 Real Held-out Photographs |
+        | **ResNet34-U-Net** | Lesion Segmentation | **64.18% Mean Dice** (51.78% IoU) | 0.7077 | 0.051 | 69 Real Held-out Photo Pairs |
+        | **Sensor Motion Event** | 3-Class Fall/Impact IMU | **96.34% Accuracy** | **0.8985** | 0.024 | 1,228 SisFall/UCI HAR 50Hz Windows |
+        | **XGBoost Multimodal** | 3-Class Trauma Severity | **83.33% Accuracy** (25/30) | **0.7850** | **0.1183** | 30 Held-out Synthetic Vectors (MCC 0.7027) |
+        | **4-Qubit PennyLane VQC** | Quantum Baseline (CPU Sim) | **53.33% Accuracy** (16/30) | **0.4230** | **0.1365** | 30 Held-out Synthetic Vectors (MCC 0.0960) |
         """)
 
         st.subheader("Classical vs. Quantum Classifier Metric Comparison")
         chart_data = {
-            "Metric": ["Accuracy", "Precision", "Recall", "F1-Score", "Brier Score"],
-            "XGBoost (Classical)": [0.8333, 0.8400, 0.8333, 0.8350, 0.3045],
-            "4-Qubit VQC (Quantum)": [0.5333, 0.4662, 0.4327, 0.4230, 0.5123]
+            "Metric": ["Accuracy", "Precision", "Recall", "F1-Score", "MCC", "Brier Score"],
+            "XGBoost (Classical)": [0.8333, 0.8222, 0.7693, 0.7850, 0.7027, 0.3045],
+            "4-Qubit VQC (Quantum)": [0.5333, 0.4662, 0.4327, 0.4230, 0.0960, 0.5123]
         }
         st.bar_chart(chart_data, x="Metric")
 
@@ -945,9 +947,9 @@ def render_model_benchmarks():
         st.subheader("🎯 Multimodal Triage Confusion Matrices (Held-Out Test Split N=30)")
         c1, c2 = st.columns(2)
 
-        # Confusion Matrix Data
+        # Verified Canonical Confusion Matrix Data
         cm_xgb_df = pd.DataFrame(
-            [[10, 0, 0], [1, 7, 2], [0, 2, 8]],
+            [[7, 3, 0], [0, 16, 1], [0, 1, 2]],
             index=["True LOW", "True MODERATE", "True HIGH"],
             columns=["Pred LOW", "Pred MODERATE", "Pred HIGH"]
         )
@@ -961,20 +963,20 @@ def render_model_benchmarks():
         with c1:
             st.markdown("#### 🌳 Classical XGBoost Confusion Matrix")
             st.dataframe(cm_xgb_df.style.background_gradient(cmap="Greens"), use_container_width=True)
-            st.caption("Overall Accuracy: 25 / 30 (83.33%) | Macro F1: 0.8350")
+            st.caption("Overall Accuracy: 25 / 30 (83.33%) | Macro F1: 0.7850 | MCC: 0.7027")
 
         with c2:
             st.markdown("#### ⚛️ 4-Qubit PennyLane VQC Confusion Matrix")
             st.dataframe(cm_vqc_df.style.background_gradient(cmap="Blues"), use_container_width=True)
-            st.caption("Overall Accuracy: 16 / 30 (53.33%) | Macro F1: 0.4230")
+            st.caption("Overall Accuracy: 16 / 30 (53.33%) | Macro F1: 0.4230 | MCC: 0.0960")
 
         st.markdown("#### Class-wise Performance Breakdown")
         breakdown_df = pd.DataFrame({
             "Risk Tier": ["LOW Risk", "MODERATE Risk", "HIGH Risk"],
-            "XGBoost Sensitivity": ["100.0%", "80.0%", "80.0%"],
-            "XGBoost Specificity": ["95.0%", "90.0%", "95.0%"],
+            "XGBoost Sensitivity": ["70.0%", "94.1%", "66.7%"],
+            "XGBoost Specificity": ["100.0%", "69.2%", "96.3%"],
             "VQC Sensitivity": ["20.0%", "76.5%", "33.3%"],
-            "VQC Specificity": ["90.0%", "38.5%", "92.6%"]
+            "VQC Specificity": ["90.0%", "23.1%", "92.6%"]
         }).set_index("Risk Tier")
         st.table(breakdown_df)
 
