@@ -173,6 +173,7 @@ class ResearchReportGenerator:
                 "yolo_confidence": visible_injury.get("yolo_confidence"),
                 "classifier_finding": visible_injury.get("classifier_finding"),
                 "classifier_probability": visible_injury.get("classifier_probability"),
+                "classifier_status": visible_injury.get("classifier_status"),
                 "vision_disagreement": vis_disagree,
                 "human_review_required": requires_review_flag,
                 "affected_ratio": affected_ratio_display,
@@ -312,10 +313,20 @@ class ResearchReportGenerator:
                 "code": {"text": "EfficientNetV2 Whole-Image Classification"},
                 "valueString": f"{vision_info.get('classifier_finding')} (probability {e_prob_str})"
             })
-        if models_disagree:
+        elif vision_info.get("classifier_status") == "OUT_OF_DISTRIBUTION":
+            injury_components.append({
+                "code": {"text": "EfficientNetV2 Whole-Image Classification"},
+                "valueString": "OUT_OF_DISTRIBUTION (withheld, softmax not trusted)"
+            })
+        if models_disagree or requires_review:
+            policy_text = (
+                "ROUTED FOR HUMAN CLINICAL REVIEW: Discordant vision hypotheses preserved; neither confidence overrides the other."
+                if models_disagree else
+                "ROUTED FOR HUMAN CLINICAL REVIEW: Automated triage settlement blocked under clinical safety policy."
+            )
             injury_components.append({
                 "code": {"text": "Disagreement Resolution Policy"},
-                "valueString": "ROUTED FOR HUMAN CLINICAL REVIEW: Neither confidence overrides the other; concurrent hypotheses preserved."
+                "valueString": policy_text
             })
 
         eff_dt = report.get("timestamp") or now_iso
