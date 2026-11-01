@@ -41,7 +41,7 @@ except ImportError:
 
 FRONTEND_BASE = "http://localhost:3000"
 BACKEND_BASE = "http://127.0.0.1:8000"
-TARGET_CASE_ID = "e684a322-bb77-4a00-8431-4903cd07612e"
+TARGET_CASE_ID = sys.argv[1] if len(sys.argv) > 1 else "8efa8854-3391-4ab1-ae76-6ae3cfb47d86"
 
 passed = 0
 total = 0
@@ -89,14 +89,18 @@ def run_browser_e2e_tests():
         has_bruise = "bruise" in content.lower()
         check("Browser E2E", "4. Concurrent Vision Hypotheses", has_burn and has_bruise, "Both Burn and Bruise visible concurrently")
 
-        # 5. Segmentation Mask Withheld
-        has_seg_withheld = (
-            "UNAVAILABLE" in content.upper() or
-            "WITHHELD" in content.upper() or
-            "0.0%" not in content or
-            "segmentation" in content.lower()
+        # 5. Strict Segmentation Mask Withheld Verification
+        # Must verify EXACT badge and diagnostic strings, not permissive presence/absence
+        has_gate_closed = "Reliability Gate: CLOSED (Output Withheld)" in content
+        has_zero_pixels = "Segmentation non-detection (0 positive pixels)" in content
+        has_na_area = "N/A" in content
+        exact_seg_withheld = (has_gate_closed and has_zero_pixels and has_na_area)
+        check(
+            "Browser E2E",
+            "5. Strict Segmentation Gate Safety",
+            exact_seg_withheld,
+            f"GateClosed={has_gate_closed}, ZeroPixelsTag={has_zero_pixels}, AreaNA={has_na_area}"
         )
-        check("Browser E2E", "5. Segmentation Gate Safety", has_seg_withheld, "Empty segmentation mask marked unavailable/withheld")
 
         # 6. Tab Navigation: Switch to Audit Tab
         audit_tab = page.locator("#case-tab-audit")
@@ -120,17 +124,22 @@ def run_browser_e2e_tests():
         else:
             check("Browser E2E", "7. Tab Navigation: SHAP Breakdown", False, "Explainability tab #case-tab-explainability not located")
 
-        # 8. Error State Handling: 404 Case Page
+        # 8. Strict Error State Handling: 404 Non-Existent Case Page
+        # Must verify exact Error Card rendering and absence of normal case content
         bad_url = f"{FRONTEND_BASE}/cases/non-existent-case-id-12345"
         bad_resp = page.goto(bad_url, wait_until="networkidle", timeout=15000)
         page.wait_for_timeout(1000)
-        bad_content = page.content()
-        handles_error_gracefully = (
-            "not found" in bad_content.lower() or
-            "error" in bad_content.lower() or
-            bad_resp.status in [404, 200]
+        bad_body_text = page.locator("body").inner_text()
+        has_error_title = "Error Retrieving Case" in bad_body_text
+        has_return_btn = "Return to Dashboard" in bad_body_text
+        normal_ui_blocked = ("Case sections" not in bad_body_text and "Full Case Overview" not in bad_body_text)
+        strict_error_handled = (has_error_title and has_return_btn and normal_ui_blocked)
+        check(
+            "Browser E2E",
+            "8. Strict Error State Rendering (404 Case)",
+            strict_error_handled,
+            f"ErrorTitle={has_error_title}, ReturnBtn={has_return_btn}, NormalUIBlocked={normal_ui_blocked}"
         )
-        check("Browser E2E", "8. Error State Resilience (404 Case)", handles_error_gracefully, f"Responded gracefully without crash: status={bad_resp.status}")
 
         browser.close()
 

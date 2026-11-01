@@ -1,0 +1,155 @@
+{
+  "target_case_id": "8efa8854-3391-4ab1-ae76-6ae3cfb47d86",
+  "execution_timestamp_utc": "2026-11-01T19:31:02.154332+00:00",
+  "git_commit_sha": "c8d3a007f131307fc529b10375b888e365bfe453",
+  "total_checks": 19,
+  "passed_checks": 19,
+  "status": "PASSED",
+  "exit_code": 0,
+  "active_checkpoint_hashes": {
+    "xgboost_best": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25",
+    "vqc_weights": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412",
+    "yolo11_injury_best": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+    "efficientnetv2_injury_best": "8cb4263e70b1e020ecc6324dca9b760f38074fd7778a6b814bcb10018d58a57a",
+    "unet_injury_best": "3c7f3f39196d71b9d8d58d1fcfc7438b4ae23d75fbd8195ae7da7b1fcb9660d1"
+  },
+  "checks": [
+    {
+      "check_num": 1,
+      "category": "API INTEGRATION",
+      "name": "1. Backend Health Check",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check_num": 2,
+      "category": "API INTEGRATION",
+      "name": "2. Multi-Case Database Integrity",
+      "passed": true,
+      "detail": "ActiveScreen=8efa8854.. (HTTP 200), FixturesVerified=True"
+    },
+    {
+      "check_num": 3,
+      "category": "CODE-CONTRACT",
+      "name": "3. Classical XGBoost Exact Prediction",
+      "passed": true,
+      "detail": "Class=HIGH, Probability=0.665 (Expected ~0.665)"
+    },
+    {
+      "check_num": 4,
+      "category": "CODE-CONTRACT",
+      "name": "4. SHAP TreeExplainer Top Attributions",
+      "passed": true,
+      "detail": "Top=peak_g_force, peak_g_force=+1.576, pain_level=+0.271 in margin log-odds"
+    },
+    {
+      "check_num": 5,
+      "category": "GOVERNANCE & SAFETY",
+      "name": "5. Vision Disagreement Preservation",
+      "passed": true,
+      "detail": "YOLO=burn (58.0%) vs EfficientNet=bruise (98.6%)"
+    },
+    {
+      "check_num": 6,
+      "category": "GOVERNANCE & SAFETY",
+      "name": "6. U-Net Reliability Gate Enforced",
+      "passed": true,
+      "detail": "Reliable=False, Area=None, RawPositivePixels=0"
+    },
+    {
+      "check_num": 7,
+      "category": "CODE-CONTRACT",
+      "name": "7. Sensor Telemetry Feature Accuracy",
+      "passed": true,
+      "detail": "Peak=5.17g, Stabilization=0.02s, Motion=normal_activity"
+    },
+    {
+      "check_num": 8,
+      "category": "API INTEGRATION",
+      "name": "8. Error Path: Non-Existent Case Handling",
+      "passed": true,
+      "detail": "HTTP 404"
+    },
+    {
+      "check_num": 9,
+      "category": "API INTEGRATION",
+      "name": "9. Gemini Socket Timeout & Deterministic Fallback",
+      "passed": true,
+      "detail": "Status=fallback, Reason=timeout (request exceeded 0.001s)"
+    },
+    {
+      "check_num": 10,
+      "category": "API INTEGRATION",
+      "name": "10. JSON Export Fidelity",
+      "passed": true,
+      "detail": "HTTP 200, XGB=HIGH"
+    },
+    {
+      "check_num": 11,
+      "category": "API INTEGRATION",
+      "name": "11. PDF Clinical Export Generation",
+      "passed": true,
+      "detail": "HTTP 200, Size=11845 bytes"
+    },
+    {
+      "check_num": 12,
+      "category": "FORMAL SCHEMA VALIDATION",
+      "name": "12. HL7 FHIR R4 Formal Schema Conformance (fhir.resources)",
+      "passed": true,
+      "detail": "HTTP 200, SchemaValidated=True, Resources=['Patient', 'Device', 'DiagnosticReport', 'Observation', 'Observation']"
+    },
+    {
+      "check_num": 13,
+      "category": "CLIENT BINDING / SSR",
+      "name": "13. Frontend Live SSR & Client Contract Validation",
+      "passed": true,
+      "detail": "HTTP 200, SSR Shell (24756 bytes) + Client Contract Binding Verified"
+    },
+    {
+      "check_num": 14,
+      "category": "CODE-CONTRACT",
+      "name": "14. SHAP Display Additivity & Raw Margin Reconciliation",
+      "passed": true,
+      "detail": "Display Additivity: +1.494 + (-0.041) = +1.453 -> Margin +1.371; Raw Softmax P(HIGH)=66.50%"
+    },
+    {
+      "check_num": 15,
+      "category": "SCHEMA & PROFILE",
+      "name": "15. FHIR R4 Schema, Reference Graph & Preliminary Status",
+      "passed": true,
+      "detail": "RefsValid=True, ReportStatus=preliminary, DualHypotheses=True, Value='Primary Finding: Burn, Affected Area: UNAVAILABLE_WITHHELD (N/A, not zero-measured)'"
+    },
+    {
+      "check_num": 16,
+      "category": "GOVERNANCE & SAFETY",
+      "name": "16. Backend Human-Review Enforcement Across All Surfaces",
+      "passed": true,
+      "detail": "CaseReview=True, JSONReview=True, PDFReview=True"
+    },
+    {
+      "check_num": 17,
+      "category": "CODE-CONTRACT",
+      "name": "17. Evidence-Consistency Heuristic Formula Verification",
+      "passed": true,
+      "detail": "Score=75.0/100 (Partially Consistent), Conflicts=['Segmentation Warning: No reliable segmentation mask was available for area calculation.', 'Data Notice: Assessment uses synthetic or demonstration data.']"
+    },
+    {
+      "check_num": 18,
+      "category": "GOVERNANCE & SAFETY",
+      "name": "18. Missing-Data Preservation (N/A Maintained in Case Record)",
+      "passed": true,
+      "detail": "AffectedRatio=None (Preserved as None/N/A, not 0.0), RawPositivePixels=0"
+    },
+    {
+      "check_num": 19,
+      "category": "ARTIFACT PROVENANCE",
+      "name": "19. Artifact Hashes, VQC 56.67% & Zero-Leakage Concordance",
+      "passed": true,
+      "detail": "XGB_SHA=b57c5cd4.., VQC_SHA=c818299b.., VQC_Acc=56.67%, Overlap=0"
+    }
+  ],
+  "evidence_boundaries": {
+    "dataset_leakage": "Exact-row hash overlap is 0 across train/val/test splits. Patient-level independence cannot be established on synthetic data.",
+    "clinical_validation": "0 paired clinical multimodal records exist. Triage labels are synthetic rule-derived. Automated clinical diagnosis is blocked."
+  }
+}

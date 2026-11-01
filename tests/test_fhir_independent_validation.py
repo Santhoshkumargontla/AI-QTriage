@@ -31,7 +31,10 @@ except ImportError:
     sys.exit(1)
 
 BACKEND_BASE = "http://127.0.0.1:8000"
-ACTIVE_SCREEN_CASE_ID = "e684a322-bb77-4a00-8431-4903cd07612e"
+ACTIVE_SCREEN_CASE_ID = (
+    sys.argv[1] if len(sys.argv) > 1 and len(sys.argv[1]) > 10
+    else "8efa8854-3391-4ab1-ae76-6ae3cfb47d86"
+)
 FIXTURE_CASE_ID = "concordant-test-fixture-001"
 
 passed_checks = 0
@@ -77,16 +80,37 @@ def validate_case_bundle(case_id: str, expects_human_review: bool):
     bundle_type = raw_bundle.get("type")
     check("Bundle Profile", "Bundle resourceType & type", raw_bundle.get("resourceType") == "Bundle" and bundle_type in ["collection", "document"], f"type={bundle_type}")
     
+    profiles = raw_bundle.get("meta", {}).get("profile", [])
+    has_bundle_profile = "http://hl7.org/fhir/StructureDefinition/Bundle" in profiles
+    check("Profile Conformance", "meta.profile HL7 Bundle StructureDefinition", has_bundle_profile, f"profiles={profiles}")
+
     timestamp = raw_bundle.get("timestamp", "")
     has_tz = timestamp.endswith("Z") or ("+" in timestamp[10:] or "-" in timestamp[10:])
     check("Temporal Spec", "Bundle timestamp ISO timezone", bool(timestamp and has_tz), f"timestamp={timestamp}")
 
     # Extract resource entries by resourceType
     resources: Dict[str, List[Dict[str, Any]]] = {}
+    all_codings = []
     for entry in raw_bundle.get("entry", []):
         res = entry.get("resource", {})
         rtype = res.get("resourceType")
         resources.setdefault(rtype, []).append(res)
+        # Collect codings
+        for k in ["code", "category", "type"]:
+            val = res.get(k)
+            if isinstance(val, dict) and "coding" in val:
+                all_codings.extend(val.get("coding", []))
+            elif isinstance(val, list):
+                for item in val:
+                    if isinstance(item, dict) and "coding" in item:
+                        all_codings.extend(item.get("coding", []))
+
+    # Comprehensive Coding Integrity Check (system, code, display)
+    valid_codings = all(
+        c.get("system", "").startswith("http") and bool(c.get("code")) and bool(c.get("display"))
+        for c in all_codings
+    )
+    check("Terminology Spec", "All codings contain valid system URI, code & display", valid_codings and len(all_codings) >= 5, f"Checked {len(all_codings)} codings across bundle entries")
 
     # 3. Patient Resource
     pts = resources.get("Patient", [])

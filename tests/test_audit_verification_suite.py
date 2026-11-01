@@ -30,9 +30,10 @@ FRONTEND_BASE = "http://localhost:3000"
 # Target case ID can be passed via command line, environment, or default to current browser tab
 ACTIVE_SCREEN_CASE_ID = (
     sys.argv[1] if len(sys.argv) > 1 and len(sys.argv[1]) > 10
-    else os.environ.get("TEST_CASE_ID", "e684a322-bb77-4a00-8431-4903cd07612e")
+    else os.environ.get("TEST_CASE_ID", "8efa8854-3391-4ab1-ae76-6ae3cfb47d86")
 )
 REGRESSION_FIXTURES = [
+    "e684a322-bb77-4a00-8431-4903cd07612e",
     "bd890e11-530d-4d0e-8c4f-4bda296a8600",
     "73471177-8c28-4c26-a507-542c14ec41ac"
 ]
