@@ -1,7 +1,9 @@
 import urllib.request
 import json
+import sys
 
-url = "http://127.0.0.1:8000/api/cases/bd890e11-530d-4d0e-8c4f-4bda296a8600"
+case_id = sys.argv[1] if len(sys.argv) > 1 else "e684a322-bb77-4a00-8431-4903cd07612e"
+url = f"http://127.0.0.1:8000/api/cases/{case_id}"
 res = urllib.request.urlopen(url)
 data = json.loads(res.read().decode("utf-8"))
 shaps = data.get("shap_explanations", [])
