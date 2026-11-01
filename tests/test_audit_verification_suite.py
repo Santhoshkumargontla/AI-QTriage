@@ -78,11 +78,19 @@ def run_audit_suite(target_case_id: str = ACTIVE_SCREEN_CASE_ID):
 
     passed = 0
     total = 0
+    test_records = []
 
     def assert_test(evidence_type: str, name: str, condition: bool, detail: str = ""):
         nonlocal passed, total
         total += 1
         tag = f"[{evidence_type}]"
+        test_records.append({
+            "check_num": total,
+            "category": evidence_type,
+            "name": name,
+            "passed": bool(condition),
+            "detail": detail
+        })
         if condition:
             passed += 1
             print(f"[PASS] {tag:<22} {name}{f' - {detail}' if detail else ''}")
@@ -427,6 +435,43 @@ def run_audit_suite(target_case_id: str = ACTIVE_SCREEN_CASE_ID):
     print("  • Zero-leakage check (19) verifies 0 exact-row hash overlap on the synthetic split.")
     print("    It does NOT claim clinical generalization; 0 paired clinical multimodal records exist.")
     print("=" * 80)
+
+    import subprocess
+    try:
+        git_sha = subprocess.check_output(["git", "rev-parse", "HEAD"]).decode("utf-8").strip()
+    except Exception:
+        git_sha = "unknown"
+
+    artifact_dir = "data/results"
+    os.makedirs(artifact_dir, exist_ok=True)
+    report_file = os.path.join(artifact_dir, f"audit_verification_run_{target_case_id[:8]}.json")
+    
+    run_record = {
+        "target_case_id": target_case_id,
+        "execution_timestamp_utc": timestamp_utc,
+        "git_commit_sha": git_sha,
+        "total_checks": total,
+        "passed_checks": passed,
+        "status": "PASSED" if passed == total else "FAILED",
+        "exit_code": 0 if passed == total else 1,
+        "active_checkpoint_hashes": {
+            "xgboost_best": xgb_sha,
+            "vqc_weights": vqc_sha,
+            "yolo11_injury_best": yolo_sha,
+            "efficientnetv2_injury_best": eff_sha,
+            "unet_injury_best": unet_sha
+        },
+        "checks": test_records,
+        "evidence_boundaries": {
+            "dataset_leakage": "Exact-row hash overlap is 0 across train/val/test splits. Patient-level independence cannot be established on synthetic data.",
+            "clinical_validation": "0 paired clinical multimodal records exist. Triage labels are synthetic rule-derived. Automated clinical diagnosis is blocked."
+        }
+    }
+
+    with open(report_file, "w", encoding="utf-8") as f:
+        json.dump(run_record, f, indent=2)
+    print(f"Reproducible test execution artifact saved to: {report_file}")
+
     return passed == total
 
 
