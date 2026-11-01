@@ -318,6 +318,10 @@ class ResearchReportGenerator:
                 "valueString": "ROUTED FOR HUMAN CLINICAL REVIEW: Neither confidence overrides the other; concurrent hypotheses preserved."
             })
 
+        eff_dt = report.get("timestamp") or now_iso
+        if eff_dt and not (eff_dt.endswith("Z") or "+" in eff_dt[10:] or "-" in eff_dt[10:]):
+            eff_dt = f"{eff_dt}Z"
+
         obs_injury = {
             "resourceType": "Observation",
             "id": f"obs-injury-{case_id[:8]}",
@@ -338,7 +342,7 @@ class ResearchReportGenerator:
                 "text": vision_info.get("finding", "Cut")
             },
             "subject": {"reference": patient_ref},
-            "effectiveDateTime": report["timestamp"],
+            "effectiveDateTime": eff_dt,
             "valueString": f"Primary Finding: {vision_info.get('finding')}, Affected Area: {aff_text}"
         }
         if injury_components:
@@ -364,7 +368,7 @@ class ResearchReportGenerator:
                 "text": "Rule-Derived Triage Category"
             },
             "subject": {"reference": patient_ref},
-            "effectiveDateTime": report["timestamp"],
+            "effectiveDateTime": eff_dt,
             "valueString": report.get("rule_derived_category", "LOW")
         }
 
@@ -381,7 +385,7 @@ class ResearchReportGenerator:
                 "text": "AI-QTriage Multimodal Triage Assessment"
             },
             "subject": {"reference": patient_ref},
-            "effectiveDateTime": report["timestamp"],
+            "effectiveDateTime": eff_dt,
             "issued": now_iso,
             "result": [
                 {"reference": f"Observation/obs-injury-{case_id[:8]}"},
@@ -398,15 +402,14 @@ class ResearchReportGenerator:
             "resourceType": "Device",
             "id": f"device-{case_id[:8]}",
             "status": "active",
-            "type": {
+            "type": [{
                 "coding": [{
                     "system": "http://snomed.info/sct",
                     "code": "86184003",
                     "display": "Smartphone telemetry sensor"
                 }],
                 "text": report["sensor"].get("source_label", "Smartphone Sensor")
-            },
-            "patient": {"reference": patient_ref}
+            }]
         }
 
         fhir_bundle = {

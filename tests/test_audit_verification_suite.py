@@ -215,12 +215,23 @@ def run_audit_suite(target_case_id: str = ACTIVE_SCREEN_CASE_ID):
     )
     assert_test("API INTEGRATION", "11. PDF Clinical Export Generation", pdf_match, f"HTTP {st_pdf}, Size={len(pdf_bytes)} bytes")
 
-    # 12. HL7 FHIR R4 Bundle Structural Conformance
+    # 12. HL7 FHIR R4 Bundle Formal Schema Conformance
     st_fhir, _, fhir_bundle = http_get(f"{BACKEND_BASE}/api/cases/{target_case_id}/fhir")
     entries = fhir_bundle.get("entry", []) if isinstance(fhir_bundle, dict) else []
     entry_types = [e.get("resource", {}).get("resourceType") for e in entries]
+    fhir_schema_valid = False
+    fhir_validation_err = None
+    try:
+        from fhir.resources.bundle import Bundle
+        validated_bundle = Bundle.model_validate(fhir_bundle)
+        fhir_schema_valid = (len(validated_bundle.entry) == len(entries))
+    except Exception as e:
+        fhir_schema_valid = False
+        fhir_validation_err = str(e)
+
     fhir_match = (
         st_fhir == 200 and
+        fhir_schema_valid and
         fhir_bundle.get("resourceType") == "Bundle" and
         fhir_bundle.get("type") in ["collection", "document"] and
         "Patient" in entry_types and
@@ -229,10 +240,10 @@ def run_audit_suite(target_case_id: str = ACTIVE_SCREEN_CASE_ID):
         "DiagnosticReport" in entry_types
     )
     assert_test(
-        "SCHEMA & PROFILE",
-        "12. HL7 FHIR R4 Bundle Structural Conformance",
+        "FORMAL SCHEMA VALIDATION",
+        "12. HL7 FHIR R4 Formal Schema Conformance (fhir.resources)",
         fhir_match,
-        f"HTTP {st_fhir}, Resources={entry_types}"
+        f"HTTP {st_fhir}, SchemaValidated={fhir_schema_valid}, Resources={entry_types}" + (f", Err={fhir_validation_err}" if fhir_validation_err else "")
     )
 
     # 13. Frontend UI Live Rendering & Client Contract Verification
@@ -409,8 +420,8 @@ def run_audit_suite(target_case_id: str = ACTIVE_SCREEN_CASE_ID):
     print(f"AUDIT SUITE SUMMARY: {passed} / {total} CHECKS PASSED FOR CASE {target_case_id}")
     print("=" * 80)
     print("SCOPE & EVIDENCE BOUNDARIES:")
-    print("  • Schema checks (12, 15) verify FHIR R4 JSON structure, resource references, and preliminary flags.")
-    print("    They do not invoke an external Java HL7 HAPI validator.")
+    print("  • Schema check 12 executes formal HL7 FHIR R4 Pydantic schema validation via fhir.resources 8.3.0.")
+    print("    Check 15 verifies preliminary status and cross-resource reference integrity.")
     print("  • Client binding checks (13) verify SSR HTML shell generation and client component data contract.")
     print("    They do not replace an interactive browser E2E session.")
     print("  • Zero-leakage check (19) verifies 0 exact-row hash overlap on the synthetic split.")
