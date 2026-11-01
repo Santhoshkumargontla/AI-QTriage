@@ -40,6 +40,10 @@ except ImportError:
 load_dotenv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".env"))
 
 
+# Bounded shared ThreadPoolExecutor to prevent thread leaks/accumulation
+_GEMINI_EXECUTOR = concurrent.futures.ThreadPoolExecutor(max_workers=2, thread_name_prefix="gemini_worker")
+
+
 def get_gemini_config() -> Dict[str, Any]:
     """Returns Gemini configuration status without exposing the API key."""
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
@@ -105,53 +109,62 @@ class GeminiFirstAidService:
                 "display_message": "AI-generated guidance unavailable. Showing rule-based research guidance."
             }
 
-        # Execute call with strict ThreadPoolExecutor timeout (8s)
-        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
-            future = executor.submit(self._call_gemini_sdk, structured_evidence, api_key)
-            try:
-                result = future.result(timeout=timeout_seconds)
-                if result and result.get("status") == "success":
-                    result["generated_at"] = generated_at
-                    result["evidence_hash"] = evidence_hash
-                    result["display_message"] = f"First-aid guidance generated with Gemini ({self.model_name}) from verified evidence."
-                    return result
-                
-                fallback_reason = result.get("fallback_reason", "Gemini response validation failed") if result else "Gemini call returned empty response"
-                return {
-                    "provider": "rule_based_fallback",
-                    "status": "fallback",
-                    "model": self.model_name,
-                    "fallback_reason": fallback_reason,
-                    "generated_at": generated_at,
-                    "evidence_hash": evidence_hash,
-                    "display_message": "AI-generated guidance unavailable. Showing rule-based research guidance."
-                }
-            except concurrent.futures.TimeoutError:
-                print(f"Gemini API request timed out (> {timeout_seconds}s). Switching to rule-based fallback.")
-                return {
-                    "provider": "rule_based_fallback",
-                    "status": "fallback",
-                    "model": self.model_name,
-                    "fallback_reason": f"timeout (request exceeded {timeout_seconds}s)",
-                    "generated_at": generated_at,
-                    "evidence_hash": evidence_hash,
-                    "display_message": "AI-generated guidance unavailable (request timed out). Showing rule-based research guidance."
-                }
-            except Exception as e:
-                print(f"Gemini API execution error: {str(e)}")
-                return {
-                    "provider": "rule_based_fallback",
-                    "status": "fallback",
-                    "model": self.model_name,
-                    "fallback_reason": f"API error: {str(e)}",
-                    "generated_at": generated_at,
-                    "evidence_hash": evidence_hash,
-                    "display_message": "AI-generated guidance unavailable. Showing rule-based research guidance."
-                }
+        # Execute call with bounded shared ThreadPoolExecutor and provider-level socket timeout
+        future = _GEMINI_EXECUTOR.submit(self._call_gemini_sdk, structured_evidence, api_key, timeout_seconds)
+        try:
+            result = future.result(timeout=timeout_seconds)
+            if result and result.get("status") == "success":
+                result["generated_at"] = generated_at
+                result["evidence_hash"] = evidence_hash
+                result["display_message"] = f"First-aid guidance generated with Gemini ({self.model_name}) from verified evidence."
+                return result
+            
+            fallback_reason = result.get("fallback_reason", "Gemini response validation failed") if result else "Gemini call returned empty response"
+            return {
+                "provider": "rule_based_fallback",
+                "status": "fallback",
+                "model": self.model_name,
+                "fallback_reason": fallback_reason,
+                "generated_at": generated_at,
+                "evidence_hash": evidence_hash,
+                "display_message": "AI-generated guidance unavailable. Showing rule-based research guidance."
+            }
+        except concurrent.futures.TimeoutError:
+            print(f"Gemini API request timed out (> {timeout_seconds}s). Switching to rule-based fallback.")
+            return {
+                "provider": "rule_based_fallback",
+                "status": "fallback",
+                "model": self.model_name,
+                "fallback_reason": f"timeout (request exceeded {timeout_seconds}s)",
+                "generated_at": generated_at,
+                "evidence_hash": evidence_hash,
+                "display_message": "AI-generated guidance unavailable (request timed out). Showing rule-based research guidance."
+            }
+        except Exception as e:
+            print(f"Gemini API execution error: {str(e)}")
+            return {
+                "provider": "rule_based_fallback",
+                "status": "fallback",
+                "model": self.model_name,
+                "fallback_reason": f"API error: {str(e)}",
+                "generated_at": generated_at,
+                "evidence_hash": evidence_hash,
+                "display_message": "AI-generated guidance unavailable. Showing rule-based research guidance."
+            }
 
-    def _call_gemini_sdk(self, structured_evidence: Dict[str, Any], api_key: str) -> Optional[Dict[str, Any]]:
-        """Makes actual call using google-genai SDK."""
-        client = genai.Client(api_key=api_key)
+    def _call_gemini_sdk(
+        self,
+        structured_evidence: Dict[str, Any],
+        api_key: str,
+        timeout_seconds: float = 12.0
+    ) -> Optional[Dict[str, Any]]:
+        """Makes actual call using google-genai SDK with provider-level socket timeout."""
+        # Provider-level socket timeout in milliseconds prevents lingering/accumulating threads
+        http_options = None
+        if types and hasattr(types, "HttpOptions"):
+            http_options = types.HttpOptions(timeout=int(timeout_seconds * 1000))
+
+        client = genai.Client(api_key=api_key, http_options=http_options) if http_options else genai.Client(api_key=api_key)
 
         system_instruction = (
             "You are generating conservative first-aid research guidance for an academic software prototype.\n"
@@ -189,8 +202,7 @@ Generate structured first-aid guidance in valid JSON format matching this exact 
             response_mime_type="application/json"
         )
 
-        models_to_try = [self.model_name, "gemini-3.5-flash-lite", "gemini-3.6-flash", "gemini-flash-latest"]
-        # Remove duplicates while preserving order
+        models_to_try = [self.model_name, "gemini-2.5-flash", "gemini-1.5-flash"]
         candidate_models = list(dict.fromkeys(models_to_try))
 
         response = None
@@ -209,7 +221,6 @@ Generate structured first-aid guidance in valid JSON format matching this exact 
                     break
             except Exception as e:
                 last_err = e
-                # Fall through immediately to next active candidate on any rate-limit or API error
                 continue
 
         if not response or not response.text:

@@ -160,12 +160,12 @@ class EvidenceConsistencyAnalyzer:
                     })
 
         # --- B. Peak G-Force Sweep ---
-        # Sweep peak g-force from 1.0g to 8.0g in increments of 0.5
+        # Sweep peak g-force from 0.0g to 8.0g in increments of 0.5 (captures boundary around 0.75g)
         g_idx = feature_names.index("peak_g_force")
         g_xgb_transitions = []
         g_vqc_transitions = []
         
-        for g_val in np.linspace(1.0, 8.0, 15):
+        for g_val in np.linspace(0.0, 8.0, 17):
             test_vec = fused_vector.copy()
             test_vec[g_idx] = g_val
             

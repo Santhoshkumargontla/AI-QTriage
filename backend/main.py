@@ -251,6 +251,7 @@ class CaseResponseSchema(BaseModel):
     prediction_agreement: Optional[str] = None
     uncertainty_level: Optional[str] = None
     justification: Optional[Any] = None
+    requires_human_review: Optional[bool] = None
 
 @app.get("/api/health", tags=["System"])
 def health_check():
@@ -317,7 +318,40 @@ def get_case(case_id: str):
         vis = dict(case["visible_injury"])
         vis["classifier_model_status"] = _effnet_training_status()
         vis["segmentation_model_status"] = _unet_training_status()
+        yolo_detected = bool(vis.get("yolo_finding_detected"))
+        yolo_class = str(vis.get("yolo_finding") or "").strip().lower()
+        eff_class = str(vis.get("classifier_finding") or "").strip().lower()
+        models_disagree = bool(yolo_detected and eff_class and yolo_class != eff_class)
+        vis["vision_disagreement"] = models_disagree
+        vis["human_review_required"] = models_disagree
+        if not vis.get("disagreement_policy"):
+            vis["disagreement_policy"] = {
+                "disagreement_detected": models_disagree,
+                "status": "DISCORDANT_CONCURRENT_HYPOTHESES" if models_disagree else "CONCORDANT_OR_SINGLE_MODEL",
+                "resolution_policy": "NO_AUTOMATED_OVERRIDE_ROUTE_TO_HUMAN_CLINICIAN",
+                "rule": (
+                    "Neither model confidence overrides the other. Both findings are logged as unresolved "
+                    "concurrent hypotheses and routed for manual clinical review."
+                ) if models_disagree else "Findings concordant or single model active.",
+                "human_review_required": models_disagree,
+                "yolo_hypothesis": {
+                    "finding": vis.get("yolo_finding"),
+                    "confidence": vis.get("yolo_confidence"),
+                    "type": "spatial_lesion_detection"
+                },
+                "classifier_hypothesis": {
+                    "finding": vis.get("classifier_finding"),
+                    "probability": vis.get("classifier_probability"),
+                    "type": "whole_image_tissue_classification"
+                }
+            }
         case["visible_injury"] = vis
+        if case.get("requires_human_review") is None:
+            case["requires_human_review"] = bool(
+                models_disagree
+                or not vis.get("segmentation_reliable")
+                or (case.get("xgboost_prediction") and case.get("xgboost_prediction", {}).get("class") == "HIGH")
+            )
     return case
 
 @app.get("/api/cases", response_model=List[CaseResponseSchema], tags=["Cases"])
@@ -1776,6 +1810,36 @@ def analyze_case(case_id: str):
                 "denominator_label": "full image"
             }
     
+    # 2a-2. Vision Disagreement Policy & Explicit Missingness
+    if vision_results:
+        yolo_detected = bool(vision_results.get("yolo_finding_detected"))
+        yolo_class = str(vision_results.get("yolo_finding") or "").strip().lower()
+        eff_class = str(vision_results.get("classifier_finding") or "").strip().lower()
+        models_disagree = bool(yolo_detected and eff_class and yolo_class != eff_class)
+        
+        vision_results["vision_disagreement"] = models_disagree
+        vision_results["human_review_required"] = models_disagree
+        vision_results["disagreement_policy"] = {
+            "disagreement_detected": models_disagree,
+            "status": "DISCORDANT_CONCURRENT_HYPOTHESES" if models_disagree else "CONCORDANT_OR_SINGLE_MODEL",
+            "resolution_policy": "NO_AUTOMATED_OVERRIDE_ROUTE_TO_HUMAN_CLINICIAN",
+            "rule": (
+                "Neither model confidence overrides the other. Both findings are logged as unresolved "
+                "concurrent hypotheses and routed for manual clinical review."
+            ) if models_disagree else "Findings concordant or single model active.",
+            "human_review_required": models_disagree,
+            "yolo_hypothesis": {
+                "finding": vision_results.get("yolo_finding"),
+                "confidence": vision_results.get("yolo_confidence"),
+                "type": "spatial_lesion_detection"
+            },
+            "classifier_hypothesis": {
+                "finding": vision_results.get("classifier_finding"),
+                "probability": vision_results.get("classifier_probability"),
+                "type": "whole_image_tissue_classification"
+            }
+        }
+
     # 2b. Questionnaire
     q_data = case.get("questionnaire") or {}
     
@@ -1821,13 +1885,16 @@ def analyze_case(case_id: str):
         print(f"NOTICE: Using Option A XGBoost for modalities {modality_set} (no exact registry row).")
 
     # 3. Fuse Modalities into a Feature Vector
-    # When sensor is not available, pass empty sensor dict so fusion layer
-    # uses its own zero-masking for the sensor dimensions (not fabricated values).
+    # When sensor or segmentation is not available, pass None so fusion layer
+    # uses its own zero-masking for the model dimensions with explicit missing indicators.
     fusion = MultimodalFeatureFusion()
     case_data = {
         "vision_analysis": {
             "classification": vision_results.get("classification"),
-            "segmentation": {"affected_ratio": vision_results.get("affected_ratio", 0.0)}
+            "segmentation": {
+                "affected_ratio": vision_results.get("affected_ratio"),
+                "segmentation_reliable": vision_results.get("segmentation_reliable", False)
+            }
         } if vision_results else {},
         "questionnaire": q_data,
         "sensor_summary": {
@@ -1918,8 +1985,18 @@ def analyze_case(case_id: str):
     max_xgb_prob = float(max(probs_xgb))
     
     uncertainty_reasons = []
+    if vision_results and vision_results.get("vision_disagreement"):
+        yolo_f = vision_results.get("yolo_finding")
+        yolo_c = vision_results.get("yolo_confidence")
+        eff_f = vision_results.get("classifier_finding")
+        eff_p = vision_results.get("classifier_probability")
+        y_txt = f"{yolo_f} ({(yolo_c*100):.1f}%)" if yolo_c is not None else str(yolo_f)
+        e_txt = f"{eff_f} ({(eff_p*100):.1f}%)" if eff_p is not None else str(eff_f)
+        uncertainty_reasons.append(
+            f"Vision model disagreement detected (YOLO: {y_txt} vs EfficientNet: {e_txt}). Case routed for human clinical review."
+        )
     if not seg_reliable:
-        uncertainty_reasons.append("Segmentation output was unavailable or below the reliability threshold.")
+        uncertainty_reasons.append("Segmentation output was unavailable or below the reliability threshold (zero-imputed for fusion).")
     if is_demo:
         uncertainty_reasons.append("This case uses synthetic or demo data.")
     if max_xgb_prob < 0.70:
@@ -1931,6 +2008,12 @@ def analyze_case(case_id: str):
         uncertainty_level_str = "MODERATE UNCERTAINTY"
     else:
         uncertainty_level_str = "LOW UNCERTAINTY"
+
+    requires_human_review = bool(
+        (vision_results and vision_results.get("vision_disagreement"))
+        or not seg_reliable
+        or (xgb_class_str == "HIGH")
+    )
 
     xgb_info = xgb_model.get_info()
     xgboost_out = {
@@ -2000,6 +2083,7 @@ def analyze_case(case_id: str):
             "uncertainty_reasons": uncertainty_reasons,
             "rule_derived_category": rule_label,
             "safety_guidance_level": rule_label,
+            "requires_human_review": requires_human_review,
             "justification": justifications,
             "safety_information": [justifications],
             "first_aid_guidance": first_aid_guidance,
@@ -2107,6 +2191,7 @@ def trigger_sos_demo(payload: SOSDemoSchema):
 def get_fhir_bundle(case_id: str):
     """Export case data as a standardized HL7 / FHIR R4 Bundle resource."""
     from backend.services.report_service import ResearchReportGenerator
+    from fastapi.responses import JSONResponse
     generator = ResearchReportGenerator()
     try:
         bundle = generator.generate_fhir_bundle(case_id)

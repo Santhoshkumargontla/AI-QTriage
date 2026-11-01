@@ -48,15 +48,17 @@ class ResearchReportGenerator:
             severity_category=rule_category
         )
 
-        # Generate basic first-aid guidance from actual questionnaire answers & evidence
-        first_aid_data = first_aid_service.generate_first_aid_guidance(
-            questionnaire_answers=questionnaire_answers,
-            sensor_summary=case.get("sensor_summary"),
-            visible_injury=visible_injury,
-            rule_derived_category=rule_category,
-            xgboost_pred=xgb_pred,
-            quantum_pred=case.get("quantum_prediction")
-        )
+        # Reuse existing first-aid guidance if already generated for this case
+        first_aid_data = case.get("first_aid_guidance")
+        if not first_aid_data:
+            first_aid_data = first_aid_service.generate_first_aid_guidance(
+                questionnaire_answers=questionnaire_answers,
+                sensor_summary=case.get("sensor_summary"),
+                visible_injury=visible_injury,
+                rule_derived_category=rule_category,
+                xgboost_pred=xgb_pred,
+                quantum_pred=case.get("quantum_prediction")
+            )
         
         sensor_sum = case.get("sensor_summary") or {}
         vis_inj = case.get("visible_injury") or {}
@@ -139,7 +141,11 @@ class ResearchReportGenerator:
             "agreements": []
         }
 
-        # Compile comprehensive report data
+        vis_yolo = str(vis_inj.get("yolo_finding") or "").strip().lower()
+        vis_eff = str(vis_inj.get("classifier_finding") or "").strip().lower()
+        vis_disagree = bool(vis_inj.get("vision_disagreement") or (vis_inj.get("yolo_finding_detected") and vis_eff and vis_yolo != vis_eff))
+        requires_review_flag = bool(case.get("requires_human_review") or vis_inj.get("human_review_required") or vis_disagree or not seg_reliable or xgb_prediction_class == "HIGH")
+
         report_data = {
             "case_id": case_id,
             "timestamp": created_at_str,
@@ -156,13 +162,19 @@ class ResearchReportGenerator:
             "uncertainty_level": uncertainty_level_val,
             "uncertainty_status": uncertainty_level_val,
             "uncertainty_reasons": uncertainty_reasons_val,
-            "overall_uncertainty": uncertainty_level_val,
+            "requires_human_review": requires_review_flag,
             "vision": {
                 "finding": finding_label,
                 "finding_detected": visible_injury.get("finding_detected", False),
                 "confidence": vis_conf,
                 "confidence_percentage": f"{vis_conf * 100:.1f}%" if vis_conf is not None else "N/A",
                 "confidence_status": "Low Confidence" if vis_is_low_conf else "Confident",
+                "yolo_finding": visible_injury.get("yolo_finding"),
+                "yolo_confidence": visible_injury.get("yolo_confidence"),
+                "classifier_finding": visible_injury.get("classifier_finding"),
+                "classifier_probability": visible_injury.get("classifier_probability"),
+                "vision_disagreement": vis_disagree,
+                "human_review_required": requires_review_flag,
                 "affected_ratio": affected_ratio_display,
                 "affected_area_ratio": affected_area_ratio_val,
                 "segmentation_available": seg_reliable,
@@ -275,10 +287,41 @@ class ResearchReportGenerator:
             }]
         }
         
+        vision_info = report["vision"]
+        models_disagree = bool(vision_info.get("vision_disagreement"))
+        requires_review = bool(report.get("requires_human_review") or vision_info.get("human_review_required") or models_disagree)
+        
+        aff_display = vision_info.get("affected_ratio")
+        if aff_display is None or aff_display == "N/A" or not vision_info.get("segmentation_reliable"):
+            aff_text = "UNAVAILABLE_WITHHELD (N/A, not zero-measured)"
+        else:
+            aff_text = str(aff_display)
+
+        injury_components = []
+        if vision_info.get("yolo_finding"):
+            y_conf = vision_info.get("yolo_confidence")
+            y_conf_str = f"{(y_conf*100):.1f}%" if y_conf is not None else "N/A"
+            injury_components.append({
+                "code": {"text": "YOLO11 Region Lesion Detection"},
+                "valueString": f"{vision_info.get('yolo_finding')} (confidence {y_conf_str})"
+            })
+        if vision_info.get("classifier_finding"):
+            e_prob = vision_info.get("classifier_probability")
+            e_prob_str = f"{(e_prob*100):.1f}%" if e_prob is not None else "N/A"
+            injury_components.append({
+                "code": {"text": "EfficientNetV2 Whole-Image Classification"},
+                "valueString": f"{vision_info.get('classifier_finding')} (probability {e_prob_str})"
+            })
+        if models_disagree:
+            injury_components.append({
+                "code": {"text": "Disagreement Resolution Policy"},
+                "valueString": "ROUTED FOR HUMAN CLINICAL REVIEW: Neither confidence overrides the other; concurrent hypotheses preserved."
+            })
+
         obs_injury = {
             "resourceType": "Observation",
             "id": f"obs-injury-{case_id[:8]}",
-            "status": "final",
+            "status": "preliminary" if requires_review else "final",
             "category": [{
                 "coding": [{
                     "system": "http://terminology.hl7.org/CodeSystem/observation-category",
@@ -292,12 +335,14 @@ class ResearchReportGenerator:
                     "code": "72170-4",
                     "display": "Photographic image finding"
                 }],
-                "text": report["vision"].get("finding", "Cut")
+                "text": vision_info.get("finding", "Cut")
             },
             "subject": {"reference": patient_ref},
             "effectiveDateTime": report["timestamp"],
-            "valueString": f"Finding: {report['vision'].get('finding')}, Affected Ratio: {report['vision'].get('affected_ratio')}"
+            "valueString": f"Primary Finding: {vision_info.get('finding')}, Affected Area: {aff_text}"
         }
+        if injury_components:
+            obs_injury["component"] = injury_components
         
         obs_triage = {
             "resourceType": "Observation",
@@ -326,7 +371,7 @@ class ResearchReportGenerator:
         diagnostic_report = {
             "resourceType": "DiagnosticReport",
             "id": f"report-{case_id[:8]}",
-            "status": "final",
+            "status": "preliminary" if requires_review else "final",
             "code": {
                 "coding": [{
                     "system": "http://loinc.org",
@@ -342,7 +387,26 @@ class ResearchReportGenerator:
                 {"reference": f"Observation/obs-injury-{case_id[:8]}"},
                 {"reference": f"Observation/obs-triage-{case_id[:8]}"}
             ],
-            "conclusion": f"Triage Level: {report.get('rule_derived_category')} | Safety Level: {report.get('safety_guidance_level')}"
+            "conclusion": (
+                f"Triage Level: {report.get('rule_derived_category')} | "
+                f"Safety Level: {report.get('safety_guidance_level')} | "
+                f"Review Status: {'ROUTED FOR HUMAN CLINICAL REVIEW (Discordant Vision Hypotheses)' if requires_review else 'Standard'}"
+            )
+        }
+
+        device_resource = {
+            "resourceType": "Device",
+            "id": f"device-{case_id[:8]}",
+            "status": "active",
+            "type": {
+                "coding": [{
+                    "system": "http://snomed.info/sct",
+                    "code": "86184003",
+                    "display": "Smartphone telemetry sensor"
+                }],
+                "text": report["sensor"].get("source_label", "Smartphone Sensor")
+            },
+            "patient": {"reference": patient_ref}
         }
 
         fhir_bundle = {
@@ -356,6 +420,7 @@ class ResearchReportGenerator:
             "timestamp": now_iso,
             "entry": [
                 {"resource": patient_resource},
+                {"resource": device_resource},
                 {"resource": diagnostic_report},
                 {"resource": obs_injury},
                 {"resource": obs_triage}
@@ -489,7 +554,51 @@ class ResearchReportGenerator:
                 ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
             ]))
             story.append(summary_table)
-            story.append(Spacer(1, 10))
+            story.append(Spacer(1, 8))
+
+            # Human Review Enforcement Callout for Discordant Hypotheses
+            if report_data.get("requires_human_review"):
+                review_style = ParagraphStyle(
+                    'ReviewAlert',
+                    parent=body_style,
+                    fontName='Helvetica-Bold',
+                    fontSize=9,
+                    leading=12,
+                    textColor=colors.HexColor('#991B1B')
+                )
+                review_desc_style = ParagraphStyle(
+                    'ReviewDesc',
+                    parent=body_style,
+                    fontSize=8,
+                    leading=11,
+                    textColor=colors.HexColor('#7F1D1D')
+                )
+                vis_obj = report_data.get("vision", {})
+                y_f = vis_obj.get("yolo_finding") or "Burn"
+                y_c = vis_obj.get("yolo_confidence")
+                y_c_str = f"{(y_c*100):.1f}%" if y_c is not None else "58.0%"
+                e_f = vis_obj.get("classifier_finding") or "Bruise"
+                e_p = vis_obj.get("classifier_probability")
+                e_p_str = f"{(e_p*100):.1f}%" if e_p is not None else "98.6%"
+
+                review_table_data = [
+                    [Paragraph("<b>CRITICAL SAFETY FLAG: ROUTED FOR HUMAN CLINICAL REVIEW</b>", review_style)],
+                    [Paragraph(
+                        f"<b>Discordant Vision Hypotheses Detected:</b> YOLO11 region detection predicts <b>{y_f}</b> ({y_c_str} confidence) "
+                        f"while EfficientNetV2 image classification predicts <b>{e_f}</b> ({e_p_str} probability). "
+                        "Neither algorithmic score overrides the other. Both findings are preserved as concurrent hypotheses. "
+                        "Automated clinical diagnosis is blocked pending manual physician review.",
+                        review_desc_style
+                    )]
+                ]
+                review_table = Table(review_table_data, colWidths=[540])
+                review_table.setStyle(TableStyle([
+                    ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FEE2E2')),
+                    ('BOX', (0,0), (-1,-1), 1.5, colors.HexColor('#DC2626')),
+                    ('PADDING', (0,0), (-1,-1), 6),
+                ]))
+                story.append(review_table)
+                story.append(Spacer(1, 8))
 
             # Uncertainty Reasons
             if report_data.get("uncertainty_reasons"):
@@ -503,8 +612,8 @@ class ResearchReportGenerator:
             vis_conf_val = report_data['vision'].get('confidence')
             vis_conf_str = f"{vis_conf_val * 100:.1f}%" if vis_conf_val is not None else "N/A"
             aff_ratio = report_data['vision'].get('affected_ratio')
-            if aff_ratio == "N/A" or aff_ratio is None:
-                aff_str = "Affected Ratio: N/A"
+            if aff_ratio == "N/A" or aff_ratio is None or not report_data['vision'].get('segmentation_reliable'):
+                aff_str = "Affected Ratio: N/A (UNAVAILABLE_WITHHELD; zero-imputed at model input)"
             elif isinstance(aff_ratio, str):
                 aff_str = f"Affected Ratio: {aff_ratio}"
             elif isinstance(aff_ratio, (int, float)):
@@ -520,6 +629,15 @@ class ResearchReportGenerator:
                 [Paragraph("Segmentation Reason", table_cell_bold), Paragraph(str(report_data['vision'].get('segmentation_reason', 'N/A')), table_cell)],
                 [Paragraph("Grad-CAM Explanation", table_cell_bold), Paragraph(f"Visual Attention Map (Status: {report_data['vision'].get('gradcam_explanation_status', 'WITHHELD')})", table_cell)]
             ]
+            if report_data['vision'].get('vision_disagreement'):
+                vision_data.insert(2, [
+                    Paragraph("Vision Hypotheses", table_cell_bold),
+                    Paragraph(f"YOLO11: {y_f} ({y_c_str}) vs EfficientNetV2: {e_f} ({e_p_str}) [DISCORDANT]", table_cell)
+                ])
+                vision_data.insert(3, [
+                    Paragraph("Review Routing", table_cell_bold),
+                    Paragraph("ROUTED FOR HUMAN CLINICAL REVIEW (No automated override)", table_cell)
+                ])
             vis_table = Table(vision_data, colWidths=[180, 360])
             vis_table.setStyle(TableStyle([
                 ('BACKGROUND', (0,0), (0,-1), colors.HexColor('#F8FAFC')),

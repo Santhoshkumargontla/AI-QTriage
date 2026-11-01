@@ -27,7 +27,14 @@ class RulesEngine:
         
         # --- Rule 1: HIGH Rule-Derived Research Category ---
         if crack_pop and (movement >= 1.0 or weight_bearing >= 1.0):
-            return "HIGH", "Assigned HIGH category: User reported hearing/feeling a crack/pop accompanied by severe movement or weight-bearing limitations."
+            lim_desc = []
+            if weight_bearing >= 1.0:
+                lim_desc.append("inability to bear weight (weight-bearing: no)")
+            if movement >= 1.0:
+                lim_desc.append("severe movement limitation")
+            elif movement >= 0.5:
+                lim_desc.append("moderate movement limitation")
+            return "HIGH", f"Assigned HIGH category: User reported hearing/feeling a crack/pop accompanied by {' and '.join(lim_desc)}."
             
         if bleeding and pain >= 7.0:
             return "HIGH", f"Assigned HIGH category: Visible active bleeding reported with high subjective pain score ({pain:.0f}/10)."

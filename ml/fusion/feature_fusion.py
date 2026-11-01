@@ -74,7 +74,10 @@ class MultimodalFeatureFusion:
                     prob_other = max(prob_other, _as_float(classes.get(extra_injury)))
             
             segmentation = vision_analysis.get("segmentation") or {}
-            affected_ratio = _as_float(segmentation.get("affected_ratio"))
+            raw_affected = segmentation.get("affected_ratio")
+            seg_reliable = bool(segmentation.get("segmentation_reliable", True))
+            affected_ratio_is_measured = raw_affected is not None and seg_reliable
+            affected_ratio = _as_float(raw_affected, default=0.0)
             vision_present = 1.0
         else:
             # Option A Missingness: presence = 0.0, feature dimensions = 0.0
@@ -82,6 +85,8 @@ class MultimodalFeatureFusion:
             prob_bruise = 0.0
             prob_swelling = 0.0
             prob_other = 0.0
+            raw_affected = None
+            affected_ratio_is_measured = False
             affected_ratio = 0.0
             vision_present = 0.0
 
@@ -187,7 +192,9 @@ class MultimodalFeatureFusion:
                 "classification_probabilities": {
                     "Cut": prob_cut, "Bruise": prob_bruise, "Swelling": prob_swelling, "Other": prob_other
                 },
-                "affected_ratio": affected_ratio
+                "affected_ratio": raw_affected if affected_ratio_is_measured else None,
+                "affected_ratio_status": "MEASURED" if affected_ratio_is_measured else "UNAVAILABLE_WITHHELD",
+                "affected_ratio_imputed": not affected_ratio_is_measured
             },
             "questionnaire": {
                 "present": bool(questionnaire_present),

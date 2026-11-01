@@ -1,7 +1,10 @@
 import hashlib
 import os
 
-from ultralytics import YOLO
+try:
+    from ultralytics import YOLO
+except ImportError:
+    YOLO = None
 
 from ml.models.canonical_paths import YOLO_CANONICAL, YOLO_RUNTIME, resolve_existing
 
@@ -230,6 +233,8 @@ class YOLO11Detector:
         return UNTRAINED_CLASS
 
     def load_model(self, model_path: str):
+        if YOLO is None:
+            raise RuntimeError("ultralytics library is required for YOLO11 inference. Please run the backend using backend/venv.")
         if not os.path.exists(model_path):
             raise FileNotFoundError(f"MODEL_ARTIFACT_MISSING: {model_path}")
         self.model = YOLO(model_path)

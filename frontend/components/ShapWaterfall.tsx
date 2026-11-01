@@ -2,17 +2,22 @@
 
 import React, { useState } from "react";
 
-interface ShapFeature {
+export interface ShapFeature {
   name: string;
   value: string | number;
   shapValue: number;
   description: string;
 }
 
-interface ShapWaterfallProps {
+export interface ShapWaterfallProps {
   features?: ShapFeature[];
   baseValue?: number;
   finalScore?: number;
+  unit?: string;
+  isLogOddsScale?: boolean;
+  title?: string;
+  subtitle?: string;
+  outcomeLabel?: string;
 }
 
 const DEFAULT_FEATURES: ShapFeature[] = [
@@ -26,13 +31,18 @@ const DEFAULT_FEATURES: ShapFeature[] = [
 
 export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
   features = DEFAULT_FEATURES,
-  baseValue = 0.20,
-  finalScore = 0.90,
+  baseValue = 0.0,
+  finalScore = 0.0,
+  unit = "margin log-odds",
+  isLogOddsScale = false,
+  title = "TreeExplainer SHAP Waterfall (Decision Margin)",
+  subtitle = "Multimodal feature contribution breakdown for classical XGBoost decision",
+  outcomeLabel = "Total Decision Margin (f(x) = E[f(x)] + \u2211 \u03c6\u1d62)",
 }) => {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   // Find max absolute value for scaling bars
-  const maxAbs = Math.max(...features.map((f) => Math.abs(f.shapValue)), 0.35);
+  const maxAbs = Math.max(...features.map((f) => Math.abs(f.shapValue)), isLogOddsScale ? 1.0 : 0.35);
 
   // Precompute waterfall cumulative steps functionally
   const featuresWithSteps = features.reduce<{
@@ -50,16 +60,37 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
     { items: [], acc: baseValue }
   ).items;
 
+  const formatVal = (v: number) => {
+    if (isLogOddsScale) {
+      return `${v >= 0 ? "+" : ""}${v.toFixed(3)}`;
+    }
+    return `${v >= 0 ? "+" : ""}${(v * 100).toFixed(1)}%`;
+  };
+
+  const formatBase = (v: number) => {
+    if (isLogOddsScale) {
+      return `${v.toFixed(3)} ${unit}`;
+    }
+    return `${(v * 100).toFixed(1)}%`;
+  };
+
+  const formatFinal = (v: number) => {
+    if (isLogOddsScale) {
+      return `${v.toFixed(3)} ${unit}`;
+    }
+    return `${(v * 100).toFixed(1)}%`;
+  };
+
   return (
     <div className="rounded-2xl border border-slate-700/60 bg-slate-900/90 p-6 shadow-2xl backdrop-blur-xl">
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
         <div>
           <h3 className="text-lg font-bold text-slate-100 flex items-center gap-2">
             <span className="inline-block h-3 w-3 rounded-full bg-cyan-400 animate-pulse"></span>
-            SHAP Waterfall Explainability
+            {title}
           </h3>
-          <p className="text-xs text-slate-400">
-            Multimodal feature contribution breakdown for classical XGBoost decision
+          <p className="text-xs text-slate-400 mt-0.5">
+            {subtitle}
           </p>
         </div>
         <div className="flex items-center gap-4 text-xs font-medium">
@@ -76,8 +107,8 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
 
       {/* Base Value Line */}
       <div className="mb-3 flex items-center justify-between rounded-lg bg-slate-800/60 px-3 py-1.5 text-xs text-slate-300 border border-slate-700/40">
-        <span>Base Expected Value ($E[f(x)]$):</span>
-        <span className="font-mono font-bold text-cyan-300">{(baseValue * 100).toFixed(1)}%</span>
+        <span>Base Expected Value (E[f(x)]):</span>
+        <span className="font-mono font-bold text-cyan-300">{formatBase(baseValue)}</span>
       </div>
 
       {/* Waterfall Bars */}
@@ -110,7 +141,7 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
                     isPositive ? "text-rose-400" : "text-emerald-400"
                   }`}
                 >
-                  {isPositive ? `+${(feat.shapValue * 100).toFixed(1)}%` : `${(feat.shapValue * 100).toFixed(1)}%`}
+                  {formatVal(feat.shapValue)}
                 </span>
               </div>
 
@@ -131,7 +162,7 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
                 <div className="mt-2 rounded-lg bg-slate-950 p-2.5 text-xs text-slate-300 border border-cyan-500/30 animate-in fade-in slide-in-from-top-1">
                   <p className="text-cyan-300 font-medium">{feat.description}</p>
                   <p className="mt-0.5 text-[11px] text-slate-400 font-mono">
-                    Shift: {(feat.startVal * 100).toFixed(1)}% &rarr; {(feat.endVal * 100).toFixed(1)}%
+                    Shift: {formatVal(feat.startVal)} &rarr; {formatVal(feat.endVal)}
                   </p>
                 </div>
               )}
@@ -141,9 +172,16 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
       </div>
 
       {/* Final Outcome */}
-      <div className="mt-4 flex items-center justify-between rounded-xl bg-gradient-to-r from-slate-800 via-slate-800 to-cyan-950/40 p-3 text-sm font-bold text-slate-100 border border-cyan-500/30">
-        <span>Final Multimodal Risk Probability:</span>
-        <span className="font-mono text-base text-cyan-300">{(finalScore * 100).toFixed(1)}%</span>
+      <div className="mt-4 space-y-2">
+        <div className="flex items-center justify-between rounded-xl bg-gradient-to-r from-slate-800 via-slate-800 to-cyan-950/40 p-3 text-sm font-bold text-slate-100 border border-cyan-500/30">
+          <span>{outcomeLabel}</span>
+          <span className="font-mono text-base text-cyan-300">{formatFinal(finalScore)}</span>
+        </div>
+        <p className="text-[10px] text-slate-400 font-mono italic">
+          {isLogOddsScale
+            ? `* Genuine TreeExplainer SHAP sum: Base margin (${formatBase(baseValue)}) + net attributions (${formatVal(finalScore - baseValue)}) = ${formatFinal(finalScore)}. Unconstrained log-odds margin for predicted class. Distinct from posterior softmax classification probability.`
+            : `* Arithmetic sum: Base expected value (${formatBase(baseValue)}) + net feature attributions (${formatVal(finalScore - baseValue)}) = ${formatFinal(finalScore)}. Illustrative scenario decomposition; distinct from actual model TreeExplainer SHAP log-odds and posterior softmax probability.`}
+        </p>
       </div>
     </div>
   );

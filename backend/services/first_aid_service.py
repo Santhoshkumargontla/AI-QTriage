@@ -196,7 +196,8 @@ class FirstAidGuidanceService:
         deterministic_fallback = self._generate_deterministic_guidance(evidence, rule_derived_category)
 
         # 4. Attempt Gemini Generation
-        gemini_result = self.gemini_service.generate_guidance(evidence, timeout_seconds=8.0)
+        timeout_sec = float(os.environ.get("GEMINI_TIMEOUT_SECONDS", "12.0"))
+        gemini_result = self.gemini_service.generate_guidance(evidence, timeout_seconds=timeout_sec)
 
         # 5. If Gemini succeeds, merge safety rule warnings and return
         if gemini_result.get("provider") == "gemini" and gemini_result.get("status") == "success":
