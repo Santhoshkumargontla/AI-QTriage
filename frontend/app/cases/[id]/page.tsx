@@ -407,7 +407,7 @@ export default function CaseDetails() {
             onClick={() => selectTab("audit")}
             className="text-xs font-bold text-cyan-400 hover:text-cyan-300 underline flex items-center gap-1 self-start sm:self-auto"
           >
-            View Full 11-Point Verification Matrix &rarr;
+            View 11-Issue Matrix &amp; 19 Verification Checks &rarr;
           </button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
@@ -2125,13 +2125,16 @@ export default function CaseDetails() {
               <div>
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-                  Backend Verification &amp; System Audit Matrix
+                  11-Issue Resolution Matrix &amp; 19-Check Automated Proof
                 </h3>
                 <p className="text-xs text-slate-400 mt-1">
-                  Comprehensive audit record surfacing backend fixes, mathematical proofs, test suite results, and research limitations directly into the UI.
+                  The 11 thematic issues below (P1, P2, and Governance) address core system architecture and research boundaries, verified by 19 independent automated suite checks in tests/test_audit_verification_suite.py.
                 </p>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                  11 Thematic Issues
+                </span>
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   19 / 19 Automated Checks Verified
                 </span>
@@ -2178,15 +2181,15 @@ export default function CaseDetails() {
                   <tr className="hover:bg-slate-850/30">
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-red-950/60 text-red-400 border border-red-800 font-bold">P1</span></td>
                     <td className="py-3 px-3 font-semibold text-slate-200">HL7 FHIR R4 Bundle Conformance</td>
-                    <td className="py-3 px-3 text-slate-300">DiagnosticReport &amp; Observations set to &quot;preliminary&quot; when human review required. Full reference integrity.</td>
-                    <td className="py-3 px-3 text-purple-300">Dual injury hypotheses preserved in obs-injury components. Withheld area preserved.</td>
+                    <td className="py-3 px-3 text-slate-300">Formal Pydantic schema validation (fhir.resources 8.3.0). Preliminary status and dual hypotheses preserved.</td>
+                    <td className="py-3 px-3 text-purple-300">Patient, Device, DiagnosticReport, Observations validated against HL7 FHIR R4 spec.</td>
                     <td className="py-3 px-3 text-right text-emerald-400 font-bold">VERIFIED (Check 12, 15)</td>
                   </tr>
                   <tr className="hover:bg-slate-850/30">
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-red-950/60 text-red-400 border border-red-800 font-bold">P1</span></td>
                     <td className="py-3 px-3 font-semibold text-slate-200">Gemini Concurrency &amp; Socket Timeouts</td>
                     <td className="py-3 px-3 text-slate-300">Bounded ThreadPoolExecutor(max_workers=2) with HttpOptions socket timeouts and rule-based fallback.</td>
-                    <td className="py-3 px-3 text-cyan-300">4 concurrent requests rejected/aborted within 1.505s; attribution guaranteed to rule_based_fallback.</td>
+                    <td className="py-3 px-3 text-cyan-300">Mock delay aborted in 1.015s; in-flight peak capped at 1 &le; 2. Attribution guaranteed to fallback.</td>
                     <td className="py-3 px-3 text-right text-emerald-400 font-bold">VERIFIED (Check 9)</td>
                   </tr>
                   <tr className="hover:bg-slate-850/30">
@@ -2213,16 +2216,16 @@ export default function CaseDetails() {
                   <tr className="hover:bg-slate-850/30">
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-amber-950/60 text-amber-400 border border-amber-800 font-bold">P2</span></td>
                     <td className="py-3 px-3 font-semibold text-slate-200">Dataset Duplication &amp; Leakage Audit</td>
-                    <td className="py-3 px-3 text-slate-300">Audit documentation surfaces 167 exact duplicates in 200 synthetic image templates.</td>
-                    <td className="py-3 px-3 text-amber-300">Strictly flags synthetic evaluation limitations; generalization to real patient photos unproven.</td>
-                    <td className="py-3 px-3 text-right text-amber-300 font-bold">DOCUMENTED</td>
+                    <td className="py-3 px-3 text-slate-300">Zero exact-row hash overlap verified across train/val/test splits (train_val=0, train_test=0, val_test=0).</td>
+                    <td className="py-3 px-3 text-amber-300">Exact row hash overlap = 0. However, patient-level independence is NOT established (synthetic generator without persistent subject IDs).</td>
+                    <td className="py-3 px-3 text-right text-amber-300 font-bold">ZERO OVERLAP / SYNTHETIC LIMIT</td>
                   </tr>
                   <tr className="hover:bg-slate-850/30">
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-purple-950/60 text-purple-400 border border-purple-800 font-bold">RESEARCH</span></td>
                     <td className="py-3 px-3 font-semibold text-slate-200">Clinical Multimodal Validation</td>
-                    <td className="py-3 px-3 text-slate-300">Explicit governance guardrails added across UI, reports, and API metadata.</td>
-                    <td className="py-3 px-3 text-rose-400">Zero (0) paired clinical multimodal records. Triage labels are synthetic rule-derived.</td>
-                    <td className="py-3 px-3 text-right text-purple-400 font-bold">GOVERNED</td>
+                    <td className="py-3 px-3 text-slate-300">Explicit governance guardrails added across UI, reports, and API metadata. Automated decision blocked.</td>
+                    <td className="py-3 px-3 text-rose-400">Zero (0) paired clinical multimodal records. Triage labels are synthetic rule-derived. Real-world accuracy unproven.</td>
+                    <td className="py-3 px-3 text-right text-rose-400 font-bold">UNRESOLVED LIMITATION (GOVERNED)</td>
                   </tr>
                   <tr className="hover:bg-slate-850/30">
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-purple-950/60 text-purple-400 border border-purple-800 font-bold">RESEARCH</span></td>
