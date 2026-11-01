@@ -39,13 +39,14 @@ All 11 official reviewer comments (Review Comments-1 #1–#6, Review Comments-2 
 ## 3. Detailed Verification Deep-Dives
 
 ### 3.1 YOLO11 Photographic Baseline Reconciliation
-- **Historical Conflict:** Prior drafts exhibited a conflict between a synthetic sketch baseline ($mAP@50 = 83.58\%$) and real photographic wounds ($mAP@50 = 36.47\%$).
-- **Audit Finding:** The 83.58% score was derived from `data/datasets/yolo_retrain_v2` (19 sketch drawings containing 0 wound annotations). The authentic performance on unconstrained clinical photographs ($N=123$ split $83/17/23$, 412 boxes) is:
-  - $\text{mAP@50} = \mathbf{36.47\%}$
-  - $\text{mAP@50--95} = \mathbf{18.44\%}$
+- **Historical Conflict:** Prior drafts exhibited an inconsistency between a synthetic sketch baseline ($mAP@50 = 83.58\%$) and real photographic wounds ($mAP@50 = 34.54\%$).
+- **Audit Finding & Canonical Ground Truth:** The active production checkpoint `ml/models/vision/yolo11_injury_best.pt` (SHA-256: `857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9`) evaluated on `yolo_expanded_v1` (2,813 real photographic images: 1,935 train, 442 val, 436 test; 4,456 boxes) recorded in `ml/models/yolo_expanded_skin_candidate/TRAIN_EVAL_REPORT.json` yields:
+  - $\text{mAP@50} = \mathbf{34.54\%}$
+  - $\text{mAP@50--95} = \mathbf{16.74\%}$
   - $\text{Precision} = \mathbf{51.59\%}$
   - $\text{Recall} = \mathbf{39.42\%}$
-- **Concordance:** Abstract, Section 3.1, Section IV.4, and Table I now report these identical verified metrics.
+  - **Per-Class AP@50 Breakdown:** Cut $50.67\%$, Bruise $60.08\%$, Abrasion $61.03\%$, Burn $16.07\%$, Wound $19.36\%$, **Laceration $0.00\%$** (class-specific limitation due to severe box imbalance: 14 train, 3 val, 4 test).
+- **Concordance:** `README.md`, `ml/models/vision/yolo11_metadata.json`, and `TRAIN_EVAL_REPORT.json` are now 100% concordant on these verified values.
 
 ### 3.2 Modality Ablation Improvement Metrics
 - **Independent Model Evaluation (`data/results/independent_ablation_results.json`):**

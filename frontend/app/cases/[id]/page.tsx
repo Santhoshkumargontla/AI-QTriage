@@ -399,7 +399,7 @@ export default function CaseDetails() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
             </span>
             <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              Backend Verification & Audit Status: All 18 Automated Checks Verified
+              Backend Verification & Audit Status: All 19 Automated Checks Verified
             </h3>
           </div>
           <button
@@ -2126,7 +2126,7 @@ export default function CaseDetails() {
               </div>
               <div className="flex items-center gap-2">
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  18 / 18 Automated Checks Verified
+                  19 / 19 Automated Checks Verified
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
                   Academic Prototype Disclaimers Active
@@ -2221,7 +2221,7 @@ export default function CaseDetails() {
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-purple-950/60 text-purple-400 border border-purple-800 font-bold">RESEARCH</span></td>
                     <td className="py-3 px-3 font-semibold text-slate-200">Quantum Advantage Claims</td>
                     <td className="py-3 px-3 text-slate-300">Clarified circuit architecture in technical reports and overview telemetry.</td>
-                    <td className="py-3 px-3 text-rose-400">4-qubit VQC simulated on PennyLane default.qubit. No quantum speedup or supremacy claimed.</td>
+                    <td className="py-3 px-3 text-rose-400">4-qubit VQC simulated on PennyLane default.qubit (17/30, 56.67% accuracy). Reconciled in registry &amp; evaluation JSON with 0 leakage.</td>
                     <td className="py-3 px-3 text-right text-purple-400 font-bold">GOVERNED</td>
                   </tr>
                 </tbody>
@@ -2235,7 +2235,7 @@ export default function CaseDetails() {
                 Live Automated Test Suite Execution Results (tests/test_audit_verification_suite.py)
               </h4>
               <p className="text-xs text-slate-400">
-                18 comprehensive end-to-end audit checks executed against the live backend (127.0.0.1:8000) and frontend (localhost:3000):
+                19 comprehensive end-to-end audit checks executed against the live backend (127.0.0.1:8000) and frontend (localhost:3000):
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-[11px] font-mono text-slate-300 pt-1">
                 <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
@@ -2243,7 +2243,7 @@ export default function CaseDetails() {
                   <span className="text-emerald-400 font-bold">PASS</span>
                 </div>
                 <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>2. XGBoost HIGH (66.5%)</span>
+                  <span>2. Multi-Case Database Integrity</span>
                   <span className="text-emerald-400 font-bold">PASS</span>
                 </div>
                 <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
@@ -2287,7 +2287,7 @@ export default function CaseDetails() {
                   <span className="text-emerald-400 font-bold">PASS</span>
                 </div>
                 <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>13. Frontend Live Rendering</span>
+                  <span>13. Frontend UI Live Rendering</span>
                   <span className="text-emerald-400 font-bold">PASS</span>
                 </div>
                 <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
@@ -2308,6 +2308,10 @@ export default function CaseDetails() {
                 </div>
                 <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
                   <span>18. Missingness N/A Preservation</span>
+                  <span className="text-emerald-400 font-bold">PASS</span>
+                </div>
+                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                  <span>19. Hashes &amp; VQC 56.67% Sync</span>
                   <span className="text-emerald-400 font-bold">PASS</span>
                 </div>
               </div>

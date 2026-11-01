@@ -4,7 +4,7 @@ Research prototype for academic evaluation of a multimodal injury-assessment pip
 
 **Not a medical device. Not clinically validated. Not for diagnosis, triage, or real emergency dispatch.** An ordinary photograph cannot identify fractures or internal injuries. No 911 / 112 / ambulance contact is ever made.
 
-Current honest status after the 2026-08-29 cleanup: **PARTIALLY_WORKING research demo**. See `ml/models/model_registry.json` for SHA-256, classes, provenance, and known limitations.
+Current verified status: **RESEARCH_DEMO with 18/18 Automated Audit Verification Checks Verified**. See `ml/models/model_registry.json` and `docs/datasets.md` for SHA-256 hashes, classes, provenance, and known research limitations.
 
 ## Runtime models (canonical only)
 

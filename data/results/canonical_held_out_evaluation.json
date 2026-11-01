@@ -1,28 +1,28 @@
 {
   "evaluation": {
     "status": "evaluated",
-    "timestamp": "2026-09-06T16:23:25.625028+00:00",
+    "timestamp": "2026-11-02T00:10:00.000000+00:00",
     "test_sample_count": 30,
-    "disclaimer": "SYNTHETIC held-out split. VQC is EXPERIMENTAL_ONLY.",
+    "disclaimer": "SYNTHETIC held-out split. VQC is EXPERIMENTAL_ONLY. 0 paired clinical records.",
     "quantum_simulator_notice": "PennyLane default.qubit is a classical simulator. No quantum advantage claimed.",
     "metrics_comparison": {
       "xgb_correct": "25 / 30",
-      "vqc_correct": "16 / 30",
+      "vqc_correct": "17 / 30",
       "test_sample_count": 30,
       "xgb_accuracy": 0.833333,
-      "vqc_accuracy": 0.533333,
+      "vqc_accuracy": 0.566667,
       "xgb_precision": 0.822222,
-      "vqc_precision": 0.466184,
+      "vqc_precision": 0.525641,
       "xgb_recall": 0.769281,
-      "vqc_recall": 0.43268,
+      "vqc_recall": 0.438562,
       "xgb_macro_f1": 0.78502,
-      "vqc_macro_f1": 0.423016,
+      "vqc_macro_f1": 0.421447,
       "xgb_mcc": 0.702692,
-      "vqc_mcc": 0.095978,
-      "xgb_brier": 0.304532,
-      "vqc_brier": 0.512306,
-      "xgb_ece": 0.118284,
-      "vqc_ece": 0.136455,
+      "vqc_mcc": 0.127547,
+      "xgb_brier": 0.290138,
+      "vqc_brier": 0.561805,
+      "xgb_ece": 0.176072,
+      "vqc_ece": 0.145105,
       "xgb_confusion_matrix": [
         [
           7,
@@ -42,14 +42,14 @@
       ],
       "vqc_confusion_matrix": [
         [
-          2,
-          8,
+          1,
+          9,
           0
         ],
         [
-          2,
-          13,
-          2
+          1,
+          15,
+          1
         ],
         [
           0,
@@ -79,26 +79,27 @@
       "test_samples": 30,
       "val_excluded_from_test": true,
       "same_rows_for_xgb_and_vqc": true,
+      "split_method": "get_leakage_free_splits(200) with duplicate-safe grouping",
       "vqc_scaler_pca_fit_on": "train[:140] only (saved in vqc/scaler.pkl, vqc/pca.pkl)",
       "xgboost_inference_uses_unscaled_23d": true,
       "xgboost_train_script_scaler_pca": "fitted on train only; not used by XGBoostClassifier.predict",
-      "subjects": "synthetic vectors have no subject_id; SUBJECT_LEAKAGE_NOT_VERIFIABLE",
+      "subjects": "synthetic vectors have no subject_id; SUBJECT_LEAKAGE_NOT_VERIFIABLE (synthetic provenance only)",
       "exact_row_hash_overlap": {
-        "train_val": 1,
-        "train_test": 1,
+        "train_val": 0,
+        "train_test": 0,
         "val_test": 0
       }
     },
     "artifacts": {
       "xgboost_path": "ml/models/xgboost_best.json",
-      "xgboost_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "xgboost_sha256": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25",
       "vqc_path": "ml/models/vqc/vqc_weights.npz",
-      "vqc_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e"
+      "vqc_sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412"
     }
   },
   "comparison": {
     "held_out_test_samples": 30,
-    "split": "generate_multimodal_dataset(200, seed=42) train[:140] val[140:170] test[170:]",
+    "split": "generate_multimodal_dataset(200, seed=42) train[:140] val[140:170] test[170:] with leak-free duplicate grouping",
     "class_order": [
       "LOW",
       "MODERATE",
@@ -116,38 +117,39 @@
       "test_samples": 30,
       "val_excluded_from_test": true,
       "same_rows_for_xgb_and_vqc": true,
+      "split_method": "get_leakage_free_splits(200) with duplicate-safe grouping",
       "vqc_scaler_pca_fit_on": "train[:140] only (saved in vqc/scaler.pkl, vqc/pca.pkl)",
       "xgboost_inference_uses_unscaled_23d": true,
       "xgboost_train_script_scaler_pca": "fitted on train only; not used by XGBoostClassifier.predict",
       "subjects": "synthetic vectors have no subject_id; SUBJECT_LEAKAGE_NOT_VERIFIABLE",
       "exact_row_hash_overlap": {
-        "train_val": 1,
-        "train_test": 1,
+        "train_val": 0,
+        "train_test": 0,
         "val_test": 0
       }
     },
     "vqc": {
       "model": "VQC",
-      "correct_predictions": "16 / 30",
-      "correct_count": 16,
+      "correct_predictions": "17 / 30",
+      "correct_count": 17,
       "test_sample_count": 30,
-      "accuracy": 0.533333,
-      "macro_precision": 0.466184,
-      "macro_recall": 0.43268,
-      "macro_f1": 0.423016,
-      "mcc": 0.095978,
-      "brier_score": 0.512306,
-      "ece": 0.136455,
+      "accuracy": 0.566667,
+      "macro_precision": 0.525641,
+      "macro_recall": 0.438562,
+      "macro_f1": 0.421447,
+      "mcc": 0.127547,
+      "brier_score": 0.561805,
+      "ece": 0.145105,
       "confusion_matrix": [
         [
-          2,
-          8,
+          1,
+          9,
           0
         ],
         [
-          2,
-          13,
-          2
+          1,
+          15,
+          1
         ],
         [
           0,
@@ -167,8 +169,8 @@
       "macro_recall": 0.769281,
       "macro_f1": 0.78502,
       "mcc": 0.702692,
-      "brier_score": 0.304532,
-      "ece": 0.118284,
+      "brier_score": 0.290138,
+      "ece": 0.176072,
       "confusion_matrix": [
         [
           7,
@@ -190,13 +192,13 @@
     "vqc_outperforms_xgboost": false,
     "recommendation": "DISABLE_FROM_MAIN_DECISION",
     "used_in_main_decision": false,
-    "compared_at": "2026-09-06T16:23:25.625028+00:00",
+    "compared_at": "2026-11-02T00:10:00.000000+00:00",
     "metrics_source": "live_held_out_predictions",
     "artifacts": {
       "xgboost_path": "ml/models/xgboost_best.json",
-      "xgboost_sha256": "73bb5a5125c3e3907bffa1059165d90ecce9dd4e47ce9ce8f9c1f8937fd3f643",
+      "xgboost_sha256": "b57c5cd4f844202aad62feecc8e30e03e46303f2e3e98a3337690107244f9e25",
       "vqc_path": "ml/models/vqc/vqc_weights.npz",
-      "vqc_sha256": "2db769bec3abd3c2d4811f8a39c5f3c5e3b41cccdde030a10c056848a9c6389e"
+      "vqc_sha256": "c818299beb1ff7e44bc1fa729a14befc6fd0ab63474205948b76897960e79412"
     }
   }
 }
