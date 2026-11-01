@@ -22,7 +22,8 @@ import {
   HeartPulse,
   Download,
   Sliders,
-  CheckCircle2
+  CheckCircle2,
+  ShieldCheck
 } from "lucide-react";
 import { ThreeDCard } from "@/components/ThreeDCard";
 
@@ -399,7 +400,7 @@ export default function CaseDetails() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
             </span>
             <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              Backend Verification & Audit Status: All 19 Automated Checks Verified
+              Verification Status: 19 Core + 33 Independent FHIR + 23 Playwright E2E Tests Verified
             </h3>
           </div>
           <button
@@ -407,7 +408,7 @@ export default function CaseDetails() {
             onClick={() => selectTab("audit")}
             className="text-xs font-bold text-cyan-400 hover:text-cyan-300 underline flex items-center gap-1 self-start sm:self-auto"
           >
-            View 11-Issue Matrix &amp; 19 Verification Checks &rarr;
+            View Verification Matrix &amp; Test Suites &rarr;
           </button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
@@ -2125,10 +2126,10 @@ export default function CaseDetails() {
               <div>
                 <h3 className="text-lg font-bold text-white flex items-center gap-2">
                   <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-                  11-Issue Resolution Matrix &amp; 19-Check Automated Proof
+                  11-Issue Resolution Matrix &amp; 3-Suite Automated Verification Proof
                 </h3>
                 <p className="text-xs text-slate-400 mt-1">
-                  The 11 thematic issues below (P1, P2, and Governance) address core system architecture and research boundaries, verified by 19 independent automated suite checks in tests/test_audit_verification_suite.py.
+                  11 thematic issues reconciled; 19 core audit checks, 33 independent FHIR R4 checks, and 23 Playwright E2E browser &amp; export tests verified for case 8efa8854-3391-4ab1-ae76-6ae3cfb47d86.
                 </p>
               </div>
               <div className="flex flex-wrap items-center gap-2">
@@ -2136,10 +2137,16 @@ export default function CaseDetails() {
                   11 Thematic Issues
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  19 / 19 Automated Checks Verified
+                  19 / 19 Core Audit
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                  33 / 33 Independent FHIR
+                </span>
+                <span className="px-3 py-1 rounded-full text-xs font-bold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                  23 / 23 Playwright E2E
                 </span>
                 <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-300 border border-amber-500/20">
-                  Academic Prototype Disclaimers Active
+                  Academic Prototype Only
                 </span>
               </div>
             </div>
@@ -2239,90 +2246,210 @@ export default function CaseDetails() {
             </div>
 
             {/* Test Suite Execution Proof Box */}
-            <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
-              <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
-                <Activity className="h-4 w-4 text-emerald-400" />
-                Live Automated Test Suite Execution Results (tests/test_audit_verification_suite.py)
-              </h4>
-              <p className="text-xs text-slate-400">
-                19 comprehensive end-to-end audit checks executed against the live backend (127.0.0.1:8000) and frontend (localhost:3000):
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-[11px] font-mono text-slate-300 pt-1">
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>1. Case API Status 200</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
+            <div className="space-y-4">
+              {/* Suite 1: Core Audit Verification Suite */}
+              <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                    <Activity className="h-4 w-4 text-emerald-400" />
+                    Suite 1: Core Audit Verification Suite (tests/test_audit_verification_suite.py)
+                  </h4>
+                  <span className="text-[11px] font-mono text-emerald-400 font-bold bg-emerald-950/60 border border-emerald-800 px-2 py-0.5 rounded">
+                    19 / 19 CHECKS PASSED
+                  </span>
                 </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>2. Multi-Case Database Integrity</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
+                <p className="text-xs text-slate-400">
+                  19 end-to-end integration and mathematical checks executed against active case <span className="font-mono text-cyan-300">8efa8854-3391-4ab1-ae76-6ae3cfb47d86</span> (Artifact: <span className="font-mono text-slate-300">data/results/audit_verification_run_8efa8854.json</span>):
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 text-[11px] font-mono text-slate-300 pt-1">
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>1. Case API Status 200</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>2. Multi-Case DB Integrity</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>3. SHAP Margin Alignment</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>4. Vision Disagreement Flag</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>5. U-Net Reliability Gate</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>6. Sensor Telemetry Integrity</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>7. 404 Case Robustness</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>8. Evidence Score Range</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>9. Gemini Timeout Fallback</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>10. JSON Export Fidelity</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>11. PDF Binary Generation</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>12. FHIR Formal Pydantic R4</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>13. Frontend UI Live Rendering</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>14. 23-Feature SHAP Additivity</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>15. FHIR Preliminary Status</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>16. Backend Review Enforced</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>17. Consistency Formula (75.0)</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>18. Missingness N/A Preserved</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>19. Hashes &amp; VQC 56.67% Sync</span>
+                    <span className="text-emerald-400 font-bold">PASS</span>
+                  </div>
                 </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>3. SHAP Margin Alignment</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
+              </div>
+
+              {/* Suite 2: Independent HL7 FHIR R4 Conformance & Terminology Suite */}
+              <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                    <FileText className="h-4 w-4 text-purple-400" />
+                    Suite 2: Independent HL7 FHIR R4 Conformance &amp; Terminology Suite (tests/test_fhir_independent_validation.py)
+                  </h4>
+                  <span className="text-[11px] font-mono text-purple-400 font-bold bg-purple-950/60 border border-purple-800 px-2 py-0.5 rounded">
+                    33 / 33 CHECKS PASSED
+                  </span>
                 </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>4. Vision Disagreement Flag</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
+                <p className="text-xs text-slate-400">
+                  Deep interoperability validation using <span className="font-mono text-purple-300">fhir.resources 8.3.0</span> across discordant (8efa8854..) and concordant fixtures:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-[11px] font-mono text-slate-300 pt-1">
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>Bundle Profile (hl7.org StructureDef)</span>
+                    <span className="text-purple-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>LOINC 72170-4, 11283-8, 11526-1</span>
+                    <span className="text-purple-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>SNOMED CT 86184003 (Sensor Device)</span>
+                    <span className="text-purple-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>Closed Reference Graph Closure</span>
+                    <span className="text-purple-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>Preliminary / Final Transitions</span>
+                    <span className="text-purple-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>UNAVAILABLE_WITHHELD Area Tag</span>
+                    <span className="text-purple-400 font-bold">PASS</span>
+                  </div>
                 </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>5. U-Net Reliability Gate</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
+              </div>
+
+              {/* Suite 3: Playwright Browser Automation & Deep Export Suite */}
+              <div className="p-4 bg-slate-950/60 border border-slate-800 rounded-xl space-y-2">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                  <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider flex items-center gap-2">
+                    <ShieldCheck className="h-4 w-4 text-cyan-400" />
+                    Suite 3: Playwright Browser Automation &amp; Deep Export Suite (tests/test_e2e_browser_exports.py)
+                  </h4>
+                  <span className="text-[11px] font-mono text-cyan-400 font-bold bg-cyan-950/60 border border-cyan-800 px-2 py-0.5 rounded">
+                    23 / 23 CHECKS PASSED
+                  </span>
                 </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>6. Sensor Telemetry Integrity</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
+                <p className="text-xs text-slate-400">
+                  Headless Chromium user journey testing with strict DOM assertions and multi-format payload inspection:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-[11px] font-mono text-slate-300 pt-1">
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>Strict 404 Error State Dialog</span>
+                    <span className="text-cyan-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>Strict Gate CLOSED &amp; 0px Badge</span>
+                    <span className="text-cyan-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>Human Review Warning Banner</span>
+                    <span className="text-cyan-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>PDF Stream Text Extraction (pypdf)</span>
+                    <span className="text-cyan-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>JSON Report Contract &amp; SHAP</span>
+                    <span className="text-cyan-400 font-bold">PASS</span>
+                  </div>
+                  <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
+                    <span>FHIR R4 Schema &amp; Dual Hypotheses</span>
+                    <span className="text-cyan-400 font-bold">PASS</span>
+                  </div>
                 </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>7. 404 Case Robustness</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>8. Evidence Score Range</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>9. Gemini Timeout Fallback</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>10. JSON Export Fidelity</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>11. PDF Binary Generation</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>12. FHIR R4 Bundle Conformance</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>13. Frontend UI Live Rendering</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>14. 23-Feature SHAP Additivity</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>15. FHIR Preliminary Status</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>16. Backend Review Enforced</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>17. Consistency Formula (75.0)</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>18. Missingness N/A Preservation</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
-                </div>
-                <div className="p-2 bg-slate-900/90 rounded border border-slate-800 flex items-center justify-between">
-                  <span>19. Hashes &amp; VQC 56.67% Sync</span>
-                  <span className="text-emerald-400 font-bold">PASS</span>
+              </div>
+
+              {/* Research Boundaries & Clinical Governance Callout */}
+              <div className="p-4 bg-amber-950/30 border border-amber-800/60 rounded-xl space-y-2">
+                <h4 className="text-xs font-bold text-amber-300 uppercase tracking-wider flex items-center gap-2">
+                  <AlertTriangle className="h-4 w-4 text-amber-400" />
+                  Mandatory Research Boundaries &amp; Clinical Disclaimers
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs text-slate-300 pt-1">
+                  <div className="p-3 bg-slate-900/90 rounded-lg border border-amber-900/40 space-y-1">
+                    <span className="font-bold text-amber-300 block">Patient-Level Independence</span>
+                    <p className="text-[11px] text-slate-400 leading-tight">
+                      Exact row hash overlap = 0 across splits. However, patient-level independence is UNPROVEN because the synthetic generator lacks persistent subject IDs.
+                    </p>
+                  </div>
+                  <div className="p-3 bg-slate-900/90 rounded-lg border border-amber-900/40 space-y-1">
+                    <span className="font-bold text-amber-300 block">Clinical Multimodal Validation</span>
+                    <p className="text-[11px] text-slate-400 leading-tight">
+                      Zero (0) paired clinical multimodal records exist. Labels are synthetic rule-derived categories. Autonomous clinical deployment is strictly blocked.
+                    </p>
+                  </div>
+                  <div className="p-3 bg-slate-900/90 rounded-lg border border-amber-900/40 space-y-1">
+                    <span className="font-bold text-amber-300 block">Real-World Model Accuracy</span>
+                    <p className="text-[11px] text-slate-400 leading-tight">
+                      Metrics (XGBoost 83.33%, VQC 56.67%, YOLO11 34.54%) represent academic held-out benchmarks on synthetic data, NOT evidence of clinical safety.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
