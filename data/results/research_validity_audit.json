@@ -1,0 +1,70 @@
+{
+  "timestamp_utc": "2026-11-02T05:39:26.285130+00:00",
+  "audit_scope": "Academic Research Prototype Validity & Scientific Integrity",
+  "total_audited_items": 9,
+  "items": [
+    {
+      "claim": "Autonomous Clinical Diagnostic Tool",
+      "evidence": "UI disclaimers, PDF warning banners, FHIR preliminary status, requires_human_review flag",
+      "finding": "AI-QTriage explicitly disclaims diagnostic authority. Autonomous clinical settlement is strictly blocked whenever models disagree or uncertainty is high.",
+      "severity": "LOW (GOVERNED)",
+      "recommended_wording": "Academic Research Prototype only; not certified for clinical diagnosis."
+    },
+    {
+      "claim": "Zero Paired Clinical Multimodal Records",
+      "evidence": "Data provenance records in MongoDB and API metadata (data_provenance: SYNTHETIC)",
+      "finding": "Verified: 0 paired clinical multimodal patient records exist in the repository. All training and evaluation data are synthetic simulations.",
+      "severity": "LOW (GOVERNED)",
+      "recommended_wording": "Evaluated solely on synthetic multimodal simulations; clinical efficacy unproven."
+    },
+    {
+      "claim": "Dataset Leakage & Patient-Level Independence",
+      "evidence": "Zero exact-row hash overlap verified across train/val/test splits (Overlap=0). Persistent subject IDs absent.",
+      "finding": "Row-level leakage is zero, but patient-level independence is unproven because synthetic generator lacks persistent subject IDs.",
+      "severity": "MEDIUM (DOCUMENTED)",
+      "recommended_wording": "Zero row-level overlap on synthetic split; patient-level independence unproven."
+    },
+    {
+      "claim": "Classical XGBoost Benchmark Performance (83.33%)",
+      "evidence": "Canonical artifact data/results/vqc_xgb_comparison.json: 25 / 30 correct (83.33% accuracy, macro-F1 0.785)",
+      "finding": "Verified exactly against canonical held-out evaluation artifact (25/30 on 30 test samples).",
+      "severity": "LOW (VERIFIED)",
+      "recommended_wording": "83.33% accuracy on synthetic held-out benchmark (n=30)."
+    },
+    {
+      "claim": "Experimental 4-Qubit VQC Performance (56.67%)",
+      "evidence": "Canonical artifact data/results/vqc_xgb_comparison.json: 17 / 30 correct (56.67% accuracy, macro-F1 0.421)",
+      "finding": "Verified exactly against canonical held-out evaluation artifact (17/30 on 30 test samples).",
+      "severity": "LOW (VERIFIED)",
+      "recommended_wording": "56.67% accuracy on 4-qubit classical simulation; does not outperform XGBoost."
+    },
+    {
+      "claim": "Quantum Advantage",
+      "evidence": "Executed on PennyLane default.qubit classical statevector simulator (4 qubits).",
+      "finding": "No quantum speedup or quantum advantage exists or is claimed. The 4-qubit circuit runs entirely as classical linear algebra.",
+      "severity": "LOW (GOVERNED)",
+      "recommended_wording": "Classical 4-qubit simulation without quantum advantage."
+    },
+    {
+      "claim": "SHAP Explanations as Causal Clinical Drivers",
+      "evidence": "TreeExplainer margin log-odds decomposition callout and waterfall UI subtitles.",
+      "finding": "SHAP represents mathematical attribution of the multi:softprob XGBoost decision margin, NOT physical or biological causality.",
+      "severity": "LOW (GOVERNED)",
+      "recommended_wording": "TreeExplainer mathematical decision margin decomposition; not biological causality."
+    },
+    {
+      "claim": "Evidence Consistency Index (75/100) as Injury Probability",
+      "evidence": "Consistency formula breakdown: 100.0 - 15.0 (UNet withheld) - 10.0 (Synthetic demo) = 75.0.",
+      "finding": "The metric is explicitly documented as a deterministic rule-based verification index, NOT a Bayesian probability or clinical certainty.",
+      "severity": "LOW (GOVERNED)",
+      "recommended_wording": "Deterministic cross-channel verification index (0-100); not a clinical probability."
+    },
+    {
+      "claim": "Emergency SOS Dispatch",
+      "evidence": "UI badge Local Demo Simulation, mock delivery outcome in database and API.",
+      "finding": "Verified: no external 911 or real emergency SMS dispatch occurred. Simulated locally.",
+      "severity": "LOW (GOVERNED)",
+      "recommended_wording": "Simulated emergency workflow demonstration; no real dispatch initiated."
+    }
+  ]
+}

@@ -1977,7 +1977,7 @@ export default function CaseDetails() {
         ];
 
         return (
-          <div className="space-y-6">
+          <div id="case-panel-shap-explainability" className="space-y-6">
             {/* 1. Genuine TreeExplainer SHAP Waterfall */}
             <ShapWaterfall
               features={waterfallFeatures}

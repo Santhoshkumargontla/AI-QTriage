@@ -1,0 +1,128 @@
+{
+  "target_case_id": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+  "total_checks": 15,
+  "passed_checks": 15,
+  "overall_status": "PASS",
+  "checks": [
+    {
+      "category": "IDENTIFIER",
+      "item": "Database Case ID",
+      "expected": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+      "observed": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "IDENTIFIER",
+      "item": "API Case ID",
+      "expected": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+      "observed": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "IDENTIFIER",
+      "item": "JSON Report Case ID",
+      "expected": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+      "observed": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "IDENTIFIER",
+      "item": "FHIR Patient ID contains Case Prefix",
+      "expected": "a4a30e57",
+      "observed": "patient-a4a30e57",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "VISION",
+      "item": "YOLO Finding (Burn)",
+      "expected": "Burn",
+      "observed": "Burn",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "VISION",
+      "item": "EfficientNet Finding (Bruise)",
+      "expected": "Bruise",
+      "observed": "Bruise",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "GOVERNANCE",
+      "item": "Database requires_human_review",
+      "expected": true,
+      "observed": true,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "GOVERNANCE",
+      "item": "API requires_human_review",
+      "expected": true,
+      "observed": true,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "GOVERNANCE",
+      "item": "JSON Report requires_human_review",
+      "expected": true,
+      "observed": true,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "GOVERNANCE",
+      "item": "FHIR Report Status (preliminary)",
+      "expected": "preliminary",
+      "observed": "preliminary",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "SEGMENTATION",
+      "item": "Segmentation Reliable Gate (False/Closed)",
+      "expected": false,
+      "observed": false,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "SEGMENTATION",
+      "item": "Affected Ratio Preserved as None (N/A)",
+      "expected": null,
+      "observed": null,
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "CONSISTENCY",
+      "item": "Evidence Consistency Score",
+      "expected": 75.0,
+      "observed": 75.0,
+      "status": "PASS",
+      "note": "Formula: 100 - 15 (UNet Withheld) - 10 (Synthetic) = 75.0"
+    },
+    {
+      "category": "TRIAGE",
+      "item": "XGBoost Predicted Class",
+      "expected": "HIGH",
+      "observed": "HIGH",
+      "status": "PASS",
+      "note": ""
+    },
+    {
+      "category": "TRIAGE",
+      "item": "XGBoost Softmax Probability",
+      "expected": 0.6649,
+      "observed": 0.6649,
+      "status": "PASS",
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "timestamp_utc": "2026-11-02T05:33:30Z",
+  "project_name": "AI-QTriage",
+  "repository": "https://github.com/Santhoshkumargontla/AI-QTriage",
+  "branch": "main",
+  "starting_commit_sha": "b18db11f",
+  "working_tree_clean": true,
+  "operating_system": "Windows 11",
+  "python_executable": "C:\\Python314\\python.exe",
+  "backend_venv_python": "backend\\venv\\Scripts\\python.exe",
+  "services": {
+    "fastapi_backend": {
+      "port": 8000,
+      "url": "http://127.0.0.1:8000",
+      "health_endpoint": "http://127.0.0.1:8000/api/health",
+      "status": "UP (HTTP 200)"
+    },
+    "nextjs_frontend": {
+      "port": 3000,
+      "url": "http://localhost:3000",
+      "status": "UP (HTTP 200)"
+    },
+    "streamlit_dashboard": {
+      "port": 8501,
+      "url": "http://localhost:8501",
+      "status": "UP"
+    },
+    "mongodb": {
+      "port": 27017,
+      "database_name": "ai_qtriage",
+      "status": "CONNECTED"
+    }
+  },
+  "active_case": {
+    "case_id": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+    "exists_in_db": true,
+    "exists_in_api": true,
+    "requires_human_review": true,
+    "triage_class": "HIGH",
+    "triage_probability": 0.6649032831192017,
+    "segmentation_reliable": false,
+    "affected_ratio": null
+  },
+  "discovered_test_commands": [
+    "python tests/run_all_verification_suites.py a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+    "python tests/test_audit_verification_suite.py a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+    "python tests/test_fhir_independent_validation.py a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+    "python tests/test_e2e_browser_exports.py a4a30e57-a232-4ca9-9fc4-3f135f7eff8d"
+  ],
+  "initial_blockers": [
+    "No external Twilio SMS production dispatch (correctly routed to local simulation).",
+    "Zero paired clinical multimodal records exist (governed as research limitation)."
+  ]
+}

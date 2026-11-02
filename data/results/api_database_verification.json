@@ -1,0 +1,87 @@
+{
+  "target_case_id": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+  "timestamp_utc": "2026-11-02T05:37:33.872886+00:00",
+  "total_checks": 13,
+  "passed_checks": 13,
+  "overall_status": "PASS",
+  "results": [
+    {
+      "test": "1. Active Case DB Record Exists",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Case found in MongoDB"
+    },
+    {
+      "test": "2. Active Case API Status 200",
+      "passed": true,
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "test": "3. DB-API Case ID Match",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Both match a4a30e57-a232-4ca9-9fc4-3f135f7eff8d"
+    },
+    {
+      "test": "4. DB-API Triage Class Match",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Class=HIGH"
+    },
+    {
+      "test": "5. DB-API Probability Match",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Prob=0.6649032831192017"
+    },
+    {
+      "test": "6. DB-API Human Review Flag Match",
+      "passed": true,
+      "status": "PASS",
+      "detail": "requires_human_review=True in both"
+    },
+    {
+      "test": "7. DB-API Null Affected Ratio Match",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Preserved as null (N/A) in both"
+    },
+    {
+      "test": "8. DB-API Segmentation Reliable Match",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Gate closed (False) in both"
+    },
+    {
+      "test": "9. Non-Existent Case Returns 404",
+      "passed": true,
+      "status": "PASS",
+      "detail": "HTTP 404, Detail: Case with ID non-existent-case-01e0ee4f was not found."
+    },
+    {
+      "test": "10. Disposable Fixture Insert Safe",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Inserted ID audit-test-fixture-d2902210"
+    },
+    {
+      "test": "11. Disposable Fixture API Retrieval",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Retrieved via API"
+    },
+    {
+      "test": "12. Disposable Fixture Cleaned Up",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Removed test record from DB"
+    },
+    {
+      "test": "13. Cleanup Verified",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Fixture no longer exists in DB"
+    }
+  ]
+}

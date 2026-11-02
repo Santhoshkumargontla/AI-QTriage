@@ -1,0 +1,121 @@
+{
+  "target_case_id": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+  "timestamp_utc": "2026-11-02T05:38:25.164921+00:00",
+  "total_checks": 16,
+  "passed_checks": 16,
+  "overall_status": "PASS",
+  "results": [
+    {
+      "format": "JSON",
+      "check": "1. HTTP Status 200",
+      "passed": true,
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "format": "JSON",
+      "check": "2. Case ID Matching",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Case ID: a4a30e57-a232-4ca9-9fc4-3f135f7eff8d"
+    },
+    {
+      "format": "JSON",
+      "check": "3. Human Review Flag",
+      "passed": true,
+      "status": "PASS",
+      "detail": "requires_human_review=True"
+    },
+    {
+      "format": "JSON",
+      "check": "4. Vision Findings Preserved",
+      "passed": true,
+      "status": "PASS",
+      "detail": "YOLO=Burn, EfficientNet=Bruise"
+    },
+    {
+      "format": "JSON",
+      "check": "5. Segmentation Withheld Preserved",
+      "passed": true,
+      "status": "PASS",
+      "detail": "reliable=False, affected_area=None"
+    },
+    {
+      "format": "JSON",
+      "check": "6. Top-Level Keys Count",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Found 33 keys"
+    },
+    {
+      "format": "FHIR",
+      "check": "7. HTTP Status 200",
+      "passed": true,
+      "status": "PASS",
+      "detail": "HTTP 200"
+    },
+    {
+      "format": "FHIR",
+      "check": "8. Pydantic R4 Schema Conformance",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Validated by fhir.resources 8.3.0 (5 entries)"
+    },
+    {
+      "format": "FHIR",
+      "check": "9. DiagnosticReport Preliminary Status",
+      "passed": true,
+      "status": "PASS",
+      "detail": "status=preliminary"
+    },
+    {
+      "format": "FHIR",
+      "check": "10. Dual Vision Hypotheses in Components",
+      "passed": true,
+      "status": "PASS",
+      "detail": "YOLO & EfficientNet preserved in components"
+    },
+    {
+      "format": "FHIR",
+      "check": "11. Segmentation Withheld ValueString",
+      "passed": true,
+      "status": "PASS",
+      "detail": "valueString contains UNAVAILABLE_WITHHELD"
+    },
+    {
+      "format": "PDF",
+      "check": "12. HTTP Status 200 & PDF Stream",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Size: 11845 bytes, header=%PDF"
+    },
+    {
+      "format": "PDF",
+      "check": "13. Page Count (2 Pages Expected)",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Page count: 2"
+    },
+    {
+      "format": "PDF",
+      "check": "14. Case ID Present in Text",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Found Case ID in extracted PDF text"
+    },
+    {
+      "format": "PDF",
+      "check": "15. Mandatory Human Review Notice",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Human review banner verified in PDF"
+    },
+    {
+      "format": "PDF",
+      "check": "16. Research & Synthetic Provenance Notice",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Synthetic/Research disclaimers present in PDF"
+    }
+  ]
+}

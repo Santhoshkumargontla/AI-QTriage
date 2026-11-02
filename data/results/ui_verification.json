@@ -1,0 +1,65 @@
+{
+  "target_case_id": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+  "url": "http://localhost:3000/cases/a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+  "timestamp_utc": "2026-11-02T05:40:58.522385+00:00",
+  "browser": "Chromium Headless (Playwright)",
+  "total_checks": 9,
+  "passed_checks": 9,
+  "overall_status": "PASS",
+  "checks": [
+    {
+      "check": "1. Case Page HTTP Load",
+      "passed": true,
+      "status": "PASS",
+      "detail": "HTTP 200 at http://localhost:3000/cases/a4a30e57-a232-4ca9-9fc4-3f135f7eff8d"
+    },
+    {
+      "check": "2. Case ID in DOM",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Case prefix a4a30e57 found in page"
+    },
+    {
+      "check": "3. Vision Hypotheses Visible",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Both Burn and Bruise visible in DOM"
+    },
+    {
+      "check": "4. Human Review Enforcement Prominent",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Human review banner visible in UI"
+    },
+    {
+      "check": "5. Segmentation Withheld Notice",
+      "passed": true,
+      "status": "PASS",
+      "detail": "UNAVAILABLE_WITHHELD / Gate CLOSED in DOM"
+    },
+    {
+      "check": "6. SHAP Explainability Values Reconciled",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Top 6 (+1.495) and Tail (-0.042) verified in rendered SHAP panel"
+    },
+    {
+      "check": "7. Synthetic Prototype Disclaimers Visible",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Synthetic/demonstration notices rendered"
+    },
+    {
+      "check": "8. Audit 75-Check Badge Present",
+      "passed": true,
+      "status": "PASS",
+      "detail": "75 / 75 Checks verified badge found"
+    },
+    {
+      "check": "9. Live Terminal Log Console Accessible",
+      "passed": true,
+      "status": "PASS",
+      "detail": "Terminal log rendered (4949 chars)"
+    }
+  ]
+}

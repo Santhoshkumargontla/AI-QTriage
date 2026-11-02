@@ -268,6 +268,9 @@ class ResearchReportGenerator:
             "first_aid_guidance": first_aid_data
         }
         
+        # Dual alias for cross-layer consistency between case document and compiled report
+        report_data["visible_injury"] = report_data["vision"]
+
         return report_data
 
     def generate_fhir_bundle(self, case_id: str) -> dict:

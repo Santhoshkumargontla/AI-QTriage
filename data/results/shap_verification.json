@@ -1,0 +1,61 @@
+{
+  "target_case_id": "a4a30e57-a232-4ca9-9fc4-3f135f7eff8d",
+  "total_features": 23,
+  "unique_features": 23,
+  "raw_ieee_754": {
+    "top_6_sum": 1.4952817149460316,
+    "tail_17_sum": -0.04232663381844759,
+    "net_attribution": 1.452955081127584,
+    "base_expected_value": -0.082254,
+    "final_decision_margin": 1.370701081127584,
+    "reported_softmax_probability": 0.6649032831192017
+  },
+  "display_3_decimals": {
+    "top_6_sum": 1.495,
+    "tail_17_sum": -0.042,
+    "net_attribution": 1.453,
+    "base_expected_value": -0.082,
+    "final_decision_margin": 1.371,
+    "component_display_sum": 1.494,
+    "component_rounding_delta": -0.001
+  },
+  "top_6_features": [
+    {
+      "feature": "peak_g_force",
+      "shap_value_raw": 1.5760868787765503,
+      "display_value": 1.576
+    },
+    {
+      "feature": "pain_level",
+      "shap_value_raw": 0.2712593674659729,
+      "display_value": 0.271
+    },
+    {
+      "feature": "questionnaire_present",
+      "shap_value_raw": -0.19670380651950836,
+      "display_value": -0.197
+    },
+    {
+      "feature": "affected_ratio",
+      "shap_value_raw": -0.1896498203277588,
+      "display_value": -0.19
+    },
+    {
+      "feature": "stabilization_time",
+      "shap_value_raw": 0.0789077877998352,
+      "display_value": 0.079
+    },
+    {
+      "feature": "delta_v",
+      "shap_value_raw": -0.04461869224905968,
+      "display_value": -0.045
+    }
+  ],
+  "reconciliation_status": {
+    "net_additivity_passed": true,
+    "margin_additivity_passed": true,
+    "raw_reconciliation_passed": true,
+    "feature_count_passed": true,
+    "overall_status": "PASS"
+  }
+}
