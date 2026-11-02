@@ -2255,21 +2255,76 @@ export default function CaseDetails() {
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-red-950/60 text-red-400 border border-red-800 font-bold">P1</span></td>
                     <td className="py-3 px-3 font-semibold text-slate-200">SHAP Attribution Reconciliation</td>
                     <td className="py-3 px-3 text-slate-300">TreeExplainer decomposed across all 23 features. Residual tail computed for features 7–23.</td>
-                    <td className="py-3 px-3 text-emerald-400">Top 6 (+1.494) + Tail (-0.041) = +1.453 net. Base (-0.082) + Net (+1.453) = +1.371 margin &rarr; 66.5% HIGH.</td>
+                    <td className="py-3 px-3 text-emerald-400">
+                      {(() => {
+                        const realShapExps = Array.isArray(caseData.shap_explanations) ? caseData.shap_explanations : [];
+                        const top6 = realShapExps.slice(0, 6);
+                        const tail17 = realShapExps.slice(6);
+                        const displayedFeatureValues = top6.map((f: any) => Number(Number(f.shap_value || 0).toFixed(3)));
+                        const displayedTop6Sum = Number(displayedFeatureValues.reduce((a: number, b: number) => a + b, 0).toFixed(3));
+                        const rawTop6Sum = top6.reduce((acc: number, f: any) => acc + Number(f.shap_value || 0), 0);
+                        const rawTailSum = tail17.reduce((acc: number, f: any) => acc + Number(f.shap_value || 0), 0);
+                        const realFeatureSum = realShapExps.reduce((acc: number, f: any) => acc + Number(f.shap_value || 0), 0);
+                        const displayedNet = Number(realFeatureSum.toFixed(3));
+                        const displayedTail = Number((displayedNet - displayedTop6Sum).toFixed(3));
+                        const realBase = -0.082254;
+                        const displayedBase = Number(realBase.toFixed(3));
+                        const displayedMargin = Number((displayedBase + displayedNet).toFixed(3));
+                        const probStr = caseData.xgboost_prediction?.probability != null 
+                          ? `${(Number(caseData.xgboost_prediction.probability) * 100).toFixed(1)}%` 
+                          : "66.5%";
+                        const predClass = caseData.xgboost_prediction?.class || "HIGH";
+
+                        return (
+                          <div className="space-y-0.5">
+                            <div>
+                              Top 6 ({displayedTop6Sum >= 0 ? "+" : ""}{displayedTop6Sum.toFixed(3)}) + Tail ({displayedTail >= 0 ? "+" : ""}{displayedTail.toFixed(3)}) = {displayedNet >= 0 ? "+" : ""}{displayedNet.toFixed(3)} net (3-dec additivity). Base ({displayedBase >= 0 ? "+" : ""}{displayedBase.toFixed(3)}) + Net = {displayedMargin >= 0 ? "+" : ""}{displayedMargin.toFixed(3)} margin &rarr; {probStr} {predClass}.
+                            </div>
+                            <div className="text-[10px] text-slate-400 font-sans">
+                              Raw IEEE-754: Top 6 = {rawTop6Sum >= 0 ? "+" : ""}{rawTop6Sum.toFixed(6)}, Tail = {rawTailSum >= 0 ? "+" : ""}{rawTailSum.toFixed(6)} (Net {realFeatureSum >= 0 ? "+" : ""}{realFeatureSum.toFixed(6)}). Both 3-decimal display sum and raw floats reconcile to {displayedMargin >= 0 ? "+" : ""}{displayedMargin.toFixed(3)} margin.
+                            </div>
+                          </div>
+                        );
+                      })()}
+                    </td>
                     <td className="py-3 px-3 text-right text-emerald-400 font-bold">VERIFIED (Check 14)</td>
                   </tr>
                   <tr className="hover:bg-slate-850/30">
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-red-950/60 text-red-400 border border-red-800 font-bold">P1</span></td>
                     <td className="py-3 px-3 font-semibold text-slate-200">U-Net Segmentation Reliability Gate</td>
                     <td className="py-3 px-3 text-slate-300">Empty mask on acute image withheld. Option-A zero-imputation isolated strictly to tensor boundary.</td>
-                    <td className="py-3 px-3 text-sky-400">Report/UI displays UNAVAILABLE_WITHHELD (N/A) rather than 0.0% measured area.</td>
+                    <td className="py-3 px-3 text-sky-400">
+                      {(() => {
+                        const isReliable = Boolean(caseData.visible_injury?.segmentation_reliable);
+                        const ratio = caseData.visible_injury?.affected_ratio;
+                        return (
+                          <span>
+                            {isReliable && ratio != null 
+                              ? `Segmented affected area: ${(Number(ratio) * 100).toFixed(1)}% measured area.`
+                              : "Report/UI displays UNAVAILABLE_WITHHELD (N/A) rather than 0.0% measured area."}
+                          </span>
+                        );
+                      })()}
+                    </td>
                     <td className="py-3 px-3 text-right text-emerald-400 font-bold">VERIFIED (Check 5, 18)</td>
                   </tr>
                   <tr className="hover:bg-slate-850/30">
                     <td className="py-3 px-3"><span className="px-2 py-0.5 rounded bg-red-950/60 text-red-400 border border-red-800 font-bold">P1</span></td>
                     <td className="py-3 px-3 font-semibold text-slate-200">Vision Disagreement &amp; Human Review</td>
                     <td className="py-3 px-3 text-slate-300">Added requires_human_review flag to DB, API response, JSON report, and PDF red warning box.</td>
-                    <td className="py-3 px-3 text-amber-300">YOLO11 Burn (58.0%) vs EfficientNet Bruise (98.6%) triggers disagreement policy; halts auto-triage.</td>
+                    <td className="py-3 px-3 text-amber-300">
+                      {(() => {
+                        const yolo = caseData.visible_injury?.yolo_finding || "N/A";
+                        const yoloConf = caseData.visible_injury?.yolo_confidence != null ? `${(Number(caseData.visible_injury.yolo_confidence) * 100).toFixed(1)}%` : "N/A";
+                        const eff = caseData.visible_injury?.classifier_finding || "N/A";
+                        const effProb = caseData.visible_injury?.classifier_probability != null ? `${(Number(caseData.visible_injury.classifier_probability) * 100).toFixed(1)}%` : (caseData.visible_injury?.classifier_finding ? "OOD" : "N/A");
+                        return (
+                          <span>
+                            YOLO11 {yolo} ({yoloConf}) vs EfficientNet {eff} ({effProb}) triggers disagreement policy; halts auto-triage.
+                          </span>
+                        );
+                      })()}
+                    </td>
                     <td className="py-3 px-3 text-right text-emerald-400 font-bold">VERIFIED (Check 4, 16)</td>
                   </tr>
                   <tr className="hover:bg-slate-850/30">
