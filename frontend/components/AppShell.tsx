@@ -95,7 +95,7 @@ function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
         </p>
         <div className="pt-2 border-t border-[var(--border-card)] flex items-center space-x-1.5 text-blue-600 font-semibold text-xs">
           <Lock className="h-3.5 w-3.5 shrink-0" />
-          <span>Local & Environment Secured</span>
+          <span>Local Research Environment</span>
         </div>
       </div>
     </>
