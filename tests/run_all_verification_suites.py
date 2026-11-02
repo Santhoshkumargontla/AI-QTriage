@@ -140,8 +140,22 @@ def main():
     with open(json_path, "w", encoding="utf-8") as f:
         json.dump(summary_data, f, indent=2)
 
+    # Also mirror to canonical un-prefixed test_suite_all.json for absolute consistency
+    canonical_json_path = os.path.join(out_dir, "test_suite_all.json")
+    with open(canonical_json_path, "w", encoding="utf-8") as f:
+        json.dump(summary_data, f, indent=2)
+
     log_path = os.path.join(out_dir, f"test_suite_all_{TARGET_CASE_ID[:8]}.log")
     with open(log_path, "w", encoding="utf-8") as f:
+        f.write(f"AI-QTRIAGE 75-CHECK CONSOLIDATED TEST LOG\n")
+        f.write(f"Target Case ID: {TARGET_CASE_ID}\nTimestamp UTC: {timestamp_utc}\nGit SHA: {git_sha}\n")
+        f.write(f"Overall Result: {total_passed}/{total_checks} PASSED\n\n")
+        for s in results:
+            f.write(f"\n{'=' * 80}\n{s['name']}\n{'=' * 80}\n")
+            f.write(s["output"])
+
+    canonical_log_path = os.path.join(out_dir, "test_suite_all.log")
+    with open(canonical_log_path, "w", encoding="utf-8") as f:
         f.write(f"AI-QTRIAGE 75-CHECK CONSOLIDATED TEST LOG\n")
         f.write(f"Target Case ID: {TARGET_CASE_ID}\nTimestamp UTC: {timestamp_utc}\nGit SHA: {git_sha}\n")
         f.write(f"Overall Result: {total_passed}/{total_checks} PASSED\n\n")
