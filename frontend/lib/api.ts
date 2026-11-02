@@ -298,4 +298,7 @@ export const api = {
 
   getReport: (caseId: string) =>
     apiFetch<any>(`/api/cases/${caseId}/report`),
+
+  getVerificationRun: (caseId: string) =>
+    apiFetch<any>(`/api/cases/${caseId}/verification-run`),
 };

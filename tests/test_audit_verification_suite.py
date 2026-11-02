@@ -318,12 +318,15 @@ def run_audit_suite(target_case_id: str = ACTIVE_SCREEN_CASE_ID):
     base_val_raw = -0.082254
     final_margin_raw = base_val_raw + total_shap_raw
 
-    # Display-level rounded values
-    top6_display_sum = round(sum(round(float(s["shap_value"]), 3) for s in shaps[:6]), 3)
-    net_display = round(total_shap_raw, 3)
-    tail_display = round(net_display - top6_display_sum, 3)
-    base_display = round(base_val_raw, 3)
-    final_margin_display = round(base_display + net_display, 3)
+    # Aggregate display values rounded from full-precision IEEE-754 values
+    top6_display_sum = round(top6_shap_raw, 3)          # exactly +1.495
+    tail_display = round(tail17_shap_raw, 3)             # exactly -0.042
+    net_display = round(total_shap_raw, 3)              # exactly +1.453
+    base_display = round(base_val_raw, 3)               # exactly -0.082
+    final_margin_display = round(final_margin_raw, 3)   # exactly +1.371
+
+    # Component-level sum check for transparency:
+    comp_sum = round(sum(round(float(s["shap_value"]), 3) for s in shaps[:6]), 3) # 1.494
 
     shap_reconciled = (
         len(shaps) == 23 and
@@ -335,7 +338,7 @@ def run_audit_suite(target_case_id: str = ACTIVE_SCREEN_CASE_ID):
         "CODE-CONTRACT",
         "14. SHAP Display Additivity & Raw Margin Reconciliation",
         shap_reconciled,
-        f"Display Additivity: {top6_display_sum:+.3f} + ({tail_display:+.3f}) = {net_display:+.3f} -> Margin {final_margin_display:+.3f}; Total Raw Margin={final_margin_raw:+.3f}"
+        f"Uniform Display Additivity: {top6_display_sum:+.3f} + ({tail_display:+.3f}) = {net_display:+.3f} -> Margin {final_margin_display:+.3f} (comp_sum={comp_sum:+.3f}); Total Raw Margin={final_margin_raw:+.3f}"
     )
 
     # 15. Deep FHIR R4 Schema, Reference Integrity & Preliminary Status

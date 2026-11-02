@@ -2157,6 +2157,22 @@ def download_pdf_report(case_id: str):
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
 
+@app.get("/api/cases/{case_id}/verification-run", tags=["Audit"])
+def get_case_verification_run(case_id: str):
+    """Retrieve the independent test verification run record and logs for a case."""
+    prefix = case_id[:8]
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    json_path = os.path.join(project_root, "data", "results", f"test_suite_all_{prefix}.json")
+    if not os.path.exists(json_path):
+        json_path = os.path.join(project_root, "data", "results", f"audit_verification_run_{prefix}.json")
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Failed reading verification artifact: {str(e)}")
+    raise HTTPException(status_code=404, detail=f"No verification test run recorded for case {case_id}")
+
 @app.post("/api/sos/demo", tags=["Emergency Demo"])
 def trigger_sos_demo(payload: SOSDemoSchema):
     """Log an emergency simulation event (no real calls made)."""
