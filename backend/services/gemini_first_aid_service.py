@@ -202,7 +202,7 @@ Generate structured first-aid guidance in valid JSON format matching this exact 
             response_mime_type="application/json"
         )
 
-        models_to_try = [self.model_name, "gemini-2.5-flash", "gemini-1.5-flash"]
+        models_to_try = [self.model_name, "gemini-2.5-flash", "gemini-3.5-flash-lite", "gemini-flash-latest"]
         candidate_models = list(dict.fromkeys(models_to_try))
 
         response = None

@@ -144,14 +144,25 @@ If classification is ambiguous (no class clearly dominant), still pick the most 
 """
 
     try:
-        model = genai.GenerativeModel("gemini-1.5-flash")
-        response = model.generate_content(
-            prompt,
-            generation_config=genai.GenerationConfig(
-                temperature=0.0,
-                max_output_tokens=128,
-            )
-        )
+        from google import genai
+        client = genai.Client(api_key=api_key)
+        target_model = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+        candidate_models = list(dict.fromkeys([target_model, "gemini-2.5-flash", "gemini-3.5-flash-lite", "gemini-flash-latest"]))
+        
+        response = None
+        for m_name in candidate_models:
+            try:
+                response = client.models.generate_content(
+                    model=m_name,
+                    contents=prompt,
+                )
+                if response and response.text:
+                    break
+            except Exception:
+                continue
+
+        if not response or not response.text:
+            return None
         text = response.text.strip()
 
         # Strip markdown code fences if present

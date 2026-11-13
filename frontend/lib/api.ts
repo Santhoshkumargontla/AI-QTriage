@@ -136,7 +136,8 @@ export interface Case {
   model_configuration_used?: string | null;
 }
 
-export async function apiFetch<T>(endpoint: string, options?: RequestInit): Promise<T> {
+export async function apiFetch<T>(endpoint: string, options?: RequestInit & { silent404?: boolean }): Promise<T> {
+  const { silent404, ...cleanOptions } = options || {};
   const url = `${API_BASE_URL}${endpoint}`;
   try {
     const headers: Record<string, string> = {
@@ -148,7 +149,7 @@ export async function apiFetch<T>(endpoint: string, options?: RequestInit): Prom
     }
 
     const response = await fetch(url, {
-      ...options,
+      ...cleanOptions,
       headers,
     });
     
@@ -170,7 +171,9 @@ export async function apiFetch<T>(endpoint: string, options?: RequestInit): Prom
       } catch {
         errorMessage = errorText || errorMessage;
       }
-      throw new Error(errorMessage);
+      const err = new Error(errorMessage);
+      (err as any).status = response.status;
+      throw err;
     }
     
     return response.json() as Promise<T>;
@@ -187,7 +190,9 @@ export async function apiFetch<T>(endpoint: string, options?: RequestInit): Prom
       console.error(`API Fetch Error [${endpoint}]:`, hint, err);
       throw new Error(hint);
     }
-    console.error(`API Fetch Error [${endpoint}]:`, err);
+    if (!silent404 || (err as any)?.status !== 404) {
+      console.error(`API Fetch Error [${endpoint}]:`, err);
+    }
     throw err;
   }
 }
@@ -300,5 +305,5 @@ export const api = {
     apiFetch<any>(`/api/cases/${caseId}/report`),
 
   getVerificationRun: (caseId: string) =>
-    apiFetch<any>(`/api/cases/${caseId}/verification-run`),
+    apiFetch<any>(`/api/cases/${caseId}/verification-run`, { silent404: true }),
 };

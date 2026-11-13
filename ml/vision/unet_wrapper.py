@@ -2,7 +2,10 @@ import os
 
 import cv2
 import numpy as np
-import segmentation_models_pytorch as smp
+try:
+    import segmentation_models_pytorch as smp
+except ImportError:
+    smp = None
 import torch
 
 from ml.vision.input_quality import (
@@ -26,6 +29,16 @@ class UNetSegmenter:
 
     def __init__(self, model_path: str = None, device: str = None):
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        self.is_loaded = False
+        self.model_path = model_path
+        self.threshold = resolve_threshold()
+        self.max_area = resolve_max_area()
+        self.model = None
+
+        if smp is None:
+            print("segmentation_models_pytorch not installed; U-Net will remain uninitialized.")
+            return
+
         self.model = smp.Unet(
             encoder_name="resnet34",
             encoder_weights=None,
@@ -35,10 +48,6 @@ class UNetSegmenter:
         )
         self.model.to(self.device)
         self.model.eval()
-        self.is_loaded = False
-        self.model_path = model_path
-        self.threshold = resolve_threshold()
-        self.max_area = resolve_max_area()
 
         from ml.models.canonical_paths import UNET_CANONICAL, resolve_existing
 

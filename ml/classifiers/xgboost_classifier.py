@@ -184,11 +184,15 @@ class XGBoostClassifier:
         else:
             class_shap = shap_vals[0]
 
+        label_names = ["LOW", "MODERATE", "HIGH"]
+        target_label = label_names[predicted_class] if 0 <= predicted_class < len(label_names) else str(predicted_class)
         local_explanations = []
         for i, name in enumerate(self.feature_names):
             local_explanations.append({
                 "feature": name,
                 "shap_value": float(class_shap[i]),
+                "target_class": target_label,
+                "target_class_idx": int(predicted_class),
                 "description": (
                     f"Feature contribution analysis (SHAP) for {name}. "
                     "This shows how much this variable contributed to the prediction."

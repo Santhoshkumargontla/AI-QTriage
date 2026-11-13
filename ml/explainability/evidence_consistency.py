@@ -188,6 +188,12 @@ class EvidenceConsistencyAnalyzer:
                 "classical_xgb": label_map[base_xgb_pred],
                 "quantum_vqc": label_map[base_vqc_pred] if base_vqc_pred is not None else None
             },
+            "baseline_values": {
+                "pain_level": float(round(fused_vector[pain_idx] * 10.0, 1)),
+                "peak_g_force": float(round(fused_vector[g_idx], 2)),
+                "classical_xgb": label_map[base_xgb_pred],
+                "quantum_vqc": label_map[base_vqc_pred] if base_vqc_pred is not None else None
+            },
             "pain_sensitivity": {
                 "classical_xgb_transitions": pain_xgb_transitions[:2], # keep first transitions for brevity
                 "quantum_vqc_transitions": pain_vqc_transitions[:2]

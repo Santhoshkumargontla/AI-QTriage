@@ -322,18 +322,33 @@ def get_case(case_id: str):
         yolo_class = str(vis.get("yolo_finding") or "").strip().lower()
         eff_class = str(vis.get("classifier_finding") or "").strip().lower()
         models_disagree = bool(yolo_detected and eff_class and yolo_class != eff_class)
+        eff_status = str(vis.get("classifier_status") or "").upper()
+        eff_withheld = bool(
+            eff_status in ("OUT_OF_DISTRIBUTION", "LOW_CONFIDENCE", "REJECTED", "WITHHELD", "MODEL_UNAVAILABLE")
+            or not vis.get("classifier_is_confident", True)
+        )
+        vis_review_needed = bool(models_disagree or eff_withheld)
         vis["vision_disagreement"] = models_disagree
-        vis["human_review_required"] = models_disagree
+        vis["human_review_required"] = vis_review_needed
         if not vis.get("disagreement_policy"):
             vis["disagreement_policy"] = {
                 "disagreement_detected": models_disagree,
-                "status": "DISCORDANT_CONCURRENT_HYPOTHESES" if models_disagree else "CONCORDANT_OR_SINGLE_MODEL",
+                "status": (
+                    "DISCORDANT_CONCURRENT_HYPOTHESES" if models_disagree
+                    else ("CLASSIFIER_OUT_OF_DISTRIBUTION" if eff_status == "OUT_OF_DISTRIBUTION"
+                    else ("CLASSIFIER_WITHHELD" if eff_withheld
+                    else "CONCORDANT_OR_SINGLE_MODEL"))
+                ),
                 "resolution_policy": "NO_AUTOMATED_OVERRIDE_ROUTE_TO_HUMAN_CLINICIAN",
                 "rule": (
                     "Neither model confidence overrides the other. Both findings are logged as unresolved "
                     "concurrent hypotheses and routed for manual clinical review."
-                ) if models_disagree else "Findings concordant or single model active.",
-                "human_review_required": models_disagree,
+                    if models_disagree else
+                    ("Classifier input flagged as out-of-distribution or withheld; automatic triage is halted and routed for manual clinical review."
+                    if eff_withheld else
+                    "Findings concordant or single model active.")
+                ),
+                "human_review_required": vis_review_needed,
                 "yolo_hypothesis": {
                     "finding": vis.get("yolo_finding"),
                     "confidence": vis.get("yolo_confidence"),
@@ -346,9 +361,15 @@ def get_case(case_id: str):
                 }
             }
         case["visible_injury"] = vis
+        eff_status = str(vis.get("classifier_status") or "").upper()
+        eff_withheld = bool(
+            eff_status in ("OUT_OF_DISTRIBUTION", "LOW_CONFIDENCE", "REJECTED", "WITHHELD", "MODEL_UNAVAILABLE")
+            or not vis.get("classifier_is_confident", True)
+        )
         if case.get("requires_human_review") is None:
             case["requires_human_review"] = bool(
                 models_disagree
+                or eff_withheld
                 or not vis.get("segmentation_reliable")
                 or (case.get("xgboost_prediction") and case.get("xgboost_prediction", {}).get("class") == "HIGH")
             )
@@ -1569,8 +1590,14 @@ def analyze_case(case_id: str):
                 # Segment the original photograph ROI. Do not run U-Net on the
                 # letterboxed 224 tensor — that would map a padded-space mask
                 # into original-image coordinates.
-                mask, pixel_count, affected_ratio, debug_info = unet_seg.segment(img_rgb_orig, bbox_orig)
-                parsed_seg = interpret_segmentation(mask, pixel_count, affected_ratio, debug_info)
+                try:
+                    mask, pixel_count, affected_ratio, debug_info = unet_seg.segment(img_rgb_orig, bbox_orig)
+                    parsed_seg = interpret_segmentation(mask, pixel_count, affected_ratio, debug_info)
+                except Exception as _unet_err:
+                    print(f"U-Net segmentation failed: {_unet_err}")
+                    mask, pixel_count, affected_ratio = None, 0, None
+                    debug_info = {"error": str(_unet_err)}
+                    parsed_seg = {"status": "UNAVAILABLE", "display_message": f"Segmentation unavailable ({_unet_err})", "is_reliable": False}
                 
                 # Crop ROI from original image for classification
                 x1o, y1o, x2o, y2o = [int(v) for v in bbox_orig]
@@ -1678,8 +1705,14 @@ def analyze_case(case_id: str):
                     yolo_coverage = "NOT AVAILABLE"
 
                 # Segment the original photograph (not the letterboxed 224 tensor)
-                mask, pixel_count, affected_ratio, debug_info = unet_seg.segment(img_rgb_orig2)
-                parsed_seg = interpret_segmentation(mask, pixel_count, affected_ratio, debug_info)
+                try:
+                    mask, pixel_count, affected_ratio, debug_info = unet_seg.segment(img_rgb_orig2)
+                    parsed_seg = interpret_segmentation(mask, pixel_count, affected_ratio, debug_info)
+                except Exception as _unet_err:
+                    print(f"U-Net segmentation failed: {_unet_err}")
+                    mask, pixel_count, affected_ratio = None, 0, None
+                    debug_info = {"error": str(_unet_err)}
+                    parsed_seg = {"status": "UNAVAILABLE", "display_message": f"Segmentation unavailable ({_unet_err})", "is_reliable": False}
                 seg_is_reliable = parsed_seg["is_reliable"]
 
                 cam = _gradcam_payload(effnet_clf, img_rgb_orig2, parsed, case_id, orig_w_real2, orig_h_real2)
@@ -1817,17 +1850,33 @@ def analyze_case(case_id: str):
         eff_class = str(vision_results.get("classifier_finding") or "").strip().lower()
         models_disagree = bool(yolo_detected and eff_class and yolo_class != eff_class)
         
+        eff_status = str(vision_results.get("classifier_status") or "").upper()
+        eff_withheld = bool(
+            eff_status in ("OUT_OF_DISTRIBUTION", "LOW_CONFIDENCE", "REJECTED", "WITHHELD", "MODEL_UNAVAILABLE")
+            or not vision_results.get("classifier_is_confident", True)
+        )
+        vis_review_needed = bool(models_disagree or eff_withheld)
+        
         vision_results["vision_disagreement"] = models_disagree
-        vision_results["human_review_required"] = models_disagree
+        vision_results["human_review_required"] = vis_review_needed
         vision_results["disagreement_policy"] = {
             "disagreement_detected": models_disagree,
-            "status": "DISCORDANT_CONCURRENT_HYPOTHESES" if models_disagree else "CONCORDANT_OR_SINGLE_MODEL",
+            "status": (
+                "DISCORDANT_CONCURRENT_HYPOTHESES" if models_disagree
+                else ("CLASSIFIER_OUT_OF_DISTRIBUTION" if eff_status == "OUT_OF_DISTRIBUTION"
+                else ("CLASSIFIER_WITHHELD" if eff_withheld
+                else "CONCORDANT_OR_SINGLE_MODEL"))
+            ),
             "resolution_policy": "NO_AUTOMATED_OVERRIDE_ROUTE_TO_HUMAN_CLINICIAN",
             "rule": (
                 "Neither model confidence overrides the other. Both findings are logged as unresolved "
                 "concurrent hypotheses and routed for manual clinical review."
-            ) if models_disagree else "Findings concordant or single model active.",
-            "human_review_required": models_disagree,
+                if models_disagree else
+                ("Classifier input flagged as out-of-distribution or withheld; automatic triage is halted and routed for manual clinical review."
+                if eff_withheld else
+                "Findings concordant or single model active.")
+            ),
+            "human_review_required": vis_review_needed,
             "yolo_hypothesis": {
                 "finding": vision_results.get("yolo_finding"),
                 "confidence": vision_results.get("yolo_confidence"),
@@ -2011,6 +2060,7 @@ def analyze_case(case_id: str):
 
     requires_human_review = bool(
         (vision_results and vision_results.get("vision_disagreement"))
+        or (vision_results and vision_results.get("human_review_required"))
         or not seg_reliable
         or (xgb_class_str == "HIGH")
     )
@@ -2156,6 +2206,19 @@ def download_pdf_report(case_id: str):
         )
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
+
+@app.get("/api/system/benchmark", tags=["Audit"])
+def get_system_computational_benchmark():
+    """Retrieve empirical prediction latency, throughput, and memory consumption benchmarks."""
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    json_path = os.path.join(project_root, "data", "results", "computational_benchmark_report.json")
+    if os.path.exists(json_path):
+        try:
+            with open(json_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Failed reading benchmark artifact: {str(e)}")
+    raise HTTPException(status_code=404, detail="Computational benchmark report not found")
 
 @app.get("/api/cases/{case_id}/verification-run", tags=["Audit"])
 def get_case_verification_run(case_id: str):

@@ -161,6 +161,7 @@ class ResearchReportGenerator:
             "prediction_agreement": prediction_agreement_val,
             "uncertainty_level": uncertainty_level_val,
             "uncertainty_status": uncertainty_level_val,
+            "overall_uncertainty": uncertainty_level_val,
             "uncertainty_reasons": uncertainty_reasons_val,
             "requires_human_review": requires_review_flag,
             "vision": {
@@ -694,7 +695,7 @@ class ResearchReportGenerator:
                 [Paragraph("Classical XGBoost Multimodal Class", table_cell_bold), Paragraph(f"{report_data['xgboost'].get('class', 'N/A')} (training data: {report_data['xgboost'].get('data_provenance', 'synthetic_multimodal_fusion')})", table_cell)],
                 [Paragraph("Experimental 4-Qubit VQC Class", table_cell_bold), Paragraph(f"{report_data['quantum'].get('class', 'N/A')} (Status: {report_data['quantum'].get('status', 'ISOLATED')})", table_cell)],
                 [Paragraph("VQC Qubit Expectation Scores", table_cell_bold), Paragraph(q_scores_str, table_cell)],
-                [Paragraph("Multimodal Evidence Consistency", table_cell_bold), Paragraph(str(report_data['multimodal'].get('multimodal_evidence_consistency', '100%')), table_cell)]
+                [Paragraph("Multimodal Data Consistency Index (Rule-Based)", table_cell_bold), Paragraph(f"{report_data['multimodal'].get('multimodal_evidence_consistency', '100%')} (Rule-Based Heuristic)", table_cell)]
             ]
             ml_table = Table(ml_data, colWidths=[180, 360])
             ml_table.setStyle(TableStyle([
