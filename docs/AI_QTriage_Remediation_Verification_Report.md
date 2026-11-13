@@ -4,8 +4,8 @@
 **Repository**: `https://github.com/Santhoshkumargontla/AI-QTriage`  
 **Active Local Commit**: `e619024be71cf0524484c19e0ed951429633e552` (Branch: `main`)  
 **Target Case ID**: `9eb23699-2c86-4816-b3aa-0e08af5945ff` (`is_demo: true`)  
-**Case Execution Timestamp**: `2026-11-13T17:51:31.973000` (UTC) / `2026-11-13 23:21:31 IST`  
-**Verification Date & Time**: November 14, 2026, 00:14:08 IST (2026-11-13T18:44:08Z)  
+**Case Execution Timestamp**: `2026-11-14T00:44:25` (System Time IST / `2026-11-13T19:14:25Z` UTC)  
+**Verification Date & Time**: November 14, 2026, 00:44:25 IST (2026-11-13T19:14:25Z)  
 
 ---
 

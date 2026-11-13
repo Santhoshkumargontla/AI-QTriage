@@ -1,7 +1,7 @@
 {
   "_id": "6af74e2346aff0e477fdbfe2",
   "case_id": "9eb23699-2c86-4816-b3aa-0e08af5945ff",
-  "created_at": "2026-11-13T17:51:31.973000",
+  "created_at": "2026-11-14T00:44:25.345000",
   "status": "analyzed",
   "image_reference": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\9eb23699-2c86-4816-b3aa-0e08af5945ff.jpeg",
   "visible_injury": {
@@ -382,7 +382,7 @@
     "scenario": "football_fall",
     "file_reference": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\9eb23699-2c86-4816-b3aa-0e08af5945ff_sensor_demo.csv",
     "feature_version": "sensor-v1",
-    "created_at": "2026-11-13T17:53:17.083229",
+    "created_at": "2026-11-14T00:44:25.345565",
     "data_provenance_message": "Synthetic sensor vectors from the bundled demonstration dataset are processed using the same sensor pipeline."
   },
   "sensor_available": true,
@@ -506,7 +506,7 @@
     "status": "success",
     "model": "gemini-3.5-flash-lite",
     "guidance_level": "URGENT_EVALUATION",
-    "generated_at": "2026-11-13T18:10:40.925434+00:00",
+    "generated_at": "2026-11-13T19:14:25.345586+00:00",
     "evidence_hash": "24ae1d8b670e8f2e",
     "display_message": "First-aid guidance generated with Gemini (gemini-3.5-flash-lite) from verified evidence.",
     "structured_evidence": {
