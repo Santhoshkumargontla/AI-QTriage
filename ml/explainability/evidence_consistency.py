@@ -183,7 +183,7 @@ class EvidenceConsistencyAnalyzer:
                     })
 
         return {
-            "explanation": "Counterfactual sensitivity analysis. This shows how altering specific inputs (like pain level or sensor peak g-force) shifts the model's output category.",
+            "explanation": "Counterfactual sensitivity analysis. This shows how altering specific inputs (like pain level or sensor peak g-force) changes the predicted research category.",
             "baseline_predictions": {
                 "classical_xgb": label_map[base_xgb_pred],
                 "quantum_vqc": label_map[base_vqc_pred] if base_vqc_pred is not None else None

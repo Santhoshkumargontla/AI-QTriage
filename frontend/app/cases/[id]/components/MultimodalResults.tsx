@@ -214,10 +214,10 @@ export function MultimodalResults({ caseData }: MultimodalResultsProps) {
                   shapValue: Number(s.shap_value || 0),
                   description: s.description || `Contribution to margin for ${s.feature}`,
                 }))}
-                baseValue={caseData.shap_base_value ?? -0.082}
-                finalScore={caseData.shap_final_margin ?? ((-0.082) + totalFeatureSum)}
+                baseValue={caseData?.shap_base_value != null ? Number(caseData.shap_base_value) : null}
+                finalScore={caseData?.shap_final_margin != null ? Number(caseData.shap_final_margin) : null}
                 isLogOddsScale={true}
-                outcomeLabel={`Target Class ${xgbClass} Margin`}
+                outcomeLabel={caseData?.shap_base_value != null ? `Target Class ${xgbClass} Margin` : `SHAP Contribution Sum (\u2211 \u03c6\u1d62)`}
               />
             </div>
           </div>

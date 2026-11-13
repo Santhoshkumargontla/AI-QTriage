@@ -209,10 +209,10 @@ export function TechnicalAudit({ caseData, testRunData }: TechnicalAuditProps) {
                   shapValue: Number(s.shap_value || 0),
                   description: s.description || `Contribution to margin for ${s.feature}`,
                 }))}
-                baseValue={baseValRaw ?? 0.0}
-                finalScore={rawMarginFromModel ?? sumFeatures}
+                baseValue={hasIndependentReferences ? baseValRaw : null}
+                finalScore={hasIndependentReferences ? rawMarginFromModel : null}
                 isLogOddsScale={true}
-                outcomeLabel={hasIndependentReferences ? `Target Class ${xgbClass} Margin` : `Sum of 23 Features (${xgbClass})`}
+                outcomeLabel={hasIndependentReferences ? `Target Class ${xgbClass} Margin` : `SHAP Contribution Sum (\u2211 \u03c6\u1d62)`}
                 subtitle={hasIndependentReferences ? "Multimodal feature contribution breakdown for classical XGBoost decision" : "Local feature contributions for class HIGH (baseline reference unavailable in case record)"}
               />
             )}
@@ -370,7 +370,7 @@ export function TechnicalAudit({ caseData, testRunData }: TechnicalAuditProps) {
           {openSections.counterfactual && (
             <div className="p-5 border-t border-slate-800 bg-slate-950/40 space-y-4 text-xs">
               <p className="text-slate-300">
-                {caseData.counterfactual_analysis.explanation}
+                {(caseData.counterfactual_analysis.explanation || "").replace(/shifts the model's output category/gi, "changes the predicted research category")}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="p-3 bg-slate-900 rounded-lg border border-slate-800 space-y-2">

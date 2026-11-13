@@ -11,8 +11,8 @@ export interface ShapFeature {
 
 export interface ShapWaterfallProps {
   features?: ShapFeature[];
-  baseValue?: number;
-  finalScore?: number;
+  baseValue?: number | null;
+  finalScore?: number | null;
   unit?: string;
   isLogOddsScale?: boolean;
   title?: string;
@@ -31,8 +31,8 @@ const DEFAULT_FEATURES: ShapFeature[] = [
 
 export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
   features = DEFAULT_FEATURES,
-  baseValue = 0.0,
-  finalScore = 0.0,
+  baseValue = null,
+  finalScore = null,
   unit = "margin log-odds",
   isLogOddsScale = false,
   title = "TreeExplainer SHAP Waterfall (Decision Margin)",
@@ -40,6 +40,10 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
   outcomeLabel = "Total Decision Margin (f(x) = E[f(x)] + \u2211 \u03c6\u1d62)",
 }) => {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
+  const hasBase = typeof baseValue === "number" && !isNaN(baseValue);
+  const hasFinal = typeof finalScore === "number" && !isNaN(finalScore);
+  const netAttribution = features.reduce((acc, f) => acc + (f.shapValue || 0), 0);
 
   // Find max absolute value for scaling bars
   const maxAbs = Math.max(...features.map((f) => Math.abs(f.shapValue)), isLogOddsScale ? 1.0 : 0.35);
@@ -57,7 +61,7 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
         acc: endVal,
       };
     },
-    { items: [], acc: baseValue }
+    { items: [], acc: hasBase ? (baseValue as number) : 0.0 }
   ).items;
 
   const formatVal = (v: number) => {
@@ -96,11 +100,11 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
         <div className="flex items-center gap-4 text-xs font-medium">
           <div className="flex items-center gap-1.5">
             <div className="h-3 w-3 rounded bg-rose-500/80"></div>
-            <span className="text-slate-300">Increases Risk (+SHAP)</span>
+            <span className="text-slate-300">Increases HIGH-class attribution</span>
           </div>
           <div className="flex items-center gap-1.5">
             <div className="h-3 w-3 rounded bg-emerald-500/80"></div>
-            <span className="text-slate-300">Decreases Risk (-SHAP)</span>
+            <span className="text-slate-300">Decreases HIGH-class attribution</span>
           </div>
         </div>
       </div>
@@ -108,7 +112,9 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
       {/* Base Value Line */}
       <div className="mb-3 flex items-center justify-between rounded-lg bg-slate-800/60 px-3 py-1.5 text-xs text-slate-300 border border-slate-700/40">
         <span>Base Expected Value (E[f(x)]):</span>
-        <span className="font-mono font-bold text-cyan-300">{formatBase(baseValue)}</span>
+        <span className={`font-mono font-bold ${hasBase ? "text-cyan-300" : "text-amber-300 italic font-sans"}`}>
+          {hasBase ? formatBase(baseValue as number) : "Baseline unavailable"}
+        </span>
       </div>
 
       {/* Waterfall Bars */}
@@ -162,7 +168,9 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
                 <div className="mt-2 rounded-lg bg-slate-950 p-2.5 text-xs text-slate-300 border border-cyan-500/30 animate-in fade-in slide-in-from-top-1">
                   <p className="text-cyan-300 font-medium">{feat.description}</p>
                   <p className="mt-0.5 text-[11px] text-slate-400 font-mono">
-                    Shift: {formatVal(feat.startVal)} &rarr; {formatVal(feat.endVal)}
+                    {hasBase
+                      ? `Shift: ${formatVal(feat.startVal)} \u2192 ${formatVal(feat.endVal)}`
+                      : `Contribution: ${formatVal(feat.shapValue)} (cumulative sum: ${formatVal(feat.endVal)})`}
                   </p>
                 </div>
               )}
@@ -174,13 +182,17 @@ export const ShapWaterfall: React.FC<ShapWaterfallProps> = ({
       {/* Final Outcome */}
       <div className="mt-4 space-y-2">
         <div className="flex items-center justify-between rounded-xl bg-gradient-to-r from-slate-800 via-slate-800 to-cyan-950/40 p-3 text-sm font-bold text-slate-100 border border-cyan-500/30">
-          <span>{outcomeLabel}</span>
-          <span className="font-mono text-base text-cyan-300">{formatFinal(finalScore)}</span>
+          <span>{hasBase && hasFinal ? outcomeLabel : `SHAP Contribution Sum (\u2211 \u03c6\u1d62)`}</span>
+          <span className="font-mono text-base text-cyan-300">
+            {hasBase && hasFinal
+              ? formatFinal(finalScore as number)
+              : `${netAttribution >= 0 ? "+" : ""}${netAttribution.toFixed(3)} ${unit}`}
+          </span>
         </div>
         <p className="text-[10px] text-slate-400 font-mono italic">
-          {isLogOddsScale
-            ? `* Genuine TreeExplainer SHAP sum: Base margin (${formatBase(baseValue)}) + net attributions (${formatVal(finalScore - baseValue)}) = ${formatFinal(finalScore)}. Unconstrained log-odds margin for predicted class. Distinct from posterior softmax classification probability.`
-            : `* Arithmetic sum: Base expected value (${formatBase(baseValue)}) + net feature attributions (${formatVal(finalScore - baseValue)}) = ${formatFinal(finalScore)}. Illustrative scenario decomposition; distinct from actual model TreeExplainer SHAP log-odds and posterior softmax probability.`}
+          {hasBase && hasFinal
+            ? `* Genuine TreeExplainer SHAP sum: Base margin (${formatBase(baseValue as number)}) + net attributions (${formatVal((finalScore as number) - (baseValue as number))}) = ${formatFinal(finalScore as number)}. Decision margin for predicted research category. Distinct from posterior softmax classification probability.`
+            : `* Local feature contributions sum to ${netAttribution >= 0 ? "+" : ""}${netAttribution.toFixed(3)} ${unit}. Base expected value is unavailable in this case record, so a total model margin is not calculated.`}
         </p>
       </div>
     </div>

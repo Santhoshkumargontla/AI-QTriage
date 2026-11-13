@@ -60,7 +60,7 @@ export function ModelGraphsAndMatrix() {
             <div>
               <h3 className="font-bold text-white text-base flex items-center gap-2">
                 <BarChart3 className="h-5 w-5 text-cyan-400" />
-                Multimodal Trauma Triage Confusion Matrices (Held-Out Test Set N=30)
+                Multimodal Research Classification Confusion Matrices (Held-Out Test Set N=30)
               </h3>
               <p className="text-xs text-slate-400 mt-1">
                 Comparative classification performance across LOW, MODERATE, and HIGH research classification categories.
