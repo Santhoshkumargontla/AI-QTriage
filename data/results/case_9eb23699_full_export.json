@@ -1,7 +1,7 @@
 {
   "_id": "6af74e2346aff0e477fdbfe2",
   "case_id": "9eb23699-2c86-4816-b3aa-0e08af5945ff",
-  "created_at": "2026-11-13 17:51:31.973000",
+  "created_at": "2026-11-13T17:51:31.973000",
   "status": "analyzed",
   "image_reference": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\9eb23699-2c86-4816-b3aa-0e08af5945ff.jpeg",
   "visible_injury": {
