@@ -28,7 +28,7 @@ export function ImageAnalysis({ caseData, liveYoloClasses = [] }: ImageAnalysisP
 
   // ResNet34-U-Net Segmentation Status & Area
   const segValid = vis?.segmentation_status === "VALID" && vis?.affected_ratio != null;
-  const segAreaStr = segValid ? `${(Number(vis.affected_ratio) * 100).toFixed(1)}% (ROI)` : "Unavailable";
+  const segAreaStr = segValid ? `${(Number(vis.affected_ratio) * 100).toFixed(1)}%` : "Unavailable";
   const segStatusStr = segValid ? "Mask Valid" : (vis?.segmentation_status || "Unavailable");
 
   // Vision Disagreement Assessment
@@ -200,12 +200,12 @@ export function ImageAnalysis({ caseData, liveYoloClasses = [] }: ImageAnalysisP
 
   return (
     <div className="space-y-4">
-      {/* Section Header */}
+      {/* Header */}
       <div className="flex items-center justify-between border-b border-slate-800 pb-2">
         <div className="flex items-center gap-2">
           <Camera className="h-5 w-5 text-emerald-400" />
           <h2 className="text-base font-bold text-white uppercase tracking-wider">
-            Section 2: Image Analysis
+            Image Analysis
           </h2>
         </div>
         <span className="text-xs text-slate-400 font-mono">
@@ -515,7 +515,11 @@ export function ImageAnalysis({ caseData, liveYoloClasses = [] }: ImageAnalysisP
             <div className="flex items-center justify-between text-xs text-slate-300">
               <span className="font-bold flex items-center gap-2">
                 <span className="inline-block w-2.5 h-2.5 rounded-full bg-indigo-500"></span>
-                <span>Active Output: Dual Side-by-Side Comparison (YOLO11 Detection vs. Grad-CAM Attention)</span>
+                <span>
+                  {gradcamOverlayUrl
+                    ? "Active Output: Dual Side-by-Side Comparison (YOLO11 Detection vs. Grad-CAM Attention)"
+                    : "Active Output: Dual Side-by-Side Comparison (YOLO11 Detection vs. Grad-CAM Unavailable)"}
+                </span>
               </span>
               <span className="font-mono text-[11px] text-slate-400">
                 Synchronized Geometry
@@ -528,7 +532,9 @@ export function ImageAnalysis({ caseData, liveYoloClasses = [] }: ImageAnalysisP
                 {renderYoloCanvas("480px")}
               </div>
               <div className="space-y-2">
-                <span className="text-xs font-bold text-slate-300 block">Grad-CAM Saliency Heatmap</span>
+                <span className="text-xs font-bold text-slate-300 block">
+                  {gradcamOverlayUrl ? "Grad-CAM Saliency Heatmap" : "Grad-CAM Saliency (Unavailable)"}
+                </span>
                 {renderGradcamCanvas("480px")}
               </div>
             </div>

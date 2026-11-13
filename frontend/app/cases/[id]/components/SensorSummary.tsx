@@ -30,12 +30,12 @@ export function SensorSummary({ caseData }: SensorSummaryProps) {
 
   return (
     <div className="space-y-4">
-      {/* Section Header */}
+      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-2">
         <div className="flex items-center gap-2">
           <Cpu className="h-5 w-5 text-emerald-400" />
           <h2 className="text-base font-bold text-white uppercase tracking-wider">
-            Section 4: Sensor Analysis
+            Sensor Analysis
           </h2>
         </div>
         {isSynthetic && (
@@ -57,7 +57,7 @@ export function SensorSummary({ caseData }: SensorSummaryProps) {
             {peakGStr}
           </span>
           <span className="text-[11px] font-mono text-purple-400 block font-semibold">
-            {isSynthetic ? "Synthetic Impact Force" : "Measured Physical Vector"}
+            {isSynthetic ? "Synthetic Peak Acceleration" : "Measured Physical Vector"}
           </span>
         </div>
 

@@ -41,12 +41,12 @@ export function SafetyGuidance({ caseData, sosStatus }: SafetyGuidanceProps) {
 
   return (
     <div className="space-y-4">
-      {/* Section Header */}
+      {/* Header */}
       <div className="flex items-center justify-between border-b border-slate-800 pb-2">
         <div className="flex items-center gap-2">
           <HeartPulse className="h-5 w-5 text-rose-400" />
           <h2 className="text-base font-bold text-white uppercase tracking-wider">
-            Section 6: Safety Guidance &amp; SOS Status
+            Safety Guidance &amp; SOS Status
           </h2>
         </div>
         <span className="text-xs text-slate-400 font-mono">

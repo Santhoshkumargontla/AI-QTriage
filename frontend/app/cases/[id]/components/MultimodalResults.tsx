@@ -36,12 +36,12 @@ export function MultimodalResults({ caseData }: MultimodalResultsProps) {
 
   return (
     <div className="space-y-4">
-      {/* Section Header */}
+      {/* Header */}
       <div className="flex items-center justify-between border-b border-slate-800 pb-2">
         <div className="flex items-center gap-2">
           <Activity className="h-5 w-5 text-emerald-400" />
           <h2 className="text-base font-bold text-white uppercase tracking-wider">
-            Section 5: Multimodal AI Results &amp; Explainability
+            Multimodal AI Results &amp; Explainability
           </h2>
         </div>
         <span className="text-xs text-slate-400 font-mono">

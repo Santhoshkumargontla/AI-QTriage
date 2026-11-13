@@ -58,12 +58,12 @@ export function QuestionnaireSummary({ caseData }: QuestionnaireSummaryProps) {
 
   return (
     <div className="space-y-3">
-      {/* Section Header */}
+      {/* Header */}
       <div className="flex items-center justify-between border-b border-slate-800 pb-2">
         <div className="flex items-center gap-2">
           <FileText className="h-5 w-5 text-emerald-400" />
           <h2 className="text-base font-bold text-white uppercase tracking-wider">
-            Section 3: Questionnaire Context
+            Questionnaire Context
           </h2>
         </div>
         <span className="text-xs text-slate-400 font-mono">
