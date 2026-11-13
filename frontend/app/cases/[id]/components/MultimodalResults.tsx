@@ -77,7 +77,7 @@ export function MultimodalResults({ caseData }: MultimodalResultsProps) {
                 {xgbProbStr}
               </span>
               <span className="block text-xs text-slate-400 mt-0.5">
-                Model Probability
+                XGBoost Research Model Probability
               </span>
             </div>
           </div>

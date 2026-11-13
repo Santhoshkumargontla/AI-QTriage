@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { AlertOctagon, HeartPulse, LifeBuoy, ShieldAlert, CheckCircle2 } from "lucide-react";
+import { AlertOctagon, HeartPulse, LifeBuoy } from "lucide-react";
 
 interface SafetyGuidanceProps {
   caseData: any;
@@ -145,17 +145,6 @@ export function SafetyGuidance({ caseData, sosStatus }: SafetyGuidanceProps) {
                   : "Local simulation only. Real emergency dispatch systems (911 / 112 / EMS) were NOT contacted."}
               </p>
             </div>
-          </div>
-
-          {/* Prominent Standardized Research Disclaimer */}
-          <div className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2 text-slate-300">
-            <span className="text-xs font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
-              <ShieldAlert className="h-4 w-4 text-amber-400" />
-              Academic Research Prototype
-            </span>
-            <p className="text-[11px] text-slate-400 leading-relaxed">
-              AI-QTriage is developed strictly for algorithmic research evaluation. Outputs are experimental statistical inferences and do not substitute for in-person evaluation, diagnosis, or triage by a qualified clinician.
-            </p>
           </div>
         </div>
       </div>

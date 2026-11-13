@@ -20,9 +20,11 @@ export function ImageAnalysis({ caseData, liveYoloClasses = [] }: ImageAnalysisP
 
   // EfficientNetV2 Finding & Probability
   const isOod = vis?.classifier_status === "OUT_OF_DISTRIBUTION";
-  const clfFinding = vis?.classifier_finding || (isOod ? "Withheld – OOD" : (vis?.classifier_status || "Unavailable"));
+  const clfFinding = isOod ? "Withheld — OOD detected" : (vis?.classifier_finding || vis?.classifier_status || "Unavailable");
   const rawClfProb = vis?.classifier_probability != null ? Number(vis.classifier_probability) : null;
-  const clfProbStr = rawClfProb != null ? `${(rawClfProb * 100).toFixed(1)}%` : (isOod ? "Withheld (OOD)" : "Unavailable");
+  const clfProbDisplay = isOod 
+    ? "Probability: Not available" 
+    : (rawClfProb != null ? `${(rawClfProb * 100).toFixed(1)}% probability` : "Probability: Unavailable");
 
   // ResNet34-U-Net Segmentation Status & Area
   const segValid = vis?.segmentation_status === "VALID" && vis?.affected_ratio != null;
@@ -41,7 +43,7 @@ export function ImageAnalysis({ caseData, liveYoloClasses = [] }: ImageAnalysisP
   if (isOod) {
     disagreementMessage = `Vision models disagree: YOLO11 detected ${yoloFinding} (${yoloConfStr}) while EfficientNetV2 flagged OUT_OF_DISTRIBUTION. Automated interpretation requires human review.`;
   } else if (vis?.finding && vis?.classifier_finding) {
-    disagreementMessage = `Vision models disagree: YOLO11 (${yoloFinding} · ${yoloConfStr}) vs. EfficientNetV2 (${clfFinding} · ${clfProbStr}). Automated interpretation requires human review.`;
+    disagreementMessage = `Vision models disagree: YOLO11 (${yoloFinding} · ${yoloConfStr}) vs. EfficientNetV2 (${clfFinding} · ${clfProbDisplay}). Automated interpretation requires human review.`;
   } else if (disagreementDetected) {
     disagreementMessage = "Vision models disagree: Multiple conflicting hypotheses detected across visual pipelines. Automated interpretation requires human review.";
   }
@@ -230,78 +232,93 @@ export function ImageAnalysis({ caseData, liveYoloClasses = [] }: ImageAnalysisP
         <button
           type="button"
           onClick={() => setActiveViewTab("detection")}
-          className={`p-4 rounded-xl border text-center space-y-1 shadow-md transition-all text-left w-full ${
+          className={`p-4 rounded-xl border text-center space-y-1 shadow-md transition-all text-left w-full flex flex-col justify-between ${
             activeViewTab === "detection"
               ? "bg-slate-900 border-blue-500 ring-2 ring-blue-500/20"
               : "bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
           }`}
         >
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">
-              YOLO11 Spatial Detection
+          <div className="space-y-1">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">
+                YOLO11 Spatial Detection
+              </span>
+              <span className="text-[9px] font-mono font-bold text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded">
+                Click to view
+              </span>
+            </div>
+            <span className="text-lg font-black text-white block capitalize">
+              {yoloFinding}
             </span>
-            <span className="text-[9px] font-mono font-bold text-blue-400 bg-blue-500/10 px-1.5 py-0.5 rounded">
-              Click to view
+            <span className="text-xs font-mono font-bold text-emerald-400 block">
+              {yoloConfStr} confidence
             </span>
           </div>
-          <span className="text-lg font-black text-white block capitalize">
-            {yoloFinding}
-          </span>
-          <span className="text-xs font-mono font-bold text-emerald-400 block">
-            {yoloConfStr} confidence
-          </span>
+          <p className="text-[10px] text-slate-400 leading-tight pt-1.5 border-t border-slate-800/80 mt-1">
+            Note: Summary displays the leading spatial detection; the image overlay may contain multiple detected regions.
+          </p>
         </button>
 
         {/* EfficientNetV2 Card */}
         <button
           type="button"
           onClick={() => setActiveViewTab("gradcam")}
-          className={`p-4 rounded-xl border text-center space-y-1 shadow-md transition-all text-left w-full ${
+          className={`p-4 rounded-xl border text-center space-y-1 shadow-md transition-all text-left w-full flex flex-col justify-between ${
             activeViewTab === "gradcam"
               ? "bg-slate-900 border-cyan-500 ring-2 ring-cyan-500/20"
               : "bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
           }`}
         >
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">
-              EfficientNetV2 Classifier
+          <div className="space-y-1">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">
+                EfficientNetV2 Classifier
+              </span>
+              <span className="text-[9px] font-mono font-bold text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded">
+                Click to view
+              </span>
+            </div>
+            <span className={`text-lg font-black block capitalize ${isOod ? "text-amber-400" : "text-white"}`}>
+              {clfFinding}
             </span>
-            <span className="text-[9px] font-mono font-bold text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded">
-              Click to view
+            <span className="text-xs font-mono font-bold text-cyan-400 block">
+              {clfProbDisplay}
             </span>
           </div>
-          <span className={`text-lg font-black block capitalize ${isOod ? "text-amber-400" : "text-white"}`}>
-            {clfFinding}
-          </span>
-          <span className="text-xs font-mono font-bold text-cyan-400 block">
-            {clfProbStr} probability
-          </span>
+          <p className="text-[10px] text-slate-400 leading-tight pt-1.5 border-t border-slate-800/80 mt-1">
+            {isOod ? "Input exceeds domain confidence threshold. Classifier predictions and saliency maps withheld." : "Whole-image classification hypothesis."}
+          </p>
         </button>
 
         {/* ResNet34-U-Net Card */}
         <button
           type="button"
           onClick={() => setActiveViewTab("segmentation")}
-          className={`p-4 rounded-xl border text-center space-y-1 shadow-md transition-all text-left w-full ${
+          className={`p-4 rounded-xl border text-center space-y-1 shadow-md transition-all text-left w-full flex flex-col justify-between ${
             activeViewTab === "segmentation"
               ? "bg-slate-900 border-purple-500 ring-2 ring-purple-500/20"
               : "bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:bg-slate-850"
           }`}
         >
-          <div className="flex items-center justify-between">
-            <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">
-              ResNet34-U-Net Segmentation
+          <div className="space-y-1">
+            <div className="flex items-center justify-between">
+              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block">
+                ResNet34-U-Net Segmentation
+              </span>
+              <span className="text-[9px] font-mono font-bold text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded">
+                Click to view
+              </span>
+            </div>
+            <span className={`text-lg font-black block ${segValid ? "text-white" : "text-slate-400"}`}>
+              {segStatusStr}
             </span>
-            <span className="text-[9px] font-mono font-bold text-purple-400 bg-purple-500/10 px-1.5 py-0.5 rounded">
-              Click to view
+            <span className="text-xs font-mono font-bold text-purple-400 block">
+              Affected ROI: {segAreaStr}
             </span>
           </div>
-          <span className={`text-lg font-black block ${segValid ? "text-white" : "text-slate-400"}`}>
-            {segStatusStr}
-          </span>
-          <span className="text-xs font-mono font-bold text-purple-400 block">
-            Affected Area: {segAreaStr}
-          </span>
+          <p className="text-[10px] text-slate-400 leading-tight pt-1.5 border-t border-slate-800/80 mt-1">
+            Binary lesion pixel mask segmented across region of interest.
+          </p>
         </button>
       </div>
 
@@ -472,7 +489,7 @@ export function ImageAnalysis({ caseData, liveYoloClasses = [] }: ImageAnalysisP
               </span>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-slate-300">
                 <div className="p-2.5 bg-slate-900 rounded-lg border border-slate-800 text-center">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase block">Affected Area (ROI)</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase block">Affected ROI</span>
                   <span className="text-lg font-black text-purple-400 font-mono">{segAreaStr}</span>
                 </div>
                 <div className="p-2.5 bg-slate-900 rounded-lg border border-slate-800 text-center">
