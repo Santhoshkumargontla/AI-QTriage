@@ -63,7 +63,7 @@ export function ModelGraphsAndMatrix() {
                 Multimodal Trauma Triage Confusion Matrices (Held-Out Test Set N=30)
               </h3>
               <p className="text-xs text-slate-400 mt-1">
-                Comparative classification performance across LOW, MODERATE, and HIGH injury risk categories.
+                Comparative classification performance across LOW, MODERATE, and HIGH research classification categories.
               </p>
             </div>
             <span className="px-3 py-1 text-[11px] font-mono font-bold rounded-lg bg-emerald-950/80 text-emerald-400 border border-emerald-800">
@@ -76,7 +76,7 @@ export function ModelGraphsAndMatrix() {
             <div className="p-5 bg-slate-950/70 border border-emerald-500/20 rounded-2xl space-y-4">
               <div className="flex justify-between items-center">
                 <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <Zap className="h-4 w-4" /> Classical XGBoost (v1.0)
+                  <Zap className="h-4 w-4" /> Multimodal XGBoost (v1.2.0)
                 </span>
                 <span className="text-[11px] font-mono text-emerald-400 font-bold bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800">
                   Accuracy: 25 / 30 (83.33%)
@@ -84,7 +84,7 @@ export function ModelGraphsAndMatrix() {
               </div>
 
               <div className="space-y-2">
-                <div className="text-[11px] font-semibold text-slate-400 text-center">Predicted Risk Category</div>
+                <div className="text-[11px] font-semibold text-slate-400 text-center">Predicted Research Category</div>
                 <div className="grid grid-cols-4 gap-1.5 text-center text-xs font-mono">
                   <div className="p-2 text-slate-500 font-bold text-[10px]">True / Pred</div>
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded">LOW</div>
@@ -140,7 +140,7 @@ export function ModelGraphsAndMatrix() {
               </div>
 
               <div className="space-y-2">
-                <div className="text-[11px] font-semibold text-slate-400 text-center">Predicted Risk Category</div>
+                <div className="text-[11px] font-semibold text-slate-400 text-center">Predicted Research Category</div>
                 <div className="grid grid-cols-4 gap-1.5 text-center text-xs font-mono">
                   <div className="p-2 text-slate-500 font-bold text-[10px]">True / Pred</div>
                   <div className="p-2 bg-slate-900 text-slate-400 font-bold rounded">LOW</div>
@@ -194,7 +194,7 @@ export function ModelGraphsAndMatrix() {
             <div>
               <h3 className="font-bold text-white text-base flex items-center gap-2">
                 <TrendingUp className="h-5 w-5 text-cyan-400" />
-                Classical XGBoost Model Feature Importance &amp; ROC Attributions
+                Multimodal XGBoost (v1.2.0) Model Feature Importance &amp; ROC Attributions
               </h3>
               <p className="text-xs text-slate-400 mt-1">
                 Quantitative gain contributions across 23 multimodal vector dimensions.
