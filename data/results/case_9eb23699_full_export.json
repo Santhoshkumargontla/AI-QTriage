@@ -1,0 +1,838 @@
+{
+  "_id": "6af74e2346aff0e477fdbfe2",
+  "case_id": "9eb23699-2c86-4816-b3aa-0e08af5945ff",
+  "created_at": "2026-11-13 17:51:31.973000",
+  "status": "analyzed",
+  "image_reference": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\9eb23699-2c86-4816-b3aa-0e08af5945ff.jpeg",
+  "visible_injury": {
+    "yolo_finding": "Abrasion",
+    "yolo_finding_detected": true,
+    "yolo_supported_classes": [
+      "abrasion",
+      "bruise",
+      "burn",
+      "cut",
+      "laceration",
+      "wound"
+    ],
+    "yolo_validated_classes": [
+      "cut",
+      "bruise",
+      "abrasion",
+      "burn",
+      "wound",
+      "laceration"
+    ],
+    "yolo_unsupported_classes": [],
+    "yolo_class_support": {
+      "cut": {
+        "status": "SUPPORTED",
+        "train_boxes": 81,
+        "val_boxes": 24,
+        "test_boxes": 24,
+        "note": null,
+        "in_model_names": true
+      },
+      "bruise": {
+        "status": "SUPPORTED",
+        "train_boxes": 458,
+        "val_boxes": 87,
+        "test_boxes": 101,
+        "note": null,
+        "in_model_names": true
+      },
+      "abrasion": {
+        "status": "SUPPORTED",
+        "train_boxes": 425,
+        "val_boxes": 97,
+        "test_boxes": 94,
+        "note": null,
+        "in_model_names": true
+      },
+      "burn": {
+        "status": "SUPPORTED",
+        "train_boxes": 1503,
+        "val_boxes": 340,
+        "test_boxes": 343,
+        "note": null,
+        "in_model_names": true
+      },
+      "wound": {
+        "status": "SUPPORTED",
+        "train_boxes": 194,
+        "val_boxes": 51,
+        "test_boxes": 53,
+        "note": null,
+        "in_model_names": true
+      },
+      "laceration": {
+        "status": "SUPPORTED",
+        "train_boxes": 14,
+        "val_boxes": 3,
+        "test_boxes": 4,
+        "note": null,
+        "in_model_names": true
+      }
+    },
+    "yolo_class_support_status": "abrasion",
+    "yolo_promotion_status": "PROMOTED_EXPANDED_SKIN_V1",
+    "yolo_dataset_provenance": "Roboflow injury_detection_v2+wound2+aid; shubhambaid burns; HF WSEG wound boxes; Stab\u2192laceration; Normal/OOD empty labels",
+    "yolo_confidence": 0.5972,
+    "yolo_bounding_box": [
+      512.0,
+      275.82,
+      763.16,
+      420.11
+    ],
+    "all_detections": [
+      {
+        "finding": "abrasion",
+        "confidence": 0.5972,
+        "bounding_box": [
+          512.0,
+          275.82,
+          763.16,
+          420.11
+        ],
+        "low_confidence": false,
+        "keep_threshold": 0.25,
+        "class_support_status": "abrasion",
+        "image_width": 1283,
+        "image_height": 700,
+        "coordinate_space": "original_image_xyxy",
+        "model_version": "expanded-skin-v1",
+        "model_status": "INFERENCE_EXECUTES",
+        "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+        "artifact_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+        "inference_mode": "SAHI_multi_tile"
+      },
+      {
+        "finding": "cut",
+        "confidence": 0.5787,
+        "bounding_box": [
+          515.06,
+          293.13,
+          754.55,
+          404.38
+        ],
+        "low_confidence": false,
+        "keep_threshold": 0.25,
+        "class_support_status": "cut",
+        "image_width": 1283,
+        "image_height": 700,
+        "coordinate_space": "original_image_xyxy",
+        "model_version": "expanded-skin-v1",
+        "model_status": "INFERENCE_EXECUTES",
+        "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+        "artifact_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+        "inference_mode": "SAHI_multi_tile"
+      },
+      {
+        "finding": "abrasion",
+        "confidence": 0.3923,
+        "bounding_box": [
+          501.58,
+          260.54,
+          640.0,
+          411.96
+        ],
+        "low_confidence": true,
+        "keep_threshold": 0.25,
+        "class_support_status": "abrasion",
+        "image_width": 1283,
+        "image_height": 700,
+        "coordinate_space": "original_image_xyxy",
+        "model_version": "expanded-skin-v1",
+        "model_status": "INFERENCE_EXECUTES",
+        "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+        "artifact_sha256": "857880192ebfbc4b6934a033cf7df78310885291ef00a5dd691576c6fbc4bff9",
+        "inference_mode": "SAHI_multi_tile"
+      }
+    ],
+    "classifier_finding": null,
+    "classifier_probability": null,
+    "classifier_status": "OUT_OF_DISTRIBUTION",
+    "classifier_model_status": "READY_FOR_RESEARCH_DEMO",
+    "classifier_reason": "softmax_not_trusted_closed_set_overconfidence",
+    "classifier_is_confident": false,
+    "classifier_is_injury_finding": false,
+    "classifier_abstention_class": null,
+    "classifier_category_type": "research_classifier",
+    "classifier_yolo_coverage": "NOT APPLICABLE \u2014 classifier output withheld",
+    "segmentation_model_status": "READY_FOR_RESEARCH_DEMO",
+    "finding": "Abrasion",
+    "finding_detected": true,
+    "confidence": 0.5972,
+    "bounding_box": [
+      512.0,
+      275.82,
+      763.16,
+      420.11
+    ],
+    "bounding_box_model": [
+      512.0,
+      275.82,
+      763.16,
+      420.11
+    ],
+    "affected_ratio": 0.3347712597884325,
+    "affected_area_ratio": 0.3347712597884325,
+    "segmentation_available": true,
+    "segmentation_reliable": true,
+    "segmentation_reason": "Segmentation mask identified.",
+    "classification": {
+      "Abrasion": null,
+      "Bruise": null,
+      "Burn": null,
+      "Cut": null,
+      "Laceration": null,
+      "Wound": null,
+      "Normal": null,
+      "OOD_Reject": null
+    },
+    "overlay_path": null,
+    "overlay_url": null,
+    "overlay_width": 1283,
+    "overlay_height": 700,
+    "gradcam_source_model": "EfficientNetV2",
+    "gradcam_predicted_class": null,
+    "gradcam_confidence": null,
+    "gradcam_model_status": "OUT_OF_DISTRIBUTION",
+    "gradcam_explanation_status": "WITHHELD",
+    "gradcam_label": "MODEL VISUALIZATION",
+    "gradcam_explanation": "NOT CLINICAL EXPLANATION",
+    "gradcam_reliability": "NOT_CLINICAL_EXPLANATION",
+    "gradcam_overlay_generated": false,
+    "gradcam_withheld_reason": "softmax_not_trusted_closed_set_overconfidence",
+    "mask_path": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\9eb23699-2c86-4816-b3aa-0e08af5945ff_mask.png",
+    "mask_url": "/uploads/9eb23699-2c86-4816-b3aa-0e08af5945ff_mask.png",
+    "image_url": "/uploads/9eb23699-2c86-4816-b3aa-0e08af5945ff.jpeg",
+    "original_width": 1283,
+    "original_height": 700,
+    "preprocessing_meta": {
+      "original_width": 1283,
+      "original_height": 700,
+      "target_width": 224,
+      "target_height": 224,
+      "resized_width": 224,
+      "resized_height": 122,
+      "scale": 0.17459080280592362,
+      "pad_x": 0,
+      "pad_y": 51,
+      "aspect_ratio_preserved": true,
+      "preprocessing_version": "img-v2-letterbox",
+      "normalized": true
+    },
+    "segmentation_debug": {
+      "checkpoint_status": "loaded",
+      "original_image_shape": "700x1283",
+      "preprocessed_roi_shape": "145x251",
+      "model_input_shape": [
+        1,
+        3,
+        256,
+        256
+      ],
+      "raw_output_min": 0.0005,
+      "raw_output_max": 0.9951,
+      "raw_output_mean": 0.3189,
+      "raw_positive_pixels": 21869,
+      "raw_positive_ratio": 0.333694,
+      "false_positive_area": 0.0,
+      "threshold_used": 0.5,
+      "positive_pixels": 12184,
+      "total_pixels": 36395,
+      "affected_area_percentage": 33.48,
+      "confidence_status": "confident",
+      "status": "VALID",
+      "reason": "passed_quality_and_mask_sanity",
+      "is_reliable": true,
+      "mask_withheld": false,
+      "trust_status": "VALID",
+      "display_message": "Segmentation mask identified.",
+      "denominator_type": "detected_region",
+      "quality": {
+        "height": 145,
+        "width": 251,
+        "std": 39.7725,
+        "ptp": 245.0,
+        "unique16": 16,
+        "laplacian_var": 2744.7937,
+        "edge_frac": 0.295755,
+        "skin_frac": 0.850446,
+        "red_frac": 0.733892
+      },
+      "max_reasonable_area": 0.7
+    },
+    "segmentation_status": "VALID",
+    "segmentation_message": "Segmentation mask identified.",
+    "segmentation_trust": "VALID",
+    "model_version": "expanded-skin-v1",
+    "model_status": "INFERENCE_EXECUTES",
+    "model_path": "ml\\models\\vision\\yolo11_injury_best.pt",
+    "vision_disagreement": false,
+    "human_review_required": true,
+    "disagreement_policy": {
+      "disagreement_detected": false,
+      "status": "CLASSIFIER_OUT_OF_DISTRIBUTION",
+      "resolution_policy": "NO_AUTOMATED_OVERRIDE_ROUTE_TO_HUMAN_CLINICIAN",
+      "rule": "Classifier input flagged as out-of-distribution or withheld; automatic triage is halted and routed for manual clinical review.",
+      "human_review_required": true,
+      "yolo_hypothesis": {
+        "finding": "Abrasion",
+        "confidence": 0.5972,
+        "type": "spatial_lesion_detection"
+      },
+      "classifier_hypothesis": {
+        "finding": null,
+        "probability": null,
+        "type": "whole_image_tissue_classification"
+      }
+    },
+    "source_type": "uploaded",
+    "data_provenance": "user_provided",
+    "clinical_validity": false,
+    "sensor_data_is_demo": true,
+    "display_message": "User-uploaded image. Sensor data for this case is demo/synthetic; modalities are not clinically paired. Research/demo only.",
+    "image_sha256": "87a76147983d0cdb3a63c9f3d3988b0e16ba8157085513f63463de26a559b446",
+    "image_reference": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\9eb23699-2c86-4816-b3aa-0e08af5945ff.jpeg"
+  },
+  "questionnaire": {
+    "answers": {
+      "pain_level": 8,
+      "location": "Left Hand",
+      "cause": "direct_blow",
+      "onset_hours": "3-12 hours ago",
+      "movement_limitation": "mild",
+      "weight_bearing": "partial",
+      "swelling": "yes",
+      "bruising_discoloration": "yes",
+      "redness": "yes",
+      "warmth": "no",
+      "open_wound": "yes",
+      "bleeding": "minor",
+      "crack_pop": "yes",
+      "deformity": "no",
+      "numbness_tingling": "no",
+      "previous_injury": "no",
+      "symptom_progression": "stable"
+    },
+    "voice_used": false,
+    "voice_transcript": null,
+    "template_id": "cut",
+    "template_version": "1.0",
+    "answer_source": "typed"
+  },
+  "sensor_summary": {
+    "timeline_label": "Timeline reconstruction. This shows the physical impact window and stabilization profile measured by sensors.",
+    "peak_g_force": 5.17,
+    "peak_acceleration": 50.72,
+    "peak_jerk_gs": 250.82,
+    "accel_variance": 32.0388,
+    "gyro_variance": 0.1341,
+    "sma": 4.5902,
+    "peak_time_offset": 1.0,
+    "pre_impact_delta_v": 10.83,
+    "post_impact_stabilization_seconds": 0.02,
+    "optical_lux_drop": null,
+    "lux_feature_available": false,
+    "gyro_feature_available": true,
+    "sample_count": 145,
+    "recording_duration_seconds": 3.0,
+    "events": [
+      {
+        "time_offset_seconds": 0.0,
+        "event_name": "Sensor Log Started",
+        "description": "Baseline monitoring initialized."
+      },
+      {
+        "time_offset_seconds": 1.0,
+        "event_name": "Peak Impact Acceleration",
+        "description": "Maximum physical impact vector measured at 5.17g force."
+      },
+      {
+        "time_offset_seconds": 1.02,
+        "event_name": "Physical Stabilization",
+        "description": "Kinetic motion stabilized to baseline level (<1.5g) after 0.02s."
+      }
+    ],
+    "motion_classification": {
+      "predicted_motion_class": "normal_activity",
+      "confidence": 0.8947128653526306,
+      "probabilities": {
+        "normal_activity": 0.8947128653526306,
+        "fall": 0.007936391048133373,
+        "impact": 0.09735073894262314
+      },
+      "status": "classified",
+      "classifier_status": "classified",
+      "missing_features": []
+    },
+    "predicted_motion_class": "normal_activity",
+    "motion_confidence": 0.8947128653526306,
+    "motion_probabilities": {
+      "normal_activity": 0.8947128653526306,
+      "fall": 0.007936391048133373,
+      "impact": 0.09735073894262314
+    },
+    "classifier_status": "classified",
+    "case_id": "9eb23699-2c86-4816-b3aa-0e08af5945ff",
+    "source_type": "demo",
+    "data_provenance": "synthetic",
+    "scenario": "football_fall",
+    "file_reference": "C:\\Users\\santh\\Capstone Project Code\\data\\uploads\\9eb23699-2c86-4816-b3aa-0e08af5945ff_sensor_demo.csv",
+    "feature_version": "sensor-v1",
+    "created_at": "2026-11-13T17:53:17.083229",
+    "data_provenance_message": "Synthetic sensor vectors from the bundled demonstration dataset are processed using the same sensor pipeline."
+  },
+  "sensor_available": true,
+  "sensor_source_type": "demo",
+  "xgboost_prediction": {
+    "class": "HIGH",
+    "probability": 0.9139161705970764,
+    "model_version": "v1.2.0",
+    "model_id": "xgb_full_v1",
+    "n_features": 23,
+    "data_provenance": "SYNTHETIC",
+    "data_provenance_detail": "synthetic_multimodal_fusion",
+    "status": "TRAINED",
+    "artifact_path": "ml/models/xgboost_best.json",
+    "label_source": "SYNTHETIC_RULE_LABELS",
+    "paired_clinical_samples": 0,
+    "clinical_claim_blocked": true,
+    "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS"
+  },
+  "quantum_prediction": {
+    "class": "MODERATE",
+    "score": [
+      0.24770227360356595,
+      0.5724547768521936,
+      0.17984294954424038
+    ],
+    "model_version": "v1.4.0",
+    "model_id": "vqc_sim_v1",
+    "status": "EXPERIMENTAL_ONLY",
+    "experimental": true,
+    "experimental_only": true,
+    "used_in_main_decision": false,
+    "data_provenance": "SYNTHETIC",
+    "error": null,
+    "pca_features": [
+      3.0,
+      0.6166048725209982,
+      3.0,
+      -3.0
+    ],
+    "pca_note": "Four PCA components from the train-fitted VQC scaler/PCA on this case vector. Not stored as clinical evidence."
+  },
+  "agreement_score": "VQC_EXCLUDED_FROM_DECISION",
+  "uncertainty_status": "MODERATE UNCERTAINTY",
+  "safety_information": [
+    "Assigned HIGH category: High kinetic impact peak (5.17g) measured by sensors coupled with elevated pain levels (8/10)."
+  ],
+  "sos_status": "TWILIO_NOT_CONFIGURED",
+  "report_reference": null,
+  "modalities_used": [
+    "image",
+    "questionnaire",
+    "sensor"
+  ],
+  "model_configuration_used": "xgb_full_v1",
+  "image_quality_metrics": {
+    "width": 1283,
+    "height": 700,
+    "aspect_ratio_preserved": true,
+    "preprocessing_note": "Image dimensions will be adjusted automatically while preserving original aspect ratio using letterbox padding.",
+    "status_message": "\u2713 Image prepared for AI analysis",
+    "blur_variance": 234.9,
+    "mean_brightness": 71.22,
+    "std_contrast": 58.09
+  },
+  "image_sha256": "87a76147983d0cdb3a63c9f3d3988b0e16ba8157085513f63463de26a559b446",
+  "clinical_claim": "BLOCKED_NO_PAIRED_CLINICAL_LABELS",
+  "clinical_claim_blocked": true,
+  "consistency_analysis": {
+    "score": 90.0,
+    "status": "Highly Consistent",
+    "conflicts": [
+      "Data Notice: Assessment uses synthetic or demonstration data."
+    ],
+    "agreements": [
+      "Agreement: Subjective direct impact is corroborated by sensor kinetic metrics."
+    ],
+    "explanation": "Evidence consistency scoring measures alignment between independent data channels and model predictions. It does not validate clinical diagnostic accuracy."
+  },
+  "counterfactual_analysis": {
+    "explanation": "Counterfactual sensitivity analysis. This shows how altering specific inputs (like pain level or sensor peak g-force) shifts the model's output category.",
+    "baseline_predictions": {
+      "classical_xgb": "HIGH",
+      "quantum_vqc": "MODERATE"
+    },
+    "baseline_values": {
+      "pain_level": 8.0,
+      "peak_g_force": 5.170000076293945,
+      "classical_xgb": "HIGH",
+      "quantum_vqc": "MODERATE"
+    },
+    "pain_sensitivity": {
+      "classical_xgb_transitions": [
+        {
+          "pain_level": 0,
+          "new_prediction": "MODERATE"
+        },
+        {
+          "pain_level": 1,
+          "new_prediction": "MODERATE"
+        }
+      ],
+      "quantum_vqc_transitions": []
+    },
+    "g_force_sensitivity": {
+      "classical_xgb_transitions": [
+        {
+          "peak_g_force": 0.0,
+          "new_prediction": "MODERATE"
+        },
+        {
+          "peak_g_force": 0.5,
+          "new_prediction": "MODERATE"
+        }
+      ],
+      "quantum_vqc_transitions": []
+    }
+  },
+  "first_aid_guidance": {
+    "provider": "gemini",
+    "status": "success",
+    "model": "gemini-3.5-flash-lite",
+    "guidance_level": "URGENT_EVALUATION",
+    "generated_at": "2026-11-13T18:10:40.925434+00:00",
+    "evidence_hash": "24ae1d8b670e8f2e",
+    "display_message": "First-aid guidance generated with Gemini (gemini-3.5-flash-lite) from verified evidence.",
+    "structured_evidence": {
+      "questionnaire": {
+        "pain_level": 8,
+        "location": "Left Hand",
+        "cause": "direct_blow",
+        "onset_hours": "3-12 hours ago",
+        "movement_limitation": "mild",
+        "weight_bearing": "partial",
+        "swelling": "yes",
+        "bruising_discoloration": "yes",
+        "redness": "yes",
+        "warmth": "no",
+        "open_wound": "yes",
+        "bleeding": "minor",
+        "crack_pop": "yes",
+        "deformity": "no",
+        "numbness_tingling": "no",
+        "previous_injury": "no",
+        "symptom_progression": "stable"
+      },
+      "yolo": {
+        "finding_detected": true,
+        "finding": "Abrasion",
+        "confidence": 0.5972,
+        "bounding_box": [
+          512.0,
+          275.82,
+          763.16,
+          420.11
+        ],
+        "supported_classes": [
+          "cut",
+          "bruise",
+          "abrasion",
+          "burn",
+          "wound",
+          "laceration"
+        ]
+      },
+      "research_classifier": {
+        "finding": null,
+        "confidence": null,
+        "category_type": "research_classifier",
+        "status": "OUT_OF_DISTRIBUTION"
+      },
+      "sensor": {
+        "provided": true,
+        "peak_g_force": 5.17,
+        "post_impact_stabilization_seconds": 0.02
+      },
+      "experimental_models": {
+        "xgboost": "HIGH",
+        "vqc": "MODERATE",
+        "agreement": "VQC_EXCLUDED_FROM_DECISION",
+        "uncertainty": null,
+        "used_in_main_decision": false
+      },
+      "safety_rules": {
+        "guidance_level": "HIGH",
+        "warning_signs": [
+          "Audible/felt crack or popping sensation at time of impact.",
+          "Severe subjective pain intensity score (8/10)."
+        ]
+      }
+    },
+    "guidance": {
+      "immediate_first_aid_steps": [
+        "Gently clean the minor bleeding area on the left hand with mild soap and clean water.",
+        "Apply a clean, sterile bandage to protect the open wound.",
+        "Apply an ice pack wrapped in a cloth to the left hand for 15-20 minutes to help reduce swelling.",
+        "Rest the left hand and avoid heavy use."
+      ],
+      "actions_to_avoid": [
+        "Do not apply direct, heavy pressure that causes excessive pain.",
+        "Do not attempt to realign any structures or manipulate the left hand.",
+        "Avoid applying ointments directly into deep open wounds without professional clearance."
+      ],
+      "symptoms_to_monitor": [
+        "Increased pain level or new severe pain.",
+        "Spreading redness, warmth, or signs of potential infection around the wound.",
+        "Worsening swelling or persistent bruising.",
+        "Any new onset of numbness or tingling."
+      ],
+      "urgent_evaluation_warning": [
+        "Audible/felt crack or popping sensation at time of impact.",
+        "Severe subjective pain intensity score (8/10)."
+      ],
+      "professional_evaluation_guidance": [
+        "Due to the presence of urgent warning signs such as a crack or popping sensation and high pain levels (8/10), clearly recommend appropriate professional medical evaluation.",
+        "Consult a healthcare professional for an accurate assessment and diagnosis of the left hand injury."
+      ],
+      "limitations": [
+        "This software is an academic research prototype and not medical advice or a diagnosis.",
+        "YOLO11 detected an abrasion with 0.5972 confidence; automated computer vision findings should be verified by a clinician."
+      ]
+    },
+    "evidence_summary": [
+      "User-reported pain level: 8/10",
+      "User-reported location: Left Hand",
+      "User-reported swelling: yes",
+      "User-reported open wound: yes",
+      "User-reported bleeding: minor",
+      "User-reported crack/pop sensation: yes",
+      "YOLO11 object detection: Abrasion (59.7%)",
+      "Sensor log measured peak impact: 5.17g."
+    ],
+    "immediate_steps": [
+      "Gently clean the minor bleeding area on the left hand with mild soap and clean water.",
+      "Apply a clean, sterile bandage to protect the open wound.",
+      "Apply an ice pack wrapped in a cloth to the left hand for 15-20 minutes to help reduce swelling.",
+      "Rest the left hand and avoid heavy use."
+    ],
+    "avoid": [
+      "Do not apply direct, heavy pressure that causes excessive pain.",
+      "Do not attempt to realign any structures or manipulate the left hand.",
+      "Avoid applying ointments directly into deep open wounds without professional clearance."
+    ],
+    "monitor": [
+      "Increased pain level or new severe pain.",
+      "Spreading redness, warmth, or signs of potential infection around the wound.",
+      "Worsening swelling or persistent bruising.",
+      "Any new onset of numbness or tingling."
+    ],
+    "seek_professional_evaluation": true,
+    "urgent_warning_signs": [
+      "Audible/felt crack or popping sensation at time of impact.",
+      "Severe subjective pain intensity score (8/10)."
+    ],
+    "professional_evaluation_warning": "Based on the reported warning signs, professional medical evaluation is recommended.",
+    "model_limitation_statement": "AI-QTriage is an academic research prototype. Model outputs are experimental and are not a medical diagnosis."
+  },
+  "fusion_label_source": "SYNTHETIC_RULE_LABELS",
+  "justification": "Assigned HIGH category: High kinetic impact peak (5.17g) measured by sensors coupled with elevated pain levels (8/10).",
+  "paired_clinical_samples": 0,
+  "requires_human_review": true,
+  "rule_derived_category": "HIGH",
+  "safety_guidance_level": "HIGH",
+  "shap_explanations": [
+    {
+      "feature": "pain_level",
+      "shap_value": 1.8502087593078613,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for pain_level."
+    },
+    {
+      "feature": "peak_g_force",
+      "shap_value": 1.1301826238632202,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for peak_g_force."
+    },
+    {
+      "feature": "questionnaire_present",
+      "shap_value": -0.1452578455209732,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for questionnaire_present."
+    },
+    {
+      "feature": "affected_ratio",
+      "shap_value": 0.12126833945512772,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for affected_ratio."
+    },
+    {
+      "feature": "prob_other",
+      "shap_value": -0.06027939170598984,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for prob_other."
+    },
+    {
+      "feature": "delta_v",
+      "shap_value": -0.05197429284453392,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for delta_v."
+    },
+    {
+      "feature": "stabilization_time",
+      "shap_value": 0.03777916729450226,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for stabilization_time."
+    },
+    {
+      "feature": "visible_bleeding",
+      "shap_value": -0.01589457131922245,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for visible_bleeding."
+    },
+    {
+      "feature": "prob_swelling",
+      "shap_value": 0.00476011261343956,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for prob_swelling."
+    },
+    {
+      "feature": "prob_bruise",
+      "shap_value": 0.0024242629297077656,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for prob_bruise."
+    },
+    {
+      "feature": "prob_cut",
+      "shap_value": -0.0014255507849156857,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for prob_cut."
+    },
+    {
+      "feature": "vision_present",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for vision_present."
+    },
+    {
+      "feature": "mech_sharp",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for mech_sharp."
+    },
+    {
+      "feature": "mech_fall",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for mech_fall."
+    },
+    {
+      "feature": "mech_sports",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for mech_sports."
+    },
+    {
+      "feature": "mech_impact",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for mech_impact."
+    },
+    {
+      "feature": "movement_limitation",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for movement_limitation."
+    },
+    {
+      "feature": "direct_impact",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for direct_impact."
+    },
+    {
+      "feature": "mech_other",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for mech_other."
+    },
+    {
+      "feature": "weight_bearing",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for weight_bearing."
+    },
+    {
+      "feature": "sensor_present",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for sensor_present."
+    },
+    {
+      "feature": "crack_pop",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for crack_pop."
+    },
+    {
+      "feature": "lux_drop",
+      "shap_value": 0.0,
+      "target_class": "HIGH",
+      "target_class_idx": 2,
+      "description": "Feature contribution analysis (SHAP) for lux_drop."
+    }
+  ],
+  "uncertainty_level": "MODERATE UNCERTAINTY",
+  "uncertainty_reasons": [
+    "This case uses synthetic or demo data."
+  ],
+  "sos_countdown_seconds": 10,
+  "sos_delivery_mode": "twilio_test",
+  "sos_event_id": "529feede-0cf2-48ff-93ff-bed268e2d8ea",
+  "sos_trigger_source": "demo",
+  "sos_trigger_time": "2026-11-13T17:54:06.660975",
+  "sos_user_location": {
+    "latitude": 9.572145812602455,
+    "longitude": 77.67639722469261,
+    "accuracy_m": 55.0,
+    "location_label": "9.57215, 77.67640",
+    "maps_url": "https://maps.google.com/?q=9.57215,77.67640",
+    "source": "browser_geolocation"
+  },
+  "sos_delivery_outcome": "TWILIO_NOT_CONFIGURED",
+  "sos_delivery_status": null,
+  "sos_failure_reason": "Twilio integration disabled (TWILIO_ENABLED=false).",
+  "sos_provider_status": null,
+  "sos_send_timestamp": "2026-11-13T17:54:16.798291+00:00",
+  "sos_twilio_error": "Twilio integration disabled (TWILIO_ENABLED=false).",
+  "sos_twilio_error_code": null,
+  "sos_twilio_sid": null,
+  "is_demo": true
+}
