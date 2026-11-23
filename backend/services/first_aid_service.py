@@ -97,24 +97,30 @@ class StructuredEvidenceBuilder:
             "status": vision.get("classifier_status"),
         }
 
-        # 4. Smartphone Sensor Log Evidence
+        # 4. Smartphone Sensor Log Evidence (Optional)
         sensor_provided = bool(sensor and sensor.get("provided", True) and sensor.get("source_type") != "not_provided")
+        peak_g = (
+            float(sensor["peak_g_force"])
+            if sensor_provided and sensor.get("peak_g_force") is not None
+            else None
+        )
+        stab_s = (
+            float(sensor["post_impact_stabilization_seconds"])
+            if sensor_provided and sensor.get("post_impact_stabilization_seconds") is not None
+            else None
+        )
         sensor_data = {
             "provided": sensor_provided,
-            "peak_g_force": (
-                float(sensor["peak_g_force"])
-                if sensor_provided and sensor.get("peak_g_force") is not None
-                else None
-            ),
-            "post_impact_stabilization_seconds": (
-                float(sensor["post_impact_stabilization_seconds"])
-                if sensor_provided and sensor.get("post_impact_stabilization_seconds") is not None
-                else None
-            ),
+            "status": "PROVIDED" if sensor_provided else "OPTIONAL_NOT_PROVIDED",
+            "peak_g_force": peak_g,
+            "post_impact_stabilization_seconds": stab_s,
+            "kinetic_emergency_threshold_exceeded": bool(peak_g is not None and stab_s is not None and peak_g >= 4.0 and stab_s >= 1.5),
+            "note": "Smartphone kinetic telemetry is optional. When absent, triage relies on image and clinical questionnaire." if not sensor_provided else "Wearable kinetic impact telemetry detected."
         }
 
-        # 5. Experimental ML Model Predictions
+        # 5. Experimental ML Model Predictions (XGBoost Values & VQC)
         xgb_class = xgb.get("class")
+        xgb_prob = xgb.get("probability")
         vqc_class = vqc.get("class")
         vqc_excluded = (
             vqc.get("used_in_main_decision") is False
@@ -129,6 +135,13 @@ class StructuredEvidenceBuilder:
 
         experimental_data = {
             "xgboost": xgb_class,
+            "xgboost_prediction": {
+                "predicted_category": xgb_class,
+                "confidence_probability": round(float(xgb_prob), 4) if xgb_prob is not None else None,
+                "confidence_percentage": f"{round(float(xgb_prob) * 100, 1)}%" if xgb_prob is not None else None,
+                "top_contributing_features": xgb.get("top_features") or [],
+                "sum_shap_margin": xgb.get("sum_shap_margin"),
+            },
             "vqc": vqc_class,
             "agreement": agreement,
             "uncertainty": None if vqc_excluded else ("HIGH" if agreement == "DISAGREEMENT" else "LOW"),
@@ -208,6 +221,8 @@ class FirstAidGuidanceService:
             gemini_warnings = guidance.get("urgent_evaluation_warning", [])
             merged_warnings = list(dict.fromkeys(deterministic_warnings + gemini_warnings))
 
+            sos_assessment = guidance.get("sos_assessment") or deterministic_fallback.get("sos_assessment", {})
+
             return {
                 "provider": "gemini",
                 "status": "success",
@@ -225,9 +240,11 @@ class FirstAidGuidanceService:
                     "professional_evaluation_guidance": guidance.get("professional_evaluation_guidance", []),
                     "limitations": guidance.get("limitations", [
                         "AI-QTriage is an academic research prototype and does not provide clinical medical diagnosis."
-                    ])
+                    ]),
+                    "sos_assessment": sos_assessment
                 },
                 # Flat keys for report parity & legacy tests
+                "sos_assessment": sos_assessment,
                 "evidence_summary": deterministic_fallback.get("evidence_summary", []),
                 "immediate_steps": guidance.get("immediate_first_aid_steps", []),
                 "avoid": guidance.get("actions_to_avoid", []),
@@ -255,9 +272,11 @@ class FirstAidGuidanceService:
                 "symptoms_to_monitor": deterministic_fallback.get("monitor", []),
                 "urgent_evaluation_warning": deterministic_fallback.get("urgent_warning_signs", []),
                 "professional_evaluation_guidance": [deterministic_fallback.get("professional_evaluation_warning", "Seek medical evaluation if symptoms worsen.")],
-                "limitations": [deterministic_fallback.get("model_limitation_statement")]
+                "limitations": [deterministic_fallback.get("model_limitation_statement")],
+                "sos_assessment": deterministic_fallback.get("sos_assessment", {})
             },
             # Flat keys for report parity & legacy tests
+            "sos_assessment": deterministic_fallback.get("sos_assessment", {}),
             "evidence_summary": deterministic_fallback.get("evidence_summary", []),
             "immediate_steps": deterministic_fallback.get("immediate_steps", []),
             "avoid": deterministic_fallback.get("avoid", []),
@@ -404,8 +423,43 @@ class FirstAidGuidanceService:
         else:
             guidance_level = "BASIC_REST_MONITOR"
 
+        # Deterministic SOS Assessment
+        peak_g = sensor.get("peak_g_force") or 0.0
+        kinetic_trigger = bool(sensor.get("kinetic_emergency_threshold_exceeded") or peak_g >= 4.0)
+        xgb_info = models.get("xgboost_prediction") or {}
+        xgb_class = xgb_info.get("predicted_category") or models.get("xgboost")
+
+        if kinetic_trigger or (urgent_warning_signs and xgb_class == "HIGH"):
+            det_sos_status = "EMERGENCY_ALERT_RECOMMENDED"
+            det_sos_action = "Initiate emergency medical contact or emergency SOS countdown."
+            det_sos_rationale = (
+                f"Severe impact kinetics ({peak_g:.1f}g) and high acute risk indicators detected "
+                f"(pain {pain_level}/10, XGBoost predicted {xgb_class}). Emergency evaluation is advised."
+            )
+        elif urgent_warning_signs or xgb_class in ("HIGH", "MODERATE") or guidance_level == "URGENT_EVALUATION":
+            det_sos_status = "URGENT_CLINICAL_EVALUATION"
+            det_sos_action = "Seek timely evaluation at an urgent care center or clinical facility."
+            det_sos_rationale = (
+                f"Active warning signs and elevated triage risk category ({guidance_level}, XGBoost: {xgb_class}) "
+                "require professional medical assessment."
+            )
+        else:
+            det_sos_status = "ROUTINE_MONITORING"
+            det_sos_action = "Rest, follow pre-clinical first-aid steps, and trigger SOS only if acute red flags develop."
+            det_sos_rationale = (
+                f"Low-acuity assessment (pain score {pain_level}/10, XGBoost: {xgb_class or 'LOW'}). "
+                "No severe kinetic or anatomical red flags reported."
+            )
+
+        det_sos_assessment = {
+            "status": det_sos_status,
+            "recommended_action": det_sos_action,
+            "multimodal_rationale": det_sos_rationale,
+        }
+
         return {
             "guidance_level": guidance_level,
+            "sos_assessment": det_sos_assessment,
             "evidence_summary": evidence_summary,
             "immediate_steps": immediate_steps,
             "avoid": avoid,

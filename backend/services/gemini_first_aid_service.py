@@ -167,10 +167,15 @@ class GeminiFirstAidService:
         client = genai.Client(api_key=api_key, http_options=http_options) if http_options else genai.Client(api_key=api_key)
 
         system_instruction = (
-            "You are generating conservative first-aid research guidance for an academic software prototype.\n"
+            "You are generating conservative first-aid research guidance and multimodal safety/SOS evaluation for an academic software prototype.\n"
             "You are NOT a doctor. You must NOT diagnose.\n"
             "You must NOT identify fractures, internal injuries, infections, or other medical conditions from an image.\n"
             "You must NOT invent symptoms, measurements, history, model findings, or questionnaire answers.\n"
+            "Analyze all provided multimodal case evidence:\n"
+            "1. User's image findings (YOLO lesion detection and EfficientNet whole-image research category)\n"
+            "2. User's questionnaire responses (pain level, symptoms, injury cause, mobility/weight-bearing)\n"
+            "3. Wearable/smartphone sensor telemetry (optional peak impact g-force and stabilization time, or noted as optional/not provided)\n"
+            "4. Multimodal XGBoost model prediction (predicted research category e.g. HIGH/MODERATE/LOW, confidence probability, and top contributing SHAP features)\n"
             "Use ONLY the supplied StructuredEvidence object.\n"
             "Never modify or reinterpret user-provided questionnaire values.\n"
             "Do NOT claim that YOLO detected an injury unless yolo.finding_detected=true.\n"
@@ -179,6 +184,7 @@ class GeminiFirstAidService:
             "If YOLO11 says no confident detection, preserve that fact accurately.\n"
             "Do NOT override deterministic safety rules or downgrade safety warnings.\n"
             "If urgent warning signs are present in safety_rules, clearly recommend appropriate professional medical evaluation.\n"
+            "Evaluate SOS status: Set status to EMERGENCY_ALERT_RECOMMENDED if acute trauma red flags, severe sensor impact, or high-risk multimodal XGBoost escalation are present; otherwise URGENT_CLINICAL_EVALUATION or ROUTINE_MONITORING.\n"
             "Always state clearly that this is research software and not medical advice or a diagnosis.\n"
             "Return valid JSON matching the exact requested JSON schema."
         )
@@ -186,14 +192,19 @@ class GeminiFirstAidService:
         prompt = f"""Given the following verified case evidence JSON:
 {json.dumps(structured_evidence, indent=2)}
 
-Generate structured first-aid guidance in valid JSON format matching this exact schema:
+Generate structured first-aid guidance and multimodal SOS safety assessment in valid JSON format matching this exact schema:
 {{
     "immediate_first_aid_steps": ["Step 1", "Step 2"],
     "actions_to_avoid": ["Action 1"],
     "symptoms_to_monitor": ["Symptom 1"],
     "urgent_evaluation_warning": ["Warning sign 1 if present"],
     "professional_evaluation_guidance": ["Guidance note 1"],
-    "limitations": ["Research prototype limitation note"]
+    "limitations": ["Research prototype limitation note"],
+    "sos_assessment": {{
+        "status": "EMERGENCY_ALERT_RECOMMENDED",
+        "recommended_action": "Clear actionable instruction on SOS escalation or emergency care",
+        "multimodal_rationale": "Detailed synthesis explaining how the image findings, questionnaire severity, sensor impact (or omission), and XGBoost prediction probability combine to determine this safety status"
+    }}
 }}"""
 
         config = types.GenerateContentConfig(
@@ -236,6 +247,12 @@ Generate structured first-aid guidance in valid JSON format matching this exact 
             if not all(k in parsed for k in required_keys):
                 return {"status": "error", "fallback_reason": "Gemini response missing required JSON keys"}
 
+            sos_data = parsed.get("sos_assessment") or {}
+            sos_status = str(sos_data.get("status") or "URGENT_CLINICAL_EVALUATION").strip()
+            valid_statuses = ("EMERGENCY_ALERT_RECOMMENDED", "URGENT_CLINICAL_EVALUATION", "ROUTINE_MONITORING")
+            if sos_status not in valid_statuses:
+                sos_status = "URGENT_CLINICAL_EVALUATION"
+
             return {
                 "provider": "gemini",
                 "status": "success",
@@ -248,7 +265,12 @@ Generate structured first-aid guidance in valid JSON format matching this exact 
                     "professional_evaluation_guidance": [str(x) for x in parsed.get("professional_evaluation_guidance", [])],
                     "limitations": [str(x) for x in parsed.get("limitations", [
                         "AI-QTriage is an academic research prototype and does not provide clinical medical diagnosis."
-                    ])]
+                    ])],
+                    "sos_assessment": {
+                        "status": sos_status,
+                        "recommended_action": str(sos_data.get("recommended_action") or "Seek formal clinical evaluation."),
+                        "multimodal_rationale": str(sos_data.get("multimodal_rationale") or "Multimodal assessment based on reported symptoms, image findings, and model probability.")
+                    }
                 }
             }
         except (json.JSONDecodeError, TypeError, ValueError, KeyError) as parse_err:

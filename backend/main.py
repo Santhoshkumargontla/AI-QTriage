@@ -2112,12 +2112,20 @@ def analyze_case(case_id: str):
     }
 
     from backend.services.first_aid_service import first_aid_service
+    xgb_enriched = dict(xgboost_out)
+    if shap_exps:
+        xgb_enriched["top_features"] = [
+            {"feature": s.get("feature"), "shap_value": round(float(s.get("shap_value", 0)), 3), "description": s.get("description")}
+            for s in shap_exps[:5]
+        ]
+        xgb_enriched["sum_shap_margin"] = round(float(sum(float(s.get("shap_value", 0)) for s in shap_exps)), 3)
+
     first_aid_guidance = first_aid_service.generate_first_aid_guidance(
         questionnaire_answers=(case.get("questionnaire") or {}).get("answers") or {},
         sensor_summary=case.get("sensor_summary"),
         visible_injury=vision_results,
         rule_derived_category=rule_label,
-        xgboost_pred=xgboost_out,
+        xgboost_pred=xgb_enriched,
         quantum_pred=quantum_out
     )
 
