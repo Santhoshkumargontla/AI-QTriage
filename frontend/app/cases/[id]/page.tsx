@@ -237,6 +237,17 @@ export default function CaseDetails() {
     }
   };
 
+  const handleDetectLocation = async () => {
+    setSosGeoStatus("pending");
+    const geo = await captureBrowserLocation();
+    if (geo?.latitude != null && geo?.longitude != null) {
+      setSosGeo(geo);
+      setSosGeoStatus("ready");
+    } else {
+      setSosGeoStatus("denied");
+    }
+  };
+
   // Loading Screen
   if (loading) {
     return (
@@ -325,7 +336,24 @@ export default function CaseDetails() {
           <MultimodalResults caseData={caseData} />
 
           {/* SECTION 6: Safety Guidance & SOS Status */}
-          <SafetyGuidance caseData={caseData} sosStatus={sosStatus} />
+          <SafetyGuidance
+            caseData={caseData}
+            sosStatus={sosStatus}
+            sosMode={sosMode}
+            setSosMode={setSosMode}
+            twilioConfig={twilioConfig}
+            sosGeo={sosGeo}
+            sosGeoStatus={sosGeoStatus}
+            manualLat={manualLat}
+            setManualLat={setManualLat}
+            manualLng={manualLng}
+            setManualLng={setManualLng}
+            sosError={sosError}
+            onTriggerSOS={handleTriggerSOS}
+            onAbortSOS={handleAbortSOS}
+            onRespondSOS={handleRespondSOS}
+            onDetectLocation={handleDetectLocation}
+          />
 
           {/* Bottom Switcher Card to Explore Technical Details */}
           <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-purple-950/20 to-slate-900 border border-purple-900/40 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xl">

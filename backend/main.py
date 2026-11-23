@@ -902,36 +902,41 @@ def create_and_analyze_demo_case():
     
     os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-    from backend.services.demo_scenario_generator import generate_random_demo_case_data
-    demo_data = generate_random_demo_case_data(case_id, UPLOAD_DIR)
-    
-    case_doc = {
-        "case_id": case_id,
-        "created_at": datetime.utcnow(),
-        "status": "sensor_submitted" if demo_data.get("sensor_available") else "image_uploaded",
-        "is_demo": True,
-        "scenario_name": demo_data.get("scenario_name"),
-        "image_reference": demo_data.get("image_reference"),
-        "image_quality_metrics": demo_data.get("image_quality_metrics"),
-        "visible_injury": None,
-        "questionnaire": demo_data.get("questionnaire"),
-        "sensor_summary": demo_data.get("sensor_summary"),
-        "sensor_available": demo_data.get("sensor_available", False),
-        "sensor_source_type": demo_data.get("sensor_source_type", "not_provided"),
-        "xgboost_prediction": None,
-        "quantum_prediction": None,
-        "agreement_score": None,
-        "uncertainty_status": None,
-        "safety_information": [],
-        "sos_status": "NONE",
-        "report_reference": None
-    }
-    db.cases.insert_one(case_doc)
-    
-    analyze_case(case_id)
-    
-    analyzed_case = db.cases.find_one({"case_id": case_id})
-    return analyzed_case
+    try:
+        from backend.services.demo_scenario_generator import generate_random_demo_case_data
+        demo_data = generate_random_demo_case_data(case_id, UPLOAD_DIR)
+        
+        case_doc = {
+            "case_id": case_id,
+            "created_at": datetime.utcnow(),
+            "status": "sensor_submitted" if demo_data.get("sensor_available") else "image_uploaded",
+            "is_demo": True,
+            "scenario_name": demo_data.get("scenario_name"),
+            "image_reference": demo_data.get("image_reference"),
+            "image_quality_metrics": demo_data.get("image_quality_metrics"),
+            "visible_injury": None,
+            "questionnaire": demo_data.get("questionnaire"),
+            "sensor_summary": demo_data.get("sensor_summary"),
+            "sensor_available": demo_data.get("sensor_available", False),
+            "sensor_source_type": demo_data.get("sensor_source_type", "not_provided"),
+            "xgboost_prediction": None,
+            "quantum_prediction": None,
+            "agreement_score": None,
+            "uncertainty_status": None,
+            "safety_information": [],
+            "sos_status": "NONE",
+            "report_reference": None
+        }
+        db.cases.insert_one(case_doc)
+        
+        analyze_case(case_id)
+        
+        analyzed_case = db.cases.find_one({"case_id": case_id})
+        return analyzed_case
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise HTTPException(status_code=500, detail=f"Demo execution failed: {str(e)}")
 
 @app.post("/api/cases/{case_id}/sos/abort", tags=["Emergency Demo"])
 def abort_sos_alert(case_id: str):
