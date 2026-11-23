@@ -896,65 +896,28 @@ def upload_live_sensor(case_id: str, payload: LiveSensorPayloadInput):
 
 @app.post("/api/cases/demo", response_model=CaseResponseSchema, status_code=status.HTTP_201_CREATED, tags=["Cases"])
 def create_and_analyze_demo_case():
-    """Create a complete end-to-end demo case using sample files, and run full analysis in one click."""
+    """Create a complete end-to-end demo case using randomized multimodal scenarios and run full analysis in one click."""
     db = get_database()
     case_id = str(uuid.uuid4())
     
     os.makedirs(UPLOAD_DIR, exist_ok=True)
-    
-    sample_img_src = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "sample", "image", "football_injury.jpg")
-    if not os.path.exists(sample_img_src):
-        from scripts.create_sample_image import main as gen_img
-        gen_img()
-        
-    img_extension = ".jpg"
-    img_dest = os.path.join(UPLOAD_DIR, f"{case_id}{img_extension}")
-    shutil.copyfile(sample_img_src, img_dest)
-    
-    from ml.vision.preprocess import verify_image_quality
-    quality_metrics = verify_image_quality(img_dest)
-    
-    sample_sensor_src = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "sample", "sensor", "football_fall.csv")
-    sensor_dest = os.path.join(UPLOAD_DIR, f"{case_id}_sensor_demo.csv")
-    shutil.copyfile(sample_sensor_src, sensor_dest)
-    
-    from ml.sensor.sensor_processor import process_sensor_data
-    sensor_summary = process_sensor_data(sensor_dest)
-    sensor_summary["case_id"] = case_id
-    sensor_summary["source_type"] = "demo"
-    sensor_summary["data_provenance"] = "synthetic"
-    sensor_summary["scenario"] = "football_fall"
-    sensor_summary["file_reference"] = sensor_dest
-    sensor_summary["feature_version"] = "sensor-v1"
-    sensor_summary["created_at"] = datetime.utcnow().isoformat()
-    sensor_summary["data_provenance_message"] = "Synthetic sensor vectors from the bundled demonstration dataset are processed using the same sensor pipeline."
-    
-    questionnaire = {
-        "answers": {
-            "pain_level": 7,
-            "injury_mechanism": "sports",
-            "movement_limitation": "moderate",
-            "weight_bearing": "no",
-            "visible_bleeding": "no",
-            "crack_pop": "yes",
-            "direct_impact": "yes"
-        },
-        "voice_used": False,
-        "voice_transcript": None
-    }
+
+    from backend.services.demo_scenario_generator import generate_random_demo_case_data
+    demo_data = generate_random_demo_case_data(case_id, UPLOAD_DIR)
     
     case_doc = {
         "case_id": case_id,
         "created_at": datetime.utcnow(),
-        "status": "sensor_submitted",
+        "status": "sensor_submitted" if demo_data.get("sensor_available") else "image_uploaded",
         "is_demo": True,
-        "image_reference": img_dest,
-        "image_quality_metrics": quality_metrics,
+        "scenario_name": demo_data.get("scenario_name"),
+        "image_reference": demo_data.get("image_reference"),
+        "image_quality_metrics": demo_data.get("image_quality_metrics"),
         "visible_injury": None,
-        "questionnaire": questionnaire,
-        "sensor_summary": sensor_summary,
-        "sensor_available": True,
-        "sensor_source_type": "demo",
+        "questionnaire": demo_data.get("questionnaire"),
+        "sensor_summary": demo_data.get("sensor_summary"),
+        "sensor_available": demo_data.get("sensor_available", False),
+        "sensor_source_type": demo_data.get("sensor_source_type", "not_provided"),
         "xgboost_prediction": None,
         "quantum_prediction": None,
         "agreement_score": None,

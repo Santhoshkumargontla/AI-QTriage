@@ -210,7 +210,7 @@ export default function Dashboard() {
               {cases.filter(c => c.is_demo || c.sensor_summary?.source_type === "demo").length}
             </div>
             <div className="text-[11px] text-amber-400/90 font-mono">
-              Synthetic Football Fall Data
+              Diverse Synthetic Scenarios
             </div>
           </div>
         </ThreeDCard>
@@ -260,7 +260,7 @@ export default function Dashboard() {
               <div>
                 <span className="font-bold text-white text-sm block">Run Complete Demo</span>
                 <p className="text-[11px] text-slate-400 mt-1 leading-relaxed">
-                  Instantly launch synthetic football fall case with all model predictions.
+                  Randomly generates diverse injury cases with varied images, questions, and sensor profiles.
                 </p>
               </div>
             </button>
