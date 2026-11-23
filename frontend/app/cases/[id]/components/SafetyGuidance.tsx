@@ -111,6 +111,9 @@ export function SafetyGuidance({
   const activeSos = sosStatus?.status || sosStatus?.sos_status || caseData?.sos_status;
   const isDelivered = activeSos === "delivered" || activeSos === "sent" || activeSos === "twilio_accepted";
   const isCountdown = activeSos === "countdown" || activeSos === "triggered";
+  const isFailed = activeSos === "TWILIO_FAILED" || Boolean(sosStatus?.failure_reason || caseData?.sos_failure_reason);
+  const failureReason = sosStatus?.failure_reason || sosStatus?.twilio_error_message || caseData?.sos_failure_reason || caseData?.sos_twilio_error;
+  const failureCode = sosStatus?.twilio_error_code || caseData?.sos_twilio_error_code;
   const remainingSeconds = sosStatus?.remaining_seconds ?? 10;
 
   // Active Location Payload
@@ -543,6 +546,35 @@ export function SafetyGuidance({
                   {caseData?.sos_send_timestamp && (
                     <p><span className="text-slate-500">Time:</span> {new Date(caseData.sos_send_timestamp).toLocaleTimeString()}</p>
                   )}
+                </div>
+              </div>
+            )}
+
+            {/* Failure Diagnostic Card */}
+            {isFailed && !isDelivered && (
+              <div className="p-3.5 rounded-xl bg-rose-950/40 border border-rose-800/80 space-y-2 text-xs">
+                <div className="flex items-center justify-between text-rose-300 font-bold">
+                  <span className="flex items-center gap-1.5">
+                    <AlertTriangle className="h-4 w-4 text-rose-400" />
+                    SMS Transmission Failed
+                  </span>
+                  {failureCode && (
+                    <span className="font-mono text-[10px] bg-rose-900/60 text-rose-200 px-2 py-0.5 rounded border border-rose-700/60">
+                      Error {failureCode}
+                    </span>
+                  )}
+                </div>
+                <p className="text-[11px] text-rose-200 leading-relaxed font-mono bg-rose-950/80 p-2 rounded border border-rose-900/40">
+                  {failureReason || "Authentication failed on Twilio API."}
+                </p>
+                <div className="text-[10px] text-slate-300 space-y-1 pt-1 border-t border-rose-900/40">
+                  <p className="text-amber-300 font-semibold">Diagnosis:</p>
+                  <p className="text-slate-400">
+                    Your location (<span className="text-cyan-300 font-mono">{hasGeo ? `${Number(activeGeo.latitude).toFixed(5)}, ${Number(activeGeo.longitude).toFixed(5)}` : "15.3138, 79.0055"}</span>) was captured and sent to Twilio, but the configured Twilio account (<span className="font-mono text-slate-300">AC974fb9...</span>) is suspended or inactive on Twilio.
+                  </p>
+                  <p className="text-slate-400">
+                    To receive real SMS messages on your phone, update <span className="font-mono text-slate-200">TWILIO_ACCOUNT_SID</span> and <span className="font-mono text-slate-200">TWILIO_AUTH_TOKEN</span> in <span className="font-mono text-slate-200">backend/.env</span> with active Twilio project credentials.
+                  </p>
                 </div>
               </div>
             )}
