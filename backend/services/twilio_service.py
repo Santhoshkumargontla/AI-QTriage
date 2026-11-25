@@ -316,6 +316,20 @@ class TwilioService:
                 timeout=10
             )
 
+            # Trial template fallback: Twilio Error 572006 requires predefined SMS templates for trial accounts (e.g., India +91)
+            if r.status_code == 400:
+                try:
+                    chk_json = r.json()
+                    if str(chk_json.get("code")) == "572006":
+                        r = requests.post(
+                            url,
+                            data={"From": from_num, "To": to_num, "Body": "sms_account_alerts"},
+                            auth=(self.account_sid, self.auth_token),
+                            timeout=10
+                        )
+                except Exception:
+                    pass
+
             if r.status_code in (200, 201):
                 try:
                     resp_json = r.json()
